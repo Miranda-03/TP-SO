@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 int main(int argc, char* argv[]) {
     
@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
     clave_memoria = config_get_string_value(config,"CLAVE_MEMORIA");
 
     //creo las conexiones
-
+   
     conexion_kernel = crear_conexion(ip, puerto_kernel);
 	conexion_memoria = crear_conexion(ip, puerto_memoria);
 
