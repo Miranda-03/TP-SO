@@ -1,4 +1,4 @@
-#include "client.h"
+#include "utils.h"
 
 
 
@@ -104,4 +104,18 @@ void eliminar_paquete(t_paquete* paquete)
 void liberar_conexion(int socket_cliente)
 {
 	close(socket_cliente);
+}
+
+
+t_config* iniciar_config(void)
+{
+	t_config* nuevo_config;
+	nuevo_config = config_create("./entradasalida.config");
+
+	if(nuevo_config==NULL){
+		printf("Error con el config");
+		exit(2);
+	}
+
+	return nuevo_config;
 }

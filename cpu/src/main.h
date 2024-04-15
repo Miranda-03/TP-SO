@@ -1,3 +1,4 @@
+
 #ifndef CLIENT_H_
 #define CLIENT_H_
 
@@ -8,14 +9,14 @@
 #include<commons/config.h>
 #include<readline/readline.h>
 
-#include "utilsc.h"
+#include "utils.h"
 
 
 t_log* iniciar_logger(void);
 t_config* iniciar_config(void);
 void leer_consola(t_log*);
 void paquete(int);
-void terminar_programa(int, int, t_log*, t_config*);
+void terminar_programa( int, t_log*, t_config*);
 
 
 t_log* iniciar_logger(void)
@@ -66,7 +67,7 @@ void paquete(int conexion)
 	
 }
 
-void terminar_programa(int conexion1, int conexion2, t_log* logger, t_config* config)
+void terminar_programa(int conexion, t_log* logger, t_config* config)
 {
 	if(logger!=NULL){
 		log_destroy(logger);
@@ -76,11 +77,10 @@ void terminar_programa(int conexion1, int conexion2, t_log* logger, t_config* co
 		config_destroy(config);
 	}
 
-	liberar_conexion(conexion1);
-	liberar_conexion(conexion2);
+	liberar_conexion(conexion);
+	
 
-	//liberamos las conexiones, uso 1 y 2 ya que no importa identificarlas en esta funcion
-}
+	//liberamos las conexiones
 
 
 #endif /* CLIENT_H_ */

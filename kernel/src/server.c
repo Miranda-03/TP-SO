@@ -1,12 +1,39 @@
 #include "server.h"
 
 int main(void) {
-	logger = log_create("kernel.log", "Servidor", 1, LOG_LEVEL_DEBUG);
+
+	int  conexion_memoria;
+	char* ip;
+    char* puerto_memoria;
+	char *clave_memoria;
+
+	t_config* config;
+
+	config = iniciar_config();
+	ip = config_get_string_value(config,"IP");
+	puerto_memoria = config_get_string_value(config,"PUERTO_MEMORIA");
+	clave_memoria = config_get_string_value(config,"CLAVE_MEMORIA");
+
+	conexion_memoria = crear_conexion(ip, puerto_memoria);
+
+	enviar_mensaje(clave_memoria,conexion_memoria);
+
+	if(logger!=NULL){
+		log_destroy(logger);
+	}
+
+	if(config!=NULL){
+		config_destroy(config);
+	}
+
+	liberar_conexion(conexion_memoria); 
+
+	logger = log_create("memoria.log", "Servidor", 1, LOG_LEVEL_DEBUG);
 
 	int server_fd = iniciar_servidor();
 	log_info(logger, "Servidor listo para recibir al cliente");
 	int cliente_fd = esperar_cliente(server_fd);
-
+		
 	t_list* lista;
 	while (1) {
 		int cod_op = recibir_operacion(cliente_fd);
@@ -32,4 +59,18 @@ int main(void) {
 
 void iterator(char* value) {
 	log_info(logger,"%s", value);
+}
+
+
+t_config* iniciar_config(void)
+{
+	t_config* nuevo_config;
+	nuevo_config = config_create("./kernel.config");
+
+	if(nuevo_config==NULL){
+		printf("Error con el config");
+		exit(2);
+	}
+
+	return nuevo_config;
 }
