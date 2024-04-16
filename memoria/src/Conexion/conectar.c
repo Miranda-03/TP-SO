@@ -19,7 +19,7 @@ void *recibirModulo(void *ptr)
         pthread_t thread;
         int *socketBidireccional = malloc(sizeof(int));
         *socketBidireccional = accept(MemoriasocketEscucha, NULL, NULL);
-      
+
         pthread_create(&thread,
                        NULL,
                        (void *)atenderModulo,
@@ -29,8 +29,9 @@ void *recibirModulo(void *ptr)
     return NULL; // Agregar un return al final de la función
 }
 
-void *atenderModulo(void *socketComunicacion)
+void *atenderModulo(void *ptr)
 {
+    int socketComunicacion = *((int *)ptr);
     printf("hace cosas con el modulo MEMORIA\n");
 
     t_resultHandShake *result = malloc(sizeof(t_paquete));
@@ -38,15 +39,12 @@ void *atenderModulo(void *socketComunicacion)
     t_paquete *paquete = malloc(sizeof(t_paquete));
     paquete->buffer = malloc(sizeof(t_buffer));
 
-    recv(socketComunicacion, &(paquete->modulo),  sizeof(TipoModulo), MSG_WAITALL);
-    recv(socketComunicacion, &(paquete->buffer->size), sizeof(uint32_t), MSG_WAITALL);
+    recv(socketComunicacion, &(paquete->modulo), sizeof(TipoModulo), 0);
+    recv(socketComunicacion, &(paquete->buffer->size), sizeof(uint32_t), 0);
     paquete->buffer->stream = malloc(paquete->buffer->size);
-    recv(socketComunicacion, paquete->buffer->stream, paquete->buffer->size, MSG_WAITALL);
-
-    printf("recibe algo MEMORIA\n");   
+    recv(socketComunicacion, paquete->buffer->stream, paquete->buffer->size, 0);
 
     result->moduloRemitente = paquete->modulo;
-    printf("Valor del módulo MEMORIA: %d\n", (int)paquete->modulo);
 
     result->moduloResponde = MEMORIA;
 
@@ -57,11 +55,9 @@ void *atenderModulo(void *socketComunicacion)
         break;
 
     default:
-        enviarPaqueteResult(result, -1, socketComunicacion);
+        enviarPaqueteResult(result, -1, &socketComunicacion);
         break;
     }
-
-     printf("llega al final MEMORIA\n");   
 
     free(paquete->buffer->stream);
     free(paquete->buffer);

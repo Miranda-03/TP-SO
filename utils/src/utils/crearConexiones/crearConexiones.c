@@ -49,33 +49,33 @@ int esperarCliente(int *socket)
     return accept(socket, NULL, NULL);
 }
 
-void enviarPaqueteResult(t_resultHandShake *result, int *result_cod, int *socket)
+void enviarPaqueteResult(t_resultHandShake *result, int result_cod, int *socket)
 {
     result->respuesta_cod = result_cod;
 
     t_buffer *buffer = malloc(sizeof(t_buffer));
     t_paquete *paquete = malloc(sizeof(t_paquete));
 
-    buffer->size = 8 + sizeof(uint8_t);
+    buffer->size = sizeof(t_resultHandShake);
 
     buffer->offset = 0;
     buffer->stream = malloc(buffer->size);
     
 
-    memcpy( buffer->stream + buffer->offset , &(result->moduloRemitente), 4);
-    buffer->offset += 4;
-    memcpy( buffer->stream + buffer->offset , &(result->moduloResponde), 4);
-    buffer->offset += 4;
+    memcpy( buffer->stream + buffer->offset , &(result->moduloRemitente), sizeof(TipoModulo));
+    buffer->offset += sizeof(TipoModulo);
+    memcpy( buffer->stream + buffer->offset , &(result->moduloResponde), sizeof(TipoModulo));
+    buffer->offset += sizeof(TipoModulo);
     memcpy( buffer->stream + buffer->offset , &(result->respuesta_cod), sizeof(uint8_t));
 
-    paquete->modulo = result->moduloResponde; // Podemos usar una constante por operación
+    paquete->modulo = result->moduloResponde; 
     paquete->buffer = buffer;
 
-    void *a_enviar = malloc(buffer->size + 4 + sizeof(uint32_t));
+    void *a_enviar = malloc(buffer->size + sizeof(TipoModulo) + sizeof(uint32_t));
     int offset = 0;
 
-    memcpy(a_enviar + offset, &(paquete->modulo), 4);
-    offset += 4;
+    memcpy(a_enviar + offset, &(paquete->modulo), sizeof(TipoModulo));
+    offset += sizeof(TipoModulo);
     memcpy(a_enviar + offset, &(paquete->buffer->size), sizeof(uint32_t));
     offset += sizeof(uint32_t);
     memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);

@@ -44,7 +44,7 @@ void conectarServidor(int *socket, struct addrinfo *servinfo);
  * @fn armarPaqueteResult
  * @brief intenta conectar con el servidor en un bucle.
 */
-void enviarPaqueteResult(t_resultHandShake  *result, int *result_cod, int *socket);
+void enviarPaqueteResult(t_resultHandShake *result, int result_cod, int *socket);
 
 
 #endif

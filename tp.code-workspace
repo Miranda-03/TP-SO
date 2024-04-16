@@ -6,7 +6,8 @@
 			"cstdlib": "c",
 			"chrono": "c",
 			"charconv": "c",
-			"functional": "c"
+			"functional": "c",
+			"format": "c"
 		},
 		"C_Cpp.errorSquiggles": "disabled",
 	},
