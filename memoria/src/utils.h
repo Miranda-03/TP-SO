@@ -1,32 +1,15 @@
 #ifndef UTILS_H_
 #define UTILS_H_
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<sys/socket.h>
-#include<unistd.h>
-#include<netdb.h>
-#include<commons/log.h>
-#include<commons/collections/list.h>
-#include<string.h>
-#include<assert.h>
+#include <utils/structs/structSendRecvMSG.h>
+#include <utils/enums/DispositivosIOenum.h>
+#include <utils/crearConexiones/crearConexiones.h>
 
-#define PUERTO "5555"
+/**
+* @fn    manageIO
+* @brief manejar el handshake del modulo IO.
+*/
+void manageIO(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
 
-typedef enum
-{
-	MENSAJE,
-	PAQUETE
-}op_code;
-
-extern t_log* logger;
-
-void* recibir_buffer(int*, int);
-
-int iniciar_servidor(void);
-int esperar_cliente(int);
-t_list* recibir_paquete(int);
-void recibir_mensaje(int);
-int recibir_operacion(int);
 
 #endif /* UTILS_H_ */

@@ -1,7 +1,10 @@
-#include "main.h"
+#include <Conexion/conectar.h>
 
 int main(int argc, char* argv[]) {
     
+    conectarModuloIO();
+    
+    /*
     int conexion_kernel, conexion_memoria;
 	char* ip;
 	char* puerto_kernel;
@@ -38,6 +41,8 @@ int main(int argc, char* argv[]) {
     paquete(conexion_memoria);
 
 	terminar_programa(conexion_kernel, conexion_memoria, logger, config);
+
+    */
 
     return 0;
 }

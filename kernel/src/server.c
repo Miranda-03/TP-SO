@@ -1,5 +1,6 @@
 #include "server.h"
 
+/*
 int main(void) {
 
 	int  conexion_memoria;
@@ -60,17 +61,4 @@ int main(void) {
 void iterator(char* value) {
 	log_info(logger,"%s", value);
 }
-
-
-t_config* iniciar_config(void)
-{
-	t_config* nuevo_config;
-	nuevo_config = config_create("./kernel.config");
-
-	if(nuevo_config==NULL){
-		printf("Error con el config");
-		exit(2);
-	}
-
-	return nuevo_config;
-}
+*/
