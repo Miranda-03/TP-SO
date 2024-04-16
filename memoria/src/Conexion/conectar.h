@@ -42,4 +42,4 @@ void manageIO(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
 */
 void manageCPU(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
 
-#endif
+#endif /*CONECTAR_F*/

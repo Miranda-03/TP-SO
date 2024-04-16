@@ -14,13 +14,13 @@ int IOsocketMemoria;
 
 void conectarModuloIO()
 {
-    // IOsocketKernel = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_KERNEL"), obtenerValorConfig(PATH_CONFIG, "IP_KERNEL"), NULL);
+    IOsocketKernel = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_KERNEL"), obtenerValorConfig(PATH_CONFIG, "IP_KERNEL"), NULL);
     IOsocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
 
-    realizarHandshakeIO();
+    HandshakeIO();
 }
 
-void realizarHandshakeIO()
+void HandshakeIO()
 {
     printf("Entra al handshake IO\n");
     HandshakeMessageIO h_msg = {STDIN};
@@ -87,3 +87,4 @@ void realizarHandshakeIO()
     free(paquete);
     free(paqueteResult);
 }
+

@@ -54,8 +54,6 @@ void *atenderModulo(void *ptr)
         break;
     
     case CPU:
-        
-
     default:
         enviarPaqueteResult(result, -1, &socketComunicacion);
         break;

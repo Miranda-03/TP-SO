@@ -5,6 +5,6 @@
 int main(int argc, char* argv[]) {
 
     conectarModuloKernel();
-    
+
     return 0;
 }
