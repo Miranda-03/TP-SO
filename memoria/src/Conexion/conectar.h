@@ -11,7 +11,6 @@
 #include <utils/structs/structSendRecvMSG.h>
 #include <utils/enums/DispositivosIOenum.h>
 #include <utils/enums/ModulosEnum.h>
-#include "utils.h"
 
 /**
 * @fn    conectarModuloMemoria
@@ -30,5 +29,17 @@ void *recibirModulo(void *ptr);
 * @brief función para atender al módulo cliente.
 */
 void *atenderModulo(void *socketComunicacion);
+
+/**
+* @fn    manageIO
+* @brief manejar el handshake del modulo IO.
+*/
+void manageIO(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
+
+/**
+* @fn    manageCPU
+* @brief manejar el handshake del modulo IO.
+*/
+void manageCPU(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
 
 #endif

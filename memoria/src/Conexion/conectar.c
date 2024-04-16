@@ -32,7 +32,6 @@ void *recibirModulo(void *ptr)
 void *atenderModulo(void *ptr)
 {
     int socketComunicacion = *((int *)ptr);
-    printf("hace cosas con el modulo MEMORIA\n");
 
     t_resultHandShake *result = malloc(sizeof(t_paquete));
 
@@ -53,6 +52,9 @@ void *atenderModulo(void *ptr)
     case IO:
         manageIO(socketComunicacion, paquete->buffer, result);
         break;
+    
+    case CPU:
+        
 
     default:
         enviarPaqueteResult(result, -1, &socketComunicacion);
@@ -63,4 +65,36 @@ void *atenderModulo(void *ptr)
     free(paquete->buffer);
     free(paquete);
     free(result);
+}
+
+void manageCPU(int *socket,  t_buffer *buffer, t_resultHandShake  *result){
+    
+}
+
+void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
+{
+
+  void *stream = buffer->stream;
+
+  TipoInterfaz tipo;
+  memcpy(&tipo, stream, 4);
+
+  switch (tipo)
+  {
+  case STDIN:
+    enviarPaqueteResult(result, 0, socket);
+    break;
+
+  case STDOUT:
+    enviarPaqueteResult(result, 0, socket);
+    break;
+
+  case DIALFS:
+    enviarPaqueteResult(result, 0, socket);
+    break;
+
+  default:
+    enviarPaqueteResult(result, -1, socket);
+    break;
+  }
 }
