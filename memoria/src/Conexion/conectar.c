@@ -72,7 +72,7 @@ void manageCPU(int *socket, t_resultHandShake *result)
 {
     enviarPaqueteResult(result, 0, socket);
 }
-
+// ferfer
 void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
 {
 
