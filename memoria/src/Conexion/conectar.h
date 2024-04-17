@@ -3,7 +3,7 @@
 
 
 #define PATH_CONFIG "memoria.config"
-#define MAXCONN 3
+#define MAXCONN 10
 
 #include <utils/crearConexiones/crearConexiones.h>
 #include <utils/obtenerValorConfig/obtenerValorConfig.h>
@@ -40,6 +40,6 @@ void manageIO(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
 * @fn    manageCPU
 * @brief manejar el handshake del modulo IO.
 */
-void manageCPU(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
+void manageCPU(int *socket, t_resultHandShake  *result);
 
 #endif

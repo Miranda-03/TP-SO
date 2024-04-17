@@ -6,9 +6,16 @@
 #define MAXCONN 1
 
 /**
-* @fn    conectarModuloKernel
-* @brief conecta el modulo kernel con los demas componentes.
+* @fn    conectarModuloCPU
+* @brief conecta el modulo CPU con los demas componentes.
 */
 void conectarModuloCPU();
+
+/**
+* @fn    handshakeCPUMemoria
+* @brief hacer handshake CPU memoria.
+*/
+void handshakeCPUMemoria();
+
 
 #endif
