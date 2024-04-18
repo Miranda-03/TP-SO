@@ -11,7 +11,7 @@ int KernelSocketCPUInterrumpt;
 
 void conectarModuloKernel()
 {
-    int *max = MAXCONN; 
+    
     int KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
 
     pthread_t threadClientes;
