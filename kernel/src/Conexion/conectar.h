@@ -10,6 +10,9 @@
 #include <pthread.h>
 #include <utils/enums/ModulosEnum.h>
 #include <utils/enums/TipoConnKernelCPU.h>
+#include <utils/enums/DispositivosIOenum.h>
+#include <utils/structs/structSendRecvMSG.h>
+
 
 /**
 * @fn    conectarModuloKernel
@@ -40,5 +43,11 @@ void handshakeKernelCPU(TipoConn conn);
 * @brief función para devolver el socket correspondiente al tipo de conexion.
 */
 int socketSegunConn(TipoConn conn);
+
+/**
+* @fn    manageIO
+* @brief manejar el handshake del modulo IO.
+*/
+void manageIO(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
 
 #endif
