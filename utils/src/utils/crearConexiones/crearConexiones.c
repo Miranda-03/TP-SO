@@ -57,18 +57,17 @@ void enviarPaqueteResult(t_resultHandShake *result, int result_cod, int *socket)
     t_paquete *paquete = malloc(sizeof(t_paquete));
 
     buffer->size = sizeof(t_resultHandShake);
-
+    
     buffer->offset = 0;
     buffer->stream = malloc(buffer->size);
-    
 
-    memcpy( buffer->stream + buffer->offset , &(result->moduloRemitente), sizeof(TipoModulo));
+    memcpy(buffer->stream + buffer->offset, &(result->moduloRemitente), sizeof(TipoModulo));
     buffer->offset += sizeof(TipoModulo);
-    memcpy( buffer->stream + buffer->offset , &(result->moduloResponde), sizeof(TipoModulo));
+    memcpy(buffer->stream + buffer->offset, &(result->moduloResponde), sizeof(TipoModulo));
     buffer->offset += sizeof(TipoModulo);
-    memcpy( buffer->stream + buffer->offset , &(result->respuesta_cod), sizeof(uint8_t));
+    memcpy(buffer->stream + buffer->offset, &(result->respuesta_cod), sizeof(uint8_t));
 
-    paquete->modulo = result->moduloResponde; 
+    paquete->modulo = result->moduloResponde;
     paquete->buffer = buffer;
 
     void *a_enviar = malloc(buffer->size + sizeof(TipoModulo) + sizeof(uint32_t));
@@ -86,4 +85,45 @@ void enviarPaqueteResult(t_resultHandShake *result, int result_cod, int *socket)
     free(paquete->buffer->stream);
     free(paquete->buffer);
     free(paquete);
+}
+
+int resultadoHandShake(int *socket)
+{
+
+    t_buffer *bufferResponse = malloc(sizeof(t_buffer));
+    t_paquete *paqueteResult = malloc(sizeof(t_paquete));
+
+    paqueteResult->buffer = bufferResponse;
+
+    recv(socket, &(paqueteResult->modulo), 4, 0);
+    recv(socket, &(paqueteResult->buffer->size), sizeof(uint32_t), MSG_WAITALL);
+    void *stream = malloc(sizeof(t_resultHandShake));
+    paqueteResult->buffer->stream = stream;
+    recv(socket, paqueteResult->buffer->stream, sizeof(t_resultHandShake), 0);
+
+    TipoModulo remitente;
+    TipoModulo responde;
+    uint8_t respuesta;
+    memcpy(&remitente, paqueteResult->buffer->stream, sizeof(TipoModulo));
+    paqueteResult->buffer->stream += sizeof(TipoModulo);
+    memcpy(&responde, paqueteResult->buffer->stream, sizeof(TipoModulo));
+    paqueteResult->buffer->stream += sizeof(TipoModulo);
+    memcpy(&respuesta, paqueteResult->buffer->stream, sizeof(uint8_t));
+
+    free(bufferResponse);
+    free(paqueteResult);
+    free(stream);
+
+    if (respuesta == 1)
+    {
+        // Handshake OK
+        printf("El handshake salio bien\n");
+        return 1;
+    }
+    else
+    {
+        printf("El handshake salio mal\n");
+        return 0;
+        // Handshake ERROR
+    }
 }

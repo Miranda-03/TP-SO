@@ -57,6 +57,9 @@ void *atenderModulo(void *ptr)
         manageCPU(socketComunicacion, result);
         break;
 
+    case KERNEL
+
+
     default:
         enviarPaqueteResult(result, -1, socketComunicacion);
         break;

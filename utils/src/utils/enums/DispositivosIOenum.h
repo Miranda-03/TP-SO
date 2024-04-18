@@ -16,3 +16,4 @@ typedef enum {
 } TipoInterfaz;
 
 #endif
+

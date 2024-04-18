@@ -1,8 +1,4 @@
 #include <Conexion/conectar.h>
-#include <utils/crearConexiones/crearConexiones.h>
-#include <utils/obtenerValorConfig/obtenerValorConfig.h>
-#include <utils/structs/structSendRecvMSG.h>
-#include <utils/enums/ModulosEnum.h>
 
 int CPUSocketMemoria;
 
@@ -12,15 +8,18 @@ void conectarModuloCPU()
     CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
 
     handshakeCPUMemoria();
-    /*
+
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
     int CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
+    if (CPUsocketBidireccionalDispatch != -1)
+        recibirConn(CPUsocketBidireccionalDispatch);
 
     int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
     int CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
-    */
+    if (CPUsocketBidireccionalInterrupt != -1)
+        recibirConn(CPUsocketBidireccionalInterrupt);
 }
 
 void handshakeCPUMemoria()
@@ -74,4 +73,29 @@ void handshakeCPUMemoria()
     free(bufferResponse);
     free(a_enviar);
     free(stream);
+}
+
+void recibirConn(int *socket)
+{
+    TipoModulo *modulo = malloc(sizeof(TipoModulo));
+    recv(socket, modulo, sizeof(TipoModulo), MSG_WAITALL);
+
+    switch (*modulo)
+    {
+    case KERNEL:
+        manageKernel(socket);
+        break;
+
+    default:
+        break;
+    }
+}
+
+void manageKernel(int *socket)
+{
+    t_resultHandShake *result = malloc(sizeof(t_resultHandShake));
+    result->moduloRemitente = KERNEL;
+    result->moduloResponde = CPU;
+    enviarPaqueteResult(result, 1, socket);
+    free(result);
 }
