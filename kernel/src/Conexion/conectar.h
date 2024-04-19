@@ -39,6 +39,12 @@ void *atenderIO(void *socketComunicacion);
 void handshakeKernelCPU(TipoConn conn);  
 
 /**
+* @fn    handshakeKernelMemoria
+* @brief función para atender realizar el handshake entre el kernel y el Memoria.
+*/
+void handshakeKernelMemoria(); 
+
+/**
 * @fn    socketSegunConn
 * @brief función para devolver el socket correspondiente al tipo de conexion.
 */

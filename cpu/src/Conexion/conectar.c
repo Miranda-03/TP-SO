@@ -57,7 +57,7 @@ void handshakeCPUMemoria()
     paqueteResult->buffer->stream += sizeof(TipoModulo);
     memcpy(&respuesta, paqueteResult->buffer->stream, sizeof(uint8_t));
 
-    if (respuesta == 0)
+    if (respuesta == 1)
     {
         // Handshake OK
         printf("El handshake de CPU a memoria salio bien\n");

@@ -56,10 +56,11 @@ void *atenderModulo(void *ptr)
     case CPU:
         manageCPU(socketComunicacion, result);
         break;
-
+    
     case KERNEL:
+        manageKernel(socketComunicacion, result);
         break;
-        
+
     default:
         enviarPaqueteResult(result, -1, socketComunicacion);
         break;
@@ -73,7 +74,7 @@ void *atenderModulo(void *ptr)
 
 void manageCPU(int *socket, t_resultHandShake *result)
 {
-    enviarPaqueteResult(result, 0, socket);
+    enviarPaqueteResult(result, 1, socket);
 }
 
 void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
@@ -87,19 +88,24 @@ void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
     switch (tipo)
     {
     case STDIN:
-        enviarPaqueteResult(result, 0, socket);
+        enviarPaqueteResult(result, 1, socket);
         break;
 
     case STDOUT:
-        enviarPaqueteResult(result, 0, socket);
+        enviarPaqueteResult(result, 1, socket);
         break;
 
     case DIALFS:
-        enviarPaqueteResult(result, 0, socket);
+        enviarPaqueteResult(result, 1, socket);
         break;
 
     default:
         enviarPaqueteResult(result, -1, socket);
         break;
     }
+}
+
+void manageKernel(int *socket, t_resultHandShake *result)
+{
+    enviarPaqueteResult(result, 1, socket);
 }

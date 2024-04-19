@@ -8,6 +8,7 @@ typedef struct
 
 int KernelSocketCPUDispatch;
 int KernelSocketCPUInterrumpt;
+int KernelSocketMemoria;
 
 void conectarModuloKernel()
 {
@@ -24,7 +25,8 @@ void conectarModuloKernel()
     handshakeKernelCPU(INTERRUMPT);
 
     // Conexion con el módulo memoria
-    int KernelSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+    KernelSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+    handshakeKernelMemoria();
     pthread_join(threadClientes, NULL);
 }
 
@@ -135,6 +137,27 @@ void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
         enviarPaqueteResult(result, -1, socket);
         break;
     }
+}
+
+void handshakeKernelMemoria(){
+    t_paquete *paquete = malloc(sizeof(t_paquete));
+
+    paquete->modulo = KERNEL;
+
+    void *a_enviar = malloc(sizeof(TipoModulo));
+
+    memcpy(a_enviar, &(paquete->modulo), sizeof(TipoModulo));
+
+    send(KernelSocketMemoria, a_enviar, sizeof(TipoModulo), 0);
+    int respuestaHandshake = resultadoHandShake(KernelSocketMemoria);
+
+    if(respuestaHandshake == 1)
+        printf("Handshake KERNEL MEMORIA exitoso \n");
+    else
+        printf("Handshake KERNEL MEMORIA mal \n");
+    
+    free(paquete);
+    free(a_enviar);
 }
 
 int socketSegunConn(TipoConn conn)
