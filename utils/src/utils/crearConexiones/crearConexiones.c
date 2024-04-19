@@ -114,6 +114,7 @@ int resultadoHandShake(int *socket)
     free(paqueteResult);
     free(stream);
 
+
     if (respuesta == 1)
     {
         // Handshake OK

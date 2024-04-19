@@ -11,26 +11,26 @@ int KernelSocketCPUInterrumpt;
 
 void conectarModuloKernel()
 {
-    
+
     int KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
 
     pthread_t threadClientes;
     pthread_create(&threadClientes, NULL, recibirClientes, (void *)KernelsocketEscucha);
-    
+
     // Conexiones con el módulo CPU
-    /*KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
+    KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
     handshakeKernelCPU(DISPATCH);
     KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
-    handshakeKernelCPU(INTERRUMPT); 
+    handshakeKernelCPU(INTERRUMPT);
 
-    //Conexion con el módulo memoria
-    int KernelSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL); */
-    pthread_join(threadClientes, NULL); 
+    // Conexion con el módulo memoria
+    int KernelSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+    pthread_join(threadClientes, NULL);
 }
 
 void *recibirClientes(void *ptr)
 {
-    int MemoriasocketEscucha = (int *)ptr; // Castear correctamente el descriptor de socket    
+    int MemoriasocketEscucha = (int *)ptr; // Castear correctamente el descriptor de socket
 
     while (1)
     {
@@ -117,17 +117,20 @@ void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
     switch (tipo)
     {
     case STDIN:
-        enviarPaqueteResult(result, 0, socket);
+        enviarPaqueteResult(result, 1, socket);
         break;
 
     case STDOUT:
-        enviarPaqueteResult(result, 0, socket);
+        enviarPaqueteResult(result, 1, socket);
         break;
 
     case DIALFS:
-        enviarPaqueteResult(result, 0, socket);
+        enviarPaqueteResult(result, 1, socket);
         break;
 
+    case GENERICA:
+        enviarPaqueteResult(result, 1, socket);
+        break;
     default:
         enviarPaqueteResult(result, -1, socket);
         break;

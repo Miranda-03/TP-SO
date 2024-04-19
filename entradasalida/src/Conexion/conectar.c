@@ -12,56 +12,62 @@ typedef struct
 int IOsocketKernel;
 int IOsocketMemoria;
 
-void conectarModuloIO()
+void conectarModuloIO(int *esGenerico)
 {
     IOsocketKernel = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_KERNEL"), obtenerValorConfig(PATH_CONFIG, "IP_KERNEL"), NULL);
-    IOsocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+    realizarHandshakeIO(IOsocketKernel);
 
-    realizarHandshakeIO();
+    if (esGenerico != 1)
+    {
+        IOsocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+        realizarHandshakeIO(IOsocketMemoria);
+    }
 }
 
-void realizarHandshakeIO(int *s1,int *s2) //No funciona el handshake
+void realizarHandshakeIO(int *socket)
 {
-    printf("Entran los  handshakes IO\n");
-
     HandshakeMessageIO h_msg = {STDIN};
 
-    void *stream = malloc(sizeof(HandshakeMessageIO));
+    t_buffer *buffer = malloc(sizeof(t_buffer));
 
-    memcpy(stream, &(h_msg.tipoIterfaz), sizeof(TipoInterfaz));
+    buffer->size = 4;
+    buffer->offset = 0;
+    buffer->stream = malloc(buffer->size);
 
-    send(IOsocketKernel, stream, sizeof(HandshakeMessageIO), 0);
-    send(IOsocketMemoria, stream, sizeof(HandshakeMessageIO), 0);
+    memcpy(buffer->stream, &(h_msg.tipoIterfaz), 4);
 
-    int respuestaKernel = resultadoHandShake(IOsocketKernel);
-    int respuestaMemoria = resultadoHandShake(IOsocketMemoria);
+    t_paquete *paquete = malloc(sizeof(t_paquete));
 
-    
-    
-    free(stream);
+    paquete->modulo = IO;
+    paquete->buffer = buffer;
 
-    if (respuestaKernel == 1)
+
+    void *a_enviar = malloc(4 + sizeof(uint32_t) + sizeof(uint32_t));
+    int offset = 0;
+
+    memcpy(a_enviar + offset, &(paquete->modulo), sizeof(TipoModulo));
+    offset += sizeof(TipoModulo);
+    memcpy(a_enviar + offset, &(paquete->buffer->size), sizeof(uint32_t));
+    offset += sizeof(uint32_t);
+    memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);
+
+    send(socket, a_enviar, buffer->size + 4 + sizeof(uint32_t), 0);
+
+    int respuestaHandshake = resultadoHandShake(socket);
+
+    if (respuestaHandshake == 1)
     {
         // Handshake OK
-        printf("El handshake con kernel salio bien\n");
+        printf("El handshake salio bien\n");
     }
     else
     {
-        printf("El handshake con kernel salio mal\n");
+        printf("El handshake salio mal\n");
         // Handshake ERROR
     }
 
-    if (respuestaMemoria == 1)
-    {
-        // Handshake OK
-        printf("El handshake con memoria salio bien\n");
-    }
-    else
-    {
-        printf("El handshake con memoria salio mal\n");
-        // Handshake ERROR
-    }
-
-    
+    free(a_enviar);
+    free(paquete->buffer->stream);
+    free(paquete->buffer);
+    free(paquete);
 }
-

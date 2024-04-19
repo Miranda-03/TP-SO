@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[]) {
     
-    conectarModuloIO();
+    conectarModuloIO(1);
     
     /*
     int conexion_kernel, conexion_memoria;
