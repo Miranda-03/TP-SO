@@ -26,32 +26,11 @@ void conectarModuloIO(int *esGenerico)
 
 void realizarHandshakeIO(int *socket)
 {
-    HandshakeMessageIO h_msg = {STDIN};
-
-    t_buffer *buffer = malloc(sizeof(t_buffer));
-
-    buffer->size = 4;
-    buffer->offset = 0;
-    buffer->stream = malloc(buffer->size);
-
-    memcpy(buffer->stream, &(h_msg.tipoIterfaz), 4);
-
-    t_paquete *paquete = malloc(sizeof(t_paquete));
-
-    paquete->modulo = IO;
-    paquete->buffer = buffer;
-
-
-    void *a_enviar = malloc(4 + sizeof(uint32_t) + sizeof(uint32_t));
-    int offset = 0;
-
-    memcpy(a_enviar + offset, &(paquete->modulo), sizeof(TipoModulo));
-    offset += sizeof(TipoModulo);
-    memcpy(a_enviar + offset, &(paquete->buffer->size), sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-    memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);
-
-    send(socket, a_enviar, buffer->size + 4 + sizeof(uint32_t), 0);
+    t_buffer *buffer = buffer_create(sizeof(TipoInterfaz));
+    TipoInterfaz tipo = STDIN;
+    buffer_add(buffer, &tipo, 4);
+    //buffer_add_uint32(buffer, STDIN);
+    enviarMensaje(socket, buffer, IO, HANDSHAKE);
 
     int respuestaHandshake = resultadoHandShake(socket);
 
@@ -65,9 +44,4 @@ void realizarHandshakeIO(int *socket)
         printf("El handshake salio mal\n");
         // Handshake ERROR
     }
-
-    free(a_enviar);
-    free(paquete->buffer->stream);
-    free(paquete->buffer);
-    free(paquete);
 }

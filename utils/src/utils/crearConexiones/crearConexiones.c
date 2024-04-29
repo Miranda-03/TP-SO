@@ -49,9 +49,14 @@ int esperarCliente(int *socket)
     return accept(socket, NULL, NULL);
 }
 
-void enviarPaqueteResult(t_resultHandShake *result, int result_cod, int *socket)
+void enviarPaqueteResult(int result_cod, int *socket, TipoModulo moduloResponde, TipoModulo moduloRemitente)
 {
+
+    t_resultHandShake *result = malloc(sizeof(t_resultHandShake));
     result->respuesta_cod = result_cod;
+    result->moduloRemitente = moduloRemitente;
+    result->moduloResponde = moduloResponde;
+
 
     t_buffer *buffer = malloc(sizeof(t_buffer));
     t_paquete *paquete = malloc(sizeof(t_paquete));
@@ -81,6 +86,7 @@ void enviarPaqueteResult(t_resultHandShake *result, int result_cod, int *socket)
 
     send(socket, a_enviar, buffer->size + 4 + sizeof(uint32_t), 0);
 
+    free(result);
     free(a_enviar);
     free(paquete->buffer->stream);
     free(paquete->buffer);

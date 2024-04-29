@@ -12,8 +12,7 @@ void conectarModuloMemoria()
 
 void *recibirModulo(void *ptr)
 {
-    int MemoriasocketEscucha = (int *)ptr; // Castear correctamente el descriptor de socket                             // Liberar el espacio de memoria reservado en conectarModuloMemoria
-
+    int MemoriasocketEscucha = (int *)ptr; // Castear correctamente el descriptor de socket
     while (1)
     {
         pthread_t thread;
@@ -33,79 +32,88 @@ void *recibirModulo(void *ptr)
 void *atenderModulo(void *ptr)
 {
     int socketComunicacion = *((int *)ptr);
+    TipoModulo moduloRemitente;
+    recv(socketComunicacion, &moduloRemitente, sizeof(TipoModulo), 0);
 
-    t_resultHandShake *result = malloc(sizeof(t_paquete));
-
-    t_paquete *paquete = malloc(sizeof(t_paquete));
-    paquete->buffer = malloc(sizeof(t_buffer));
-
-    recv(socketComunicacion, &(paquete->modulo), sizeof(TipoModulo), 0);
-
-    result->moduloRemitente = paquete->modulo;
-    result->moduloResponde = MEMORIA;
-
-    switch (paquete->modulo)
+    switch (moduloRemitente)
     {
     case IO:
-        recv(socketComunicacion, &(paquete->buffer->size), sizeof(uint32_t), 0);
-        paquete->buffer->stream = malloc(paquete->buffer->size);
-        recv(socketComunicacion, paquete->buffer->stream, paquete->buffer->size, 0);
-        manageIO(socketComunicacion, paquete->buffer, result);
+        manageIO(socketComunicacion);
         break;
 
     case CPU:
-        manageCPU(socketComunicacion, result);
+        manageCPU(socketComunicacion);
         break;
-    
+
     case KERNEL:
-        manageKernel(socketComunicacion, result);
+        manageKernel(socketComunicacion);
         break;
 
     default:
-        enviarPaqueteResult(result, -1, socketComunicacion);
+        enviarPaqueteResult(-1, socketComunicacion, MEMORIA, IO);
         break;
     }
-
-    free(paquete->buffer->stream);
-    free(paquete->buffer);
-    free(paquete);
-    free(result);
 }
 
-void manageCPU(int *socket, t_resultHandShake *result)
+void manageCPU(int *socket)
 {
-    enviarPaqueteResult(result, 1, socket);
+    op_code *codigoOperacion = get_opcode_msg_recv(socket);
+
+    if (*codigoOperacion == HANDSHAKE)
+    {
+        enviarPaqueteResult(1, socket, MEMORIA, CPU);
+    }
+    else
+    {
+        // Funcion para el CPU
+    }
+
+    free(codigoOperacion);
 }
 
-void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
+void manageIO(int *socket)
 {
-
-    void *stream = buffer->stream;
+    op_code *codigoOperacion = get_opcode_msg_recv(socket);
+    t_buffer *buffer = buffer_leer_recv(socket);
 
     TipoInterfaz tipo;
-    memcpy(&tipo, stream, 4);
+    memcpy(&tipo, buffer->stream, 4);
 
-    switch (tipo)
+    free(codigoOperacion);
+    buffer_destroy(buffer);
+
+    switch (tipo) // primero fijarse el codigo de operacion en cada 'case' del switch
     {
     case STDIN:
-        enviarPaqueteResult(result, 1, socket);
+        enviarPaqueteResult(1, socket, MEMORIA, IO);
         break;
 
     case STDOUT:
-        enviarPaqueteResult(result, 1, socket);
+        enviarPaqueteResult(1, socket, MEMORIA, IO);
         break;
 
     case DIALFS:
-        enviarPaqueteResult(result, 1, socket);
+        enviarPaqueteResult(1, socket, MEMORIA, IO);
         break;
 
     default:
-        enviarPaqueteResult(result, -1, socket);
+        enviarPaqueteResult(-1, socket, MEMORIA, IO);
         break;
     }
 }
 
-void manageKernel(int *socket, t_resultHandShake *result)
+void manageKernel(int *socket)
 {
-    enviarPaqueteResult(result, 1, socket);
+    op_code *codigoOperacion = get_opcode_msg_recv(socket);
+
+    if (*codigoOperacion == HANDSHAKE)
+    {
+        enviarPaqueteResult(1, socket, MEMORIA, KERNEL);
+    }
+    else
+    {
+        // Funcion para el CPU
+    }
+
+    free(codigoOperacion);
 }

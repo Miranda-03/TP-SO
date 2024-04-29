@@ -9,7 +9,9 @@
 #include <utils/obtenerValorConfig/obtenerValorConfig.h>
 #include <utils/structs/structSendRecvMSG.h>
 #include <utils/enums/ModulosEnum.h>
-
+#include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
+#include <utils/enums/codigosOperacion.h>
 
 /**
 * @fn    conectarModuloCPU

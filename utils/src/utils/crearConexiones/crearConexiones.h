@@ -41,9 +41,9 @@ void conectarServidor(int *socket, struct addrinfo *servinfo);
 
 /**
  * @fn armarPaqueteResult
- * @brief intenta conectar con el servidor en un bucle.
+ * @brief envia el paquete con la respuesta de handshake.
  */
-void enviarPaqueteResult(t_resultHandShake *result, int result_cod, int *socket);
+void enviarPaqueteResult(int result_cod, int *socket, TipoModulo moduloResponde, TipoModulo moduloRemitente);
 
 /**
  * @fn resultadoHandShake

@@ -4,6 +4,9 @@
 
 #define PATH_CONFIG "entradasalida.config"
 
+#include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
+
 /**
 * @fn    conectarModuloIO
 * @brief conecta el modulo I/O con los demas componentes.

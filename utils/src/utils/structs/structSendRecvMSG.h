@@ -2,6 +2,7 @@
 #define MSG_STRUCT
 
 #include <utils/enums/ModulosEnum.h>
+#include <utils/enums/codigosOperacion.h>
 #include <stdint.h>
 
 /**
@@ -20,11 +21,13 @@ typedef struct
 /**
  * @brief buffer .
  * @param modulo cual es el modulo que envia el mensaje
+ * @param opcode codigo de operacion
  * @param buffer buffer con el mensaje
  */
 typedef struct
 {
     TipoModulo modulo;
+    op_code opcode;
     t_buffer *buffer;
 } t_paquete;
 

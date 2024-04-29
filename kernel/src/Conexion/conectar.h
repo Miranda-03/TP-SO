@@ -12,6 +12,9 @@
 #include <utils/enums/TipoConnKernelCPU.h>
 #include <utils/enums/DispositivosIOenum.h>
 #include <utils/structs/structSendRecvMSG.h>
+#include <utils/enums/codigosOperacion.h>
+#include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
 
 
 /**
@@ -54,6 +57,6 @@ int socketSegunConn(TipoConn conn);
 * @fn    manageIO
 * @brief manejar el handshake del modulo IO.
 */
-void manageIO(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
+void manageIO(int *socket);
 
 #endif

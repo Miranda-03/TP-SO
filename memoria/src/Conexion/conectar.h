@@ -11,6 +11,8 @@
 #include <utils/structs/structSendRecvMSG.h>
 #include <utils/enums/DispositivosIOenum.h>
 #include <utils/enums/ModulosEnum.h>
+#include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
 
 /**
 * @fn    conectarModuloMemoria
@@ -34,12 +36,12 @@ void *atenderModulo(void *socketComunicacion);
 * @fn    manageIO
 * @brief manejar el handshake del modulo IO.
 */
-void manageIO(int *socket,  t_buffer *buffer, t_resultHandShake  *result);
+void manageIO(int *socket);
 
 /**
 * @fn    manageCPU
 * @brief manejar el handshake del modulo IO.
 */
-void manageCPU(int *socket, t_resultHandShake  *result);
+void manageCPU(int *socket);
 
 #endif

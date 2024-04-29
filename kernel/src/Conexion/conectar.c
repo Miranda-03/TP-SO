@@ -54,51 +54,31 @@ void *atenderIO(void *ptr)
 {
     int socketComunicacion = *((int *)ptr);
 
-    t_resultHandShake *result = malloc(sizeof(t_paquete));
+    TipoModulo *moduloEntrante = malloc(sizeof(TipoModulo));
+    recv(socketComunicacion, moduloEntrante, sizeof(TipoModulo), 0);
 
-    t_paquete *paquete = malloc(sizeof(t_paquete));
-    paquete->buffer = malloc(sizeof(t_buffer));
-
-    recv(socketComunicacion, &(paquete->modulo), sizeof(TipoModulo), 0);
-
-    result->moduloRemitente = paquete->modulo;
-    result->moduloResponde = KERNEL;
-
-    switch (paquete->modulo)
+    switch (*moduloEntrante)
     {
     case IO:
-        recv(socketComunicacion, &(paquete->buffer->size), sizeof(uint32_t), 0);
-        paquete->buffer->stream = malloc(paquete->buffer->size);
-        recv(socketComunicacion, paquete->buffer->stream, paquete->buffer->size, 0);
-        manageIO(socketComunicacion, paquete->buffer, result);
+        manageIO(socketComunicacion);
         break;
     default:
-        enviarPaqueteResult(result, -1, socketComunicacion);
+        // enviarPaqueteResult(result, -1, socketComunicacion);
         break;
     }
 
-    free(paquete->buffer->stream);
-    free(paquete->buffer);
-    free(paquete);
-    free(result);
+    free(moduloEntrante);
 }
 
 void handshakeKernelCPU(TipoConn conn)
 {
-    HandshakeMessageKernel handshakemsg = {KERNEL, conn};
+    t_buffer *buffer = buffer_create(sizeof(TipoConn));
+    //buffer_add_uint32(buffer, conn);
+    buffer_add(buffer, &conn, 4);
+    memcpy(buffer->stream, &conn, sizeof(TipoConn));
+    enviarMensaje(socketSegunConn(conn), buffer, KERNEL, HANDSHAKE);
 
-    void *stream = malloc(sizeof(HandshakeMessageKernel));
-    int offset = 0;
-    memcpy(stream, &(handshakemsg.modulo), sizeof(TipoModulo));
-    offset += sizeof(TipoModulo);
-    memcpy(stream + offset, &(handshakemsg.conn), sizeof(TipoConn));
-
-    send(socketSegunConn(conn), stream, sizeof(HandshakeMessageKernel), 0);
-    int resultado = resultadoHandShake(socketSegunConn(conn));
-
-    free(stream);
-
-    if (resultado == 1)
+    if (resultadoHandShake(socketSegunConn(conn)) == 1)
     {
         printf("Handshake KERNEL CPU exitoso\n");
     }
@@ -108,56 +88,57 @@ void handshakeKernelCPU(TipoConn conn)
     }
 }
 
-void manageIO(int *socket, t_buffer *buffer, t_resultHandShake *result)
+void manageIO(int *socket)
 {
 
-    void *stream = buffer->stream;
+    op_code *opCode = get_opcode_msg_recv(socket);
 
-    TipoInterfaz tipo;
-    memcpy(&tipo, stream, 4);
-
-    switch (tipo)
+    if (*opCode == HANDSHAKE)
     {
-    case STDIN:
-        enviarPaqueteResult(result, 1, socket);
-        break;
-
-    case STDOUT:
-        enviarPaqueteResult(result, 1, socket);
-        break;
-
-    case DIALFS:
-        enviarPaqueteResult(result, 1, socket);
-        break;
-
-    case GENERICA:
-        enviarPaqueteResult(result, 1, socket);
-        break;
-    default:
-        enviarPaqueteResult(result, -1, socket);
-        break;
+        enviarPaqueteResult(1, socket, KERNEL, IO);
     }
+    else
+    {
+        t_buffer *buffer = buffer_leer_recv(socket);
+        TipoInterfaz tipo;
+        memcpy(&tipo, buffer->stream, 4);
+
+        switch (tipo) // eliminar el buffer
+        {
+        case STDIN:
+            // funcion para STDIN
+            break;
+
+        case STDOUT:
+            // funcion para STDOUT
+            break;
+
+        case DIALFS:
+            // funcion para DIALFS
+            break;
+
+        case GENERICA:
+            // funcion para GENERICA
+            break;
+        default:
+            // enviar mensaje de error
+            break;
+        }
+    }
+
+    free(opCode);
 }
 
-void handshakeKernelMemoria(){
-    t_paquete *paquete = malloc(sizeof(t_paquete));
+void handshakeKernelMemoria()
+{
+    t_buffer *buffer = buffer_create(0);
+    enviarMensaje(KernelSocketMemoria, buffer, KERNEL, HANDSHAKE);
+    //buffer_destroy(buffer);
 
-    paquete->modulo = KERNEL;
-
-    void *a_enviar = malloc(sizeof(TipoModulo));
-
-    memcpy(a_enviar, &(paquete->modulo), sizeof(TipoModulo));
-
-    send(KernelSocketMemoria, a_enviar, sizeof(TipoModulo), 0);
-    int respuestaHandshake = resultadoHandShake(KernelSocketMemoria);
-
-    if(respuestaHandshake == 1)
+    if (resultadoHandShake(KernelSocketMemoria) == 1)
         printf("Handshake KERNEL MEMORIA exitoso \n");
     else
         printf("Handshake KERNEL MEMORIA mal \n");
-    
-    free(paquete);
-    free(a_enviar);
 }
 
 int socketSegunConn(TipoConn conn)
