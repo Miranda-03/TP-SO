@@ -1,5 +1,4 @@
 #include "utils/obtenerValorConfig/obtenerValorConfig.h"
-#include "commons/config.h"
 
 char *obtenerValorConfig(char *path, char *key)
 {

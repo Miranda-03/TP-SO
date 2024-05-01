@@ -9,27 +9,24 @@ typedef struct
     TipoInterfaz tipoIterfaz;
 } HandshakeMessageIO;
 
-int IOsocketKernel;
-int IOsocketMemoria;
 
-void conectarModuloIO(int *esGenerico)
+void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria)
 {
     IOsocketKernel = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_KERNEL"), obtenerValorConfig(PATH_CONFIG, "IP_KERNEL"), NULL);
-    realizarHandshakeIO(IOsocketKernel);
+    realizarHandshakeIO(tipo_interfaz, identificador, IOsocketKernel);
 
     if (esGenerico != 1)
     {
         IOsocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
-        realizarHandshakeIO(IOsocketMemoria);
+        realizarHandshakeIO(tipo_interfaz, identificador, IOsocketMemoria);
     }
 }
 
-void realizarHandshakeIO(int *socket)
+void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *socket)
 {
-    t_buffer *buffer = buffer_create(sizeof(TipoInterfaz));
-    TipoInterfaz tipo = STDIN;
-    buffer_add(buffer, &tipo, 4);
-    //buffer_add_uint32(buffer, STDIN);
+    t_buffer *buffer = buffer_create(sizeof(TipoInterfaz) + strlen(identificador) + 1);
+    buffer_add(buffer, &tipo_interfaz, 4);
+    buffer_add_string(buffer, strlen(identificador) + 1, identificador);
     enviarMensaje(socket, buffer, IO, HANDSHAKE);
 
     int respuestaHandshake = resultadoHandShake(socket);
