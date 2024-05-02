@@ -68,8 +68,10 @@ void manageGenerico(moduloIO *modulo_io, int *socket)
     }
     recv(socket, &unidades, sizeof(uint32_t), 0);
     
+    //Realiza la operacion 
     sleep(tiempo_unidad * unidades);
 
+    //Le dice al Kernel que termino con el numero 1
     t_buffer *buffer = buffer_create(sizeof(uint32_t));
     buffer_add_uint32(buffer, 1);
     enviarMensaje(socket, buffer, IO, MENSAJE);

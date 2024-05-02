@@ -15,6 +15,8 @@
 #include <utils/enums/codigosOperacion.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
+#include <utils/enums/DispositivosIOenum.h>
+#include "Interfaces/interfaces.h"
 
 
 /**
@@ -58,5 +60,11 @@ int socketSegunConn(TipoConn conn);
 * @brief manejar el handshake del modulo IO.
 */
 void manageIO(int *socket);
+
+/**
+* @fn    obtener_identificador
+* @brief obtener el identificador de la interfaz.
+*/
+char *obtener_identificador(t_buffer *buffer);
 
 #endif

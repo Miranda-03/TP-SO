@@ -24,8 +24,9 @@ void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOso
 
 void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *socket)
 {
-    t_buffer *buffer = buffer_create(sizeof(TipoInterfaz) + strlen(identificador) + 1);
+    t_buffer *buffer = buffer_create(sizeof(TipoInterfaz) + strlen(identificador) + 1 + sizeof(uint32_t));
     buffer_add(buffer, &tipo_interfaz, 4);
+    buffer_add_uint32(buffer, strlen(identificador) + 1);
     buffer_add_string(buffer, strlen(identificador) + 1, identificador);
     enviarMensaje(socket, buffer, IO, HANDSHAKE);
 

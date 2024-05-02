@@ -10,6 +10,8 @@ int KernelSocketCPUDispatch;
 int KernelSocketCPUInterrumpt;
 int KernelSocketMemoria;
 
+t_dictionary *interfaces_conectadas = dictionary_create();
+
 void conectarModuloKernel()
 {
 
@@ -73,7 +75,7 @@ void *atenderIO(void *ptr)
 void handshakeKernelCPU(TipoConn conn)
 {
     t_buffer *buffer = buffer_create(sizeof(TipoConn));
-    //buffer_add_uint32(buffer, conn);
+    // buffer_add_uint32(buffer, conn);
     buffer_add(buffer, &conn, 4);
     memcpy(buffer->stream, &conn, sizeof(TipoConn));
     enviarMensaje(socketSegunConn(conn), buffer, KERNEL, HANDSHAKE);
@@ -88,17 +90,26 @@ void handshakeKernelCPU(TipoConn conn)
     }
 }
 
+
+
 void manageIO(int *socket)
 {
 
     op_code *opCode = get_opcode_msg_recv(socket);
+    t_buffer *buffer = buffer_leer_recv(socket);
+    TipoInterfaz tipo;
+    memcpy(&tipo, buffer->stream, 4);
+    char * identificador = obtener_identificador(buffer);
+    buffer_destroy(buffer);
 
     if (*opCode == HANDSHAKE)
     {
+        guardar_interfaz_conectada(socket, tipo, identificador, interfaces_conectadas);
         enviarPaqueteResult(1, socket, KERNEL, IO);
     }
     else
     {
+        /*
         t_buffer *buffer = buffer_leer_recv(socket);
         TipoInterfaz tipo;
         memcpy(&tipo, buffer->stream, 4);
@@ -123,7 +134,7 @@ void manageIO(int *socket)
         default:
             // enviar mensaje de error
             break;
-        }
+        }*/
     }
 
     free(opCode);
@@ -133,12 +144,25 @@ void handshakeKernelMemoria()
 {
     t_buffer *buffer = buffer_create(0);
     enviarMensaje(KernelSocketMemoria, buffer, KERNEL, HANDSHAKE);
-    //buffer_destroy(buffer);
+    // buffer_destroy(buffer);
 
     if (resultadoHandShake(KernelSocketMemoria) == 1)
         printf("Handshake KERNEL MEMORIA exitoso \n");
     else
         printf("Handshake KERNEL MEMORIA mal \n");
+}
+
+char *obtener_identificador(t_buffer *buffer){
+    int size_identificador;
+    char *identificador;
+    memcpy(&size_identificador, buffer->stream + 4, sizeof(uint32_t));
+    memcpy(identificador, buffer->stream + 4 + sizeof(uint32_t), size_identificador);
+    
+    return identificador;
+}
+
+void guardar_interfaz_conectada(int *socket, TipoInterfaz interfaz, char* identificador){
+    
 }
 
 int socketSegunConn(TipoConn conn)
