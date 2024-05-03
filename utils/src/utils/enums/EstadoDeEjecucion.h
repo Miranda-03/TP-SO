@@ -2,7 +2,7 @@
 #define ESTADO_ENUM
 
 /**
-* @brief enum para los 4 tipos de interfaces.
+* @brief enum para los 5 estados de ejecucion.
 * @param NEW 
 * @param READY 
 * @param EXEC
