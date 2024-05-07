@@ -27,14 +27,17 @@ void planificaciónDeProcesos(){
         case "1":
             break;
         case "2":
-            iniciar_proceso(colaNew, colaReady);
-            enviarproceso();
+            iniciar_proceso(colaNew);
             break;
         case "3":
+            proceso_ready(colaNew,colaReady);
             break;
         case "4":
+            ejecutar_proceso(colaReady,colaExec);
             break;
         case "5":
+            finalizar_proceso(colaExit,colaExec,colaBlock,logger);
+            proceso_ready(colaNew,colaReady);
             break;
         case "6":
             break;
@@ -50,24 +53,67 @@ void planificaciónDeProcesos(){
 
 }
 
-Pcb *crearPcb(int quantum, int duracion, t_queue *colaNew){
+Pcb *crearPcb(int quantum, int duracion){
     Pcb *pcb = malloc(sizeof(Pcb));
     pcb->PID = 0;
     pcb->program_counter = 0;
     pcb->quantum = quantum;
     pcb->duracion = duracion;
-    
-
-    queue_push(colaNew, pcb);
 
     return pcb;
 }
 
-void iniciar_proceso(t_queue* cola_new, t_queue* cola_ready) {
-    Pcb* pcb = crearPcb(2,1,cola_new); // el pid, el pc y el quantum vienen de memoria
-    queue_push(cola_ready, pcb);
-    planificarFIFO(cola_ready);
+void iniciar_proceso(t_queue* cola_new) {
+    Pcb* pcb = crearPcb(2,1); // el pid, el pc y el quantum vienen de memoria
+    Proceso* proceso=crear_proceso(pcb);
+    queue_push(cola_new, proceso);
 }
+void crear_proceso(Pcb* pcb)
+{
+    Proceso* proceso = malloc(sizeof(Proceso));
+    proceso->pcb=pcb;
+    proceso->contexto=NEW;
+}
+proceso_ready(t_queue* colaNew,t_queue* colaReady)
+{
+    Proceso* proceso=queue_peek(colaNew);
+    enviarproceso(,proceso);//Envia el proceso a memoria y lo recibe
+    queue_push(colaReady,proceso);
+    queue_pop(colaNew);
+}
+ejecutar_proceso(t_queue* colaready,t_queue* colaexec)
+{
+ Proceso* proceso=queue_peek(colaready);
+ enviarproceso(,proceso);
+ queue_push(colaexec,proceso);
+ queue_pop(colaready);
+}
+finalizar_proceso(t_queue*colaexit,t_queue*colaexec,t_queue* colablock,t_log* log)
+{
+ do{
+    log_info(log,"Seleccione la cola");
+     char *operacion = readline(">");
+     switch (operacion)
+        {
+        case "1":
+        Proceso* proceso=queue_peek(colaexec);
+        queue_push(colaexit,proceso);
+        queue_pop(colaexec);
+        exit(1);
+            break;
+        case"2":
+        Proceso* proceso=queue_peek(colablock);
+        queue_push(colaexit,proceso);
+        queue_pop(colablock);
+        exit(1);
+        break;
+         default:
+            log_info(log,"Operación Inválida ");
+            break;
+        }
+    }while (true);
+    log_destroy(log);
+ }
 
 void planificarFIFO(t_queue *cola){
     while (!queue_is_empty(cola)) {
@@ -103,9 +149,9 @@ t_log* iniciar_logger(void)
 	return nuevo_logger;
 }
 
-void enviarproceso(int *KernelSocketCPUDispatch, Pcb *pcb){
+void enviarproceso(int *KernelSocketCPUDispatch, Proceso *proceso){
     t_buffer *buffer = buffer_create(sizeof(int64_t)); //Tal vez hay que crear un struct que tenga el pcb
-    buffer_add(buffer, pcb, 4);
+    buffer_add(buffer, proceso, 4);
     enviarMensaje(socket, buffer, CPU, PROCESO);
 }
 
