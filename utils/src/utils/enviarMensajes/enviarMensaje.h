@@ -18,5 +18,11 @@ void enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code cod
 */
 op_code *get_opcode_msg_recv(int *socket);
 
+/**
+ * @fn get_modulo_msg_recv
+* @brief Retorna el modulo del paquete del recv().
+*/
+TipoModulo *get_modulo_msg_recv(int *socket);
+
 #endif
 

@@ -27,6 +27,12 @@ void enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code cod
 
 op_code *get_opcode_msg_recv(int *socket){
     op_code *opcode = malloc(sizeof(op_code));
-    recv(socket, opcode, sizeof(op_code), 0);
+    recv(socket, opcode, sizeof(op_code), MSG_WAITALL);
     return opcode;
+}
+
+TipoModulo *get_modulo_msg_recv(int *socket){
+    TipoModulo *modulo = malloc(sizeof(TipoModulo));
+    recv(socket, modulo, sizeof(TipoModulo), MSG_WAITALL);
+    return modulo;
 }

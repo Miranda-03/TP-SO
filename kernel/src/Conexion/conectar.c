@@ -96,11 +96,11 @@ void manageIO(int *socket)
 {
 
     op_code *opCode = get_opcode_msg_recv(socket);
-    t_buffer *buffer = buffer_leer_recv(socket);
+    void *stream = buffer_leer_stream_recv(socket);
     TipoInterfaz tipo;
-    memcpy(&tipo, buffer->stream, 4);
-    char * identificador = obtener_identificador(buffer);
-    buffer_destroy(buffer);
+    memcpy(&tipo, stream, 4);
+    char * identificador = obtener_identificador(stream);
+    free(stream);
 
     if (*opCode == HANDSHAKE)
     {
@@ -109,32 +109,7 @@ void manageIO(int *socket)
     }
     else
     {
-        /*
-        t_buffer *buffer = buffer_leer_recv(socket);
-        TipoInterfaz tipo;
-        memcpy(&tipo, buffer->stream, 4);
-
-        switch (tipo) // eliminar el buffer
-        {
-        case STDIN:
-            // funcion para STDIN
-            break;
-
-        case STDOUT:
-            // funcion para STDOUT
-            break;
-
-        case DIALFS:
-            // funcion para DIALFS
-            break;
-
-        case GENERICA:
-            // funcion para GENERICA
-            break;
-        default:
-            // enviar mensaje de error
-            break;
-        }*/
+       enviarPaqueteResult(-1, socket, KERNEL, IO);
     }
 
     free(opCode);
@@ -152,11 +127,11 @@ void handshakeKernelMemoria()
         printf("Handshake KERNEL MEMORIA mal \n");
 }
 
-char *obtener_identificador(t_buffer *buffer){
+char *obtener_identificador(void *stream){
     int size_identificador;
     char *identificador;
-    memcpy(&size_identificador, buffer->stream + 4, sizeof(uint32_t));
-    memcpy(identificador, buffer->stream + 4 + sizeof(uint32_t), size_identificador);
+    memcpy(&size_identificador, stream + 4, sizeof(uint32_t));
+    memcpy(identificador, stream + 4 + sizeof(uint32_t), size_identificador);
     
     return identificador;
 }

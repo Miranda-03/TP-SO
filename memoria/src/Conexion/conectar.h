@@ -13,6 +13,8 @@
 #include <utils/enums/ModulosEnum.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
+#include <manageCPU/CPUconn.h>
+#include <manageKernel/Kernelconn.h>
 
 /**
 * @fn    conectarModuloMemoria
@@ -39,9 +41,15 @@ void *atenderModulo(void *socketComunicacion);
 void manageIO(int *socket);
 
 /**
-* @fn    manageCPU
-* @brief manejar el handshake del modulo IO.
+* @fn    manageModulo
+* @brief manejar el handshake del modulo.
 */
-void manageCPU(int *socket);
+void manageModulo(int *socket, TipoModulo modulo);
+
+/**
+* @fn    iniciar_hilo_conexion_cpu
+* @brief funcion para inicar el hilo de ejecucion para enviar y recibir mensajes con el modulo correspondiente.
+*/
+void iniciar_hilo_conexion(int *socket, TipoModulo modulo);
 
 #endif

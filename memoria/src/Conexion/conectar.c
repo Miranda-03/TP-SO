@@ -41,31 +41,25 @@ void *atenderModulo(void *ptr)
         manageIO(socketComunicacion);
         break;
 
-    case CPU:
-        manageCPU(socketComunicacion);
-        break;
-
-    case KERNEL:
-        manageKernel(socketComunicacion);
-        break;
-
     default:
-        enviarPaqueteResult(-1, socketComunicacion, MEMORIA, IO);
+        manageModulo(socketComunicacion, moduloRemitente);
         break;
     }
+    pthread_exit(NULL);
 }
 
-void manageCPU(int *socket)
+void manageModulo(int *socket, TipoModulo modulo)
 {
     op_code *codigoOperacion = get_opcode_msg_recv(socket);
 
     if (*codigoOperacion == HANDSHAKE)
     {
-        enviarPaqueteResult(1, socket, MEMORIA, CPU);
+        enviarPaqueteResult(1, socket, MEMORIA, modulo);
+        iniciar_hilo_conexion(socket, modulo);
     }
     else
     {
-        // Funcion para el CPU
+        enviarPaqueteResult(-1, socket, MEMORIA, modulo);
     }
 
     free(codigoOperacion);
@@ -102,18 +96,18 @@ void manageIO(int *socket)
     }
 }
 
-void manageKernel(int *socket)
+void iniciar_hilo_conexion(int *socket, TipoModulo modulo)
 {
-    op_code *codigoOperacion = get_opcode_msg_recv(socket);
-
-    if (*codigoOperacion == HANDSHAKE)
-    {
-        enviarPaqueteResult(1, socket, MEMORIA, KERNEL);
-    }
+    pthread_t thread_conexion_cpu;
+    if (modulo == CPU)
+        pthread_create(&thread_conexion_cpu,
+                       NULL,
+                       (void *)manage_conn_cpu,
+                       socket);
     else
-    {
-        // Funcion para el CPU
-    }
-
-    free(codigoOperacion);
+        pthread_create(&thread_conexion_cpu,
+                       NULL,
+                       (void *)manage_conn_kernel,
+                       socket);
+    pthread_detach(thread_conexion_cpu);
 }
