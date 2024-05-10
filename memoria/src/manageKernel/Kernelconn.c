@@ -46,5 +46,7 @@ unsigned int obtener_instuccion_kernel(void *stream)
 
 void enviar_mensaje(int *socket, int instruccion_guardada)
 {
-    //implementar funcion
+    t_buffer *buffer = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer, instruccion_guardada);
+    enviarMensaje(socket, buffer, MEMORIA, MENSAJE);
 }

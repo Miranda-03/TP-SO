@@ -31,5 +31,8 @@ unsigned int obtener_pc(void *stream)
 void enviar_instruccion(int *socket, unsigned int pc, unsigned int pid)
 {
     char *instruccion = obtener_instruccion(pid, pc);
-    // implementar
+    t_buffer *buffer = buffer_create(sizeof(uint32_t) + strlen(instruccion) + 1);
+    buffer_add_uint32(buffer,  strlen(instruccion) + 1);
+    buffer_add_string(buffer, strlen(instruccion) + 1, instruccion);
+    enviarMensaje(socket, buffer, MEMORIA, MENSAJE);
 }
