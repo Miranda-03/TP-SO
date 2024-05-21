@@ -19,7 +19,7 @@ void buffer_destroy(t_buffer *buffer);
 * @fn    buffer_leer_recv
 * @brief Arma el buffer que recive del recv().
 */
-void *buffer_leer_stream_recv(int *socket)
+void buffer_leer_stream_recv(int *socket)
 
 /**
 * @fn    buffer_add

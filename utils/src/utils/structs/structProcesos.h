@@ -4,6 +4,11 @@
 #include <stdint.h>
 #include "structCpu.h"
 #include <utils/enums/EstadoDeEjecucion.h>
+#include <pthread.h>
+
+int ID = 1;
+pthread_mutex_t mutex;
+
 
 /**
  * @brief struct para administrar los procesos
@@ -15,7 +20,7 @@ typedef struct
 {
     int pid;
     int quantum;
-    RegistrosCpu registros;
+    Registros registros;
 } Pcb;
 
 /**
@@ -40,8 +45,6 @@ typedef struct
     Proceso info;
     ColaDeProcesos *sig;
 } ColaDeProcesos;
-
-
 
 
 #endif

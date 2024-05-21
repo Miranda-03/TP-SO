@@ -90,8 +90,6 @@ void handshakeKernelCPU(TipoConn conn)
     }
 }
 
-
-
 void manageIO(int *socket)
 {
 
