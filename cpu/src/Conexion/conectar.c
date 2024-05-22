@@ -1,6 +1,5 @@
 #include <Conexion/conectar.h>
 
-int CPUSocketMemoria;
 
 void conectarModuloCPU()
 {
@@ -11,13 +10,13 @@ void conectarModuloCPU()
 
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    int CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
+    CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
     if (CPUsocketBidireccionalDispatch != -1)
         recibirConn(CPUsocketBidireccionalDispatch);
 
     int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    int CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
+    CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
     if (CPUsocketBidireccionalInterrupt != -1)
         recibirConn(CPUsocketBidireccionalInterrupt);
 }
@@ -40,7 +39,7 @@ void handshakeCPUMemoria()
     }
 }
 
-void recibirConn(int *socket)
+void recibirConn(int *socket, TipoConn conexion)
 {
     TipoModulo *modulo = malloc(sizeof(TipoModulo));
     recv(socket, modulo, sizeof(TipoModulo), MSG_WAITALL);
@@ -48,7 +47,7 @@ void recibirConn(int *socket)
     switch (*modulo)
     {
     case KERNEL:
-        manageKernel(socket);
+        manageKernel(socket, conexion);
         break;
 
     default:
@@ -58,7 +57,7 @@ void recibirConn(int *socket)
     free(modulo);
 }
 
-void manageKernel(int *socket)
+void manageKernel(int *socket, TipoConn conexion)
 {
     op_code *codigoOperacion = get_opcode_msg_recv(socket);
     printf("LLEGA AL MANAGE KERNEL DEL CPU \n");
@@ -68,8 +67,35 @@ void manageKernel(int *socket)
     }
     else
     {
-        // funcion para el kernel
+        if(conexion == DISPATCH){
+            crearHiloDISPATCH(socket);
+        }
+        else{
+            crearHiloINTERRUPT(socket);
+        }
     }
 
     free(codigoOperacion);
+}
+
+void crearHiloDISPATCH(int *socket){
+    pthread_t hiloDISPATCH;
+
+    pthread_create(&hiloDISPATCH,
+                       NULL,
+                       (void *)manageDISPATCH,
+                       socket);
+
+    pthread_detach(hiloDISPATCH);        
+}
+
+void crearHiloINTERRUPT(int *socket){
+    pthread_t hiloINTERRUPT;
+
+    pthread_create(&hiloINTERRUPT,
+                       NULL,
+                       (void *)manageINTERRUPT,
+                       socket);
+
+    pthread_detach(hiloINTERRUPT);        
 }
