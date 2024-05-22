@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "conectar.h": "c",
+        "funcionesbuffer.h": "c",
+        "string.h": "c",
+        "connmemoria.h": "c",
+        "instruccionesio.h": "c",
+        "ciclodeejecucion.h": "c"
+    }
+}

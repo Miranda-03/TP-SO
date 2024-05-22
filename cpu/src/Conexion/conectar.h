@@ -12,6 +12,8 @@
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <utils/enums/codigosOperacion.h>
+#include <utils/enums/TipoConnKernelCPU.h>
+#include <pthread.h>
 
 /**
 * @fn    conectarModuloCPU
@@ -29,12 +31,13 @@ void handshakeCPUMemoria();
 * @fn    recibirConn
 * @brief recibir y gestionar conexion entrante.
 */
-void recibirConn(int *socket);
+void recibirConn(int *socket, TipoConn conexion);
 
 /**
 * @fn    manageKernel
 * @brief gestionar la conexion con Kernel.
 */
-void manageKernel(int *socket);
+void manageKernel(int *socket, TipoConn conexion);
+
 
 #endif
