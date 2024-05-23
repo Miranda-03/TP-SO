@@ -5,17 +5,17 @@
 #include "ciclo/cicloDeEjecucion.h"
 
 Proceso *procesoCPU;
-int CPUSocketMemoria;
-int CPUsocketBidireccionalDispatch;
-int CPUsocketBidireccionalInterrupt;
+int *CPUSocketMemoria;
+int *CPUsocketBidireccionalDispatch;
+int *CPUsocketBidireccionalInterrupt;
 
 int main(int argc, char* argv[]) {
 
     procesoCPU = malloc(sizeof(Proceso));
 
-    conectarModuloCPU();
+    conectarModuloCPU(CPUSocketMemoria, CPUsocketBidireccionalDispatch, CPUsocketBidireccionalInterrupt);
     
-    cicloDeEjecucion(CPUSocketMemoria, CPUsocketBidireccionalDispatch, CPUsocketBidireccionalInterrupt);
+    cicloDeEjecucion(CPUSocketMemoria, CPUsocketBidireccionalDispatch, CPUsocketBidireccionalInterrupt, procesoCPU);
 
     return 0;
 }

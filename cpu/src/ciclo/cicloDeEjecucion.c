@@ -2,7 +2,7 @@
 
 
 
-void cicloDeEjecucion (int *socketMemoria, int *socketDISPATCH, int *socketINTERRUPT){
+void cicloDeEjecucion (int *socketMemoria, int *socketDISPATCH, int *socketINTERRUPT, Proceso *procesoCPU){
     while(1){
 
         if(*procesoCPU != NULL){
@@ -20,7 +20,7 @@ void cicloDeEjecucion (int *socketMemoria, int *socketDISPATCH, int *socketINTER
     }
 }
 
-void execute(char* instruccion[]){
+void execute(char* instruccion[], Proceso *procesoCPU){
 
     char operacion = instruccion[0];
 

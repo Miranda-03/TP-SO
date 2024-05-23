@@ -6,6 +6,7 @@
         "string.h": "c",
         "connmemoria.h": "c",
         "instruccionesio.h": "c",
-        "ciclodeejecucion.h": "c"
+        "ciclodeejecucion.h": "c",
+        "tipoconnkernelcpu.h": "c"
     }
 }
