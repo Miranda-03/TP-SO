@@ -15,7 +15,8 @@ typedef enum
     SUM,
     SUB,
     JNZ,
-    IO_GEN_SLEEP
+    IO_GEN_SLEEP,
+    EXIT
 } instruccion;
 
 #endif

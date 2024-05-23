@@ -15,6 +15,19 @@
 #include <pthread.h>
 #include <utils/enums/TipoConnKernelCPU.h>
 #include <utils/structs/structProcesos.h>
+#include <stdint.h>
+
+
+/**
+ * @brief struct para pasar los parametros a la funcion del hilo
+ */
+typedef struct
+{
+    int *socket;
+    Proceso *procesosCPU;
+} parametros_hilo;  
+
+
 
 /**
 * @fn    conectarModuloCPU

@@ -81,23 +81,25 @@ void manageKernel(int *socket, TipoConn conexion, Proceso *procesoCPU)
 void crearHiloDISPATCH(int *socket, Proceso *procesoCPU){
     pthread_t hiloDISPATCH;
 
-
-
+    paremetros_hilo params = {socket, procesoCPU};
+ 
     pthread_create(&hiloDISPATCH,
                        NULL,
                        (void *)manageDISPATCH,
-                       socket);
+                       params);
 
     pthread_detach(hiloDISPATCH);        
 }
 
 void crearHiloINTERRUPT(int *socket, Proceso *procesoCPU){
     pthread_t hiloINTERRUPT;
+
+    paremetros_hilo params = {socket, procesoCPU};
     
     pthread_create(&hiloINTERRUPT,
                        NULL,
                        (void *)manageINTERRUPT,
-                       socket);
+                       params);
 
     pthread_detach(hiloINTERRUPT);        
 }

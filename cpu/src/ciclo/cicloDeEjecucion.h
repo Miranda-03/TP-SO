@@ -6,6 +6,8 @@
 #include <utils/enums/instrucciones.h>
 #include <utils/enums/instruccionesIO.h>
 #include <utils/structs/structProcesos.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
 * @fn    cicloDeEjecucion
