@@ -1,4 +1,4 @@
-
+#include "connKernel.h"
 
 void * manageDISPATCH(void * ptr){
 
