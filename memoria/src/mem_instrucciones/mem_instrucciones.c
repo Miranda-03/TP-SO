@@ -34,7 +34,7 @@ char *obtener_instruccion(unsigned int pid, unsigned int pc)
    unsigned int contador = 0;
    char *instruccion = NULL;
    size_t len = 0;
-   while ((getline(&instruccio, &len, file)) != -1)
+   while ((getline(&instruccion, &len, file)) != -1)
    {
       if (contador == pc) return instruccion;
       contador++;

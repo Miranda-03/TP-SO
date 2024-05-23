@@ -15,7 +15,7 @@ void crear_mem_instrucciones();
 * @fn    agregar_instrucciones
 * @brief agrega las instrucciones indicadas en el PATH con su PID al diccionario.
 */
-void agregar_instrucciones(char *path, int pid);
+int agregar_instrucciones(char *path, int pid);
 
 /**
 * @fn    obtener_instruccion
