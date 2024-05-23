@@ -13,7 +13,7 @@ void cicloDeEjecucion (int *socketMemoria, int *socketDISPATCH, int *socketINTER
             // DECODE
             char* instruccionSeparada[] = string_split(instruccion, " ");
 
-            execute(instruccionSeparada);
+            execute(instruccionSeparada, procesoCPU);
 
             checkInterrupt();
         }
