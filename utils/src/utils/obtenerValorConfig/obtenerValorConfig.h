@@ -1,6 +1,7 @@
 #ifndef OBTENER_IP
 #define OBTENER_IP
 
+#include <stdio.h> 
 #include "commons/config.h"
 
 /**

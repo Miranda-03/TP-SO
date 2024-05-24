@@ -5,6 +5,10 @@
 #include <utils/enums/ModulosEnum.h>
 #include <utils/enums/codigosOperacion.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <string.h>
 
 /**
  * @fn enviarMensaje

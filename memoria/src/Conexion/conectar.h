@@ -32,7 +32,7 @@ void *recibirModulo(void *ptr);
 * @fn    atenderModulo
 * @brief función para atender al módulo cliente.
 */
-void *atenderModulo(void *socketComunicacion);
+void *atenderModulo(void *ptr);
 
 /**
 * @fn    manageIO

@@ -28,7 +28,7 @@ char *obtener_instruccion(unsigned int pid, unsigned int pc)
    char char_pid[10];
    sprintf(char_pid, "%d", pid);
    if (!dictionary_has_key(memoria_instrucciones, char_pid))
-      return -1;
+      return "null";
 
    FILE *file = dictionary_get(memoria_instrucciones, char_pid);
    unsigned int contador = 0;
@@ -39,5 +39,5 @@ char *obtener_instruccion(unsigned int pid, unsigned int pc)
       if (contador == pc) return instruccion;
       contador++;
    }
-   return -1;
+   return "null";
 }

@@ -16,7 +16,7 @@ void *manage_conn_kernel(void *ptr);
 * @fn    obtener_pid
 * @brief obtener el PID del stream.
 */
-unsigned int obtener_pid(void *stream);
+unsigned int obtener_elpid(void *stream);
 
 /**
 * @fn    obtener_path_instruccion

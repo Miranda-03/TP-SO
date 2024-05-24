@@ -21,7 +21,7 @@ void *manage_conn_kernel(void *ptr)
     }
 }
 
-unsigned int obtener_pid(void *stream)
+unsigned int obtener_elpid(void *stream)
 {
     unsigned int pid;
     memcpy(&pid, stream + sizeof(unsigned int), sizeof(unsigned int));

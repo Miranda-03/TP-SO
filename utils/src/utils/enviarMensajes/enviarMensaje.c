@@ -18,7 +18,7 @@ void enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code cod
     offset += sizeof(uint32_t);
     memcpy(a_enviar + offset, &(paquete->buffer->stream), paquete->buffer->size);
 
-    send(socket, a_enviar, buffer->size + sizeof(TipoModulo) + sizeof(op_code) + sizeof(uint32_t));
+    send(socket, a_enviar, buffer->size + sizeof(TipoModulo) + sizeof(op_code) + sizeof(uint32_t),0);
 
     buffer_destroy(paquete->buffer);
     free(a_enviar);

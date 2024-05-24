@@ -2,6 +2,10 @@
 #define BUFFER_FUNC_H
 
 #include <utils/structs/structSendRecvMSG.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <string.h>
 
 /**
 * @fn    buffer_create
@@ -19,7 +23,7 @@ void buffer_destroy(t_buffer *buffer);
 * @fn    buffer_leer_recv
 * @brief Arma el buffer que recive del recv() y devuelve el stream.
 */
-void buffer_leer_stream_recv(int *socket)
+void *buffer_leer_stream_recv(int *socket);
 
 /**
 * @fn    buffer_add

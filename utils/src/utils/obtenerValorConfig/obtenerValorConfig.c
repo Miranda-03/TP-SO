@@ -2,7 +2,7 @@
 
 char *obtenerValorConfig(char *path, char *key)
 {
-    char* valor = NULL;
+    char* valor;
     t_config* config = config_create(path);
 
     if (config != NULL) {
