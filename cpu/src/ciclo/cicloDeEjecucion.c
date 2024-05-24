@@ -131,7 +131,7 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     }
 
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);
-
+    buffer_destroy(buffer);
     procesoCPU->pid = NULL;
 }
 
