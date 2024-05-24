@@ -17,7 +17,7 @@ void buffer_destroy(t_buffer *buffer);
 
 /**
 * @fn    buffer_leer_recv
-* @brief Arma el buffer que recive del recv().
+* @brief Arma el buffer que recive del recv() y devuelve el stream.
 */
 void buffer_leer_stream_recv(int *socket)
 
@@ -44,6 +44,18 @@ void buffer_add_uint32(t_buffer *buffer, uint32_t data);
 * @brief Lee un uint32_t del buffer y avanza el offset.
 */
 uint32_t buffer_read_uint32(t_buffer *buffer);
+
+/**
+* @fn    buffer_add_uint8
+* @brief Agrega un uint8_t al buffer.
+*/
+void buffer_add_uint8(t_buffer *buffer, uint8_t data);
+
+/**
+* @fn    buffer_read_uint8
+* @brief Lee un uint8_t del buffer y avanza el offset.
+*/
+uint32_t buffer_read_uint8(t_buffer *buffer);
 
 /**
 * @fn    buffer_add_string
