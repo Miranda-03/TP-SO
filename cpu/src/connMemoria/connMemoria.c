@@ -21,6 +21,9 @@ char* recibirInstruccion(int *socket, unsigned int pid, unsigned int pc){
 
     memcpy(size, stream, sizeof(int));
     memcpy(instruccion, stream + sizeof(int), size);
+
+    buffer_destroy(buffer);
+    free(size);
     
     return instruccion;
 }
