@@ -3,11 +3,10 @@
 
 char* recibirInstruccion(int *socket, unsigned int pid, unsigned int pc){
 
-    char* instruccion;
     int* size = malloc(sizeof(int));
     
 
-    t_buffer* buffer= buffer_create(sizeof(unsigned int)*2)
+    t_buffer* buffer= buffer_create(sizeof(unsigned int)*2);
 
     buffer_add_uint32(buffer, pc);
     buffer_add_uint32(buffer, pid);
@@ -20,7 +19,8 @@ char* recibirInstruccion(int *socket, unsigned int pid, unsigned int pc){
     void* stream = buffer_leer_stream_recv(socket);
 
     memcpy(size, stream, sizeof(int));
-    memcpy(instruccion, stream + sizeof(int), size);
+    char* instruccion = malloc(*size);
+    memcpy(instruccion, stream + sizeof(int), *size);
 
     buffer_destroy(buffer);
     free(size);

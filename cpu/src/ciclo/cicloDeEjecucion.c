@@ -9,46 +9,49 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
         {
 
             // FETCH
-            char *instruccion = recibirInstruccion(socketMemoria, procesoCPU->pid, procesoCPU->registros.pc);
+            char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->registros.pc);
 
             procesoCPU->registros.pc += 1;
 
             // DECODE
-            char *instruccionSeparada[] = string_split(instruccion, " ");
+          
+            char** instruccionSeparada = string_split(instruccion, " ");
 
             execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch);
 
-            checkInterrupt(procesoCPU, interrupcion);
+            checkInterrupt(procesoCPU, interrupcion, CPUsocketBidireccionalDispatch);
         }
     }
 }
 
-void execute(char *instruccionSeparada[], Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch)
+void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch)
 {
 
-    char operacion = instruccionSeparada[0];
+    char *operacion = instruccionSeparada[0];
     char *primerParametro = instruccionSeparada[1];
     char *segundoParametro = instruccionSeparada[2];
+    int *registro;
 
-    switch (operacion)
+    switch (*operacion)
     {
     case SET:
-        int *registro = obtenerRegistro(primerParametro, procesoCPU);
+        registro = obtenerRegistro(primerParametro, procesoCPU);
         *registro = atoi(&segundoParametro);
         break;
     case SUM:
-        int *registro = obtenerRegistro(primerParametro, procesoCPU);
+        registro = obtenerRegistro(primerParametro, procesoCPU);
         *registro += atoi(&segundoParametro);
         break;
     case SUB:
-        int *registro = obtenerRegistro(primerParametro, procesoCPU);
+        registro = obtenerRegistro(primerParametro, procesoCPU);
         *registro -= atoi(&segundoParametro);
         break;
     case JNZ:
         instruccion_JNZ(procesoCPU, obtenerRegistro(primerParametro, procesoCPU), atoi(&segundoParametro));
         break;
     case IO_GEN_SLEEP:
-        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch) break;
+        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch); 
+        break;
     case EXIT:
         enviar_contexto_al_kernel(procesoCPU, EXIT_SIGNAL, NULL, CPUsocketBidireccionalDispatch);
         break;
@@ -59,36 +62,45 @@ void execute(char *instruccionSeparada[], Contexto_proceso *procesoCPU, char *in
 
 int *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU)
 {
-    switch (registro)
+    if (strcmp(registro, "ax") == 0)
     {
-    case ax:
         return &(procesoCPU->registros.ax);
-        break;
-    case eax:
+    }
+    else if (strcmp(registro, "eax") == 0)
+    {
         return &(procesoCPU->registros.eax);
-        break;
-    case bx:
+    }
+    else if (strcmp(registro, "bx") == 0)
+    {
         return &(procesoCPU->registros.bx);
-        break;
-    case ebx:
+    }
+    else if (strcmp(registro, "ebx") == 0)
+    {
         return &(procesoCPU->registros.ebx);
-        break;
-    case cx:
+    }
+    else if (strcmp(registro, "cx") == 0)
+    {
         return &(procesoCPU->registros.cx);
-        break;
-    case ecx:
+    }
+    else if (strcmp(registro, "ecx") == 0)
+    {
         return &(procesoCPU->registros.ecx);
-        break;
-    case dx:
+    }
+    else if (strcmp(registro, "dx") == 0)
+    {
         return &(procesoCPU->registros.dx);
-        break;
-    case edx:
+    }
+    else if (strcmp(registro, "edx") == 0)
+    {
         return &(procesoCPU->registros.edx);
-        break;
-    default:
-        break;
+    }
+    else
+    {
+        // Devolver un valor por defecto en caso de que no coincida ningún registro
+        return NULL;
     }
 }
+
 
 void checkInterrupt(Contexto_proceso *procesoCPU, int *interrupcion, int *CPUsocketBidireccionalDispatch)
 {
@@ -127,7 +139,7 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     if (instruccion != NULL)
     { // No estoy seguro de la comparacion
         buffer_add_uint32(buffer, strlen(instruccion) + 1);
-        buffer_add_string(buffer, instruccion);
+        buffer_add_string(buffer, strlen(instruccion) + 1, instruccion);
     }
 
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);

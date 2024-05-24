@@ -53,8 +53,7 @@ void planificacionDeProcesos(int16_t operacion){
 
 Pcb *crearPcb(){
     Pcb *pcb = malloc(sizeof(Pcb));
-    pcb->PID = asignar_pid;
-    pcb->program_counter = 0;
+    pcb->pid = asignar_pid();
     pcb->quantum = obtenerValorConfig("./kernel.config");
 
     return pcb;
@@ -65,12 +64,14 @@ void iniciar_proceso(t_queue* cola_new) {
     Proceso* proceso = crear_proceso(pcb);
     queue_push(cola_new, proceso);
 }
+
 void crear_proceso(Pcb* pcb)
 {
     Proceso* proceso = malloc(sizeof(Proceso));
     proceso->pcb=pcb;
     proceso->contexto=NEW;
 }
+
 proceso_ready(t_queue* colaNew,t_queue* colaReady)
 {
     Proceso* proceso=queue_peek(colaNew);
@@ -146,17 +147,19 @@ t_log* iniciar_logger(void)
 	return nuevo_logger;
 }
 
-void enviarproceso(int *KernelSocketCPUDispatch, Proceso *proceso){
+void enviarproceso(int *KernelSocketCPUDispatch, Proceso *proceso, pthread_mutex_t mutex;){
     /*t_buffer *buffer = buffer_create(sizeof(int64_t)); //Tal vez hay que crear un struct que tenga el pcb
     buffer_add(buffer, proceso, 4);
     enviarMensaje(socket, buffer, CPU, PROCESO); */
 }
 
-int asignar_pid(void)
+int asignar_pid(int pid)
 {
 int valor;
 pthread_mutex_lock(&mutex);
-valor = ID;
-ID++;
+valor = pid;
+pid++;
 pthread_mutex_unlock(&mutex);
+
+return pid;
 }

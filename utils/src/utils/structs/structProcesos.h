@@ -6,8 +6,8 @@
 #include <utils/enums/EstadoDeEjecucion.h>
 #include <pthread.h>
 
-int ID = 1;
-pthread_mutex_t mutex;
+
+
 
 
 /**
@@ -40,11 +40,7 @@ typedef struct
  * @param info puntero al siguiente de la cola
  * @param RegistrosCpu Registros  de la CPU.
  */
-typedef struct
-{
-    Proceso info;
-    ColaDeProcesos *sig;
-} ColaDeProcesos;
+
 
 
 #endif

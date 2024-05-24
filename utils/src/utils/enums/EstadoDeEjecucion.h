@@ -13,7 +13,7 @@ typedef enum {
     NEW,
     READY,
     EXEC,
-    EXIT,
+    ESTADO_EXIT,
     BLOCK
 } ContextoDeEjecucion;
 

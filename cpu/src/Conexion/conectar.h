@@ -15,16 +15,8 @@
 #include <utils/enums/TipoConnKernelCPU.h>
 #include <utils/structs/structSendContextCPU.h>
 #include <stdint.h>
+#include <connKernel/connKernel.h>
 
-/**
- * @brief struct para pasar los parametros a la funcion del hilo
- */
-typedef struct
-{
-    int *socket;
-    int *interrupcion;
-    Contexto_proceso *procesosCPU;
-} parametros_hilo;
 
 /**
  * @fn    conectarModuloCPU
@@ -64,6 +56,6 @@ void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU);
  * @fn    crearHiloINTERRUPT
  * @brief crear hilo con la función de conexión interrumpt con el Kernel.
  */
-void crearHiloINTERRUPT(int *socket int *interrupcion);
+void crearHiloINTERRUPT(int *socket , int *interrupcion);
 
 #endif

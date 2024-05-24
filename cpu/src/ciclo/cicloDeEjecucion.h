@@ -4,7 +4,6 @@
 #include <connMemoria/connMemoria.h>
 #include <commons/string.h>
 #include <utils/enums/instrucciones.h>
-#include <utils/enums/instruccionesIO.h>
 #include <utils/structs/structSendContextCPU.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -26,7 +25,7 @@ void cicloDeEjecucion(int *CPUSocketMemoria,
  * @fn    execute
  * @brief Fase de execute del CPU.
  */
-void execute(char *instruccionSeparada[], Contexto_proceso *procesoCPU, char* instruccion, int *CPUsocketBidireccionalDispatch );
+void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char* instruccion, int *CPUsocketBidireccionalDispatch );
 
 /**
  * @fn    obtenerRegistro
@@ -51,5 +50,11 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
  * @brief ejecutar la instrucción JNZ.
  */
 void instruccion_JNZ(Contexto_proceso *procesoCPU, int *registro, int valor);
+
+/**
+ * @fn    agregar_registros_al_buffer
+ * @brief agregar los registros del cpu al buffer.
+ */
+void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer);
 
 #endif

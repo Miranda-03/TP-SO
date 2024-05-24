@@ -2,6 +2,7 @@
 #define CONN_MEMORIA_H
 
 #include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
 
 
 /**

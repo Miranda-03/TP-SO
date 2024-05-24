@@ -9,11 +9,11 @@ void consolaInteractiva(){
     while(strcmp(leido,"exit") != 0){
         valido = verificar_comando(leido);
         if(!valido){
-            log_error(logger_Kernel,"Comando no reconocido");
-            free(leido);
+            log_error(logger_Kernel,"Comando no reconocido");  
         }
-
-        //atender instruccion
+        else {
+            atender_instruccion(leido);   
+        }
         free(leido);
         leido = readline(">");
     }
@@ -41,7 +41,7 @@ bool verificar_comando(char* leido)
 void atender_instruccion(char* leido){
     char** comando = string_split(leido," ");
     
-    t_buffer* buffer=buffer_create();
+    t_buffer* buffer= buffer_create(sizeof(t_buffer));
 
     if(strcmp(leido="EJECUTAR_SCRIPT")==0)
     {  

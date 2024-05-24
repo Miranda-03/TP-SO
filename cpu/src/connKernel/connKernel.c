@@ -3,7 +3,7 @@
 void *manageDISPATCH(void *ptr)
 {
 
-    parametros_hilo *params = *((parametros_hilo *)ptr);
+    parametros_hilo *params = ((parametros_hilo *)ptr);
 
     while (1)
     {
@@ -17,7 +17,7 @@ void *manageDISPATCH(void *ptr)
 void *manageINTERRUPT(void *ptr)
 {
 
-    parametros_hilo *params = *((parametros_hilo *)ptr);
+    parametros_hilo *params = ((parametros_hilo *)ptr);
 
     while (1)
     {
@@ -35,7 +35,7 @@ void obtener_procesoCPU_del_stream(void *stream, Contexto_proceso *procesoCPU)
     unsigned int *offset = malloc(sizeof(unsigned int));
     *offset = 0;
 
-    memcpy(procesoCPU->pcb.pid, stream + *offset, sizeof(unsigned int));
+    memcpy(procesoCPU->pid, stream + *offset, sizeof(unsigned int));
     *offset += sizeof(unsigned int);
     obtener_registros(stream, offset, procesoCPU);
 

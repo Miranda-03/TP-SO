@@ -3,7 +3,9 @@
 
 #include <stdint.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <utils/structs/structProcesos.h>
 #include <utils/structs/structSendContextCPU.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
 
 /**
  * @brief struct para pasar los parametros a la funcion del hilo
@@ -12,20 +14,20 @@ typedef struct
 {
     int *socket;
     int *interrupcion;
-    Contexto_proceso *procesosCPU;
+    Contexto_proceso *procesoCPU;
 } parametros_hilo;  
 
 /**
 * @fn    manageDISPATCH
 * @brief Función en el hilo para la conexión dispatch con el Kernel.
 */
-void * manageDISPATCH(void * ptr)
+void * manageDISPATCH(void * ptr);
 
 /**
 * @fn    manageINTERRUPT
 * @brief Función en el hilo para la conexión interrumpt con el Kernel.
 */
-void * manageINTERRUPT(void * ptr)
+void * manageINTERRUPT(void * ptr);
 
 /**
 * @fn    obtener_procesoCPU_del_stream

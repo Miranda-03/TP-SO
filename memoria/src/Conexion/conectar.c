@@ -31,18 +31,20 @@ void *recibirModulo(void *ptr)
 
 void *atenderModulo(void *ptr)
 {
-    int *socketComunicacion = *((int *)ptr);
-    TipoModulo moduloRemitente;
-    recv(socketComunicacion, &moduloRemitente, sizeof(TipoModulo), 0);
-
-    switch (moduloRemitente)
+    int *socketComunicacion = (int *)ptr;
+    TipoModulo *moduloRemitente = malloc(sizeof(TipoModulo));
+    printf("ENTRA ANTES DEL RECV\n");
+    recv(socketComunicacion, moduloRemitente, sizeof(TipoModulo), 0);
+    printf("ENTRA AL HILO\n");
+    printf("Modulo: %d \n", *moduloRemitente);
+    switch (*moduloRemitente)
     {
     case IO:
         manageIO(socketComunicacion);
         break;
 
     default:
-        manageModulo(socketComunicacion, moduloRemitente);
+        manageModulo(socketComunicacion, *moduloRemitente);
         break;
     }
     pthread_exit(NULL);
@@ -51,9 +53,10 @@ void *atenderModulo(void *ptr)
 void manageModulo(int *socket, TipoModulo modulo)
 {
     op_code *codigoOperacion = get_opcode_msg_recv(socket);
-
+    printf("ENTRA AL IF DEL HANDSHAKE EN MEMORIA\n");
     if (*codigoOperacion == HANDSHAKE)
     {
+        printf("ENTRA AL IF DEL HANDSHAKE EN MEMORIA\n");
         enviarPaqueteResult(1, socket, MEMORIA, modulo);
         iniciar_hilo_conexion(socket, modulo);
     }
@@ -110,4 +113,4 @@ void iniciar_hilo_conexion(int *socket, TipoModulo modulo)
                        (void *)manage_conn_kernel,
                        socket);
     pthread_detach(thread_conexion_cpu);
-}
+}   

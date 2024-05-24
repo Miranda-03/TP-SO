@@ -25,17 +25,19 @@ void handshakeCPUMemoria(int *CPUSocketMemoria)
 {
     t_buffer *buffer = buffer_create(0);
     enviarMensaje(CPUSocketMemoria, buffer, CPU, HANDSHAKE);
-    //buffer_destroy(buffer);
+    //buffer_destroy(buffer); // Asegúrate de destruir el buffer para evitar fugas de memoria
 
-    if (resultadoHandShake(CPUSocketMemoria) == 1)
+    int resultado = resultadoHandShake(CPUSocketMemoria);
+    if (resultado == 1)
     {
         // Handshake OK
-        printf("El handshake de CPU a memoria salio bien\n");
+        printf("El handshake de CPU a memoria salió bien\n");
     }
     else
     {
-        printf("El handshake de CPU a memoria salio mal\n");
         // Handshake ERROR
+        printf("El handshake de CPU a memoria salió mal\n");
+        printf("Código de error: %d\n", resultado); // Asume que resultadoHandShake devuelve un código de error
     }
 }
 
@@ -82,7 +84,9 @@ void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU){
     pthread_t hiloDISPATCH;
 
     parametros_hilo *params = malloc(sizeof(parametros_hilo));
-    *params = {socket, NULL, procesoCPU};
+    params->socket = socket;
+    params->interrupcion = NULL;
+    params->procesoCPU = procesoCPU;
  
     pthread_create(&hiloDISPATCH,
                        NULL,
@@ -96,8 +100,10 @@ void crearHiloINTERRUPT(int *socket, int *interrupcion){
     pthread_t hiloINTERRUPT;
 
     parametros_hilo *params = malloc(sizeof(parametros_hilo));
-    *params = {socket, interrupcion, NULL};
-    
+    params->socket = socket;
+    params->interrupcion = interrupcion;
+    params->procesoCPU = NULL;
+
     pthread_create(&hiloINTERRUPT,
                        NULL,
                        (void *)manageINTERRUPT,
