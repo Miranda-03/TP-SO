@@ -50,6 +50,18 @@ uint32_t buffer_read_uint32(t_buffer *buffer)
     return data;
 }
 
+void buffer_add_uint8(t_buffer *buffer, uint8_t data)
+{
+    buffer_add(buffer, data, sizeof(uint8_t));
+}
+
+uint32_t buffer_read_uint8(t_buffer *buffer)
+{
+    uint32_t data;
+    buffer_read(buffer, &data, sizeof(uint8_t));
+    return data;
+}
+
 void buffer_add_string(t_buffer *buffer, uint32_t length, char *string)
 {
     buffer_add_uint32(buffer, length);

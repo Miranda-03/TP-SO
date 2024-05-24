@@ -1,7 +1,6 @@
 #ifndef CONECTAR_F
 #define CONECTAR_F
 
-
 #define PATH_CONFIG "cpu.config"
 #define MAXCONN 1
 
@@ -14,9 +13,8 @@
 #include <utils/enums/codigosOperacion.h>
 #include <pthread.h>
 #include <utils/enums/TipoConnKernelCPU.h>
-#include <utils/structs/structProcesos.h>
+#include <utils/structs/structSendContextCPU.h>
 #include <stdint.h>
-
 
 /**
  * @brief struct para pasar los parametros a la funcion del hilo
@@ -24,45 +22,48 @@
 typedef struct
 {
     int *socket;
-    Proceso *procesosCPU;
-} parametros_hilo;  
-
-
-
-/**
-* @fn    conectarModuloCPU
-* @brief conecta el modulo CPU con los demas componentes.
-*/
-void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Proceso * procesoCPU);
+    int *interrupcion;
+    Contexto_proceso *procesosCPU;
+} parametros_hilo;
 
 /**
-* @fn    handshakeCPUMemoria
-* @brief hacer handshake CPU memoria.
-*/
+ * @fn    conectarModuloCPU
+ * @brief conecta el modulo CPU con los demas componentes.
+ */
+void conectarModuloCPU(int *CPUSocketMemoria,
+                       int *CPUsocketBidireccionalDispatch,
+                       int *CPUsocketBidireccionalInterrupt,
+                       Contexto_proceso *procesoCPU,
+                       int *interrupcion);
+
+/**
+ * @fn    handshakeCPUMemoria
+ * @brief hacer handshake CPU memoria.
+ */
 void handshakeCPUMemoria(int *CPUSocketMemoria);
 
 /**
-* @fn    recibirConn
-* @brief recibir y gestionar conexion entrante.
-*/
-void recibirConn(int *socket, TipoConn conexion, Proceso *procesoCPU);
+ * @fn    recibirConn
+ * @brief recibir y gestionar conexion entrante.
+ */
+void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion);
 
 /**
-* @fn    manageKernel
-* @brief gestionar la conexion con Kernel.
-*/
-void manageKernel(int *socket, TipoConn conexion, Proceso *procesoCPU);
+ * @fn    manageKernel
+ * @brief gestionar la conexion con Kernel.
+ */
+void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion);
 
 /**
-* @fn    crearHiloDISPATCH
-* @brief crear hilo con la función de conexión dispatch con el Kernel.
-*/
-void crearHiloDISPATCH(int *socket, Proceso *procesoCPU);
+ * @fn    crearHiloDISPATCH
+ * @brief crear hilo con la función de conexión dispatch con el Kernel.
+ */
+void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU);
 
 /**
-* @fn    crearHiloINTERRUPT
-* @brief crear hilo con la función de conexión interrumpt con el Kernel.
-*/
-void crearHiloINTERRUPT(int *socket, Proceso *procesoCPU);
+ * @fn    crearHiloINTERRUPT
+ * @brief crear hilo con la función de conexión interrumpt con el Kernel.
+ */
+void crearHiloINTERRUPT(int *socket int *interrupcion);
 
 #endif
