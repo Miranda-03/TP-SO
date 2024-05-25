@@ -10,6 +10,8 @@
 #include <string.h>
 #include <commons/log.h>
 #include <utils/structs/structSendRecvMSG.h>
+#include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
 
 /**
  * @fn    sockerModoEscucha

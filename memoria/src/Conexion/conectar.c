@@ -32,10 +32,8 @@ void *recibirModulo(void *ptr)
 void *atenderModulo(void *ptr)
 {
     int *socketComunicacion = (int *)ptr;
-    TipoModulo *moduloRemitente = malloc(sizeof(TipoModulo));
-    printf("ENTRA ANTES DEL RECV\n");
-    recv(socketComunicacion, moduloRemitente, sizeof(TipoModulo), 0);
     printf("ENTRA AL HILO\n");
+    TipoModulo *moduloRemitente = get_modulo_msg_recv(socketComunicacion);
     printf("Modulo: %d \n", *moduloRemitente);
     switch (*moduloRemitente)
     {

@@ -6,8 +6,8 @@ void *manage_conn_kernel(void *ptr)
 
     while (1)
     {
-        op_code *op_code = get_opcode_msg_recv(socketKernel);
         TipoModulo *modulo = get_modulo_msg_recv(socketKernel);
+        op_code *op_code = get_opcode_msg_recv(socketKernel);
         void *stream = buffer_leer_stream_recv(socketKernel);
 
         if (obtener_instuccion_kernel(stream) == 1)

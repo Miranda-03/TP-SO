@@ -23,11 +23,14 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
 
 void handshakeCPUMemoria(int *CPUSocketMemoria)
 {
-    t_buffer *buffer = buffer_create(0);
-    enviarMensaje(CPUSocketMemoria, buffer, CPU, HANDSHAKE);
+    t_buffer *buffer = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer, 2);
+    while(1){}
+    //enviarMensaje(CPUSocketMemoria, buffer, CPU, HANDSHAKE);
     //buffer_destroy(buffer); // Asegúrate de destruir el buffer para evitar fugas de memoria
 
     int resultado = resultadoHandShake(CPUSocketMemoria);
+    
     if (resultado == 1)
     {
         // Handshake OK
