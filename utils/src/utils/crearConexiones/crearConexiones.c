@@ -51,33 +51,83 @@ int esperarCliente(int *socket)
 
 void enviarPaqueteResult(int result_cod, int *socket, TipoModulo moduloResponde, TipoModulo moduloRemitente)
 {
-    printf("result_code %d\n", result_cod);
-    t_buffer *buffer = buffer_create(sizeof(TipoModulo) * 2 + sizeof(int));
-    buffer_add_uint32(buffer, 4);
+    t_resultHandShake *result = malloc(sizeof(t_resultHandShake));
+    result->respuesta_cod = result_cod;
+    result->moduloRemitente = moduloRemitente;
+    result->moduloResponde = moduloResponde;
 
-    enviarMensaje(socket, buffer, moduloResponde, MENSAJE);
+
+    t_buffer *buffer = malloc(sizeof(t_buffer));
+    t_paquete *paquete = malloc(sizeof(t_paquete));
+
+    buffer->size = sizeof(t_resultHandShake);
+    
+    buffer->offset = 0;
+    buffer->stream = malloc(buffer->size);
+
+    memcpy(buffer->stream + buffer->offset, &(result->moduloRemitente), sizeof(TipoModulo));
+    buffer->offset += sizeof(TipoModulo);
+    memcpy(buffer->stream + buffer->offset, &(result->moduloResponde), sizeof(TipoModulo));
+    buffer->offset += sizeof(TipoModulo);
+    memcpy(buffer->stream + buffer->offset, &(result->respuesta_cod), sizeof(uint8_t));
+
+    paquete->modulo = result->moduloResponde;
+    paquete->buffer = buffer;
+
+    void *a_enviar = malloc(buffer->size + sizeof(TipoModulo) + sizeof(uint32_t));
+    int offset = 0;
+
+    memcpy(a_enviar + offset, &(paquete->modulo), sizeof(TipoModulo));
+    offset += sizeof(TipoModulo);
+    memcpy(a_enviar + offset, &(paquete->buffer->size), sizeof(uint32_t));
+    offset += sizeof(uint32_t);
+    memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);
+
+    send(socket, a_enviar, buffer->size + 4 + sizeof(uint32_t), 0);
+
+    free(result);
+    free(a_enviar);
+    free(paquete->buffer->stream);
+    free(paquete->buffer);
+    free(paquete);
 }
 
 int resultadoHandShake(int *socket)
 {
+t_buffer *bufferResponse = malloc(sizeof(t_buffer));
+    t_paquete *paqueteResult = malloc(sizeof(t_paquete));
 
-    op_code *op_code = get_opcode_msg_recv(socket);
-    TipoModulo *modulo = get_modulo_msg_recv(socket);
-    void *stream = buffer_leer_stream_recv(socket);
-    uint32_t *respuesta = malloc(sizeof(uint32_t));
-    memcpy(respuesta, stream, sizeof(uint32_t));
-    printf("respuesta del resultadoHandShake del stream %d\n", *respuesta);
-    if (*respuesta == 1)
+    paqueteResult->buffer = bufferResponse;
+
+    recv(socket, &(paqueteResult->modulo), 4, 0);
+    recv(socket, &(paqueteResult->buffer->size), sizeof(uint32_t), MSG_WAITALL);
+    void *stream = malloc(sizeof(t_resultHandShake));
+    paqueteResult->buffer->stream = stream;
+    recv(socket, paqueteResult->buffer->stream, sizeof(t_resultHandShake), 0);
+
+    TipoModulo remitente;
+    TipoModulo responde;
+    uint8_t respuesta;
+    memcpy(&remitente, paqueteResult->buffer->stream, sizeof(TipoModulo));
+    paqueteResult->buffer->stream += sizeof(TipoModulo);
+    memcpy(&responde, paqueteResult->buffer->stream, sizeof(TipoModulo));
+    paqueteResult->buffer->stream += sizeof(TipoModulo);
+    memcpy(&respuesta, paqueteResult->buffer->stream, sizeof(uint8_t));
+
+    free(bufferResponse);
+    free(paqueteResult);
+    free(stream);
+
+
+    if (respuesta == 1)
     {
         // Handshake OK
         printf("El handshake salio bien\n");
-        free(respuesta);
         return 1;
     }
     else
     {
         printf("El handshake salio mal\n");
-        free(respuesta);
         return 0;
         // Handshake ERROR
     }

@@ -22,7 +22,7 @@
  * @fn    conectarModuloCPU
  * @brief conecta el modulo CPU con los demas componentes.
  */
-void conectarModuloCPU(int *CPUSocketMemoria,
+void conectarModuloCPU(int *no,
                        int *CPUsocketBidireccionalDispatch,
                        int *CPUsocketBidireccionalInterrupt,
                        Contexto_proceso *procesoCPU,
@@ -32,7 +32,7 @@ void conectarModuloCPU(int *CPUSocketMemoria,
  * @fn    handshakeCPUMemoria
  * @brief hacer handshake CPU memoria.
  */
-void handshakeCPUMemoria(int *CPUSocketMemoria);
+void handshakeCPUMemoria();
 
 /**
  * @fn    recibirConn

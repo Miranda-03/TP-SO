@@ -31,18 +31,19 @@ void *recibirModulo(void *ptr)
 
 void *atenderModulo(void *ptr)
 {
-    int *socketComunicacion = (int *)ptr;
-    printf("ENTRA AL HILO\n");
-    TipoModulo *moduloRemitente = get_modulo_msg_recv(socketComunicacion);
-    printf("Modulo: %d \n", *moduloRemitente);
-    switch (*moduloRemitente)
+   
+    int socketComunicacion = *((int *)ptr);
+    TipoModulo moduloRemitente;
+    recv(socketComunicacion, &moduloRemitente, sizeof(TipoModulo), 0);
+    printf("Modulo: %d \n", moduloRemitente);
+    switch (moduloRemitente)
     {
     case IO:
         manageIO(socketComunicacion);
         break;
 
     default:
-        manageModulo(socketComunicacion, *moduloRemitente);
+        manageModulo(socketComunicacion, moduloRemitente);
         break;
     }
     pthread_exit(NULL);

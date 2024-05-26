@@ -2,7 +2,7 @@
 
 void *manage_conn_cpu(void *ptr)
 {
-    int socketCPU = *((int *)ptr);
+    int socketCPU = ((int *)ptr);
 
     while (1)
     {

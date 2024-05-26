@@ -1,12 +1,12 @@
 #include <Conexion/conectar.h>
+int CPUSocketMemoria;
 
-
-void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
+void conectarModuloCPU(int *no, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
 {
     // Conexion con el módulo memoria
-    *CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+    CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
 
-    handshakeCPUMemoria(CPUSocketMemoria);
+    handshakeCPUMemoria();
 
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
@@ -21,13 +21,13 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
         recibirConn(CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
 }
 
-void handshakeCPUMemoria(int *CPUSocketMemoria)
+void handshakeCPUMemoria()
 {
     t_buffer *buffer = buffer_create(sizeof(uint32_t));
     buffer_add_uint32(buffer, 2);
     enviarMensaje(CPUSocketMemoria, buffer, CPU, HANDSHAKE);
     //buffer_destroy(buffer); // Asegúrate de destruir el buffer para evitar fugas de memoria
-
+    printf("pasa\n");
     int resultado = resultadoHandShake(CPUSocketMemoria);
     
     if (resultado == 1)

@@ -5,7 +5,7 @@
 #include "ciclo/cicloDeEjecucion.h"
 
 Contexto_proceso *procesoCPU;
-int CPUSocketMemoria;
+int no;
 int CPUsocketBidireccionalDispatch;
 int CPUsocketBidireccionalInterrupt;
 int interrupcion;
@@ -14,9 +14,9 @@ int main(int argc, char* argv[]) {
 
     procesoCPU = malloc(sizeof(Proceso));
 
-    conectarModuloCPU(&CPUSocketMemoria, &CPUsocketBidireccionalDispatch, &CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
+    conectarModuloCPU(&no, &CPUsocketBidireccionalDispatch, &CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
     
-    cicloDeEjecucion(&CPUSocketMemoria, &CPUsocketBidireccionalDispatch, &CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
+    //cicloDeEjecucion(&CPUSocketMemoria, &CPUsocketBidireccionalDispatch, &CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
 
     return 0;
 }
