@@ -1,15 +1,14 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <Conexion/conectar.h>
-#include <Procesos/procesos.h>
-#include <Procesos/consola.h>
-#include <utils/logs.h>
+#include "Globales/globales.h"
+
+
 
 
 int main(int argc, char* argv[]) {
-
+    initialize(); // esto se puede cambiar
     conectarModuloKernel();
-    consolaInteractiva();
+    //consolaInteractiva();
 
     return 0;
 }
+
+

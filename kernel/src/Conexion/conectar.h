@@ -17,7 +17,7 @@
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <utils/enums/DispositivosIOenum.h>
 #include "Interfaces/interfaces.h"
-
+#include "Globales/globales.h"
 
 /**
 * @fn    conectarModuloKernel
@@ -65,6 +65,6 @@ void manageIO(int *socket);
 * @fn    obtener_identificador
 * @brief obtener el identificador de la interfaz.
 */
-char *obtener_identificador(t_buffer *buffer);
+char *obtener_identificador(void *stream);
 
 #endif

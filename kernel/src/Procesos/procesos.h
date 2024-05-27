@@ -2,6 +2,6 @@
 #include <commons/collections/dictionary.h>
 #include <commons/collections/queue.h>
 #include <Conexion/conectar.h>
-#include <utils/funcionesBuffer/funcionesbBuffer.h>
+#include <utils/funcionesBuffer/funcionesBuffer.h>
 
-void planificacionDeProcesos(int16_t operacion);
+void planificacionDeProcesos(int operacion);

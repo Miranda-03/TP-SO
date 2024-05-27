@@ -1,8 +1,11 @@
 #ifndef INTERFACES_H
 #define INTERFACES_H
 
-#include <utils/enums/DispositivosIOenum.h>
-#include <commons/collections/dictionary.h>
+
+#include "Conexion/conectar.h"
+
+
+
 
 /**
 * @fn    guardar_interfaz_conectada
