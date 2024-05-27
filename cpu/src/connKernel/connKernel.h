@@ -33,12 +33,12 @@ void * manageINTERRUPT(void * ptr);
 * @fn    obtener_procesoCPU_del_stream
 * @brief obtener el pcb del stream enviado desde el Kernel.
 */
-void obtener_procesoCPU_del_stream(void* stream, Contexto_proceso *procesoCPU);
+void obtener_procesoCPU_del_stream(t_buffer *buffer, Contexto_proceso *procesoCPU);
 
 /**
 * @fn    obtener_registros
 * @brief obtener los registros del stream.
 */
-void obtener_registros(void* stream, unsigned int *offset ,Contexto_proceso *procesoCPU);
+void obtener_registros(t_buffer *buffer, Contexto_proceso *procesoCPU);
 
 #endif

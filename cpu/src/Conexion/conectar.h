@@ -32,7 +32,7 @@ void conectarModuloCPU(int *no,
  * @fn    handshakeCPUMemoria
  * @brief hacer handshake CPU memoria.
  */
-void handshakeCPUMemoria();
+void handshakeCPUMemoria(int *CPUSocketMemoria);
 
 /**
  * @fn    recibirConn

@@ -15,15 +15,16 @@ void buffer_destroy(t_buffer *buffer)
     free(buffer);
 }
 
-void *buffer_leer_stream_recv(int *socket)
-{
+t_buffer *buffer_leer_recv(int *socket){
     t_buffer *buffer = buffer_create(0);
-    recv(socket, &(buffer->size), sizeof(uint32_t), MSG_WAITALL);
+    recv(socket, &(buffer->size), sizeof(uint32_t), 0);
     buffer->stream = malloc(buffer->size);
     recv(socket, buffer->stream, buffer->size, 0);
-    void *stream = buffer->stream;
-    buffer_destroy(buffer);
-    return stream;
+    return buffer;
+}
+
+void *buffer_leer_stream_recv(int *socket){
+    printf("esto no funciona\n");
 }
 
 void buffer_add(t_buffer *buffer, void *data, uint32_t size)

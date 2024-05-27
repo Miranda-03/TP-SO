@@ -1,33 +1,31 @@
 #include <Conexion/conectar.h>
-int CPUSocketMemoria;
 
-void conectarModuloCPU(int *no, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
+void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
 {
     // Conexion con el módulo memoria
     CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
 
-    handshakeCPUMemoria();
+    handshakeCPUMemoria(CPUSocketMemoria);
 
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    *CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
+    CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
     if (*CPUsocketBidireccionalDispatch != -1)
         recibirConn(CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
 
     int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    *CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
+    CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
     if (*CPUsocketBidireccionalInterrupt != -1)
         recibirConn(CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
 }
 
-void handshakeCPUMemoria()
+void handshakeCPUMemoria(int *CPUSocketMemoria)
 {
     t_buffer *buffer = buffer_create(sizeof(uint32_t));
     buffer_add_uint32(buffer, 2);
     enviarMensaje(CPUSocketMemoria, buffer, CPU, HANDSHAKE);
-    //buffer_destroy(buffer); // Asegúrate de destruir el buffer para evitar fugas de memoria
-    printf("pasa\n");
+    
     int resultado = resultadoHandShake(CPUSocketMemoria);
     
     if (resultado == 1)
@@ -39,14 +37,12 @@ void handshakeCPUMemoria()
     {
         // Handshake ERROR
         printf("El handshake de CPU a memoria salió mal\n");
-        printf("Código de error: %d\n", resultado); // Asume que resultadoHandShake devuelve un código de error
     }
 }
 
 void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion)
 {
-    TipoModulo *modulo = malloc(sizeof(TipoModulo));
-    recv(socket, modulo, sizeof(TipoModulo), MSG_WAITALL);
+    TipoModulo *modulo = get_modulo_msg_recv(socket);
 
     switch (*modulo)
     {

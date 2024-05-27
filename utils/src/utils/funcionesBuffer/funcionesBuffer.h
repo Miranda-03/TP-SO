@@ -21,8 +21,10 @@ void buffer_destroy(t_buffer *buffer);
 
 /**
 * @fn    buffer_leer_recv
-* @brief Arma el buffer que recive del recv() y devuelve el stream.
+* @brief Arma el buffer que recive del recv() y lo devuelve.
 */
+t_buffer *buffer_leer_recv(int *socket);
+
 void *buffer_leer_stream_recv(int *socket);
 
 /**

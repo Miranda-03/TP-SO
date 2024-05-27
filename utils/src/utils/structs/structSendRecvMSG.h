@@ -41,7 +41,7 @@ typedef struct
 {
     TipoModulo moduloRemitente;
     TipoModulo moduloResponde;
-    uint8_t respuesta_cod;
+    uint32_t respuesta_cod;
 } t_resultHandShake;
 
 #endif

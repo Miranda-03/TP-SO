@@ -8,33 +8,25 @@ void *manage_conn_kernel(void *ptr)
     {
         TipoModulo *modulo = get_modulo_msg_recv(socketKernel);
         op_code *op_code = get_opcode_msg_recv(socketKernel);
-        void *stream = buffer_leer_stream_recv(socketKernel);
+        t_buffer *buffer = buffer_leer_recv(socketKernel);
 
-        if (obtener_instuccion_kernel(stream) == 1)
+        if (buffer_read_uint32(buffer) == 1)
         {
-            enviar_mensaje(socketKernel, agregar_instrucciones(obtener_path_instruccion(stream), obtener_pid(stream)));
+            unsigned int pid = buffer_read_uint32(buffer);
+            enviar_mensaje(socketKernel, agregar_instrucciones(obtener_path_instruccion(buffer),pid));
         }
         else
         {
             // quitar archivo de instrucciones
         }
+        buffer_destroy(buffer);
     }
 }
 
-unsigned int obtener_elpid(void *stream)
+char *obtener_path_instruccion(t_buffer *buffer)
 {
-    unsigned int pid;
-    memcpy(&pid, stream + sizeof(unsigned int), sizeof(unsigned int));
-    return pid;
-}
-
-char *obtener_path_instruccion(void *stream)
-{
-    char *path;
-    uint32_t path_len;
-    memcpy(&path_len, stream + sizeof(unsigned int), sizeof(uint32_t));
-    memcpy(path, stream + (sizeof(unsigned int) * 2) + sizeof(uint32_t), path_len);
-    return path;
+    int path_len = buffer_read_uint32(buffer);
+    return buffer_read_string(buffer, path_len);
 }
 
 unsigned int obtener_instuccion_kernel(void *stream)

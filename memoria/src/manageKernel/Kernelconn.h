@@ -22,7 +22,7 @@ unsigned int obtener_elpid(void *stream);
 * @fn    obtener_path_instruccion
 * @brief obtener el PATH del archivo de instrucciones del stream.
 */
-char* obtener_path_instruccion(void *stream);
+char* obtener_path_instruccion(t_buffer *buffer);
 
 /**
 * @fn    obtener_instuccion_kernel

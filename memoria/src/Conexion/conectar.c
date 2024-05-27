@@ -31,7 +31,7 @@ void *recibirModulo(void *ptr)
 
 void *atenderModulo(void *ptr)
 {
-   
+
     int socketComunicacion = *((int *)ptr);
     TipoModulo moduloRemitente;
     recv(socketComunicacion, &moduloRemitente, sizeof(TipoModulo), 0);
@@ -70,13 +70,11 @@ void manageModulo(int *socket, TipoModulo modulo)
 void manageIO(int *socket)
 {
     op_code *codigoOperacion = get_opcode_msg_recv(socket);
-    void* stream = buffer_leer_stream_recv(socket);
 
-    TipoInterfaz tipo;
-    memcpy(&tipo, stream, 4);
+    t_buffer *buffer = buffer_leer_recv(socket);
+    TipoInterfaz tipo = buffer_read_uint32(buffer);
 
-    free(codigoOperacion);
-    free(stream);
+    free(buffer); // no eliminar el buffer para luego usar el resto del stream
 
     switch (tipo) // primero fijarse el codigo de operacion en cada 'case' del switch
     {
@@ -112,4 +110,4 @@ void iniciar_hilo_conexion(int *socket, TipoModulo modulo)
                        (void *)manage_conn_kernel,
                        socket);
     pthread_detach(thread_conexion_cpu);
-}   
+}
