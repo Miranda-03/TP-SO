@@ -4,7 +4,7 @@
 
 
 int main(int argc, char* argv[]) {
-    initialize(); // esto se puede cambiar
+    //initialize(); // esto se puede cambiar
     conectarModuloKernel();
     //consolaInteractiva();
 

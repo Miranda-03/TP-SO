@@ -15,7 +15,7 @@ void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOso
     IOsocketKernel = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_KERNEL"), obtenerValorConfig(PATH_CONFIG, "IP_KERNEL"), NULL);
     realizarHandshakeIO(tipo_interfaz, identificador, IOsocketKernel);
 
-    if (esGenerico != 1)
+    if (tipo_interfaz != GENERICA)
     {
         IOsocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
         realizarHandshakeIO(tipo_interfaz, identificador, IOsocketMemoria);
@@ -25,8 +25,7 @@ void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOso
 void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *socket)
 {
     t_buffer *buffer = buffer_create(sizeof(TipoInterfaz) + strlen(identificador) + 1 + sizeof(uint32_t));
-    buffer_add(buffer, &tipo_interfaz, 4);
-    buffer_add_uint32(buffer, strlen(identificador) + 1);
+    buffer_add_uint32(buffer, tipo_interfaz);
     buffer_add_string(buffer, strlen(identificador) + 1, identificador);
     enviarMensaje(socket, buffer, IO, HANDSHAKE);
 

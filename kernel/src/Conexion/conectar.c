@@ -15,6 +15,8 @@ int KernelSocketMemoria;
 
 void conectarModuloKernel()
 {
+    interfaces_conectadas = dictionary_create();
+
     int KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
 
     pthread_t threadClientes;
@@ -39,15 +41,11 @@ void *recibirClientes(void *ptr)
     while (1)
     {
         pthread_t thread;
-        int *socketBidireccional = malloc(sizeof(int));
-        if (!socketBidireccional) {
-            perror("malloc");
-            return NULL;
-        }
 
         printf("esperando accept\n");
+        int *socketBidireccional = malloc(sizeof(int));
         *socketBidireccional = accept(MemoriasocketEscucha, NULL, NULL);
-        if (*socketBidireccional < 0) {
+        if (socketBidireccional < 0) {
             perror("accept");
             free(socketBidireccional);
             continue;
@@ -62,27 +60,16 @@ void *recibirClientes(void *ptr)
 void *atenderIO(void *ptr)
 {
     int socketComunicacion = *((int *)ptr);
-    free(ptr);
 
-    TipoModulo *moduloEntrante = malloc(sizeof(TipoModulo));
-    if (!moduloEntrante) {
-        perror("malloc");
-        return NULL;
-    }
-
-    if (recv(socketComunicacion, moduloEntrante, sizeof(TipoModulo), 0) <= 0) {
-        perror("recv");
-        free(moduloEntrante);
-        return NULL;
-    }
+    TipoModulo *moduloEntrante = get_modulo_msg_recv(socketComunicacion);
 
     switch (*moduloEntrante)
     {
     case IO:
-        manageIO(&socketComunicacion);
+        manageIO(socketComunicacion);
         break;
     default:
-        // enviarPaqueteResult(result, -1, socketComunicacion);
+        enviarPaqueteResult(-1, socketComunicacion, KERNEL, *moduloEntrante);
         break;
     }
 
@@ -97,7 +84,7 @@ void handshakeKernelCPU(TipoConn conn)
         perror("buffer_create");
         return;
     }
-    buffer_add(buffer, &conn, sizeof(TipoConn));
+    buffer_add_uint32(buffer, conn);
 
     enviarMensaje(socketSegunConn(conn), buffer, KERNEL, HANDSHAKE);
 
@@ -120,18 +107,13 @@ void manageIO(int *socket)
         perror("get_opcode_msg_recv");
         return;
     }
-    void *stream = buffer_leer_stream_recv(socket);
-    if (!stream) {
-        perror("buffer_leer_stream_recv");
-        free(opCode);
-        return;
-    }
+//impresora
+    t_buffer *buffer = buffer_leer_recv(socket);
 
-    TipoInterfaz tipo;
-    memcpy(&tipo, stream, sizeof(TipoInterfaz));
-    char *identificador = obtener_identificador(stream);
-    free(stream);
-
+    TipoInterfaz tipo = buffer_read_uint32(buffer);
+    int sizeIdentificador = buffer_read_uint32(buffer);
+    char *identificador = buffer_read_string(buffer, sizeIdentificador);
+    buffer_destroy(buffer);
     if (*opCode == HANDSHAKE)
     {
         guardar_interfaz_conectada(socket, tipo, identificador, interfaces_conectadas);
@@ -141,9 +123,6 @@ void manageIO(int *socket)
     {
        enviarPaqueteResult(-1, socket, KERNEL, IO);
     }
-
-    free(identificador);
-    free(opCode);
 }
 
 void handshakeKernelMemoria()
@@ -161,22 +140,6 @@ void handshakeKernelMemoria()
         printf("Handshake KERNEL MEMORIA mal \n");
 
     buffer_destroy(buffer);
-}
-
-char *obtener_identificador(void *stream)
-{
-    int size_identificador;
-    memcpy(&size_identificador, (char *)stream + sizeof(TipoInterfaz), sizeof(int));
-
-    char *identificador = malloc(size_identificador + 1);
-    if (!identificador) {
-        perror("malloc");
-        return NULL;
-    }
-    memcpy(identificador, (char *)stream + sizeof(TipoInterfaz) + sizeof(int), size_identificador);
-    identificador[size_identificador] = '\0';
-
-    return identificador;
 }
 
 int socketSegunConn(TipoConn conn)

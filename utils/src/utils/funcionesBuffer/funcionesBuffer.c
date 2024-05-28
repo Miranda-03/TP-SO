@@ -15,7 +15,8 @@ void buffer_destroy(t_buffer *buffer)
     free(buffer);
 }
 
-t_buffer *buffer_leer_recv(int *socket){
+t_buffer *buffer_leer_recv(int *socket)
+{
     t_buffer *buffer = buffer_create(0);
     recv(socket, &(buffer->size), sizeof(uint32_t), 0);
     buffer->stream = malloc(buffer->size);
@@ -23,7 +24,8 @@ t_buffer *buffer_leer_recv(int *socket){
     return buffer;
 }
 
-void *buffer_leer_stream_recv(int *socket){
+void *buffer_leer_stream_recv(int *socket)
+{
     printf("esto no funciona\n");
 }
 
@@ -33,7 +35,7 @@ void buffer_add(t_buffer *buffer, void *data, uint32_t size)
     buffer->offset += size;
 }
 
-void buffer_read(t_buffer *buffer, void *data, uint32_t size)
+void buffer_read(t_buffer *buffer, void *data, int size)
 {
     memcpy(data, buffer->stream + buffer->offset, size);
     buffer->offset += size;
@@ -66,12 +68,13 @@ uint32_t buffer_read_uint8(t_buffer *buffer)
 void buffer_add_string(t_buffer *buffer, uint32_t length, char *string)
 {
     buffer_add_uint32(buffer, length);
-    buffer_add(buffer, string, length);
+    memcpy(buffer->stream + buffer->offset, string, length);
+    buffer->offset += length;
 }
 
-char *buffer_read_string(t_buffer *buffer, uint32_t *length)
+char *buffer_read_string(t_buffer *buffer, int length)
 {
-    char *string;
+    char *string = malloc(length);
     buffer_read(buffer, string, length);
     return string;
 }

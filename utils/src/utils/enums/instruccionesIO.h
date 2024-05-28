@@ -23,7 +23,8 @@ typedef enum
     IO_FS_TRUNCATE,
     IO_FS_WRITE,
     IO_FS_READ,
-    IO_DISCONNECT
+    IO_DISCONNECT,
+    NONE
 } instruccionIO;
 
 #endif

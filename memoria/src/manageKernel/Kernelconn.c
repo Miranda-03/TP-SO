@@ -2,7 +2,7 @@
 
 void *manage_conn_kernel(void *ptr)
 {
-    int socketKernel = *((int *)ptr);
+    int socketKernel = ((int *)ptr);
 
     while (1)
     {

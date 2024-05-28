@@ -29,6 +29,12 @@ typedef struct
 void crearIO();
 
 /**
+ * @fn hilo_conexion_io
+ * @brief funcion del hilo de conexion.
+ */
+void *hilo_conexion_io(void *ptr);
+
+/**
  * @fn instanciar_struct_io
  * @brief funcion para instancear un struct moduloIO.
  */
@@ -38,7 +44,7 @@ moduloIO *instanciar_struct_io(char *identificador, char *config_path);
  * @fn tipo_interfaz_del_config
  * @brief funcion para devolver el valor del tipo de interfaz del archivo de configuracion.
  */
-TipoInterfaz *tipo_interfaz_del_config(char *config_path);
+TipoInterfaz tipo_interfaz_del_config(char *config_path);
 
 /**
  * @fn manageGenerico

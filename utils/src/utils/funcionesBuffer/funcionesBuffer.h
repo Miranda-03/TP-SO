@@ -37,7 +37,7 @@ void buffer_add(t_buffer *buffer, void *data, uint32_t size);
 * @fn    buffer_read
 * @brief Guarda size bytes del principio del buffer en la dirección data y avanza el offset.
 */
-void buffer_read(t_buffer *buffer, void *data, uint32_t size);
+void buffer_read(t_buffer *buffer, void *data, int size);
 
 /**
 * @fn    buffer_add_uint32
@@ -73,6 +73,6 @@ void buffer_add_string(t_buffer *buffer, uint32_t length, char *string);
 * @fn    buffer_read_string
 * @brief Lee un string y su longitud del buffer y avanza el offset.
 */
-char *buffer_read_string(t_buffer *buffer, uint32_t *length);
+char *buffer_read_string(t_buffer *buffer, int length);
 
 #endif

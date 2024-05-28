@@ -10,13 +10,13 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
     CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
-    if (*CPUsocketBidireccionalDispatch != -1)
+    if (CPUsocketBidireccionalDispatch != -1)
         recibirConn(CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
 
     int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
     CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
-    if (*CPUsocketBidireccionalInterrupt != -1)
+    if (CPUsocketBidireccionalInterrupt != -1)
         recibirConn(CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
 }
 

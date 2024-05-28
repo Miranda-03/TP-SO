@@ -5,36 +5,37 @@ void crearIO()
     // crear el dispositivo impresora a modo de ejemplo
     char *config_path = "io_config/impresora.config";
     moduloIO *impresora = instanciar_struct_io("impresora", config_path);
-    TipoInterfaz *io_interfaz = tipo_interfaz_del_config(config_path);
+    TipoInterfaz io_interfaz = tipo_interfaz_del_config(config_path);
 
-    int *IOsocketKernel = malloc(sizeof(int));
-    int *IOsocketMemoria = malloc(sizeof(int));
-    *IOsocketMemoria = NULL;
-    conectarModuloIO(*io_interfaz, "impresora", IOsocketKernel, IOsocketMemoria);
+    int IOsocketKernel = malloc(sizeof(int));
+    int IOsocketMemoria = malloc(sizeof(int));
+    conectarModuloIO(io_interfaz, "impresora", IOsocketKernel, IOsocketMemoria);
+
     socket_hilo *sockets = malloc(sizeof(socket_hilo));
     sockets->IO_Kernel_socket = IOsocketKernel;
     sockets->IO_Memoria_socket = IOsocketMemoria;
-    sockets->modulo_io = impresora;
-    sockets->tipo_interfaz = *io_interfaz;
+    memcpy(sockets->modulo_io->config_path, impresora->config_path, strlen(impresora->config_path) + 1);
+    memcpy(sockets->modulo_io->identificador, impresora->identificador, strlen(impresora->identificador) + 1);
+    sockets->tipo_interfaz = io_interfaz;
+
     pthread_t thread;
     pthread_create(&thread, NULL, (void *)hilo_conexion_io, sockets);
     pthread_detach(thread);
-    free(io_interfaz);
 }
 
 void *hilo_conexion_io(void *ptr)
 {
-    socket_hilo *sockets = *((socket_hilo *)ptr);
+    socket_hilo *sockets = ((socket_hilo *)ptr);
     instruccionIO *instruccion = malloc(sizeof(instruccionIO));
     int io_esta_conectado = 1;
 
     while (io_esta_conectado)
     {
-        *instruccion = NULL;
+        *instruccion = NONE;
         do
         {
             recv(sockets->IO_Kernel_socket, instruccion, sizeof(instruccionIO), 0);
-        } while (*instruccion == NULL);
+        } while (*instruccion == NONE);
 
         if (*instruccion == IO_DISCONNECT)
         {
@@ -87,10 +88,10 @@ moduloIO *instanciar_struct_io(char *identificador, char *config_path)
     return io;
 }
 
-TipoInterfaz *tipo_interfaz_del_config(char *config_path)
+TipoInterfaz tipo_interfaz_del_config(char *config_path)
 {
-    t_config *IOconfig = config_create(char *config_path);
-    TipoInterfaz *io_interfaz = config_get_int_value(IOconfig *, "TIPO_INTERFAZ");
+    t_config *IOconfig = config_create(config_path);
+    TipoInterfaz io_interfaz = config_get_int_value(IOconfig, "TIPO_INTERFAZ");
     config_destroy(IOconfig);
     return io_interfaz;
 }
