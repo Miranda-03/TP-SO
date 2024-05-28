@@ -3,12 +3,15 @@
 #include <Conexion/conectar.h>
 #include <Procesos/procesos.h>
 
-int *socketIO=1;
+#include "Globales/globales.h"
+
+
+
 
 int main(int argc, char* argv[]) {
-
+    //initialize(); // esto se puede cambiar
     conectarModuloKernel();
-    planificaciónDeProcesos();
-    
+    //consolaInteractiva();
+
     return 0;
 }
