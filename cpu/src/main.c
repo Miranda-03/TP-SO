@@ -10,12 +10,17 @@ int CPUsocketBidireccionalDispatch;
 int CPUsocketBidireccionalInterrupt;
 int interrupcion;
 
-int main(int argc, char* argv[]) {
-
+int main(int argc, char *argv[])
+{
     procesoCPU = malloc(sizeof(Proceso));
 
-    conectarModuloCPU(CPUSocketMemoria, CPUsocketBidireccionalDispatch, CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
-    
+    // Declaración de los sockets como punteros para poder modificarlos dentro de conectarModuloCPU
+    int *CPUSocketMemoriaPtr = &CPUSocketMemoria;
+    int *CPUsocketBidireccionalDispatchPtr = &CPUsocketBidireccionalDispatch;
+    int *CPUsocketBidireccionalInterruptPtr = &CPUsocketBidireccionalInterrupt;
+
+    conectarModuloCPU(CPUSocketMemoriaPtr, CPUsocketBidireccionalDispatchPtr, CPUsocketBidireccionalInterruptPtr, procesoCPU, &interrupcion);
+
     cicloDeEjecucion(CPUSocketMemoria, CPUsocketBidireccionalDispatch, CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
 
     return 0;

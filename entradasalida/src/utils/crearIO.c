@@ -7,16 +7,15 @@ void crearIO()
     moduloIO *impresora = instanciar_struct_io("impresora", config_path);
     TipoInterfaz io_interfaz = tipo_interfaz_del_config(config_path);
 
-    int IOsocketKernel = malloc(sizeof(int));
-    int IOsocketMemoria = malloc(sizeof(int));
-    conectarModuloIO(io_interfaz, "impresora", IOsocketKernel, IOsocketMemoria);
+    int IOsocketKernel;
+    int IOsocketMemoria;
 
-    socket_hilo *sockets = malloc(sizeof(socket_hilo));
-    sockets->IO_Kernel_socket = IOsocketKernel;
-    sockets->IO_Memoria_socket = IOsocketMemoria;
-    memcpy(sockets->modulo_io->config_path, impresora->config_path, strlen(impresora->config_path) + 1);
-    memcpy(sockets->modulo_io->identificador, impresora->identificador, strlen(impresora->identificador) + 1);
-    sockets->tipo_interfaz = io_interfaz;
+    int *IOsocketKernelptr = &IOsocketKernel;
+    int *IOsocketMemoriaptr = &IOsocketMemoria;
+
+    conectarModuloIO(io_interfaz, "impresora", IOsocketKernelptr, IOsocketMemoriaptr);
+
+    socket_hilo *sockets = generar_struct_socket_hilo(impresora, IOsocketKernel, IOsocketMemoria, io_interfaz);
 
     pthread_t thread;
     pthread_create(&thread, NULL, (void *)hilo_conexion_io, sockets);
@@ -41,7 +40,7 @@ void *hilo_conexion_io(void *ptr)
         {
             free(sockets->IO_Kernel_socket);
             free(sockets->IO_Memoria_socket);
-            free(sockets->modulo_io);
+            destruir_struct_io(sockets->modulo_io);
             free(sockets);
             free(instruccion);
             io_esta_conectado = 0;
@@ -80,12 +79,38 @@ void manageGenerico(moduloIO *modulo_io, int *socket)
     buffer_destroy(buffer);
 }
 
-moduloIO *instanciar_struct_io(char *identificador, char *config_path)
+moduloIO *instanciar_struct_io(const char *identificador, const char *config_path)
 {
     moduloIO *io = malloc(sizeof(moduloIO));
-    io->identificador = identificador;
-    io->config_path = config_path;
+    if (io == NULL) {
+        // Manejo de error de asignación de memoria
+        return NULL;
+    }
+
+    // Copiar el identificador
+    io->identificador = strdup(identificador);
+    if (io->identificador == NULL) {
+        // Manejo de error de asignación de memoria
+        free(io);
+        return NULL;
+    }
+
+    // Copiar el config_path
+    io->config_path = strdup(config_path);
+    if (io->config_path == NULL) {
+        // Manejo de error de asignación de memoria
+        free(io->identificador);
+        free(io);
+        return NULL;
+    }
+
     return io;
+}
+
+void destruir_struct_io(moduloIO *struct_io){
+    free(struct_io->config_path);
+    free(struct_io->identificador);
+    free(struct_io);
 }
 
 TipoInterfaz tipo_interfaz_del_config(char *config_path)
@@ -94,4 +119,14 @@ TipoInterfaz tipo_interfaz_del_config(char *config_path)
     TipoInterfaz io_interfaz = config_get_int_value(IOconfig, "TIPO_INTERFAZ");
     config_destroy(IOconfig);
     return io_interfaz;
+}
+
+socket_hilo *generar_struct_socket_hilo(moduloIO * modulo_io, int *IOsocketKernel, int *IOsocketMemoria, TipoInterfaz interfaz){
+    socket_hilo *io_hilo = malloc(sizeof(socket_hilo));
+    io_hilo->modulo_io = modulo_io;
+    io_hilo->IO_Kernel_socket = IOsocketKernel;
+    io_hilo->IO_Memoria_socket = IOsocketMemoria;
+    io_hilo->tipo_interfaz = interfaz;
+
+    return io_hilo;
 }

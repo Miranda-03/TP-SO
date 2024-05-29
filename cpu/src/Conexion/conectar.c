@@ -3,21 +3,21 @@
 void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
 {
     // Conexion con el módulo memoria
-    CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+    *CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
 
-    handshakeCPUMemoria(CPUSocketMemoria);
+    handshakeCPUMemoria(*CPUSocketMemoria);
 
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
-    if (CPUsocketBidireccionalDispatch != -1)
-        recibirConn(CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
+    *CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
+    if (*CPUsocketBidireccionalDispatch != -1)
+        recibirConn(*CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
 
     int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
-    if (CPUsocketBidireccionalInterrupt != -1)
-        recibirConn(CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
+    *CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
+    if (*CPUsocketBidireccionalInterrupt != -1)
+        recibirConn(*CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
 }
 
 void handshakeCPUMemoria(int *CPUSocketMemoria)
