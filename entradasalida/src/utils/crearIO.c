@@ -19,7 +19,7 @@ void crearIO()
 
     pthread_t thread;
     pthread_create(&thread, NULL, (void *)hilo_conexion_io, sockets);
-    pthread_detach(thread);
+    pthread_join(thread);
 }
 
 void *hilo_conexion_io(void *ptr)
