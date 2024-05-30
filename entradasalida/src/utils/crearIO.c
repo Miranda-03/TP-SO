@@ -15,7 +15,7 @@ void crearIO()
 
     conectarModuloIO(io_interfaz, "impresora", IOsocketKernelptr, IOsocketMemoriaptr);
 
-    socket_hilo *sockets = generar_struct_socket_hilo(impresora, IOsocketKernel, IOsocketMemoria, io_interfaz);
+    socket_hilo *sockets = generar_struct_socket_hilo(impresora, IOsocketKernel, IOsocketMemoria, io)
 
     pthread_t thread;
     pthread_create(&thread, NULL, (void *)hilo_conexion_io, sockets);
@@ -76,7 +76,6 @@ void manageGenerico(moduloIO *modulo_io, int *socket)
     buffer_add_uint32(buffer, 1);
     enviarMensaje(socket, buffer, IO, MENSAJE);
     config_destroy(config);
-    buffer_destroy(buffer);
 }
 
 moduloIO *instanciar_struct_io(const char *identificador, const char *config_path)
