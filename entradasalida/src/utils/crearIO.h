@@ -5,8 +5,10 @@
 #include <pthread.h>
 #include "../Conexion/conectar.h"
 #include <utils/enums/instruccionesIO.h>
-#include "commons/config.h"
+#include <commons/config.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
+#include <commons/log.h>
+#include <commons/string.h>
 
 typedef struct
 {
@@ -56,7 +58,7 @@ TipoInterfaz tipo_interfaz_del_config(char *config_path);
  * @fn manageGenerico
  * @brief funcion para el modulo del tipo GENERICO.
  */
-void manageGenerico(moduloIO *modulo_io, int *socket);
+void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer)
 
 /**
  * @fn generar_struct_socket_hilo
@@ -67,5 +69,17 @@ void manageGenerico(moduloIO *modulo_io, int *socket);
  * @param interfaz tipo de interfaz.
  */
 socket_hilo *generar_struct_socket_hilo(moduloIO * modulo_io, int *IOsocketKernel, int *IOsocketMemoria, TipoInterfaz interfaz);
+
+/**
+ * @fn *recibir_instruccion_del_kernel
+ * @brief funcion para recibir la instruccion del kernel y devolver el buffer para leer los parametros luego.
+ */
+t_buffer *recibir_instruccion_del_kernel(instruccionIO *instruccion, int *PID, int *socket);
+
+/**
+ * @fn *mensaje_info_operacion
+ * @brief devulve el char* para el logger.
+ */
+char *mensaje_info_operacion(int PID, char *operacion);
 
 #endif
