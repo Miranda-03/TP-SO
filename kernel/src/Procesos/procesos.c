@@ -9,12 +9,13 @@ int KernelSocketMemoria;
 
 
 
-void planificaciónDeProcesos(){
-    t_queue *colaNew = queue_create();
-    t_queue *colaReady = queue_create();
-    t_queue *colaBlock = queue_create();
-    t_queue *colaExec = queue_create();
-    t_queue *colaExit = queue_create();
+void planificacionDeProcesos(int case,char* path)
+{
+    t_list *listaNew = list_create();
+    t_list *listaReady = list_create();
+    t_list *listaBlock = list_create();
+    t_list *listaExec = list_create();
+    t_list *listaExit = list_create();
 
     t_log* logger = iniciar_logger();
     
@@ -27,17 +28,17 @@ void planificaciónDeProcesos(){
         case "1":
             break;
         case "2":
-            iniciar_proceso(colaNew);
+            iniciar_proceso(listaNew);
             break;
         case "3":
-            proceso_ready(colaNew,colaReady);
+            proceso_ready(listaNew,listaReady);
             break;
         case "4":
-            ejecutar_proceso(colaReady,colaExec);
+            ejecutar_proceso(listaReady,listaExec);
             break;
         case "5":
-            finalizar_proceso(colaExit,colaExec,colaBlock,logger);
-            proceso_ready(colaNew,colaReady);
+            finalizar_proceso(listaNew,listaReady,listaExec,listaBlock,listaExit,logger);
+            proceso_ready(listaNew,listaReady);
             break;
         case "6":
             break;
@@ -53,42 +54,55 @@ void planificaciónDeProcesos(){
 
 }
 
-Pcb *crearPcb(int quantum, int duracion){
+Pcb *crearPcb(int quantum){
     Pcb *pcb = malloc(sizeof(Pcb));
-    pcb->PID = 0;
-    pcb->program_counter = 0;
-    pcb->quantum = quantum;
-    pcb->duracion = duracion;
+    pcb->pid = asignar_pid();
+    pcb->quantum = obtenerValorConfig("./kernel.config","QUANTUM");
+    pcb->registros=NULL;
 
     return pcb;
 }
 
-void iniciar_proceso(t_queue* cola_new) {
-    Pcb* pcb = crearPcb(2,1); // el pid, el pc y el quantum vienen de memoria
-    Proceso* proceso=crear_proceso(pcb);
-    queue_push(cola_new, proceso);
+void iniciar_proceso(t_list* list_new) {
+    Pcb* pcb = crearPcb(2); 
+   list_add(list_new,pcb);
 }
-void crear_proceso(Pcb* pcb)
+proceso_ready(t_list* listNew,t_list* listReady,char* path)
 {
-    Proceso* proceso = malloc(sizeof(Proceso));
-    proceso->pcb=pcb;
-    proceso->contexto=NEW;
+   int grado_multiprogamacion = config_get_string_value("./kernel.config","GRADO_MULTIPROGRAMACION");
+   if(list_size(listReady)< grado_multiprogamacion)
+   {
+   Pcb* pcb=list_remove(listNew,0);
+   t_buffer* buffer= buffer_create(sizeof(unsigned int)+strlen(path));
+   buffer_add(buffer,proceso->pcb->pid,sizeof(unsigned int));
+   buffer_add(buffer,path,sizeof(char*));
+   enviarMensaje(socket,buffer,KERNEL,PROCESO);
+   list_add(listReady,pcb);
+   }
 }
-proceso_ready(t_queue* colaNew,t_queue* colaReady)
+
+ejecutar_proceso(t_list* listready,t_list* listexec)
 {
-    Proceso* proceso=queue_peek(colaNew);
-    enviarproceso(,proceso);//Envia el proceso a memoria y lo recibe
-    queue_push(colaReady,proceso);
-    queue_pop(colaNew);
+  if(list_size(listexec)==0)
+   {
+    Pcb* pcb=list_remove(listready,0);
+    t_buffer* buffer = buffer_create(sizeof(unsigned int)+sizeof(Registros));
+    buffer_add(buffer,proceso->pcb->pid,sizeof(unsigned int));
+    buffer_add(buffer,proceso->pcb->registros.pc,sizeof(uint32_t));
+    buffer_add(buffer,proceso->pcb->registros.ax,sizeof(uint8_t));
+    buffer_add(buffer,proceso->pcb->registros.eax,sizeof(uint32_t));
+    buffer_add(buffer,proceso->pcb->registros.bx,sizeof(uint8_t));
+    buffer_add(buffer,proceso->pcb->registros.ebx,sizeof(uint32_t));
+    buffer_add(buffer,proceso->pcb->registros.cx,sizeof(uint8_t));
+    buffer_add(buffer,proceso->pcb->registros.ecx,sizeof(uint32_t));
+    buffer_add(buffer,proceso->pcb->registros.dx,sizeof(uint8_t));
+    buffer_add(buffer,proceso->pcb->registros.edx,sizeof(uint32_t));
+    enviarMensaje(socket,buffer,KERNEL,PROCESO);
+    list_add(listexec,pcb);
+   }
 }
-ejecutar_proceso(t_queue* colaready,t_queue* colaexec)
-{
- Proceso* proceso=queue_peek(colaready);
- enviarproceso(,proceso);
- queue_push(colaexec,proceso);
- queue_pop(colaready);
-}
-finalizar_proceso(t_queue*colaexit,t_queue*colaexec,t_queue* colablock,t_log* log)
+
+/*finalizar_proceso(t_list* listNew,t_list* listReady,t_list* listExec, t_list* listBlock,t_list* listExit,t_log* log)
 {
  do{
     log_info(log,"Seleccione la cola");
@@ -113,7 +127,7 @@ finalizar_proceso(t_queue*colaexit,t_queue*colaexec,t_queue* colablock,t_log* lo
         }
     }while (true);
     log_destroy(log);
- }
+ }*/
 
 void planificarFIFO(t_queue *cola){
     while (!queue_is_empty(cola)) {
@@ -149,9 +163,18 @@ t_log* iniciar_logger(void)
 	return nuevo_logger;
 }
 
-void enviarproceso(int *KernelSocketCPUDispatch, Proceso *proceso){
+void enviarproceso(int *KernelSocketCPUDispatch, Pcb *pcb){
     t_buffer *buffer = buffer_create(sizeof(int64_t)); //Tal vez hay que crear un struct que tenga el pcb
-    buffer_add(buffer, proceso, 4);
+    buffer_add(buffer, pcb, sizeof(Pcb));
     enviarMensaje(socket, buffer, CPU, PROCESO);
 }
 
+int asignar_pid(int pid)
+{
+int valor;
+pthread_mutex_lock(&mutex);
+valor = pid;
+pid++;
+pthread_mutex_unlock(&mutex);
+return pid;
+}
