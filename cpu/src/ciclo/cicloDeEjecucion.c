@@ -138,7 +138,6 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
 
     if (instruccion != NULL)
     { // No estoy seguro de la comparacion
-        buffer_add_uint32(buffer, strlen(instruccion) + 1);
         buffer_add_string(buffer, strlen(instruccion) + 1, instruccion);
     }
 
