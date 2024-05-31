@@ -36,11 +36,6 @@ void *hilo_conexion_io(void *ptr)
         *instruccion = NONE;
         buffer = recibir_instruccion_del_kernel(instruccion, PID, sockets->IO_Kernel_socket);
 
-        do
-        {
-            recv(sockets->IO_Kernel_socket, instruccion, sizeof(instruccionIO), 0);
-        } while (*instruccion == NONE);
-
         if (*instruccion == IO_DISCONNECT)
         {
             free(sockets->IO_Kernel_socket);
