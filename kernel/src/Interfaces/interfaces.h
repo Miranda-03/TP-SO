@@ -3,6 +3,7 @@
 
 
 #include "Conexion/conectar.h"
+#include <Globales/globales.h>
 
 
 

@@ -1,6 +1,6 @@
 #include "cicloDeEjecucion.h"
 
-void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
+/* void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
 {
     t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
 
@@ -162,7 +162,7 @@ void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
     buffer_add_uint32(buffer, procesoCPU->registros.edx);
 }
 
-char *mensaje_fetch_instruccion_log(int *pid, int *pc)
+*char mensaje_fetch_instruccion_log(int *pid, int *pc)
 {
     char *result = string_new();
     string_append(&result, "PID: ");
@@ -172,7 +172,7 @@ char *mensaje_fetch_instruccion_log(int *pid, int *pc)
     return result;
 }
 
-char *mensaje_execute_log(int *pid, char *instruccion)
+*char mensaje_execute_log(int *pid, char *instruccion)
 {
     char *result = string_new();
     string_append(&result, "PID: ");
@@ -185,3 +185,5 @@ char *mensaje_execute_log(int *pid, char *instruccion)
 
     return result;
 }
+
+*/

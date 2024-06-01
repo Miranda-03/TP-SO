@@ -1,4 +1,4 @@
-#include <Conexion/conectar.h>
+#include "Conexion/conectar.h"
 
 typedef struct
 {
@@ -6,18 +6,16 @@ typedef struct
     TipoConn conn;
 } HandshakeMessageKernel;
 
-extern t_dictionary *interfaces_conectadas;
-extern t_log *logger_kernel;
-
 int KernelSocketCPUDispatch;
 int KernelSocketCPUInterrumpt;
 int KernelSocketMemoria;
+int KernelsocketEscucha;
 
 void conectarModuloKernel()
 {
     interfaces_conectadas = dictionary_create();
 
-    int KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
+    KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
 
     pthread_t threadClientes;
     pthread_create(&threadClientes, NULL, recibirClientes, (void *)(intptr_t)KernelsocketEscucha);

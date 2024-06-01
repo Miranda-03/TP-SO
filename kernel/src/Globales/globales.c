@@ -1,11 +1,22 @@
-#include "globales.h"
+#include "Globales/globales.h"
 
 t_dictionary *interfaces_conectadas;
 t_log *logger_kernel;
+t_config *config_kernel;
+int quantum_global;
+int grado_multiprogamacion;
+int pid_global;
 
-void initialize() {
-    interfaces_conectadas = dictionary_create();
-    logger_kernel = iniciar_loggerKernel();
+t_config* iniciar_configkernel(void) {
+    t_config* nuevo_config;
+    nuevo_config = config_create("./kernel.config");
+
+    if (nuevo_config == NULL) {
+        printf("Error con el config");
+        exit(2);
+    }
+
+    return nuevo_config;
 }
 
 t_log* iniciar_loggerKernel(void) {
@@ -15,4 +26,13 @@ t_log* iniciar_loggerKernel(void) {
         exit(1);
     }
     return nuevo_logger;
+}
+
+void initialize(void) {
+    interfaces_conectadas = dictionary_create();
+    logger_kernel = iniciar_loggerKernel();
+    config_kernel = iniciar_configkernel();
+    quantum_global = config_get_int_value(config_kernel, "QUANTUM");
+    grado_multiprogamacion = config_get_int_value(config_kernel, "GRADO_MULTIPROGRAMACION");
+    pid_global = 1;
 }

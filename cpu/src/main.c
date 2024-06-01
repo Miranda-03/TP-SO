@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
     conectarModuloCPU(CPUSocketMemoriaPtr, CPUsocketBidireccionalDispatchPtr, CPUsocketBidireccionalInterruptPtr, procesoCPU, &interrupcion);
 
-    cicloDeEjecucion(CPUSocketMemoria, CPUsocketBidireccionalDispatch, CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
+    //cicloDeEjecucion(CPUSocketMemoria, CPUsocketBidireccionalDispatch, CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
 
     return 0;
 }
