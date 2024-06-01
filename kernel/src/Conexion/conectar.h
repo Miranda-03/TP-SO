@@ -16,7 +16,7 @@
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <utils/enums/DispositivosIOenum.h>
-#include "Interfaces/interfaces.h"
+#include <Interfaces/interfaces.h>
 #include "Globales/globales.h"
 
 /**

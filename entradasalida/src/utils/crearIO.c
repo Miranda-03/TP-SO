@@ -27,14 +27,14 @@ void *hilo_conexion_io(void *ptr)
     socket_hilo *sockets = ((socket_hilo *)ptr);
     instruccionIO *instruccion = malloc(sizeof(instruccionIO));
     int io_esta_conectado = 1;
-    t_buffer *buffer;
+    t_buffer *buffer_kernel;
     int *PID = malloc(sizeof(int));
     t_log *logger = log_create("logs/io.log", "entradasalida", 1, LOG_LEVEL_INFO);
 
     while (io_esta_conectado)
     {
         *instruccion = NONE;
-        buffer = recibir_instruccion_del_kernel(instruccion, PID, sockets->IO_Kernel_socket);
+        buffer_kernel = recibir_instruccion_del_kernel(instruccion, PID, sockets->IO_Kernel_socket);
 
         if (*instruccion == IO_DISCONNECT)
         {
@@ -53,14 +53,14 @@ void *hilo_conexion_io(void *ptr)
             case GENERICA:
 
                 log_info(logger, mensaje_info_operacion(*PID, "IO_SLEEP_GEN"));
-                manageGenerico(sockets->modulo_io, sockets->IO_Kernel_socket, buffer);
+                manageGenerico(sockets->modulo_io, sockets->IO_Kernel_socket, buffer_kernel);
                 break;
             }
         }
     }
 }
 
-void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer)
+void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel)
 {
     t_config *config = config_create(modulo_io->config_path);
     int tiempo_unidad;
@@ -70,7 +70,7 @@ void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer)
         tiempo_unidad = config_get_int_value(config, "TIEMPO_UNIDAD_TRABAJO");
     }
 
-    unidades = buffer_read_uint32(buffer);
+    unidades = buffer_read_uint32(buffer_kernel);
 
     // REALIZA LA OPERACION
     sleep(tiempo_unidad * unidades);

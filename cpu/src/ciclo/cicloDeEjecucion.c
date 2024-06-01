@@ -9,7 +9,7 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
         if (procesoCPU->pid != NULL)
         {
             // FETCH
-            log_info(logger, mensaje_fetch_instruccion_log(procesoCPU->pid, procesoCPU->registros.pc));
+            log_info(loger, mensaje_fetch_instruccion_log(procesoCPU->pid, procesoCPU->registros.pc));
             char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->registros.pc);
 
             procesoCPU->registros.pc += 1;
@@ -145,7 +145,7 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     }
 
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);
-    buffer_destroy(buffer);
+    //buffer_destroy(buffer);
     procesoCPU->pid = NULL;
 }
 
