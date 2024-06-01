@@ -2,20 +2,21 @@
 
 void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
 {
+    t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
+
     while (1)
     {
-
         if (procesoCPU->pid != NULL)
         {
-
             // FETCH
+            log_info(logger, mensaje_fetch_instruccion_log(procesoCPU->pid, procesoCPU->registros.pc));
             char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->registros.pc);
 
             procesoCPU->registros.pc += 1;
 
             // DECODE
-          
-            char** instruccionSeparada = string_split(instruccion, " ");
+
+            char **instruccionSeparada = string_split(instruccion, " ");
 
             execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch);
 
@@ -26,11 +27,13 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
 
 void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch)
 {
-
     char *operacion = instruccionSeparada[0];
     char *primerParametro = instruccionSeparada[1];
     char *segundoParametro = instruccionSeparada[2];
     int *registro;
+    t_log *loger_execute = log_create();
+
+    log_info(loger_execute, mensaje_execute_log(procesoCPU->pid, instruccion));
 
     switch (*operacion)
     {
@@ -50,10 +53,11 @@ void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char *ins
         instruccion_JNZ(procesoCPU, obtenerRegistro(primerParametro, procesoCPU), atoi(&segundoParametro));
         break;
     case IO_GEN_SLEEP:
-        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch); 
+        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
         break;
     case EXIT:
         enviar_contexto_al_kernel(procesoCPU, EXIT_SIGNAL, NULL, CPUsocketBidireccionalDispatch);
+        log_destroy(loger_execute);
         break;
     default:
         break;
@@ -100,7 +104,6 @@ int *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU)
         return NULL;
     }
 }
-
 
 void checkInterrupt(Contexto_proceso *procesoCPU, int *interrupcion, int *CPUsocketBidireccionalDispatch)
 {
@@ -157,4 +160,28 @@ void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
     buffer_add_uint32(buffer, procesoCPU->registros.ecx);
     buffer_add_uint8(buffer, procesoCPU->registros.dx);
     buffer_add_uint32(buffer, procesoCPU->registros.edx);
+}
+
+char *mensaje_fetch_instruccion_log(int *pid, int *pc)
+{
+    char *result = string_new();
+    string_append(&result, "PID: ");
+    string_append(&result, string_itoa(*pid));
+    string_append(&result, " - FETCH - Program Counter: ");
+    string_append(&result, string_itoa(*pc));
+    return result;
+}
+
+char *mensaje_execute_log(int *pid, char *instruccion)
+{
+    char *result = string_new();
+    string_append(&result, "PID: ");
+    string_append(&result, string_itoa(*pid));
+    string_append(&result, " - Ejecutando: ");
+    char **instruccionSeparada = string_n_split(instruccion, 2, " ");
+    string_append(&result, instruccionSeparada[0]);
+    string_append(&result, " - ");
+    string_append(&result, instruccionSeparada[1]);
+
+    return result;
 }

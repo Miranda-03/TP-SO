@@ -69,7 +69,8 @@ void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer)
     {
         tiempo_unidad = config_get_int_value(config, "TIEMPO_UNIDAD_TRABAJO");
     }
-    recv(socket, &unidades, sizeof(uint32_t), 0);
+
+    unidades = buffer_read_uint32(buffer);
 
     // REALIZA LA OPERACION
     sleep(tiempo_unidad * unidades);

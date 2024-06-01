@@ -10,6 +10,7 @@
 #include <utils/enums/motivosDesalojo.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
+#include <commons/log.h>
 
 /**
  * @fn    cicloDeEjecucion
