@@ -1,12 +1,5 @@
 #include "Globales/globales.h"
 
-t_dictionary *interfaces_conectadas;
-t_log *logger_kernel;
-t_config *config_kernel;
-int quantum_global;
-int grado_multiprogamacion;
-int pid_global;
-
 t_config* iniciar_configkernel(void) {
     t_config* nuevo_config;
     nuevo_config = config_create("./kernel.config");
@@ -32,7 +25,16 @@ void initialize(void) {
     interfaces_conectadas = dictionary_create();
     logger_kernel = iniciar_loggerKernel();
     config_kernel = iniciar_configkernel();
+    listaReady = list_create();
+    listaBlock = list_create();
+    listaExec = list_create();
     quantum_global = config_get_int_value(config_kernel, "QUANTUM");
     grado_multiprogamacion = config_get_int_value(config_kernel, "GRADO_MULTIPROGRAMACION");
     pid_global = 1;
+    KernelSocketCPUDispatch = 0;
+    KernelSocketCPUInterrumpt = 0;
+    KernelSocketMemoria = 0;
+    KernelsocketEscucha = 0;
+    interfaces_conectadas = dictionary_create();
+
 }

@@ -1,6 +1,5 @@
 #include <Procesos/consola.h>
-
-
+#include "Globales/globales.h"
 
 
 
@@ -48,7 +47,7 @@ bool verificar_comando(char* leido)
 void atender_instruccion(char* leido){
    char** comando = string_split(leido," ");
   
-   t_buffer* buffer= buffer_create(sizeof(t_buffer));
+   t_buffer* buffer = buffer_create(sizeof(t_buffer));
 
 
    if(strcmp(leido,"EJECUTAR_SCRIPT")==0)
@@ -59,17 +58,11 @@ void atender_instruccion(char* leido){
    }
    else if(strcmp(leido,"INICIAR_PROCESO")==0)
    {
-       buffer_add_string(buffer,sizeof(comando[1]),comando[1]);
-       planificacionDeProcesos(2,comando[1]);
-       planificacionDeProcesos(3,comando[1]);
-       planificacionDeProcesos(4,comando[1]);
-      
+    planificacionDeProcesos(1,comando[1],-1);      
    }else if(strcmp(leido,"FINALIZAR_PROCESO")==0)
    {
-       buffer_add(buffer,1,sizeof(unsigned int));
-       enviarMensaje(socket,buffer,KERNEL,MENSAJE);
-       //implementar semaforo para cuando termine de finalizar el proceso mandar a CPU otro
-       planificacionDeProcesos(4,comando[1]);
+    int pid=atoi(comando[1]);
+    planificacionDeProcesos(2," ",pid); 
    }else if(strcmp(leido,"DETENER_PLANIFICACION")==0)
    {
 

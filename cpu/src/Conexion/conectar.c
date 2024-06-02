@@ -47,6 +47,7 @@ void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, i
     switch (*modulo)
     {
     case KERNEL:
+        printf ("socket de escuha de cpu %i\n", socket);
         manageKernel(socket, conexion, procesoCPU, interrupcion);
         break;
 
@@ -91,7 +92,7 @@ void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU){
                        (void *)manageDISPATCH,
                        params);
 
-    pthread_detach(hiloDISPATCH);        
+    pthread_join(hiloDISPATCH,NULL);        
 }
 
 void crearHiloINTERRUPT(int *socket, int *interrupcion){
@@ -99,13 +100,13 @@ void crearHiloINTERRUPT(int *socket, int *interrupcion){
 
     parametros_hilo *params = malloc(sizeof(parametros_hilo));
     params->socket = socket;
-    params->interrupcion = interrupcion;
     params->procesoCPU = NULL;
-
+    params->interrupcion = interrupcion;
+    
     pthread_create(&hiloINTERRUPT,
                        NULL,
                        (void *)manageINTERRUPT,
                        params);
 
-    pthread_detach(hiloINTERRUPT);        
+    pthread_join(hiloINTERRUPT,NULL);        
 }

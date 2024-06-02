@@ -12,9 +12,14 @@
 #include <commons/config.h>
 #include <readline/readline.h>
 
+
+
 extern t_dictionary *interfaces_conectadas;
 extern t_log *logger_kernel;
 extern t_config *config_kernel;
+extern t_list* listaReady;
+extern t_list* listaBlock;
+extern t_list* listaExec;
 extern int quantum_global;
 extern int grado_multiprogamacion;
 extern int pid_global;
@@ -24,8 +29,6 @@ extern int KernelSocketMemoria;
 extern int KernelsocketEscucha;
 
 
-t_log* iniciar_loggerKernel(void);
-t_config* iniciar_configkernel(void);
-void initialize(void);
+
 
 #endif // GLOBALES_H

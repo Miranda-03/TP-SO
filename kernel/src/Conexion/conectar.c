@@ -1,4 +1,6 @@
+#include "Globales/globales.h"
 #include "Conexion/conectar.h"
+
 
 typedef struct
 {
@@ -6,15 +8,10 @@ typedef struct
     TipoConn conn;
 } HandshakeMessageKernel;
 
-int KernelSocketCPUDispatch;
-int KernelSocketCPUInterrumpt;
-int KernelSocketMemoria;
-int KernelsocketEscucha;
 
 void conectarModuloKernel()
 {
-    interfaces_conectadas = dictionary_create();
-
+    
     KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
 
     pthread_t threadClientes;
@@ -23,8 +20,8 @@ void conectarModuloKernel()
     // Conexiones con el módulo CPU
     KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
     handshakeKernelCPU(DISPATCH);
-    KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
-    handshakeKernelCPU(INTERRUMPT);
+    /*KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
+    handshakeKernelCPU(INTERRUMPT);*/
 
     // Conexion con el módulo memoria
     KernelSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
@@ -84,7 +81,11 @@ void handshakeKernelCPU(TipoConn conn)
     }
     buffer_add_uint32(buffer, conn);
 
+    int socket = socketSegunConn(conn);
+    printf ("socket %i\n", socket);
+
     enviarMensaje(socketSegunConn(conn), buffer, KERNEL, HANDSHAKE);
+    
 
     if (resultadoHandShake(socketSegunConn(conn)) == 1)
     {
