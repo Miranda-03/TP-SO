@@ -8,6 +8,10 @@ typedef struct
     TipoConn conn;
 } HandshakeMessageKernel;
 
+int KernelSocketCPUDispatch;
+int KernelSocketCPUInterrumpt;
+int KernelSocketMemoria;
+int KernelsocketEscucha;
 
 void conectarModuloKernel()
 {
