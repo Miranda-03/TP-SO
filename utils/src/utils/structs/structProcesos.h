@@ -18,8 +18,8 @@
  */
 typedef struct
 {
-    int pid;
-    int quantum;
+    uint32_t pid;
+    uint32_t quantum;
     Registros registros;
 } Pcb;
 
