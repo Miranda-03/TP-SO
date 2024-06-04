@@ -6,6 +6,7 @@
 #include <Conexion/conectar.h>
 #include <Procesos/consola.h>
 #include <commons/collections/dictionary.h>
+#include <commons/collections/list.h>
 #include <commons/log.h>
 #include <commons/string.h>
 #include <commons/config.h>

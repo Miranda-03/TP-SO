@@ -17,6 +17,7 @@
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <utils/enums/DispositivosIOenum.h>
 #include <Interfaces/interfaces.h>
+#include <CPUConexion/CPUConexion.h>
 
 
 /**
