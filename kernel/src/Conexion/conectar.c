@@ -1,4 +1,3 @@
-#include "Globales/globales.h"
 #include "Conexion/conectar.h"
 
 
@@ -21,21 +20,22 @@ void conectarModuloKernel()
     pthread_t threadClientes;
     pthread_create(&threadClientes, NULL, recibirClientes, (void *)(intptr_t)KernelsocketEscucha);
 
-    // Conexiones con el módulo CPU
-    KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
-    handshakeKernelCPU(DISPATCH);
-    /*KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), NULL);
-    handshakeKernelCPU(INTERRUMPT);*/
+    KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), NULL, MAXCONN);
+    // la siguiente linea es autobloqueante
+    int *KenerlsocketBidireccionalDispatch = esperarCliente(KernelSocketCPUDispatch);
+    if (*KenerlsocketBidireccionalDispatch != -1)
+        //recibirConexion(*KenerlsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
 
-    // Conexion con el módulo memoria
-    KernelSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
-    handshakeKernelMemoria();
-    pthread_join(threadClientes, NULL);
+    KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), NULL, MAXCONN);
+    // la siguiente linea es autobloqueante
+    int *KernelsocketBidireccionalInterrupt = esperarCliente(KernelSocketCPUInterrumpt);
+    if (*KernelsocketBidireccionalInterrupt != -1)
+        //recibirConexion(*CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
 }
 
 void *recibirClientes(void *ptr)
 {
-    int MemoriasocketEscucha = (intptr_t)ptr; // Castear correctamente el descriptor de socket
+    int socketEscucha = (intptr_t)ptr; // Castear correctamente el descriptor de socket
 
     while (1)
     {
@@ -43,7 +43,7 @@ void *recibirClientes(void *ptr)
 
         printf("esperando accept\n");
         int *socketBidireccional = malloc(sizeof(int));
-        *socketBidireccional = accept(MemoriasocketEscucha, NULL, NULL);
+        *socketBidireccional = accept(socketEscucha, NULL, NULL);
         if (socketBidireccional < 0) {
             perror("accept");
             free(socketBidireccional);
@@ -157,3 +157,79 @@ int socketSegunConn(TipoConn conn)
         return -1;
     }
 }
+
+void recibirConexion(int *socket, TipoConn conexion, )
+{
+    TipoModulo *modulo = get_modulo_msg_recv(socket);
+
+    switch (*modulo)
+    {
+    case CPU:
+        manageCPU(socket, conexion);
+        break;
+    case IO:
+        manageIO(socket,);
+    default:
+        break;
+    }
+
+    free(modulo);
+}
+
+void manageCPU(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion)
+{
+    op_code *codigoOperacion = get_opcode_msg_recv(socket);
+    printf("LLEGA AL MANAGE KERNEL DEL CPU \n");
+    if (*codigoOperacion == HANDSHAKE)
+    {
+        enviarPaqueteResult(1, socket, CPU, KERNEL);
+    }
+    else
+    {
+        if(conexion == DISPATCH){
+            crearHiloDISPATCH(socket, procesoCPU);
+        }
+        else{
+            crearHiloINTERRUPT(socket, interrupcion);
+        }
+    }
+
+    free(codigoOperacion);
+}
+
+void crearHiloDISPATCH(int *socket, MotivoDesalojo* motivo, int* pid, Registros* registros, char* instruccion){
+    pthread_t hiloDISPATCHKernel;
+
+    parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo));
+    params->socket = socket;
+    params->registros = registros;
+    params->MotivoDesalojo = motivo;
+    params->pid=pid;
+    params->instruccion=NULL;
+ 
+    pthread_create(&hiloDISPATCHKernel,
+                       NULL,
+                       (void *)manageDISPATCH,
+                       params);
+
+    pthread_join(hiloDISPATCHKernel,NULL);        
+}
+
+void crearHiloINTERRUPT(int *socket, MotivoDesalojo* motivo,int* pid,Registros* registros,char* instruccion){
+    pthread_t hiloINTERRUPTKernel;
+
+    parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo_Kernel));
+    params->socket = socket;
+    params->registros = registros;
+    params->MotivoDesalojo = motivo;
+    params->pid = pid;
+    params->instruccion = instruccion;
+    
+    pthread_create(&hiloINTERRUPTKernel,
+                       NULL,
+                       (void *)manageINTERRUPT,
+                       params);
+
+    pthread_join(hiloINTERRUPTKernel,NULL);        
+}
+

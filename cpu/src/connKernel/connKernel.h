@@ -6,16 +6,10 @@
 #include <utils/structs/structProcesos.h>
 #include <utils/structs/structSendContextCPU.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
+#include <utils/structs/structInt.h>
 
-/**
- * @brief struct para pasar los parametros a la funcion del hilo
- */
-typedef struct
-{
-    int *socket;
-    int *interrupcion;
-    Contexto_proceso *procesoCPU;
-} parametros_hilo;  
+
+
 
 /**
 * @fn    manageDISPATCH

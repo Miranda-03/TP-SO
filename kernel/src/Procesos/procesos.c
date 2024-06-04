@@ -28,6 +28,22 @@ void iniciar_proceso(t_list* list_ready,t_list* list_exec,char* path){
 
 }
 
+Pcb *crearPcb(){
+   Pcb *pcb = malloc(sizeof(Pcb));
+   pcb->pid = asignar_pid();
+   pcb->quantum = quantum_global;
+   pcb->registros.ax = 0;
+   pcb->registros.bx = 0;
+   pcb->registros.cx = 0;
+   pcb->registros.dx = 0;
+   pcb->registros.eax = 0;
+   pcb->registros.ebx = 0;
+   pcb->registros.ecx = 0;
+   pcb->registros.edx = 0;
+   pcb->registros.pc = 0;
+   return pcb;
+}
+
 void llenarbuffer(t_buffer* buffer,Pcb* pcb)
 {
    buffer_add(buffer,pcb->pid,sizeof(uint32_t));

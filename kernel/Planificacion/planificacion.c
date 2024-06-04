@@ -1,6 +1,6 @@
 #include "planificacion.h"
 
-void inicializar_planificador(void){
+/*void inicializar_planificador(void){
     /*thread_mutex_init(&nextPidMutex,NULL);
 	
 
@@ -13,7 +13,7 @@ void inicializar_planificador(void){
 	e_ready = crear_estado(READY);
 	e_execute = crear_estado(EXECUTE);
 	e_exit = crear_estado(EXIT);
-	e_blocked = crear_estado(BLOCKED); */
+	e_blocked = crear_estado(BLOCKED); 
 
 
 	pthread_t  th_execute_pcb;
@@ -49,3 +49,4 @@ void liberarProceso(void){
 	
 }
 
+*/

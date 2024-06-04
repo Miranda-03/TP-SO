@@ -11,6 +11,7 @@
 #include <commons/string.h>
 #include <commons/config.h>
 #include <readline/readline.h>
+#include "utils/structs/structProcesos.h"
 
 
 
@@ -27,6 +28,12 @@ extern int KernelSocketCPUDispatch;
 extern int KernelSocketCPUInterrumpt;
 extern int KernelSocketMemoria;
 extern int KernelsocketEscucha;
+extern int *KenerlsocketBidireccionalDispatch;
+extern int *KenerlsocketBidireccionalInterrupt;
+
+t_config* iniciar_configkernel(void);
+t_log* iniciar_loggerKernel(void);
+void initialize(void);
 
 
 

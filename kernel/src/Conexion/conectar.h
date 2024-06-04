@@ -18,6 +18,7 @@
 #include <utils/enums/DispositivosIOenum.h>
 #include <Interfaces/interfaces.h>
 #include <CPUConexion/CPUConexion.h>
+#include "Globales/globales.h"
 
 
 /**
@@ -68,6 +69,6 @@ void manageIO(int *socket);
 */
 //char *obtener_identificador(void *stream);
 
-
+void recibirConexion(int *socket, TipoConn conexion);
 
 #endif
