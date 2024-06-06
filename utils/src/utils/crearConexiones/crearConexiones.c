@@ -1,6 +1,6 @@
 #include "crearConexiones.h"
 
-int crearSocket(char *puerto, char *ip, int *MaxConexiones)
+int crearSocket(char *puerto, char *ip, int MaxConexiones)
 {
     int resultSocket;
 
@@ -20,19 +20,19 @@ int crearSocket(char *puerto, char *ip, int *MaxConexiones)
     resultSocket = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol);
 
     if (ip == NULL)
-        sockerModoEscucha(resultSocket, servinfo, MaxConexiones);
+        sockerModoEscucha(&resultSocket, servinfo, MaxConexiones);
     else
-        conectarServidor(resultSocket, servinfo);
+        conectarServidor(&resultSocket, servinfo);
 
     freeaddrinfo(servinfo);
 
     return resultSocket;
 }
 
-void sockerModoEscucha(int *socket, struct addrinfo *servinfo, int *MaxConexiones)
+void sockerModoEscucha(int *socket, struct addrinfo *servinfo, int MaxConexiones)
 {
-    bind(socket, servinfo->ai_addr, servinfo->ai_addrlen);
-    listen(socket, MaxConexiones);
+    bind(*socket, servinfo->ai_addr, servinfo->ai_addrlen);
+    listen(*socket, MaxConexiones);
 }
 
 void conectarServidor(int *socket, struct addrinfo *servinfo)
@@ -40,13 +40,13 @@ void conectarServidor(int *socket, struct addrinfo *servinfo)
     int err = 0;
     do
     {
-        err = connect(socket, servinfo->ai_addr, servinfo->ai_addrlen);
+        err = connect(*socket, servinfo->ai_addr, servinfo->ai_addrlen);
     } while (err != -1);
 }
 
 int esperarCliente(int *socket)
 {
-    return accept(socket, NULL, NULL);
+    return accept(*socket, NULL, NULL);
 }
 
 void enviarPaqueteResult(int result_cod, int *socket, TipoModulo moduloResponde, TipoModulo moduloRemitente)

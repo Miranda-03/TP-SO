@@ -18,7 +18,7 @@ int agregar_instrucciones(char *path, int pid)
 
    char char_pid[10];
    sprintf(char_pid, "%d", pid);
-   dictionary_put(memoria_instrucciones, &char_pid, file_instrucciones);
+   dictionary_put(memoria_instrucciones, char_pid, file_instrucciones);
 
    return 1;
 }

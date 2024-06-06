@@ -3,6 +3,8 @@
 
 #include <stdio.h> 
 #include "commons/config.h"
+#include <string.h>
+
 
 /**
 * @fn    obtenerValorConfig

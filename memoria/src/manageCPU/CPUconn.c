@@ -2,22 +2,22 @@
 
 void *manage_conn_cpu(void *ptr)
 {
-    int socketCPU = ((int *)ptr);
+    int socketCPU = *((int *)ptr);
 
     unsigned int pc;
     unsigned int pid;
 
     while (1)
     {
-        op_code *op_code = get_opcode_msg_recv(socketCPU);
-        TipoModulo *modulo = get_modulo_msg_recv(socketCPU);
+        op_code *op_code = get_opcode_msg_recv(&socketCPU);
+        TipoModulo *modulo = get_modulo_msg_recv(&socketCPU);
         //void *stream = buffer_leer_stream_recv(socketCPU);
 
-        t_buffer *buffer = buffer_leer_recv(socket);
+        t_buffer *buffer = buffer_leer_recv(&socketCPU);
         pc = buffer_read_uint32(buffer);
         pid = buffer_read_uint32(buffer);
         buffer_destroy(buffer);
-        enviar_instruccion(socketCPU, pc, pid);
+        enviar_instruccion(&socketCPU, pc, pid);
     }
 }
 

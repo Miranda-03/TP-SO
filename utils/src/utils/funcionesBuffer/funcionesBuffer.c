@@ -18,9 +18,9 @@ void buffer_destroy(t_buffer *buffer)
 t_buffer *buffer_leer_recv(int *socket)
 {
     t_buffer *buffer = buffer_create(0);
-    recv(socket, &(buffer->size), sizeof(uint32_t), 0);
+    recv(*socket, &(buffer->size), sizeof(uint32_t), 0);
     buffer->stream = malloc(buffer->size);
-    recv(socket, buffer->stream, buffer->size, 0);
+    recv(*socket, buffer->stream, buffer->size, 0);
     return buffer;
 }
 
@@ -43,7 +43,7 @@ void buffer_read(t_buffer *buffer, void *data, int size)
 
 void buffer_add_uint32(t_buffer *buffer, uint32_t data)
 {
-    buffer_add(buffer, data, sizeof(uint32_t));
+    buffer_add(buffer, &data, sizeof(uint32_t));
 }
 
 uint32_t buffer_read_uint32(t_buffer *buffer)
@@ -55,7 +55,7 @@ uint32_t buffer_read_uint32(t_buffer *buffer)
 
 void buffer_add_uint8(t_buffer *buffer, uint8_t data)
 {
-    buffer_add(buffer, data, sizeof(uint8_t));
+    buffer_add(buffer, &data, sizeof(uint8_t));
 }
 
 uint32_t buffer_read_uint8(t_buffer *buffer)

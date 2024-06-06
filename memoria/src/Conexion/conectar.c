@@ -4,21 +4,21 @@ void conectarModuloMemoria()
 {
     pthread_t threadModulos;
 
-    int MemoriasocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
+    int MemoriasocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, 10);
 
-    pthread_create(&threadModulos, NULL, recibirModulo, (void *)MemoriasocketEscucha);
+    pthread_create(&threadModulos, NULL, recibirModulo, (void *)&MemoriasocketEscucha);
     pthread_join(threadModulos, NULL);
 }
 
 void *recibirModulo(void *ptr)
 {
-    int MemoriasocketEscucha = (int *)ptr; // Castear correctamente el descriptor de socket
+    int *MemoriasocketEscucha = (int *)ptr; // Castear correctamente el descriptor de socket
     while (1)
     {
         pthread_t thread;
         int *socketBidireccional = malloc(sizeof(int));
         printf("esperando accept\n");
-        *socketBidireccional = accept(MemoriasocketEscucha, NULL, NULL);
+        *socketBidireccional = accept(*MemoriasocketEscucha, NULL, NULL);
         printf("aceptado\n");
         pthread_create(&thread,
                        NULL,
@@ -39,11 +39,11 @@ void *atenderModulo(void *ptr)
     switch (moduloRemitente)
     {
     case IO:
-        manageIO(socketComunicacion);
+        manageIO(&socketComunicacion);
         break;
 
     default:
-        manageModulo(socketComunicacion, moduloRemitente);
+        manageModulo(&socketComunicacion, moduloRemitente);
         break;
     }
     pthread_exit(NULL);

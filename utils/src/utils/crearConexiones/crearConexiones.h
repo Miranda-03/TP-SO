@@ -17,7 +17,7 @@
  * @fn    sockerModoEscucha
  * @brief marcar el socket en modo escucha con listen() y bindiarlo al puerto con bind().
  */
-void sockerModoEscucha(int *socket, struct addrinfo *servinfo, int *MaxConexiones);
+void sockerModoEscucha(int *socket, struct addrinfo *servinfo, int MaxConexiones);
 
 /**
  * @fn    crearSocket
@@ -26,7 +26,7 @@ void sockerModoEscucha(int *socket, struct addrinfo *servinfo, int *MaxConexione
  * @param ip IP del módulo a conectar. NULL si el socket es de eschucha.
  * @param MaxConexiones cantidad máxima de conexiones del socket en modo escucha. Dejar en NULL si el socket es de conexion.
  */
-int crearSocket(char *puerto, char *ip, int *MaxConexiones);
+int crearSocket(char *puerto, char *ip, int MaxConexiones);
 
 /**
  * @fn esperarCliente

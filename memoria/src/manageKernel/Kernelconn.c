@@ -2,18 +2,18 @@
 
 void *manage_conn_kernel(void *ptr)
 {
-    int socketKernel = ((int *)ptr);
+    int socketKernel = *((int *)ptr);
 
     while (1)
     {
-        TipoModulo *modulo = get_modulo_msg_recv(socketKernel);
-        op_code *op_code = get_opcode_msg_recv(socketKernel);
-        t_buffer *buffer = buffer_leer_recv(socketKernel);
+        TipoModulo *modulo = get_modulo_msg_recv(&socketKernel);
+        op_code *op_code = get_opcode_msg_recv(&socketKernel);
+        t_buffer *buffer = buffer_leer_recv(&socketKernel);
 
         if (buffer_read_uint32(buffer) == 1)
         {
             unsigned int pid = buffer_read_uint32(buffer);
-            enviar_mensaje(socketKernel, agregar_instrucciones(obtener_path_instruccion(buffer),pid));
+            enviar_mensaje(&socketKernel, agregar_instrucciones(obtener_path_instruccion(buffer),pid));
         }
         else
         {

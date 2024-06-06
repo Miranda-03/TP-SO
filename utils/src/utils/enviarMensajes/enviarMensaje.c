@@ -13,7 +13,7 @@ void enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code cod
     offset += sizeof(uint32_t);
     memcpy(a_enviar + offset, buffer->stream, buffer->size);
 
-    send(socket, a_enviar, buffer->size + sizeof(TipoModulo) + sizeof(op_code) + sizeof(uint32_t), 0);
+    send(*socket, a_enviar, buffer->size + sizeof(TipoModulo) + sizeof(op_code) + sizeof(uint32_t), 0);
 
     buffer_destroy(buffer);
     free(a_enviar);
@@ -22,13 +22,13 @@ void enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code cod
 op_code *get_opcode_msg_recv(int *socket)
 {
     op_code *opcode = malloc(sizeof(op_code));
-    recv(socket, opcode, sizeof(op_code), MSG_WAITALL);
+    recv(*socket, opcode, sizeof(op_code), MSG_WAITALL);
     return opcode;
 }
 
 TipoModulo *get_modulo_msg_recv(int *socket)
 {
     TipoModulo *modulo = malloc(sizeof(TipoModulo));
-    recv(socket, modulo, sizeof(TipoModulo), MSG_WAITALL);
+    recv(*socket, modulo, sizeof(TipoModulo), MSG_WAITALL);
     return modulo;
 }
