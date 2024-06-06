@@ -16,3 +16,4 @@ int asignar_pid();
 void llenarbuffer(t_buffer* buffer,Pcb* pcb);
 void cambiarGrado(int grado);
 void loggearLista(void *elemento);
+void reingresar_proceso(MotivoDesalojo* motivo,Pcb* pcb);

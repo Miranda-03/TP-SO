@@ -31,7 +31,7 @@ void *buffer_leer_stream_recv(int *socket)
 
 void buffer_add(t_buffer *buffer, void *data, uint32_t size)
 {
-    memcpy(buffer->stream + buffer->offset, &data, size);
+    memcpy(buffer->stream + buffer->offset, data, size);
     buffer->offset += size;
 }
 

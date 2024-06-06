@@ -6,6 +6,7 @@ t_config *config_kernel;
 t_list* listaReady;
 t_list* listaBlock;
 t_list* listaExec;
+t_list* listaQuantum;
 int quantum_global;
 int grado_multiprogamacion;
 int pid_global;
@@ -38,6 +39,7 @@ void initialize(void) {
     listaReady = list_create();
     listaBlock = list_create();
     listaExec = list_create();
+    listaQuantum = list_create();
     quantum_global = config_get_int_value(config_kernel, "QUANTUM");
     grado_multiprogamacion = config_get_int_value(config_kernel, "GRADO_MULTIPROGRAMACION");
     pid_global = 1;

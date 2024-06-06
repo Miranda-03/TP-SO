@@ -21,6 +21,10 @@ typedef struct
     uint32_t edx;
 } Registros;
 
+/**
+ * @brief struct para pasar los parametros a la funcion del hilo
+ */
+
 
 
 #endif

@@ -32,18 +32,18 @@ void *recibirModulo(void *ptr)
 void *atenderModulo(void *ptr)
 {
 
-    int socketComunicacion = *((int *)ptr);
+    int *socketComunicacion = ((int *)ptr);
     TipoModulo moduloRemitente;
-    recv(socketComunicacion, &moduloRemitente, sizeof(TipoModulo), 0);
+    recv(*socketComunicacion, &moduloRemitente, sizeof(TipoModulo), 0);
     printf("Modulo: %d \n", moduloRemitente);
     switch (moduloRemitente)
     {
     case IO:
-        manageIO(&socketComunicacion);
+        manageIO(socketComunicacion);
         break;
 
     default:
-        manageModulo(&socketComunicacion, moduloRemitente);
+        manageModulo(socketComunicacion, moduloRemitente);
         break;
     }
     pthread_exit(NULL);
@@ -55,6 +55,7 @@ void manageModulo(int *socket, TipoModulo modulo)
     printf("ENTRA AL IF DEL HANDSHAKE EN MEMORIA\n");
     if (*codigoOperacion == HANDSHAKE)
     {
+        
         printf("ENTRA AL IF DEL HANDSHAKE EN MEMORIA\n");
         enviarPaqueteResult(1, socket, MEMORIA, modulo);
         iniciar_hilo_conexion(socket, modulo);

@@ -21,6 +21,7 @@ extern t_config *config_kernel;
 extern t_list* listaReady;
 extern t_list* listaBlock;
 extern t_list* listaExec;
+extern t_list* listaQuantum;
 extern int quantum_global;
 extern int grado_multiprogamacion;
 extern int pid_global;

@@ -41,7 +41,8 @@ void obtener_procesoCPU_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int
     obtener_registros(buffer,registros);
     buffer_destroy(buffer);
 
-    pcb = actualizarPcb(pcb,Registros);
+    pcb = actualizarPcb(pcb,registros);
+    reingresar_proceso(motivo,pcb);
 }
 
 void obtener_registros(t_buffer *buffer, Registros* registros)

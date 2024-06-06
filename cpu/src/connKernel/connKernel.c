@@ -1,9 +1,9 @@
 #include "connKernel.h"
 
-void *manageDISPATCH(void *ptr)
+ void *manageDISPATCH(void *ptr)
 {
 
-    parametros_hilo *params = ((parametros_hilo *)ptr);
+    parametros_hilo_Cpu *params = ((parametros_hilo_Cpu *)ptr);
 
     while (1)
     {
@@ -17,7 +17,7 @@ void *manageDISPATCH(void *ptr)
 void *manageINTERRUPT(void *ptr)
 {
 
-    parametros_hilo *params = ((parametros_hilo *)ptr);
+    parametros_hilo_Cpu *params = ((parametros_hilo_Kernel *)ptr);
 
     while (1)
     {
@@ -41,6 +41,7 @@ void obtener_procesoCPU_del_stream(t_buffer *buffer, Contexto_proceso *procesoCP
 }
 
 void obtener_registros(t_buffer *buffer, Contexto_proceso *procesoCPU)
+
 {
     procesoCPU->registros.pc = buffer_read_uint32(buffer);
     procesoCPU->registros.ax = buffer_read_uint8(buffer);
@@ -52,3 +53,4 @@ void obtener_registros(t_buffer *buffer, Contexto_proceso *procesoCPU)
     procesoCPU->registros.dx = buffer_read_uint8(buffer);
     procesoCPU->registros.edx = buffer_read_uint32(buffer);
 }
+

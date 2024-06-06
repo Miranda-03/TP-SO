@@ -65,7 +65,6 @@ int resultadoHandShake(int *socket)
 
     TipoModulo *modulo = get_modulo_msg_recv(socket);
     op_code *op_code = get_opcode_msg_recv(socket);
-
     TipoModulo remitente;
     TipoModulo responde;
     int respuesta;

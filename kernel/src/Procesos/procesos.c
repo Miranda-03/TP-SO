@@ -107,6 +107,13 @@ void cambiarGrado(int grado){
     grado_multiprogamacion = grado;
     //reanudar planificacion
 }
+void reingresar_proceso(MotivoDesalojo* motivo,Pcb* pcb);
+{
+    if(motivo==FIN_DE_QUANNTUM)
+    {
+      list_add(listaQuantum,pcb);  
+    }
+}
 
 
 

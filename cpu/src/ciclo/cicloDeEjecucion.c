@@ -31,7 +31,7 @@ void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char *ins
     char *primerParametro = instruccionSeparada[1];
     char *segundoParametro = instruccionSeparada[2];
     int *registro;
-    t_log *loger_execute = log_create();
+    t_log *loger_execute = log_create("logs/cpu_execute.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
 
     log_info(loger_execute, mensaje_execute_log(procesoCPU->pid, instruccion));
 

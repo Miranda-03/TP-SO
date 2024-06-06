@@ -5,19 +5,19 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
     // Conexion con el módulo memoria
     *CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
 
-    handshakeCPUMemoria(*CPUSocketMemoria);
+    handshakeCPUMemoria(CPUSocketMemoria);
 
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    *CPUsocketBidireccionalDispatch = esperarCliente(CPUsocketEscuchaDispatch);
+    *CPUsocketBidireccionalDispatch = esperarCliente(&CPUsocketEscuchaDispatch);
     if (*CPUsocketBidireccionalDispatch != -1)
-        recibirConn(*CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
+        recibirConn(CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
 
     int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    *CPUsocketBidireccionalInterrupt = esperarCliente(CPUsocketEscuchaInterrupt);
+    *CPUsocketBidireccionalInterrupt = esperarCliente(&CPUsocketEscuchaInterrupt);
     if (*CPUsocketBidireccionalInterrupt != -1)
-        recibirConn(*CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
+        recibirConn(CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
 }
 
 void handshakeCPUMemoria(int *CPUSocketMemoria)
@@ -82,7 +82,7 @@ void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, 
 void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU){
     pthread_t hiloDISPATCH;
 
-    parametros_hilo *params = malloc(sizeof(parametros_hilo));
+    parametros_hilo_Cpu *params = malloc(sizeof(parametros_hilo_Cpu));
     params->socket = socket;
     params->interrupcion = NULL;
     params->procesoCPU = procesoCPU;
@@ -98,7 +98,7 @@ void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU){
 void crearHiloINTERRUPT(int *socket, int *interrupcion){
     pthread_t hiloINTERRUPT;
 
-    parametros_hilo *params = malloc(sizeof(parametros_hilo));
+    parametros_hilo_Cpu *params = malloc(sizeof(parametros_hilo_Cpu));
     params->socket = socket;
     params->procesoCPU = NULL;
     params->interrupcion = interrupcion;

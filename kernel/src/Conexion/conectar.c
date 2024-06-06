@@ -200,7 +200,7 @@ void manageCPU(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int
 void crearHiloDISPATCH(int *socket, MotivoDesalojo* motivo, int* pid, Registros* registros, char* instruccion){
     pthread_t hiloDISPATCHKernel;
 
-    parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo));
+    parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo_Kernel));
     params->socket = socket;
     params->registros = registros;
     params->MotivoDesalojo = motivo;
@@ -215,7 +215,7 @@ void crearHiloDISPATCH(int *socket, MotivoDesalojo* motivo, int* pid, Registros*
     pthread_join(hiloDISPATCHKernel,NULL);        
 }
 
-void crearHiloINTERRUPT(int *socket, MotivoDesalojo* motivo,int* pid,Registros* registros,char* instruccion){
+void crearHiloINTERRUPT(int *socket, MotivoDesalojo* motivo, int* pid, Registros* registros, char* instruccion){
     pthread_t hiloINTERRUPTKernel;
 
     parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo_Kernel));
