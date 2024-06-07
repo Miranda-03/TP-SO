@@ -3,6 +3,7 @@
 
 #include "utils/structs/structInt.h"
 #include "utils/enums/motivosDesalojo.h"
+#include "Procesos/procesos.h"
 
 
 void *manageDISPATCH(void *ptr);

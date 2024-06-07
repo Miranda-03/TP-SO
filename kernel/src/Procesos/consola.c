@@ -54,15 +54,27 @@ void atender_instruccion(char* leido){
    }
    else if(strcmp(leido,"INICIAR_PROCESO")==0)
    {
-    char* path;
-    path= comando[1];
-    iniciar_proceso(listaReady,listaExec,path);      
+    char* path = comando[1];
+    iniciar_proceso(path);      
    }else if(strcmp(leido,"FINALIZAR_PROCESO")==0)
    {
-    int pid;
-    pid=atoi(comando[1]);
-    finalizar_proceso(listaReady, listaExec,listaBlock,pid); 
-   }else if(strcmp(leido,"DETENER_PLANIFICACION")==0)
+    int pid=atoi(comando[1]);
+    Registros* registros=NULL;
+    Pcb* pcb=NULL;
+    pcb=list_find(listaExec,pcb->pid==pid);
+    if(pcb!=NULL)
+    {
+        t_buffer buffer=buffer_create(sizeof(uint32_t));
+        buffer_add(buffer,1,sizeof(uint32_t));
+        enviarMensaje(KernelSocketCPUInterrumpt,buffer,KERNEL,MENSAJE);
+    }
+    else
+    {
+        finalizar_proceso(pid,registros);
+    }
+   }
+    
+   else if(strcmp(leido,"DETENER_PLANIFICACION")==0)
    {
 
    }else if(strcmp(leido,"INICIAR_PLANIFICACION")==0)

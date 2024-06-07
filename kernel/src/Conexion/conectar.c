@@ -168,7 +168,7 @@ void recibirConexion(int *socket, TipoConn conexion, )
         manageCPU(socket, conexion);
         break;
     case IO:
-        manageIO(socket,);
+        manageIO(socket);
     default:
         break;
     }

@@ -12,7 +12,7 @@ void *manageDISPATCH(void *ptr)
         TipoModulo *modulo = get_modulo_msg_recv(params->socket);
         op_code *op_code = get_opcode_msg_recv(params->socket);
 
-        obtener_procesoCPU_del_stream(buffer_leer_recv(params->socket),params->motivo,params->pid,params->registros);
+        obtener_procesoCPU_del_stream(buffer_leer_recv(params->socket),params->motivo,params->pid,params->registros,params->instruccion);
     }
 }
 
@@ -25,24 +25,28 @@ void *manageINTERRUPT(void *ptr)
     {
         TipoModulo *modulo = get_modulo_msg_recv(params->socket);
         op_code *op_code = get_opcode_msg_recv(params->socket);
-        t_buffer *buffer = buffer_leer_recv(socket);
 
-        params->interrupcion = buffer_read_uint32(buffer);// pasar un 1 como unsigned int para interrumpir, un 2 para indicar fin de quanntum
-
-        buffer_destroy(buffer);
+        obtener_procesoCPUint_del_stream(buffer_leer_recv(params->socket),params->motivo,params->pid,params->registros,params->instruccion);
+        
     }
 }
 
-void obtener_procesoCPU_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros* registros)
+void obtener_procesoCPU_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros* registros, char* instruccion)
 {
-    Pcb* pcb;
     motivo = buffer_read_uint32(buffer);
     pid = buffer_read_uint32(buffer);
     obtener_registros(buffer,registros);
     buffer_destroy(buffer);
-
-    pcb = actualizarPcb(pcb,registros);
-    reingresar_proceso(motivo,pcb);
+    manejar_proceso(motivo,pid,registros,instruccion);
+}
+void obtener_procesoCPUint_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros* registros,char* instruccion)
+{
+    motivo = buffer_read_uint32(buffer);
+    pid = buffer_read_uint32(buffer);
+    obtener_registros(buffer,registros);
+    instruccion=buffer_read_string(buffer,strlen(instruccion));
+    buffer_destroy(buffer);
+    manejar_proceso(motivo,pid,registros,instruccion);
 }
 
 void obtener_registros(t_buffer *buffer, Registros* registros)
@@ -58,15 +62,3 @@ void obtener_registros(t_buffer *buffer, Registros* registros)
     registros->registros.edx = buffer_read_uint32(buffer);
 }
 
-void actualizarPcb(Pcb* pcb, Registros* registros){
-    
-    pcb->registros.ax = registros.ax;
-    pcb->registros.bx = registros.bx ;
-    pcb->registros.cx = registros.cx;
-    pcb->registros.dx = registros.dx;
-    pcb->registros.eax = registros.eax;
-    pcb->registros.ebx = registros.ebx;
-    pcb->registros.ecx = registros.ecx;
-    pcb->registros.edx = registros.ecx;
-    pcb->registros.pc = registros.pc;
-}

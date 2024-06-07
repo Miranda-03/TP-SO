@@ -1,25 +1,20 @@
 #include "procesos.h"
 
-void iniciar_proceso(t_list* list_ready,t_list* list_exec,char* path){
-   if(list_size(list_ready)< grado_multiprogamacion)
+void iniciar_proceso(char* path){
+   if(list_size(listaReady)< grado_multiprogamacion)
    {  
-       t_buffer* bufferm = buffer_create(sizeof(uint32_t)*2+strlen(path));
+       t_buffer* buffer = buffer_create(sizeof(uint32_t)*2+strlen(path));
        Pcb* pcb = crearPcb();
-       buffer_add(bufferm,1,sizeof(uint32_t));
-       buffer_add(bufferm,pcb->pid,sizeof(uint32_t));
-       buffer_add(bufferm,path,sizeof(path));
-       enviarMensaje(KernelSocketMemoria,bufferm,KERNEL,PROCESO);
-       if(list_size(list_exec)==0)
+       buffer_add(buffer,1,sizeof(uint32_t));
+       buffer_add(buffer,pcb->pid,sizeof(uint32_t));
+       buffer_add(buffer,path,sizeof(path));
+       enviarMensaje(KernelSocketMemoria,buffer,KERNEL,PROCESO);
+       list_add(listaReady,pcb);
+       log_info(logger_kernel,"Cola Ready / Ready Prioridad: \n");
+       list_iterate(listaReady, loggearLista);
+       if(list_size(listaExec)==0)
        {
-       t_buffer* buffercpu = buffer_create(sizeof(uint32_t)+sizeof(Registros)); 
-       llenarbuffer(buffercpu,pcb);
-       enviarMensaje(KernelSocketCPUDispatch,buffercpu,KERNEL,PROCESO);
-       list_add(list_exec,pcb);
-       }
-       else{
-            list_add(list_ready,pcb);
-            log_info(logger_kernel,"Cola Ready / Ready Prioridad: \n");
-            list_iterate(listaReady, loggearLista);
+       enviarcpu();
        }
    }
    else{
@@ -58,36 +53,87 @@ void llenarbuffer(t_buffer* buffer,Pcb* pcb)
    buffer_add(buffer,pcb->registros.edx,sizeof(uint32_t));
 }
 
-void finalizar_proceso(t_list* listReady,t_list* listExec, t_list* listBlock,int pid) //no esta terminada
+void finalizar_proceso(int pid,Registros* registros) //no esta terminada
 {
     Pcb* pcb=NULL;
-    pcb=list_find(listExec,pcb->pid==pid);
+    pcb=list_find(listaExec,pcb->pid==pid);
     if(pcb!=NULL)
     {
-        t_buffer* buffercpu = buffer_create(sizeof(uint32_t)+sizeof(Registros));
-        t_buffer* buffermem =buffer_create(sizeof(uint32_t)*2);
-        buffer_add(buffermem,-1,sizeof(uint32_t));
-        buffer_add(buffermem,pid,sizeof(uint32_t));
-        list_remove_by_condition(listExec,pcb->pid==pid); 
+        t_buffer* buffer=buffer_create(sizeof(uint32_t)*2);
+        buffer_add(buffer,-1,sizeof(uint32_t));
+        buffer_add(buffer,pid,sizeof(uint32_t));
+        list_remove_by_condition(listaExec,pcb->pid==pid);
+        enviarMensaje(KernelSocketMemoria,buffer,KERNEL,PROCESO);
+        enviarcpu(); 
+        // Aca si sacas el pcb de la listaExec podes ver los registros que tenia antes y despues de la ejecucion 
         //log_info(logger_kernel,"PID: <PID> - Estado Anterior: <ESTADO_ANTERIOR> - Estado Actual: <ESTADO_ACTUAL>\n");
-        pcb=list_get(listReady,0);
-        list_remove(listReady,0);
-        llenarbuffer(buffercpu,pcb);
-        enviarMensaje(KernelSocketCPUDispatch,buffercpu,KERNEL,PROCESO);
+        return;
     }
-    pcb=list_find(listReady,pcb->pid==pid);
+    pcb=list_find(listaReady,pcb->pid==pid);
     if(pcb!=NULL)
     {
-    list_remove_by_condition(listReady,pcb->pid==pid);
+     t_buffer* buffer=buffer_create(sizeof(uint32_t)*2);
+        buffer_add(buffer,-1,sizeof(uint32_t));
+        buffer_add(buffer,pid,sizeof(uint32_t));    
+    list_remove_by_condition(listaReady,pcb->pid==pid);
+    enviarMensaje(KernelSocketMemoria,buffer,KERNEL,PROCESO);
+    return;
     }
     pcb=list_find(listaBlock,pcb->pid==pid);
     if(pcb!=NULL)
     {
-    list_remove_by_condition(listBlock,pcb->pid==pid);  
+        t_buffer* buffer=buffer_create(sizeof(uint32_t)*2);
+        buffer_add(buffer,-1,sizeof(uint32_t));
+        buffer_add(buffer,pid,sizeof(uint32_t));    
+    list_remove_by_condition(listaBlock,pcb->pid==pid);  
+    enviarMensaje(KernelSocketMemoria,buffer,KERNEL,PROCESO);
+    return;
     }
-    
+    //log_info(logger_kernel,"Proceso no encontrado")
 }
+void manejar_proceso(MotivoDesalojo *motivo, int pid, Registros* registros,char* instruccion)
+{
+    if(motivo==FIN_DE_QUANNTUM)
+    {
+        Pcb* pcb=list_get(listaExec,0);
+        list_remove(listaExec,0);
+        //Si hay VRR resta el quantum del pcb por el asignado por el sistema y envia el proceso a la lista de mayor prioridad
+        pcb->registros=registros;
+        list_add(listaReady,pcb);
+        enviarcpu();
+    }
+    else if(motivo==INTERRUPCION_IO)
+    {
+        Pcb* pcb=list_get(listaExec,0);
+        list_remove(listaExec,0);
+        pcb->registros=registros;
+        //Manda a hacer la IO
+        list_add(listaBlock,pcb);
+        enviarcpu();
+    }
+    else if(motivo==INTERRUPCION_KERNEL)
+    {
+        finalizar_proceso(pid,registros);
+    }
+    else if(motivo==ERROR_DE_PROGRAMA)
+    {
 
+    }
+    else if(motivo==EXIT_SIGNAL)
+    {
+
+    }
+}
+void enviarcpu()
+{
+    t_buffer* buffer=buffer_create(sizeof(uint32_t)+sizeof(Registros));
+    Pcb* pcb=list_get(listaReady,0);
+    list_remove(listaReady,0);
+    llenarbuffer(buffer,pcb);
+    enviarMensaje(KernelSocketCPUDispatch,buffer,KERNEL,PROCESO);
+    //Si hay RR empieza a contar el quantum que tiene el pcb
+    list_add(listaExec,pcb);
+}
 int asignar_pid(){
     int valor;
     //pthread_mutex_lock(&mutex);
@@ -107,13 +153,7 @@ void cambiarGrado(int grado){
     grado_multiprogamacion = grado;
     //reanudar planificacion
 }
-void reingresar_proceso(MotivoDesalojo* motivo,Pcb* pcb);
-{
-    if(motivo==FIN_DE_QUANNTUM)
-    {
-      list_add(listaQuantum,pcb);  
-    }
-}
+
 
 
 
@@ -153,3 +193,4 @@ void reingresar_proceso(MotivoDesalojo* motivo,Pcb* pcb);
        }
    }
 } */
+
