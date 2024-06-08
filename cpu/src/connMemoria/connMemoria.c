@@ -14,12 +14,11 @@ char *recibirInstruccion(int *socket, unsigned int pid, unsigned int pc)
     op_code *op_code = get_opcode_msg_recv(socket);
     t_buffer *buffer_recv = buffer_leer_recv(socket);
 
-    int size = buffer_read_uint32(socket);
+    int size = buffer_read_uint32(buffer_recv);
     char *instruccion = buffer_read_string(buffer, size);
 
     buffer_destroy(buffer);
     buffer_destroy(buffer_recv);
-    free(size);
 
     return instruccion;
 }

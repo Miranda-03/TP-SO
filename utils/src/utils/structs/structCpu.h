@@ -8,23 +8,28 @@
  * @brief struct de registros que se mandan a la cpu
  */
 
-typedef struct
-{
+typedef union {
+    int32_t i32;
+    uint8_t u8;
+} Registro;
+
+typedef struct {
     uint32_t pc;
-    uint8_t ax;
-    uint32_t eax;
-    uint8_t bx;
-    uint32_t ebx;
-    uint8_t cx;
-    uint32_t ecx;
-    uint8_t dx;
-    uint32_t edx;
+    Registro ax;
+    Registro eax;
+    Registro bx;
+    Registro ebx;
+    Registro cx;
+    Registro ecx;
+    Registro dx;
+    Registro edx;
 } Registros;
 
-/**
- * @brief struct para pasar los parametros a la funcion del hilo
- */
-
+/*
+typedef struct {
+    Registros registros;
+} Contexto_proceso;
+*/
 
 
 #endif

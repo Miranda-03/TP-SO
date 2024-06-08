@@ -6,10 +6,10 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
 
     while (1)
     {
-        if (procesoCPU->pid != NULL)
+        if ((procesoCPU->pid) != -1)
         {
             // FETCH
-            log_info(loger, mensaje_fetch_instruccion_log(procesoCPU->pid, procesoCPU->registros.pc));
+            log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->registros.pc)));
             char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->registros.pc);
 
             procesoCPU->registros.pc += 1;
@@ -25,32 +25,60 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
     }
 }
 
-void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch)
+void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch)
 {
     char *operacion = instruccionSeparada[0];
     char *primerParametro = instruccionSeparada[1];
     char *segundoParametro = instruccionSeparada[2];
     int *registro;
+    Registro *reg;
+    char tipo;
     t_log *loger_execute = log_create("logs/cpu_execute.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
 
-    log_info(loger_execute, mensaje_execute_log(procesoCPU->pid, instruccion));
+    log_info(loger_execute, mensaje_execute_log(&(procesoCPU->pid), instruccion));
 
     switch (*operacion)
     {
     case SET:
-        registro = obtenerRegistro(primerParametro, procesoCPU);
-        *registro = atoi(&segundoParametro);
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        if (tipo == 'i')
+        {
+            printf("Valor de ax: %d\n", reg->i32);
+            reg->i32 = atoi(segundoParametro);
+        }
+        else if (tipo == 'u')
+        {
+            reg->u8 = atoi(segundoParametro);
+        }
+        *registro = atoi(segundoParametro);
         break;
     case SUM:
-        registro = obtenerRegistro(primerParametro, procesoCPU);
-        *registro += atoi(&segundoParametro);
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        if (tipo == 'i')
+        {
+            printf("Valor de ax: %d\n", reg->i32);
+            reg->i32 += atoi(segundoParametro);
+        }
+        else if (tipo == 'u')
+        {
+            reg->u8 += atoi(segundoParametro);
+        }
         break;
     case SUB:
-        registro = obtenerRegistro(primerParametro, procesoCPU);
-        *registro -= atoi(&segundoParametro);
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        if (tipo == 'i')
+        {
+            printf("Valor de ax: %d\n", reg->i32);
+            reg->i32 -= atoi(segundoParametro);
+        }
+        else if (tipo == 'u')
+        {
+            reg->u8 -= atoi(segundoParametro);
+        }
         break;
     case JNZ:
-        instruccion_JNZ(procesoCPU, obtenerRegistro(primerParametro, procesoCPU), atoi(&segundoParametro));
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        instruccion_JNZ(procesoCPU, reg, tipo, atoi(segundoParametro));
         break;
     case IO_GEN_SLEEP:
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
@@ -64,71 +92,85 @@ void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char *ins
     }
 }
 
-int *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU)
+Registro *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU, char *tipo)
 {
     if (strcmp(registro, "ax") == 0)
     {
+        *tipo = 'u';
         return &(procesoCPU->registros.ax);
     }
     else if (strcmp(registro, "eax") == 0)
     {
+        *tipo = 'i';
         return &(procesoCPU->registros.eax);
     }
     else if (strcmp(registro, "bx") == 0)
     {
+        *tipo = 'u';
         return &(procesoCPU->registros.bx);
     }
     else if (strcmp(registro, "ebx") == 0)
     {
+        *tipo = 'i';
         return &(procesoCPU->registros.ebx);
     }
     else if (strcmp(registro, "cx") == 0)
     {
+        *tipo = 'u';
         return &(procesoCPU->registros.cx);
     }
     else if (strcmp(registro, "ecx") == 0)
     {
+        *tipo = 'i';
         return &(procesoCPU->registros.ecx);
     }
     else if (strcmp(registro, "dx") == 0)
     {
+        *tipo = 'u';
         return &(procesoCPU->registros.dx);
     }
     else if (strcmp(registro, "edx") == 0)
     {
+        *tipo = 'i';
         return &(procesoCPU->registros.edx);
     }
     else
     {
-        // Devolver un valor por defecto en caso de que no coincida ningún registro
         return NULL;
     }
 }
 
 void checkInterrupt(Contexto_proceso *procesoCPU, int *interrupcion, int *CPUsocketBidireccionalDispatch)
 {
-    if (procesoCPU->pid == NULL)
+    if (procesoCPU->pid == -1)
         return;
 
     if (*interrupcion == 1)
     {
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_KERNEL, NULL, CPUsocketBidireccionalDispatch);
         *interrupcion = 0;
-        procesoCPU->pid = NULL;
+        procesoCPU->pid = -1;
     }
     else if (*interrupcion == 2)
     {
         enviar_contexto_al_kernel(procesoCPU, FIN_DE_QUANNTUM, NULL, CPUsocketBidireccionalDispatch);
         *interrupcion = 0;
-        procesoCPU->pid = NULL;
+        procesoCPU->pid = -1;
     }
 }
 
-void instruccion_JNZ(Contexto_proceso *procesoCPU, int *registro, int valor)
+void instruccion_JNZ(Contexto_proceso *procesoCPU, Registro *reg, char tipo, int valor)
 {
-    if (*registro != 0)
+
+    if (tipo == 'i')
     {
-        procesoCPU->registros.pc = valor;
+        if (reg->i32 != 0)
+            procesoCPU->registros.pc = valor;
+    }
+    else if (tipo == 'u')
+    {
+        if (reg->u8 != 0)
+            procesoCPU->registros.pc = valor;
     }
 }
 
@@ -145,21 +187,21 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     }
 
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);
-    //buffer_destroy(buffer);
-    procesoCPU->pid = NULL;
+    // buffer_destroy(buffer);
+    procesoCPU->pid = -1;
 }
 
 void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
 {
     buffer_add_uint32(buffer, procesoCPU->registros.pc);
-    buffer_add_uint8(buffer, procesoCPU->registros.ax);
-    buffer_add_uint32(buffer, procesoCPU->registros.eax);
-    buffer_add_uint8(buffer, procesoCPU->registros.bx);
-    buffer_add_uint32(buffer, procesoCPU->registros.ebx);
-    buffer_add_uint8(buffer, procesoCPU->registros.cx);
-    buffer_add_uint32(buffer, procesoCPU->registros.ecx);
-    buffer_add_uint8(buffer, procesoCPU->registros.dx);
-    buffer_add_uint32(buffer, procesoCPU->registros.edx);
+    buffer_add_uint8(buffer, procesoCPU->registros.ax.u8);
+    buffer_add_uint32(buffer, procesoCPU->registros.eax.i32);
+    buffer_add_uint8(buffer, procesoCPU->registros.bx.u8);
+    buffer_add_uint32(buffer, procesoCPU->registros.ebx.i32);
+    buffer_add_uint8(buffer, procesoCPU->registros.cx.u8);
+    buffer_add_uint32(buffer, procesoCPU->registros.ecx.i32);
+    buffer_add_uint8(buffer, procesoCPU->registros.dx.u8);
+    buffer_add_uint32(buffer, procesoCPU->registros.edx.i32);
 }
 
 char *mensaje_fetch_instruccion_log(int *pid, int *pc)

@@ -26,13 +26,13 @@ void cicloDeEjecucion(int *CPUSocketMemoria,
  * @fn    execute
  * @brief Fase de execute del CPU.
  */
-void execute(char instruccionSeparada[], Contexto_proceso *procesoCPU, char* instruccion, int *CPUsocketBidireccionalDispatch );
+void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char* instruccion, int *CPUsocketBidireccionalDispatch );
 
 /**
  * @fn    obtenerRegistro
  * @brief obtiene el registro según un dato tipo char*.
  */
-int* obtenerRegistro(char* registro, Contexto_proceso *procesoCPU);
+Registro *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU, char *tipo);
 
 /**
  * @fn    checkInterrupt
@@ -50,7 +50,7 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
  * @fn    instruccion_JNZ
  * @brief ejecutar la instrucción JNZ.
  */
-void instruccion_JNZ(Contexto_proceso *procesoCPU, int *registro, int valor);
+void instruccion_JNZ(Contexto_proceso *procesoCPU, Registro *reg, char tipo, int valor);
 
 /**
  * @fn    agregar_registros_al_buffer

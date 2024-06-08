@@ -52,13 +52,13 @@ void obtener_procesoCPUint_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, 
 void obtener_registros(t_buffer *buffer, Registros* registros)
 {
     registros->registros.pc = buffer_read_uint32(buffer);
-    registros->registros.ax = buffer_read_uint8(buffer);
-    registros->registros.eax = buffer_read_uint32(buffer);
-    registros->registros.bx = buffer_read_uint8(buffer);
-    registros->registros.ebx = buffer_read_uint32(buffer);
-    registros->registros.cx = buffer_read_uint8(buffer);
-    registros->registros.ecx = buffer_read_uint32(buffer);
-    registros->registros.dx = buffer_read_uint8(buffer);
-    registros->registros.edx = buffer_read_uint32(buffer);
+    registros->registros.ax.u8 = buffer_read_uint8(buffer);
+    registros->registros.eax.i32 = buffer_read_uint32(buffer);
+    registros->registros.bx.u8 = buffer_read_uint8(buffer);
+    registros->registros.ebx.i32 = buffer_read_uint32(buffer);
+    registros->registros.cx.u8 = buffer_read_uint8(buffer);
+    registros->registros.ecx.i32 = buffer_read_uint32(buffer);
+    registros->registros.dx.u8 = buffer_read_uint8(buffer);
+    registros->registros.edx.i32 = buffer_read_uint32(buffer);
 }
 
