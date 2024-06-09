@@ -12,6 +12,7 @@
 #include <commons/config.h>
 #include <readline/readline.h>
 #include "utils/structs/structProcesos.h"
+#include <utils/enums/algorimos.h>
 
 
 
@@ -29,8 +30,11 @@ extern int KernelSocketCPUDispatch;
 extern int KernelSocketCPUInterrumpt;
 extern int KernelSocketMemoria;
 extern int KernelsocketEscucha;
-extern int *KenerlsocketBidireccionalDispatch;
-extern int *KenerlsocketBidireccionalInterrupt;
+extern int KernelsocketIO;
+extern int *KernelsocketBidireccionalIO;
+extern int *KernelsocketBidireccionalDispatch;
+extern int *KernelsocketBidireccionalInterrupt;
+extern algoritmo algoritmo_actual;
 
 t_config* iniciar_configkernel(void);
 t_log* iniciar_loggerKernel(void);

@@ -43,6 +43,7 @@ void initialize(void) {
     quantum_global = config_get_int_value(config_kernel, "QUANTUM");
     grado_multiprogamacion = config_get_int_value(config_kernel, "GRADO_MULTIPROGRAMACION");
     pid_global = 1;
+    algoritmo_actual = FIFO;
     interfaces_conectadas = dictionary_create();
 
 }

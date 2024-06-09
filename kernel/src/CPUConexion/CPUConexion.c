@@ -31,7 +31,7 @@ void *manageINTERRUPT(void *ptr)
     }
 }
 
-void obtener_procesoCPU_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros* registros, char* instruccion)
+void obtener_procesoCPU_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros* registros, instruccionIO* instruccion)
 {
     motivo = buffer_read_uint32(buffer);
     pid = buffer_read_uint32(buffer);
@@ -39,12 +39,12 @@ void obtener_procesoCPU_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int
     buffer_destroy(buffer);
     manejar_proceso(motivo,pid,registros,instruccion);
 }
-void obtener_procesoCPUint_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros* registros,char* instruccion)
+void obtener_procesoCPUint_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros* registros,instruccionIO* instruccion)
 {
     motivo = buffer_read_uint32(buffer);
     pid = buffer_read_uint32(buffer);
     obtener_registros(buffer,registros);
-    instruccion=buffer_read_string(buffer,strlen(instruccion));
+    instruccion=buffer_read_uint32(buffer);
     buffer_destroy(buffer);
     manejar_proceso(motivo,pid,registros,instruccion);
 }

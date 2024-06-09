@@ -4,6 +4,7 @@
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/structs/structProcesos.h>
 #include <utils/enums/motivosDesalojo.h>
+#include <utils/enums/instruccionesIO.h>
 #include "Globales/globales.h"
 #include "CPUConexion/CPUConexion.h"
 
@@ -18,4 +19,4 @@ int asignar_pid();
 void llenarbuffer(t_buffer* buffer,Pcb* pcb);
 void cambiarGrado(int grado);
 void loggearLista(void *elemento);
-void manejar_proceso(MotivoDesalojo* motivo,int pid,Registros* registros,char* instruccion);
+void manejar_proceso(MotivoDesalojo* motivo,int pid,Registros* registros,instruccionIO* instruccion);

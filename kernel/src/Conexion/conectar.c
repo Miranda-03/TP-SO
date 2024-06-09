@@ -11,26 +11,31 @@ int KernelSocketCPUDispatch;
 int KernelSocketCPUInterrumpt;
 int KernelSocketMemoria;
 int KernelsocketEscucha;
+int KernelsocketIO;
 
 void conectarModuloKernel()
 {
     
-    KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
+    /*KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
 
     pthread_t threadClientes;
-    pthread_create(&threadClientes, NULL, recibirClientes, (void *)(intptr_t)KernelsocketEscucha);
+    pthread_create(&threadClientes, NULL, recibirClientes, (void *)(intptr_t)KernelsocketEscucha);*/
 
     KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
-    int *KenerlsocketBidireccionalDispatch = esperarCliente(KernelSocketCPUDispatch);
-    if (*KenerlsocketBidireccionalDispatch != -1)
-        //recibirConexion(*KenerlsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
+    int *KernelsocketBidireccionalDispatch = esperarCliente(KernelSocketCPUDispatch);
+    if (*KernelsocketBidireccionalDispatch != -1)
+        recibirConexion(*KernelsocketBidireccionalDispatch, DISPATCH);
 
     KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
     int *KernelsocketBidireccionalInterrupt = esperarCliente(KernelSocketCPUInterrumpt);
     if (*KernelsocketBidireccionalInterrupt != -1)
-        //recibirConexion(*CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
+        recibirConexion(*KernelsocketBidireccionalInterrupt, INTERRUMPT);
+    KernelsocketIO = crearSocket(PATH_CONFIG,"PUERTO_IO",NULL,MAXCONN);
+    int *KernelsocketBidireccionalIO = esperarCliente(KernelsocketIO);
+    if(*KernelsocketBidireccionalIO!= -1)
+    recibirConexion(*KernelsocketBidireccionalIO,IO);
 }
 
 void *recibirClientes(void *ptr)
@@ -56,25 +61,19 @@ void *recibirClientes(void *ptr)
     return NULL; // Agregar un return al final de la función
 }
 
-void *atenderIO(void *ptr)
+/*void *atenderIO(int* socket,TipoConn* conexion)
 {
-    int socketComunicacion = *((int *)ptr);
-
-    TipoModulo *moduloEntrante = get_modulo_msg_recv(socketComunicacion);
-
-    switch (*moduloEntrante)
+    op_code *codigoOperacion = get_opcode_msg_recv(socket);
+    printf("LLEGA A ATENDER IO \n");
+    if(*codigoOperacion==HANDSHAKE)
     {
-    case IO:
-        manageIO(socketComunicacion);
-        break;
-    default:
-        enviarPaqueteResult(-1, socketComunicacion, KERNEL, *moduloEntrante);
-        break;
+        enviarPaqueteResult(1, socket, IO, KERNEL);
     }
-
-    free(moduloEntrante);
-    return NULL;
-}
+    else{
+        manageIO(socket,TipoConn* conexion);
+    }
+    free(codigoOperacion);
+}*/
 
 void handshakeKernelCPU(TipoConn conn)
 {
@@ -103,30 +102,6 @@ void handshakeKernelCPU(TipoConn conn)
     buffer_destroy(buffer);
 }
 
-void manageIO(int *socket)
-{
-    op_code *opCode = get_opcode_msg_recv(socket);
-    if (!opCode) {
-        perror("get_opcode_msg_recv");
-        return;
-    }
-//impresora
-    t_buffer *buffer = buffer_leer_recv(socket);
-
-    TipoInterfaz tipo = buffer_read_uint32(buffer);
-    int sizeIdentificador = buffer_read_uint32(buffer);
-    char *identificador = buffer_read_string(buffer, sizeIdentificador);
-    buffer_destroy(buffer);
-    if (*opCode == HANDSHAKE)
-    {
-        guardar_interfaz_conectada(socket, tipo, identificador, interfaces_conectadas);
-        enviarPaqueteResult(1, socket, KERNEL, IO);
-    }
-    else
-    {
-       enviarPaqueteResult(-1, socket, KERNEL, IO);
-    }
-}
 
 void handshakeKernelMemoria()
 {
@@ -158,7 +133,7 @@ int socketSegunConn(TipoConn conn)
     }
 }
 
-void recibirConexion(int *socket, TipoConn conexion, )
+void recibirConexion(int *socket, TipoConn conexion)
 {
     TipoModulo *modulo = get_modulo_msg_recv(socket);
 
@@ -168,7 +143,7 @@ void recibirConexion(int *socket, TipoConn conexion, )
         manageCPU(socket, conexion);
         break;
     case IO:
-        manageIO(socket);
+        crearHiloIO(socket);
     default:
         break;
     }
@@ -197,7 +172,7 @@ void manageCPU(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int
     free(codigoOperacion);
 }
 
-void crearHiloDISPATCH(int *socket, MotivoDesalojo* motivo, int* pid, Registros* registros, char* instruccion){
+void crearHiloDISPATCH(int *socket, MotivoDesalojo* motivo, int* pid, Registros* registros, instruccionIO* instruccion){
     pthread_t hiloDISPATCHKernel;
 
     parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo_Kernel));
@@ -215,7 +190,7 @@ void crearHiloDISPATCH(int *socket, MotivoDesalojo* motivo, int* pid, Registros*
     pthread_join(hiloDISPATCHKernel,NULL);        
 }
 
-void crearHiloINTERRUPT(int *socket, MotivoDesalojo* motivo, int* pid, Registros* registros, char* instruccion){
+void crearHiloINTERRUPT(int *socket, MotivoDesalojo* motivo, int* pid, Registros* registros, instruccionIO* instruccion){
     pthread_t hiloINTERRUPTKernel;
 
     parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo_Kernel));
@@ -232,4 +207,17 @@ void crearHiloINTERRUPT(int *socket, MotivoDesalojo* motivo, int* pid, Registros
 
     pthread_join(hiloINTERRUPTKernel,NULL);        
 }
+crearHiloIO(int* socket,TipoInterfaz* tipo,char* identificador)
+{
+    pthread_t hilo_IO_Kernel;
+        parametros_hilo_IO *params = malloc(sizeof(parametros_hilo_IO));
+        params->socket=socket;
+        params->interfaz=tipo;
+        params->identificador=identificador;
+         pthread_create(&hilo_IO_Kernel,
+                       NULL,
+                       (void *)manageIO,
+                       params);
 
+    pthread_join(hilo_IO_Kernel,NULL); 
+}

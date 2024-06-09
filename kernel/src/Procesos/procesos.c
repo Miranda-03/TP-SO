@@ -91,15 +91,21 @@ void finalizar_proceso(int pid,Registros* registros) //no esta terminada
     }
     //log_info(logger_kernel,"Proceso no encontrado")
 }
-void manejar_proceso(MotivoDesalojo *motivo, int pid, Registros* registros,char* instruccion)
+void manejar_proceso(MotivoDesalojo *motivo, int pid, Registros* registros,instruccionIO* instruccion)
 {
     if(motivo==FIN_DE_QUANNTUM)
     {
         Pcb* pcb=list_get(listaExec,0);
         list_remove(listaExec,0);
-        //Si hay VRR resta el quantum del pcb por el asignado por el sistema y envia el proceso a la lista de mayor prioridad
         pcb->registros=registros;
+        if(algoritmo_actual==VRR)
+        {
+            pcb->quantum-=quantum_global;
+            list_add(listaQuantum,pcb);
+        }
+        else{
         list_add(listaReady,pcb);
+        }
         enviarcpu();
     }
     else if(motivo==INTERRUPCION_IO)
@@ -107,7 +113,10 @@ void manejar_proceso(MotivoDesalojo *motivo, int pid, Registros* registros,char*
         Pcb* pcb=list_get(listaExec,0);
         list_remove(listaExec,0);
         pcb->registros=registros;
-        //Manda a hacer la IO
+        t_buffer buffer = buffer_create(sizeof(uint32_t)*2);
+        buffer_add(buffer,pid);
+        buffer_add(buffer,instruccion);
+        enviarMensaje(KernelsocketIO,buffer,KERNEL,PROCESO);
         list_add(listaBlock,pcb);
         enviarcpu();
     }
@@ -127,12 +136,30 @@ void manejar_proceso(MotivoDesalojo *motivo, int pid, Registros* registros,char*
 void enviarcpu()
 {
     t_buffer* buffer=buffer_create(sizeof(uint32_t)+sizeof(Registros));
-    Pcb* pcb=list_get(listaReady,0);
+    Pcb* pcb=NULL;
+    pcb=list_get(listaQuantum,0);
+    if(pcb!=NULL)
+    {
+        list_remove(listaQuantum,0);
+    }
+    else
+    {
+    pcb=list_get(listaReady,0);
+    if(pcb!=NULL)
+    {
     list_remove(listaReady,0);
+    }
+    }
+    if(pcb!=NULL)
+    {
     llenarbuffer(buffer,pcb);
     enviarMensaje(KernelSocketCPUDispatch,buffer,KERNEL,PROCESO);
     //Si hay RR empieza a contar el quantum que tiene el pcb
     list_add(listaExec,pcb);
+    }
+    else{
+        //No hay procesos a ejecutar
+    }
 }
 int asignar_pid(){
     int valor;

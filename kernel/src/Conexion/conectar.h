@@ -19,6 +19,7 @@
 #include <Interfaces/interfaces.h>
 #include <CPUConexion/CPUConexion.h>
 #include "Globales/globales.h"
+#include <IOconexion/IOconexion.h>
 
 
 /**
@@ -37,7 +38,7 @@ void *recibirClientes(void *ptr);
 * @fn    atenderIO
 * @brief función para atender al módulo I/O.
 */
-void *atenderIO(void *socketComunicacion);
+void *atenderIO(int* socket,TipoConn* conexion);
 
 /**
 * @fn    handshakeKernelCPU
