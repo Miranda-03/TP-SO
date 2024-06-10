@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <commons/collections/dictionary.h>
+#include <MemoriaPrincipal/memoriaPrincipal.h>
 
 /**
  * @fn    crear_mem_instrucciones
@@ -15,12 +16,14 @@ void crear_mem_instrucciones();
  * @fn    agregar_instrucciones
  * @brief agrega las instrucciones indicadas en el PATH con su PID al diccionario.
  */
-int agregar_instrucciones(char *path, int pid);
+int agregar_instrucciones(char* path, int pid)
 
 /**
  * @fn    obtener_instruccion
  * @brief retorna una instruccion.
  */
-char *obtener_instruccion(unsigned int pid, unsigned int pc);
+char* obtener_instruccion(int pid, int pc);
+
+void cargar_pagina(Memoria* memoria, int pid, const char* archivo_pseudocodigo, int pagina_indice);
 
 #endif
