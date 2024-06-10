@@ -53,4 +53,3 @@ void obtener_registros(t_buffer *buffer, Contexto_proceso *procesoCPU)
     procesoCPU->registros.dx.u8 = buffer_read_uint8(buffer);
     procesoCPU->registros.edx.i32 = buffer_read_uint32(buffer);
 }
-

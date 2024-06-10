@@ -1,5 +1,5 @@
 #include "IOconexion.h"
-void manageIO(void* ptr)
+/* void manageIO(void* ptr)
 {
     parametros_hilo_IO* params = ((parametros_hilo_IO *)ptr);
     op_code *opCode = get_opcode_msg_recv(params->socket);
@@ -26,4 +26,4 @@ else if(*opCode==MENSAJE)
     {
        enviarPaqueteResult(-1, socket, KERNEL, IO);
     }
-}
+} */

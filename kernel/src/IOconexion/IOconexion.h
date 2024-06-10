@@ -6,4 +6,6 @@
 #include "Procesos/procesos.h"
 #include "utils/enums/codigosOperacion.h"
 
-void* manageIO(void* ptr);
+//void* manageIO(void* ptr);
+
+#endif

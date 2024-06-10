@@ -80,7 +80,7 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         instruccion_JNZ(procesoCPU, reg, tipo, atoi(segundoParametro));
         break;
-    case IO_GEN_SLEEP:
+    case IO_GEN_SLEEP_CPU:
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
         break;
     case EXIT:

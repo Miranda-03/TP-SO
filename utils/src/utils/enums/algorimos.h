@@ -14,6 +14,6 @@ typedef enum {
     FIFO,
     RR,
     VRR
-} algoritmo;
+} Algoritmo;
 
 #endif

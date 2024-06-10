@@ -20,6 +20,7 @@
 #include <CPUConexion/CPUConexion.h>
 #include "Globales/globales.h"
 #include <IOconexion/IOconexion.h>
+#include <utils/structs/structInt.h>
 
 
 /**
@@ -50,7 +51,7 @@ void handshakeKernelCPU(TipoConn conn);
 * @fn    handshakeKernelMemoria
 * @brief función para atender realizar el handshake entre el kernel y el Memoria.
 */
-void handshakeKernelMemoria(); 
+void handshakeKernelMemoria(int* socketMemoria); 
 
 /**
 * @fn    socketSegunConn

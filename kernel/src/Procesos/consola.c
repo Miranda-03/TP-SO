@@ -49,8 +49,6 @@ void atender_instruccion(char* leido){
    if(strcmp(leido,"EJECUTAR_SCRIPT")==0)
    { 
        //buffer_add_string(buffer,sizeof(comando[1]),comando[1]);
-
-
    }
    else if(strcmp(leido,"INICIAR_PROCESO")==0)
    {
@@ -59,19 +57,20 @@ void atender_instruccion(char* leido){
    }else if(strcmp(leido,"FINALIZAR_PROCESO")==0)
    {
     int pid=atoi(comando[1]);
-    Registros* registros=NULL;
-    Pcb* pcb=NULL;
+    /*
+    decidir si se trabaja con listas o colas
+    Pcb* pcb;
     pcb=list_find(listaExec,pcb->pid==pid);
     if(pcb!=NULL)
     {
-        t_buffer buffer=buffer_create(sizeof(uint32_t));
+        t_buffer *buffer=buffer_create(sizeof(uint32_t));
         buffer_add(buffer,1,sizeof(uint32_t));
         enviarMensaje(KernelSocketCPUInterrumpt,buffer,KERNEL,MENSAJE);
     }
     else
     {
-        finalizar_proceso(pid,registros);
-    }
+        finalizar_proceso(pid,pcb->registros);
+    } */
    }
     
    else if(strcmp(leido,"DETENER_PLANIFICACION")==0)
@@ -86,9 +85,11 @@ void atender_instruccion(char* leido){
     cambiarGrado(grado);
    }else if(strcmp(leido,"PROCESO_ESTADO")==0)
    {
+    /*
+    decidir listas o colas
     list_iterate(listaReady, loggearLista);
     list_iterate(listaExec, loggearLista);
-    list_iterate(listaBlock,loggearLista);
+    list_iterate(listaBlock,loggearLista);*/
    }else{
        log_error(logger_kernel,"ERROR");
       

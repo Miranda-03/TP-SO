@@ -29,8 +29,7 @@ void *recibirModulo(void *ptr)
     return NULL; // Agregar un return al final de la función
 }
 
-void *atenderModulo(void *ptr)
-{
+void *atenderModulo(void *ptr){
 
     int *socketComunicacion = ((int *)ptr);
     TipoModulo moduloRemitente;

@@ -6,6 +6,7 @@
 #include <Conexion/conectar.h>
 #include <Procesos/consola.h>
 #include <commons/collections/dictionary.h>
+#include <commons/collections/queue.h>
 #include <commons/collections/list.h>
 #include <commons/log.h>
 #include <commons/string.h>
@@ -23,6 +24,7 @@ extern t_list* listaReady;
 extern t_list* listaBlock;
 extern t_list* listaExec;
 extern t_list* listaQuantum;
+extern t_queue * cola_new;
 extern int quantum_global;
 extern int grado_multiprogamacion;
 extern int pid_global;
@@ -34,7 +36,7 @@ extern int KernelsocketIO;
 extern int *KernelsocketBidireccionalIO;
 extern int *KernelsocketBidireccionalDispatch;
 extern int *KernelsocketBidireccionalInterrupt;
-extern algoritmo algoritmo_actual;
+extern Algoritmo algoritmo_actual;
 
 t_config* iniciar_configkernel(void);
 t_log* iniciar_loggerKernel(void);

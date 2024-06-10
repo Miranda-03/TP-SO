@@ -3,7 +3,6 @@
 
 #include "utils/structs/structInt.h"
 #include "utils/enums/motivosDesalojo.h"
-#include "utils/enums/instruccionesIO.h"
 #include "Procesos/procesos.h"
 
 

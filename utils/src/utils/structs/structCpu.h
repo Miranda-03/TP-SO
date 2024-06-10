@@ -25,11 +25,4 @@ typedef struct {
     Registro edx;
 } Registros;
 
-/*
-typedef struct {
-    Registros registros;
-} Contexto_proceso;
-*/
-
-
 #endif

@@ -12,11 +12,11 @@
 
 Pcb *crearPcb();
 void iniciar_proceso(char* path);
-void finalizar_proceso(int pid,Registros* registros);
+void finalizar_proceso(int pid,Registros registros);
 //void planificarFIFO(t_queue *cola);
 //void planificarRR(t_queue *cola);
 int asignar_pid();
 void llenarbuffer(t_buffer* buffer,Pcb* pcb);
 void cambiarGrado(int grado);
 void loggearLista(void *elemento);
-void manejar_proceso(MotivoDesalojo* motivo,int pid,Registros* registros,instruccionIO* instruccion);
+void manejar_proceso(MotivoDesalojo* motivo,int pid,Registros registros,instruccionIO* instruccion);
