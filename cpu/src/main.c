@@ -12,7 +12,7 @@ int interrupcion;
 
 int main(int argc, char *argv[])
 {
-    procesoCPU = malloc(sizeof(Proceso));
+    procesoCPU = malloc(sizeof(Contexto_proceso));
 
     // Declaración de los sockets como punteros para poder modificarlos dentro de conectarModuloCPU
     int *CPUSocketMemoriaPtr = &CPUSocketMemoria;
