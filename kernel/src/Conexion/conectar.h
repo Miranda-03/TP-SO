@@ -21,6 +21,7 @@
 #include "Globales/globales.h"
 #include <IOconexion/IOconexion.h>
 #include <utils/structs/structInt.h>
+#include "Interfaces/interfaces.h"
 
 
 /**
@@ -28,6 +29,18 @@
 * @brief conecta el modulo kernel con los demas componentes.
 */
 void conectarModuloKernel();
+
+/**
+* @fn    manageCPU
+* @brief la conexion con el CPU en un hilo.
+*/
+void manageCPU(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion);
+
+/**
+* @fn    crearHiloDISPATCH
+* @brief conexion dispatch en un hilo.
+*/
+void crearHiloDISPATCH(int *socket, MotivoDesalojo *motivo, int *pid, Registros *registros, instruccionIO *instruccion);
 
 /**
 * @fn    recibirClientes

@@ -16,21 +16,6 @@ void *manageDISPATCH(void *ptr)
     }*/
 }
 
-void *manageINTERRUPT(void *ptr)
-{
-
-    /*parametros_hilo_Cpu *params = ((parametros_hilo_Cpu *)ptr);
-
-    while (1)
-    {
-        TipoModulo *modulo = get_modulo_msg_recv(params->socket);
-        op_code *op_code = get_opcode_msg_recv(params->socket);
-
-        obtener_procesoCPUint_del_stream(buffer_leer_recv(params->socket),params->motivo,params->pid,params->registros,params->instruccion);
-        
-    }*/
-}
-
 /* void obtener_procesoCPU_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, int* pid, Registros registros, char* instruccion)
 {
     motivo = buffer_read_uint32(buffer);
