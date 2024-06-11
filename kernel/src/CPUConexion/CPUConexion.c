@@ -37,7 +37,6 @@ void obtener_procesoCPUint_del_stream(t_buffer *buffer, MotivoDesalojo* motivo, 
 
 void obtener_registros(t_buffer *buffer, Registros registros)
 {
-    registros->registros.pc = buffer_read_uint32(buffer);
     registros->registros.ax.u8 = buffer_read_uint8(buffer);
     registros->registros.eax.i32 = buffer_read_uint32(buffer);
     registros->registros.bx.u8 = buffer_read_uint8(buffer);

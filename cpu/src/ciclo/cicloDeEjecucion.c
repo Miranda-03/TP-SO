@@ -12,7 +12,7 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
             log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->registros.pc)));
             char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->registros.pc);
 
-            procesoCPU->registros.pc += 1;
+            procesoCPU->pc= 1;
 
             // DECODE
 
@@ -165,12 +165,12 @@ void instruccion_JNZ(Contexto_proceso *procesoCPU, Registro *reg, char tipo, int
     if (tipo == 'i')
     {
         if (reg->i32 != 0)
-            procesoCPU->registros.pc = valor;
+            procesoCPU->pc = valor;
     }
     else if (tipo == 'u')
     {
         if (reg->u8 != 0)
-            procesoCPU->registros.pc = valor;
+            procesoCPU->pc = valor;
     }
 }
 
@@ -179,6 +179,7 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     t_buffer *buffer = buffer_create(sizeof(uint32_t) * 6 + strlen(instruccion) + 1 + sizeof(MotivoDesalojo) + sizeof(uint8_t) * 4);
     buffer_add_uint32(buffer, motivo); // No estoy seguto si era un uint32_t
     buffer_add_uint32(buffer, procesoCPU->pid);
+    buffer_add_uint32(buffer, procesoCPU->pc);
     agregar_registros_al_buffer(procesoCPU, buffer);
 
     if (instruccion != NULL)
@@ -187,13 +188,12 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     }
 
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);
-    // buffer_destroy(buffer);
+    
     procesoCPU->pid = -1;
 }
 
 void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
 {
-    buffer_add_uint32(buffer, procesoCPU->registros.pc);
     buffer_add_uint8(buffer, procesoCPU->registros.ax.u8);
     buffer_add_uint32(buffer, procesoCPU->registros.eax.i32);
     buffer_add_uint8(buffer, procesoCPU->registros.bx.u8);

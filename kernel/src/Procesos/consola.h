@@ -5,6 +5,7 @@
 #include <utils/structs/structProcesos.h>
 #include "Globales/globales.h"
 #include "procesos.h"
+#include <utils/structs/structProcesos.h>
 
 void consolaInteractiva();
 bool verificar_comando(char* leido);

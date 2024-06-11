@@ -11,6 +11,7 @@
 typedef struct
 {
     unsigned int pid;
+    uint32_t pc;
     Registros registros;
 } Contexto_proceso;
 

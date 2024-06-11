@@ -8,13 +8,12 @@
  * @brief struct de registros que se mandan a la cpu
  */
 
-typedef union {
+typedef struct {
     int32_t i32;
     uint8_t u8;
 } Registro;
 
 typedef struct {
-    uint32_t pc;
     Registro ax;
     Registro eax;
     Registro bx;

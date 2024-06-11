@@ -24,7 +24,7 @@ void sockerModoEscucha(int *socket, struct addrinfo *servinfo, int MaxConexiones
  * @brief configura y retorna un socket.
  * @param puerto puerto del módulo.
  * @param ip IP del módulo a conectar. NULL si el socket es de eschucha.
- * @param MaxConexiones cantidad máxima de conexiones del socket en modo escucha. Dejar en NULL si el socket es de conexion.
+ * @param MaxConexiones cantidad máxima de conexiones del socket en modo escucha. Dejar en 0 si el socket es de conexion.
  */
 int crearSocket(char *puerto, char *ip, int MaxConexiones);
 

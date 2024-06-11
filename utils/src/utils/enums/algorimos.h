@@ -6,10 +6,7 @@
 * @param FIFO 
 * @param RR
 * @param VRR
-* 
-
 */
-
 typedef enum {
     FIFO,
     RR,

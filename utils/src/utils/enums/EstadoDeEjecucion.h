@@ -15,6 +15,6 @@ typedef enum {
     EXEC,
     ESTADO_EXIT,
     BLOCK
-} ContextoDeEjecucion;
+} EstadoProceso;
 
 #endif
