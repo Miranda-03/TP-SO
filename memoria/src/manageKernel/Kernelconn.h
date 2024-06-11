@@ -36,4 +36,6 @@ unsigned int obtener_instuccion_kernel(void *stream);
 */
 void enviar_mensaje(int *socket, int instruccion_guardada);
 
+void crearProceso(Memoria *memoria,  int pid);
+
 #endif

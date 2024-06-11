@@ -1,44 +1,31 @@
 #include "memoriaPrincipal.h"
 
-void inicializar_memoria(Memoria* memoria, int numero_procesos) {
-    memoria->espacio_memoria = malloc(TAMANO_MEMORIA);
-    memoria->tablas_paginas = (TablaPaginas*) malloc(numero_procesos * sizeof(TablaPaginas));
-    memoria->numero_procesos = numero_procesos;
+Memoria* inicializar_memoria() {
+    Memoria* mem = (Memoria*)malloc(sizeof(Memoria));
 
-    for (int i = 0; i < numero_procesos; i++) {
-        memoria->tablas_paginas[i].entradas = (EntradaTablaPaginas*) malloc((TAMANO_MEMORIA / TAMANO_PAGINA) * sizeof(EntradaTablaPaginas));
-        memoria->tablas_paginas[i].numero_entradas = TAMANO_MEMORIA / TAMANO_PAGINA;
-
-        for (int j = 0; j < memoria->tablas_paginas[i].numero_entradas; j++) {
-            memoria->tablas_paginas[i].entradas[j].frame = -1;
-            memoria->tablas_paginas[i].entradas[j].presente = 0;
-        }
+    mem->espacio_usuario = malloc(TAM_MEMORIA);
+    if (mem->espacio_usuario == NULL) {
+        log_error(logger_memoria,"No hay espacio para hacer el malloc de la memoria");
+        exit(1);
     }
+
+    
+    for (int i = 0; i < NUM_PAGINA; i++) {
+        Pagina* pagina = (Pagina*)malloc(sizeof(Pagina));
+        pagina->datos = mem->espacio_usuario + (i * TAM_PAGINA); //se calcula la direccion base, y se la asigna al puntero datos
+        mem->tabla_paginas.paginas[i] = pagina;
+    }
+
+    return mem;
 }
 
-void cargar_instrucciones(Memoria* memoria, int id_proceso, const char* archivo_pseudocodigo) {
-    FILE* archivo = fopen(archivo_pseudocodigo, "r");
-    if (archivo == NULL) {
-        log_error(logger_memoria, "Error al abrir el archivo\n");
-        return;
-    }
 
-    int pagina_indice = 0;
-    char linea[256];
-
-    while (fgets(linea, sizeof(linea), archivo) != NULL) {
-        if (pagina_indice >= memoria->tablas_paginas[id_proceso].numero_entradas) {
-            log_error(logger_memoria, "ENo hay suficiente memoria para cargar las instrucciones\n");
-            break;
+void liberar_memoria(Memoria* mem) {
+    if (mem != NULL) {
+        for (int i = 0; i < NUM_PAGINA; i++) {
+            free(mem->tabla_paginas.paginas[i]);
         }
-
-        void* direccion_pagina = memoria->espacio_memoria + pagina_indice * TAMANO_PAGINA;
-        memoria->tablas_paginas[id_proceso].entradas[pagina_indice].marco = pagina_indice;
-        memoria->tablas_paginas[id_proceso].entradas[pagina_indice].presente = 1;
-
-        strncpy((char*)direccion_pagina, linea, TAMANO_PAGINA);
-        pagina_indice++;
+        free(mem->espacio_usuario);
+        free(mem);
     }
-
-    fclose(archivo);
 }

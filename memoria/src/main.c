@@ -5,9 +5,12 @@
 
 int main(int argc, char* argv[]) {
 
+    Memoria* mem = inicializar_memoria();
+
     crear_mem_instrucciones();
-    
     conectarModuloMemoria();
+
+    liberarMemoria(mem);
 
     return 0;
 }

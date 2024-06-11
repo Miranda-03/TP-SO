@@ -5,39 +5,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include "structProcesos.h"
 
-#define TAMANO_PAGINA 4096  
-#define NUMERO_PAGINAS 256 
-#define TAMANO_MEMORIA (TAMANO_PAGINA * NUMERO_PAGINAS)  
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define TAMANO_PAGINA 32 
-#define TAMANO_MEMORIA 4096 
-
+#define TAM_PAGINA 32 
+#define TAM_MEMORIA 4096 
+#define NUM_PAGINA 128
+#define NUM_FRAMES 128
+typedef struct {
+    void* datos; 
+} Pagina;
 
 typedef struct {
-    int numero_pagina;
-    int desplazamiento;
-} DireccionLogica;
-
-typedef struct {
-    int frame;
-    int presente; 
-} EntradaTablaPaginas;
-
-
-typedef struct {
-    EntradaTablaPaginas* entradas;
-    int numero_entradas;
+    Pagina* paginas[NUM_PAGINA]; 
 } TablaPaginas;
 
+typedef struct {
+    void* espacio_usuario; 
+    TablaPaginas tabla_paginas; 
+} Memoria;
 
 typedef struct {
-    void* espacio_memoria;
-    TablaPaginas* tablas_paginas;
-    int numero_procesos;
-} Memoria;
+    Pcb pcb; 
+    TablaPaginas tabla_paginas; 
+} ProcesoMemoria;
+
+
+#endif

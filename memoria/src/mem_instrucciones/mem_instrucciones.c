@@ -48,16 +48,16 @@ void cargar_pagina(Memoria* memoria, int pid, const char* archivo_pseudocodigo, 
         return;
     }
 
-    int inicio_pagina = pagina_indice * TAMANO_PAGINA;
+    int inicio_pagina = pagina_indice * TAM_PAGINA;
     int pc = inicio_pagina;
     int indice_memoria;
 
-    while (!feof(archivo) && pc < inicio_pagina + TAMANO_PAGINA) {
+    while (!feof(archivo) && pc < inicio_pagina + TAMA_PAGINA) {
         char* instruccion = obtener_instruccion(pid, pc);
         if (strcmp(instruccion, "null") == 0) {
             break;
         }
-        indice_memoria = pagina_indice * TAMANO_PAGINA + (pc - inicio_pagina);
+        indice_memoria = pagina_indice * TAM_PAGINA + (pc - inicio_pagina);
         memcpy(memoria->espacio_memoria + indice_memoria, instruccion, strlen(instruccion));
         pc += strlen(instruccion) + 1; 
 
