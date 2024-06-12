@@ -9,7 +9,8 @@ typedef enum {
     INTERRUPCION_IO,
     ERROR_DE_PROGRAMA,
     EXIT_SIGNAL,
-    INTERRUPCION_KERNEL
+    INTERRUPCION_KERNEL,
+    OUT_OF_MEMORY
 } MotivoDesalojo;
 
 #endif

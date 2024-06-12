@@ -16,6 +16,12 @@ typedef enum
     SUB,
     JNZ,
     IO_GEN_SLEEP_CPU,
+    MOV_IN,
+    MOV_OUT,
+    RESIZE,
+    COPY_STRING,
+    IO_STDIN_READ,
+    IO_STDOUT_WRITE,
     EXIT
 } instruccion;
 
