@@ -29,7 +29,6 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
 {
     char *operacion = instruccionSeparada[0];
     char *primerParametro = instruccionSeparada[1];
-    char *segundoParametro = instruccionSeparada[2];
     int *registro;
     Registro *reg;
     char tipo;
@@ -37,9 +36,10 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
 
     log_info(loger_execute, mensaje_execute_log(&(procesoCPU->pid), instruccion));
 
-    switch (*operacion)
+    switch (*operacion) // operacion es un char y las instrucciones son numeros
     {
     case SET:
+        char *segundoParametro = instruccionSeparada[2];
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
@@ -53,6 +53,7 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         *registro = atoi(segundoParametro);
         break;
     case SUM:
+        char *segundoParametro = instruccionSeparada[2];
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
@@ -65,6 +66,7 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         }
         break;
     case SUB:
+        char *segundoParametro = instruccionSeparada[2];
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
@@ -77,12 +79,55 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         }
         break;
     case JNZ:
+        char *segundoParametro = instruccionSeparada[2];
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         instruccion_JNZ(procesoCPU, reg, tipo, atoi(segundoParametro));
         break;
     case IO_GEN_SLEEP_CPU:
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
         break;
+
+    case MOV_IN: // (Registro Datos, Registro Direccion)
+        char *segundoParametro = instruccionSeparada[2];
+        reg = obtenerRegistro(segundoParametro, procesoCPU, &tipo);
+        int dir_fisica = mmu(reg,tipo);
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        if (tipo == 'i')
+            reg->i32 = atoi(enviarAMemoria(dir_fisica));
+        else if (tipo == 'u')
+            reg->u8 = atoi(enviarAMemoria(dir_fisica));
+        break;
+
+    case MOV_OUT: // (Registro Dirección, Registro Datos)
+        char *segundoParametro = instruccionSeparada[2];
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        int dir_fisica = mmu(reg,tipo);
+        reg = obtenerRegistro(segundoParametro, procesoCPU, &tipo);
+        if (tipo == 'i')
+            cambiarValor(dir_fisica, reg->i32); // le manda a memoria una dir_fisica para que le asigne el valor del registro
+        else if (tipo == 'u')
+            cambiarValor(dir_fisica, reg->u8);
+
+    case RESIZE:
+        if (cambiarTamanio(procesoCPU, atoi(primerParametro)) == -1)
+            enviar_contexto_al_kernel(procesoCPU, OUT_OF_MEMORY, NULL, CPUsocketBidireccionalDispatch);
+        break;
+
+    case COPY_STRING:
+        int dir_fisica = mmu(procesoCPU->SI,'i');
+        char *cortado;
+        strncpy(cortado,enviarAMemoria(dir_fisica),atoi(primerParametro));
+        cambiarString(mmu(procesoCPU->DI,'i'),cortado,strlen(cortado)); // le manda a memoria el string donde tiene que apuntar la dir_fisica
+        break;
+    
+    case IO_STDIN_READ:
+        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
+        break;
+
+    case IO_STDOUT_WRITE:
+        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
+        break;
+
     case EXIT:
         enviar_contexto_al_kernel(procesoCPU, EXIT_SIGNAL, NULL, CPUsocketBidireccionalDispatch);
         log_destroy(loger_execute);
@@ -174,6 +219,7 @@ void instruccion_JNZ(Contexto_proceso *procesoCPU, Registro *reg, char tipo, int
     }
 }
 
+// poner los registros SI y DI
 void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo motivo, char *instruccion, int *CPUsocketBidireccionalDispatch)
 {
     t_buffer *buffer = buffer_create(sizeof(uint32_t) * 6 + strlen(instruccion) + 1 + sizeof(MotivoDesalojo) + sizeof(uint8_t) * 4);
