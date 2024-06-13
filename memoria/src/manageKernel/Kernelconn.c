@@ -42,15 +42,3 @@ void enviar_mensaje(int *socket, int instruccion_guardada)
     buffer_add_uint32(buffer, instruccion_guardada);
     enviarMensaje(socket, buffer, MEMORIA, MENSAJE);
 }
-
-
-void crearProceso(Memoria *memoria,  int pid) {
-  
-
-    TablaPaginas *tablaPaginasProceso = (TablaPaginas *)malloc(sizeof(TablaPaginas));
-    inicializarTablaPaginas(tablaPaginasProceso, NUM_PAGINA);
-
-    // Aquí podrías guardar la tabla de páginas del proceso en una estructura global o devolverla
-    // para que el kernel la administre. Por ahora solo imprimimos un mensaje de éxito.
-    printf("Proceso %u creado con una tabla de páginas vacía.\n", pid);
-}

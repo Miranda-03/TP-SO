@@ -6,27 +6,30 @@
 #include <string.h>
 #include <math.h>
 #include "structProcesos.h"
+#include <commons/collections/dictionary.h>
 
 #define TAM_PAGINA 32 
-#define TAM_MEMORIA 4096 
+#define TAM_MEMORIA 4096  /*tiene que estar en el config, esto se cambia*/
 #define NUM_PAGINA 128
 #define NUM_FRAMES 128
+
 typedef struct {
     void* datos; 
+    int presencia;
 } Pagina;
 
 typedef struct {
-    Pagina* paginas[NUM_PAGINA]; 
-} TablaPaginas;
+    void* datos;
+    int presencia;
+} Frame;
 
 typedef struct {
     void* espacio_usuario; 
-    TablaPaginas tabla_paginas; 
+    t_dictionary* tabla_paginas; //Clave = Nro Marco y Valor = pagina
 } Memoria;
 
 typedef struct {
-    Pcb pcb; 
-    TablaPaginas tabla_paginas; 
+    //datos de proceso
 } ProcesoMemoria;
 
 
