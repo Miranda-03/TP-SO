@@ -19,6 +19,7 @@ int agregar_instrucciones(char *path, int pid)
    char char_pid[10];
    sprintf(char_pid, "%d", pid);
    dictionary_put(memoria_instrucciones, char_pid, file_instrucciones);
+   asignar_espacio(char_pid);
 
    return 1;
 }
@@ -41,3 +42,14 @@ char *obtener_instruccion(unsigned int pid, unsigned int pc)
    }
    return "null";
 }
+
+
+void liberar_proceso(int pid){
+   /* char char_pid[10];
+   sprintf(char_pid, "%d", pid);
+   if (!dictionary_has_key(memoria_instrucciones, char_pid)){
+   FILE *file = (FILE*) dictionary_remove(memoria_instrucciones, char_pid);
+   } */
+   
+}
+

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <commons/collections/dictionary.h>
+#include <MemoriaPrincipal/memoriaPrincipal.h>
 
 /**
  * @fn    crear_mem_instrucciones

@@ -13,6 +13,8 @@ extern int tam_pagina;
 extern int tam_frame; 
 extern int cant_paginas;
 
+
+
 typedef struct {
     int pid;
     int pagina;
