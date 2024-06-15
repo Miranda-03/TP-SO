@@ -7,6 +7,7 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
 
     handshakeCPUMemoria(CPUSocketMemoria);
 
+    procesoCPU->pid = -1;
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
     *CPUsocketBidireccionalDispatch = esperarCliente(&CPUsocketEscuchaDispatch);

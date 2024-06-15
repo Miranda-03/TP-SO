@@ -10,14 +10,14 @@ typedef struct
 } HandshakeMessageIO;
 
 
-void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria)
+void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria, char* path_config)
 {
-    *IOsocketKernel = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_KERNEL"), obtenerValorConfig(PATH_CONFIG, "IP_KERNEL"), NULL);
+    *IOsocketKernel = crearSocket(obtenerValorConfig(path_config, "PUERTO_KERNEL"), obtenerValorConfig(path_config, "IP_KERNEL"), NULL);
     realizarHandshakeIO(tipo_interfaz, identificador, *IOsocketKernel);
 
     if (tipo_interfaz != GENERICA)
     {
-        *IOsocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), NULL);
+        *IOsocketMemoria = crearSocket(obtenerValorConfig(path_config, "PUERTO_MEMORIA"), obtenerValorConfig(path_config, "IP_MEMORIA"), NULL);
         realizarHandshakeIO(tipo_interfaz, identificador, *IOsocketMemoria);
     }
 }

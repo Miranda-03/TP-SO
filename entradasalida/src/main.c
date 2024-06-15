@@ -3,8 +3,13 @@
 
 int main(int argc, char* argv[]){
     
-    crearIO();
-        
+    inicializarMutex();
+
+    crearIO("io_config/impresora.config", "impresora");
+
+    crearIO("io_config/teclado.config", "teclado");
+
+    crearIO("io_config/monitor.config", "monitor");    
 
     return 0;
 }

@@ -35,6 +35,7 @@ void obtener_procesoCPU_del_stream(t_buffer *buffer, Contexto_proceso *procesoCP
 {
     
     procesoCPU->pid = buffer_read_uint32(buffer);
+    procesoCPU->pc = buffer_read_uint32(buffer);
     obtener_registros(buffer, procesoCPU);
 
     buffer_destroy(buffer);
@@ -43,7 +44,6 @@ void obtener_procesoCPU_del_stream(t_buffer *buffer, Contexto_proceso *procesoCP
 void obtener_registros(t_buffer *buffer, Contexto_proceso *procesoCPU)
 
 {
-    procesoCPU->registros.pc = buffer_read_uint32(buffer);
     procesoCPU->registros.ax.u8 = buffer_read_uint8(buffer);
     procesoCPU->registros.eax.i32 = buffer_read_uint32(buffer);
     procesoCPU->registros.bx.u8 = buffer_read_uint8(buffer);

@@ -13,7 +13,7 @@
 * @brief conecta el modulo I/O con los demas componentes.
 * @param esGenerico indicar si la interfaz es GENERICA con un 1.
 */
-void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria);
+void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria, char *path_config);
 
 /**
 * @fn    realizarHandshakeIO

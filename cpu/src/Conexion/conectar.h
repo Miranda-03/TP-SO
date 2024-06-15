@@ -22,7 +22,7 @@
  * @fn    conectarModuloCPU
  * @brief conecta el modulo CPU con los demas componentes.
  */
-void conectarModuloCPU(int *no,
+void conectarModuloCPU(int *CPUSocketMemoria,
                        int *CPUsocketBidireccionalDispatch,
                        int *CPUsocketBidireccionalInterrupt,
                        Contexto_proceso *procesoCPU,

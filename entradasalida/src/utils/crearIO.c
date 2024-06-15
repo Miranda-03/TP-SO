@@ -1,10 +1,17 @@
 #include "crearIO.h"
 
-void crearIO()
+pthread_mutex_t mutexMSGMemoria_io;
+
+void inicializarMutex()
+{
+    pthread_mutex_init(&mutexMSGMemoria_io, NULL);
+}
+
+void crearIO(char *config_file, char *idIO)
 {
     // crear el dispositivo impresora a modo de ejemplo
-    char *config_path = "io_config/impresora.config";
-    moduloIO *impresora = instanciar_struct_io("impresora", config_path);
+    char *config_path = config_file;
+    moduloIO *impresora = instanciar_struct_io(idIO, config_path);
     TipoInterfaz io_interfaz = tipo_interfaz_del_config(config_path);
 
     int IOsocketKernel;
@@ -13,7 +20,7 @@ void crearIO()
     int *IOsocketKernelptr = &IOsocketKernel;
     int *IOsocketMemoriaptr = &IOsocketMemoria;
 
-    conectarModuloIO(io_interfaz, "impresora", IOsocketKernelptr, IOsocketMemoriaptr);
+    conectarModuloIO(io_interfaz, idIO, IOsocketKernelptr, IOsocketMemoriaptr, config_path);
 
     socket_hilo *sockets = generar_struct_socket_hilo(impresora, IOsocketKernel, IOsocketMemoria, io);
 
@@ -25,7 +32,7 @@ void crearIO()
 void *hilo_conexion_io(void *ptr)
 {
     socket_hilo *sockets = ((socket_hilo *)ptr);
-    instruccionIO *instruccion = malloc(sizeof(instruccionIO));
+    char *instruccion;
     int io_esta_conectado = 1;
     t_buffer *buffer_kernel;
     int *PID = malloc(sizeof(int));
@@ -33,10 +40,10 @@ void *hilo_conexion_io(void *ptr)
 
     while (io_esta_conectado)
     {
-        *instruccion = NONE;
+        //*instruccion = NONE;
         buffer_kernel = recibir_instruccion_del_kernel(instruccion, PID, sockets->IO_Kernel_socket);
 
-        if (*instruccion == IO_DISCONNECT)
+        if (strcmp(instruccion, "IO_DISCONNECT") == 0)
         {
             free(sockets->IO_Kernel_socket);
             free(sockets->IO_Memoria_socket);
@@ -51,16 +58,110 @@ void *hilo_conexion_io(void *ptr)
             switch (sockets->tipo_interfaz)
             {
             case GENERICA:
-
                 log_info(logger, mensaje_info_operacion(*PID, "IO_SLEEP_GEN"));
-                manageGenerico(sockets->modulo_io, sockets->IO_Kernel_socket, buffer_kernel);
+                manageGenerico(sockets->modulo_io, sockets->IO_Kernel_socket, buffer_kernel, instruccion);
                 break;
+            case STDIN:
+                log_info(logger, mensaje_info_operacion(*PID, "IO_STDIN_READ"));
+                manageSTDIN(sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
+                break;
+            case STDIN:
+                log_info(logger, mensaje_info_operacion(*PID, "IO_STDOUT_WRITE"));
+                manageSTDOUT(sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
+                break
             }
         }
     }
 }
 
-void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel)
+/*
+    PARA ESCRIBIR LA MEMORIA SE LE ENVIA PRIMERO UN INT: 2 LECTURA, 3 ESCRITURA
+*/
+
+void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion)
+{
+    t_config *config = config_create(modulo_io->config_path);
+
+    int dir_fisica = buffer_read_uint32(buffer_kernel);
+    int size_text = buffer_read_uint32(buffer_kernel);
+
+    char texto[size_text] = readline(">");
+
+    int *resultado = -1;
+
+    t_buffer *buffer = buffer_create(8 + strlen(texto) + 1);
+    buffer_add_uint32(buffer, 3);
+    buffer_add_uint32(buffer, dir_fisica);
+    buffer_add_string(buffer, size_text + 1, texto);
+
+    enviarMensajeAMemoria(socketMemoria, texto, dir_fisica, resultado, buffer);
+
+    // Le dice al Kernel que termino con el numero 1
+    t_buffer *buffer = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer, *resultado);
+    enviarMensaje(socket, buffer, IO, MENSAJE);
+    buffer_destroy(buffer_kernel);
+    config_destroy(config);
+}
+
+void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion)
+{
+    t_config *config = config_create(modulo_io->config_path);
+
+    int dir_fisica = buffer_read_uint32(buffer_kernel);
+    int size_text = buffer_read_uint32(buffer_kernel);
+
+    t_buffer *buffer = buffer_create(12);
+    buffer_add_uint32(buffer, 2);
+    buffer_add_uint32(buffer, dir_fisica);
+    buffer_add_uint8(buffer, size_text);
+
+    enviarMensaje(socketMemoria, buffer, IO, MENSAJE);
+
+    TipoModulo *modulo = get_modulo_msg_recv(socket);
+    op_code *code = get_opcode_msg_recv(socket);
+
+    t_buffer *buffer = buffer_leer_recv(socket);
+    int resultado = buffer_read_uint32(buffer);
+
+    char *texto_resultado = buffer_read_string(buffer, size_text);
+
+    printf("La cadena obtenida es: %s\n", cadena); //HACER LUEGO CON UN LOGER
+
+    t_buffer *buffer = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer, resultado);
+    enviarMensaje(socket, buffer, IO, MENSAJE);
+    buffer_destroy(buffer_kernel);
+    config_destroy(config);
+
+    buffer_destroy(buffer);
+}
+
+void enviarMensajeAMemoria(int *socket, char *texto, int dir_fisica, int *resultado, t_buffer *buffer)
+{
+    pthread_mutex_lock(&mutexMSGMemoria_io);
+
+    enviarMensaje(socket, buffer, IO, MENSAJE);
+
+    *resultado = esperarResultado(socket);
+
+    pthread_mutex_unlock(&mutexMSGMemoria_io);
+}
+
+int esperarResultado(int *socket)
+{
+    TipoModulo *modulo = get_modulo_msg_recv(socket);
+    op_code *code = get_opcode_msg_recv(socket);
+
+    t_buffer *buffer = buffer_leer_recv(socket);
+    int resultado = buffer_read_uint32(buffer);
+
+    buffer_destroy(buffer);
+
+    return resultado;
+}
+
+void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel, char *instruccion)
 {
     t_config *config = config_create(modulo_io->config_path);
     int tiempo_unidad;
@@ -70,7 +171,7 @@ void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel)
         tiempo_unidad = config_get_int_value(config, "TIEMPO_UNIDAD_TRABAJO");
     }
 
-    unidades = buffer_read_uint32(buffer_kernel);
+    unidades = atoi(string_split(instruccion, " ")[2]);
 
     // REALIZA LA OPERACION
     sleep(tiempo_unidad * unidades);
@@ -79,6 +180,7 @@ void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel)
     t_buffer *buffer = buffer_create(sizeof(uint32_t));
     buffer_add_uint32(buffer, 1);
     enviarMensaje(socket, buffer, IO, MENSAJE);
+    buffer_destroy(buffer_kernel);
     config_destroy(config);
 }
 
@@ -139,14 +241,14 @@ socket_hilo *generar_struct_socket_hilo(moduloIO *modulo_io, int *IOsocketKernel
     return io_hilo;
 }
 
-t_buffer *recibir_instruccion_del_kernel(instruccionIO *instruccion, int *PID, int *socket)
+t_buffer *recibir_instruccion_del_kernel(char *instruccion, int *PID, int *socket)
 {
     TipoModulo *modulo = get_modulo_msg_recv(socket);
     op_code *codigo = get_opcode_msg_recv(socket);
 
     t_buffer *buffer = buffer_leer_recv(socket);
-    *PID = buffer_read_uint32(buffer);
-    *instruccion = buffer_read_uint32(socket);
+    //*PID = buffer_read_uint32(buffer); // RECIBIRA ALGUNOS OTROS REGISTROS, NO ES NECESARIO PARA GENERICO. PASAR POR PARAMETRO TIPO DE IO
+    instruccion = buffer_read_string(buffer);
 
     return buffer;
 }

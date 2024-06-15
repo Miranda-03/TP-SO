@@ -4,7 +4,7 @@ typedef struct
 {
     int socket;
     t_dictionary *interfaces_conectadas;
-} parametros_hilo_IO;
+} parametros_hilo_IO_Kernel;
 
 void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch, int *KernelSocketCPUInterrumpt, t_dictionary *interfaces_conectadas)
 {
@@ -20,9 +20,10 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
 
     // Recibir conexiones de IO
     int KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
-    parametros_hilo_IO *params;
+    parametros_hilo_IO_Kernel *params = malloc(sizeof(parametros_hilo_IO_Kernel));
     params->socket = KernelsocketEscucha;
     params->interfaces_conectadas = interfaces_conectadas;
+    inicializarMutexDiccionarioIOConectadas();
     pthread_t threadClientes;
     pthread_create(&threadClientes, NULL, recibirClientes, (void *)params);
     pthread_join(threadClientes, NULL);
@@ -30,7 +31,7 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
 
 void *recibirClientes(void *ptr)
 {
-    parametros_hilo_IO *params = (parametros_hilo_IO *)ptr; // Castear correctamente el descriptor de socket
+    parametros_hilo_IO_Kernel *params = (parametros_hilo_IO_Kernel *)ptr; // Castear correctamente el descriptor de socket
     int socketEscucha = params->socket;
     while (1)
     {
@@ -54,26 +55,27 @@ void *recibirClientes(void *ptr)
 
 void *atenderIO(void *ptr)
 {
-    parametros_hilo_IO *params = (parametros_hilo_IO *)ptr; // Castear correctamente el descriptor de socket
+    parametros_hilo_IO_Kernel *params = (parametros_hilo_IO_Kernel *)ptr; // Castear correctamente el descriptor de socket
     int socket = params->socket;
 
-    TipoModulo *modulo = get_modulo_msg_recv(socket);
-    op_code *codigoOperacion = get_opcode_msg_recv(socket);
+    TipoModulo *modulo = get_modulo_msg_recv(&socket);
+    op_code *codigoOperacion = get_opcode_msg_recv(&socket);
     printf("LLEGA A ATENDER IO \n");
     if (*codigoOperacion == HANDSHAKE && *modulo == IO)
     {
-        enviarPaqueteResult(1, socket, IO, KERNEL);
+        enviarPaqueteResult(1, &socket, IO, KERNEL);
 
-        t_buffer *buffer = buffer_leer_recv(socket);
-        TipoInterfaz *interfaz = buffer_read_uint32(buffer);
+        t_buffer *buffer = buffer_leer_recv(&socket);
+        TipoInterfaz interfaz = buffer_read_uint32(buffer);
         int sizeIdentificador = buffer_read_uint32(buffer);
         char *identificador = buffer_read_string(buffer, sizeIdentificador);
-        guardar_interfaz_conectada(socket, *interfaz, identificador, params->interfaces_conectadas);
+
+        guardar_interfaz_conectada(&socket, interfaz, identificador, params->interfaces_conectadas);
         buffer_destroy(buffer);
     }
     else
     {
-        enviarPaqueteResult(-1, socket, IO, KERNEL);
+        enviarPaqueteResult(-1, &socket, IO, KERNEL);
     }
     // free(codigoOperacion);
 }

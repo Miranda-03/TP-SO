@@ -19,6 +19,6 @@ typedef struct
     uint32_t quantumRestante;
     Registros registros;
     EstadoProceso estado;
-} Pcb;
+} Pcb; // FALTA PONER DOS REGISTROS MAS (SI y DI)
 
 #endif

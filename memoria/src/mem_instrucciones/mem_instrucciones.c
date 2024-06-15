@@ -36,7 +36,10 @@ char *obtener_instruccion(unsigned int pid, unsigned int pc)
    size_t len = 0;
    while ((getline(&instruccion, &len, file)) != -1)
    {
-      if (contador == pc) return instruccion;
+      if (contador == pc){
+         sleep(10);
+         return instruccion;
+      } 
       contador++;
    }
    return "null";
