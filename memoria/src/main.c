@@ -5,9 +5,12 @@
 
 int main(int argc, char* argv[]) {
 
+    Memoria* mem = inicializar_memoria();
+
     crear_mem_instrucciones();
-    
-    conectarModuloMemoria();
+    agregar_instrucciones(mem,"instruccionesPrueba.txt", 1200);
+    //conectarModuloMemoria();
+    liberar_memoria(mem);
 
     return 0;
 }

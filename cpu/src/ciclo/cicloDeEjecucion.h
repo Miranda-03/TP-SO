@@ -5,6 +5,7 @@
 #include <commons/string.h>
 #include <utils/enums/instrucciones.h>
 #include <utils/structs/structSendContextCPU.h>
+#include <utils/enums/instruccionesIO.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <utils/enums/motivosDesalojo.h>

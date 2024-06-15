@@ -10,16 +10,11 @@
 #include <pthread.h>
 #include <utils/enums/ModulosEnum.h>
 #include <utils/enums/TipoConnKernelCPU.h>
-#include <utils/enums/DispositivosIOenum.h>
 #include <utils/structs/structSendRecvMSG.h>
 #include <utils/enums/codigosOperacion.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <utils/enums/DispositivosIOenum.h>
-#include <Interfaces/interfaces.h>
-#include <CPUConexion/CPUConexion.h>
-#include "Globales/globales.h"
-#include <IOconexion/IOconexion.h>
 #include <utils/structs/structInt.h>
 #include "Interfaces/interfaces.h"
 
@@ -52,13 +47,13 @@ void *recibirClientes(void *ptr);
 * @fn    atenderIO
 * @brief función para atender al módulo I/O.
 */
-void *atenderIO(int* socket,TipoConn* conexion);
+void *atenderIO(void *ptr);
 
 /**
 * @fn    handshakeKernelCPU
 * @brief función para atender realizar el handshake entre el kernel y el CPU.
 */
-void handshakeKernelCPU(TipoConn conn);  
+void handshakeKernelCPU(TipoConn conn, int *socket);  
 
 /**
 * @fn    handshakeKernelMemoria
@@ -87,3 +82,4 @@ void manageIO(int *socket);
 void recibirConexion(int *socket, TipoConn conexion);
 
 #endif
+

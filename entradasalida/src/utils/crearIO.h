@@ -9,6 +9,7 @@
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <commons/log.h>
 #include <commons/string.h>
+#include <readline/readline.h>
 
 typedef struct
 {
@@ -28,7 +29,7 @@ typedef struct
  * @fn crearIO
  * @brief funcion para crear I/O.
  */
-void crearIO();
+void crearIO(char *config_file, char *idIO);
 
 /**
  * @fn hilo_conexion_io
@@ -58,7 +59,7 @@ TipoInterfaz tipo_interfaz_del_config(char *config_path);
  * @fn manageGenerico
  * @brief funcion para el modulo del tipo GENERICO.
  */
-void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer)
+void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel, char *instruccion)
 
 /**
  * @fn generar_struct_socket_hilo
@@ -81,5 +82,17 @@ t_buffer *recibir_instruccion_del_kernel(instruccionIO *instruccion, int *PID, i
  * @brief devulve el char* para el logger.
  */
 char *mensaje_info_operacion(int PID, char *operacion);
+
+/**
+ * @fn *manageSTDIN
+ * @brief funcion para las entradasalidas de tipo STDIN.
+ */
+void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion);
+
+void inicializarMutex();
+
+void enviarMensajeAMemoria(int *socket, char *texto, int dir_fisica, int *resultado, t_buffer *buffer);
+
+int esperarResultado(int *socket)
 
 #endif

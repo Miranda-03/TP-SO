@@ -9,10 +9,10 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
         if ((procesoCPU->pid) != -1)
         {
             // FETCH
-            log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->registros.pc)));
-            char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->registros.pc);
+            log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->pc)));
+            char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->pc);
 
-            procesoCPU->pc= 1;
+            procesoCPU->pc = 1;
 
             // DECODE
 
@@ -37,9 +37,8 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
 
     log_info(loger_execute, mensaje_execute_log(&(procesoCPU->pid), instruccion));
 
-    switch (*operacion)
+    if (strcmp(operacion, "SET") == 0)
     {
-    case SET:
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
@@ -51,8 +50,9 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
             reg->u8 = atoi(segundoParametro);
         }
         *registro = atoi(segundoParametro);
-        break;
-    case SUM:
+    }
+    else if (strcmp(operacion, "SUM") == 0)
+    {
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
@@ -63,8 +63,9 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         {
             reg->u8 += atoi(segundoParametro);
         }
-        break;
-    case SUB:
+    }
+    else if (strcmp(operacion, "SUB") == 0)
+    {
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
@@ -75,20 +76,58 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         {
             reg->u8 -= atoi(segundoParametro);
         }
-        break;
-    case JNZ:
+    }
+    else if (strcmp(operacion, "JNZ") == 0)
+    {
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         instruccion_JNZ(procesoCPU, reg, tipo, atoi(segundoParametro));
-        break;
-    case IO_GEN_SLEEP_CPU:
+    }
+    else if (strcmp(operacion, "MOVE_IN") == 0)
+    {
+        char *segundoParametro = instruccionSeparada[2];
+        reg = obtenerRegistro(segundoParametro, procesoCPU, &tipo);
+        int dir_fisica = mmu(reg,tipo);
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        if (tipo == 'i')
+            reg->i32 = atoi(enviarAMemoria(dir_fisica));
+        else if (tipo == 'u')
+            reg->u8 = atoi(enviarAMemoria(dir_fisica));
+    }
+    else if (strcmp(operacion, "MOVE_OUT") == 0)
+    {
+        char *segundoParametro = instruccionSeparada[2];
+        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
+        int dir_fisica = mmu(reg,tipo);
+        reg = obtenerRegistro(segundoParametro, procesoCPU, &tipo);
+        if (tipo == 'i')
+            cambiarValor(dir_fisica, reg->i32); // le manda a memoria una dir_fisica para que le asigne el valor del registro
+        else if (tipo == 'u')
+            cambiarValor(dir_fisica, reg->u8);
+    }
+    else if (strcmp(operacion, "RESIZE") == 0)
+    {
+        if (cambiarTamanio(procesoCPU, atoi(primerParametro)) == -1)
+            enviar_contexto_al_kernel(procesoCPU, OUT_OF_MEMORY, NULL, CPUsocketBidireccionalDispatch);
+    }
+    else if (strcmp(operacion, "COPY_STRING") == 0)
+    {
+        int dir_fisica = mmu(procesoCPU->SI,'i');
+        char *cortado;
+        strncpy(cortado,enviarAMemoria(dir_fisica),atoi(primerParametro));
+        cambiarString(mmu(procesoCPU->DI,'i'),cortado,strlen(cortado)); // le manda a memoria el string donde tiene que apuntar la dir_fisica
+    }
+    else if (strcmp(operacion, "IO_STDIN_READ") == 0)
+    {
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
-        break;
-    case EXIT:
+    }
+    else if (strcmp(operacion, "IO_STDIN_WRITE") == 0)
+    {
+        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
+    }
+    else if (strcmp(operacion, "EXIT") == 0)
+    {
         enviar_contexto_al_kernel(procesoCPU, EXIT_SIGNAL, NULL, CPUsocketBidireccionalDispatch);
         log_destroy(loger_execute);
-        break;
-    default:
-        break;
     }
 }
 
@@ -188,7 +227,7 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     }
 
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);
-    
+
     procesoCPU->pid = -1;
 }
 
