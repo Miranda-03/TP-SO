@@ -29,3 +29,19 @@ void enviar_instruccion(int *socket, unsigned int pc, unsigned int pid)
     buffer_add_string(buffer, strlen(instruccion) + 1, instruccion);
     enviarMensaje(socket, buffer, MEMORIA, MENSAJE);
 }
+
+int acceso_tabla_de_pagina(Memoria* memoria, int numero_pagina) {
+    
+    Frame* frame = NULL;
+
+    void* iter = dictionary_iterator(memoria->tabla_paginas);
+    while ((frame = dictionary_next(&iter))) {
+        if (frame->pagina == numero_pagina) {
+            return frame; // En realidad debo devolver el numero del frame, falta ver como lo estructuramos
+
+        }
+    }
+
+   
+    return -1;
+}
