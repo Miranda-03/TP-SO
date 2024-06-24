@@ -42,7 +42,7 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
-            printf("Valor de ax: %d\n", reg->i32);
+            
             reg->i32 = atoi(segundoParametro);
         }
         else if (tipo == 'u')
@@ -56,7 +56,7 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
-            printf("Valor de ax: %d\n", reg->i32);
+            
             reg->i32 += atoi(segundoParametro);
         }
         else if (tipo == 'u')
@@ -69,7 +69,7 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
         if (tipo == 'i')
         {
-            printf("Valor de ax: %d\n", reg->i32);
+            
             reg->i32 -= atoi(segundoParametro);
         }
         else if (tipo == 'u')

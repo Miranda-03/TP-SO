@@ -26,7 +26,7 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
     inicializarMutexDiccionarioIOConectadas();
     pthread_t threadClientes;
     pthread_create(&threadClientes, NULL, recibirClientes, (void *)params);
-    pthread_join(threadClientes, NULL);
+    pthread_detach(threadClientes);
 }
 
 void *recibirClientes(void *ptr)
@@ -36,7 +36,7 @@ void *recibirClientes(void *ptr)
     while (1)
     {
         pthread_t thread;
-        printf("esperando accept\n");
+
         int *socketBidireccional = malloc(sizeof(int));
         *socketBidireccional = accept(socketEscucha, NULL, NULL);
         if (socketBidireccional < 0)
@@ -45,7 +45,7 @@ void *recibirClientes(void *ptr)
             free(socketBidireccional);
             continue;
         }
-        printf("aceptado\n");
+
         params->socket = *socketBidireccional;
         pthread_create(&thread, NULL, atenderIO, (void *)params); // Pasar el descriptor de socket como un puntero
         pthread_detach(thread);
@@ -60,7 +60,7 @@ void *atenderIO(void *ptr)
 
     TipoModulo *modulo = get_modulo_msg_recv(&socket);
     op_code *codigoOperacion = get_opcode_msg_recv(&socket);
-    printf("LLEGA A ATENDER IO \n");
+
     if (*codigoOperacion == HANDSHAKE && *modulo == IO)
     {
         enviarPaqueteResult(1, &socket, IO, KERNEL);
@@ -78,6 +78,7 @@ void *atenderIO(void *ptr)
         enviarPaqueteResult(-1, &socket, IO, KERNEL);
     }
     // free(codigoOperacion);
+    pthread_exit(NULL);
 }
 
 void handshakeKernelCPU(TipoConn conn, int *socket)
@@ -94,11 +95,11 @@ void handshakeKernelCPU(TipoConn conn, int *socket)
 
     if (resultadoHandShake(socket) == 1)
     {
-        printf("Handshake KERNEL CPU exitoso\n");
+        printf("se conecta con cpu\n");
     }
     else
     {
-        printf("Handshake KERNEL CPU mal\n");
+        printf("error de conexion con cpu\n");
     }
 }
 
@@ -114,9 +115,9 @@ void handshakeKernelMemoria(int *socketMemoria)
     enviarMensaje(socketMemoria, buffer, KERNEL, HANDSHAKE);
 
     if (resultadoHandShake(socketMemoria) == 1)
-        printf("Handshake KERNEL MEMORIA exitoso \n");
+        printf("se conecta con la memoria\n");
     else
-        printf("Handshake KERNEL MEMORIA mal \n");
+        printf("error con la conexion de memoria\n");
 }
 
 /*void crearHiloDISPATCH(int *socket, MotivoDesalojo *motivo, int *pid, Registros *registros, instruccionIO *instruccion)

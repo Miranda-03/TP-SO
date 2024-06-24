@@ -59,7 +59,7 @@ TipoInterfaz tipo_interfaz_del_config(char *config_path);
  * @fn manageGenerico
  * @brief funcion para el modulo del tipo GENERICO.
  */
-void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel, char *instruccion)
+void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel, char *instruccion);
 
 /**
  * @fn generar_struct_socket_hilo
@@ -75,7 +75,7 @@ socket_hilo *generar_struct_socket_hilo(moduloIO * modulo_io, int *IOsocketKerne
  * @fn *recibir_instruccion_del_kernel
  * @brief funcion para recibir la instruccion del kernel y devolver el buffer para leer los parametros luego.
  */
-t_buffer *recibir_instruccion_del_kernel(instruccionIO *instruccion, int *PID, int *socket);
+t_buffer *recibir_instruccion_del_kernel(char *instruccion, int *PID, int *socket);
 
 /**
  * @fn *mensaje_info_operacion
@@ -93,6 +93,8 @@ void inicializarMutex();
 
 void enviarMensajeAMemoria(int *socket, char *texto, int dir_fisica, int *resultado, t_buffer *buffer);
 
-int esperarResultado(int *socket)
+int esperarResultado(int *socket);
+
+void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion);
 
 #endif

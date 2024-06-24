@@ -14,7 +14,7 @@
  * @fn enviarMensaje
 * @brief funcion arma parquete con el buffer y luego envia el stream.
 */
-void enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion);
+int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion);
 
 /**
  * @fn get_opcode_msg_recv

@@ -1,14 +1,14 @@
 #include "planificadorCP.h"
 
 ParamsPCP_kernel *params;
-int *PIDprocesoEjecutando;
+int PIDprocesoEjecutando;
 t_temporal *tiempoEjecutando;
-int *quantumTotal;
-int *quantumRestante;
+int quantumTotal;
+int quantumRestante;
 // int socketBidireccionalMemoria_Kernel;
 Algoritmo algoritmo;
 
-Pcb* proceosPCB_HILO_recursos; // ESTO SE PUEDE MEJORAR
+Pcb *proceosPCB_HILO_recursos; // ESTO SE PUEDE MEJORAR
 
 t_queue *cola_de_ready;
 t_queue *cola_de_mayor_prioridad;
@@ -39,9 +39,11 @@ void *planificarCortoPlazo(void *ptr)
     interfaces_conectadas = params->interfaces_conectadas;
     recursos = params->recursos;
     algoritmo = params->algoritmo;
-    *PIDprocesoEjecutando = -1;
-    *quantumTotal = atoi(obtenerValorConfig(PATH_CONFIG, "QUANTUM"));
-    *quantumRestante = *quantumTotal;
+    PIDprocesoEjecutando = -1;
+    quantumTotal = atoi(obtenerValorConfig(PATH_CONFIG, "QUANTUM"));
+    quantumRestante = quantumTotal;
+
+    procesoDelCPU = malloc(sizeof(MensajeProcesoDelCPU));
 
     cola_de_ready = queue_create();
     cola_de_mayor_prioridad = queue_create();
@@ -54,6 +56,7 @@ void *planificarCortoPlazo(void *ptr)
     pthread_mutex_init(&mutexIOGenerico, NULL);
     pthread_mutex_init(&mutexIOSTDIN, NULL);
     pthread_mutex_init(&mutexIOSTDOUT, NULL);
+    pthread_mutex_init(&mutexMayorPriordad, NULL);
 
     pthread_t hiloParaBloqueados;
     pthread_create(&hiloParaBloqueados, NULL, manageBloqueados, NULL);
@@ -61,28 +64,27 @@ void *planificarCortoPlazo(void *ptr)
 
     while (1)
     {
-        if (hayAlgunoEnCPU() < 0)
+        if (hayAlgunoEnCPU() < 0 && hayProcesosEnCola() > 0)
         {
             if (algoritmo == VRR)
             {
                 if (hayProcesosPrioritarios() > 0)
                 {
-                    *quantumRestante = enviarProcesoMayorPrioridadCPU();
+                    quantumRestante = enviarProcesoMayorPrioridadCPU();
                 }
                 else
                 {
-                    *quantumRestante = *quantumTotal;
+                    quantumRestante = quantumTotal;
                     enviarProcesoReadyCPU();
                 }
-                // AGREGAR COLA DE MAYOR PRIORIDAD
             }
             else
             {
-                *quantumRestante = *quantumTotal;
+                quantumRestante = quantumTotal;
                 enviarProcesoReadyCPU();
             }
 
-            esperarProcesoCPU(*quantumRestante);
+            esperarProcesoCPU(quantumRestante);
 
             // Crear el proceso (PCB) con un malloc
             Pcb *procesoPCB = malloc(sizeof(Pcb));
@@ -101,14 +103,29 @@ void *planificarCortoPlazo(void *ptr)
     }
 }
 
-int chequearRecursos(Pcb *proceso) // HEADER
+int hayProcesosEnCola() // HEADER
 {
+    int respuesta = -1;
+    pthread_mutex_lock(&mutexReady);
+    if (!queue_is_empty(cola_de_ready))
+        respuesta = 1;
+    pthread_mutex_unlock(&mutexReady);
 
+    pthread_mutex_lock(&mutexMayorPriordad);
+    if (!queue_is_empty(cola_de_mayor_prioridad))
+        respuesta = 1;
+    pthread_mutex_unlock(&mutexMayorPriordad);
+
+    return respuesta;
+}
+
+int chequearRecursos(Pcb *proceso)
+{
     if (procesoDelCPU->motivo == PETICION_RECURSO)
     {
         char **instruccion_separada = string_split(procesoDelCPU->instruccion, " ");
 
-        if (instruccion_separada[0] == "WAIT")
+        if (strcmp(instruccion_separada[0], "WAIT") == 0)
         {
             hacerWAIT(instruccion_separada[1], proceso);
             return 1;
@@ -121,25 +138,29 @@ int chequearRecursos(Pcb *proceso) // HEADER
     }
 }
 
-void hacerWAIT(char *id_recurso, proceso) // HEADER
+void hacerWAIT(char *id_recurso, Pcb *proceso)
 {
     pthread_t hilo_para_wair_recurso;
     pthread_create(&hilo_para_wair_recurso, NULL, waitHilo, (void *)id_recurso);
     pthread_detach(hilo_para_wair_recurso);
 }
 
-void *waitHilo (void *ptr) // HEADER
+void *waitHilo(void *ptr)
 {
     char *id_recurso = (char *)ptr;
 
-    sem_wait(&((sem_t)dictionary_get(recursos, id_recurso)))
+    sem_t *semaphore = (sem_t *)dictionary_get(recursos, id_recurso);
+    sem_wait(semaphore);
 
     agregarProcesoAReadyCorrespondiente(proceosPCB_HILO_recursos);
+
+    pthread_exit(NULL);
 }
 
-void hacerPOST(char *id_recurso) // HEADER
+void hacerPOST(char *id_recurso)
 {
-    sem_post(&((sem_t)dictionary_get(recursos, id_recurso)));
+    sem_t *semaphore = (sem_t *)dictionary_get(recursos, id_recurso);
+    sem_post(semaphore);
 }
 
 int chequearMotivoIO(Pcb *proceso)
@@ -222,11 +243,11 @@ void esperarProcesoCPU(int quantum)
         int tiempoRestante = esperarQuantum(quantum);
         temporal_destroy(tiempoEjecutando);
 
-        if (algoritmo == VRR)
+        if (algoritmo == VRR && PIDprocesoEjecutando < 0)
         {
             procesoDelCPU->pcb->quantumRestante = tiempoRestante;
         }
-        else
+        else if (PIDprocesoEjecutando < 0)
         {
             procesoDelCPU->pcb->quantumRestante = 0;
         }
@@ -245,7 +266,7 @@ int esperarQuantum(int quantum)
 
     while (1)
     {
-        if (*PIDprocesoEjecutando < 0)
+        if (PIDprocesoEjecutando < 0)
         {
             return temporal_gettime(tiempoEjecutando);
         }
@@ -277,7 +298,6 @@ void enviarInterrupcion(MotivoDesalojo motivo, int *socket)
 void *escuchaDispatch(void *ptr)
 {
     TipoModulo *modulo = get_modulo_msg_recv(&(params->KernelSocketCPUDispatch));
-    *PIDprocesoEjecutando = -1; // llego el proceso, ya no esta ejecutando ninguno
     op_code *op_code = get_opcode_msg_recv(&(params->KernelSocketCPUDispatch));
 
     t_buffer *buffer = buffer_leer_recv(&(params->KernelSocketCPUDispatch));
@@ -292,6 +312,8 @@ void *escuchaDispatch(void *ptr)
         int len = buffer_read_uint32(buffer);
         procesoDelCPU->instruccion = buffer_read_string(buffer, len);
     }
+
+    PIDprocesoEjecutando = -1; // llego el proceso, ya no esta ejecutando ninguno
 
     buffer_destroy(buffer);
     pthread_exit(NULL);
@@ -389,6 +411,9 @@ void *manageIO_Kernel(void *ptr)
 
     while (1)
     {
+        if (queue_is_empty(lista_bloqueados))
+            break;
+
         obtenerKeys(identificadoresIOConectadas);
         ordenarListaConLasIOsConectadas(tipo_interfaz, listasPorCadaID); // HACE UN 'dictionary_iterator' con 'interfaces_conectadas'
 
@@ -411,7 +436,7 @@ void *manageIO_Kernel(void *ptr)
             params->interfaz = tipo_interfaz;
             pthread_t hiloParaID;
             pthread_create(&hiloParaID, NULL, manageGenericoPorID, (void *)params);
-            pthread_join(hiloParaID, NULL);
+            pthread_detach(hiloParaID);
         }
         /*
              Primero guarda las io (en este caso genericas) conectadas junto a una cola de procesos
@@ -634,7 +659,7 @@ int enviarProcesoMayorPrioridadCPU()
 
     enviarMensajeCPUPCBProceso(proceso); // Mandar solo pcb. En la cola de ready guardar la pcb solamente
 
-    *PIDprocesoEjecutando = proceso->pid;
+    PIDprocesoEjecutando = proceso->pid;
 
     int quantum = proceso->quantumRestante;
 
@@ -646,14 +671,12 @@ int enviarProcesoMayorPrioridadCPU()
 void enviarProcesoReadyCPU()
 {
     pthread_mutex_lock(&mutexReady);
-    Pcb *proceso = (Pcb *)queue_pop(cola_de_ready);
+    Pcb *proceso = (Pcb *)queue_pop(cola_de_ready); // segmentation foult
     pthread_mutex_unlock(&mutexReady);
 
+    PIDprocesoEjecutando = proceso->pid;
+
     enviarMensajeCPUPCBProceso(proceso); // Mandar solo pcb. En la cola de ready guardar la pcb solamente
-
-    *PIDprocesoEjecutando = proceso->pid;
-
-    free(proceso);
 }
 
 void enviarMensajeCPUPCBProceso(Pcb *proceso)
@@ -682,7 +705,7 @@ void agregarRegistrosAlBuffer(t_buffer *buffer, Pcb *proceso)
 
 int hayAlgunoEnCPU()
 {
-    return *PIDprocesoEjecutando;
+    return PIDprocesoEjecutando;
 }
 
 void agregarProcesoAReadyCorrespondiente(Pcb *proceso)

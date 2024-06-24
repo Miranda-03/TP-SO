@@ -17,9 +17,9 @@ void *recibirModulo(void *ptr)
     {
         pthread_t thread;
         int *socketBidireccional = malloc(sizeof(int));
-        printf("esperando accept\n");
+        
         *socketBidireccional = accept(*MemoriasocketEscucha, NULL, NULL);
-        printf("aceptado\n");
+        
         pthread_create(&thread,
                        NULL,
                        (void *)atenderModulo,
@@ -34,7 +34,7 @@ void *atenderModulo(void *ptr){
     int *socketComunicacion = ((int *)ptr);
     TipoModulo moduloRemitente;
     recv(*socketComunicacion, &moduloRemitente, sizeof(TipoModulo), 0);
-    printf("Modulo: %d \n", moduloRemitente);
+    
     switch (moduloRemitente)
     {
     case IO:
@@ -51,11 +51,11 @@ void *atenderModulo(void *ptr){
 void manageModulo(int *socket, TipoModulo modulo)
 {
     op_code *codigoOperacion = get_opcode_msg_recv(socket);
-    printf("ENTRA AL IF DEL HANDSHAKE EN MEMORIA\n");
+    
     if (*codigoOperacion == HANDSHAKE)
     {
         
-        printf("ENTRA AL IF DEL HANDSHAKE EN MEMORIA\n");
+        
         enviarPaqueteResult(1, socket, MEMORIA, modulo);
         iniciar_hilo_conexion(socket, modulo);
     }

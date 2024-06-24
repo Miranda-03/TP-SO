@@ -13,7 +13,7 @@ typedef struct
 void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria, char* path_config)
 {
     *IOsocketKernel = crearSocket(obtenerValorConfig(path_config, "PUERTO_KERNEL"), obtenerValorConfig(path_config, "IP_KERNEL"), NULL);
-    realizarHandshakeIO(tipo_interfaz, identificador, *IOsocketKernel);
+    realizarHandshakeIO(tipo_interfaz, identificador, IOsocketKernel);
 
     if (tipo_interfaz != GENERICA)
     {
@@ -34,11 +34,11 @@ void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *s
     if (respuestaHandshake == 1)
     {
         // Handshake OK
-        printf("El handshake salio bien\n");
+        
     }
     else
     {
-        printf("El handshake salio mal\n");
+        
         // Handshake ERROR
     }
 }

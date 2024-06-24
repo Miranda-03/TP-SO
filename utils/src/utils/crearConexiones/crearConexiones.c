@@ -14,7 +14,7 @@ int crearSocket(char *puerto, char *ip, int MaxConexiones)
     int status = getaddrinfo(ip, puerto, &hints, &servinfo);
     if (status != 0)
     {
-        fprintf(stderr, "Error al obtener la dirección del servidor: %s\n", gai_strerror(status));
+        printf("error en crearSocket\n");
     }
 
     resultSocket = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol);
@@ -68,23 +68,14 @@ int resultadoHandShake(int *socket)
     TipoModulo remitente;
     TipoModulo responde;
     int respuesta;
-    t_buffer *buffer= buffer_leer_recv(socket);
+    t_buffer *buffer = buffer_leer_recv(socket);
     respuesta = buffer_read_uint32(buffer);
     remitente = buffer_read_uint32(buffer);
     responde = buffer_read_uint32(buffer);
     buffer_destroy(buffer);
 
-
     if (respuesta == 1)
-    {
-        // Handshake OK
-        printf("El handshake salio bien\n");
         return 1;
-    }
-    else
-    {
-        printf("El handshake salio mal\n");
-        return 0;
-        // Handshake ERROR
-    }
+
+    return 0;
 }

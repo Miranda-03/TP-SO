@@ -280,10 +280,12 @@ int verificarIOConectada();
 
 int chequearRecursos(Pcb *proceso);
 
-void hacerWAIT(char *id_recurso, proceso);
+void hacerWAIT(char *id_recurso, Pcb *proceso);
 
 void *waitHilo (void *ptr);
 
 void hacerPOST(char *id_recurso);
+
+int hayProcesosEnCola();
 
 #endif

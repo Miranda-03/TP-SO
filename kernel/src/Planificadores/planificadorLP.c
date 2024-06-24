@@ -2,7 +2,7 @@
 
 int pid_global = -1;
 
-//int grado_multiprogramacion;
+// int grado_multiprogramacion;
 
 int *socketBidireccionalMemoria;
 
@@ -19,6 +19,7 @@ void inicarPlanificadorLargoPLazo(int socketMemoria)
     sem_init(&grado_multiprogramacion, 0, atoi(obtenerValorConfig(PATH_CONFIG, "GRADO_MULTIPROGRAMACION")));
     cola_de_exit = queue_create();
     cola_de_new = queue_create();
+    socketBidireccionalMemoria = malloc(4);
     *socketBidireccionalMemoria = socketMemoria;
     iniciarMutex();
 }
@@ -54,8 +55,8 @@ void agregarNuevoProcesoReady()
         PcbGuardarEnNEW *nuevo_proceso = sacarProcesoDeNew();
 
         int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
-
-        if (resultadoMemoria < 0)
+        printf("El resultado de la memoria despues de guardar la instruccion es: %d\n", resultadoMemoria);
+        if (resultadoMemoria > 0)
             agregarProcesoColaReady(nuevo_proceso->proceso);
     }
 }
@@ -66,9 +67,9 @@ int guardarInstruccionesMemoria(PcbGuardarEnNEW *proceso)
     buffer_add_uint32(buffer, 1);
     buffer_add_uint32(buffer, proceso->proceso->pid);
     buffer_add_string(buffer, strlen(proceso->path_instrucciones) + 1, proceso->path_instrucciones);
-    int *resultado;
-    enviarMensajeMemoria(buffer, resultado);
-    return *resultado;
+    int resultado;
+    enviarMensajeMemoria(buffer, &resultado);
+    return resultado;
 }
 
 int esperarRespuesteDeMemoria()
@@ -147,8 +148,8 @@ void quitarMemoria(Pcb *proceso)
     t_buffer *buffer = buffer_create(8);
     buffer_add_uint32(buffer, 0);
     buffer_add_uint32(buffer, proceso->pid);
-    int *resultado;
-    enviarMensajeMemoria(buffer, resultado);
+    int resultado;
+    enviarMensajeMemoria(buffer, &resultado);
 }
 
 void enviarMensajeMemoria(t_buffer *buffer, int *resultado)
@@ -158,6 +159,8 @@ void enviarMensajeMemoria(t_buffer *buffer, int *resultado)
     enviarMensaje(socketBidireccionalMemoria, buffer, KERNEL, MENSAJE);
 
     *resultado = esperarRespuesteDeMemoria();
+
+    printf("La respuesta es: %u\n", *resultado);
 
     pthread_mutex_unlock(&mutexMSGMemoria);
 }

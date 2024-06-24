@@ -32,12 +32,12 @@ void handshakeCPUMemoria(int *CPUSocketMemoria)
     if (resultado == 1)
     {
         // Handshake OK
-        printf("El handshake de CPU a memoria salió bien\n");
+        
     }
     else
     {
         // Handshake ERROR
-        printf("El handshake de CPU a memoria salió mal\n");
+        
     }
 }
 
@@ -62,7 +62,7 @@ void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, i
 void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion)
 {
     op_code *codigoOperacion = get_opcode_msg_recv(socket);
-    printf("LLEGA AL MANAGE KERNEL DEL CPU \n");
+    
     if (*codigoOperacion == HANDSHAKE)
     {
         enviarPaqueteResult(1, socket, CPU, KERNEL);

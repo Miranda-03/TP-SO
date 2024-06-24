@@ -22,11 +22,11 @@ void crearIO(char *config_file, char *idIO)
 
     conectarModuloIO(io_interfaz, idIO, IOsocketKernelptr, IOsocketMemoriaptr, config_path);
 
-    socket_hilo *sockets = generar_struct_socket_hilo(impresora, IOsocketKernel, IOsocketMemoria, io);
+    socket_hilo *sockets = generar_struct_socket_hilo(impresora, &IOsocketKernel, &IOsocketMemoria, io_interfaz);
 
     pthread_t thread;
     pthread_create(&thread, NULL, (void *)hilo_conexion_io, sockets);
-    pthread_join(thread);
+    pthread_join(thread, NULL);
 }
 
 void *hilo_conexion_io(void *ptr)
@@ -65,10 +65,10 @@ void *hilo_conexion_io(void *ptr)
                 log_info(logger, mensaje_info_operacion(*PID, "IO_STDIN_READ"));
                 manageSTDIN(sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
                 break;
-            case STDIN:
+            case STDOUT:
                 log_info(logger, mensaje_info_operacion(*PID, "IO_STDOUT_WRITE"));
                 manageSTDOUT(sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
-                break
+                break;
             }
         }
     }
@@ -85,11 +85,13 @@ void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer 
     int dir_fisica = buffer_read_uint32(buffer_kernel);
     int size_text = buffer_read_uint32(buffer_kernel);
 
-    char texto[size_text] = readline(">");
+    char *texto;
+
+    texto = readline(">");
 
     int *resultado = -1;
 
-    t_buffer *buffer = buffer_create(8 + strlen(texto) + 1);
+    t_buffer *buffer = buffer_create(8 + size_text + 1);
     buffer_add_uint32(buffer, 3);
     buffer_add_uint32(buffer, dir_fisica);
     buffer_add_string(buffer, size_text + 1, texto);
@@ -97,11 +99,12 @@ void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer 
     enviarMensajeAMemoria(socketMemoria, texto, dir_fisica, resultado, buffer);
 
     // Le dice al Kernel que termino con el numero 1
-    t_buffer *buffer = buffer_create(sizeof(uint32_t));
-    buffer_add_uint32(buffer, *resultado);
-    enviarMensaje(socket, buffer, IO, MENSAJE);
+    t_buffer *buffer_respuesta_kernel = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer_respuesta_kernel, *resultado);
+    enviarMensaje(socket, buffer_respuesta_kernel, IO, MENSAJE);
     buffer_destroy(buffer_kernel);
     config_destroy(config);
+    free(texto);
 }
 
 void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion)
@@ -121,20 +124,20 @@ void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer
     TipoModulo *modulo = get_modulo_msg_recv(socket);
     op_code *code = get_opcode_msg_recv(socket);
 
-    t_buffer *buffer = buffer_leer_recv(socket);
-    int resultado = buffer_read_uint32(buffer);
+    t_buffer *buffer_memoria = buffer_leer_recv(socket);
+    int resultado = buffer_read_uint32(buffer_memoria);
 
-    char *texto_resultado = buffer_read_string(buffer, size_text);
+    char *texto_resultado = buffer_read_string(buffer_memoria, size_text);
 
-    printf("La cadena obtenida es: %s\n", cadena); //HACER LUEGO CON UN LOGER
+     //HACER LUEGO CON UN LOGER
 
-    t_buffer *buffer = buffer_create(sizeof(uint32_t));
-    buffer_add_uint32(buffer, resultado);
-    enviarMensaje(socket, buffer, IO, MENSAJE);
+    t_buffer *buffer_respuesta_para_kernel = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer_respuesta_para_kernel, resultado);
+    enviarMensaje(socket, buffer_respuesta_para_kernel, IO, MENSAJE);
     buffer_destroy(buffer_kernel);
     config_destroy(config);
 
-    buffer_destroy(buffer);
+    buffer_destroy(buffer_memoria);
 }
 
 void enviarMensajeAMemoria(int *socket, char *texto, int dir_fisica, int *resultado, t_buffer *buffer)
@@ -248,7 +251,8 @@ t_buffer *recibir_instruccion_del_kernel(char *instruccion, int *PID, int *socke
 
     t_buffer *buffer = buffer_leer_recv(socket);
     //*PID = buffer_read_uint32(buffer); // RECIBIRA ALGUNOS OTROS REGISTROS, NO ES NECESARIO PARA GENERICO. PASAR POR PARAMETRO TIPO DE IO
-    instruccion = buffer_read_string(buffer);
+    int size = buffer_read_uint32(buffer);
+    instruccion = buffer_read_string(buffer, size);
 
     return buffer;
 }

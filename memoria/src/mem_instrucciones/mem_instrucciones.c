@@ -17,7 +17,9 @@ int agregar_instrucciones(char *path, int pid)
       return -1;
 
    char char_pid[10];
-   sprintf(char_pid, "%d", pid);
+   
+   snprintf(char_pid, sizeof(char_pid), "%d", pid);
+
    dictionary_put(memoria_instrucciones, char_pid, file_instrucciones);
 
    return 1;
@@ -26,7 +28,9 @@ int agregar_instrucciones(char *path, int pid)
 char *obtener_instruccion(unsigned int pid, unsigned int pc)
 {
    char char_pid[10];
-   sprintf(char_pid, "%d", pid);
+
+   snprintf(char_pid, sizeof(char_pid), "%d", pid);
+
    if (!dictionary_has_key(memoria_instrucciones, char_pid))
       return "null";
 

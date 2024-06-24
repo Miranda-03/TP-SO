@@ -2,19 +2,25 @@
 
 void consolaInteractiva()
 {
-    char *leido;
-
-    do
+    char *linea;
+    printf("entra a la funcion\n");
+    while(1)
     {
-        leido = readline(">");
-        int valido = verificar_comando(leido);
-        if (valido < 0)
-            //log_error(logger_kernel, "Comando no reconocido");
-            printf("Comando no reconocido\n");
-        else
-            atender_instruccion(leido);
+        linea = readline(">");
 
-    } while (strcmp(leido, "exit") != 0);
+        if (!linea)
+        {
+            break;
+        }
+
+        int valido = verificar_comando(linea);
+        if (valido < 0)
+            // log_error(logger_kernel, "Comando no reconocido");
+            printf("comando no reconocido\n");
+        else
+            atender_instruccion(linea);
+
+    } 
 }
 
 int verificar_comando(char *leido)
@@ -54,7 +60,7 @@ void atender_instruccion(char *leido)
         char *path = comando[1];
         pthread_t hilo_creacion_proceso;
         pthread_create(&hilo_creacion_proceso, NULL, PLPNuevoProceso, path);
-        pthread_join(hilo_creacion_proceso, NULL);
+        pthread_detach(hilo_creacion_proceso);
     }
     /*
     else if (strcmp(leido, "FINALIZAR_PROCESO") == 0)

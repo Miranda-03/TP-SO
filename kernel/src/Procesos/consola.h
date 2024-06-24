@@ -7,7 +7,9 @@
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/structs/structProcesos.h>
 #include <Planificadores/planificadorLP.h>
+#include <stdio.h>
 #include <readline/readline.h>
+#include <readline/history.h>
 
 void consolaInteractiva();
 int verificar_comando(char *leido);

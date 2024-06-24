@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <commons/collections/dictionary.h>
+#include <commons/string.h>
 #include <unistd.h>
 
 /**

@@ -26,7 +26,7 @@ t_buffer *buffer_leer_recv(int *socket)
 
 void *buffer_leer_stream_recv(int *socket)
 {
-    printf("esto no funciona\n");
+    
 }
 
 void buffer_add(t_buffer *buffer, void *data, uint32_t size)
