@@ -15,6 +15,7 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
     // Conexiones con el módulo CPU
     *KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), 0);
     handshakeKernelCPU(DISPATCH, KernelSocketCPUDispatch);
+    sleep(5);
     *KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), 0);
     handshakeKernelCPU(INTERRUMPT, KernelSocketCPUInterrumpt);
 
@@ -48,7 +49,7 @@ void *recibirClientes(void *ptr)
 
         params->socket = *socketBidireccional;
         pthread_create(&thread, NULL, atenderIO, (void *)params); // Pasar el descriptor de socket como un puntero
-        pthread_detach(thread);
+        pthread_join(thread, NULL);
     }
     return NULL; // Agregar un return al final de la función
 }
@@ -61,10 +62,8 @@ void *atenderIO(void *ptr)
     TipoModulo *modulo = get_modulo_msg_recv(&socket);
     op_code *codigoOperacion = get_opcode_msg_recv(&socket);
 
-    if (*codigoOperacion == HANDSHAKE && *modulo == IO)
+    if (*codigoOperacion == MENSAJE && *modulo == IO)
     {
-        enviarPaqueteResult(1, &socket, IO, KERNEL);
-
         t_buffer *buffer = buffer_leer_recv(&socket);
         TipoInterfaz interfaz = buffer_read_uint32(buffer);
         int sizeIdentificador = buffer_read_uint32(buffer);
@@ -72,6 +71,8 @@ void *atenderIO(void *ptr)
 
         guardar_interfaz_conectada(&socket, interfaz, identificador, params->interfaces_conectadas);
         buffer_destroy(buffer);
+
+        enviarPaqueteResult(1, &socket, IO, KERNEL);
     }
     else
     {

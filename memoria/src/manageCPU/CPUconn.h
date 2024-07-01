@@ -28,6 +28,6 @@ unsigned int obtener_pc(void *stream);
 * @fn    enviar_instruccion
 * @brief buscar y enviar la instruccion al CPU.
 */
-void enviar_instruccion(int *socket, unsigned int pc, unsigned int pid);
+void enviar_instruccion(int *socket, int pc, int pid);
 
 #endif

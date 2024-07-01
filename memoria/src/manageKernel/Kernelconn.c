@@ -9,18 +9,22 @@ void *manage_conn_kernel(void *ptr)
         TipoModulo *modulo = get_modulo_msg_recv(socketKernel);
         op_code *op_code = get_opcode_msg_recv(socketKernel);
         t_buffer *buffer = buffer_leer_recv(socketKernel);
-        printf("le llega algo del kernel\n");
+
         if (buffer_read_uint32(buffer) == 1)
         {
-            printf("entra al if para guardar la instruccion \n");
             unsigned int pid = buffer_read_uint32(buffer);
             char *path = obtener_path_instruccion(buffer);
-            enviar_mensaje(socketKernel, agregar_instrucciones(path, pid));
-            printf("guarda la instruccion \n");
+
+            enviar_mensaje_de_confirmacion(socketKernel, guardar_nuevo_proceso(path, pid));
         }
         else
         {
-            // quitar archivo de instrucciones
+            // quitar archivo de instrucciones (NO TERMINADO)
+            int pid = buffer_read_uint32(buffer);
+            t_buffer *buffer_eliminar_instrucciones = buffer_create(4);
+            buffer_add_uint32(buffer_eliminar_instrucciones, 1);
+
+            enviarMensaje(socketKernel, buffer_eliminar_instrucciones, MEMORIA, MENSAJE);
         }
         buffer_destroy(buffer);
         free(modulo);
@@ -42,9 +46,22 @@ unsigned int obtener_instuccion_kernel(void *stream)
     return instruccion;
 }
 
-void enviar_mensaje(int *socket, int instruccion_guardada)
+void enviar_mensaje_de_confirmacion(int *socket, int instruccion_guardada)
 {
     t_buffer *buffer = buffer_create(sizeof(uint32_t));
     buffer_add_uint32(buffer, instruccion_guardada);
     enviarMensaje(socket, buffer, MEMORIA, MENSAJE);
+}
+
+int guardar_nuevo_proceso(char *path, int pid)
+{
+    int resultado_instrucciones = agregar_instrucciones(path, pid);
+
+    if(resultado_instrucciones > 0)
+    {
+        crear_tabla_de_pagina(pid);
+        return 1;
+    }
+    
+    return -1;
 }

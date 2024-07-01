@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <commons/collections/dictionary.h>
+#include <utils/obtenerValorConfig/obtenerValorConfig.h>
 #include <commons/string.h>
 #include <unistd.h>
 
@@ -23,6 +24,6 @@ int agregar_instrucciones(char *path, int pid);
  * @fn    obtener_instruccion
  * @brief retorna una instruccion.
  */
-char *obtener_instruccion(unsigned int pid, unsigned int pc);
+char *obtener_instruccion(int pid, int pc);
 
 #endif

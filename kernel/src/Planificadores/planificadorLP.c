@@ -51,11 +51,10 @@ void agregarNuevoProcesoReady()
 {
     if (!queue_is_empty(cola_de_new))
     {
-        sem_wait(&grado_multiprogramacion);
         PcbGuardarEnNEW *nuevo_proceso = sacarProcesoDeNew();
 
         int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
-        printf("El resultado de la memoria despues de guardar la instruccion es: %d\n", resultadoMemoria);
+
         if (resultadoMemoria > 0)
             agregarProcesoColaReady(nuevo_proceso->proceso);
     }
@@ -63,7 +62,7 @@ void agregarNuevoProcesoReady()
 
 int guardarInstruccionesMemoria(PcbGuardarEnNEW *proceso)
 {
-    t_buffer *buffer = buffer_create(8 + strlen(proceso->path_instrucciones) + 1);
+    t_buffer *buffer = buffer_create(12 + strlen(proceso->path_instrucciones) + 1);
     buffer_add_uint32(buffer, 1);
     buffer_add_uint32(buffer, proceso->proceso->pid);
     buffer_add_string(buffer, strlen(proceso->path_instrucciones) + 1, proceso->path_instrucciones);
@@ -89,6 +88,7 @@ int esperarRespuesteDeMemoria()
 PcbGuardarEnNEW *sacarProcesoDeNew()
 {
     pthread_mutex_lock(&mutexColaNEW);
+    sem_wait(&grado_multiprogramacion);
     PcbGuardarEnNEW *nuevo_proceso = queue_pop(cola_de_new);
     pthread_mutex_unlock(&mutexColaNEW);
 
@@ -97,13 +97,6 @@ PcbGuardarEnNEW *sacarProcesoDeNew()
 
 Pcb *crearProcesoEstadoNEW()
 {
-    /*
-    uint32_t pid;
-    uint32_t pc;
-    uint32_t quantumRestante;
-    Registros registros;
-    EstadoProceso estado;
-    */
     Pcb *pcb = malloc(sizeof(Pcb));
     pcb->pid = asignar_pid();
     pcb->pc = 0;
@@ -160,7 +153,30 @@ void enviarMensajeMemoria(t_buffer *buffer, int *resultado)
 
     *resultado = esperarRespuesteDeMemoria();
 
-    printf("La respuesta es: %u\n", *resultado);
-
     pthread_mutex_unlock(&mutexMSGMemoria);
+}
+
+int buscarProcesoEnREADYyEXITporIDyFinalizarlo(char *PID) // HEADER
+{
+}
+
+void ajustar_grado_multiprogramacion(int nuevo_valor)
+{
+    int valor_actual;
+    sem_getvalue(&grado_multiprogramacion, &valor_actual);
+
+    if (nuevo_valor > valor_actual)
+    {
+        for (int i = 0; i < (nuevo_valor - valor_actual); i++)
+        {
+            sem_post(&grado_multiprogramacion);
+        }
+    }
+    else if (nuevo_valor < valor_actual)
+    {
+        for (int i = 0; i < (valor_actual - nuevo_valor); i++)
+        {
+            sem_wait(&grado_multiprogramacion);
+        }
+    }
 }

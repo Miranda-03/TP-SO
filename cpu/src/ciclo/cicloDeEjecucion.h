@@ -11,6 +11,7 @@
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <commons/log.h>
+#include "setInstrucciones.h"
 
 /**
  * @fn    cicloDeEjecucion
@@ -26,31 +27,19 @@ void cicloDeEjecucion(int *CPUSocketMemoria,
  * @fn    execute
  * @brief Fase de execute del CPU.
  */
-void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char* instruccion, int *CPUsocketBidireccionalDispatch );
-
-/**
- * @fn    obtenerRegistro
- * @brief obtiene el registro según un dato tipo char*.
- */
-Registro *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU, char *tipo);
+void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch, t_log* loger);
 
 /**
  * @fn    checkInterrupt
  * @brief verifica si hay una interrupcion con la variable pasada por parametro (int interrupcion).
  */
-void checkInterrupt(Contexto_proceso *procesoCPU, int *interrupcion, int *CPUsocketBidireccionalDispatch);
+void checkInterrupt(Contexto_proceso *procesoCPU, int *CPUsocketBidireccionalDispatch);
 
 /**
  * @fn    enviar_contexto_al_kernel
  * @brief envia el contexto al kernel junto con el motivo. Si el motivo es por I/O además se le envia la instrucción.
  */
 void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo motivo, char* instruccion, int *CPUsocketBidireccionalDispatch);
-
-/**
- * @fn    instruccion_JNZ
- * @brief ejecutar la instrucción JNZ.
- */
-void instruccion_JNZ(Contexto_proceso *procesoCPU, Registro *reg, char tipo, int valor);
 
 /**
  * @fn    agregar_registros_al_buffer

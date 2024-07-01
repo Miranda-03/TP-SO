@@ -1,8 +1,11 @@
 #include "cicloDeEjecucion.h"
 
-void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
+int *interrupcion_ce;
+
+void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion_main)
 {
     t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
+    interrupcion_ce = interrupcion_main;
 
     while (1)
     {
@@ -12,20 +15,20 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
             log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->pc)));
             char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->pc);
 
-            procesoCPU->pc = 1;
+            procesoCPU->pc += 1;
 
             // DECODE
 
             char **instruccionSeparada = string_split(instruccion, " ");
 
-            execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch);
+            execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch, loger);
 
-            checkInterrupt(procesoCPU, interrupcion, CPUsocketBidireccionalDispatch);
+            checkInterrupt(procesoCPU, CPUsocketBidireccionalDispatch);
         }
     }
 }
 
-void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch)
+void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *instruccion, int *CPUsocketBidireccionalDispatch, t_log *loger)
 {
     char *operacion = instruccionSeparada[0];
     char *primerParametro = instruccionSeparada[1];
@@ -33,151 +36,68 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
     int *registro;
     Registro *reg;
     char tipo;
-    t_log *loger_execute = log_create("logs/cpu_execute.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
-
-    log_info(loger_execute, mensaje_execute_log(&(procesoCPU->pid), instruccion));
 
     if (strcmp(operacion, "SET") == 0)
     {
-        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
-        if (tipo == 'i')
-        {
-            
-            reg->i32 = atoi(segundoParametro);
-        }
-        else if (tipo == 'u')
-        {
-            reg->u8 = atoi(segundoParametro);
-        }
-        *registro = atoi(segundoParametro);
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_SET(primerParametro, segundoParametro, procesoCPU, &tipo, reg);
     }
     else if (strcmp(operacion, "SUM") == 0)
     {
-        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
-        if (tipo == 'i')
-        {
-            
-            reg->i32 += atoi(segundoParametro);
-        }
-        else if (tipo == 'u')
-        {
-            reg->u8 += atoi(segundoParametro);
-        }
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_SUM(primerParametro, segundoParametro, procesoCPU, &tipo, reg);
     }
     else if (strcmp(operacion, "SUB") == 0)
     {
-        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
-        if (tipo == 'i')
-        {
-            
-            reg->i32 -= atoi(segundoParametro);
-        }
-        else if (tipo == 'u')
-        {
-            reg->u8 -= atoi(segundoParametro);
-        }
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_SUB(primerParametro, segundoParametro, procesoCPU, &tipo, reg);
     }
     else if (strcmp(operacion, "JNZ") == 0)
     {
-        reg = obtenerRegistro(primerParametro, procesoCPU, &tipo);
-        instruccion_JNZ(procesoCPU, reg, tipo, atoi(segundoParametro));
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_JNZ(primerParametro, segundoParametro, procesoCPU, &tipo, reg);
     }
-    else if (strcmp(operacion, "IO_GEN_SLEEP_CPU") == 0)
+    else if (strcmp(operacion, "IO_GEN_SLEEP") == 0)
     {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
     }
     else if (strcmp(operacion, "EXIT") == 0)
     {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
         enviar_contexto_al_kernel(procesoCPU, EXIT_SIGNAL, NULL, CPUsocketBidireccionalDispatch);
-        log_destroy(loger_execute);
+        // log_destroy(loger_execute);
     }
 }
 
-Registro *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU, char *tipo)
-{
-    if (strcmp(registro, "ax") == 0)
-    {
-        *tipo = 'u';
-        return &(procesoCPU->registros.ax);
-    }
-    else if (strcmp(registro, "eax") == 0)
-    {
-        *tipo = 'i';
-        return &(procesoCPU->registros.eax);
-    }
-    else if (strcmp(registro, "bx") == 0)
-    {
-        *tipo = 'u';
-        return &(procesoCPU->registros.bx);
-    }
-    else if (strcmp(registro, "ebx") == 0)
-    {
-        *tipo = 'i';
-        return &(procesoCPU->registros.ebx);
-    }
-    else if (strcmp(registro, "cx") == 0)
-    {
-        *tipo = 'u';
-        return &(procesoCPU->registros.cx);
-    }
-    else if (strcmp(registro, "ecx") == 0)
-    {
-        *tipo = 'i';
-        return &(procesoCPU->registros.ecx);
-    }
-    else if (strcmp(registro, "dx") == 0)
-    {
-        *tipo = 'u';
-        return &(procesoCPU->registros.dx);
-    }
-    else if (strcmp(registro, "edx") == 0)
-    {
-        *tipo = 'i';
-        return &(procesoCPU->registros.edx);
-    }
-    else
-    {
-        return NULL;
-    }
-}
-
-void checkInterrupt(Contexto_proceso *procesoCPU, int *interrupcion, int *CPUsocketBidireccionalDispatch)
+void checkInterrupt(Contexto_proceso *procesoCPU, int *CPUsocketBidireccionalDispatch)
 {
     if (procesoCPU->pid == -1)
         return;
 
-    if (*interrupcion == 1)
+    if (*interrupcion_ce == 1)
     {
+        *interrupcion_ce = 0;
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_KERNEL, NULL, CPUsocketBidireccionalDispatch);
-        *interrupcion = 0;
-        procesoCPU->pid = -1;
     }
-    else if (*interrupcion == 2)
+    else if (*interrupcion_ce == 2)
     {
+        *interrupcion_ce = 0;
         enviar_contexto_al_kernel(procesoCPU, FIN_DE_QUANNTUM, NULL, CPUsocketBidireccionalDispatch);
-        *interrupcion = 0;
-        procesoCPU->pid = -1;
-    }
-}
-
-void instruccion_JNZ(Contexto_proceso *procesoCPU, Registro *reg, char tipo, int valor)
-{
-
-    if (tipo == 'i')
-    {
-        if (reg->i32 != 0)
-            procesoCPU->pc = valor;
-    }
-    else if (tipo == 'u')
-    {
-        if (reg->u8 != 0)
-            procesoCPU->pc = valor;
     }
 }
 
 void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo motivo, char *instruccion, int *CPUsocketBidireccionalDispatch)
 {
-    t_buffer *buffer = buffer_create(sizeof(uint32_t) * 6 + strlen(instruccion) + 1 + sizeof(MotivoDesalojo) + sizeof(uint8_t) * 4);
+    t_buffer *buffer;
+    if (instruccion != NULL)
+    {
+        buffer = buffer_create((sizeof(uint32_t) * 10) + strlen(instruccion) + 1 + sizeof(MotivoDesalojo));
+    }
+    else
+    {
+        buffer = buffer_create(sizeof(uint32_t) * 9 + sizeof(MotivoDesalojo));
+    }
     buffer_add_uint32(buffer, motivo); // No estoy seguto si era un uint32_t
     buffer_add_uint32(buffer, procesoCPU->pid);
     buffer_add_uint32(buffer, procesoCPU->pc);
@@ -191,6 +111,7 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);
 
     procesoCPU->pid = -1;
+    *interrupcion_ce = 0;
 }
 
 void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
@@ -221,10 +142,17 @@ char *mensaje_execute_log(int *pid, char *instruccion)
     string_append(&result, "PID: ");
     string_append(&result, string_itoa(*pid));
     string_append(&result, " - Ejecutando: ");
-    char **instruccionSeparada = string_n_split(instruccion, 2, " ");
-    string_append(&result, instruccionSeparada[0]);
-    string_append(&result, " - ");
-    string_append(&result, instruccionSeparada[1]);
+    if (strcmp(string_split(instruccion, " ")[0], "EXIT") == 0)
+    {
+        string_append(&result, "EXIT");
+    }
+    else
+    {
+        char **instruccionSeparada = string_n_split(instruccion, 2, " ");
+        string_append(&result, instruccionSeparada[0]);
+        string_append(&result, " - ");
+        string_append(&result, instruccionSeparada[1]);
+    }
 
     return result;
 }

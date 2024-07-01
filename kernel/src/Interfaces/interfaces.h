@@ -14,7 +14,7 @@
 typedef struct
 {
     TipoInterfaz interfaz;
-    int *socket;
+    int socket;
 } IOguardar;
 
 /**

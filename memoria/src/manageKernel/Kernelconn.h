@@ -5,6 +5,7 @@
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <mem_instrucciones/mem_instrucciones.h>
+#include <mem_usuario/mem_usuario.h>
 
 /**
 * @fn    manage_conn_kernel
@@ -25,15 +26,21 @@ unsigned int obtener_elpid(void *stream);
 char* obtener_path_instruccion(t_buffer *buffer);
 
 /**
+ * @fn    guardar_nuevo_proceso
+ * @brief crea las estructuras necesarias para el nuevo proceso.
+ */
+int guardar_nuevo_proceso(char *path, int pid);
+
+/**
 * @fn    obtener_instuccion_kernel
 * @brief obtener la instruccion del Kernel en el stream.
 */
 unsigned int obtener_instuccion_kernel(void *stream);
 
 /**
-* @fn    enviar_mensaje
+* @fn    enviar_mensaje_de_confirmacion
 * @brief envia un mensaje al Kernel indicando exito o error al guardar las instrucciones.
 */
-void enviar_mensaje(int *socket, int instruccion_guardada);
+void enviar_mensaje_de_confirmacion(int *socket, int instruccion_guardada);
 
 #endif

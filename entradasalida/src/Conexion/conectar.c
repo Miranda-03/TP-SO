@@ -12,13 +12,13 @@ typedef struct
 
 void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria, char* path_config)
 {
-    *IOsocketKernel = crearSocket(obtenerValorConfig(path_config, "PUERTO_KERNEL"), obtenerValorConfig(path_config, "IP_KERNEL"), NULL);
+    *IOsocketKernel = crearSocket(obtenerValorConfig(path_config, "PUERTO_KERNEL"), obtenerValorConfig(path_config, "IP_KERNEL"), 0);
     realizarHandshakeIO(tipo_interfaz, identificador, IOsocketKernel);
 
     if (tipo_interfaz != GENERICA)
     {
-        *IOsocketMemoria = crearSocket(obtenerValorConfig(path_config, "PUERTO_MEMORIA"), obtenerValorConfig(path_config, "IP_MEMORIA"), NULL);
-        realizarHandshakeIO(tipo_interfaz, identificador, *IOsocketMemoria);
+        *IOsocketMemoria = crearSocket(obtenerValorConfig(path_config, "PUERTO_MEMORIA"), obtenerValorConfig(path_config, "IP_MEMORIA"), 0);
+        realizarHandshakeIO(tipo_interfaz, identificador, IOsocketMemoria);
     }
 }
 
@@ -27,18 +27,17 @@ void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *s
     t_buffer *buffer = buffer_create(sizeof(TipoInterfaz) + strlen(identificador) + 1 + sizeof(uint32_t));
     buffer_add_uint32(buffer, tipo_interfaz);
     buffer_add_string(buffer, strlen(identificador) + 1, identificador);
-    enviarMensaje(socket, buffer, IO, HANDSHAKE);
+    enviarMensaje(socket, buffer, IO, MENSAJE);
 
     int respuestaHandshake = resultadoHandShake(socket);
 
     if (respuestaHandshake == 1)
     {
-        // Handshake OK
+        printf("SE CONECTA CON KERNEL\n");
         
     }
     else
     {
-        
-        // Handshake ERROR
+        printf("ERROR CON KERNEL\n");
     }
 }

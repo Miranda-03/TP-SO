@@ -106,4 +106,10 @@ void quitarMemoria(Pcb *proceso);
 */
 void enviarMensajeMemoria(t_buffer *buffer, int *resultado);
 
+/**
+* @fn    ajustar_grado_multiprogramacion
+* @brief ajustar el grado de multiprogramacion del planificador de largo plazo.
+*/
+void ajustar_grado_multiprogramacion(int nuevo_valor);
+
 #endif

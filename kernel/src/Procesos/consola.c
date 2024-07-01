@@ -3,10 +3,10 @@
 void consolaInteractiva()
 {
     char *linea;
-    printf("entra a la funcion\n");
-    while(1)
+
+    while (1)
     {
-        linea = readline(">");
+        linea = readline("FIFO-OS>");
 
         if (!linea)
         {
@@ -14,13 +14,12 @@ void consolaInteractiva()
         }
 
         int valido = verificar_comando(linea);
+        
         if (valido < 0)
-            // log_error(logger_kernel, "Comando no reconocido");
             printf("comando no reconocido\n");
         else
             atender_instruccion(linea);
-
-    } 
+    }
 }
 
 int verificar_comando(char *leido)
@@ -34,7 +33,7 @@ int verificar_comando(char *leido)
         strcmp(comando[0], "DETENER_PLANIFICACION") == 0 ||
         strcmp(comando[0], "INICIAR_PLANIFICACION") == 0 ||
         strcmp(comando[0], "MULTIPROGRAMACION") == 0 ||
-        strcmp(comando[0], "PROCESO_ESTADO"))
+        strcmp(comando[0], "PROCESO_ESTADO")) == 0
     {
         return 1;
     }
@@ -47,38 +46,39 @@ void atender_instruccion(char *leido)
 
     t_buffer *buffer = buffer_create(sizeof(t_buffer));
 
-    /*
-         if (strcmp(comando[0], "EJECUTAR_SCRIPT") == 0)
+    if (strcmp(comando[0], "EJECUTAR_SCRIPT") == 0)
     {
         // Aquí puedes agregar el código para EJECUTAR_SCRIPT
     }
-    else
-    */
-
-    if (strcmp(comando[0], "INICIAR_PROCESO") == 0)
+    else if (strcmp(comando[0], "INICIAR_PROCESO") == 0)
     {
         char *path = comando[1];
         pthread_t hilo_creacion_proceso;
         pthread_create(&hilo_creacion_proceso, NULL, PLPNuevoProceso, path);
         pthread_detach(hilo_creacion_proceso);
     }
+    else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0) // FALTA HACER
+    {
+        /*
+        int resultadoFinalizado = buscarProcesoEnREADYyEXITporIDyFinalizarlo(comando[1]);
+        if (resultadoFinalizado < 0)
+            buscarProcesoEnPlanificadorCP(comando[1]);
+        */
+    }
+    else if (strcmp(comando[0], "DETENER_PLANIFICACION") == 0)
+    {
+        detenerPlanificador();
+    }
+    else if (strcmp(comando[0], "INICIAR_PLANIFICACION") == 0)
+    {
+        reanudarPlanificador();
+    }
+    else if (strcmp(comando[0], "MULTIPROGRAMACION") == 0)
+    {
+        ajustar_grado_multiprogramacion(atoi(comando[1]));
+    }
+    
     /*
-    else if (strcmp(leido, "FINALIZAR_PROCESO") == 0)
-    {
-        // Aquí puedes agregar el código para FINALIZAR_PROCESO
-    }
-    else if (strcmp(leido, "DETENER_PLANIFICACION") == 0)
-    {
-        // Aquí puedes agregar el código para DETENER_PLANIFICACION
-    }
-    else if (strcmp(leido, "INICIAR_PLANIFICACION") == 0)
-    {
-        // Aquí puedes agregar el código para INICIAR_PLANIFICACION
-    }
-    else if (strcmp(leido, "MULTIPROGRAMACION") == 0)
-    {
-        // Aquí puedes agregar el código para MULTIPROGRAMACION
-    }
     else if (strcmp(leido, "PROCESO_ESTADO") == 0)
     {
         // Aquí puedes agregar el código para PROCESO_ESTADO

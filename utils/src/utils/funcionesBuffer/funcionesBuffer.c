@@ -26,7 +26,6 @@ t_buffer *buffer_leer_recv(int *socket)
 
 void *buffer_leer_stream_recv(int *socket)
 {
-    
 }
 
 void buffer_add(t_buffer *buffer, void *data, uint32_t size)
@@ -74,7 +73,7 @@ void buffer_add_string(t_buffer *buffer, uint32_t length, char *string)
 
 char *buffer_read_string(t_buffer *buffer, int length)
 {
-    char *string = malloc(length);
+    char *string = (char *)calloc(length, sizeof(char));
     buffer_read(buffer, string, length);
     return string;
 }

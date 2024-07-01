@@ -15,7 +15,7 @@ char *recibirInstruccion(int *socket, unsigned int pid, unsigned int pc)
     t_buffer *buffer_recv = buffer_leer_recv(socket);
 
     int size = buffer_read_uint32(buffer_recv);
-    char *instruccion = buffer_read_string(buffer, size);
+    char *instruccion = buffer_read_string(buffer_recv, size);
 
     buffer_destroy(buffer);
     buffer_destroy(buffer_recv);

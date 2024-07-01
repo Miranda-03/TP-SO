@@ -10,6 +10,7 @@
 #include <commons/log.h>
 #include <commons/string.h>
 #include <readline/readline.h>
+#include <unistd.h>
 
 typedef struct
 {
@@ -19,8 +20,8 @@ typedef struct
 
 typedef struct
 {
-   int *IO_Kernel_socket;
-   int *IO_Memoria_socket;
+   int IO_Kernel_socket;
+   int IO_Memoria_socket;
    moduloIO *modulo_io;
    TipoInterfaz tipo_interfaz;
 } socket_hilo;
@@ -29,7 +30,7 @@ typedef struct
  * @fn crearIO
  * @brief funcion para crear I/O.
  */
-void crearIO(char *config_file, char *idIO);
+void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha);
 
 /**
  * @fn hilo_conexion_io
@@ -75,7 +76,7 @@ socket_hilo *generar_struct_socket_hilo(moduloIO * modulo_io, int *IOsocketKerne
  * @fn *recibir_instruccion_del_kernel
  * @brief funcion para recibir la instruccion del kernel y devolver el buffer para leer los parametros luego.
  */
-t_buffer *recibir_instruccion_del_kernel(char *instruccion, int *PID, int *socket);
+t_buffer *recibir_instruccion_del_kernel(char **instruccion, int *PID, int *socket);
 
 /**
  * @fn *mensaje_info_operacion

@@ -37,7 +37,7 @@ typedef struct
     pthread_mutex_t mutexCola;
     char *identificador;
     int *conectado;
-    int *socket;
+    int socket;
     t_queue *colaBloqueadoPorID;
 } listaBlockPorID;
 
@@ -67,7 +67,7 @@ typedef struct
 typedef struct
 {
     TipoInterfaz interfaz;
-    int *socket;
+    int socket;
 } IOguardar_kernel;
 
 typedef struct
@@ -287,5 +287,9 @@ void *waitHilo (void *ptr);
 void hacerPOST(char *id_recurso);
 
 int hayProcesosEnCola();
+
+void detenerPlanificador();
+
+void reanudarPlanificador();
 
 #endif
