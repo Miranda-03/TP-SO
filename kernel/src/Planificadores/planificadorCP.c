@@ -27,6 +27,7 @@ pthread_mutex_t mutexIOSTDIN;
 pthread_mutex_t mutexIOSTDOUT;
 
 sem_t flujoPlanificador_cp;
+sem_t esperar_proceso;
 
 /*
     PONER LOS PROTOTIPOS DE LAS FUNCIONES EN EL HEADER IOguardar
@@ -62,6 +63,7 @@ void *planificarCortoPlazo(void *ptr)
     pthread_mutex_init(&mutexMayorPriordad, NULL);
 
     sem_init(&flujoPlanificador_cp, 0, 1);
+    sem_init(&esperar_proceso, 0, 0);
 
     pthread_t hiloParaBloqueados;
     pthread_create(&hiloParaBloqueados, NULL, manageBloqueados, NULL);
@@ -246,6 +248,8 @@ void esperarProcesoCPU(int quantum)
         int tiempoRestante = esperarQuantum(quantum);
         temporal_destroy(tiempoEjecutando);
 
+        sem_wait(&esperar_proceso);
+
         if (algoritmo == VRR && PIDprocesoEjecutando < 0)
         {
             procesoDelCPU->pcb->quantumRestante = tiempoRestante;
@@ -274,7 +278,7 @@ int esperarQuantum(int quantum)
             return (quantum - temporal_gettime(tiempoEjecutando));
         }
         else if (temporal_gettime(tiempoEjecutando) >= quantum)
-        {
+        {   
             enviarInterrupcion(FIN_DE_QUANNTUM, &(params->KernelSocketCPUInterrumpt));
             return 0;
         }
@@ -317,6 +321,7 @@ void *escuchaDispatch(void *ptr)
     }
 
     PIDprocesoEjecutando = -1; // llego el proceso, ya no esta ejecutando ninguno
+    sem_post(&esperar_proceso);
 
     buffer_destroy(buffer);
     pthread_exit(NULL);

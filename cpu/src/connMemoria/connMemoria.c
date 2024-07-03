@@ -5,10 +5,10 @@ char *recibirInstruccion(int *socket, unsigned int pid, unsigned int pc)
 
     t_buffer *buffer = buffer_create(sizeof(unsigned int) * 2);
 
-    buffer_add_uint32(buffer, pc);
     buffer_add_uint32(buffer, pid);
+    buffer_add_uint32(buffer, pc);
 
-    enviarMensaje(socket, buffer, CPU, MENSAJE);
+    enviarMensaje(socket, buffer, CPU, OBTENER_INSTRUCCION);
 
     TipoModulo *modulo = get_modulo_msg_recv(socket);
     op_code *op_code = get_opcode_msg_recv(socket);

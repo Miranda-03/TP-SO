@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <commons/collections/dictionary.h>
 #include <utils/obtenerValorConfig/obtenerValorConfig.h>
+#include <utils/enviarMensajes/enviarMensaje.h>
 #include <commons/string.h>
 #include <unistd.h>
 
@@ -25,5 +26,11 @@ int agregar_instrucciones(char *path, int pid);
  * @brief retorna una instruccion.
  */
 char *obtener_instruccion(int pid, int pc);
+
+/**
+ * @fn    enviar_instruccion
+ * @brief envia la instruccion a la CPU.
+ */
+void enviar_instruccion(int *socket, int pc, int pid);
 
 #endif

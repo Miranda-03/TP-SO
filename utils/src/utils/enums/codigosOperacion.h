@@ -11,7 +11,12 @@
 typedef enum {
     HANDSHAKE,
     MENSAJE,
-    PROCESO
+    PROCESO,
+    OBTENER_INSTRUCCION,
+    LEER_MEMORIA,
+    ESCRIBIR_MEMORIA,
+    RESIZE,
+    OBTENER_MARCO
 } op_code;
 
 #endif

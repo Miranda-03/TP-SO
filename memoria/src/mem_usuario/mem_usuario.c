@@ -9,15 +9,34 @@ t_dictionary *tablas_de_paginas;
 int tam_memoria;
 int tam_pagina;
 
-void iniciar_espacio_usuario() // HEADER
+int *socket_cpu;
+int *socket_stdin;
+int *socket_stdout;
+
+void obtener_socket_stdin(int *socket_io)
+{
+    socket_stdin = socket_io;
+}
+
+void obtener_socket_stdout(int *socket_io)
+{
+    socket_stdout = socket_io;
+}
+
+void obtener_socket(int *socket_main)
+{
+    socket_cpu = socket_main;
+}
+
+void iniciar_espacio_usuario()
 {
     tam_memoria = atoi(obtenerValorConfig("memoria.config", "TAM_MEMORIA"));
     espacio = malloc(tam_memoria);
 }
 
-void iniciar_marcos() // HEADER
+void iniciar_marcos()
 {
-    tam_pagina = atoi(obtenerValorConfig("memori.config", "TAM_PAGINA"));
+    tam_pagina = atoi(obtenerValorConfig("memoria.config", "TAM_PAGINA"));
     int cant_marcos = tam_memoria / tam_pagina;
 
     tabla_marcos = list_create();
@@ -31,15 +50,14 @@ void iniciar_marcos() // HEADER
     }
 }
 
-void iniciar_tablas_de_paginas() // HEADER
+void iniciar_tablas_de_paginas()
 {
     tablas_de_paginas = dictionary_create();
 }
 
-void crear_tabla_de_pagina(int PID) // HEADER
+void crear_tabla_de_pagina(int PID)
 {
-    t_list *tabla_de_paginas;
-    = list_create();
+    t_list *tabla_de_paginas = list_create();
 
     char char_pid[10];
 
@@ -48,21 +66,25 @@ void crear_tabla_de_pagina(int PID) // HEADER
     dictionary_put(tablas_de_paginas, char_pid, tabla_de_paginas);
 }
 
-int resize_proceso(int PID, int tam) // HEADER
+void resize_proceso(int PID, int tam)
 {
     int cant_paginas = cant_paginas_por_proceso(PID);
 
+    int resultado = 1; 
+
     if (cant_paginas * tam_pagina > tam)
     {
-        quitar_paginas(PID, tam, cant_paginas - 1);
+        resultado = quitar_paginas(PID, tam, cant_paginas - 1);
     }
     else if (cant_paginas * tam_pagina < tam)
     {
-        agregar_paginas(PID, tam, cant_paginas + 1);
+        resultado = agregar_paginas(PID, tam, cant_paginas + 1);
     }
+
+    enviar_dato_a_modulo(&resultado, 4, NULL);
 }
 
-int encontrar_marco(int PID, int numero_de_pagina) // HEADER
+void encontrar_marco(int PID, int numero_de_pagina)
 {
     char char_pid[10];
 
@@ -81,62 +103,27 @@ int encontrar_marco(int PID, int numero_de_pagina) // HEADER
 
     Pagina *entrada = (Pagina *)list_find(tabla_de_paginas, encontrar_pagina);
 
-    return entrada->marco->numero_de_marco;
+    enviar_dato_a_modulo(&(entrada->marco->numero_de_marco), 4, NULL);
 }
 
-int escribir_memoria(int numero_de_marco, int desplazamiento, int bytes, void *dato) // HEADER
+void escribir_memoria(int direccion_fisica, int bytes_a_escribir, void *dato, TipoInterfaz *interfaz)
 {
-    // int puntero = (numero_de_marco * tam_pagina) + desplazamiento;
+    memcpy(espacio + direccion_fisica, dato, bytes_a_escribir);
 
-    int puntero = obtener_puntero_a_memoria(numero_de_marco, desplazamiento); // FALTA HACER
-
-    if (puntero < 0)
-        return -1; // DIRECCION INVALIDA
-
-    int cant_bytes_copiados = 1;
-
-    while (cant_bytes_copiados <= bytes)
-    {
-        int puntero_donde_escribir = excedio_pagina(puntero + cant_bytes_copiados); // FALTA HACER
-
-        if (puntero_donde_escribir < 0)
-            return -2; // NO PUEDE GUARDAR EL DATO POR FALTA DE MEMORIA
-
-        memcpy(espacio + puntero_donde_escribir + (cant_bytes_copiados - 1), dato + (cant_bytes_copiados - 1), 1);
-
-        cant_bytes_copiados += 1;
-    }
-
-    return 1;
+    int resultado = 1;
+    enviar_dato_a_modulo(&resultado, 4, interfaz);
 }
 
-void *leer_memoria(int numero_de_marco, int desplazamiento, int bytes_a_leer) // HEADER
+void leer_memoria(int direccion_fisica, int bytes_a_leer, TipoInterfaz *interfaz)
 {
-    int puntero = obtener_puntero_a_memoria(numero_de_marco, desplazamiento); // FALTA HACER
-
-    if (puntero < 0)
-        return -1; // DIRECCION INVALIDA
-
-    if (valor_fuera_de_rango(puntero, bytes_a_leer) < 0)
-        return -3; // SE QUIERE LEER UNA PARTE DE LA MEMORIA QUE NO EXISTE
-
     void *dato = malloc(bytes_a_leer);
 
-    int bytes_leidos = 1;
+    memcpy(dato, espacio + direccion_fisica, bytes_a_leer);
 
-    while (bytes_leidos <= bytes_a_leer)
-    {
-        int puntero_donde_leer = excedio_pagina(puntero + bytes_leidos); // FALTA HACER
-
-        memcpy(dato + (bytes_leidos - 1), espacio + puntero_donde_leer + (bytes_leidos - 1), 1);
-
-        bytes_leidos += 1;
-    }
-
-    return 1;
+    enviar_dato_a_modulo(dato, bytes_a_leer, interfaz);
 }
 
-void quitar_paginas(int PID, int tam, int cant_paginas) // HEADER
+int quitar_paginas(int PID, int tam, int cant_paginas)
 {
     char char_pid[10];
 
@@ -151,9 +138,11 @@ void quitar_paginas(int PID, int tam, int cant_paginas) // HEADER
         free(entrada);
         cant_paginas -= 1;
     }
+
+    return 1;
 }
 
-void agregar_paginas(int PID, int tam, int cant_paginas) // HEADER
+int agregar_paginas(int PID, int tam, int cant_paginas)
 {
     char char_pid[10];
 
@@ -164,12 +153,13 @@ void agregar_paginas(int PID, int tam, int cant_paginas) // HEADER
     while (cant_paginas * tam_pagina < tam)
     {
         Pagina *entrada = malloc(sizeof(Pagina));
+        entrada->marco = NULL;
         entrada->marco = encontrar_marco_libre();
 
         if (entrada->marco == NULL)
         {
-            // ENVIA MENSAJE DE OUT OF MEMORY A CPU
             free(entrada);
+            return -1;
         }
         else
         {
@@ -180,29 +170,24 @@ void agregar_paginas(int PID, int tam, int cant_paginas) // HEADER
 
         cant_paginas += 1;
     }
+
+    return 1;
 }
 
-Marco *encontrar_marco_libre() // HEADER
+Marco *encontrar_marco_libre()
 {
     bool esta_libre(void *value)
     {
-        Marco *marco = (Marco *)value;
-        if (marco->ocupado == 0)
+        Marco *entrada = (Marco *)value;
+        if(entrada->ocupado == 0)
             return 1;
         return 0;
     }
 
-    Marco *entrada = (Marco *)list_find(tabla_marcos, esta_libre);
-
-    if (entrada == NULL)
-        return NULL;
-
-    entrada->ocupado = 1;
-
-    return entrada;
+    return (Marco *)list_find(tabla_marcos, esta_libre);
 }
 
-int cant_paginas_por_proceso(int PID) // HEADER
+int cant_paginas_por_proceso(int PID)
 {
     char char_pid[10];
 
@@ -211,4 +196,30 @@ int cant_paginas_por_proceso(int PID) // HEADER
     t_list *tabla_de_paginas = (t_list *)dictionary_get(tablas_de_paginas, char_pid);
 
     return tam_pagina * list_size(tabla_de_paginas);
+}
+
+void enviar_tam_de_pagina()
+{
+    enviar_dato_a_modulo(&tam_pagina, 4, NULL);
+}
+
+void enviar_dato_a_modulo(void *dato, int bytes_a_enviar, TipoInterfaz *interfaz)
+{
+    int *socket_conn = obtener_socket_correspondiente(interfaz);
+
+    //if(*socket_conn < 0) // ERROR
+
+    t_buffer *buffer = buffer_create(bytes_a_enviar);
+    buffer_add(buffer, dato, bytes_a_enviar);
+    enviarMensaje(socket_conn, buffer, MEMORIA, MENSAJE);
+}
+
+int *obtener_socket_correspondiente(TipoInterfaz *interfaz)
+{
+    if(interfaz == NULL)
+        return socket_cpu;
+    else if(*interfaz == STDIN)
+        return socket_stdin;
+    else if(*interfaz == STDOUT)
+        return socket_stdout;
 }

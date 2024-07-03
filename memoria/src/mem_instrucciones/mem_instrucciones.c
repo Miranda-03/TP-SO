@@ -7,7 +7,7 @@ int retardoEspera;
 void crear_mem_instrucciones()
 {
    memoria_instrucciones = dictionary_create();
-   retardoEspera = atoi(obtenerValorConfig("memoria.config", "RETARDO_RESPUESTA"))/100;
+   retardoEspera = atoi(obtenerValorConfig("memoria.config", "RETARDO_RESPUESTA")) / 1000;
 }
 
 int agregar_instrucciones(char *path, int pid)
@@ -60,4 +60,12 @@ char *obtener_instruccion(int pid, int pc)
    }
    free(instruccion);
    return "null";
+}
+
+void enviar_instruccion(int *socket, int pc, int pid)
+{
+   char *instruccion = obtener_instruccion(pid, pc);
+   t_buffer *buffer = buffer_create(sizeof(uint32_t) + (strlen(instruccion)) + 1);
+   buffer_add_string(buffer, (strlen(instruccion)) + 1, instruccion);
+   enviarMensaje(socket, buffer, MEMORIA, MENSAJE);
 }

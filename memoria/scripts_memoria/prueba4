@@ -1,4 +1,4 @@
-IO_GEN_SLEEP escaner 2
+IO_GEN_SLEEP impresora 10
 SET AX 1
 SET BX 1
 SUB AX BX

@@ -4,27 +4,63 @@ void *manage_conn_cpu(void *ptr)
 {
     int socketCPU = *((int *)ptr);
 
+    obtener_socket(&socketCPU);
+
     int pc;
     int pid;
+    int dir_fisica;
+    int bytes;
+    int tam;
+    int numero_pagina;
+    // HAY QUE PONER LOS LOGERS
 
     while (1)
     {
-        op_code *op_code = get_opcode_msg_recv(&socketCPU);
         TipoModulo *modulo = get_modulo_msg_recv(&socketCPU);
-        //void *stream = buffer_leer_stream_recv(socketCPU);
-
+        op_code *op_code = get_opcode_msg_recv(&socketCPU);
         t_buffer *buffer = buffer_leer_recv(&socketCPU);
-        pc = buffer_read_uint32(buffer);
         pid = buffer_read_uint32(buffer);
-        buffer_destroy(buffer);
-        enviar_instruccion(&socketCPU, pc, pid);
-    }
-}
 
-void enviar_instruccion(int *socket, int pc, int pid)
-{
-    char *instruccion = obtener_instruccion(pid, pc);
-    t_buffer *buffer = buffer_create(sizeof(uint32_t) + (strlen(instruccion)) + 1);
-    buffer_add_string(buffer, (strlen(instruccion)) + 1, instruccion);
-    enviarMensaje(socket, buffer, MEMORIA, MENSAJE);
+        switch (*op_code)
+        {
+        case OBTENER_INSTRUCCION:
+            pc = buffer_read_uint32(buffer);
+            buffer_destroy(buffer);
+            enviar_instruccion(&socketCPU, pc, pid);
+            break;
+
+        case LEER_MEMORIA:
+            dir_fisica = buffer_read_uint32(buffer);
+            bytes = buffer_read_uint32(buffer);
+            buffer_destroy(buffer);
+            leer_memoria(dir_fisica, bytes, NULL);
+            break;
+        
+        case ESCRIBIR_MEMORIA:
+            dir_fisica = buffer_read_uint32(buffer);
+            bytes = buffer_read_uint32(buffer);
+            void *dato = malloc(bytes);
+            buffer_read(buffer, dato, bytes);
+            buffer_destroy(buffer);
+            escribir_memoria(dir_fisica, bytes, dato, NULL);
+            break;
+        
+        case RESIZE:
+            tam = buffer_read_uint32(buffer);
+            buffer_destroy(buffer);
+            resize_proceso(pid, tam);
+            break;
+        
+        case OBTENER_MARCO:
+            numero_pagina = buffer_read_uint32(buffer);
+            buffer_destroy(buffer);
+            encontrar_marco(pid, numero_pagina);
+            break;
+
+        default:
+            buffer_destroy(buffer);
+            enviar_tam_de_pagina();
+            break;
+        }
+    }
 }
