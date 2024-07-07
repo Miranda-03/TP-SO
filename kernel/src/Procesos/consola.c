@@ -48,7 +48,7 @@ void atender_instruccion(char *leido)
 
     if (strcmp(comando[0], "EJECUTAR_SCRIPT") == 0)
     {
-        // Aquí puedes agregar el código para EJECUTAR_SCRIPT
+        leer_script(comando[1]);
     }
     else if (strcmp(comando[0], "INICIAR_PROCESO") == 0)
     {
@@ -86,4 +86,31 @@ void atender_instruccion(char *leido)
     {
         log_error(logger_kernel, "ERROR");
     } */
+}
+
+void leer_script(const char *path)
+{
+    FILE *file = fopen(path, "r");
+    if (file == NULL)
+    {
+        perror("Error opening file");
+        return;
+    }
+
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+
+    while ((read = getline(&line, &len, file)) != -1)
+    {
+        // Eliminar el salto de línea si está presente
+        if (read > 0 && line[read - 1] == '\n')
+        {
+            line[read - 1] = '\0';
+        }
+        atender_instruccion(line);
+    }
+
+    free(line);
+    fclose(file);
 }
