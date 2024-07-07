@@ -37,6 +37,8 @@ void obtener_procesoCPU_del_stream(t_buffer *buffer, Contexto_proceso *procesoCP
     procesoCPU->pid = buffer_read_uint32(buffer);
     procesoCPU->pc = buffer_read_uint32(buffer);
     obtener_registros(buffer, procesoCPU);
+    procesoCPU->SI = buffer_read_uint32(buffer);
+    procesoCPU->DI = buffer_read_uint32(buffer);
 
     buffer_destroy(buffer);
 }

@@ -1,7 +1,7 @@
 SET AX 1
 IO_GEN_SLEEP escaner 3
 SET BX 1
-IO_GEN_SLEEP escaner 10
+WAIT RA
 SUB AX BX
 SET BX 1
 IO_GEN_SLEEP impresora 2

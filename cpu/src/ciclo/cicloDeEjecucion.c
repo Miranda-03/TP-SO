@@ -2,10 +2,14 @@
 
 int *interrupcion_ce;
 
+int socket_con_memoria_cpu;
+
 void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion_main)
 {
     t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
     interrupcion_ce = interrupcion_main;
+    socket_con_memoria_cpu = *CPUSocketMemoria;
+    obtener_tam_pagina(*CPUSocketMemoria);
 
     while (1)
     {
@@ -33,6 +37,7 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
     char *operacion = instruccionSeparada[0];
     char *primerParametro = instruccionSeparada[1];
     char *segundoParametro = instruccionSeparada[2];
+    char *tercerParametro = instruccionSeparada[3];
     int *registro;
     Registro *reg;
     char tipo;
@@ -57,10 +62,50 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
         instruccion_JNZ(primerParametro, segundoParametro, procesoCPU, &tipo, reg);
     }
+    else if (strcmp(operacion, "RESIZE") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_RESIZE(primerParametro, procesoCPU, socket_con_memoria_cpu, CPUsocketBidireccionalDispatch);
+    }
+    else if (strcmp(operacion, "COPY_STRING") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_COPY_STRING(primerParametro, procesoCPU, socket_con_memoria_cpu);
+    }
+    else if (strcmp(operacion, "MOV_IN") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_MOV_IN(primerParametro, segundoParametro, procesoCPU, &tipo, reg, socket_con_memoria_cpu);
+    }
+    else if (strcmp(operacion, "MOV_OUT") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_MOV_OUT(primerParametro, segundoParametro, procesoCPU, &tipo, reg, socket_con_memoria_cpu);
+    }
+    else if (strcmp(operacion, "WAIT") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        enviar_contexto_al_kernel(procesoCPU, PETICION_RECURSO, instruccion, CPUsocketBidireccionalDispatch);
+    }
+    else if (strcmp(operacion, "SIGNAL") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        enviar_contexto_al_kernel(procesoCPU, PETICION_RECURSO, instruccion, CPUsocketBidireccionalDispatch);
+    }
     else if (strcmp(operacion, "IO_GEN_SLEEP") == 0)
     {
         log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
         enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
+    }
+    else if (strcmp(operacion, "IO_STDIN_READ") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_IO_STD(instruccionSeparada, procesoCPU, &tipo, reg, socket_con_memoria_cpu, *CPUsocketBidireccionalDispatch, STDIN);
+    }
+    else if (strcmp(operacion, "IO_STDOUT_WRITE") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_IO_STD(instruccionSeparada, procesoCPU, &tipo, reg, socket_con_memoria_cpu, *CPUsocketBidireccionalDispatch, STDOUT);
     }
     else if (strcmp(operacion, "EXIT") == 0)
     {
@@ -78,7 +123,7 @@ void checkInterrupt(Contexto_proceso *procesoCPU, int *CPUsocketBidireccionalDis
     if (*interrupcion_ce == 1)
     {
         *interrupcion_ce = 0;
-        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_KERNEL, NULL, CPUsocketBidireccionalDispatch);
+        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_EXIT_KERNEL, NULL, CPUsocketBidireccionalDispatch);
     }
     else if (*interrupcion_ce == 2)
     {
@@ -102,6 +147,8 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     buffer_add_uint32(buffer, procesoCPU->pid);
     buffer_add_uint32(buffer, procesoCPU->pc);
     agregar_registros_al_buffer(procesoCPU, buffer);
+    buffer_add_uint32(buffer, procesoCPU->SI);
+    buffer_add_uint32(buffer, procesoCPU->DI);
 
     if (instruccion != NULL)
     { // No estoy seguro de la comparacion
@@ -155,4 +202,22 @@ char *mensaje_execute_log(int *pid, char *instruccion)
     }
 
     return result;
+}
+
+void obtener_tam_pagina(int socket)
+{
+    t_buffer *buffer = buffer_create(4);
+    buffer_add_uint32(buffer, -1);
+    enviarMensaje(&socket, buffer, CPU, MENSAJE);
+
+    TipoModulo *modulo = get_modulo_msg_recv(&socket);
+    op_code *opcode = get_opcode_msg_recv(&socket);
+    t_buffer *buffer_recv = buffer_leer_recv(&socket);
+
+    int *tam_pagina = malloc(4);
+    buffer_read(buffer_recv, tam_pagina, 4);
+    buffer_destroy(buffer_recv);
+    instanciar_tam_pagina_MMU(*tam_pagina);
+
+    free(tam_pagina);
 }

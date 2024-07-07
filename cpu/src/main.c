@@ -3,6 +3,7 @@
 #include "Conexion/conectar.h"
 #include <utils/structs/structSendContextCPU.h>
 #include "ciclo/cicloDeEjecucion.h"
+#include "TLB/TLB.h"
 
 Contexto_proceso *procesoCPU;
 int CPUSocketMemoria;
@@ -20,6 +21,8 @@ int main(int argc, char *argv[])
     int *CPUsocketBidireccionalInterruptPtr = &CPUsocketBidireccionalInterrupt;
 
     conectarModuloCPU(CPUSocketMemoriaPtr, CPUsocketBidireccionalDispatchPtr, CPUsocketBidireccionalInterruptPtr, procesoCPU, &interrupcion);
+
+    iniciar_TLB(CPUSocketMemoria);
 
     cicloDeEjecucion(&CPUSocketMemoria, &CPUsocketBidireccionalDispatch, &CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
 

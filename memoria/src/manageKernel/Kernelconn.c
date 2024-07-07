@@ -19,11 +19,14 @@ void *manage_conn_kernel(void *ptr)
         }
         else
         {
-            // quitar archivo de instrucciones (NO TERMINADO)
             int pid = buffer_read_uint32(buffer);
-            t_buffer *buffer_eliminar_instrucciones = buffer_create(4);
-            buffer_add_uint32(buffer_eliminar_instrucciones, 1);
 
+            resize_proceso(pid, 0, 0);
+            quitar_tabla_de_pagina(pid);
+            int respuesta = quitar_instrucciones(pid);
+
+            t_buffer *buffer_eliminar_instrucciones = buffer_create(4);
+            buffer_add_uint32(buffer_eliminar_instrucciones, respuesta);
             enviarMensaje(socketKernel, buffer_eliminar_instrucciones, MEMORIA, MENSAJE);
         }
         buffer_destroy(buffer);

@@ -131,8 +131,10 @@ void iniciarMutex()
 
 void terminarProceso(Pcb *proceso) // FALTA LIBERAR LOS RECURSOS
 {
+    proceso->estado = ESTADO_EXIT;
     quitarMemoria(proceso);
-    free(proceso);
+    liberar_recursos(proceso);
+    queue_push(cola_de_exit, proceso);
     sem_post(&grado_multiprogramacion);
 }
 
@@ -179,4 +181,26 @@ void ajustar_grado_multiprogramacion(int nuevo_valor)
             sem_wait(&grado_multiprogramacion);
         }
     }
+}
+
+int encontrar_en_new_y_terminar(int pid)
+{
+    Pcb *proceso = NULL;
+
+    bool encontrar_proceso(void *value)
+    {
+        Pcb *proceso = (Pcb *)value;
+        if(proceso->pid == pid)
+            return 1;
+        return 0;
+    }
+
+    proceso = list_remove_by_condition(cola_de_new->elements, encontrar_proceso);
+    if(proceso != NULL)
+    {
+        proceso->estado = ESTADO_EXIT;
+        queue_push(cola_de_exit, proceso);
+        return 1;
+    }
+    return -1;
 }

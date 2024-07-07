@@ -33,24 +33,24 @@ void *manage_conn_cpu(void *ptr)
             dir_fisica = buffer_read_uint32(buffer);
             bytes = buffer_read_uint32(buffer);
             buffer_destroy(buffer);
-            leer_memoria(dir_fisica, bytes, NULL);
+            leer_memoria(dir_fisica, bytes, &socketCPU);
             break;
-        
+
         case ESCRIBIR_MEMORIA:
             dir_fisica = buffer_read_uint32(buffer);
             bytes = buffer_read_uint32(buffer);
             void *dato = malloc(bytes);
             buffer_read(buffer, dato, bytes);
             buffer_destroy(buffer);
-            escribir_memoria(dir_fisica, bytes, dato, NULL);
+            escribir_memoria(dir_fisica, bytes, dato, &socketCPU);
             break;
-        
+
         case RESIZE:
             tam = buffer_read_uint32(buffer);
             buffer_destroy(buffer);
-            resize_proceso(pid, tam);
+            resize_proceso(pid, tam, 1);
             break;
-        
+
         case OBTENER_MARCO:
             numero_pagina = buffer_read_uint32(buffer);
             buffer_destroy(buffer);

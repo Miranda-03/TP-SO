@@ -33,4 +33,10 @@ char *obtener_instruccion(int pid, int pc);
  */
 void enviar_instruccion(int *socket, int pc, int pid);
 
+/**
+ * @fn    quitar_instrucciones
+ * @brief quita el archivo con las instrucciones del proceso.
+ */
+int quitar_instrucciones(int pid);
+
 #endif

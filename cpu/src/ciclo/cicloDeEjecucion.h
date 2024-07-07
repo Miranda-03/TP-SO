@@ -12,6 +12,7 @@
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <commons/log.h>
 #include "setInstrucciones.h"
+#include "MMU/MMU.h"
 
 /**
  * @fn    cicloDeEjecucion
@@ -49,5 +50,11 @@ void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
 
 char *mensaje_fetch_instruccion_log(int *pid, int *pc);
 char *mensaje_execute_log(int *pid, char *instruccion);
+
+/**
+ * @fn    obtener_tam_pagina
+ * @brief le pide a memoria el tamaño de la pagina.
+ */
+void obtener_tam_pagina (int socket);
 
 #endif

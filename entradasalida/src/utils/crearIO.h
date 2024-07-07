@@ -11,6 +11,7 @@
 #include <commons/string.h>
 #include <readline/readline.h>
 #include <unistd.h>
+#include <utils/obtenerValorConfig/obtenerValorConfig.h>
 
 typedef struct
 {
@@ -88,7 +89,7 @@ char *mensaje_info_operacion(int PID, char *operacion);
  * @fn *manageSTDIN
  * @brief funcion para las entradasalidas de tipo STDIN.
  */
-void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion);
+void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion, int pid);
 
 void inicializarMutex();
 
@@ -96,6 +97,8 @@ void enviarMensajeAMemoria(int *socket, char *texto, int dir_fisica, int *result
 
 int esperarResultado(int *socket);
 
-void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion);
+void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion, int pid);
+
+TipoInterfaz tipo_interfaz_config(char *config_path);
 
 #endif

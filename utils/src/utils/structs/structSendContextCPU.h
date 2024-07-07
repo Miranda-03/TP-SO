@@ -13,6 +13,8 @@ typedef struct
     int pid;
     uint32_t pc;
     Registros registros;
+    uint32_t SI;
+    uint32_t DI;
 } Contexto_proceso;
 
 

@@ -14,7 +14,7 @@ void consolaInteractiva()
         }
 
         int valido = verificar_comando(linea);
-        
+
         if (valido < 0)
             printf("comando no reconocido\n");
         else
@@ -59,11 +59,10 @@ void atender_instruccion(char *leido)
     }
     else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0) // FALTA HACER
     {
-        /*
-        int resultadoFinalizado = buscarProcesoEnREADYyEXITporIDyFinalizarlo(comando[1]);
-        if (resultadoFinalizado < 0)
-            buscarProcesoEnPlanificadorCP(comando[1]);
-        */
+        detenerPlanificador();
+        if (encontrar_y_terminar_proceso(atoi(comando[1])) < 0)
+            encontrar_en_new_y_terminar(atoi(comando[1]));
+        reanudarPlanificador();
     }
     else if (strcmp(comando[0], "DETENER_PLANIFICACION") == 0)
     {
@@ -77,7 +76,7 @@ void atender_instruccion(char *leido)
     {
         ajustar_grado_multiprogramacion(atoi(comando[1]));
     }
-    
+
     /*
     else if (strcmp(leido, "PROCESO_ESTADO") == 0)
     {

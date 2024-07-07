@@ -80,10 +80,12 @@ void manageIO(int *socket)
     {
     case STDIN:
         enviarPaqueteResult(1, socket, MEMORIA, IO);
+        crearHiloManageSTDIN(socket);
         break;
 
     case STDOUT:
         enviarPaqueteResult(1, socket, MEMORIA, IO);
+        crearHiloManageSTDOUT(socket);
         break;
 
     case DIALFS:
@@ -94,6 +96,26 @@ void manageIO(int *socket)
         enviarPaqueteResult(-1, socket, MEMORIA, IO);
         break;
     }
+}
+
+void crearHiloManageSTDIN(int *socket)
+{
+    pthread_t hilo_manage_stdin;
+    pthread_create(&hilo_manage_stdin,
+                       NULL,
+                       (void *)manage_conn_stdin_io,
+                       socket);
+    pthread_detach(hilo_manage_stdin);
+}
+
+void crearHiloManageSTDOUT(int *socket)
+{
+    pthread_t hilo_manage_stdout;
+    pthread_create(&hilo_manage_stdout,
+                       NULL,
+                       (void *)manage_conn_stdout_io,
+                       socket);
+    pthread_detach(hilo_manage_stdout);
 }
 
 void iniciar_hilo_conexion(int *socket, TipoModulo modulo)

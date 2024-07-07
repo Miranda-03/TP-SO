@@ -111,5 +111,10 @@ void enviarMensajeMemoria(t_buffer *buffer, int *resultado);
 * @brief ajustar el grado de multiprogramacion del planificador de largo plazo.
 */
 void ajustar_grado_multiprogramacion(int nuevo_valor);
+/**
+* @fn    encontrar_en_new_y_terminar
+* @brief busca el proceso en la cola de NEW y lo manda a la cola de exit.
+*/
+int encontrar_en_new_y_terminar(int pid);
 
 #endif

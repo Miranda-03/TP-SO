@@ -15,6 +15,8 @@
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <manageCPU/CPUconn.h>
 #include <manageKernel/Kernelconn.h>
+#include <manageSTDIN/manageSTDIN.h>
+#include <manageSTDOUT/manageSTDOUT.h>
 
 /**
 * @fn    conectarModuloMemoria
@@ -51,5 +53,8 @@ void manageModulo(int *socket, TipoModulo modulo);
 * @brief funcion para inicar el hilo de ejecucion para enviar y recibir mensajes con el modulo correspondiente.
 */
 void iniciar_hilo_conexion(int *socket, TipoModulo modulo);
+
+void crearHiloManageSTDIN(int *socket);
+void crearHiloManageSTDOUT(int *socket);
 
 #endif

@@ -11,7 +11,6 @@
 #include <unistd.h>
 #include <semaphore.h>
 
-
 int KernelSocketCPUDispatch;
 int KernelSocketCPUInterrumpt;
 int KernelSocketMemoria;
@@ -48,11 +47,17 @@ void obtenerRecuros()
         lenIDS++;
     }
 
-    for(int i = 0; i < lenIDS; i++)
+    for (int i = 0; i < lenIDS; i++)
     {
-        sem_t cant_recurso;
-        sem_init(&cant_recurso, 0, atoi(recursosCantidad[i]));
-        dictionary_put(recursos_main, recursosIDs[1], &cant_recurso);
+        sleep(1);
+        Recurso *recurso = malloc(sizeof(Recurso));
+        recurso->cantidad_recurso = malloc(4);
+        recurso->cola_de_bloqueados_por_recurso = queue_create();
+        pthread_mutex_init(&recurso->mutex_recurso, NULL);
+        *(recurso->cantidad_recurso) = atoi(recursosCantidad[i]);
+        recurso->id_recurso = strdup(recursosIDs[i]);
+        recurso->cant_recursos_iniciales = atoi(recursosCantidad[i]);
+        dictionary_put(recursos_main, recursosIDs[i], recurso);
     }
 }
 

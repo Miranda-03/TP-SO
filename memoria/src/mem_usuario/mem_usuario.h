@@ -53,7 +53,7 @@ void iniciar_tablas_de_paginas();
  * @fn    resize_proceso
  * @brief hace el rezise del proceso agragando o quitando paginas.
  */
-void resize_proceso(int PID, int tam);
+void resize_proceso(int PID, int tam, int enviar_dato);
 
 /**
  * @fn    encontrar_marco
@@ -65,13 +65,13 @@ void encontrar_marco(int PID, int numero_de_pagina);
  * @fn    escribir_memoria
  * @brief escribe en la memoria los bytes indicados en la direccion fisica pasada por parametro (hace un memcpy en espacio).
  */
-void escribir_memoria(int direccion_fisica, int bytes_a_escribir, void *dato, TipoInterfaz *interfaz);
+void escribir_memoria(int direccion_fisica, int bytes_a_escribir, void *dato, int *socket);
 
 /**
  * @fn    leer_memoria
  * @brief lee en la memoria los bytes indicados.
  */
-void leer_memoria(int direccion_fisica, int bytes_a_leer, TipoInterfaz *interfaz);
+void leer_memoria(int direccion_fisica, int bytes_a_leer, int *socket);
 
 /**
  * @fn    quitar_paginas
@@ -95,7 +95,7 @@ int cant_paginas_por_proceso(int PID);
  * @fn    enviar_dato_a_CPU
  * @brief envia el dato solicitado al CPU por el socket correspondiente.
  */
-void enviar_dato_a_modulo(void *dato, int bytes_a_enviar, TipoInterfaz *interfaz);
+void enviar_dato_a_modulo(void *dato, int bytes_a_enviar, int *socket);
 
 /**
  * @fn    obtener_socket
@@ -124,5 +124,17 @@ void enviar_tam_de_pagina();
 int *obtener_socket_correspondiente(TipoInterfaz *interfaz);
 
 Marco *encontrar_marco_libre();
+
+/**
+ * @fn    liberar_memoria
+ * @brief libera los marcos del proceso si tiene.
+ */
+int liberar_memoria(int pid);
+
+/**
+ * @fn    quitar_tabla_de_pagina
+ * @brief quita la tabla de paginas del proceso.
+ */
+void quitar_tabla_de_pagina(int pid);
 
 #endif
