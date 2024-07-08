@@ -7,7 +7,7 @@ void inicializarMutex()
     pthread_mutex_init(&mutexMSGMemoria_io, NULL);
 }
 
-void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
+void crearIO(char *config_file, char *idIO)
 {
     // crear el dispositivo impresora a modo de ejemplo
     char *config_path = config_file;
@@ -22,9 +22,11 @@ void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
 
     conectarModuloIO(io_interfaz, idIO, IOsocketKernelptr, IOsocketMemoriaptr, config_path);
 
-    socket_hilo *sockets = generar_struct_socket_hilo(impresora, &IOsocketKernel, &IOsocketMemoria, io_interfaz);
+    socket_hilo *sockets = generar_struct_socket_hilo(impresora, IOsocketKernel, IOsocketMemoria, io);
 
-    pthread_create(hilo_de_escucha, NULL, (void *)hilo_conexion_io, sockets);
+    pthread_t thread;
+    pthread_create(&thread, NULL, (void *)hilo_conexion_io, sockets);
+    pthread_join(thread);
 }
 
 void *hilo_conexion_io(void *ptr)
@@ -39,10 +41,12 @@ void *hilo_conexion_io(void *ptr)
     while (io_esta_conectado)
     {
         //*instruccion = NONE;
-        buffer_kernel = recibir_instruccion_del_kernel(&instruccion, PID, &(sockets->IO_Kernel_socket));
+        buffer_kernel = recibir_instruccion_del_kernel(instruccion, PID, sockets->IO_Kernel_socket);
 
         if (strcmp(instruccion, "IO_DISCONNECT") == 0)
         {
+            free(sockets->IO_Kernel_socket);
+            free(sockets->IO_Memoria_socket);
             destruir_struct_io(sockets->modulo_io);
             free(sockets);
             free(instruccion);
@@ -55,16 +59,18 @@ void *hilo_conexion_io(void *ptr)
             {
             case GENERICA:
                 log_info(logger, mensaje_info_operacion(*PID, "IO_SLEEP_GEN"));
-                manageGenerico(sockets->modulo_io, &(sockets->IO_Kernel_socket), buffer_kernel, instruccion);
+                manageGenerico(sockets->modulo_io, sockets->IO_Kernel_socket, buffer_kernel, instruccion);
                 break;
             case STDIN:
                 log_info(logger, mensaje_info_operacion(*PID, "IO_STDIN_READ"));
-                manageSTDIN(sockets->modulo_io, &(sockets->IO_Kernel_socket), &(sockets->IO_Memoria_socket), buffer_kernel, instruccion);
+                manageSTDIN(sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
                 break;
             case STDOUT:
                 log_info(logger, mensaje_info_operacion(*PID, "IO_STDOUT_WRITE"));
-                manageSTDOUT(sockets->modulo_io, &(sockets->IO_Kernel_socket), &(sockets->IO_Memoria_socket), buffer_kernel, instruccion);
+                manageSTDOUT(sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
                 break;
+            case DIALFS:
+                manageDialFS(*PID,logger, sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
             }
         }
     }
@@ -74,6 +80,30 @@ void *hilo_conexion_io(void *ptr)
     PARA ESCRIBIR LA MEMORIA SE LE ENVIA PRIMERO UN INT: 2 LECTURA, 3 ESCRITURA
 */
 
+void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion) {
+    t_config *config = config_create(modulo_io->config_path);
+    char *nombre_archivo = buffer_read_string(buffer_kernel);
+    int tamano = obtener_tamano_archivo(nombre_archivo); // Suponiendo que esta función existe y devuelve el tamaño
+    int puntero_archivo = obtener_puntero_archivo(nombre_archivo); // Suponiendo que esta función existe y devuelve el puntero
+
+    if (strcmp(instruccion, "IO_FS_CREATE") == 0) {
+        crear_archivo(pid, logger, nombre_archivo);
+    } else if (strcmp(instruccion, "IO_FS_DELETE") == 0) {
+        eliminar_archivo(pid, logger, nombre_archivo);
+    } else if (strcmp(instruccion, "IO_FS_TRUNCATE") == 0) {
+        truncar_archivo(pid, logger, nombre_archivo, tamano);
+    } else if (strcmp(instruccion, "IO_FS_WRITE") == 0) {
+        escribir_archivo(pid, logger, nombre_archivo, tamano, puntero_archivo);
+    } else if (strcmp(instruccion, "IO_FS_READ") == 0) {
+        leer_archivo(pid, logger, nombre_archivo, tamano, puntero_archivo);
+    } else {
+        log_info(logger, "DialFS - Instrucción desconocida");
+    }
+
+
+    free(nombre_archivo);
+}
+
 void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion)
 {
     t_config *config = config_create(modulo_io->config_path);
@@ -81,28 +111,23 @@ void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer 
     int dir_fisica = buffer_read_uint32(buffer_kernel);
     int size_text = buffer_read_uint32(buffer_kernel);
 
-    char *texto;
+    char texto[size_text] = readline(">");
 
-    texto = readline(">");
+    int *resultado = -1;
 
-    int *resultado = malloc(4);
+    t_buffer *buffer = buffer_create(8 + strlen(texto) + 1);
+    buffer_add_uint32(buffer, 3);
+    buffer_add_uint32(buffer, dir_fisica);
+    buffer_add_string(buffer, size_text + 1, texto);
 
-    *resultado = -1;
-
-    t_buffer *buffer_e = buffer_create(8 + size_text + 1);
-    buffer_add_uint32(buffer_e, 3);
-    buffer_add_uint32(buffer_e, dir_fisica);
-    buffer_add_string(buffer_e, size_text + 1, texto);
-
-    enviarMensajeAMemoria(socketMemoria, texto, dir_fisica, resultado, buffer_e);
+    enviarMensajeAMemoria(socketMemoria, texto, dir_fisica, resultado, buffer);
 
     // Le dice al Kernel que termino con el numero 1
-    t_buffer *buffer_respuesta_kernel = buffer_create(sizeof(uint32_t));
-    buffer_add_uint32(buffer_respuesta_kernel, *resultado);
-    enviarMensaje(socket, buffer_respuesta_kernel, IO, MENSAJE);
+    t_buffer *buffer = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer, *resultado);
+    enviarMensaje(socket, buffer, IO, MENSAJE);
     buffer_destroy(buffer_kernel);
     config_destroy(config);
-    free(texto);
 }
 
 void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion)
@@ -122,20 +147,20 @@ void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer
     TipoModulo *modulo = get_modulo_msg_recv(socket);
     op_code *code = get_opcode_msg_recv(socket);
 
-    t_buffer *buffer_memoria = buffer_leer_recv(socket);
-    int resultado = buffer_read_uint32(buffer_memoria);
+    t_buffer *buffer = buffer_leer_recv(socket);
+    int resultado = buffer_read_uint32(buffer);
 
-    char *texto_resultado = buffer_read_string(buffer_memoria, size_text);
+    char *texto_resultado = buffer_read_string(buffer, size_text);
 
-    // HACER LUEGO CON UN LOGER
+    printf("La cadena obtenida es: %s\n", cadena); //HACER LUEGO CON UN LOGER
 
-    t_buffer *buffer_respuesta_para_kernel = buffer_create(sizeof(uint32_t));
-    buffer_add_uint32(buffer_respuesta_para_kernel, resultado);
-    enviarMensaje(socket, buffer_respuesta_para_kernel, IO, MENSAJE);
+    t_buffer *buffer = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer, resultado);
+    enviarMensaje(socket, buffer, IO, MENSAJE);
     buffer_destroy(buffer_kernel);
     config_destroy(config);
 
-    buffer_destroy(buffer_memoria);
+    buffer_destroy(buffer);
 }
 
 void enviarMensajeAMemoria(int *socket, char *texto, int dir_fisica, int *resultado, t_buffer *buffer)
@@ -235,22 +260,22 @@ socket_hilo *generar_struct_socket_hilo(moduloIO *modulo_io, int *IOsocketKernel
 {
     socket_hilo *io_hilo = malloc(sizeof(socket_hilo));
     io_hilo->modulo_io = modulo_io;
-    io_hilo->IO_Kernel_socket = *IOsocketKernel;
-    io_hilo->IO_Memoria_socket = *IOsocketMemoria;
+    io_hilo->IO_Kernel_socket = IOsocketKernel;
+    io_hilo->IO_Memoria_socket = IOsocketMemoria;
     io_hilo->tipo_interfaz = interfaz;
 
     return io_hilo;
 }
 
-t_buffer *recibir_instruccion_del_kernel(char **instruccion, int *PID, int *socket)
+t_buffer *recibir_instruccion_del_kernel(char *instruccion, int *PID, int *socket)
 {
     TipoModulo *modulo = get_modulo_msg_recv(socket);
     op_code *codigo = get_opcode_msg_recv(socket);
 
     t_buffer *buffer = buffer_leer_recv(socket);
-    *PID = buffer_read_uint32(buffer); // RECIBIRA ALGUNOS OTROS REGISTROS, NO ES NECESARIO PARA GENERICO. PASAR POR PARAMETRO TIPO DE IO
-    int size = buffer_read_uint32(buffer);
-    *instruccion = buffer_read_string(buffer, size);
+    //*PID = buffer_read_uint32(buffer); // RECIBIRA ALGUNOS OTROS REGISTROS, NO ES NECESARIO PARA GENERICO. PASAR POR PARAMETRO TIPO DE IO
+    instruccion = buffer_read_string(buffer);
+
     return buffer;
 }
 
@@ -262,4 +287,58 @@ char *mensaje_info_operacion(int PID, char *operacion)
     string_append(&result, " - Operacion: ");
     string_append(&result, operacion);
     return result;
+}  
+
+char* mensaje_info_detallado(int PID, char* operacion, char* nombre_archivo, int tamano, int puntero_archivo) {
+    
+    char* mensaje = malloc(256);
+    if (strcmp(operacion, "Crear Archivo:") == 0) {
+        snprintf(mensaje, 256, "DialFS - Crear Archivo: \"PID: %d - Crear Archivo: %s\"", PID, nombre_archivo);
+    } else if (strcmp(operacion, "Eliminar Archivo:") == 0) {
+        snprintf(mensaje, 256, "DialFS - Eliminar Archivo: \"PID: %d - Eliminar Archivo: %s\"", PID, nombre_archivo);
+    } else if (strcmp(operacion, "Truncar Archivo:") == 0) {
+        snprintf(mensaje, 256, "DialFS - Truncar Archivo: \"PID: %d - Truncar Archivo: %s - Tamaño: %d\"", PID, nombre_archivo, tamano);
+    } else if (strcmp(operacion, "Leer Archivo:") == 0) {
+        snprintf(mensaje, 256, "DialFS - Leer Archivo: \"PID: %d - Leer Archivo: %s - Tamaño a Leer: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
+    } else if (strcmp(operacion, "Escribir Archivo:") == 0) {
+        snprintf(mensaje, 256, "DialFS - Escribir Archivo: \"PID: %d - Escribir Archivo: %s - Tamaño a Escribir: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
+    } else {
+        snprintf(mensaje, 256, "DialFS - Operación desconocida");
+    }
+    return mensaje;
+}
+
+
+void crear_archivo(int *pid, t_log *logger, char *nombre_archivo) {
+    int bloque_libre = buscar_bloque_libre();
+    if (bloque_libre != -1) {
+        marcar_bloque_ocupado(bloque_libre);
+        crear_archivo_metadata(nombre_archivo, bloque_libre, 0);
+        log_info(logger, mensaje_info_detallado(*pid, "Crear Archivo:", nombre_archivo, 0, 0));
+    } else {
+        log_error(logger, "No hay bloques libres disponibles para crear el archivo.");
+    }
+}
+
+void eliminar_archivo(int *pid, t_log *logger, char *nombre_archivo) {
+    int bloque_inicial = obtener_bloque_inicial(nombre_archivo);
+    int tamano = obtener_tamano_archivo(nombre_archivo);
+    liberar_bloques(bloque_inicial, tamano);
+    eliminar_archivo_metadata(nombre_archivo);
+    log_info(logger, mensaje_info_detallado(*pid, "Eliminar Archivo:", nombre_archivo, 0, 0));
+}
+
+void truncar_archivo(int *pid, t_log *logger, char *nombre_archivo, int tamano) {
+    truncar_archivo_fs(nombre_archivo, tamano); // Suponiendo que esta función ajusta el tamaño del archivo en el FS
+    log_info(logger, mensaje_info_detallado(*pid, "Truncar Archivo:", nombre_archivo, tamano, 0));
+}
+
+void escribir_archivo(int *pid, t_log *logger, char *nombre_archivo, int tamano, int puntero_archivo) {
+    escribir_archivo_fs(nombre_archivo, tamano, puntero_archivo); // Suponiendo que esta función escribe los datos en el archivo en el FS
+    log_info(logger, mensaje_info_detallado(*pid, "Escribir Archivo:", nombre_archivo, tamano, puntero_archivo));
+}
+
+void leer_archivo(int *pid, t_log *logger, char *nombre_archivo, int tamano, int puntero_archivo) {
+    leer_archivo_fs(nombre_archivo, tamano, puntero_archivo); // Suponiendo que esta función lee los datos del archivo en el FS
+    log_info(logger, mensaje_info_detallado(*pid, "Leer Archivo:", nombre_archivo, tamano, puntero_archivo));
 }

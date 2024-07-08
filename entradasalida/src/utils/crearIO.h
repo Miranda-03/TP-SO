@@ -98,4 +98,6 @@ int esperarResultado(int *socket);
 
 void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion);
 
+void manageDialFS(int *pid ,t_log *logger, moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion);
+
 #endif
