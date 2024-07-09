@@ -55,7 +55,7 @@ void atender_instruccion(char *leido)
         char *path = comando[1];
         pthread_t hilo_creacion_proceso;
         pthread_create(&hilo_creacion_proceso, NULL, PLPNuevoProceso, path);
-        pthread_detach(hilo_creacion_proceso);
+        pthread_join(hilo_creacion_proceso, NULL);
     }
     else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0) // FALTA HACER
     {

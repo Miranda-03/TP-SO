@@ -14,6 +14,8 @@ sem_t grado_multiprogramacion;
 t_queue *cola_de_new;
 t_queue *cola_de_exit;
 
+t_log *kernel_loger_lp;
+
 void inicarPlanificadorLargoPLazo(int socketMemoria)
 {
     sem_init(&grado_multiprogramacion, 0, atoi(obtenerValorConfig(PATH_CONFIG, "GRADO_MULTIPROGRAMACION")));
@@ -21,6 +23,7 @@ void inicarPlanificadorLargoPLazo(int socketMemoria)
     cola_de_new = queue_create();
     socketBidireccionalMemoria = malloc(4);
     *socketBidireccionalMemoria = socketMemoria;
+    kernel_loger_lp = log_create("logs/kernel_info.log", "plani_lp", 1, LOG_LEVEL_INFO);
     iniciarMutex();
 }
 
@@ -29,7 +32,19 @@ void nuevoProceso(char *path_instrucciones)
     PcbGuardarEnNEW *nuevo_proceso = (PcbGuardarEnNEW *)malloc(sizeof(PcbGuardarEnNEW));
     nuevo_proceso->proceso = crearProcesoEstadoNEW();
     nuevo_proceso->path_instrucciones = path_instrucciones;
+    mensaje_nuevo_proceso(nuevo_proceso->proceso->pid);
     agregarProcesoColaNew(nuevo_proceso);
+}
+
+void mensaje_nuevo_proceso(int pid)
+{
+    char *mensaje = string_new();
+
+    string_append(&mensaje, "Se crea el proceso ");
+    string_append(&mensaje, string_itoa(pid));
+    string_append(&mensaje, " en NEW");
+
+    log_info(kernel_loger_lp, mensaje);
 }
 
 void agregarProcesoColaNew(PcbGuardarEnNEW *proceso)
@@ -129,13 +144,26 @@ void iniciarMutex()
     pthread_mutex_init(&mutexMSGMemoria, NULL);
 }
 
-void terminarProceso(Pcb *proceso) // FALTA LIBERAR LOS RECURSOS
+void terminarProceso(Pcb *proceso, char *motivo_exit)
 {
     proceso->estado = ESTADO_EXIT;
+    mensaje_exit(proceso->pid, motivo_exit);
     quitarMemoria(proceso);
     liberar_recursos(proceso);
     queue_push(cola_de_exit, proceso);
     sem_post(&grado_multiprogramacion);
+}
+
+void mensaje_exit(int pid, char *motivo_exit)
+{
+    char *mensaje = string_new();
+
+    string_append(&mensaje, "Finaliza el proceso ");
+    string_append(&mensaje, string_itoa(pid));
+    string_append(&mensaje, " - Motivo: ");
+    string_append(&mensaje, motivo_exit);
+
+    log_info(kernel_loger_lp, mensaje);
 }
 
 void quitarMemoria(Pcb *proceso)
@@ -190,13 +218,13 @@ int encontrar_en_new_y_terminar(int pid)
     bool encontrar_proceso(void *value)
     {
         Pcb *proceso = (Pcb *)value;
-        if(proceso->pid == pid)
+        if (proceso->pid == pid)
             return 1;
         return 0;
     }
 
     proceso = list_remove_by_condition(cola_de_new->elements, encontrar_proceso);
-    if(proceso != NULL)
+    if (proceso != NULL)
     {
         proceso->estado = ESTADO_EXIT;
         queue_push(cola_de_exit, proceso);

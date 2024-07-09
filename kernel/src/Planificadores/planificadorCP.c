@@ -6,10 +6,12 @@ t_temporal *tiempoEjecutando;
 int quantumTotal;
 int quantumRestante;
 int *PIDbuscadoParaTerminar;
-// int socketBidireccionalMemoria_Kernel;
+
 Algoritmo algoritmo;
 
-Pcb *proceosPCB_HILO_recursos; // ESTO SE PUEDE MEJORAR
+t_log *kernel_loger_cp;
+
+Pcb *proceosPCB_HILO_recursos;
 
 t_queue *cola_de_ready;
 t_queue *cola_de_mayor_prioridad;
@@ -35,11 +37,6 @@ sem_t flujoPlanificador_cp;
 sem_t esperar_proceso;
 sem_t esperar_guardar_proceso;
 
-/*
-    PONER LOS PROTOTIPOS DE LAS FUNCIONES EN EL HEADER IOguardar
-*/
-
-// CREO QUE HAY QUE INICIALIZAR EL 'procesoDelCPU' PARA DESPUES PODER USARLO
 MensajeProcesoDelCPU *procesoDelCPU;
 
 void *planificarCortoPlazo(void *ptr)
@@ -51,6 +48,8 @@ void *planificarCortoPlazo(void *ptr)
     PIDprocesoEjecutando = -1;
     quantumTotal = atoi(obtenerValorConfig(PATH_CONFIG, "QUANTUM"));
     quantumRestante = quantumTotal;
+
+    kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
 
     PIDbuscadoParaTerminar = malloc(4);
     *PIDbuscadoParaTerminar = -1;
@@ -120,15 +119,17 @@ void *planificarCortoPlazo(void *ptr)
 
             sem_wait(&esperar_guardar_proceso);
 
-            if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0) // && leQuedaQuantum(procesoDelCPU) < 0 => se evalua luego.
+            if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
             {
                 agregarProcesoAReadyCorrespondiente(procesoPCB);
             }
+
+            mensaje_desalojo();
         }
     }
 }
 
-int hayProcesosEnCola() // HEADER
+int hayProcesosEnCola() 
 {
     int respuesta = -1;
     pthread_mutex_lock(&mutexReady);
@@ -152,7 +153,7 @@ int chequearRecursos(Pcb *proceso)
 
         if (!dictionary_has_key(recursos, instruccion_separada[1]))
         {
-            terminarProceso(proceso);
+            terminarProceso(proceso, "INVALID_RESOURCE");
             return 1;
         }
 
@@ -160,6 +161,7 @@ int chequearRecursos(Pcb *proceso)
         {
             sem_wait(&flujoPlanificador_cp);
             proceso->estado = BLOCK;
+            mensaje_cambio_de_estado("Executing", "Bloqueado",  proceso->pid);
             guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
             sem_post(&flujoPlanificador_cp);
             return 1;
@@ -213,7 +215,12 @@ void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_qu
 {
     while (1)
     {
+        if (queue_is_empty(cola_de_bloqueados_recursos))
+            break;
+
+        pthread_mutex_lock(&mutex);
         Pcb *proceso_siguiente = (Pcb *)queue_peek(cola_de_bloqueados_recursos);
+        pthread_mutex_unlock(&mutex);
         if (pid_solicitante == proceso_siguiente->pid)
         {
             pthread_mutex_lock(&mutex);
@@ -327,15 +334,17 @@ int chequearMotivoIO(Pcb *proceso)
     if (procesoDelCPU->motivo != INTERRUPCION_IO)
         return -1;
 
-    if (verificarIOConectada() < 0)
+    if (verificarIOConectada(procesoDelCPU->instruccion) < 0)
     {
-        terminarProceso(proceso);
+        terminarProceso(proceso, "INVALID_INTERFACE");
         return 1;
     }
 
     sem_wait(&flujoPlanificador_cp);
 
     procesoDelCPU->pcb->estado = BLOCK;
+    mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
+
     enviarProcesoColaIOCorrespondiente(proceso);
 
     sem_post(&flujoPlanificador_cp);
@@ -343,10 +352,10 @@ int chequearMotivoIO(Pcb *proceso)
     return 1;
 }
 
-int verificarIOConectada()
+int verificarIOConectada(char *instruccion) // HEADER
 {
     t_list *listaDeIDs = devolverKeys(interfaces_conectadas);
-    char *id_io = string_split(procesoDelCPU->instruccion, " ")[1];
+    char *id_io = string_split(instruccion, " ")[1];
     int resultado = -1;
 
     void verificarIO(char *key, void *value)
@@ -355,18 +364,23 @@ int verificarIOConectada()
 
         if (strcmp(key, id_io) == 0)
         {
-            if (io_guardada->interfaz == GENERICA &&
-                strcmp(string_split(procesoDelCPU->instruccion, " ")[0], "IO_GEN_SLEEP") == 0)
+            // int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion)
+            if (enviarMensaje(&(io_guardada->socket), NULL, KERNEL, CHECK_CONN_IO) < 0)
+            {
+                resultado = -1;
+            }
+            else if (io_guardada->interfaz == GENERICA &&
+                     strcmp(string_split(instruccion, " ")[0], "IO_GEN_SLEEP") == 0)
             {
                 resultado = 1;
             }
             else if (io_guardada->interfaz == STDIN &&
-                     strcmp(string_split(procesoDelCPU->instruccion, " ")[0], "IO_STDIN_READ") == 0)
+                     strcmp(string_split(instruccion, " ")[0], "IO_STDIN_READ") == 0)
             {
                 resultado = 1;
             }
             else if (io_guardada->interfaz == STDOUT &&
-                     strcmp(string_split(procesoDelCPU->instruccion, " ")[0], "IO_STDOUT_WRITE") == 0)
+                     strcmp(string_split(instruccion, " ")[0], "IO_STDOUT_WRITE") == 0)
             {
                 resultado = 1;
             }
@@ -383,8 +397,20 @@ int chequearMotivoExit(Pcb *proceso)
     if (procesoDelCPU->motivo != EXIT_SIGNAL && procesoDelCPU->motivo != INTERRUPCION_EXIT_KERNEL && procesoDelCPU->motivo != OUT_OF_MEMORY)
         return -1;
 
-    terminarProceso(proceso);
+    char *motivo_exit = enum_to_string_EXIT(procesoDelCPU->motivo);
+
+    terminarProceso(proceso, motivo_exit);
     return 1;
+}
+
+char *enum_to_string_EXIT(MotivoDesalojo motivo)
+{
+    if (motivo == EXIT_SIGNAL)
+        return "SUCCESS";
+    if (motivo == INTERRUPCION_EXIT_KERNEL)
+        return "INTERRUPTED_BY_USER";
+    if (motivo == OUT_OF_MEMORY)
+        return "OUT_OF_MEMORY";
 }
 
 void esperarProcesoCPU(int quantum)
@@ -597,12 +623,11 @@ void *manageIO_Kernel(void *ptr)
 
         if (laIOEstaConectada(identificadoresIOConectadas, proceso) > 0)
         {
-            guardarEnSuCola(listasPorCadaID, proceso); // Guardar en su cola, tambien se fija si esta conectada
+            guardarEnSuCola(listasPorCadaID, proceso);
         }
         else
         {
-            terminarProceso(proceso->procesoPCB); // EXISTIRAN DOS FUNCIONES: 'terminarEjecucion' que buscara el proceso en el sistema y eliminara lo necesario
-                                                  // y 'terminarProceso' que ira dentro de la otra funcion y hara un EXIT del proceso.
+            terminarProceso(proceso->procesoPCB, "INVALID_INTERFACE");
         }
 
         for (int i = 0; i < list_size(listasPorCadaID); i++)
@@ -819,7 +844,7 @@ void quitarProcesoDeLaCola(int resultadoDeLaIO, listaBlockPorID *cola, int pid)
         pthread_mutex_unlock(&(cola->mutexCola));
 
         if (resultadoDeLaIO < 0)
-            terminarProceso(proceso->procesoPCB);
+            terminarProceso(proceso->procesoPCB, "ERROR_DE_IO");
         else
             agregarProcesoAReadyCorrespondiente(proceso->procesoPCB);
 
@@ -868,7 +893,9 @@ void enviarProcesoReadyCPU()
 
     PIDprocesoEjecutando = proceso->pid;
 
-    // EXECUTE
+    proceso->estado = EXEC;
+    mensaje_cambio_de_estado("Ready", "Executing", proceso->pid);
+
     enviarMensajeCPUPCBProceso(proceso); // Mandar solo pcb. En la cola de ready guardar la pcb solamente
 
     sem_post(&flujoPlanificador_cp);
@@ -914,9 +941,64 @@ void agregarProcesoAReadyCorrespondiente(Pcb *proceso)
     else
         agregarProcesoColaReady(proceso);
 
+    char *estado_previo = enum_to_string(proceso->estado);
+
     proceso->estado = READY;
+    mensaje_cambio_de_estado(estado_previo, "Ready", proceso->pid);
 
     sem_post(&flujoPlanificador_cp);
+}
+
+char *enum_to_string(EstadoProceso estado) // HEADER
+{
+    if (estado == EXEC)
+        return "Executing";
+    if (estado == BLOCK)
+        return "Bloqueado";
+    if (estado == NEW)
+        return "New";
+    return "NULL";
+}
+
+void mensaje_desalojo()
+{
+    char *mensaje = string_new();
+
+    if (procesoDelCPU->motivo == FIN_DE_QUANNTUM)
+    {
+        char *pid = string_itoa(procesoDelCPU->pcb->pid);
+
+        string_append(&mensaje, "PID: ");
+        string_append(&mensaje, pid);
+        string_append(&mensaje, " - Desalojado por fin de Quantum");
+
+        log_info(kernel_loger_cp, mensaje);
+    }
+    else if (procesoDelCPU->motivo == PETICION_RECURSO || procesoDelCPU->motivo == INTERRUPCION_IO)
+    {
+        char *recurso = string_split(procesoDelCPU->instruccion, " ")[1];
+
+        string_append(&mensaje, "PID: ");
+        string_append(&mensaje, string_itoa(procesoDelCPU->pcb->pid));
+        string_append(&mensaje, " - Bloqueado por: ");
+        string_append(&mensaje, recurso);
+
+        log_info(kernel_loger_cp, mensaje);
+    }
+}
+
+void mensaje_cambio_de_estado(char *estado_anterior, char *estado_siguiente, int pid) 
+{
+    char *mensaje = string_new();
+
+    string_append(&mensaje, "PID: ");
+    string_append(&mensaje, string_itoa(pid));
+    string_append(&mensaje, " - Estado anterior: ");
+    string_append(&mensaje, estado_anterior);
+    string_append(&mensaje, " - Estado actual: ");
+    string_append(&mensaje, estado_siguiente);
+
+    log_info(kernel_loger_cp, mensaje);
 }
 
 void guardarLosRegistros(Pcb *proceso)
@@ -938,6 +1020,8 @@ void agregarProcesoColaMayorPrioridad(Pcb *procesoPCB)
     queue_push(cola_de_mayor_prioridad, procesoPCB);
 
     pthread_mutex_unlock(&mutexMayorPriordad);
+
+    log_ingreso_a_ready("Ready Prioridad", procesoPCB);
 }
 
 void agregarProcesoColaReady(Pcb *procesoPCB)
@@ -947,6 +1031,51 @@ void agregarProcesoColaReady(Pcb *procesoPCB)
     queue_push(cola_de_ready, procesoPCB);
 
     pthread_mutex_unlock(&mutexReady);
+
+    log_ingreso_a_ready("Cola Ready", procesoPCB);
+}
+
+void log_ingreso_a_ready(char *cola, Pcb *proceso_nuevo)
+{
+    char *array_pids = obtener_array_de_pids(cola, proceso_nuevo);
+
+    char *mensaje = string_new();
+
+    string_append(&mensaje, cola);
+    string_append(&mensaje, ": ");
+    string_append(&mensaje, array_pids);
+
+    log_info(kernel_loger_cp, mensaje);
+}
+
+char *obtener_array_de_pids(char *cola_c, Pcb *proceso_nuevo)
+{
+    t_queue *cola;
+
+    char *array = string_new();
+
+    if (strcmp(cola_c, "Cola Ready") == 0)
+        cola = cola_de_ready;
+    else
+        cola = cola_de_mayor_prioridad;
+
+    string_append(&array, "[ ");
+
+    void iterar_procesos(void *value)
+    {
+        Pcb *proceso = (Pcb *)value;
+
+        string_append(&array, string_itoa(proceso->pid));
+
+        if (proceso->pid != proceso_nuevo->pid)
+            string_append(&array, ", ");
+    }
+
+    list_iterate(cola->elements, iterar_procesos);
+
+    string_append(&array, " ]");
+
+    return array;
 }
 
 void detenerPlanificador()
@@ -999,13 +1128,13 @@ int buscar_en_readys(int pid)
     proceso = list_remove_by_condition(cola_de_mayor_prioridad->elements, encontrar_proceso);
     if (proceso != NULL)
     {
-        terminarProceso(proceso);
+        terminarProceso(proceso, "INTERRUPTED_BY_USER");
         return 1;
     }
     proceso = list_remove_by_condition(cola_de_ready->elements, encontrar_proceso);
     if (proceso != NULL)
     {
-        terminarProceso(proceso);
+        terminarProceso(proceso, "INTERRUPTED_BY_USER");
         return 1;
     }
     return -1;
@@ -1026,7 +1155,7 @@ int buscar_en_bloqueados_y_terminar(int pid)
     proceso = (structGuardarProcesoEnBloqueado *)list_remove_by_condition(lista_bloqueados_generico->elements, encontrar_proceso_bloqueado);
     if (proceso != NULL)
     {
-        terminarProceso(proceso->procesoPCB);
+        terminarProceso(proceso->procesoPCB, "INTERRUPTED_BY_USER");
         free(proceso);
         return 1;
     }
@@ -1034,7 +1163,7 @@ int buscar_en_bloqueados_y_terminar(int pid)
     proceso = (structGuardarProcesoEnBloqueado *)list_remove_by_condition(lista_bloqueados_STDIN->elements, encontrar_proceso_bloqueado);
     if (proceso != NULL)
     {
-        terminarProceso(proceso->procesoPCB);
+        terminarProceso(proceso->procesoPCB, "INTERRUPTED_BY_USER");
         free(proceso);
         return 1;
     }
@@ -1042,7 +1171,7 @@ int buscar_en_bloqueados_y_terminar(int pid)
     proceso = (structGuardarProcesoEnBloqueado *)list_remove_by_condition(lista_bloqueados_STDOUT->elements, encontrar_proceso_bloqueado);
     if (proceso != NULL)
     {
-        terminarProceso(proceso->procesoPCB);
+        terminarProceso(proceso->procesoPCB, "INTERRUPTED_BY_USER");
         free(proceso);
         return 1;
     }
@@ -1050,7 +1179,7 @@ int buscar_en_bloqueados_y_terminar(int pid)
     proceso = (structGuardarProcesoEnBloqueado *)list_remove_by_condition(lista_bloqueados_DialFS->elements, encontrar_proceso_bloqueado);
     if (proceso != NULL)
     {
-        terminarProceso(proceso->procesoPCB);
+        terminarProceso(proceso->procesoPCB, "INTERRUPTED_BY_USER");
         free(proceso);
         return 1;
     }
@@ -1066,7 +1195,7 @@ int buscar_bloqueados_porIDio(int pid)
         structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
         if (proceso->procesoPCB->pid == pid)
         {
-            terminarProceso(proceso->procesoPCB);
+            terminarProceso(proceso->procesoPCB, "INTERRUPTED_BY_USER");
             encontro_y_termino_proceso = 1;
             return 1;
         }
@@ -1098,7 +1227,7 @@ int buscar_colas_recursos_terminar(int pid)
     void buscar_proceso_por_recurso(char *key, void *value)
     {
         Recurso *recurso = (Recurso *)value;
-        buscar_en_espera(recurso->cola_de_bloqueados_por_recurso, pid, &resultado);
+        buscar_en_espera(recurso->cola_de_bloqueados_por_recurso, pid, &resultado, recurso->mutex_recurso);
     }
 
     dictionary_iterator(recursos, buscar_proceso_por_recurso);
@@ -1106,7 +1235,7 @@ int buscar_colas_recursos_terminar(int pid)
     return resultado;
 }
 
-void buscar_en_espera(t_queue *cola, int pid, int *resultado)
+void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t mutex)
 {
     Pcb *proceso = NULL;
 
@@ -1118,11 +1247,13 @@ void buscar_en_espera(t_queue *cola, int pid, int *resultado)
         return 0;
     }
 
+    pthread_mutex_lock(&mutex);
     proceso = (Pcb *)list_remove_by_condition(cola->elements, encontrar_proceso);
+    pthread_mutex_unlock(&mutex);
 
-    if(proceso != NULL)
+    if (proceso != NULL)
     {
-        terminarProceso(proceso);
+        terminarProceso(proceso, "INTERRUPTED_BY_USER");
         *resultado = 1;
     }
 }

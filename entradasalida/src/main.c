@@ -14,6 +14,8 @@ int main()
     int num_files = 0;
     const char *folder_path = "io_config";
 
+    inicializarMutex();
+
     // Contar el número de archivos en el directorio
     if ((dir = opendir(folder_path)) != NULL)
     {
@@ -63,6 +65,7 @@ int main()
         free(hilos_de_escucha);
         return EXIT_FAILURE;
     }
+
 
     // Esperar a que todos los hilos terminen
     for (int i = 0; i < num_files; i++)

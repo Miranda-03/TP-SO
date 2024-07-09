@@ -8,6 +8,8 @@
 #include <utils/obtenerValorConfig/obtenerValorConfig.h>
 #include <utils/funcionesBuffer/funcionesBuffer.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
+#include <commons/log.h>
+#include <commons/string.h>
 
 typedef struct
 {
@@ -57,5 +59,10 @@ void guardar_entrada_en_TLB(int pid, int num_pagina, int marco);
 * @brief busca si la pagina del proceso correspondiente se encentra guardada en la TLB.
 */
 int buscar_en_TLB(int num_pagina, int pid);
+
+
+void mensaje_obtener_marco(int pid, int num_pagina, int marco_tlb);
+
+void mensaje_tlb(char *estado, int num_pagina, int pid);
 
 #endif

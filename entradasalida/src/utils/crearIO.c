@@ -1,10 +1,12 @@
 #include "crearIO.h"
 
 pthread_mutex_t mutexMSGMemoria_io;
+t_log *logger;
 
 void inicializarMutex()
 {
     pthread_mutex_init(&mutexMSGMemoria_io, NULL);
+    logger = log_create("logs/io.log", "entradasalida", 1, LOG_LEVEL_INFO);
 }
 
 void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
@@ -34,12 +36,14 @@ void *hilo_conexion_io(void *ptr)
     int io_esta_conectado = 1;
     t_buffer *buffer_kernel;
     int *PID = malloc(sizeof(int));
-    t_log *logger = log_create("logs/io.log", "entradasalida", 1, LOG_LEVEL_INFO);
 
     while (io_esta_conectado)
     {
         //*instruccion = NONE;
         buffer_kernel = recibir_instruccion_del_kernel(&instruccion, PID, &(sockets->IO_Kernel_socket));
+
+        if(buffer_kernel == NULL)
+            continue;
 
         if (strcmp(instruccion, "IO_DISCONNECT") == 0)
         {
@@ -132,7 +136,7 @@ void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer 
 void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion, int pid)
 {
     char **instruccionSeparada = string_split(instruccion, " ");
-    
+
     char **direcciones_fisicas = string_get_string_as_array(instruccionSeparada[2]);
 
     int len_dr_fisicas = string_array_size(direcciones_fisicas);
@@ -202,7 +206,7 @@ void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel, c
     unidades = atoi(string_split(instruccion, " ")[2]);
 
     // REALIZA LA OPERACION
-    sleep(tiempo_unidad * unidades);
+    usleep((tiempo_unidad * unidades) * 1000);
 
     // Le dice al Kernel que termino con el numero 1
     t_buffer *buffer = buffer_create(sizeof(uint32_t));
@@ -286,11 +290,16 @@ t_buffer *recibir_instruccion_del_kernel(char **instruccion, int *PID, int *sock
     TipoModulo *modulo = get_modulo_msg_recv(socket);
     op_code *codigo = get_opcode_msg_recv(socket);
 
-    t_buffer *buffer = buffer_leer_recv(socket);
-    *PID = buffer_read_uint32(buffer); // RECIBIRA ALGUNOS OTROS REGISTROS, NO ES NECESARIO PARA GENERICO. PASAR POR PARAMETRO TIPO DE IO
-    int size = buffer_read_uint32(buffer);
-    *instruccion = buffer_read_string(buffer, size);
-    return buffer;
+    if (*codigo != CHECK_CONN_IO)
+    {
+        t_buffer *buffer = buffer_leer_recv(socket);
+        *PID = buffer_read_uint32(buffer); // RECIBIRA ALGUNOS OTROS REGISTROS, NO ES NECESARIO PARA GENERICO. PASAR POR PARAMETRO TIPO DE IO
+        int size = buffer_read_uint32(buffer);
+        *instruccion = buffer_read_string(buffer, size);
+        return buffer;
+    }
+
+    return NULL;
 }
 
 char *mensaje_info_operacion(int PID, char *operacion)

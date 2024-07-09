@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     conectarModuloCPU(CPUSocketMemoriaPtr, CPUsocketBidireccionalDispatchPtr, CPUsocketBidireccionalInterruptPtr, procesoCPU, &interrupcion);
 
     iniciar_TLB(CPUSocketMemoria);
+    iniciar_loger_conn_memoria();
 
     cicloDeEjecucion(&CPUSocketMemoria, &CPUsocketBidireccionalDispatch, &CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);
 

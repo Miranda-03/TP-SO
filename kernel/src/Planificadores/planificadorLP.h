@@ -92,7 +92,7 @@ void iniciarMutex();
 * @fn    terminarProceso
 * @brief termina el proceso.
 */
-void terminarProceso(Pcb *proceso);
+void terminarProceso(Pcb *proceso, char *motivo_exit);
 
 /**
 * @fn    quitarMemoria
@@ -116,5 +116,9 @@ void ajustar_grado_multiprogramacion(int nuevo_valor);
 * @brief busca el proceso en la cola de NEW y lo manda a la cola de exit.
 */
 int encontrar_en_new_y_terminar(int pid);
+
+void mensaje_nuevo_proceso(int pid);
+
+void mensaje_exit(int pid, char *motivo_exit);
 
 #endif

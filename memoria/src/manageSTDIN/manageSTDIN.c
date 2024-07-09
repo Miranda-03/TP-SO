@@ -25,14 +25,6 @@ void *manage_conn_stdin_io(void *ptr)
             bytes = buffer_read_uint32(buffer);
             void *dato = malloc(bytes);
             buffer_read(buffer, dato, bytes);
-
-            char destino2[2];
-            memset(destino2, 0, 2);
-
-            memcpy(destino2, dato, 2);
-
-            printf("%s\n", destino2);
-
             buffer_destroy(buffer);
             escribir_memoria(dir_fisica, bytes, dato, &socketSTDIN);
             break;

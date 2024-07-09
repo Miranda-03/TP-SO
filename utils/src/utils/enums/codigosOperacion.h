@@ -16,7 +16,8 @@ typedef enum {
     LEER_MEMORIA,
     ESCRIBIR_MEMORIA,
     RESIZE,
-    OBTENER_MARCO
+    OBTENER_MARCO,
+    CHECK_CONN_IO,
 } op_code;
 
 #endif

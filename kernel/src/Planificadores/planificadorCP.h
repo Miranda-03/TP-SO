@@ -19,6 +19,7 @@
 #include <Interfaces/interfaces.h>
 #include <semaphore.h>
 #include <Planificadores/planificadorLP.h>
+#include <commons/log.h>
 
 #define PATH_CONFIG "kernel.config"
 
@@ -297,7 +298,7 @@ int laIOEstaConectada(t_list *conectadas, structGuardarProcesoEnBloqueado *proce
 
 void enviarInterrupcion(MotivoDesalojo motivo, int *socket);
 
-int verificarIOConectada();
+int verificarIOConectada(char *instruccion);
 
 int chequearRecursos(Pcb *proceso);
 
@@ -347,10 +348,22 @@ int buscar_bloqueados_porIDio(int pid);
 
 int buscar_colas_recursos_terminar(int pid);
 
-void buscar_en_espera(t_queue *cola, int pid, int *resultado);
+void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t mutex);
 
 void interrumpir_ejecucion();
 
 void guardar_en_cola_correspondiente_recurso(Pcb *proceso, char **instruccion_separada);
+
+void log_ingreso_a_ready(char *cola, Pcb *proceso_nuevo);
+
+char *obtener_array_de_pids(char *cola, Pcb *proceso_nuevo);
+
+char *enum_to_string_EXIT(MotivoDesalojo motivo);
+
+char *enum_to_string(EstadoProceso estado);
+
+void mensaje_desalojo(); 
+
+void mensaje_cambio_de_estado(char *estado_anterior, char *estado_siguiente, int pid);
 
 #endif

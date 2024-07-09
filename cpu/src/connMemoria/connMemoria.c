@@ -1,5 +1,12 @@
 #include "connMemoria.h"
 
+t_log *loger_conn_memoria;
+
+void iniciar_loger_conn_memoria()
+{
+    loger_conn_memoria = log_create("logs/cpu_conn_memoria.log", "conn_memoria", 1, LOG_LEVEL_INFO);
+}
+
 char *recibirInstruccion(int *socket, unsigned int pid, unsigned int pc)
 {
 
@@ -57,6 +64,8 @@ void *cpu_leer_memoria(int direccion_logica_inicio, int bytes_a_leer, int pid, i
         buffer_destroy(buffer_recv);
     }
 
+    mensaje_conn_memoria(pid, "LEER", direcciones[0], dato);
+
     return dato;
 }
 
@@ -94,5 +103,25 @@ int escribir_memoria(int direccion_logica_inicio, int bytes_a_escribir, int pid,
             break;
     }
 
+    mensaje_conn_memoria(pid, "LEER", direcciones[0], dato);
+
     return resultado;
+}
+
+void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, void *dato)
+{
+    char *dato_char = (char *)dato;
+
+    char *mensaje = string_new();
+
+    string_append(&mensaje, "PID: ");
+    string_append(&mensaje, string_itoa(pid));
+    string_append(&mensaje, " - Acción: ");
+    string_append(&mensaje, accion);
+    string_append(&mensaje, " - Dirección Física: ");
+    string_append(&mensaje, direccion_fisica);
+    string_append(&mensaje, " - Valor: ");
+    string_append(&mensaje, dato_char);
+
+    log_info(loger_conn_memoria, mensaje);
 }
