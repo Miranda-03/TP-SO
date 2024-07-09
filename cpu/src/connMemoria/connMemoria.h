@@ -19,6 +19,6 @@ int escribir_memoria(int direccion_logica_inicio, int bytes_a_escribir, int pid,
 
 void iniciar_loger_conn_memoria();
 
-void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, void *dato);
+void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, char *dato);
 
 #endif

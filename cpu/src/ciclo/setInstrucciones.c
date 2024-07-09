@@ -128,15 +128,15 @@ void instruccion_COPY_STRING(char *primerParametro, Contexto_proceso *procesoCPU
 
 void instruccion_MOV_IN(char *primerParametro, char *segundoParametro, Contexto_proceso *procesoCPU, char *tipo, Registro *reg, int socket_memoria)
 {
-    reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
     Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
+    reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
     if (*tipo == 'i')
     {
         reg->i32 = *((uint32_t *)cpu_leer_memoria(reg2->i32, 4, procesoCPU->pid, socket_memoria));
     }
     else if (*tipo == 'u')
     {
-        reg->u8 = *((uint8_t *)cpu_leer_memoria(reg2->u8, 1, procesoCPU->pid, socket_memoria));
+        reg->u8 = *((uint8_t *)cpu_leer_memoria(reg2->i32, 1, procesoCPU->pid, socket_memoria));
     }
 }
 
@@ -146,11 +146,13 @@ void instruccion_MOV_OUT(char *primerParametro, char *segundoParametro, Contexto
     Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
     if (*tipo == 'i')
     {
-        escribir_memoria(reg->i32, 4, procesoCPU->pid, &(reg2->i32), socket_memoria);
+        void *dato = &(reg2->i32);
+        escribir_memoria(reg->i32, 4, procesoCPU->pid, dato, socket_memoria);
     }
     else if (*tipo == 'u')
     {
-        escribir_memoria(reg->u8, 1, procesoCPU->pid, &(reg2->u8), socket_memoria);
+        void *dato = &(reg2->u8);
+        escribir_memoria(reg->i32, 1, procesoCPU->pid, dato, socket_memoria);
     }
 }
 

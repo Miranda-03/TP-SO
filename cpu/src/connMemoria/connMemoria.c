@@ -64,14 +64,16 @@ void *cpu_leer_memoria(int direccion_logica_inicio, int bytes_a_leer, int pid, i
         buffer_destroy(buffer_recv);
     }
 
-    mensaje_conn_memoria(pid, "LEER", direcciones[0], dato);
+    mensaje_conn_memoria(pid, "LEER", direcciones[0], (char *)dato);
 
     return dato;
 }
 
-int escribir_memoria(int direccion_logica_inicio, int bytes_a_escribir, int pid, void *dato, int socket_memoria)
+int escribir_memoria(int direccion_logica_inicio, int bytes_a_escribir, int pid, void *dato_v, int socket_memoria)
 {
     char **direcciones = obtener_direcciones_fisicas(direccion_logica_inicio, bytes_a_escribir, pid);
+
+    char *dato = (char *)dato_v;
 
     int size_array_direcciones = string_array_size(direcciones);
 
@@ -103,16 +105,16 @@ int escribir_memoria(int direccion_logica_inicio, int bytes_a_escribir, int pid,
             break;
     }
 
-    mensaje_conn_memoria(pid, "LEER", direcciones[0], dato);
+    mensaje_conn_memoria(pid, "ESCRIBIR", direcciones[0], dato);
 
     return resultado;
 }
 
-void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, void *dato)
+void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, char *dato)
 {
-    char *dato_char = (char *)dato;
-
     char *mensaje = string_new();
+
+    int dato_int = (int) *dato;
 
     string_append(&mensaje, "PID: ");
     string_append(&mensaje, string_itoa(pid));
@@ -121,7 +123,7 @@ void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, void *d
     string_append(&mensaje, " - Dirección Física: ");
     string_append(&mensaje, direccion_fisica);
     string_append(&mensaje, " - Valor: ");
-    string_append(&mensaje, dato_char);
+    string_append(&mensaje, string_itoa(dato_int));
 
     log_info(loger_conn_memoria, mensaje);
 }
