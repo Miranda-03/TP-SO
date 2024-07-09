@@ -1,10 +1,11 @@
 #include <Conexion/conectar.h>
-#include "utils/crearIO.h"
+#include "manage_io/crearIO.h"
 
 int main()
 {
 
     inicializarMutex();
+    
 
     pthread_t hilos_de_escucha[2];
 

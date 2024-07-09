@@ -10,7 +10,8 @@
 #include <commons/log.h>
 #include <commons/string.h>
 #include <readline/readline.h>
-#include <unistd.h>
+#include "fylesystem/fylesystem.h"
+#include "bitmap/bitmap.h"
 
 typedef struct
 {

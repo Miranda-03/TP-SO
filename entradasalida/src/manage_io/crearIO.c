@@ -81,13 +81,13 @@ void *hilo_conexion_io(void *ptr)
 */
 
 void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion) {
-    t_config *config = config_create(modulo_io->config_path);
+    
     char *nombre_archivo = buffer_read_string(buffer_kernel);
-    int tamano = obtener_tamano_archivo(nombre_archivo); // Suponiendo que esta función existe y devuelve el tamaño
-    int puntero_archivo = obtener_puntero_archivo(nombre_archivo); // Suponiendo que esta función existe y devuelve el puntero
+    int tamano = obtener_tamano_archivo(nombre_archivo); 
+    int puntero_archivo = obtener_puntero_archivo(nombre_archivo); 
 
     if (strcmp(instruccion, "IO_FS_CREATE") == 0) {
-        crear_archivo(pid, logger, nombre_archivo);
+        crear_archivo(pid, logger, nombre_archivo, tamano);
     } else if (strcmp(instruccion, "IO_FS_DELETE") == 0) {
         eliminar_archivo(pid, logger, nombre_archivo);
     } else if (strcmp(instruccion, "IO_FS_TRUNCATE") == 0) {
@@ -100,14 +100,13 @@ void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int
         log_info(logger, "DialFS - Instrucción desconocida");
     }
 
-
     free(nombre_archivo);
 }
 
 void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion)
 {
     t_config *config = config_create(modulo_io->config_path);
-
+    
     int dir_fisica = buffer_read_uint32(buffer_kernel);
     int size_text = buffer_read_uint32(buffer_kernel);
 
@@ -308,37 +307,3 @@ char* mensaje_info_detallado(int PID, char* operacion, char* nombre_archivo, int
     return mensaje;
 }
 
-
-void crear_archivo(int *pid, t_log *logger, char *nombre_archivo) {
-    int bloque_libre = buscar_bloque_libre();
-    if (bloque_libre != -1) {
-        marcar_bloque_ocupado(bloque_libre);
-        crear_archivo_metadata(nombre_archivo, bloque_libre, 0);
-        log_info(logger, mensaje_info_detallado(*pid, "Crear Archivo:", nombre_archivo, 0, 0));
-    } else {
-        log_error(logger, "No hay bloques libres disponibles para crear el archivo.");
-    }
-}
-
-void eliminar_archivo(int *pid, t_log *logger, char *nombre_archivo) {
-    int bloque_inicial = obtener_bloque_inicial(nombre_archivo);
-    int tamano = obtener_tamano_archivo(nombre_archivo);
-    liberar_bloques(bloque_inicial, tamano);
-    eliminar_archivo_metadata(nombre_archivo);
-    log_info(logger, mensaje_info_detallado(*pid, "Eliminar Archivo:", nombre_archivo, 0, 0));
-}
-
-void truncar_archivo(int *pid, t_log *logger, char *nombre_archivo, int tamano) {
-    truncar_archivo_fs(nombre_archivo, tamano); // Suponiendo que esta función ajusta el tamaño del archivo en el FS
-    log_info(logger, mensaje_info_detallado(*pid, "Truncar Archivo:", nombre_archivo, tamano, 0));
-}
-
-void escribir_archivo(int *pid, t_log *logger, char *nombre_archivo, int tamano, int puntero_archivo) {
-    escribir_archivo_fs(nombre_archivo, tamano, puntero_archivo); // Suponiendo que esta función escribe los datos en el archivo en el FS
-    log_info(logger, mensaje_info_detallado(*pid, "Escribir Archivo:", nombre_archivo, tamano, puntero_archivo));
-}
-
-void leer_archivo(int *pid, t_log *logger, char *nombre_archivo, int tamano, int puntero_archivo) {
-    leer_archivo_fs(nombre_archivo, tamano, puntero_archivo); // Suponiendo que esta función lee los datos del archivo en el FS
-    log_info(logger, mensaje_info_detallado(*pid, "Leer Archivo:", nombre_archivo, tamano, puntero_archivo));
-}
