@@ -113,6 +113,7 @@ void *planificarCortoPlazo(void *ptr)
             procesoPCB->pc = procesoDelCPU->pcb->pc;
             procesoPCB->pid = procesoDelCPU->pcb->pid;
             procesoPCB->quantumRestante = procesoDelCPU->pcb->quantumRestante;
+            procesoPCB->estado = EXEC;
             guardarLosRegistros(procesoPCB);
 
             proceosPCB_HILO_recursos = procesoPCB;
@@ -129,7 +130,7 @@ void *planificarCortoPlazo(void *ptr)
     }
 }
 
-int hayProcesosEnCola() 
+int hayProcesosEnCola()
 {
     int respuesta = -1;
     pthread_mutex_lock(&mutexReady);
@@ -161,7 +162,7 @@ int chequearRecursos(Pcb *proceso)
         {
             sem_wait(&flujoPlanificador_cp);
             proceso->estado = BLOCK;
-            mensaje_cambio_de_estado("Executing", "Bloqueado",  proceso->pid);
+            mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
             guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
             sem_post(&flujoPlanificador_cp);
             return 1;
@@ -213,14 +214,20 @@ void *waitHilo(void *ptr)
 
 void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_queue *cola_de_bloqueados_recursos, pthread_mutex_t mutex)
 {
+    Pcb *proceso_siguiente;
+
     while (1)
     {
         if (queue_is_empty(cola_de_bloqueados_recursos))
             break;
 
         pthread_mutex_lock(&mutex);
-        Pcb *proceso_siguiente = (Pcb *)queue_peek(cola_de_bloqueados_recursos);
+        if (!queue_is_empty(cola_de_bloqueados_recursos))
+        {
+            proceso_siguiente = (Pcb *)queue_peek(cola_de_bloqueados_recursos);
+        }
         pthread_mutex_unlock(&mutex);
+
         if (pid_solicitante == proceso_siguiente->pid)
         {
             pthread_mutex_lock(&mutex);
@@ -893,9 +900,6 @@ void enviarProcesoReadyCPU()
 
     PIDprocesoEjecutando = proceso->pid;
 
-    proceso->estado = EXEC;
-    mensaje_cambio_de_estado("Ready", "Executing", proceso->pid);
-
     enviarMensajeCPUPCBProceso(proceso); // Mandar solo pcb. En la cola de ready guardar la pcb solamente
 
     sem_post(&flujoPlanificador_cp);
@@ -909,6 +913,9 @@ void enviarMensajeCPUPCBProceso(Pcb *proceso)
     agregarRegistrosAlBuffer(buffer, proceso);
     buffer_add_uint32(buffer, proceso->SI);
     buffer_add_uint32(buffer, proceso->DI);
+
+    proceso->estado = EXEC;
+    mensaje_cambio_de_estado("Ready", "Executing", proceso->pid);
 
     enviarMensaje(&(params->KernelSocketCPUDispatch), buffer, KERNEL, MENSAJE);
 
@@ -987,7 +994,7 @@ void mensaje_desalojo()
     }
 }
 
-void mensaje_cambio_de_estado(char *estado_anterior, char *estado_siguiente, int pid) 
+void mensaje_cambio_de_estado(char *estado_anterior, char *estado_siguiente, int pid)
 {
     char *mensaje = string_new();
 
@@ -1019,9 +1026,9 @@ void agregarProcesoColaMayorPrioridad(Pcb *procesoPCB)
 
     queue_push(cola_de_mayor_prioridad, procesoPCB);
 
-    pthread_mutex_unlock(&mutexMayorPriordad);
-
     log_ingreso_a_ready("Ready Prioridad", procesoPCB);
+
+    pthread_mutex_unlock(&mutexMayorPriordad);
 }
 
 void agregarProcesoColaReady(Pcb *procesoPCB)
@@ -1030,9 +1037,9 @@ void agregarProcesoColaReady(Pcb *procesoPCB)
 
     queue_push(cola_de_ready, procesoPCB);
 
-    pthread_mutex_unlock(&mutexReady);
-
     log_ingreso_a_ready("Cola Ready", procesoPCB);
+
+    pthread_mutex_unlock(&mutexReady);
 }
 
 void log_ingreso_a_ready(char *cola, Pcb *proceso_nuevo)
