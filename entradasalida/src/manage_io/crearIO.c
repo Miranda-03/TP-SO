@@ -7,6 +7,7 @@ void inicializarMutex()
 {
     pthread_mutex_init(&mutexMSGMemoria_io, NULL);
     logger = log_create("logs/io.log", "entradasalida", 1, LOG_LEVEL_INFO);
+    int bitmap[block_count];
 }
 
 void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
