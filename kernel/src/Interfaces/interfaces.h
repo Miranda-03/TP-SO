@@ -14,7 +14,7 @@
 typedef struct
 {
     TipoInterfaz interfaz;
-    int socket;
+    int *socket;
 } IOguardar;
 
 /**
@@ -42,3 +42,4 @@ void buscarNuevasConectadas(t_dictionary *diccionario_interfaces_conectadas,  vo
 t_list *devolverKeys(t_dictionary *diccionario_interfaces_conectadas);
 
 #endif
+
