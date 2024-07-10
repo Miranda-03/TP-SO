@@ -135,9 +135,11 @@ int buscar_en_TLB(int num_pagina, int pid)
     {
         Entrada_TLB *entrada = (Entrada_TLB *)value;
         if (entrada->pid == pid && entrada->numero_de_pagina == num_pagina)
+        {
             marco = entrada->marco;
-        if (algoritmo == LRU)
-            return 1;
+            if (algoritmo == LRU)
+                return 1;
+        }
         return 0;
     }
 
