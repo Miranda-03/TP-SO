@@ -42,7 +42,7 @@ void *hilo_conexion_io(void *ptr)
         //*instruccion = NONE;
         buffer_kernel = recibir_instruccion_del_kernel(&instruccion, PID, &(sockets->IO_Kernel_socket));
 
-        if(buffer_kernel == NULL)
+        if (buffer_kernel == NULL)
             continue;
 
         if (strcmp(instruccion, "IO_DISCONNECT") == 0)
@@ -101,7 +101,7 @@ void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer 
 
     int resultado = 0;
 
-    for (int i = 0; i < (len_dr_fisicas / 2); i++)
+    for (int i = 0; i < (len_dr_fisicas); i += 2)
     {
         t_buffer *buffer = buffer_create(4 + 4 + 4 + atoi(direcciones_fisicas[i + 1]));
         buffer_add_uint32(buffer, pid);
@@ -143,7 +143,7 @@ void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer
 
     char *dato_a_leer = string_new();
 
-    for (int i = 0; i < (len_dr_fisicas / 2); i++)
+    for (int i = 0; i < (len_dr_fisicas); i += 2)
     {
         t_buffer *buffer = buffer_create(12);
         buffer_add_uint32(buffer, pid);
