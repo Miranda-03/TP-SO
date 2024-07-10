@@ -45,6 +45,8 @@ void mensaje_nuevo_proceso(int pid)
     string_append(&mensaje, " en NEW");
 
     log_info(kernel_loger_lp, mensaje);
+
+    free(mensaje);
 }
 
 void agregarProcesoColaNew(PcbGuardarEnNEW *proceso)
@@ -164,6 +166,8 @@ void mensaje_exit(int pid, char *motivo_exit)
     string_append(&mensaje, motivo_exit);
 
     log_info(kernel_loger_lp, mensaje);
+
+    free(mensaje);
 }
 
 void quitarMemoria(Pcb *proceso)

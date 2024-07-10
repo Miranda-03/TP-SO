@@ -46,7 +46,11 @@ void *planificarCortoPlazo(void *ptr)
     recursos = params->recursos;
     algoritmo = params->algoritmo;
     PIDprocesoEjecutando = -1;
-    quantumTotal = atoi(obtenerValorConfig(PATH_CONFIG, "QUANTUM"));
+
+    t_config *config = config_create(PATH_CONFIG);
+    quantumTotal = atoi(config_get_string_value(config, "QUANTUM"));
+    config_destroy(config);
+
     quantumRestante = quantumTotal;
 
     kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
@@ -155,6 +159,7 @@ int chequearRecursos(Pcb *proceso)
         if (!dictionary_has_key(recursos, instruccion_separada[1]))
         {
             terminarProceso(proceso, "INVALID_RESOURCE");
+            string_array_destroy(instruccion_separada);
             return 1;
         }
 
@@ -165,13 +170,16 @@ int chequearRecursos(Pcb *proceso)
             mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
             guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
             sem_post(&flujoPlanificador_cp);
+            string_array_destroy(instruccion_separada);
             return 1;
         }
         else
         {
             hacerPOST(instruccion_separada[1], proceso->pid);
+            string_array_destroy(instruccion_separada);
             return -1;
         }
+        string_array_destroy(instruccion_separada);
     }
     return -1;
 }
@@ -180,6 +188,7 @@ void guardar_en_cola_correspondiente_recurso(Pcb *proceso, char **instruccion_se
 {
     Recurso *recurso = dictionary_get(recursos, instruccion_separada[1]);
     queue_push(recurso->cola_de_bloqueados_por_recurso, proceso);
+    sem_post(&(recurso->procesos_en_espera));
 }
 
 void crearHilosParaWAIT()
@@ -201,72 +210,38 @@ void *waitHilo(void *ptr)
 
     while (1)
     {
-        if (!queue_is_empty(recurso->cola_de_bloqueados_por_recurso))
-        {
-            Pcb *proceso = (Pcb *)queue_peek(recurso->cola_de_bloqueados_por_recurso);
-            recurso_wait(recurso->id_recurso, recurso->cantidad_recurso, proceso->pid, recurso->cola_de_bloqueados_por_recurso, recurso->mutex_recurso);
-        }
+        sem_wait(&(recurso->procesos_en_espera));
+        Pcb *proceso = (Pcb *)queue_peek(recurso->cola_de_bloqueados_por_recurso);
+        recurso_wait(recurso->id_recurso, recurso->cantidad_recurso, proceso->pid, recurso->cola_de_bloqueados_por_recurso, &(recurso->mutex_recurso), &(recurso->sem_recursos));
     }
 
     free(params);
     pthread_exit(NULL);
 }
 
-void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_queue *cola_de_bloqueados_recursos, pthread_mutex_t mutex)
+void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_queue *cola_de_bloqueados_recursos, pthread_mutex_t *mutex, sem_t *instancias)
 {
-    Pcb *proceso_siguiente;
+    sem_wait(instancias);
 
-    while (1)
+    pthread_mutex_lock(mutex);
+    *cant_recurso -= 1;
+
+    sem_wait(&flujoPlanificador_cp);
+    if (queue_is_empty(cola_de_bloqueados_recursos))
     {
-        if (queue_is_empty(cola_de_bloqueados_recursos))
-            break;
-
-        pthread_mutex_lock(&mutex);
-        if (!queue_is_empty(cola_de_bloqueados_recursos))
-        {
-            proceso_siguiente = (Pcb *)queue_peek(cola_de_bloqueados_recursos);
-        }
-        pthread_mutex_unlock(&mutex);
-
-        if (pid_solicitante == proceso_siguiente->pid)
-        {
-            pthread_mutex_lock(&mutex);
-            *cant_recurso -= 1;
-            if (*cant_recurso < 0)
-                *cant_recurso += 1;
-            else
-            {
-                proceso_siguiente = (Pcb *)queue_peek(cola_de_bloqueados_recursos);
-                if (pid_solicitante == proceso_siguiente->pid)
-                {
-                    sem_wait(&flujoPlanificador_cp);
-                    Pcb *proceso_confirmacion = (Pcb *)queue_peek(cola_de_bloqueados_recursos);
-                    if (pid_solicitante != proceso_confirmacion->pid)
-                    {
-                        *cant_recurso += 1;
-                        pthread_mutex_unlock(&mutex);
-                        break;
-                    }
-                    Pcb *proceso = (Pcb *)queue_pop(cola_de_bloqueados_recursos);
-                    poner_en_lista_de_recursos_adquiridos(proceso->pid, id_recurso);
-                    pthread_mutex_unlock(&mutex);
-                    sem_post(&flujoPlanificador_cp);
-
-                    agregarProcesoAReadyCorrespondiente(proceso);
-                    break;
-                }
-                else
-                {
-                    *cant_recurso += 1;
-                    pthread_mutex_unlock(&mutex);
-                    break;
-                }
-            }
-            pthread_mutex_unlock(&mutex);
-        }
-        else
-            break;
+        sem_post(instancias);
+        *cant_recurso += 1;
+        sem_post(&flujoPlanificador_cp);
     }
+    else
+    {
+        Pcb *proceso = (Pcb *)queue_pop(cola_de_bloqueados_recursos);
+        poner_en_lista_de_recursos_adquiridos(proceso->pid, id_recurso);
+        sem_post(&flujoPlanificador_cp);
+        agregarProcesoAReadyCorrespondiente(proceso);
+    }
+
+    pthread_mutex_unlock(mutex);
 }
 
 void poner_en_lista_de_recursos_adquiridos(int pid, char *id_recurso)
@@ -310,7 +285,13 @@ void agregar_recurso_al_diccionario(char *id_recurso)
     pthread_mutex_lock(&recurso->mutex_recurso);
     *(recurso->cantidad_recurso) += 1;
     if (*(recurso->cantidad_recurso) > recurso->cant_recursos_iniciales)
+    {
         *(recurso->cantidad_recurso) -= 1;
+    }
+    else
+    {
+        sem_post(&(recurso->sem_recursos));
+    }
     pthread_mutex_unlock(&recurso->mutex_recurso);
 }
 
@@ -362,7 +343,8 @@ int chequearMotivoIO(Pcb *proceso)
 int verificarIOConectada(char *instruccion) // HEADER
 {
     t_list *listaDeIDs = devolverKeys(interfaces_conectadas);
-    char *id_io = string_split(instruccion, " ")[1];
+    char **instruccionSeparada = string_split(instruccion, " ");
+    char *id_io = instruccionSeparada[1];
     int resultado = -1;
 
     void verificarIO(char *key, void *value)
@@ -374,27 +356,33 @@ int verificarIOConectada(char *instruccion) // HEADER
             // int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion)
             if (enviarMensaje(&(io_guardada->socket), NULL, KERNEL, CHECK_CONN_IO) < 0)
             {
+                list_destroy(listaDeIDs);
                 resultado = -1;
             }
             else if (io_guardada->interfaz == GENERICA &&
-                     strcmp(string_split(instruccion, " ")[0], "IO_GEN_SLEEP") == 0)
+                     strcmp(instruccionSeparada[0], "IO_GEN_SLEEP") == 0)
             {
+                list_destroy(listaDeIDs);
                 resultado = 1;
             }
             else if (io_guardada->interfaz == STDIN &&
-                     strcmp(string_split(instruccion, " ")[0], "IO_STDIN_READ") == 0)
+                     strcmp(instruccionSeparada[0], "IO_STDIN_READ") == 0)
             {
+                list_destroy(listaDeIDs);
                 resultado = 1;
             }
             else if (io_guardada->interfaz == STDOUT &&
-                     strcmp(string_split(instruccion, " ")[0], "IO_STDOUT_WRITE") == 0)
+                     strcmp(instruccionSeparada[0], "IO_STDOUT_WRITE") == 0)
             {
+                list_destroy(listaDeIDs);
                 resultado = 1;
             }
         }
     }
 
     buscarNuevasConectadas(interfaces_conectadas, verificarIO);
+
+    string_array_destroy(instruccionSeparada);
 
     return resultado;
 }
@@ -515,6 +503,8 @@ void *escuchaDispatch(void *ptr)
     sem_post(&esperar_proceso);
 
     buffer_destroy(buffer);
+    free(modulo);
+    free(op_code);
     pthread_exit(NULL);
 }
 
@@ -552,6 +542,8 @@ void enviarProcesoColaIOCorrespondiente(Pcb *proceso)
     {
         guardarEnColaSTDOUT(procesoInstruccion);
     }
+
+    string_array_destroy(instruccionSeparada);
 }
 
 void guardarEnColaGenerico(structGuardarProcesoEnBloqueado *proceso) // Tiene que guardar la PCB junto a la instruccion
@@ -655,6 +647,7 @@ void *manageIO_Kernel(void *ptr)
             con la misma se utilizan semaforos binarios que estaran guardados en 'listasPorCadaID'. Una vez recibida la finalizacion
             del io se sacara de la cola de bloqueado y se guardara en Ready o MayorPrioridad o se mandara a EXIT segun corresponda.
         */
+       list_destroy(identificadoresIOConectadas);
     }
 }
 
@@ -677,7 +670,8 @@ int laIOEstaConectada(t_list *conectadas, structGuardarProcesoEnBloqueado *proce
 
 void guardarEnSuCola(t_list *listasPorCadaID, structGuardarProcesoEnBloqueado *proceso)
 {
-    char *ID_IOProceso = string_split(proceso->instruccion, " ")[1];
+    char **instruccionSeparada = string_split(proceso->instruccion, " ");
+    char *ID_IOProceso = instruccionSeparada[1];
 
     void guardarProcesoYInstruccion(void *value)
     {
@@ -693,6 +687,8 @@ void guardarEnSuCola(t_list *listasPorCadaID, structGuardarProcesoEnBloqueado *p
     }
 
     list_iterate(listasPorCadaID, guardarProcesoYInstruccion);
+
+    string_array_destroy(instruccionSeparada);
 }
 
 t_queue *obtenerColaCorrespondiente(TipoInterfaz tipo_interfaz)
@@ -823,6 +819,7 @@ void enviarMensajeAInterfaz(structGuardarProcesoEnBloqueado *proceso, int *socke
     t_buffer *buffer = buffer_create(strlen(proceso->instruccion) + 1 + 4 + 4);
     buffer_add_uint32(buffer, proceso->procesoPCB->pid);
     buffer_add_string(buffer, strlen(proceso->instruccion) + 1, proceso->instruccion);
+    free(proceso->instruccion);
     enviarMensaje(socket, buffer, KERNEL, MENSAJE);
 }
 
@@ -983,7 +980,8 @@ void mensaje_desalojo()
     }
     else if (procesoDelCPU->motivo == PETICION_RECURSO || procesoDelCPU->motivo == INTERRUPCION_IO)
     {
-        char *recurso = string_split(procesoDelCPU->instruccion, " ")[1];
+        char **instruccionSeparada = string_split(procesoDelCPU->instruccion, " ");
+        char *recurso = instruccionSeparada[1];
 
         string_append(&mensaje, "PID: ");
         string_append(&mensaje, string_itoa(procesoDelCPU->pcb->pid));
@@ -991,7 +989,10 @@ void mensaje_desalojo()
         string_append(&mensaje, recurso);
 
         log_info(kernel_loger_cp, mensaje);
+        string_array_destroy(instruccionSeparada);
     }
+
+    free(mensaje);
 }
 
 void mensaje_cambio_de_estado(char *estado_anterior, char *estado_siguiente, int pid)
@@ -1006,6 +1007,8 @@ void mensaje_cambio_de_estado(char *estado_anterior, char *estado_siguiente, int
     string_append(&mensaje, estado_siguiente);
 
     log_info(kernel_loger_cp, mensaje);
+
+    free(mensaje);
 }
 
 void guardarLosRegistros(Pcb *proceso)
@@ -1053,6 +1056,9 @@ void log_ingreso_a_ready(char *cola, Pcb *proceso_nuevo)
     string_append(&mensaje, array_pids);
 
     log_info(kernel_loger_cp, mensaje);
+
+    free(mensaje);
+    free(array_pids);
 }
 
 char *obtener_array_de_pids(char *cola_c, Pcb *proceso_nuevo)

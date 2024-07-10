@@ -35,16 +35,16 @@ int verificar_comando(char *leido)
         strcmp(comando[0], "MULTIPROGRAMACION") == 0 ||
         strcmp(comando[0], "PROCESO_ESTADO") == 0)
     {
+        free(comando);
         return 1;
     }
+    free(comando);
     return -1;
 }
 
 void atender_instruccion(char *leido)
 {
     char **comando = string_split(leido, " ");
-
-    t_buffer *buffer = buffer_create(sizeof(t_buffer));
 
     if (strcmp(comando[0], "EJECUTAR_SCRIPT") == 0)
     {
@@ -86,6 +86,8 @@ void atender_instruccion(char *leido)
     {
         log_error(logger_kernel, "ERROR");
     } */
+
+    string_array_destroy(comando);
 }
 
 void leer_script(const char *path)

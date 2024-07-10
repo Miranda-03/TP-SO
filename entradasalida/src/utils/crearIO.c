@@ -12,7 +12,9 @@ void inicializarMutex()
 void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
 {
     // crear el dispositivo impresora a modo de ejemplo
-    char *identificador = string_split(idIO, ".")[0];
+    char **nombreArchivo = string_split(idIO, ".");
+    char *identificador = nombreArchivo[0];
+
     moduloIO *impresora = instanciar_struct_io(identificador, config_file);
     TipoInterfaz io_interfaz = tipo_interfaz_del_config(config_file);
 
@@ -27,6 +29,7 @@ void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
     socket_hilo *sockets = generar_struct_socket_hilo(impresora, &IOsocketKernel, &IOsocketMemoria, io_interfaz);
 
     pthread_create(hilo_de_escucha, NULL, (void *)hilo_conexion_io, sockets);
+    string_array_destroy(nombreArchivo);
 }
 
 void *hilo_conexion_io(void *ptr)
@@ -129,6 +132,8 @@ void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer 
     t_buffer *buffer_respuesta_kernel = buffer_create(sizeof(uint32_t));
     buffer_add_uint32(buffer_respuesta_kernel, resultado);
     enviarMensaje(socket, buffer_respuesta_kernel, IO, MENSAJE);
+    string_array_destroy(instruccionSeparada);
+    string_array_destroy(direcciones_fisicas);
     buffer_destroy(buffer_kernel);
     free(texto);
 }
@@ -166,6 +171,8 @@ void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer
     t_buffer *buffer_respuesta_para_kernel = buffer_create(sizeof(uint32_t));
     buffer_add_uint32(buffer_respuesta_para_kernel, 1);
     enviarMensaje(socket, buffer_respuesta_para_kernel, IO, MENSAJE);
+    string_array_destroy(instruccionSeparada);
+    string_array_destroy(direcciones_fisicas);
     buffer_destroy(buffer_kernel);
 }
 
@@ -188,6 +195,8 @@ int esperarResultado(int *socket)
     t_buffer *buffer = buffer_leer_recv(socket);
     int resultado = buffer_read_uint32(buffer);
 
+    free(modulo);
+    free(code);
     buffer_destroy(buffer);
 
     return resultado;
@@ -203,7 +212,11 @@ void manageGenerico(moduloIO *modulo_io, int *socket, t_buffer *buffer_kernel, c
         tiempo_unidad = config_get_int_value(config, "TIEMPO_UNIDAD_TRABAJO");
     }
 
-    unidades = atoi(string_split(instruccion, " ")[2]);
+    char **instruccion_separada = string_split(instruccion, " ");
+
+    unidades = atoi(instruccion_separada[2]);
+
+    string_array_destroy(instruccion_separada);
 
     // REALIZA LA OPERACION
     usleep((tiempo_unidad * unidades) * 1000);
@@ -226,7 +239,9 @@ moduloIO *instanciar_struct_io(const char *identificador, const char *config_pat
     }
 
     // Copiar el identificador
-    io->identificador = strdup(identificador);
+    io->identificador = string_new();
+    string_append(&(io->identificador), identificador);
+
     if (io->identificador == NULL)
     {
         // Manejo de error de asignación de memoria
@@ -235,7 +250,9 @@ moduloIO *instanciar_struct_io(const char *identificador, const char *config_pat
     }
 
     // Copiar el config_path
-    io->config_path = strdup(config_path);
+    io->config_path = string_new();
+    string_append(&(io->config_path), config_path);
+
     if (io->config_path == NULL)
     {
         // Manejo de error de asignación de memoria
@@ -262,16 +279,21 @@ TipoInterfaz tipo_interfaz_del_config(char *config_path)
 
 TipoInterfaz tipo_interfaz_config(char *config_path)
 {
-    char *tipo = obtenerValorConfig(config_path, "TIPO_INTERFAZ");
+    TipoInterfaz interfaz;
+    t_config *config = config_create(config_path);
+    char *tipo = config_get_string_value(config, "TIPO_INTERFAZ");
 
     if (strcmp(tipo, "GENERICA") == 0)
-        return GENERICA;
+        interfaz = GENERICA;
     if (strcmp(tipo, "STDIN") == 0)
-        return STDIN;
+         interfaz = STDIN;
     if (strcmp(tipo, "STDOUT") == 0)
-        return STDOUT;
+        interfaz = STDOUT;
     if (strcmp(tipo, "DIALFS") == 0)
-        return DIALFS;
+        interfaz = DIALFS;
+    
+    config_destroy(config);
+    return interfaz;
 }
 
 socket_hilo *generar_struct_socket_hilo(moduloIO *modulo_io, int *IOsocketKernel, int *IOsocketMemoria, TipoInterfaz interfaz)

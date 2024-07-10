@@ -90,6 +90,8 @@ typedef struct
     int *cantidad_recurso;
     int cant_recursos_iniciales;
     pthread_mutex_t mutex_recurso;
+    sem_t sem_recursos;
+    sem_t procesos_en_espera;
 } Recurso;
 
 typedef struct
@@ -318,7 +320,7 @@ void reanudarPlanificador();
  * @fn    recurso_wait
  * @brief funcion para hacer el wait del recurso.
  */
-void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_queue *cola_de_bloqueados_recursos, pthread_mutex_t mutex);
+void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_queue *cola_de_bloqueados_recursos, pthread_mutex_t *mutex, sem_t *instancias);
 
 /**
  * @fn    poner_en_lista_de_recursos_adquiridos

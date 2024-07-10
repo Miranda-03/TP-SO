@@ -74,6 +74,9 @@ int resultadoHandShake(int *socket)
     responde = buffer_read_uint32(buffer);
     buffer_destroy(buffer);
 
+    free(modulo);
+    free(op_code);
+
     if (respuesta == 1)
         return 1;
 

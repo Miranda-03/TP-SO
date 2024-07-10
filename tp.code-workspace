@@ -49,5 +49,16 @@
 		{
 			"path": "utils"
 		}
-	]
+	],
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+
+		]
+	},
+	"extensions": {
+		"recommendations": [
+			"1nvitr0.valgrind-task-integration"
+		]
+	}
 }

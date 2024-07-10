@@ -8,19 +8,20 @@ typedef struct
 
 void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch, int *KernelSocketCPUInterrumpt, t_dictionary *interfaces_conectadas)
 {
-    // Conectar con Memoria
-    *KernelSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), 0);
+    t_config *config = config_create(PATH_CONFIG);
+    // PUERTO_MEMORIA, IP_MEMORIA
+    *KernelSocketMemoria = crearSocket(config_get_string_value(config,"PUERTO_MEMORIA"), config_get_string_value(config,"IP_MEMORIA"), 0);
     handshakeKernelMemoria(KernelSocketMemoria);
 
-    // Conexiones con el módulo CPU
-    *KernelSocketCPUDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_DISPATCH"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), 0);
+    // Conexiones con el módulo CPU 
+    *KernelSocketCPUDispatch = crearSocket(config_get_string_value(config,"PUERTO_CPU_DISPATCH"), config_get_string_value(config,"IP_CPU"), 0);
     handshakeKernelCPU(DISPATCH, KernelSocketCPUDispatch);
     sleep(5);
-    *KernelSocketCPUInterrumpt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_CPU_INTERRUPT"), obtenerValorConfig(PATH_CONFIG, "IP_CPU"), 0);
+    *KernelSocketCPUInterrumpt = crearSocket(config_get_string_value(config,"PUERTO_CPU_INTERRUPT"), config_get_string_value(config,"IP_CPU"), 0);
     handshakeKernelCPU(INTERRUMPT, KernelSocketCPUInterrumpt);
 
     // Recibir conexiones de IO
-    int KernelsocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, MAXCONN);
+    int KernelsocketEscucha = crearSocket(config_get_string_value(config,"PUERTO_ESCUCHA"), NULL, MAXCONN);
     parametros_hilo_IO_Kernel *params = malloc(sizeof(parametros_hilo_IO_Kernel));
     params->socket = KernelsocketEscucha;
     params->interfaces_conectadas = interfaces_conectadas;
@@ -28,6 +29,8 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
     pthread_t threadClientes;
     pthread_create(&threadClientes, NULL, recibirClientes, (void *)params);
     pthread_detach(threadClientes);
+
+    config_destroy(config);
 }
 
 void *recibirClientes(void *ptr)
@@ -78,7 +81,8 @@ void *atenderIO(void *ptr)
     {
         enviarPaqueteResult(-1, &socket, IO, KERNEL);
     }
-    // free(codigoOperacion);
+    free(codigoOperacion);
+    free(modulo);
     pthread_exit(NULL);
 }
 

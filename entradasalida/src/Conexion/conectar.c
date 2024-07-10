@@ -12,14 +12,18 @@ typedef struct
 
 void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOsocketKernel, int *IOsocketMemoria, char* path_config)
 {
-    *IOsocketKernel = crearSocket(obtenerValorConfig(path_config, "PUERTO_KERNEL"), obtenerValorConfig(path_config, "IP_KERNEL"), 0);
+    t_config *config = config_create(path_config); 
+
+    *IOsocketKernel = crearSocket(config_get_string_value(config, "PUERTO_KERNEL"), config_get_string_value(config, "IP_KERNEL"), 0);
     realizarHandshakeIO(tipo_interfaz, identificador, IOsocketKernel);
 
-    if (tipo_interfaz != GENERICA)
+    if (tipo_interfaz != GENERICA) 
     {
-        *IOsocketMemoria = crearSocket(obtenerValorConfig(path_config, "PUERTO_MEMORIA"), obtenerValorConfig(path_config, "IP_MEMORIA"), 0);
+        *IOsocketMemoria = crearSocket(config_get_string_value(config, "PUERTO_MEMORIA"), config_get_string_value(config, "IP_MEMORIA"), 0);
         realizarHandshakeIO(tipo_interfaz, identificador, IOsocketMemoria);
     }
+
+    config_destroy(config);
 }
 
 void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *socket)

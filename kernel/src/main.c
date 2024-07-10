@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <semaphore.h>
+#include <commons/config.h>
 
 int KernelSocketCPUDispatch;
 int KernelSocketCPUInterrumpt;
@@ -26,19 +27,23 @@ typedef struct
 
 void obtenerAlgoritmoDeConfig()
 {
-    char *charAlgortimo = obtenerValorConfig("kernel.config", "ALGORITMO_PLANIFICACION");
+    t_config *config = config_create("kernel.config");
+    char *charAlgortimo = config_get_string_value(config, "ALGORITMO_PLANIFICACION");
     if (strcmp(charAlgortimo, "RR") == 0)
         algoritmoPlanificacion = RR;
     else if (strcmp(charAlgortimo, "VRR") == 0)
         algoritmoPlanificacion = VRR;
     else
         algoritmoPlanificacion = FIFO;
+
+    config_destroy(config);
 }
 
 void obtenerRecuros()
 {
-    char **recursosIDs = string_get_string_as_array(obtenerValorConfig("kernel.config", "RECURSOS"));
-    char **recursosCantidad = string_get_string_as_array(obtenerValorConfig("kernel.config", "INSTANCIAS_RECURSOS"));
+    t_config *config = config_create("kernel.config");
+    char **recursosIDs = config_get_array_value(config, "RECURSOS");
+    char **recursosCantidad = config_get_array_value(config, "INSTANCIAS_RECURSOS");
 
     int lenIDS = 0;
 
@@ -50,15 +55,22 @@ void obtenerRecuros()
     for (int i = 0; i < lenIDS; i++)
     {
         sleep(1);
+        int cant = atoi(recursosCantidad[i]);
         Recurso *recurso = malloc(sizeof(Recurso));
         recurso->cantidad_recurso = malloc(4);
         recurso->cola_de_bloqueados_por_recurso = queue_create();
         pthread_mutex_init(&recurso->mutex_recurso, NULL);
-        *(recurso->cantidad_recurso) = atoi(recursosCantidad[i]);
+        *(recurso->cantidad_recurso) = cant;
         recurso->id_recurso = strdup(recursosIDs[i]);
-        recurso->cant_recursos_iniciales = atoi(recursosCantidad[i]);
+        recurso->cant_recursos_iniciales = cant;
+        sem_init(&(recurso->sem_recursos), 0, cant);
+        sem_init(&(recurso->procesos_en_espera), 0, 0);
         dictionary_put(recursos_main, recursosIDs[i], recurso);
     }
+
+    string_array_destroy(recursosIDs);
+    string_array_destroy(recursosCantidad);
+    config_destroy(config);
 }
 
 int main(int argc, char *argv[])

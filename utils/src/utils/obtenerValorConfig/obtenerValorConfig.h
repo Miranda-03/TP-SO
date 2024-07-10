@@ -2,8 +2,10 @@
 #define OBTENER_IP
 
 #include <stdio.h> 
-#include "commons/config.h"
+#include <commons/config.h>
 #include <string.h>
+#include <stdlib.h>
+#include <commons/string.h>
 
 
 /**
