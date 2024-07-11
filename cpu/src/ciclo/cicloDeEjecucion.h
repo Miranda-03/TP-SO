@@ -13,6 +13,7 @@
 #include <commons/log.h>
 #include "setInstrucciones.h"
 #include "MMU/MMU.h"
+#include <semaphore.h>
 
 /**
  * @fn    cicloDeEjecucion
@@ -56,5 +57,7 @@ char *mensaje_execute_log(int *pid, char *instruccion);
  * @brief le pide a memoria el tamaño de la pagina.
  */
 void obtener_tam_pagina (int socket);
+
+void llega_proceso();
 
 #endif

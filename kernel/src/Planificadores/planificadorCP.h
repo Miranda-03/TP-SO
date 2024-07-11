@@ -350,7 +350,7 @@ int buscar_bloqueados_porIDio(int pid);
 
 int buscar_colas_recursos_terminar(int pid);
 
-void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t mutex);
+void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t *mutex);
 
 void interrumpir_ejecucion();
 
@@ -367,5 +367,9 @@ char *enum_to_string(EstadoProceso estado);
 void mensaje_desalojo(); 
 
 void mensaje_cambio_de_estado(char *estado_anterior, char *estado_siguiente, int pid);
+
+sem_t *obtenerSemaforoCorrespondiente(TipoInterfaz interfaz);
+
+void guardarEnColaDIALFS(structGuardarProcesoEnBloqueado *proceso);
 
 #endif

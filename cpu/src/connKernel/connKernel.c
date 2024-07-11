@@ -11,6 +11,8 @@
         op_code *op_code = get_opcode_msg_recv(params->socket);
 
         obtener_procesoCPU_del_stream(buffer_leer_recv(params->socket), params->procesoCPU);
+
+        llega_proceso();
     }
 }
 

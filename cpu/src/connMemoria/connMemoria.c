@@ -59,9 +59,10 @@ void *cpu_leer_memoria(int direccion_logica_inicio, int bytes_a_leer, int pid, i
         buffer_destroy(buffer_recv);
     }
 
-    int *numero = (int *)dato;
+    int numero = *(int)dato;
+    char *dato_char = (char *)dato;
 
-    mensaje_conn_memoria(pid, "LEER", direcciones[0], *numero);
+    mensaje_conn_memoria(pid, "LEER", direcciones[0], numero);
 
     return dato;
 }

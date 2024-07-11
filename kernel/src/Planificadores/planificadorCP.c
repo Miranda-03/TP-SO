@@ -16,9 +16,13 @@ Pcb *proceosPCB_HILO_recursos;
 t_queue *cola_de_ready;
 t_queue *cola_de_mayor_prioridad;
 t_queue *lista_bloqueados_generico;
+sem_t esperando_generico_sem;
 t_queue *lista_bloqueados_STDIN;
+sem_t esperando_stdin_sem;
 t_queue *lista_bloqueados_STDOUT;
+sem_t esperando_stdout_sem;
 t_queue *lista_bloqueados_DialFS;
+sem_t esperando_dialfs_sem;
 
 t_list *lista_de_procesos_con_recursos;
 t_list *todas_las_listasBloqueadosPorIDio;
@@ -31,17 +35,19 @@ pthread_mutex_t mutexMayorPriordad;
 pthread_mutex_t mutexIOGenerico;
 pthread_mutex_t mutexIOSTDIN;
 pthread_mutex_t mutexIOSTDOUT;
+pthread_mutex_t mutexIODIALFS;
 pthread_mutex_t mutexListaTodosPorIDio;
 
 sem_t flujoPlanificador_cp;
 sem_t esperar_proceso;
 sem_t esperar_guardar_proceso;
+sem_t cant_procesos_ready;
 
 MensajeProcesoDelCPU *procesoDelCPU;
 
 void *planificarCortoPlazo(void *ptr)
 {
-    params = (ParamsPCP_kernel *)ptr;
+    params = (ParamsPCP_kernel *)ptr; // PARAMS FREE
     interfaces_conectadas = params->interfaces_conectadas;
     recursos = params->recursos;
     algoritmo = params->algoritmo;
@@ -53,20 +59,25 @@ void *planificarCortoPlazo(void *ptr)
 
     quantumRestante = quantumTotal;
 
-    kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
+    kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO); // DESTRUIR
 
-    PIDbuscadoParaTerminar = malloc(4);
+    PIDbuscadoParaTerminar = malloc(4); // FREE
     *PIDbuscadoParaTerminar = -1;
 
-    procesoDelCPU = malloc(sizeof(MensajeProcesoDelCPU));
-    procesoDelCPU->pcb = malloc(sizeof(Pcb));
+    procesoDelCPU = malloc(sizeof(MensajeProcesoDelCPU)); // FREE
+    procesoDelCPU->pcb = malloc(sizeof(Pcb));             // FREE
 
     cola_de_ready = queue_create();
     cola_de_mayor_prioridad = queue_create();
+
     lista_bloqueados_generico = queue_create();
+    sem_init(&esperando_generico_sem, 0, 0);
     lista_bloqueados_STDIN = queue_create();
+    sem_init(&esperando_stdin_sem, 0, 0);
     lista_bloqueados_STDOUT = queue_create();
+    sem_init(&esperando_stdout_sem, 0, 0);
     lista_bloqueados_DialFS = queue_create();
+    sem_init(&esperando_dialfs_sem, 0, 0);
 
     lista_de_procesos_con_recursos = list_create();
     todas_las_listasBloqueadosPorIDio = list_create();
@@ -75,12 +86,14 @@ void *planificarCortoPlazo(void *ptr)
     pthread_mutex_init(&mutexIOGenerico, NULL);
     pthread_mutex_init(&mutexIOSTDIN, NULL);
     pthread_mutex_init(&mutexIOSTDOUT, NULL);
+    pthread_mutex_init(&mutexIODIALFS, NULL);
     pthread_mutex_init(&mutexMayorPriordad, NULL);
     pthread_mutex_init(&mutexListaTodosPorIDio, NULL);
 
     sem_init(&flujoPlanificador_cp, 0, 1);
     sem_init(&esperar_proceso, 0, 0);
     sem_init(&esperar_guardar_proceso, 0, 0);
+    sem_init(&cant_procesos_ready, 0, 0);
 
     pthread_t hiloParaBloqueados;
     pthread_create(&hiloParaBloqueados, NULL, manageBloqueados, NULL);
@@ -90,47 +103,46 @@ void *planificarCortoPlazo(void *ptr)
 
     while (1)
     {
-        if (hayAlgunoEnCPU() < 0 && hayProcesosEnCola() > 0)
+        sem_wait(&cant_procesos_ready);
+
+        if (algoritmo == VRR)
         {
-            if (algoritmo == VRR)
+            if (hayProcesosPrioritarios() > 0)
             {
-                if (hayProcesosPrioritarios() > 0)
-                {
-                    quantumRestante = enviarProcesoMayorPrioridadCPU();
-                }
-                else
-                {
-                    quantumRestante = quantumTotal;
-                    enviarProcesoReadyCPU();
-                }
+                quantumRestante = enviarProcesoMayorPrioridadCPU();
             }
             else
             {
                 quantumRestante = quantumTotal;
                 enviarProcesoReadyCPU();
             }
-
-            esperarProcesoCPU(quantumRestante);
-
-            // Crear el proceso (PCB) con un malloc
-            Pcb *procesoPCB = malloc(sizeof(Pcb));
-            procesoPCB->pc = procesoDelCPU->pcb->pc;
-            procesoPCB->pid = procesoDelCPU->pcb->pid;
-            procesoPCB->quantumRestante = procesoDelCPU->pcb->quantumRestante;
-            procesoPCB->estado = EXEC;
-            guardarLosRegistros(procesoPCB);
-
-            proceosPCB_HILO_recursos = procesoPCB;
-
-            sem_wait(&esperar_guardar_proceso);
-
-            if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
-            {
-                agregarProcesoAReadyCorrespondiente(procesoPCB);
-            }
-
-            mensaje_desalojo();
         }
+        else
+        {
+            quantumRestante = quantumTotal;
+            enviarProcesoReadyCPU();
+        }
+
+        esperarProcesoCPU(quantumRestante);
+
+        // Crear el proceso (PCB) con un malloc
+        Pcb *procesoPCB = malloc(sizeof(Pcb));
+        procesoPCB->pc = procesoDelCPU->pcb->pc;
+        procesoPCB->pid = procesoDelCPU->pcb->pid;
+        procesoPCB->quantumRestante = procesoDelCPU->pcb->quantumRestante;
+        procesoPCB->estado = EXEC;
+        guardarLosRegistros(procesoPCB);
+
+        proceosPCB_HILO_recursos = procesoPCB;
+
+        sem_wait(&esperar_guardar_proceso);
+
+        if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
+        {
+            agregarProcesoAReadyCorrespondiente(procesoPCB);
+        }
+
+        mensaje_desalojo();
     }
 }
 
@@ -225,6 +237,7 @@ void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_qu
 
     pthread_mutex_lock(mutex);
     *cant_recurso -= 1;
+    pthread_mutex_unlock(mutex);
 
     sem_wait(&flujoPlanificador_cp);
     if (queue_is_empty(cola_de_bloqueados_recursos))
@@ -240,8 +253,6 @@ void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_qu
         sem_post(&flujoPlanificador_cp);
         agregarProcesoAReadyCorrespondiente(proceso);
     }
-
-    pthread_mutex_unlock(mutex);
 }
 
 void poner_en_lista_de_recursos_adquiridos(int pid, char *id_recurso)
@@ -282,7 +293,7 @@ void hacerPOST(char *id_recurso, int pid)
 void agregar_recurso_al_diccionario(char *id_recurso)
 {
     Recurso *recurso = (Recurso *)dictionary_get(recursos, id_recurso);
-    pthread_mutex_lock(&recurso->mutex_recurso);
+    pthread_mutex_lock(&(recurso->mutex_recurso));
     *(recurso->cantidad_recurso) += 1;
     if (*(recurso->cantidad_recurso) > recurso->cant_recursos_iniciales)
     {
@@ -292,7 +303,7 @@ void agregar_recurso_al_diccionario(char *id_recurso)
     {
         sem_post(&(recurso->sem_recursos));
     }
-    pthread_mutex_unlock(&recurso->mutex_recurso);
+    pthread_mutex_unlock(&(recurso->mutex_recurso));
 }
 
 void liberar_recursos(Pcb *proceso)
@@ -552,6 +563,8 @@ void guardarEnColaGenerico(structGuardarProcesoEnBloqueado *proceso) // Tiene qu
 
     queue_push(lista_bloqueados_generico, proceso);
 
+    sem_post(&esperando_generico_sem);
+
     pthread_mutex_unlock(&mutexIOGenerico);
 }
 
@@ -560,6 +573,8 @@ void guardarEnColaSTDIN(structGuardarProcesoEnBloqueado *proceso) // Tiene que g
     pthread_mutex_lock(&mutexIOSTDIN);
 
     queue_push(lista_bloqueados_STDIN, proceso);
+
+    sem_post(&esperando_stdin_sem);
 
     pthread_mutex_unlock(&mutexIOSTDIN);
 }
@@ -570,7 +585,20 @@ void guardarEnColaSTDOUT(structGuardarProcesoEnBloqueado *proceso) // Tiene que 
 
     queue_push(lista_bloqueados_STDOUT, proceso);
 
+    sem_post(&esperando_stdout_sem);
+
     pthread_mutex_unlock(&mutexIOSTDOUT);
+}
+
+void guardarEnColaDIALFS(structGuardarProcesoEnBloqueado *proceso) // Tiene que guardar la PCB junto a la instruccion
+{
+    pthread_mutex_lock(&mutexIODIALFS);
+
+    queue_push(lista_bloqueados_DialFS, proceso);
+
+    sem_post(&esperando_dialfs_sem);
+
+    pthread_mutex_unlock(&mutexIODIALFS);
 }
 
 void *manageBloqueados(void *ptr) // iniciar hilo en el planificador
@@ -580,14 +608,17 @@ void *manageBloqueados(void *ptr) // iniciar hilo en el planificador
     pthread_t hiloBloqueadosGenericos;
     pthread_t hiloBloqueadosSTDIN;
     pthread_t hiloBloqueadosSTDOUT;
+    pthread_t hiloBloqueadosDIALFS;
 
     pthread_create(&hiloBloqueadosGenericos, NULL, manageIO_Kernel, (void *)GENERICA);
     pthread_create(&hiloBloqueadosSTDIN, NULL, manageIO_Kernel, (void *)STDIN);
     pthread_create(&hiloBloqueadosSTDOUT, NULL, manageIO_Kernel, (void *)STDOUT);
+    pthread_create(&hiloBloqueadosDIALFS, NULL, manageIO_Kernel, (void *)DIALFS);
 
     pthread_detach(hiloBloqueadosGenericos);
     pthread_detach(hiloBloqueadosSTDIN);
     pthread_detach(hiloBloqueadosSTDOUT);
+    pthread_detach(hiloBloqueadosDIALFS);
 
     pthread_exit(NULL);
 }
@@ -606,11 +637,12 @@ void *manageIO_Kernel(void *ptr)
     structGuardarProcesoEnBloqueado *proceso;
 
     t_queue *lista_bloqueados = obtenerColaCorrespondiente(tipo_interfaz);
+    sem_t *sem_hay_procesos_esperando = obtenerSemaforoCorrespondiente(tipo_interfaz);
 
     while (1)
     {
-        if (queue_is_empty(lista_bloqueados))
-            continue;
+
+        sem_wait(sem_hay_procesos_esperando);
 
         identificadoresIOConectadas = dictionary_keys(interfaces_conectadas);
         // obtenerKeys(identificadoresIOConectadas);
@@ -647,7 +679,32 @@ void *manageIO_Kernel(void *ptr)
             con la misma se utilizan semaforos binarios que estaran guardados en 'listasPorCadaID'. Una vez recibida la finalizacion
             del io se sacara de la cola de bloqueado y se guardara en Ready o MayorPrioridad o se mandara a EXIT segun corresponda.
         */
-       list_destroy(identificadoresIOConectadas);
+        list_destroy(identificadoresIOConectadas);
+    }
+}
+
+sem_t *obtenerSemaforoCorrespondiente(TipoInterfaz interfaz) // HEADER
+{
+    switch (interfaz)
+    {
+    case GENERICA:
+        return &esperando_generico_sem;
+        break;
+
+    case STDIN:
+        return &esperando_stdin_sem;
+        break;
+
+    case STDOUT:
+        return &esperando_stdout_sem;
+        break;
+
+    case DIALFS:
+        return &esperando_dialfs_sem;
+        break;
+
+    default:
+        break;
     }
 }
 
@@ -705,6 +762,10 @@ t_queue *obtenerColaCorrespondiente(TipoInterfaz tipo_interfaz)
 
     case STDOUT:
         return lista_bloqueados_STDOUT;
+        break;
+    
+    case DIALFS:
+        return lista_bloqueados_DialFS;
         break;
 
     default:
@@ -1029,6 +1090,8 @@ void agregarProcesoColaMayorPrioridad(Pcb *procesoPCB)
 
     queue_push(cola_de_mayor_prioridad, procesoPCB);
 
+    sem_post(&cant_procesos_ready);
+
     log_ingreso_a_ready("Ready Prioridad", procesoPCB);
 
     pthread_mutex_unlock(&mutexMayorPriordad);
@@ -1039,6 +1102,8 @@ void agregarProcesoColaReady(Pcb *procesoPCB)
     pthread_mutex_lock(&mutexReady);
 
     queue_push(cola_de_ready, procesoPCB);
+
+    sem_post(&cant_procesos_ready);
 
     log_ingreso_a_ready("Cola Ready", procesoPCB);
 
@@ -1240,7 +1305,7 @@ int buscar_colas_recursos_terminar(int pid)
     void buscar_proceso_por_recurso(char *key, void *value)
     {
         Recurso *recurso = (Recurso *)value;
-        buscar_en_espera(recurso->cola_de_bloqueados_por_recurso, pid, &resultado, recurso->mutex_recurso);
+        buscar_en_espera(recurso->cola_de_bloqueados_por_recurso, pid, &resultado, &(recurso->mutex_recurso));
     }
 
     dictionary_iterator(recursos, buscar_proceso_por_recurso);
@@ -1248,7 +1313,7 @@ int buscar_colas_recursos_terminar(int pid)
     return resultado;
 }
 
-void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t mutex)
+void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t *mutex)
 {
     Pcb *proceso = NULL;
 
@@ -1260,9 +1325,9 @@ void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t mu
         return 0;
     }
 
-    pthread_mutex_lock(&mutex);
+    pthread_mutex_lock(mutex);
     proceso = (Pcb *)list_remove_by_condition(cola->elements, encontrar_proceso);
-    pthread_mutex_unlock(&mutex);
+    pthread_mutex_unlock(mutex);
 
     if (proceso != NULL)
     {

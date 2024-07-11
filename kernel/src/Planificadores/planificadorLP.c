@@ -149,10 +149,10 @@ void iniciarMutex()
 void terminarProceso(Pcb *proceso, char *motivo_exit)
 {
     proceso->estado = ESTADO_EXIT;
-    mensaje_exit(proceso->pid, motivo_exit);
     quitarMemoria(proceso);
     liberar_recursos(proceso);
     queue_push(cola_de_exit, proceso);
+    mensaje_exit(proceso->pid, motivo_exit);
     sem_post(&grado_multiprogramacion);
 }
 

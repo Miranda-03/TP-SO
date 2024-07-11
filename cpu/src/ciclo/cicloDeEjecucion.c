@@ -4,31 +4,33 @@ int *interrupcion_ce;
 
 int socket_con_memoria_cpu;
 
+sem_t hay_proceso_exec_sem;
+
 void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion_main)
 {
     t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
     interrupcion_ce = interrupcion_main;
     socket_con_memoria_cpu = *CPUSocketMemoria;
     obtener_tam_pagina(*CPUSocketMemoria);
+    sem_init(&hay_proceso_exec_sem, 0, 0);
 
     while (1)
     {
-        if ((procesoCPU->pid) != -1)
-        {
-            // FETCH
-            log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->pc)));
-            char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->pc);
+        sem_wait(&hay_proceso_exec_sem);
 
-            procesoCPU->pc += 1;
+        // FETCH
+        log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->pc)));
+        char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->pc);
 
-            // DECODE
+        procesoCPU->pc += 1;
 
-            char **instruccionSeparada = string_split(instruccion, " ");
+        // DECODE
 
-            execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch, loger);
+        char **instruccionSeparada = string_split(instruccion, " ");
 
-            checkInterrupt(procesoCPU, CPUsocketBidireccionalDispatch);
-        }
+        execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch, loger);
+
+        checkInterrupt(procesoCPU, CPUsocketBidireccionalDispatch);
     }
 }
 
@@ -130,6 +132,10 @@ void checkInterrupt(Contexto_proceso *procesoCPU, int *CPUsocketBidireccionalDis
         *interrupcion_ce = 0;
         enviar_contexto_al_kernel(procesoCPU, FIN_DE_QUANNTUM, NULL, CPUsocketBidireccionalDispatch);
     }
+    else
+    {
+        sem_post(&hay_proceso_exec_sem);
+    }
 }
 
 void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo motivo, char *instruccion, int *CPUsocketBidireccionalDispatch)
@@ -220,4 +226,9 @@ void obtener_tam_pagina(int socket)
     instanciar_tam_pagina_MMU(*tam_pagina);
 
     free(tam_pagina);
+}
+
+void llega_proceso()
+{
+    sem_post(&hay_proceso_exec_sem);
 }

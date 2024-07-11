@@ -7,6 +7,7 @@
 #include <utils/structs/structSendContextCPU.h>
 #include <utils/enviarMensajes/enviarMensaje.h>
 #include <utils/structs/structInt.h>
+#include <ciclo/cicloDeEjecucion.h>
 
 
 

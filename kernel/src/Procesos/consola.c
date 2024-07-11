@@ -33,7 +33,8 @@ int verificar_comando(char *leido)
         strcmp(comando[0], "DETENER_PLANIFICACION") == 0 ||
         strcmp(comando[0], "INICIAR_PLANIFICACION") == 0 ||
         strcmp(comando[0], "MULTIPROGRAMACION") == 0 ||
-        strcmp(comando[0], "PROCESO_ESTADO") == 0)
+        strcmp(comando[0], "PROCESO_ESTADO") == 0 ||
+        strcmp(comando[0], "APAGAR_SISTEMA") == 0 )
     {
         free(comando);
         return 1;

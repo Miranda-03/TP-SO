@@ -32,16 +32,16 @@ void instruccion_SET(char *primerParametro, char *segundoParametro, Contexto_pro
 {
     if (strcmp(primerParametro, "PC") == 0)
     {
-        procesoCPU->pc += atoi(segundoParametro);
+        procesoCPU->pc = atoi(segundoParametro);
         return;
     }
     else if (strcmp(primerParametro, "SI") == 0)
     {
-        procesoCPU->SI += atoi(segundoParametro);
+        procesoCPU->SI = atoi(segundoParametro);
     }
     else if (strcmp(primerParametro, "DI") == 0)
     {
-        procesoCPU->DI += atoi(segundoParametro);
+        procesoCPU->DI = atoi(segundoParametro);
     }
 
     reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
@@ -75,16 +75,16 @@ void instruccion_SUB(char *primerParametro, char *segundoParametro, Contexto_pro
 {
     if (strcmp(primerParametro, "PC") == 0)
     {
-        procesoCPU->pc += atoi(segundoParametro);
+        procesoCPU->pc -= atoi(segundoParametro);
         return;
     }
     else if (strcmp(primerParametro, "SI") == 0)
     {
-        procesoCPU->SI += atoi(segundoParametro);
+        procesoCPU->SI -= atoi(segundoParametro);
     }
     else if (strcmp(primerParametro, "DI") == 0)
     {
-        procesoCPU->DI += atoi(segundoParametro);
+        procesoCPU->DI -= atoi(segundoParametro);
     }
 
     reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
@@ -133,10 +133,12 @@ void instruccion_MOV_IN(char *primerParametro, char *segundoParametro, Contexto_
     if (*tipo == 'i')
     {
         reg->i32 = *((uint32_t *)cpu_leer_memoria(reg2->i32, 4, procesoCPU->pid, socket_memoria));
+        printf("LLEGA BIEEEEENNNENENENENEN: %d\n", reg->i32);
     }
     else if (*tipo == 'u')
     {
         reg->u8 = *((uint8_t *)cpu_leer_memoria(reg2->i32, 1, procesoCPU->pid, socket_memoria));
+        printf("LLEGA BIEEEEENNNENENENENEN: %d\n", reg->u8);
     }
 }
 
