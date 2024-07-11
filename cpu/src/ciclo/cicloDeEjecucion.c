@@ -17,20 +17,22 @@ void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch
     while (1)
     {
         sem_wait(&hay_proceso_exec_sem);
+        if (procesoCPU->pid != -1)
+        {
+            // FETCH
+            log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->pc)));
+            char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->pc);
 
-        // FETCH
-        log_info(loger, mensaje_fetch_instruccion_log(&(procesoCPU->pid), &(procesoCPU->pc)));
-        char *instruccion = recibirInstruccion(CPUSocketMemoria, procesoCPU->pid, procesoCPU->pc);
+            procesoCPU->pc += 1;
 
-        procesoCPU->pc += 1;
+            // DECODE
 
-        // DECODE
+            char **instruccionSeparada = string_split(instruccion, " ");
 
-        char **instruccionSeparada = string_split(instruccion, " ");
+            execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch, loger);
 
-        execute(instruccionSeparada, procesoCPU, instruccion, CPUsocketBidireccionalDispatch, loger);
-
-        checkInterrupt(procesoCPU, CPUsocketBidireccionalDispatch);
+            checkInterrupt(procesoCPU, CPUsocketBidireccionalDispatch);
+        }
     }
 }
 

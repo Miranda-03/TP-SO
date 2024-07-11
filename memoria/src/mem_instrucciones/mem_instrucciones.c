@@ -7,7 +7,7 @@ int retardoEspera;
 void crear_mem_instrucciones()
 {
    memoria_instrucciones = dictionary_create();
-   retardoEspera = atoi(obtenerValorConfig("memoria.config", "RETARDO_RESPUESTA")) / 1000;
+   retardoEspera = atoi(obtenerValorConfig("memoria.config", "RETARDO_RESPUESTA"));
 }
 
 int agregar_instrucciones(char *path, int pid)
@@ -75,7 +75,7 @@ char *obtener_instruccion(int pid, int pc)
 
          rewind(file_instrucciones);
          fclose(file_instrucciones);
-         sleep(retardoEspera);
+         usleep(retardoEspera * 1000);
          return instruccion;
       }
       contador++;

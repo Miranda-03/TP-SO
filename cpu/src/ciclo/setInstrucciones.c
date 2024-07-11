@@ -15,16 +15,18 @@ void instruccion_SUM(char *primerParametro, char *segundoParametro, Contexto_pro
     {
         procesoCPU->DI += atoi(segundoParametro);
     }
-
-    reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
-    Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
-    if (*tipo == 'i')
+    else
     {
-        reg->i32 += reg2->i32;
-    }
-    else if (*tipo == 'u')
-    {
-        reg->u8 += reg2->u8;
+        reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
+        Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
+        if (*tipo == 'i')
+        {
+            reg->i32 += reg2->i32;
+        }
+        else if (*tipo == 'u')
+        {
+            reg->u8 += reg2->u8;
+        }
     }
 }
 
@@ -43,15 +45,17 @@ void instruccion_SET(char *primerParametro, char *segundoParametro, Contexto_pro
     {
         procesoCPU->DI = atoi(segundoParametro);
     }
-
-    reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
-    if (*tipo == 'i')
+    else
     {
-        reg->i32 = atoi(segundoParametro);
-    }
-    else if (*tipo == 'u')
-    {
-        reg->u8 = atoi(segundoParametro);
+        reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
+        if (*tipo == 'i')
+        {
+            reg->i32 = atoi(segundoParametro);
+        }
+        else if (*tipo == 'u')
+        {
+            reg->u8 = atoi(segundoParametro);
+        }
     }
 }
 
@@ -86,16 +90,18 @@ void instruccion_SUB(char *primerParametro, char *segundoParametro, Contexto_pro
     {
         procesoCPU->DI -= atoi(segundoParametro);
     }
-
-    reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
-    Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
-    if (*tipo == 'i')
+    else
     {
-        reg->i32 -= reg2->i32;
-    }
-    else if (*tipo == 'u')
-    {
-        reg->u8 -= reg2->u8;
+        reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
+        Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
+        if (*tipo == 'i')
+        {
+            reg->i32 -= reg2->i32;
+        }
+        else if (*tipo == 'u')
+        {
+            reg->u8 -= reg2->u8;
+        }
     }
 }
 
@@ -122,39 +128,57 @@ void instruccion_RESIZE(char *primerParametro, Contexto_proceso *procesoCPU, int
 
 void instruccion_COPY_STRING(char *primerParametro, Contexto_proceso *procesoCPU, int socket_memoria)
 {
-    char *string_obtenido = (char *)cpu_leer_memoria(procesoCPU->SI, atoi(primerParametro), procesoCPU->pid, socket_memoria);
+    char *string_obtenido = string_new();
+    int num = atoi(primerParametro);
+    string_append(&string_obtenido, cpu_leer_memoria(procesoCPU->SI, atoi(primerParametro), procesoCPU->pid, socket_memoria));
     escribir_memoria(procesoCPU->DI, atoi(primerParametro), procesoCPU->pid, string_obtenido, socket_memoria);
 }
 
 void instruccion_MOV_IN(char *primerParametro, char *segundoParametro, Contexto_proceso *procesoCPU, char *tipo, Registro *reg, int socket_memoria)
 {
     Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
-    reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
+    int dir_logica;
     if (*tipo == 'i')
     {
-        reg->i32 = *((uint32_t *)cpu_leer_memoria(reg2->i32, 4, procesoCPU->pid, socket_memoria));
-        printf("LLEGA BIEEEEENNNENENENENEN: %d\n", reg->i32);
+        dir_logica = reg2->i32;
     }
     else if (*tipo == 'u')
     {
-        reg->u8 = *((uint8_t *)cpu_leer_memoria(reg2->i32, 1, procesoCPU->pid, socket_memoria));
-        printf("LLEGA BIEEEEENNNENENENENEN: %d\n", reg->u8);
+        dir_logica = reg2->u8;
+    }
+    reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
+    if (*tipo == 'i')
+    {
+        reg->i32 = ((uint32_t )*cpu_leer_memoria(dir_logica, 4, procesoCPU->pid, socket_memoria));
+    }
+    else if (*tipo == 'u')
+    {
+        reg->u8 = ((uint8_t)*cpu_leer_memoria(dir_logica, 1, procesoCPU->pid, socket_memoria));
     }
 }
 
 void instruccion_MOV_OUT(char *primerParametro, char *segundoParametro, Contexto_proceso *procesoCPU, char *tipo, Registro *reg, int socket_memoria)
 {
     reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
+    int dir_logica;
+    if (*tipo == 'i')
+    {
+        dir_logica = reg->i32;
+    }
+    else if (*tipo == 'u')
+    {
+        dir_logica = reg->u8;
+    }
     Registro *reg2 = obtenerRegistro(segundoParametro, procesoCPU, tipo);
     if (*tipo == 'i')
     {
         void *dato = &(reg2->i32);
-        escribir_memoria(reg->i32, 4, procesoCPU->pid, dato, socket_memoria);
+        escribir_memoria(dir_logica, 4, procesoCPU->pid, dato, socket_memoria);
     }
     else if (*tipo == 'u')
     {
         void *dato = &(reg2->u8);
-        escribir_memoria(reg->i32, 1, procesoCPU->pid, dato, socket_memoria);
+        escribir_memoria(dir_logica, 1, procesoCPU->pid, dato, socket_memoria);
     }
 }
 
@@ -185,10 +209,7 @@ void instruccion_IO_STD(char **instruccion, Contexto_proceso *procesoCPU, char *
 
     char **direcciones_fisicas;
 
-    if (interfaz == STDIN)
-        direcciones_fisicas = obtener_direcciones_fisicas(direccion, tam, procesoCPU->pid);
-    else
-        direcciones_fisicas = obtener_direcciones_fisicas(tam, direccion, procesoCPU->pid);
+    direcciones_fisicas = obtener_direcciones_fisicas(direccion, tam, procesoCPU->pid);
 
     char *instruccion_con_dir_fisica = string_new();
 

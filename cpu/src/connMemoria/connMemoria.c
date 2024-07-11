@@ -29,9 +29,11 @@ char *recibirInstruccion(int *socket, unsigned int pid, unsigned int pc)
     return instruccion;
 }
 
-void *cpu_leer_memoria(int direccion_logica_inicio, int bytes_a_leer, int pid, int socket_memoria)
+char *cpu_leer_memoria(int direccion_logica_inicio, int bytes_a_leer, int pid, int socket_memoria)
 {
-    void *dato = malloc(bytes_a_leer);
+    // void *dato = malloc(bytes_a_leer);
+
+    char *dato = string_new();
 
     char **direcciones = obtener_direcciones_fisicas(direccion_logica_inicio, bytes_a_leer, pid);
 
@@ -52,17 +54,15 @@ void *cpu_leer_memoria(int direccion_logica_inicio, int bytes_a_leer, int pid, i
         op_code *opcode = get_opcode_msg_recv(&socket_memoria);
         t_buffer *buffer_recv = buffer_leer_recv(&socket_memoria);
 
-        buffer_read(buffer_recv, dato + offset, atoi(direcciones[i + 1]));
+        string_append(&dato, buffer_read_string(buffer_recv, atoi(direcciones[i + 1])));
+        // buffer_read(buffer_recv, dato + offset, atoi(direcciones[i + 1]));
 
         offset += atoi(direcciones[i + 1]);
 
         buffer_destroy(buffer_recv);
     }
 
-    int numero = *(int)dato;
-    char *dato_char = (char *)dato;
-
-    mensaje_conn_memoria(pid, "LEER", direcciones[0], numero);
+    mensaje_conn_memoria(pid, "LEER", direcciones[0], dato);
 
     return dato;
 }
@@ -103,12 +103,12 @@ int escribir_memoria(int direccion_logica_inicio, int bytes_a_escribir, int pid,
             break;
     }
 
-    mensaje_conn_memoria(pid, "ESCRIBIR", direcciones[0], *(int *)dato);
+    mensaje_conn_memoria(pid, "ESCRIBIR", direcciones[0], (char *)dato);
 
     return resultado;
 }
 
-void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, int dato)
+void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, char *dato)
 {
     char *mensaje = string_new();
 
@@ -121,7 +121,14 @@ void mensaje_conn_memoria(int pid, char *accion, char *direccion_fisica, int dat
     string_append(&mensaje, " - Dirección Física: ");
     string_append(&mensaje, direccion_fisica);
     string_append(&mensaje, " - Valor: ");
-    string_append(&mensaje, string_itoa(dato));
+    if (strcmp(dato, "\n") == 0 || strlen(dato) == 0 || strcmp(dato, "@") == 0)
+    {
+        string_append(&mensaje, string_itoa((int)*dato));
+    }
+    else
+    {
+        string_append(&mensaje, dato);
+    }
 
     log_info(loger_conn_memoria, mensaje);
 }

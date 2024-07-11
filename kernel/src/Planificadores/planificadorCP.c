@@ -131,6 +131,8 @@ void *planificarCortoPlazo(void *ptr)
         procesoPCB->pid = procesoDelCPU->pcb->pid;
         procesoPCB->quantumRestante = procesoDelCPU->pcb->quantumRestante;
         procesoPCB->estado = EXEC;
+        procesoPCB->SI = procesoDelCPU->pcb->SI;
+        procesoPCB->DI = procesoDelCPU->pcb->DI;
         guardarLosRegistros(procesoPCB);
 
         proceosPCB_HILO_recursos = procesoPCB;

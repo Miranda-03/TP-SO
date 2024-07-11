@@ -26,6 +26,7 @@ void *manage_conn_stdin_io(void *ptr)
             void *dato = malloc(bytes);
             buffer_read(buffer, dato, bytes);
             buffer_destroy(buffer);
+            char *dato_char = (char *)dato;
             escribir_memoria(dir_fisica, bytes, dato, &socketSTDIN);
             break;
         }
