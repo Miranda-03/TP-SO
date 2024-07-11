@@ -101,4 +101,8 @@ void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer
 
 TipoInterfaz tipo_interfaz_config(char *config_path);
 
+char* obtener_nombre_archivo(char **comando)
+int obtener_tamano_archivo(char **comando)
+int obtener_puntero_archivo(char **comando)
+
 #endif

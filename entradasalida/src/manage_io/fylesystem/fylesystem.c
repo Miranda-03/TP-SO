@@ -118,21 +118,7 @@ void escribir_archivo_fs(t_log *logger, char *nombre_archivo, int tamano, int pu
     int bloque_inicio = puntero_archivo / block_size;
     int bloque_fin = (puntero_archivo + tamano - 1) / block_size;
 
-    if (bloque_fin >= (tamano_actual + block_size - 1) / block_size) {
-        int bloques_necesarios = bloque_fin + 1 - (tamano_actual + block_size - 1) / block_size;
-        int bloque_libre = buscar_bloque_libre();
-
-        if (bloque_libre == -1) {
-            log_error(logger, "No hay suficientes bloques libres para escribir el archivo.");
-            return;
-        }
-
-        for (int i = 0; i < bloques_necesarios; i++) {
-            marcar_bloque_ocupado(bloque_inicial + bloque_inicio + i);
-        }
-        tamano_actual += bloques_necesarios * block_size;
-        actualizar_tamano_archivo(nombre_archivo, tamano_actual);
-    }
+    /*falta agregar la logica para compactar*/
 
     FILE *archivo = fopen(nombre_archivo, "rb+");
     if (archivo == NULL) {
@@ -140,8 +126,8 @@ void escribir_archivo_fs(t_log *logger, char *nombre_archivo, int tamano, int pu
         return;
     }
 
-    fseek(archivo, (bloque_inicial + bloque_inicio) * block_size + puntero_archivo % block_size, SEEK_SET);
-    fwrite(datos_a_escribir, sizeof(char), tamano, archivo);
+    //fseek(archivo, (bloque_inicial + bloque_inicio) * block_size + puntero_archivo % block_size, SEEK_SET);
+    //fwrite(datos_a_escribir, sizeof(char), tamano, archivo); No se q se escribe, esto es conceptual
 
     fclose(archivo);
 
