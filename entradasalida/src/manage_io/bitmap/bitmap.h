@@ -1,4 +1,4 @@
-#ifndef BITMAP_H
+/*#ifndef BITMAP_H
 #define BITMAP_H
 
 #include "../fylesystem/fylesystem.h"
@@ -19,4 +19,4 @@ void marcar_bloque_libre(int bloque);
 void crear_archivo_metadata(char *nombre_archivo, int bloque_inicial, int tamano_archivo);
 void eliminar_archivo_metadata(char *nombre_archivo);
 
-#endif // BITMAP_H
+#endif // BITMAP_H */

@@ -1,3 +1,4 @@
+/*
 #include "bitmap.h"
 
 void inicalizar_bloques(){
@@ -74,4 +75,4 @@ void eliminar_archivo_metadata(char *nombre_archivo) {
     if (remove(nombre_archivo) != 0) {
         perror("Error al eliminar el archivo de metadata");
     }
-}
+}*/

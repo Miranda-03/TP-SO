@@ -12,6 +12,7 @@
 #include <readline/readline.h>
 #include <unistd.h>
 #include <utils/obtenerValorConfig/obtenerValorConfig.h>
+#include "../manage_io/funciones_DIALFS/funciones_DIALFS.h"
 
 typedef struct
 {
@@ -101,8 +102,10 @@ void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer
 
 TipoInterfaz tipo_interfaz_config(char *config_path);
 
-char* obtener_nombre_archivo(char **comando)
-int obtener_tamano_archivo(char **comando)
-int obtener_puntero_archivo(char **comando)
+char* obtener_nombre_archivo(char **comando);
+int obtener_tamano_archivo(char **comando);
+int obtener_puntero_archivo(char **comando);
+
+void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion);
 
 #endif

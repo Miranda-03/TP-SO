@@ -41,4 +41,6 @@ void buscarNuevasConectadas(t_dictionary *diccionario_interfaces_conectadas,  vo
 */
 t_list *devolverKeys(t_dictionary *diccionario_interfaces_conectadas);
 
+void quitar_interfaz(char *key, t_dictionary *diccionario_interfaces_conectadas);
+
 #endif

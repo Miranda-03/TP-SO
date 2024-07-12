@@ -42,6 +42,8 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
     char *primerParametro = instruccionSeparada[1];
     char *segundoParametro = instruccionSeparada[2];
     char *tercerParametro = instruccionSeparada[3];
+    char *cuartoParametro = instruccionSeparada[4];
+    char *quintoParametro = instruccionSeparada[5];
     int *registro;
     Registro *reg;
     char tipo;
@@ -111,12 +113,29 @@ void execute(char **instruccionSeparada, Contexto_proceso *procesoCPU, char *ins
         log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
         instruccion_IO_STD(instruccionSeparada, procesoCPU, &tipo, reg, socket_con_memoria_cpu, *CPUsocketBidireccionalDispatch, STDOUT);
     }
+    else if (strcmp(operacion, "IO_FS_CREATE") == 0 || strcmp(operacion, "IO_FS_DELETE") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion, CPUsocketBidireccionalDispatch);
+    }
+    else if (strcmp(operacion, "IO_FS_TRUNCATE") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_IO_FS_TRUNCATE(operacion, primerParametro, segundoParametro, tercerParametro, &tipo, reg, *CPUsocketBidireccionalDispatch, procesoCPU);
+    }
+    else if (strcmp(operacion, "IO_FS_WRITE") == 0 || strcmp(operacion, "IO_FS_READ") == 0)
+    {
+        log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
+        instruccion_IO_FS_WRITE_READ(operacion, primerParametro, segundoParametro, tercerParametro, cuartoParametro, quintoParametro, &tipo, reg, *CPUsocketBidireccionalDispatch, procesoCPU);
+    }
     else if (strcmp(operacion, "EXIT") == 0)
     {
         log_info(loger, mensaje_execute_log(&(procesoCPU->pid), instruccion));
         enviar_contexto_al_kernel(procesoCPU, EXIT_SIGNAL, NULL, CPUsocketBidireccionalDispatch);
         // log_destroy(loger_execute);
     }
+
+    string_array_destroy(instruccionSeparada);
 }
 
 void checkInterrupt(Contexto_proceso *procesoCPU, int *CPUsocketBidireccionalDispatch)

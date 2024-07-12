@@ -3,11 +3,15 @@
 pthread_mutex_t mutexMSGMemoria_io;
 t_log *logger;
 
+char *path_base;
+int block_size;
+int block_count;
+int retraso;
+
 void inicializarMutex()
 {
     pthread_mutex_init(&mutexMSGMemoria_io, NULL);
     logger = log_create("logs/io.log", "entradasalida", 1, LOG_LEVEL_INFO);
-    int bitmap[block_count];
 }
 
 void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
@@ -41,6 +45,16 @@ void *hilo_conexion_io(void *ptr)
     t_buffer *buffer_kernel;
     int *PID = malloc(sizeof(int));
 
+    if (sockets->tipo_interfaz == DIALFS)
+    {
+        iniciar_archivos(sockets->modulo_io->config_path);
+        t_config *config = config_create(sockets->modulo_io->config_path);
+        path_base = config_get_string_value(config, "PATH_BASE_DIALFS");
+        block_size = config_get_int_value(config, "BLOCK_SIZE");
+        block_count = config_get_int_value(config, "BLOCK_COUNT");
+        retraso = config_get_int_value(config, "RETRASO_COMPACTACION");
+    }
+
     while (io_esta_conectado)
     {
         //*instruccion = NONE;
@@ -73,61 +87,66 @@ void *hilo_conexion_io(void *ptr)
                 log_info(logger, mensaje_info_operacion(*PID, "IO_STDOUT_WRITE"));
                 manageSTDOUT(sockets->modulo_io, &(sockets->IO_Kernel_socket), &(sockets->IO_Memoria_socket), buffer_kernel, instruccion, *PID);
                 break;
-            case STDOUT:
-                log_info(logger, mensaje_info_operacion(*PID, "IO_STDOUT_WRITE"));
-                manageSTDOUT(sockets->modulo_io, &(sockets->IO_Kernel_socket), &(sockets->IO_Memoria_socket), buffer_kernel, instruccion, *PID);
-                break;
-             case DIALFS:
-                manageDialFS(*PID,logger, sockets->modulo_io, sockets->IO_Kernel_socket, sockets->IO_Memoria_socket, buffer_kernel, instruccion);
+            case DIALFS:
+                manageDialFS(PID, logger, sockets->modulo_io, &(sockets->IO_Kernel_socket), &(sockets->IO_Memoria_socket), buffer_kernel, instruccion);
             }
         }
     }
 }
 
-/*
-    PARA ESCRIBIR LA MEMORIA SE LE ENVIA PRIMERO UN INT: 2 LECTURA, 3 ESCRITURA
-*/
+void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion)
+{
+    char **comando = string_split(instruccion, " ");
 
-void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion) {
-    char **comando = string_split(instruccion, " "); 
+    buffer_destroy(buffer_kernel);
 
-    if (comando[0] == NULL || comando[1] == NULL) {
+    if (comando[0] == NULL || comando[1] == NULL)
+    {
         log_error(logger, "DialFS - Comando inválido");
         free(instruccion);
-        for (int i = 0; comando[i] != NULL; i++) {
+        for (int i = 0; comando[i] != NULL; i++)
+        {
             free(comando[i]);
         }
         free(comando);
         return;
     }
 
-    char* nombre_archivo = obtener_nombre_archivo(comando);
-    int tamano = obtener_tamano_archivo(comando); 
-    int puntero_archivo = obtener_puntero_archivo(comando); 
+    log_info(logger, mensaje_info_operacion(*pid, comando[0]));
 
-    if (strcmp(comando[0], "IO_FS_CREATE") == 0) {
-        crear_archivo(pid, logger, nombre_archivo, tamano);
-    } else if (strcmp(comando[0], "IO_FS_DELETE") == 0) {
-        eliminar_archivo(pid, logger, nombre_archivo);
-    } else if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0) {
-        truncar_archivo(pid, logger, nombre_archivo, tamano);
-    } else if (strcmp(comando[0], "IO_FS_WRITE") == 0) {
-        // Aquí debes obtener los datos a escribir de alguna forma, posiblemente como un nuevo parámetro
-        // char* datos_a_escribir = obtener_datos();
-        // escribir_archivo_fs(logger, nombre_archivo, tamano, puntero_archivo, datos_a_escribir);
-    } else if (strcmp(comando[0], "IO_FS_READ") == 0) {
-        leer_archivo(pid, logger, nombre_archivo, tamano, puntero_archivo);
-    } else {
+    if (strcmp(comando[0], "IO_FS_CREATE") == 0)
+    {
+        crear_archivo(*pid, logger, comando, path_base, block_count);
+    }
+    else if (strcmp(comando[0], "IO_FS_DELETE") == 0)
+    {
+        borrar_archivo(*pid, logger, comando, path_base, block_count);
+    }
+    else if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0)
+    {
+        truncate_archivo(*pid, logger, comando, path_base, block_count, block_size, retraso);
+    }
+    else if (strcmp(comando[0], "IO_FS_WRITE") == 0)
+    {
+        escribir_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
+    }
+    else if (strcmp(comando[0], "IO_FS_READ") == 0)
+    {
+        leer_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
+    }
+    else
+    {
         log_error(logger, "DialFS - Instrucción desconocida");
     }
 
+    // Le dice al Kernel que termino con el numero 1
+    int resultado = 1;
+    t_buffer *buffer_respuesta_kernel = buffer_create(sizeof(uint32_t));
+    buffer_add_uint32(buffer_respuesta_kernel, resultado);
+    enviarMensaje(socket, buffer_respuesta_kernel, IO, MENSAJE);
     free(instruccion);
-    for (int i = 0; comando[i] != NULL; i++) {
-        free(comando[i]);
-    }
-    free(comando);
+    string_array_destroy(comando);
 }
-
 
 void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer *buffer_kernel, char *instruccion, int pid)
 {
@@ -334,12 +353,12 @@ TipoInterfaz tipo_interfaz_config(char *config_path)
     if (strcmp(tipo, "GENERICA") == 0)
         interfaz = GENERICA;
     if (strcmp(tipo, "STDIN") == 0)
-         interfaz = STDIN;
+        interfaz = STDIN;
     if (strcmp(tipo, "STDOUT") == 0)
         interfaz = STDOUT;
     if (strcmp(tipo, "DIALFS") == 0)
         interfaz = DIALFS;
-    
+
     config_destroy(config);
     return interfaz;
 }
@@ -380,61 +399,83 @@ char *mensaje_info_operacion(int PID, char *operacion)
     string_append(&result, " - Operacion: ");
     string_append(&result, operacion);
     return result;
-} 
+}
 
-char* mensaje_info_detallado(int PID, char* operacion, char* nombre_archivo, int tamano, int puntero_archivo) {
-    
-    char* mensaje = malloc(256);
-    if (strcmp(operacion, "Crear Archivo:") == 0) {
+char *mensaje_info_detallado(int PID, char *operacion, char *nombre_archivo, int tamano, int puntero_archivo)
+{
+
+    char *mensaje = malloc(256);
+    if (strcmp(operacion, "Crear Archivo:") == 0)
+    {
         snprintf(mensaje, 256, "DialFS - Crear Archivo: \"PID: %d - Crear Archivo: %s\"", PID, nombre_archivo);
-    } else if (strcmp(operacion, "Eliminar Archivo:") == 0) {
+    }
+    else if (strcmp(operacion, "Eliminar Archivo:") == 0)
+    {
         snprintf(mensaje, 256, "DialFS - Eliminar Archivo: \"PID: %d - Eliminar Archivo: %s\"", PID, nombre_archivo);
-    } else if (strcmp(operacion, "Truncar Archivo:") == 0) {
+    }
+    else if (strcmp(operacion, "Truncar Archivo:") == 0)
+    {
         snprintf(mensaje, 256, "DialFS - Truncar Archivo: \"PID: %d - Truncar Archivo: %s - Tamaño: %d\"", PID, nombre_archivo, tamano);
-    } else if (strcmp(operacion, "Leer Archivo:") == 0) {
+    }
+    else if (strcmp(operacion, "Leer Archivo:") == 0)
+    {
         snprintf(mensaje, 256, "DialFS - Leer Archivo: \"PID: %d - Leer Archivo: %s - Tamaño a Leer: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
-    } else if (strcmp(operacion, "Escribir Archivo:") == 0) {
+    }
+    else if (strcmp(operacion, "Escribir Archivo:") == 0)
+    {
         snprintf(mensaje, 256, "DialFS - Escribir Archivo: \"PID: %d - Escribir Archivo: %s - Tamaño a Escribir: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
-    } else {
+    }
+    else
+    {
         snprintf(mensaje, 256, "DialFS - Operación desconocida");
     }
     return mensaje;
 }
 
-char* obtener_nombre_archivo(char **comando) {
-    if (comando[1] == NULL) {
+char *obtener_nombre_archivo(char **comando)
+{
+    if (comando[1] == NULL)
+    {
         return NULL;
     }
     return comando[1];
 }
 
-int obtener_tamano_archivo(char **comando) {
+int obtener_tamano_archivo(char **comando)
+{
     // en realidad el tamaño hay q calcularlo en base a la direccion fisica?
 
-    if (comando[2] == NULL && comando[3] == NULL) {
-        
+    if (comando[2] == NULL && comando[3] == NULL)
+    {
+
         return -1;
     }
 
     // para IO_FS_TRUNCATE la tercera posicion y en la cuarta posición para IO_FS_WRITE y IO_FS_READ
 
-    if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0) {
+    if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0)
+    {
         return atoi(comando[2]);
-    } else if (strcmp(comando[0], "IO_FS_WRITE") == 0 || strcmp(comando[0], "IO_FS_READ") == 0) {
+    }
+    else if (strcmp(comando[0], "IO_FS_WRITE") == 0 || strcmp(comando[0], "IO_FS_READ") == 0)
+    {
         return atoi(comando[3]);
     }
     return -1;
 }
 
-int obtener_puntero_archivo(char **comando) {
-    
-    if (comando[4] == NULL) {
-        
+int obtener_puntero_archivo(char **comando)
+{
+
+    if (comando[4] == NULL)
+    {
+
         return -1;
     }
 
     // Misma logica q en el tamaño
-    if (strcmp(comando[0], "IO_FS_WRITE") == 0 || strcmp(comando[0], "IO_FS_READ") == 0) {
+    if (strcmp(comando[0], "IO_FS_WRITE") == 0 || strcmp(comando[0], "IO_FS_READ") == 0)
+    {
         return atoi(comando[4]);
     }
     return -1;

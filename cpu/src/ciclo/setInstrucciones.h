@@ -71,4 +71,10 @@ void instruccion_IO_STD(char **instruccion, Contexto_proceso *procesoCPU, char *
  */
 Registro *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU, char *tipo);
 
+void instruccion_IO_FS_TRUNCATE(char *operacion, char *id_io, char *nombre_archivo, char *reg_tam, char *tipo, Registro *reg, int socket_dispatch, Contexto_proceso *procesoCPU);
+
+char *obtener_array_de_direcciones(Contexto_proceso *procesoCPU, char *tipo, Registro *reg, char *dir, char *tam);
+
+void instruccion_IO_FS_WRITE_READ(char *operacion, char *id_io, char *nombre_archivo, char *direccion, char *reg_tam, char *puntero, char *tipo, Registro *reg, int socket_dispatch, Contexto_proceso *procesoCPU);
+
 #endif

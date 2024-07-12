@@ -149,7 +149,7 @@ void instruccion_MOV_IN(char *primerParametro, char *segundoParametro, Contexto_
     reg = obtenerRegistro(primerParametro, procesoCPU, tipo);
     if (*tipo == 'i')
     {
-        reg->i32 = ((uint32_t )*cpu_leer_memoria(dir_logica, 4, procesoCPU->pid, socket_memoria));
+        reg->i32 = ((uint32_t)*cpu_leer_memoria(dir_logica, 4, procesoCPU->pid, socket_memoria));
     }
     else if (*tipo == 'u')
     {
@@ -184,32 +184,6 @@ void instruccion_MOV_OUT(char *primerParametro, char *segundoParametro, Contexto
 
 void instruccion_IO_STD(char **instruccion, Contexto_proceso *procesoCPU, char *tipo, Registro *reg, int socket_memoria, int socket_dispatch, TipoInterfaz interfaz)
 {
-    unsigned int direccion = 0;
-    unsigned int tam = 0;
-
-    reg = obtenerRegistro(instruccion[2], procesoCPU, tipo);
-    if (*tipo == 'i')
-    {
-        direccion = reg->i32;
-    }
-    else if (*tipo == 'u')
-    {
-        direccion = reg->u8;
-    }
-
-    Registro *reg2 = obtenerRegistro(instruccion[3], procesoCPU, tipo);
-    if (*tipo == 'i')
-    {
-        tam = reg2->i32;
-    }
-    else if (*tipo == 'u')
-    {
-        tam = reg2->u8;
-    }
-
-    char **direcciones_fisicas;
-
-    direcciones_fisicas = obtener_direcciones_fisicas(direccion, tam, procesoCPU->pid);
 
     char *instruccion_con_dir_fisica = string_new();
 
@@ -217,20 +191,68 @@ void instruccion_IO_STD(char **instruccion, Contexto_proceso *procesoCPU, char *
     string_append(&instruccion_con_dir_fisica, " ");
     string_append(&instruccion_con_dir_fisica, instruccion[1]);
     string_append(&instruccion_con_dir_fisica, " ");
-    string_append(&instruccion_con_dir_fisica, "[");
-
-    int len_df_array = string_array_size(direcciones_fisicas);
-
-    for (int i = 0; i < (len_df_array - 1); i++)
-    {
-        string_append(&instruccion_con_dir_fisica, direcciones_fisicas[i]);
-        string_append(&instruccion_con_dir_fisica, ",");
-    }
-
-    string_append(&instruccion_con_dir_fisica, direcciones_fisicas[len_df_array - 1]);
-    string_append(&instruccion_con_dir_fisica, "]");
+    string_append(&instruccion_con_dir_fisica, obtener_array_de_direcciones(procesoCPU, tipo, reg, instruccion[2], instruccion[3]));
 
     enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion_con_dir_fisica, &socket_dispatch);
+
+    free(instruccion_con_dir_fisica);
+}
+
+void instruccion_IO_FS_TRUNCATE(char *operacion, char *id_io, char *nombre_archivo, char *reg_tam, char *tipo, Registro *reg, int socket_dispatch, Contexto_proceso *procesoCPU)
+{
+    int tam;
+    reg = obtenerRegistro(reg_tam, procesoCPU, tipo);
+    if (*tipo == 'i')
+    {
+        tam = reg->i32;
+    }
+    else if (*tipo == 'u')
+    {
+        tam = reg->u8;
+    }
+
+    char *instruccion_enviar = string_new();
+    string_append(&instruccion_enviar, operacion);
+    string_append(&instruccion_enviar, " ");
+    string_append(&instruccion_enviar, id_io);
+    string_append(&instruccion_enviar, " ");
+    string_append(&instruccion_enviar, nombre_archivo);
+    string_append(&instruccion_enviar, " ");
+    string_append(&instruccion_enviar, string_itoa(tam));
+
+    enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion_enviar, &socket_dispatch);
+
+    free(instruccion_enviar);
+}
+
+void instruccion_IO_FS_WRITE_READ(char *operacion, char *id_io, char *nombre_archivo, char *direccion, char *reg_tam, char *puntero, char *tipo, Registro *reg, int socket_dispatch, Contexto_proceso *procesoCPU)
+{
+    int puntero_int;
+    
+    reg = obtenerRegistro(puntero, procesoCPU, tipo);
+    if (*tipo == 'i')
+    {
+        puntero_int = reg->i32;
+    }
+    else if (*tipo == 'u')
+    {
+        puntero_int = reg->u8;
+    }
+
+    char *instruccion_enviar = string_new();
+    string_append(&instruccion_enviar, operacion);
+    string_append(&instruccion_enviar, " ");
+    string_append(&instruccion_enviar, id_io);
+    string_append(&instruccion_enviar, " ");
+    string_append(&instruccion_enviar, nombre_archivo);
+    string_append(&instruccion_enviar, " ");
+    string_append(&instruccion_enviar, obtener_array_de_direcciones(procesoCPU, tipo, reg, direccion, reg_tam));
+    string_append(&instruccion_enviar, " ");
+    string_append(&instruccion_enviar, string_itoa(puntero_int));
+
+    enviar_contexto_al_kernel(procesoCPU, INTERRUPCION_IO, instruccion_enviar, &socket_dispatch);
+
+    free(instruccion_enviar);
 }
 
 Registro *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU, char *tipo)
@@ -279,4 +301,53 @@ Registro *obtenerRegistro(char *registro, Contexto_proceso *procesoCPU, char *ti
     {
         return NULL;
     }
+}
+
+char *obtener_array_de_direcciones(Contexto_proceso *procesoCPU, char *tipo, Registro *reg, char *dir, char *tam)
+{
+    unsigned int direccion = 0;
+    unsigned int tam_num = 0;
+
+    reg = obtenerRegistro(dir, procesoCPU, tipo);
+    if (*tipo == 'i')
+    {
+        direccion = reg->i32;
+    }
+    else if (*tipo == 'u')
+    {
+        direccion = reg->u8;
+    }
+
+    Registro *reg2 = obtenerRegistro(tam, procesoCPU, tipo);
+    if (*tipo == 'i')
+    {
+        tam_num = reg2->i32;
+    }
+    else if (*tipo == 'u')
+    {
+        tam_num = reg2->u8;
+    }
+
+    char **direcciones_fisicas;
+
+    direcciones_fisicas = obtener_direcciones_fisicas(direccion, tam_num, procesoCPU->pid);
+
+    char *instruccion_con_dir_fisica = string_new();
+
+    string_append(&instruccion_con_dir_fisica, "[");
+
+    int len_df_array = string_array_size(direcciones_fisicas);
+
+    for (int i = 0; i < (len_df_array - 1); i++)
+    {
+        string_append(&instruccion_con_dir_fisica, direcciones_fisicas[i]);
+        string_append(&instruccion_con_dir_fisica, ",");
+    }
+
+    string_append(&instruccion_con_dir_fisica, direcciones_fisicas[len_df_array - 1]);
+    string_append(&instruccion_con_dir_fisica, "]");
+
+    string_array_destroy(direcciones_fisicas);
+
+    return instruccion_con_dir_fisica;
 }

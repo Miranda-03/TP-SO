@@ -36,3 +36,10 @@ t_list *devolverKeys(t_dictionary *diccionario_interfaces_conectadas)
 
     return keys_ids;
 }
+
+void quitar_interfaz(char *key, t_dictionary *diccionario_interfaces_conectadas)
+{
+    pthread_mutex_lock(&mutexDiccionarioInterfaz);
+    dictionary_remove(diccionario_interfaces_conectadas, key);
+    pthread_mutex_unlock(&mutexDiccionarioInterfaz);
+}

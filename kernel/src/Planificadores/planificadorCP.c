@@ -370,6 +370,7 @@ int verificarIOConectada(char *instruccion) // HEADER
             if (enviarMensaje(&(io_guardada->socket), NULL, KERNEL, CHECK_CONN_IO) < 0)
             {
                 list_destroy(listaDeIDs);
+                quitar_interfaz(key, interfaces_conectadas);
                 resultado = -1;
             }
             else if (io_guardada->interfaz == GENERICA &&
@@ -386,6 +387,16 @@ int verificarIOConectada(char *instruccion) // HEADER
             }
             else if (io_guardada->interfaz == STDOUT &&
                      strcmp(instruccionSeparada[0], "IO_STDOUT_WRITE") == 0)
+            {
+                list_destroy(listaDeIDs);
+                resultado = 1;
+            }
+            else if (io_guardada->interfaz == DIALFS &&
+                     (strcmp(instruccionSeparada[0], "IO_FS_CREATE") == 0 ||
+                      strcmp(instruccionSeparada[0], "IO_FS_DELETE") == 0 ||
+                      strcmp(instruccionSeparada[0], "IO_FS_TRUNCATE") == 0 ||
+                      strcmp(instruccionSeparada[0], "IO_FS_WRITE") == 0 ||
+                      strcmp(instruccionSeparada[0], "IO_FS_READ") == 0))
             {
                 list_destroy(listaDeIDs);
                 resultado = 1;
@@ -555,6 +566,10 @@ void enviarProcesoColaIOCorrespondiente(Pcb *proceso)
     {
         guardarEnColaSTDOUT(procesoInstruccion);
     }
+    else
+    {
+        guardarEnColaDIALFS(procesoInstruccion);
+    }
 
     string_array_destroy(instruccionSeparada);
 }
@@ -646,6 +661,8 @@ void *manageIO_Kernel(void *ptr)
 
         sem_wait(sem_hay_procesos_esperando);
 
+        buscar_ios_conectadas();
+
         identificadoresIOConectadas = dictionary_keys(interfaces_conectadas);
         // obtenerKeys(identificadoresIOConectadas);
         ordenarListaConLasIOsConectadas(tipo_interfaz, listasPorCadaID); // HACE UN 'dictionary_iterator' con 'interfaces_conectadas'
@@ -683,6 +700,30 @@ void *manageIO_Kernel(void *ptr)
         */
         list_destroy(identificadoresIOConectadas);
     }
+}
+
+void buscar_ios_conectadas()
+{
+    char **keys = string_array_new();
+
+    void verificar_desconecada(char *key, void *value)
+    {
+        IOguardar_kernel *io_guardada = (IOguardar_kernel *)value;
+        // int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion)
+        if (enviarMensaje(&(io_guardada->socket), NULL, KERNEL, CHECK_CONN_IO) < 0)
+        {
+            string_array_push(&keys, key);
+        }
+    }
+
+    dictionary_iterator(interfaces_conectadas, verificar_desconecada);
+
+    for (int i = 0; i < string_array_size(keys); i++)
+    {
+        quitar_interfaz(keys[i], interfaces_conectadas);
+    }
+
+    string_array_destroy(keys);
 }
 
 sem_t *obtenerSemaforoCorrespondiente(TipoInterfaz interfaz) // HEADER
@@ -765,7 +806,7 @@ t_queue *obtenerColaCorrespondiente(TipoInterfaz tipo_interfaz)
     case STDOUT:
         return lista_bloqueados_STDOUT;
         break;
-    
+
     case DIALFS:
         return lista_bloqueados_DialFS;
         break;
@@ -864,14 +905,42 @@ void *manageGenericoPorID(void *ptr)
         pthread_exit(NULL);
     }
 
-    structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)queue_peek(cola->colaBloqueadoPorID); // TIENE QUE AGARRAR EL PCB JUNTO A LA INSTRUCCION
+    structGuardarProcesoEnBloqueado *proceso;
+
+    if (!queue_is_empty(cola->colaBloqueadoPorID))
+    {
+        proceso = (structGuardarProcesoEnBloqueado *)queue_peek(cola->colaBloqueadoPorID); // TIENE QUE AGARRAR EL PCB JUNTO A LA INSTRUCCION
+    }
+    else
+    {
+        sem_post(&cola->semEsperarBlock);
+        free(params);
+        pthread_exit(NULL);
+    }
+
+    int pid = proceso->procesoPCB->pid;
 
     enviarMensajeAInterfaz(proceso, &(cola->socket), params->interfaz);
 
     int result = esperarConfirmacion(&(cola->socket));
 
     sem_wait(&flujoPlanificador_cp);
-    quitarProcesoDeLaCola(result, cola, proceso->procesoPCB->pid); // .pop de la cola, tiene un mutex
+    if (!queue_is_empty(cola->colaBloqueadoPorID))
+    {
+        structGuardarProcesoEnBloqueado *proceso_estado = (structGuardarProcesoEnBloqueado *)queue_peek(cola->colaBloqueadoPorID);
+        if (proceso_estado->procesoPCB->pid == pid)
+        {
+            quitarProcesoDeLaCola(result, cola, proceso->procesoPCB->pid);
+        }
+    }
+    else
+    {
+        sem_post(&cola->semEsperarBlock);
+        sem_post(&flujoPlanificador_cp);
+        free(params);
+        pthread_exit(NULL);
+    }
+
     sem_post(&cola->semEsperarBlock);
 
     pthread_exit(NULL);
@@ -918,7 +987,10 @@ void quitarProcesoDeLaCola(int resultadoDeLaIO, listaBlockPorID *cola, int pid)
         free(proceso);
     }
     else
+    {
+        sem_post(&flujoPlanificador_cp);
         pthread_mutex_unlock(&(cola->mutexCola));
+    }
 }
 
 int hayProcesosPrioritarios()
@@ -1341,4 +1413,68 @@ void buscar_en_espera(t_queue *cola, int pid, int *resultado, pthread_mutex_t *m
 void interrumpir_ejecucion()
 {
     enviarInterrupcion(INTERRUPCION_EXIT_KERNEL, &(params->KernelSocketCPUInterrumpt));
+}
+
+void listar_por_estado()
+{
+    t_log *loger_estados_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
+    char *mensaje_cp_readys = string_new();
+    string_append(&mensaje_cp_readys, "READY [ ");
+    void recorrer(void *value)
+    {
+        Pcb *proceso = (Pcb *)value;
+        string_append(&mensaje_cp_readys, string_itoa(proceso->pid));
+        string_append(&mensaje_cp_readys, ", ");
+    }
+    list_iterate(cola_de_ready->elements, recorrer);
+    list_iterate(cola_de_mayor_prioridad->elements, recorrer);
+    string_append(&mensaje_cp_readys, "]");
+    log_info(loger_estados_cp, mensaje_cp_readys);
+    free(mensaje_cp_readys);
+
+    char *mensaje_cp_bloqueado = string_new();
+    string_append(&mensaje_cp_bloqueado, "BLOQUEADOS [ ");
+
+    void iterar_cola(void *value) // NOOOOO
+    {
+        structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
+        string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
+        string_append(&mensaje_cp_bloqueado, ", ");
+    }
+
+    void iterar_sobre_colas_de_espera_por_cada_io(void *value)
+    {
+        listaBlockPorID *io_lista = (listaBlockPorID *)value;
+        // list_iterate(io_lista->colaBloqueadoPorID->elements, encontrar)
+        list_iterate(io_lista->colaBloqueadoPorID->elements, iterar_cola);
+    }
+
+    void iterar_sobre_todas_las_listas(void *value)
+    {
+        t_list *listasPorCadaID = (t_list *)value;
+        list_iterate(listasPorCadaID, iterar_sobre_colas_de_espera_por_cada_io);
+    }
+
+    list_iterate(todas_las_listasBloqueadosPorIDio, iterar_sobre_todas_las_listas);
+
+    void iterar_procesos_recurso(void *value)
+    {
+        Pcb *proceso = (Pcb *)value;
+        string_append(&mensaje_cp_bloqueado, string_itoa(proceso->pid));
+        string_append(&mensaje_cp_bloqueado, ", ");
+    }
+
+    void buscar_proceso_por_recurso(char *key, void *value)
+    {
+        Recurso *recurso = (Recurso *)value;
+        list_iterate(recurso->cola_de_bloqueados_por_recurso->elements, iterar_procesos_recurso);
+    }
+
+    dictionary_iterator(recursos, buscar_proceso_por_recurso);
+
+    string_append(&mensaje_cp_bloqueado, "]");
+    log_info(loger_estados_cp, mensaje_cp_bloqueado);
+    free(mensaje_cp_bloqueado);
+
+    log_destroy(loger_estados_cp);
 }

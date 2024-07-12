@@ -372,4 +372,8 @@ sem_t *obtenerSemaforoCorrespondiente(TipoInterfaz interfaz);
 
 void guardarEnColaDIALFS(structGuardarProcesoEnBloqueado *proceso);
 
+void buscar_ios_conectadas();
+
+void listar_por_estado();
+
 #endif

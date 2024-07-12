@@ -17,6 +17,7 @@
 #include <manageKernel/Kernelconn.h>
 #include <manageSTDIN/manageSTDIN.h>
 #include <manageSTDOUT/manageSTDOUT.h>
+#include <manageDIALFS/manageDIALFS.h>
 
 /**
 * @fn    conectarModuloMemoria
@@ -56,5 +57,6 @@ void iniciar_hilo_conexion(int *socket, TipoModulo modulo);
 
 void crearHiloManageSTDIN(int *socket);
 void crearHiloManageSTDOUT(int *socket);
+void crearHiloManageDIALFS(int *socket);
 
 #endif
