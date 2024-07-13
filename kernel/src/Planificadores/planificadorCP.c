@@ -1415,9 +1415,11 @@ void interrumpir_ejecucion()
     enviarInterrupcion(INTERRUPCION_EXIT_KERNEL, &(params->KernelSocketCPUInterrumpt));
 }
 
+
 void listar_por_estado()
 {
     t_log *loger_estados_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
+    
     char *mensaje_cp_readys = string_new();
     string_append(&mensaje_cp_readys, "READY [ ");
     void recorrer(void *value)
@@ -1434,6 +1436,11 @@ void listar_por_estado()
 
     char *mensaje_cp_bloqueado = string_new();
     string_append(&mensaje_cp_bloqueado, "BLOQUEADOS [ ");
+
+    /*
+    
+    
+    */
 
     void iterar_cola(void *value) // NOOOOO
     {
@@ -1471,6 +1478,14 @@ void listar_por_estado()
     }
 
     dictionary_iterator(recursos, buscar_proceso_por_recurso);
+
+    /*
+    void iterar_bloqueados(void *value) {
+        structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
+        string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
+        string_append(&mensaje_cp_bloqueado, ", ");
+    }
+    
 
     string_append(&mensaje_cp_bloqueado, "]");
     log_info(loger_estados_cp, mensaje_cp_bloqueado);

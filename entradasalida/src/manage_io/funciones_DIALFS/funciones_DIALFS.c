@@ -1,4 +1,4 @@
- 
+
 #include "funciones_DIALFS.h"
 
 void iniciar_archivos(char *path_config)
@@ -19,23 +19,53 @@ void iniciar_archivos(char *path_config)
 
 void crear_bitmap(const char *path, const char *filename, size_t size)
 {
-    //char *bitarray = string_new();
-    //t_bitarray *bitarray_struct = bitarray_create_with_mode(bitarray, size, MSB_FIRST);
+    // char *bitarray = string_new();
+    // t_bitarray *bitarray_struct = bitarray_create_with_mode(bitarray, size, MSB_FIRST);
 
     // Crear el path completo del archivo
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/%s.dat", path, filename);
 
-    FILE *file = fopen(fullPath, "w"); // Abrir el archivo en modo binario para escritura
+    FILE *file = fopen(fullPath, "a"); // Abrir el archivo en modo binario para escritura
     if (file == NULL)
     {
         perror("Error al abrir el archivo");
         exit(EXIT_FAILURE);
     }
 
-    //ftruncate(file, size);
+    // Asigna memoria para el bitarray
+    char *bitarray_data = (char *)malloc(size);
+    if (bitarray_data == NULL)
+    {
+        perror("malloc");
+        exit(EXIT_FAILURE); // Salir en caso de error de memoria
+    }
 
-    //fwrite(bitarray_struct->bitarray, bitarray_struct->size, 1, file);
+    // Crea la estructura del bitarray
+    t_bitarray *bitarray_struct = bitarray_create_with_mode(bitarray_data, size, MSB_FIRST);
+    if (bitarray_struct == NULL)
+    {
+        perror("bitarray_create_with_mode");
+        free(bitarray_data);
+        exit(EXIT_FAILURE); // Salir en caso de error
+    }
+
+    // Leer el bitarray del archivo
+    size_t read_size = fread(bitarray_struct->bitarray, 1, size, file);
+    if (read_size == 0)
+    {
+        size_t write_size = fwrite(bitarray_struct->bitarray, 1, bitarray_struct->size, file);
+        if (write_size != bitarray_struct->size)
+        {
+            perror("fwrite");
+            fclose(file);
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    // ftruncate(file, size);
+
+    // fwrite(bitarray_struct->bitarray, bitarray_struct->size, 1, file);
 
     fclose(file);
 }
@@ -46,7 +76,7 @@ void crear_archivo_bloques(const char *path, const char *filename, size_t size)
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/%s.dat", path, filename);
 
-    FILE *file = fopen(fullPath, "w"); // Abrir el archivo en modo binario para escritura
+    FILE *file = fopen(fullPath, "a"); // Abrir el archivo en modo binario para escritura
     if (file == NULL)
     {
         perror("Error al abrir el archivo");
@@ -101,45 +131,53 @@ void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *p
 
     t_bitarray *bitmap = obtener_bitarray_del_archivo(path_base, cant_bloques);
 
-    int bloques_asignados = floor(tam / size_bloques);
+    int bloques_asignados = ceil((float)tam / size_bloques);
+    if (bloques_asignados == 0)
+    {
+        bloques_asignados = 1;
+    }
+    int bloques_nuevos = ceil((float)nuevo_tam / size_bloques);
 
-    int bloques_nuevos = floor(nuevo_tam / size_bloques);
+    int nuevo_inicio = inicio;
 
-    int nuevo_inicio;
+    config_destroy(metadata);
 
     if (bloques_nuevos < bloques_asignados)
     {
         borrar_bits(bitmap, inicio + bloques_nuevos, bloques_asignados - bloques_nuevos);
+
+        t_config *metadata_guardar = config_create(fullPath);
+        config_set_value(metadata_guardar, "BLOQUE_INICIAL", string_itoa(nuevo_inicio));
+        config_set_value(metadata_guardar, "TAMANIO_ARCHIVO", string_itoa(nuevo_tam));
+        config_save(metadata_guardar);
+        config_destroy(metadata_guardar);
     }
     else if (bloques_nuevos > bloques_asignados)
     {
-        if (verificar_espacio_suficiente(bitmap, bloques_nuevos - bloques_asignados) > 0)
-        {
-            borrar_bits(bitmap, inicio, bloques_asignados);
-            nuevo_inicio = verificar_contiguo(pid, loger, bitmap, inicio + bloques_asignados, bloques_nuevos - bloques_asignados, bloques_asignados, path_base, size_bloques, retardo);
-            agregar_bits(bitmap, nuevo_inicio, bloques_nuevos);
-        }
+        // if (verificar_espacio_suficiente(bitmap, bloques_nuevos - bloques_asignados) > 0)
+
+        borrar_bits(bitmap, inicio, bloques_asignados);
+        nuevo_inicio = verificar_contiguo(pid, loger, bitmap, inicio + bloques_asignados, bloques_nuevos - bloques_asignados, bloques_asignados, path_base, size_bloques, retardo);
+        agregar_bits(bitmap, nuevo_inicio, bloques_nuevos);
+
+        t_config *metadata_guardar = config_create(fullPath);
+        config_set_value(metadata_guardar, "BLOQUE_INICIAL", string_itoa(nuevo_inicio));
+        config_set_value(metadata_guardar, "TAMANIO_ARCHIVO", string_itoa(nuevo_tam));
+        config_save(metadata_guardar);
+        config_destroy(metadata_guardar);
     }
 
     guardar_bitmap(path_base, bitmap);
-
-    config_destroy(metadata);
-
-    t_config *metadata_guadar = config_create(fullPath);
-    config_set_value(metadata_guadar, "BLOQUE_INICIAL", string_itoa(nuevo_inicio));
-    config_set_value(metadata_guadar, "TAMANIO_ARCHIVO", string_itoa(nuevo_tam));
-    config_save(metadata_guadar);
-    config_destroy(metadata_guadar);
 }
 
 int verificar_contiguo(int pid, t_log *loger, t_bitarray *bitmap, int bloque_inicio, int bloques_a_colocar, int bloques_asignados, char *path_base, int size_bloque, int retardo)
 {
-    int contador = 0;
+    int contador = bloque_inicio;
     int bloques_disponibles = 0;
 
-    while (bloque_inicio < bitmap->size)
+    while (contador < bitmap->size)
     {
-        if (!bitarray_test_bit(bitmap, (off_t)bloque_inicio))
+        if (!bitarray_test_bit(bitmap, contador))
         {
             bloques_disponibles++;
         }
@@ -147,15 +185,18 @@ int verificar_contiguo(int pid, t_log *loger, t_bitarray *bitmap, int bloque_ini
         {
             break;
         }
-        bloque_inicio++;
+        contador++;
     }
+
+    printf("Bloques libres: %d\n", bloques_disponibles);
+    printf("Bloques a colocar: %d\n", bloques_a_colocar);
 
     if (bloques_disponibles < bloques_a_colocar)
     {
         return compactar(pid, loger, bitmap, path_base, size_bloque, retardo);
     }
 
-    return bloque_inicio;
+    return bloque_inicio - bloques_asignados;
 }
 
 int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int size_bloque, int retardo)
@@ -169,9 +210,12 @@ int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int si
         if (bitarray_test_bit(bitmap, contador))
         {
             num_bloques = encontrar_archivo_y_modificar(offset_bitmap, contador, path_base, size_bloque);
-            borrar_bits(bitmap, contador, num_bloques);
-            agregar_bits(bitmap, offset_bitmap, num_bloques);
-            offset_bitmap += num_bloques;
+            if (num_bloques != -1)
+            {
+                borrar_bits(bitmap, contador, num_bloques);
+                agregar_bits(bitmap, offset_bitmap, num_bloques);
+                offset_bitmap += num_bloques;
+            }
         }
         contador++;
     }
@@ -184,7 +228,7 @@ int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int si
 int encontrar_archivo_y_modificar(int offset, int block_inicio_contador, char *path_base, int size_bloque)
 {
     int tam_archivo = 0;
-    int tam_archivo_copy = 0;
+    int tam_archivo_copy = -1;
 
     struct dirent *entry;
     DIR *dir = opendir(path_base);
@@ -222,7 +266,13 @@ int encontrar_archivo_y_modificar(int offset, int block_inicio_contador, char *p
 
     closedir(dir);
 
-    return floor(tam_archivo_copy / size_bloque);
+    if (tam_archivo_copy == 0)
+        return 1;
+
+    if (tam_archivo_copy == -1)
+        return -1;
+
+    return ceil((float)tam_archivo_copy / size_bloque);
 }
 
 int verificar_espacio_suficiente(t_bitarray *bitmap, int cant_nuevos_bloques)
@@ -251,7 +301,7 @@ int escribir_archivo(int pid, t_log *loger, char **instruccionSeparada, int size
 
     int size_array_dir = string_array_size(direcciones_fisicas);
 
-    char *dato_a_leer = calloc(1, 1);  // Inicializa como cadena vacía
+    char *dato_a_leer = calloc(1, 1); // Inicializa como cadena vacía
 
     for (int i = 0; i < (size_array_dir); i += 2)
     {
@@ -287,7 +337,8 @@ int escribir_archivo(int pid, t_log *loger, char **instruccionSeparada, int size
     snprintf(fullPath, sizeof(fullPath), "%s/bloques.dat", path_base);
 
     FILE *file = fopen(fullPath, "rb+");
-    if (!file) {
+    if (!file)
+    {
         perror("fopen");
         free(dato_a_leer);
         config_destroy(metadata);
@@ -318,7 +369,8 @@ char *leer_archivo(int pid, t_log *loger, char **instruccionSeparada, int size_b
     int size_array_dir = string_array_size(direcciones_fisicas);
 
     char *dato = malloc(size_dato_a_leer + 1);
-    if (!dato) {
+    if (!dato)
+    {
         perror("malloc");
         string_array_destroy(direcciones_fisicas);
         return NULL;
@@ -337,7 +389,8 @@ char *leer_archivo(int pid, t_log *loger, char **instruccionSeparada, int size_b
     snprintf(fullPath, sizeof(fullPath), "%s/bloques.dat", path_base);
 
     FILE *file = fopen(fullPath, "rb");
-    if (!file) {
+    if (!file)
+    {
         perror("fopen");
         free(dato);
         string_array_destroy(direcciones_fisicas);
@@ -347,7 +400,8 @@ char *leer_archivo(int pid, t_log *loger, char **instruccionSeparada, int size_b
 
     int offset_archivo = atoi(instruccionSeparada[4]);
 
-    if (fseek(file, (bloque_inicio * size_bloque) + offset_archivo, SEEK_SET) != 0) {
+    if (fseek(file, (bloque_inicio * size_bloque) + offset_archivo, SEEK_SET) != 0)
+    {
         perror("fseek");
         fclose(file);
         free(dato);
@@ -382,7 +436,8 @@ char *leer_archivo(int pid, t_log *loger, char **instruccionSeparada, int size_b
 
         resultado = buffer_read_uint32(buffer_recv);
 
-        if (resultado < 0) {
+        if (resultado < 0)
+        {
             buffer_destroy(buffer_recv);
             buffer_destroy(buffer);
             break;
@@ -462,9 +517,9 @@ int comprobar_espacio(char *path_base, int cant_bloques)
 
     while (contador < bitmap_struct->size)
     {
-        if (!bitarray_test_bit(bitmap_struct, (off_t)contador))
+        if (!bitarray_test_bit(bitmap_struct, contador))
         {
-            bitarray_set_bit(bitmap_struct, (off_t)contador);
+            bitarray_set_bit(bitmap_struct, contador);
             respuesta = contador;
             break;
         }
@@ -477,31 +532,75 @@ int comprobar_espacio(char *path_base, int cant_bloques)
     return respuesta;
 }
 
-void guardar_bitmap(char *path_base, t_bitarray *self)
-{
-    char fullPath[1024];
-    snprintf(fullPath, sizeof(fullPath), "%s/bitmap.dat", path_base);
-
-    FILE *file = fopen(fullPath, "wb");
-
-    fwrite(self->bitarray, 1, self->size, file);
-
-    fclose(file);
-}
-
 t_bitarray *obtener_bitarray_del_archivo(char *path_base, int size)
 {
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/bitmap.dat", path_base);
 
-    char *bitarray = string_new();
-    t_bitarray *bitarray_struct = bitarray_create_with_mode(bitarray, size, MSB_FIRST);
+    // Asigna memoria para el bitarray
+    char *bitarray_data = (char *)malloc(size);
+    if (bitarray_data == NULL)
+    {
+        perror("malloc");
+        exit(EXIT_FAILURE); // Salir en caso de error de memoria
+    }
 
+    // Crea la estructura del bitarray
+    t_bitarray *bitarray_struct = bitarray_create_with_mode(bitarray_data, size, MSB_FIRST);
+    if (bitarray_struct == NULL)
+    {
+        perror("bitarray_create_with_mode");
+        free(bitarray_data);
+        exit(EXIT_FAILURE); // Salir en caso de error
+    }
+
+    // Abrir el archivo en modo lectura binaria
     FILE *archivo_bitmap = fopen(fullPath, "rb");
+    if (archivo_bitmap == NULL)
+    {
+        perror("fopen");
+        free(bitarray_data); // Liberar la memoria en caso de error
+        free(bitarray_struct);
+        exit(EXIT_FAILURE);
+    }
 
-    fread(bitarray_struct->bitarray, 1, size, archivo_bitmap);
+    // Leer el bitarray del archivo
+    size_t read_size = fread(bitarray_struct->bitarray, 1, size, archivo_bitmap);
+    if (read_size != size)
+    {
+        perror("fread");
+        free(bitarray_data); // Liberar la memoria en caso de error
+        free(bitarray_struct);
+        fclose(archivo_bitmap);
+        exit(EXIT_FAILURE);
+    }
 
     fclose(archivo_bitmap);
 
     return bitarray_struct;
+}
+
+void guardar_bitmap(char *path_base, t_bitarray *self)
+{
+    char fullPath[1024];
+    snprintf(fullPath, sizeof(fullPath), "%s/bitmap.dat", path_base);
+
+    // Abrir el archivo en modo escritura binaria
+    FILE *file = fopen(fullPath, "wb");
+    if (file == NULL)
+    {
+        perror("fopen");
+        exit(EXIT_FAILURE);
+    }
+
+    // Escribir el bitarray en el archivo
+    size_t write_size = fwrite(self->bitarray, 1, self->size, file);
+    if (write_size != self->size)
+    {
+        perror("fwrite");
+        fclose(file);
+        exit(EXIT_FAILURE);
+    }
+
+    fclose(file);
 }

@@ -112,7 +112,12 @@ void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int
         return;
     }
 
-    log_info(logger, mensaje_info_operacion(*pid, comando[0]));
+    char *instruccion_comando = comando[0];
+    char *mensaje = mensaje_info_operacion(*pid, instruccion_comando);
+
+    log_info(logger, mensaje);
+
+    free(mensaje);
 
     if (strcmp(comando[0], "IO_FS_CREATE") == 0)
     {
@@ -387,6 +392,9 @@ t_buffer *recibir_instruccion_del_kernel(char **instruccion, int *PID, int *sock
         *instruccion = buffer_read_string(buffer, size);
         return buffer;
     }
+
+    free(modulo);
+    free(codigo);
 
     return NULL;
 }

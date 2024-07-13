@@ -121,4 +121,6 @@ void mensaje_nuevo_proceso(int pid);
 
 void mensaje_exit(int pid, char *motivo_exit);
 
+//void_listar_estados_lp();
+
 #endif
