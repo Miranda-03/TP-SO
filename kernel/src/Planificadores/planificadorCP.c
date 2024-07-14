@@ -355,7 +355,6 @@ int chequearMotivoIO(Pcb *proceso)
 
 int verificarIOConectada(char *instruccion) // HEADER
 {
-    t_list *listaDeIDs = devolverKeys(interfaces_conectadas);
     char **instruccionSeparada = string_split(instruccion, " ");
     char *id_io = instruccionSeparada[1];
     int resultado = -1;
@@ -366,29 +365,24 @@ int verificarIOConectada(char *instruccion) // HEADER
 
         if (strcmp(key, id_io) == 0)
         {
-            // int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion)
-            if (enviarMensaje(&(io_guardada->socket), NULL, KERNEL, CHECK_CONN_IO) < 0)
+            //io_guardada->socket int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion)
+            if (check_socket_connection(io_guardada->socket) <= 0)
             {
-                list_destroy(listaDeIDs);
-                quitar_interfaz(key, interfaces_conectadas);
                 resultado = -1;
             }
             else if (io_guardada->interfaz == GENERICA &&
                      strcmp(instruccionSeparada[0], "IO_GEN_SLEEP") == 0)
             {
-                list_destroy(listaDeIDs);
                 resultado = 1;
             }
             else if (io_guardada->interfaz == STDIN &&
                      strcmp(instruccionSeparada[0], "IO_STDIN_READ") == 0)
             {
-                list_destroy(listaDeIDs);
                 resultado = 1;
             }
             else if (io_guardada->interfaz == STDOUT &&
                      strcmp(instruccionSeparada[0], "IO_STDOUT_WRITE") == 0)
             {
-                list_destroy(listaDeIDs);
                 resultado = 1;
             }
             else if (io_guardada->interfaz == DIALFS &&
@@ -398,7 +392,6 @@ int verificarIOConectada(char *instruccion) // HEADER
                       strcmp(instruccionSeparada[0], "IO_FS_WRITE") == 0 ||
                       strcmp(instruccionSeparada[0], "IO_FS_READ") == 0))
             {
-                list_destroy(listaDeIDs);
                 resultado = 1;
             }
         }
@@ -661,7 +654,7 @@ void *manageIO_Kernel(void *ptr)
 
         sem_wait(sem_hay_procesos_esperando);
 
-        buscar_ios_conectadas();
+        //buscar_ios_conectadas();
 
         identificadoresIOConectadas = dictionary_keys(interfaces_conectadas);
         // obtenerKeys(identificadoresIOConectadas);
@@ -830,7 +823,7 @@ t_list *ordenarListaConLasIOsConectadas(TipoInterfaz tipo, t_list *listasPorCada
 
     buscarNuevasConectadas(interfaces_conectadas, encontrarIONuevaConectada);
 
-    MarcarDesconetadas(listasPorCadaID);
+    //MarcarDesconetadas(listasPorCadaID);
 }
 
 void PonerIO(char *key, void *value, t_list *listasPorCadaID, TipoInterfaz tipo)
@@ -876,7 +869,7 @@ void MarcarDesconetadas(t_list *listasPorCadaID)
     void verificarIOConectada(void *value)
     {
         listaBlockPorID *io = (listaBlockPorID *)value;
-        if (!dictionary_has_key(interfaces_conectadas, io->identificador)) // poner mutex en Interfaces
+        if (check_socket_connection(io->socket) <= 0) // poner mutex en Interfaces
         {
             *(io->conectado) = -1;
         }
@@ -889,6 +882,10 @@ void *manageGenericoPorID(void *ptr)
 {
     structParaHiloFORIO *params = (structParaHiloFORIO *)ptr;
     listaBlockPorID *cola = params->lista;
+
+    IOguardar *io = (IOguardar *)dictionary_get(interfaces_conectadas, cola->identificador);
+
+    cola->socket = io->socket;
 
     if (*(cola->conectado) < 0)
     {
@@ -1491,5 +1488,5 @@ void listar_por_estado()
     log_info(loger_estados_cp, mensaje_cp_bloqueado);
     free(mensaje_cp_bloqueado);
 
-    log_destroy(loger_estados_cp);
+    log_destroy(loger_estados_cp);*/
 }

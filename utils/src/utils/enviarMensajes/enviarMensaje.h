@@ -9,6 +9,9 @@
 #include <stdio.h>
 #include <sys/socket.h>
 #include <string.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/types.h>
 
 /**
  * @fn enviarMensaje
@@ -27,6 +30,10 @@ op_code *get_opcode_msg_recv(int *socket);
 * @brief Retorna el modulo del paquete del recv().
 */
 TipoModulo *get_modulo_msg_recv(int *socket);
+
+int set_socket_blocking_mode(int sockfd, int blocking);
+
+int check_socket_connection(int sockfd);
 
 #endif
 
