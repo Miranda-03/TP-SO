@@ -11,8 +11,6 @@ Algoritmo algoritmo;
 
 t_log *kernel_loger_cp;
 
-Pcb *proceosPCB_HILO_recursos;
-
 t_queue *cola_de_ready;
 t_queue *cola_de_mayor_prioridad;
 t_queue *lista_bloqueados_generico;
@@ -47,7 +45,7 @@ MensajeProcesoDelCPU *procesoDelCPU;
 
 void *planificarCortoPlazo(void *ptr)
 {
-    params = (ParamsPCP_kernel *)ptr; // PARAMS FREE
+    params = (ParamsPCP_kernel *)ptr;
     interfaces_conectadas = params->interfaces_conectadas;
     recursos = params->recursos;
     algoritmo = params->algoritmo;
@@ -59,13 +57,13 @@ void *planificarCortoPlazo(void *ptr)
 
     quantumRestante = quantumTotal;
 
-    kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO); // DESTRUIR
+    kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO); 
 
-    PIDbuscadoParaTerminar = malloc(4); // FREE
+    PIDbuscadoParaTerminar = malloc(4); 
     *PIDbuscadoParaTerminar = -1;
 
-    procesoDelCPU = malloc(sizeof(MensajeProcesoDelCPU)); // FREE
-    procesoDelCPU->pcb = malloc(sizeof(Pcb));             // FREE
+    procesoDelCPU = malloc(sizeof(MensajeProcesoDelCPU)); 
+    procesoDelCPU->pcb = malloc(sizeof(Pcb));             
 
     cola_de_ready = queue_create();
     cola_de_mayor_prioridad = queue_create();
@@ -125,23 +123,11 @@ void *planificarCortoPlazo(void *ptr)
 
         esperarProcesoCPU(quantumRestante);
 
-        // Crear el proceso (PCB) con un malloc
-        Pcb *procesoPCB = malloc(sizeof(Pcb));
-        procesoPCB->pc = procesoDelCPU->pcb->pc;
-        procesoPCB->pid = procesoDelCPU->pcb->pid;
-        procesoPCB->quantumRestante = procesoDelCPU->pcb->quantumRestante;
-        procesoPCB->estado = EXEC;
-        procesoPCB->SI = procesoDelCPU->pcb->SI;
-        procesoPCB->DI = procesoDelCPU->pcb->DI;
-        guardarLosRegistros(procesoPCB);
-
-        proceosPCB_HILO_recursos = procesoPCB;
-
         sem_wait(&esperar_guardar_proceso);
 
-        if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
+        if (chequearMotivoIO() < 0 && chequearMotivoExit() < 0 && chequearRecursos() < 0)
         {
-            agregarProcesoAReadyCorrespondiente(procesoPCB);
+            agregarProcesoAReadyCorrespondiente();
         }
 
         mensaje_desalojo();
@@ -172,7 +158,7 @@ int chequearRecursos(Pcb *proceso)
 
         if (!dictionary_has_key(recursos, instruccion_separada[1]))
         {
-            terminarProceso(proceso, "INVALID_RESOURCE");
+            terminarProceso(procesoDelCPU->pcb, "INVALID_RESOURCE");
             string_array_destroy(instruccion_separada);
             return 1;
         }
@@ -180,16 +166,16 @@ int chequearRecursos(Pcb *proceso)
         if (strcmp(instruccion_separada[0], "WAIT") == 0)
         {
             sem_wait(&flujoPlanificador_cp);
-            proceso->estado = BLOCK;
-            mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
-            guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
+            procesoDelCPU->pcb->estado = BLOCK;
+            mensaje_cambio_de_estado("Executing", "Bloqueado", procesoDelCPU->pcb->pid);
+            guardar_en_cola_correspondiente_recurso(procesoDelCPU->pcb, instruccion_separada);
             sem_post(&flujoPlanificador_cp);
             string_array_destroy(instruccion_separada);
             return 1;
         }
         else
         {
-            hacerPOST(instruccion_separada[1], proceso->pid);
+            hacerPOST(instruccion_separada[1], procesoDelCPU->pcb->pid);
             string_array_destroy(instruccion_separada);
             return -1;
         }
@@ -346,7 +332,7 @@ int chequearMotivoIO(Pcb *proceso)
     procesoDelCPU->pcb->estado = BLOCK;
     mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
 
-    enviarProcesoColaIOCorrespondiente(proceso);
+    enviarProcesoColaIOCorrespondiente(procesoDelCPU->pcb);
 
     sem_post(&flujoPlanificador_cp);
 
@@ -411,7 +397,7 @@ int chequearMotivoExit(Pcb *proceso)
 
     char *motivo_exit = enum_to_string_EXIT(procesoDelCPU->motivo);
 
-    terminarProceso(proceso, motivo_exit);
+    terminarProceso(procesoDelCPU->pcb, motivo_exit);
     return 1;
 }
 
@@ -1048,7 +1034,7 @@ void enviarMensajeCPUPCBProceso(Pcb *proceso)
 
     enviarMensaje(&(params->KernelSocketCPUDispatch), buffer, KERNEL, MENSAJE);
 
-    free(proceso);
+    procesoDelCPU->pcb = proceso;
 }
 
 void agregarRegistrosAlBuffer(t_buffer *buffer, Pcb *proceso)
@@ -1068,19 +1054,19 @@ int hayAlgunoEnCPU()
     return PIDprocesoEjecutando;
 }
 
-void agregarProcesoAReadyCorrespondiente(Pcb *proceso)
+void agregarProcesoAReadyCorrespondiente()
 {
     sem_wait(&flujoPlanificador_cp);
 
-    if (algoritmo == VRR && proceso->quantumRestante > 0)
-        agregarProcesoColaMayorPrioridad(proceso);
+    if (algoritmo == VRR && procesoDelCPU->pcb->quantumRestante > 0)
+        agregarProcesoColaMayorPrioridad(procesoDelCPU->pcb);
     else
-        agregarProcesoColaReady(proceso);
+        agregarProcesoColaReady(procesoDelCPU->pcb);
 
-    char *estado_previo = enum_to_string(proceso->estado);
+    char *estado_previo = enum_to_string(procesoDelCPU->pcb->estado);
 
-    proceso->estado = READY;
-    mensaje_cambio_de_estado(estado_previo, "Ready", proceso->pid);
+    procesoDelCPU->pcb->estado = READY;
+    mensaje_cambio_de_estado(estado_previo, "Ready", procesoDelCPU->pcb->pid);
 
     sem_post(&flujoPlanificador_cp);
 }
