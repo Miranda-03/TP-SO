@@ -11,8 +11,6 @@ Algoritmo algoritmo;
 
 t_log *kernel_loger_cp;
 
-Pcb *proceosPCB_HILO_recursos;
-
 t_queue *cola_de_ready;
 t_queue *cola_de_mayor_prioridad;
 t_queue *lista_bloqueados_generico;
@@ -47,7 +45,7 @@ MensajeProcesoDelCPU *procesoDelCPU;
 
 void *planificarCortoPlazo(void *ptr)
 {
-    params = (ParamsPCP_kernel *)ptr; // PARAMS FREE
+    params = (ParamsPCP_kernel *)ptr;
     interfaces_conectadas = params->interfaces_conectadas;
     recursos = params->recursos;
     algoritmo = params->algoritmo;
@@ -59,13 +57,13 @@ void *planificarCortoPlazo(void *ptr)
 
     quantumRestante = quantumTotal;
 
-    kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO); // DESTRUIR
+    kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
 
-    PIDbuscadoParaTerminar = malloc(4); // FREE
+    PIDbuscadoParaTerminar = malloc(4);
     *PIDbuscadoParaTerminar = -1;
 
-    procesoDelCPU = malloc(sizeof(MensajeProcesoDelCPU)); // FREE
-    procesoDelCPU->pcb = malloc(sizeof(Pcb));             // FREE
+    procesoDelCPU = malloc(sizeof(MensajeProcesoDelCPU));
+    procesoDelCPU->pcb = malloc(sizeof(Pcb));
 
     cola_de_ready = queue_create();
     cola_de_mayor_prioridad = queue_create();
@@ -124,28 +122,30 @@ void *planificarCortoPlazo(void *ptr)
         }
 
         esperarProcesoCPU(quantumRestante);
-
-        // Crear el proceso (PCB) con un malloc
         Pcb *procesoPCB = malloc(sizeof(Pcb));
-        procesoPCB->pc = procesoDelCPU->pcb->pc;
-        procesoPCB->pid = procesoDelCPU->pcb->pid;
-        procesoPCB->quantumRestante = procesoDelCPU->pcb->quantumRestante;
-        procesoPCB->estado = EXEC;
-        procesoPCB->SI = procesoDelCPU->pcb->SI;
-        procesoPCB->DI = procesoDelCPU->pcb->DI;
-        guardarLosRegistros(procesoPCB);
 
-        proceosPCB_HILO_recursos = procesoPCB;
+        actualizar_pcb(procesoPCB);
 
         sem_wait(&esperar_guardar_proceso);
+
+        mensaje_desalojo();
 
         if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
         {
             agregarProcesoAReadyCorrespondiente(procesoPCB);
         }
-
-        mensaje_desalojo();
     }
+}
+
+void actualizar_pcb(Pcb *proceso)
+{
+    proceso->pc = procesoDelCPU->pcb->pc;
+    proceso->pid = procesoDelCPU->pcb->pid;
+    proceso->quantumRestante = procesoDelCPU->pcb->quantumRestante;
+    proceso->estado = EXEC;
+    proceso->SI = procesoDelCPU->pcb->SI;
+    proceso->DI = procesoDelCPU->pcb->DI;
+    guardarLosRegistros(proceso);
 }
 
 int hayProcesosEnCola()
@@ -365,7 +365,7 @@ int verificarIOConectada(char *instruccion) // HEADER
 
         if (strcmp(key, id_io) == 0)
         {
-            //io_guardada->socket int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion)
+            // io_guardada->socket int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codigoOperacion)
             if (check_socket_connection(io_guardada->socket) <= 0)
             {
                 resultado = -1;
@@ -636,7 +636,7 @@ void *manageBloqueados(void *ptr) // iniciar hilo en el planificador
 void *manageIO_Kernel(void *ptr)
 {
     TipoInterfaz tipo_interfaz = (TipoInterfaz)ptr;
-    t_list *identificadoresIOConectadas;
+
     t_list *listasPorCadaID;
     listasPorCadaID = list_create();
 
@@ -654,17 +654,13 @@ void *manageIO_Kernel(void *ptr)
 
         sem_wait(sem_hay_procesos_esperando);
 
-        //buscar_ios_conectadas();
-
-        identificadoresIOConectadas = dictionary_keys(interfaces_conectadas);
-        // obtenerKeys(identificadoresIOConectadas);
         ordenarListaConLasIOsConectadas(tipo_interfaz, listasPorCadaID); // HACE UN 'dictionary_iterator' con 'interfaces_conectadas'
 
         sem_wait(&flujoPlanificador_cp);
         proceso = (structGuardarProcesoEnBloqueado *)queue_pop(lista_bloqueados);
         sem_post(&flujoPlanificador_cp);
 
-        if (laIOEstaConectada(identificadoresIOConectadas, proceso) > 0)
+        if (laIOEstaConectada(proceso) > 0)
         {
             guardarEnSuCola(listasPorCadaID, proceso);
         }
@@ -691,7 +687,6 @@ void *manageIO_Kernel(void *ptr)
             con la misma se utilizan semaforos binarios que estaran guardados en 'listasPorCadaID'. Una vez recibida la finalizacion
             del io se sacara de la cola de bloqueado y se guardara en Ready o MayorPrioridad o se mandara a EXIT segun corresponda.
         */
-        list_destroy(identificadoresIOConectadas);
     }
 }
 
@@ -744,19 +739,20 @@ sem_t *obtenerSemaforoCorrespondiente(TipoInterfaz interfaz) // HEADER
     }
 }
 
-int laIOEstaConectada(t_list *conectadas, structGuardarProcesoEnBloqueado *proceso)
+int laIOEstaConectada(structGuardarProcesoEnBloqueado *proceso)
 {
-    int estaConectada = -1;
+    int estaConectada = 1;
     char *keyProceso = string_split(proceso->instruccion, " ")[1];
 
-    void saberSiEstaConectada(void *value)
+    void saberSiEstaConectada(char *key, void *value)
     {
-        char *key = (char *)value;
+        IOguardar *io = (IOguardar *)value;
         if (strcmp(key, keyProceso) == 0)
-            estaConectada = 1;
+            if(check_socket_connection(io->socket) == 0)
+                estaConectada = -1;
     }
 
-    list_iterate(conectadas, saberSiEstaConectada);
+    dictionary_iterator(interfaces_conectadas, saberSiEstaConectada);
 
     return estaConectada;
 }
@@ -823,7 +819,7 @@ t_list *ordenarListaConLasIOsConectadas(TipoInterfaz tipo, t_list *listasPorCada
 
     buscarNuevasConectadas(interfaces_conectadas, encontrarIONuevaConectada);
 
-    //MarcarDesconetadas(listasPorCadaID);
+    // MarcarDesconetadas(listasPorCadaID);
 }
 
 void PonerIO(char *key, void *value, t_list *listasPorCadaID, TipoInterfaz tipo)
@@ -887,12 +883,6 @@ void *manageGenericoPorID(void *ptr)
 
     cola->socket = io->socket;
 
-    if (*(cola->conectado) < 0)
-    {
-        free(params);
-        pthread_exit(NULL);
-    }
-
     sem_wait(&cola->semEsperarBlock);
 
     if (queue_is_empty(cola->colaBloqueadoPorID)) // poner un mutex para esto por las dudas
@@ -916,6 +906,15 @@ void *manageGenericoPorID(void *ptr)
     }
 
     int pid = proceso->procesoPCB->pid;
+
+    if(check_socket_connection(cola->socket) == 0)
+    {
+        proceso = (structGuardarProcesoEnBloqueado *)queue_pop(cola->colaBloqueadoPorID);
+        terminarProceso(proceso->procesoPCB, "INVALID_INTERFACE (probablemente desconectada)");
+        sem_post(&cola->semEsperarBlock);
+        free(params);
+        pthread_exit(NULL);
+    }
 
     enviarMensajeAInterfaz(proceso, &(cola->socket), params->interfaz);
 
@@ -1412,11 +1411,10 @@ void interrumpir_ejecucion()
     enviarInterrupcion(INTERRUPCION_EXIT_KERNEL, &(params->KernelSocketCPUInterrumpt));
 }
 
-
 void listar_por_estado()
 {
     t_log *loger_estados_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
-    
+
     char *mensaje_cp_readys = string_new();
     string_append(&mensaje_cp_readys, "READY [ ");
     void recorrer(void *value)
@@ -1435,8 +1433,8 @@ void listar_por_estado()
     string_append(&mensaje_cp_bloqueado, "BLOQUEADOS [ ");
 
     /*
-    
-    
+
+
     */
 
     void iterar_cola(void *value) // NOOOOO
@@ -1482,7 +1480,7 @@ void listar_por_estado()
         string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
         string_append(&mensaje_cp_bloqueado, ", ");
     }
-    
+
 
     string_append(&mensaje_cp_bloqueado, "]");
     log_info(loger_estados_cp, mensaje_cp_bloqueado);

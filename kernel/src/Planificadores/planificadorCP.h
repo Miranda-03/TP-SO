@@ -296,7 +296,7 @@ int estaEnLaLista(char *key, t_list *lista);
 
 void guardarEnSuCola(t_list *listasPorCadaID, structGuardarProcesoEnBloqueado *proceso);
 
-int laIOEstaConectada(t_list *conectadas, structGuardarProcesoEnBloqueado *proceso);
+int laIOEstaConectada(structGuardarProcesoEnBloqueado *proceso);
 
 void enviarInterrupcion(MotivoDesalojo motivo, int *socket);
 
@@ -375,5 +375,7 @@ void guardarEnColaDIALFS(structGuardarProcesoEnBloqueado *proceso);
 void buscar_ios_conectadas();
 
 void listar_por_estado();
+
+void actualizar_pcb(Pcb *proceso);
 
 #endif
