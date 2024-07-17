@@ -237,7 +237,7 @@ int encontrar_en_new_y_terminar(int pid)
     return -1;
 }
 
-/*void_listar_estados_lp(){
+void listar_estados_lp(){
     t_log *loger_estados_lp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
 
     char *mensaje_lp_new = string_new();
@@ -271,4 +271,4 @@ int encontrar_en_new_y_terminar(int pid)
 
     log_destroy(loger_estados_lp);
 
-} */
+} 

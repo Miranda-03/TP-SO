@@ -1420,12 +1420,7 @@ void listar_por_estado()
     char *mensaje_cp_bloqueado = string_new();
     string_append(&mensaje_cp_bloqueado, "BLOQUEADOS [ ");
 
-    /*
-    
-    
-    */
-
-    void iterar_cola(void *value) // NOOOOO
+    void iterar_cola(void *value) 
     {
         structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
         string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
@@ -1462,17 +1457,10 @@ void listar_por_estado()
 
     dictionary_iterator(recursos, buscar_proceso_por_recurso);
 
-    /*
-    void iterar_bloqueados(void *value) {
-        structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
-        string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
-        string_append(&mensaje_cp_bloqueado, ", ");
-    }
     
-
     string_append(&mensaje_cp_bloqueado, "]");
     log_info(loger_estados_cp, mensaje_cp_bloqueado);
     free(mensaje_cp_bloqueado);
 
-    log_destroy(loger_estados_cp);*/
+    log_destroy(loger_estados_cp);
 }
