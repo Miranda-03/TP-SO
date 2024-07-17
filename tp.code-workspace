@@ -29,7 +29,8 @@
 			"*.tcc": "c",
 			"memory_resource": "c",
 			"memory": "c",
-			"MMU.H": "cpp"
+			"MMU.H": "cpp",
+			"cmath": "c"
 		},
 		"C_Cpp.errorSquiggles": "disabled",
 	},

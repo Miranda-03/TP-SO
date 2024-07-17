@@ -121,22 +121,27 @@ void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int
 
     if (strcmp(comando[0], "IO_FS_CREATE") == 0)
     {
+        log_info(logger,"Pid: %s - Operacion: IO_FS_CREATE",pid);
         crear_archivo(*pid, logger, comando, path_base, block_count);
     }
     else if (strcmp(comando[0], "IO_FS_DELETE") == 0)
     {
+        log_info(logger,"Pid: %s - Operacion: IO_FS_DELETE",pid);
         borrar_archivo(*pid, logger, comando, path_base, block_count);
     }
     else if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0)
     {
+        log_info(logger,"Pid: %s - Operacion: IO_FS_TRUNCATE",pid);
         truncate_archivo(*pid, logger, comando, path_base, block_count, block_size, retraso);
     }
     else if (strcmp(comando[0], "IO_FS_WRITE") == 0)
     {
+        log_info(logger,"Pid: %s - Operacion: IO_FS_WRITE",pid);
         escribir_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
     }
     else if (strcmp(comando[0], "IO_FS_READ") == 0)
     {
+        log_info(logger,"Pid: %s - Operacion: IO_FS_READ",pid);
         leer_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
     }
     else
@@ -409,36 +414,6 @@ char *mensaje_info_operacion(int PID, char *operacion)
     return result;
 }
 
-char *mensaje_info_detallado(int PID, char *operacion, char *nombre_archivo, int tamano, int puntero_archivo)
-{
-
-    char *mensaje = malloc(256);
-    if (strcmp(operacion, "Crear Archivo:") == 0)
-    {
-        snprintf(mensaje, 256, "DialFS - Crear Archivo: \"PID: %d - Crear Archivo: %s\"", PID, nombre_archivo);
-    }
-    else if (strcmp(operacion, "Eliminar Archivo:") == 0)
-    {
-        snprintf(mensaje, 256, "DialFS - Eliminar Archivo: \"PID: %d - Eliminar Archivo: %s\"", PID, nombre_archivo);
-    }
-    else if (strcmp(operacion, "Truncar Archivo:") == 0)
-    {
-        snprintf(mensaje, 256, "DialFS - Truncar Archivo: \"PID: %d - Truncar Archivo: %s - Tamaño: %d\"", PID, nombre_archivo, tamano);
-    }
-    else if (strcmp(operacion, "Leer Archivo:") == 0)
-    {
-        snprintf(mensaje, 256, "DialFS - Leer Archivo: \"PID: %d - Leer Archivo: %s - Tamaño a Leer: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
-    }
-    else if (strcmp(operacion, "Escribir Archivo:") == 0)
-    {
-        snprintf(mensaje, 256, "DialFS - Escribir Archivo: \"PID: %d - Escribir Archivo: %s - Tamaño a Escribir: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
-    }
-    else
-    {
-        snprintf(mensaje, 256, "DialFS - Operación desconocida");
-    }
-    return mensaje;
-}
 
 char *obtener_nombre_archivo(char **comando)
 {

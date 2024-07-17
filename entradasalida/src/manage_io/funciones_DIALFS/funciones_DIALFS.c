@@ -90,15 +90,18 @@ void crear_archivo(int pid, t_log *loger, char **instruccionSeparada, char *path
 {
     int bloque_inicial = comprobar_espacio(path_base, cant_bloques);
 
+
     if (bloque_inicial < 0)
         return;
+
+    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],0,0);
 
     crear_archivo_metadata(path_base, instruccionSeparada[2], bloque_inicial);
 }
 
 void borrar_archivo(int pid, t_log *log, char **instruccionSeparada, char *path_base, int cant_bloques)
 {
-    t_bitarray *bitmap = obtener_bitarray_del_archivo(path_base, cant_bloques);
+    t_bitarray *bitmap = obtener_bit    array_del_archivo(path_base, cant_bloques);
 
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/%s", path_base, instruccionSeparada[2]);
@@ -115,6 +118,8 @@ void borrar_archivo(int pid, t_log *log, char **instruccionSeparada, char *path_
     guardar_bitmap(path_base, bitmap);
 
     config_destroy(metadata);
+
+    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],0,0);
 }
 
 void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *path_base, int cant_bloques, int size_bloques, int retardo)
@@ -167,6 +172,7 @@ void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *p
         config_destroy(metadata_guardar);
     }
 
+    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],nuevo_tam,0);
     guardar_bitmap(path_base, bitmap);
 }
 
@@ -201,6 +207,8 @@ int verificar_contiguo(int pid, t_log *loger, t_bitarray *bitmap, int bloque_ini
 
 int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int size_bloque, int retardo)
 {
+    log_info(loger, "Pid: %d - Inicio Compactación",pid);
+    
     int offset_bitmap = 0;
     int contador = 0;
     int num_bloques = 0;
@@ -222,6 +230,7 @@ int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int si
 
     usleep(retardo * 1000);
 
+    log_info(loger, "Pid: %d - Fin Compactación",pid);  
     return offset_bitmap;
 }
 
@@ -336,19 +345,27 @@ int escribir_archivo(int pid, t_log *loger, char **instruccionSeparada, int size
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/bloques.dat", path_base);
 
+    int offset_archivo = (bloque_inicio * size_bloque) + atoi(instruccionSeparada[4]);
+
     FILE *file = fopen(fullPath, "rb+");
     if (!file)
     {
-        perror("fopen");
+        log_error(loger,"Error al abrir archivo");
         free(dato_a_leer);
         config_destroy(metadata);
         return -1;
     }
 
-    fseek(file, (bloque_inicio * size_bloque) + atoi(instruccionSeparada[4]), SEEK_SET);
+    fseek(file, offset_archivo, SEEK_SET);
 
     fwrite(dato_a_leer, 1, strlen(dato_a_leer), file);
 
+    int size_dato_a_leer = strlen(dato_a_leer);
+    char size_dato_a_leer_str[20];
+    sprintf(size_dato_a_leer_str, "%d", size_dato_a_leer);
+    
+    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],size_dato_a_leer_str,instruccionSeparada[4]);
+    
     fclose(file);
 
     string_array_destroy(direcciones_fisicas);
@@ -410,7 +427,11 @@ char *leer_archivo(int pid, t_log *loger, char **instruccionSeparada, int size_b
         return NULL;
     }
 
+
+
     fread(dato, 1, size_dato_a_leer, file);
+    
+    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],size_dato_a_leer,offset_archivo);
 
     fclose(file);
 
@@ -603,4 +624,35 @@ void guardar_bitmap(char *path_base, t_bitarray *self)
     }
 
     fclose(file);
+}
+
+char *mensaje_info_detallado(int PID, char *operacion, char *nombre_archivo, int tamano, int puntero_archivo)
+{
+
+    char *mensaje = malloc(256);
+    if (strcmp(operacion, "Crear Archivo:") == 0)
+    {
+        snprintf(mensaje, 256, "DialFS - Crear Archivo: \"PID: %d - Crear Archivo: %s\"", PID, nombre_archivo);
+    }
+    else if (strcmp(operacion, "Eliminar Archivo:") == 0)
+    {
+        snprintf(mensaje, 256, "DialFS - Eliminar Archivo: \"PID: %d - Eliminar Archivo: %s\"", PID, nombre_archivo);
+    }
+    else if (strcmp(operacion, "Truncar Archivo:") == 0)
+    {
+        snprintf(mensaje, 256, "DialFS - Truncar Archivo: \"PID: %d - Truncar Archivo: %s - Tamaño: %d\"", PID, nombre_archivo, tamano);
+    }
+    else if (strcmp(operacion, "Leer Archivo:") == 0)
+    {
+        snprintf(mensaje, 256, "DialFS - Leer Archivo: \"PID: %d - Leer Archivo: %s - Tamaño a Leer: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
+    }
+    else if (strcmp(operacion, "Escribir Archivo:") == 0)
+    {
+        snprintf(mensaje, 256, "DialFS - Escribir Archivo: \"PID: %d - Escribir Archivo: %s - Tamaño a Escribir: %d - Puntero Archivo: %d\"", PID, nombre_archivo, tamano, puntero_archivo);
+    }
+    else
+    {
+        snprintf(mensaje, 256, "DialFS - Operación desconocida");
+    }
+    return mensaje;
 }
