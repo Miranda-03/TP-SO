@@ -28,14 +28,14 @@ void *manage_conn_dialFS_io(void *ptr)
             buffer_read(buffer, dato, bytes);
             buffer_destroy(buffer);
             char *dato_char = (char *)dato;
-            escribir_memoria(dir_fisica, bytes, dato, &socketDIALFS);
+            escribir_memoria(pid,dir_fisica, bytes, dato, &socketDIALFS);
             break;
 
         case LEER_MEMORIA:
             dir_fisica = buffer_read_uint32(buffer);
             bytes = buffer_read_uint32(buffer);
             buffer_destroy(buffer);
-            leer_memoria(dir_fisica, bytes, &socketDIALFS);
+            leer_memoria(pid,dir_fisica, bytes, &socketDIALFS);
             break;
 
         default:

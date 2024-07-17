@@ -116,13 +116,13 @@ void *escuchaDispatch(void *ptr);
  * @fn    chequearMotivoIO
  * @brief funcion para verificar que la instruccion sea de IO.
  */
-int chequearMotivoIO(Pcb *proceso);
+int chequearMotivoIO();
 
 /**
  * @fn    chequearMotivoExit
  * @brief funcion para verificar que la instruccion sea EXIT.
  */
-int chequearMotivoExit(Pcb *proceso);
+int chequearMotivoExit();
 
 /**
  * @fn    esperarProcesoCPU
@@ -242,7 +242,7 @@ int hayAlgunoEnCPU();
  * @fn    agregarProcesoAReadyCorrespondiente
  * @brief agrega el proceso a Ready o a mayor prioridad.
  */
-void agregarProcesoAReadyCorrespondiente(Pcb *procesoPCB);
+void agregarProcesoAReadyCorrespondiente();
 
 /**
  * @fn    guardarLosRegistros
@@ -302,7 +302,7 @@ void enviarInterrupcion(MotivoDesalojo motivo, int *socket);
 
 int verificarIOConectada(char *instruccion);
 
-int chequearRecursos(Pcb *proceso);
+int chequearRecursos();
 
 void crearHilosParaWAIT();
 

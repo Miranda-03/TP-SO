@@ -65,13 +65,13 @@ void encontrar_marco(int PID, int numero_de_pagina);
  * @fn    escribir_memoria
  * @brief escribe en la memoria los bytes indicados en la direccion fisica pasada por parametro (hace un memcpy en espacio).
  */
-void escribir_memoria(int direccion_fisica, int bytes_a_escribir, void *dato, int *socket);
+void escribir_memoria(int PID, int direccion_fisica, int bytes_a_escribir, void *dato, int *socket);
 
 /**
  * @fn    leer_memoria
  * @brief lee en la memoria los bytes indicados.
  */
-void leer_memoria(int direccion_fisica, int bytes_a_leer, int *socket);
+void leer_memoria(int PID, int direccion_fisica, int bytes_a_leer, int *socket);
 
 /**
  * @fn    quitar_paginas

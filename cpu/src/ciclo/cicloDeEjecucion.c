@@ -8,7 +8,7 @@ sem_t hay_proceso_exec_sem;
 
 void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion_main)
 {
-    t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
+    t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO); // se destruye este log?
     interrupcion_ce = interrupcion_main;
     socket_con_memoria_cpu = *CPUSocketMemoria;
     obtener_tam_pagina(*CPUSocketMemoria);
@@ -197,21 +197,7 @@ void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
     buffer_add_uint8(buffer, procesoCPU->registros.cx.u8);
     buffer_add_uint32(buffer, procesoCPU->registros.ecx.i32);
     buffer_add_uint8(buffer, procesoCPU->registros.dx.u8);
-    buffer_add_uint32(buffer, procesoCPU->registros.edx.i32);
-}
-
-char *mensaje_fetch_instruccion_log(int *pid, int *pc)
-{
-    char *result = string_new();
-    string_append(&result, "PID: ");
-    string_append(&result, string_itoa(*pid));
-    string_append(&result, " - FETCH - Program Counter: ");
-    string_append(&result, string_itoa(*pc));
-    return result;
-}
-
-char *mensaje_execute_log(int *pid, char *instruccion)
-{
+    buffer_add_uint32(buffer, procesoCPU->registros.edx.i32);logger
     char *result = string_new();
     string_append(&result, "PID: ");
     string_append(&result, string_itoa(*pid));

@@ -25,7 +25,7 @@ void *manage_conn_stdout_io(void *ptr)
             dir_fisica = buffer_read_uint32(buffer);
             bytes = buffer_read_uint32(buffer);
             buffer_destroy(buffer);
-            leer_memoria(dir_fisica, bytes, &socketSTDOUT);
+            leer_memoria(pid,dir_fisica, bytes, &socketSTDOUT);
             break;
 
         default:

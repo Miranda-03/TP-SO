@@ -132,7 +132,7 @@ void *planificarCortoPlazo(void *ptr)
 
         if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
         {
-            agregarProcesoAReadyCorrespondiente(procesoPCB);
+            agregarProcesoAReadyCorrespondiente();
         }
     }
 }
@@ -172,7 +172,7 @@ int chequearRecursos(Pcb *proceso)
 
         if (!dictionary_has_key(recursos, instruccion_separada[1]))
         {
-            terminarProceso(proceso, "INVALID_RESOURCE");
+            terminarProceso(procesoDelCPU->pcb, "INVALID_RESOURCE");
             string_array_destroy(instruccion_separada);
             return 1;
         }
@@ -180,16 +180,16 @@ int chequearRecursos(Pcb *proceso)
         if (strcmp(instruccion_separada[0], "WAIT") == 0)
         {
             sem_wait(&flujoPlanificador_cp);
-            proceso->estado = BLOCK;
-            mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
-            guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
+            procesoDelCPU->pcb->estado = BLOCK;
+            mensaje_cambio_de_estado("Executing", "Bloqueado", procesoDelCPU->pcb->pid);
+            guardar_en_cola_correspondiente_recurso(procesoDelCPU->pcb, instruccion_separada);
             sem_post(&flujoPlanificador_cp);
             string_array_destroy(instruccion_separada);
             return 1;
         }
         else
         {
-            hacerPOST(instruccion_separada[1], proceso->pid);
+            hacerPOST(instruccion_separada[1], procesoDelCPU->pcb->pid);
             string_array_destroy(instruccion_separada);
             return -1;
         }
@@ -346,7 +346,7 @@ int chequearMotivoIO(Pcb *proceso)
     procesoDelCPU->pcb->estado = BLOCK;
     mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
 
-    enviarProcesoColaIOCorrespondiente(proceso);
+    enviarProcesoColaIOCorrespondiente(procesoDelCPU->pcb);
 
     sem_post(&flujoPlanificador_cp);
 
@@ -411,7 +411,7 @@ int chequearMotivoExit(Pcb *proceso)
 
     char *motivo_exit = enum_to_string_EXIT(procesoDelCPU->motivo);
 
-    terminarProceso(proceso, motivo_exit);
+    terminarProceso(procesoDelCPU->pcb, motivo_exit);
     return 1;
 }
 
@@ -1047,7 +1047,7 @@ void enviarMensajeCPUPCBProceso(Pcb *proceso)
 
     enviarMensaje(&(params->KernelSocketCPUDispatch), buffer, KERNEL, MENSAJE);
 
-    free(proceso);
+    procesoDelCPU->pcb = proceso;
 }
 
 void agregarRegistrosAlBuffer(t_buffer *buffer, Pcb *proceso)
@@ -1067,19 +1067,19 @@ int hayAlgunoEnCPU()
     return PIDprocesoEjecutando;
 }
 
-void agregarProcesoAReadyCorrespondiente(Pcb *proceso)
+void agregarProcesoAReadyCorrespondiente()
 {
     sem_wait(&flujoPlanificador_cp);
 
-    if (algoritmo == VRR && proceso->quantumRestante > 0)
-        agregarProcesoColaMayorPrioridad(proceso);
+    if (algoritmo == VRR && procesoDelCPU->pcb->quantumRestante > 0)
+        agregarProcesoColaMayorPrioridad(procesoDelCPU->pcb);
     else
-        agregarProcesoColaReady(proceso);
+        agregarProcesoColaReady(procesoDelCPU->pcb);
 
-    char *estado_previo = enum_to_string(proceso->estado);
+    char *estado_previo = enum_to_string(procesoDelCPU->pcb->estado);
 
-    proceso->estado = READY;
-    mensaje_cambio_de_estado(estado_previo, "Ready", proceso->pid);
+    procesoDelCPU->pcb->estado = READY;
+    mensaje_cambio_de_estado(estado_previo, "Ready", procesoDelCPU->pcb->pid);
 
     sem_post(&flujoPlanificador_cp);
 }
@@ -1432,12 +1432,7 @@ void listar_por_estado()
     char *mensaje_cp_bloqueado = string_new();
     string_append(&mensaje_cp_bloqueado, "BLOQUEADOS [ ");
 
-    /*
-
-
-    */
-
-    void iterar_cola(void *value) // NOOOOO
+    void iterar_cola(void *value) 
     {
         structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
         string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
@@ -1474,17 +1469,10 @@ void listar_por_estado()
 
     dictionary_iterator(recursos, buscar_proceso_por_recurso);
 
-    /*
-    void iterar_bloqueados(void *value) {
-        structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
-        string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
-        string_append(&mensaje_cp_bloqueado, ", ");
-    }
-
-
+    
     string_append(&mensaje_cp_bloqueado, "]");
     log_info(loger_estados_cp, mensaje_cp_bloqueado);
     free(mensaje_cp_bloqueado);
 
-    log_destroy(loger_estados_cp);*/
+    log_destroy(loger_estados_cp);
 }

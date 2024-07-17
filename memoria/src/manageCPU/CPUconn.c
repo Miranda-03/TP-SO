@@ -33,7 +33,7 @@ void *manage_conn_cpu(void *ptr)
             dir_fisica = buffer_read_uint32(buffer);
             bytes = buffer_read_uint32(buffer);
             buffer_destroy(buffer);
-            leer_memoria(dir_fisica, bytes, &socketCPU);
+            leer_memoria(pid,dir_fisica, bytes, &socketCPU);
             break;
 
         case ESCRIBIR_MEMORIA:
@@ -42,7 +42,7 @@ void *manage_conn_cpu(void *ptr)
             void *dato = malloc(bytes);
             buffer_read(buffer, dato, bytes);
             buffer_destroy(buffer);
-            escribir_memoria(dir_fisica, bytes, dato, &socketCPU);
+            escribir_memoria(pid,dir_fisica, bytes, dato, &socketCPU);
             break;
 
         case RESIZE:

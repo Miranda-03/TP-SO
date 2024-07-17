@@ -25,6 +25,7 @@ void consolaInteractiva()
 int verificar_comando(char *leido)
 {
     char **comando = string_split(leido, " ");
+    t_log *logger_comando = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
 
     if (
         strcmp(comando[0], "EJECUTAR_SCRIPT") == 0 ||
@@ -37,9 +38,12 @@ int verificar_comando(char *leido)
         strcmp(comando[0], "APAGAR_SISTEMA") == 0 )
     {
         free(comando);
+        log_destroy(logger_comando);
         return 1;
     }
     free(comando);
+    log_error(logger_comando, "ERROR");
+    log_destroy(logger_comando);
     return -1;
 }
 
@@ -76,17 +80,15 @@ void atender_instruccion(char *leido)
     else if (strcmp(comando[0], "MULTIPROGRAMACION") == 0)
     {
         ajustar_grado_multiprogramacion(atoi(comando[1]));
-    }
-
-    /*
+    }    
     else if (strcmp(leido, "PROCESO_ESTADO") == 0)
     {
-        // Aquí puedes agregar el código para PROCESO_ESTADO
+        listar_por_estado();
+        listar_por_estado_lp();
     }
     else
     {
-        log_error(logger_kernel, "ERROR");
-    } */
+    } 
 
     string_array_destroy(comando);
 }
