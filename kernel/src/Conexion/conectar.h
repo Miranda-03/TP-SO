@@ -81,4 +81,6 @@ void manageIO(int *socket);
 
 void recibirConexion(int *socket, TipoConn conexion);
 
+char *get_tipo_conn(TipoConn conn);
+
 #endif

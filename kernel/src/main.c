@@ -54,7 +54,6 @@ void obtenerRecuros()
 
     for (int i = 0; i < lenIDS; i++)
     {
-        sleep(1);
         int cant = atoi(recursosCantidad[i]);
         Recurso *recurso = malloc(sizeof(Recurso));
         recurso->cantidad_recurso = malloc(4);

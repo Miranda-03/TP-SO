@@ -10,18 +10,18 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
 {
     t_config *config = config_create(PATH_CONFIG);
     // PUERTO_MEMORIA, IP_MEMORIA
-    *KernelSocketMemoria = crearSocket(config_get_string_value(config,"PUERTO_MEMORIA"), config_get_string_value(config,"IP_MEMORIA"), 0);
+    *KernelSocketMemoria = crearSocket(config_get_string_value(config, "PUERTO_MEMORIA"), config_get_string_value(config, "IP_MEMORIA"), 0);
     handshakeKernelMemoria(KernelSocketMemoria);
 
-    // Conexiones con el módulo CPU 
-    *KernelSocketCPUDispatch = crearSocket(config_get_string_value(config,"PUERTO_CPU_DISPATCH"), config_get_string_value(config,"IP_CPU"), 0);
+    // Conexiones con el módulo CPU
+    *KernelSocketCPUDispatch = crearSocket(config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config_get_string_value(config, "IP_CPU"), 0);
     handshakeKernelCPU(DISPATCH, KernelSocketCPUDispatch);
     sleep(5);
-    *KernelSocketCPUInterrumpt = crearSocket(config_get_string_value(config,"PUERTO_CPU_INTERRUPT"), config_get_string_value(config,"IP_CPU"), 0);
+    *KernelSocketCPUInterrumpt = crearSocket(config_get_string_value(config, "PUERTO_CPU_INTERRUPT"), config_get_string_value(config, "IP_CPU"), 0);
     handshakeKernelCPU(INTERRUMPT, KernelSocketCPUInterrumpt);
 
     // Recibir conexiones de IO
-    int KernelsocketEscucha = crearSocket(config_get_string_value(config,"PUERTO_ESCUCHA"), NULL, MAXCONN);
+    int KernelsocketEscucha = crearSocket(config_get_string_value(config, "PUERTO_ESCUCHA"), NULL, MAXCONN);
     parametros_hilo_IO_Kernel *params = malloc(sizeof(parametros_hilo_IO_Kernel));
     params->socket = KernelsocketEscucha;
     params->interfaces_conectadas = interfaces_conectadas;
@@ -89,6 +89,7 @@ void *atenderIO(void *ptr)
 void handshakeKernelCPU(TipoConn conn, int *socket)
 {
     t_buffer *buffer = buffer_create(sizeof(TipoConn));
+    t_log *loger = log_create("logs/kernel_conn.log", "kernel_conn", 1, LOG_LEVEL_INFO);
     if (!buffer)
     {
         perror("buffer_create");
@@ -98,18 +99,39 @@ void handshakeKernelCPU(TipoConn conn, int *socket)
 
     enviarMensaje(socket, buffer, KERNEL, HANDSHAKE);
 
+    char *tipo_conn = get_tipo_conn(conn);
+
+    char *mensaje_loger = string_new();
+
     if (resultadoHandShake(socket) == 1)
     {
-        printf("se conecta con cpu\n");
+        string_append(&mensaje_loger, "Se establece conexion con CPU: ");
+        string_append(&mensaje_loger, tipo_conn);
+        log_info(loger, mensaje_loger);
     }
     else
     {
-        printf("error de conexion con cpu\n");
+        string_append(&mensaje_loger, "Error de conexion con CPU: ");
+        string_append(&mensaje_loger, tipo_conn);
+        log_error(loger, mensaje_loger);
     }
+
+    free(mensaje_loger);
+    log_destroy(loger);
+}
+
+char *get_tipo_conn(TipoConn conn)
+{
+    if (conn == DISPATCH)
+        return "DISPATCH";
+    return "INTERRUMPT";
 }
 
 void handshakeKernelMemoria(int *socketMemoria)
 {
+
+    t_log *loger = log_create("logs/kernel_conn.log", "kernel_conn", 1, LOG_LEVEL_INFO);
+
     t_buffer *buffer = buffer_create(0);
     if (!buffer)
     {
@@ -120,26 +142,9 @@ void handshakeKernelMemoria(int *socketMemoria)
     enviarMensaje(socketMemoria, buffer, KERNEL, HANDSHAKE);
 
     if (resultadoHandShake(socketMemoria) == 1)
-        printf("se conecta con la memoria\n");
+        log_info(loger, "Se establece conexion con la memoria");
     else
-        printf("error con la conexion de memoria\n");
+        log_error(loger, "Error en la conexion con la memoria");
+
+    log_destroy(loger);
 }
-
-/*void crearHiloDISPATCH(int *socket, MotivoDesalojo *motivo, int *pid, Registros *registros, instruccionIO *instruccion)
-{
-    pthread_t hiloDISPATCHKernel;
-
-    parametros_hilo_Kernel *params = malloc(sizeof(parametros_hilo_Kernel));
-    params->socket = socket;
-    // params->registros = registros;
-    params->motivo = motivo;
-    params->pid = pid;
-    params->instruccion = NULL;
-
-    pthread_create(&hiloDISPATCHKernel,
-                   NULL,
-                   (void *)manageDISPATCH,
-                   params);
-
-    pthread_join(hiloDISPATCHKernel, NULL);
-}*/
