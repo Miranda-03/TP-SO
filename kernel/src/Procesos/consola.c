@@ -8,9 +8,8 @@ void consolaInteractiva()
     {
         linea = readline("FIFO-OS>");
 
-        if (!linea)
-        {
-            break;
+        if (linea) {
+            add_history(linea);
         }
 
         int valido = verificar_comando(linea);
