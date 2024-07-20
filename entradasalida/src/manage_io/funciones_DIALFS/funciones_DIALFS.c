@@ -90,18 +90,17 @@ void crear_archivo(int pid, t_log *loger, char **instruccionSeparada, char *path
 {
     int bloque_inicial = comprobar_espacio(path_base, cant_bloques);
 
-
     if (bloque_inicial < 0)
         return;
 
-    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],0,0);
+    char *mensaje = mensaje_info_detallado(pid, instruccionSeparada[1], instruccionSeparada[2], 0, 0);
 
     crear_archivo_metadata(path_base, instruccionSeparada[2], bloque_inicial);
 }
 
 void borrar_archivo(int pid, t_log *log, char **instruccionSeparada, char *path_base, int cant_bloques)
 {
-    t_bitarray *bitmap = obtener_bit    array_del_archivo(path_base, cant_bloques);
+    t_bitarray *bitmap = obtener_bit array_del_archivo(path_base, cant_bloques);
 
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/%s", path_base, instruccionSeparada[2]);
@@ -119,7 +118,7 @@ void borrar_archivo(int pid, t_log *log, char **instruccionSeparada, char *path_
 
     config_destroy(metadata);
 
-    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],0,0);
+    char *mensaje = mensaje_info_detallado(pid, instruccionSeparada[1], instruccionSeparada[2], 0, 0);
 }
 
 void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *path_base, int cant_bloques, int size_bloques, int retardo)
@@ -172,7 +171,7 @@ void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *p
         config_destroy(metadata_guardar);
     }
 
-    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],nuevo_tam,0);
+    char *mensaje = mensaje_info_detallado(pid, instruccionSeparada[1], instruccionSeparada[2], nuevo_tam, 0);
     guardar_bitmap(path_base, bitmap);
 }
 
@@ -207,8 +206,8 @@ int verificar_contiguo(int pid, t_log *loger, t_bitarray *bitmap, int bloque_ini
 
 int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int size_bloque, int retardo)
 {
-    log_info(loger, "Pid: %d - Inicio Compactación",pid);
-    
+    log_info(loger, "Pid: %d - Inicio Compactación", pid);
+
     int offset_bitmap = 0;
     int contador = 0;
     int num_bloques = 0;
@@ -222,6 +221,7 @@ int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int si
             {
                 borrar_bits(bitmap, contador, num_bloques);
                 agregar_bits(bitmap, offset_bitmap, num_bloques);
+                mover_datos_guardados(contador, offset_bitmap, num_bloques, size_bloque);
                 offset_bitmap += num_bloques;
             }
         }
@@ -230,8 +230,31 @@ int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int si
 
     usleep(retardo * 1000);
 
-    log_info(loger, "Pid: %d - Fin Compactación",pid);  
+    log_info(loger, "Pid: %d - Fin Compactación", pid);
     return offset_bitmap;
+}
+
+void mover_datos_guardados(int contador, int offset, int num_bloques, int size_bloque, char *path_base)
+{
+    char fullPath[1024];
+    snprintf(fullPath, sizeof(fullPath), "%s/bloques.dat", path_base);
+
+    FILE *file = fopen(fullPath, "rb+");
+    if (!file)
+    {
+        log_error(loger, "Error al abrir archivo");
+    }
+
+    char *buffer = (char *)malloc(num_bloques * size_bloque);
+
+    fseek(file, (contador * size_bloque), SEEK_SET);
+    fread(buffer, (num_bloques * size_bloque), 1, file);
+
+    fseek(file, (offset * size_bloque), SEEK_SET);
+    fwrite(buffer, (num_bloques * size_bloque), 1, file);
+
+    free(buffer);
+    fclose(file);
 }
 
 int encontrar_archivo_y_modificar(int offset, int block_inicio_contador, char *path_base, int size_bloque)
@@ -350,7 +373,7 @@ int escribir_archivo(int pid, t_log *loger, char **instruccionSeparada, int size
     FILE *file = fopen(fullPath, "rb+");
     if (!file)
     {
-        log_error(loger,"Error al abrir archivo");
+        log_error(loger, "Error al abrir archivo");
         free(dato_a_leer);
         config_destroy(metadata);
         return -1;
@@ -363,9 +386,9 @@ int escribir_archivo(int pid, t_log *loger, char **instruccionSeparada, int size
     int size_dato_a_leer = strlen(dato_a_leer);
     char size_dato_a_leer_str[20];
     sprintf(size_dato_a_leer_str, "%d", size_dato_a_leer);
-    
-    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],size_dato_a_leer_str,instruccionSeparada[4]);
-    
+
+    char *mensaje = mensaje_info_detallado(pid, instruccionSeparada[1], instruccionSeparada[2], size_dato_a_leer_str, instruccionSeparada[4]);
+
     fclose(file);
 
     string_array_destroy(direcciones_fisicas);
@@ -427,11 +450,9 @@ char *leer_archivo(int pid, t_log *loger, char **instruccionSeparada, int size_b
         return NULL;
     }
 
-
-
     fread(dato, 1, size_dato_a_leer, file);
-    
-    char *mensaje = mensaje_info_detallado(pid,instruccionSeparada[1],instruccionSeparada[2],size_dato_a_leer,offset_archivo);
+
+    char *mensaje = mensaje_info_detallado(pid, instruccionSeparada[1], instruccionSeparada[2], size_dato_a_leer, offset_archivo);
 
     fclose(file);
 
