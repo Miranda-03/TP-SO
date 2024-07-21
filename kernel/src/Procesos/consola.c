@@ -8,7 +8,8 @@ void consolaInteractiva()
     {
         linea = readline("FIFO-OS>");
 
-        if (linea) {
+        if (linea)
+        {
             add_history(linea);
         }
 
@@ -34,7 +35,7 @@ int verificar_comando(char *leido)
         strcmp(comando[0], "INICIAR_PLANIFICACION") == 0 ||
         strcmp(comando[0], "MULTIPROGRAMACION") == 0 ||
         strcmp(comando[0], "PROCESO_ESTADO") == 0 ||
-        strcmp(comando[0], "APAGAR_SISTEMA") == 0 )
+        strcmp(comando[0], "APAGAR_SISTEMA") == 0)
     {
         free(comando);
         log_destroy(logger_comando);
@@ -79,15 +80,14 @@ void atender_instruccion(char *leido)
     else if (strcmp(comando[0], "MULTIPROGRAMACION") == 0)
     {
         ajustar_grado_multiprogramacion(atoi(comando[1]));
-    }    
+    }
     else if (strcmp(leido, "PROCESO_ESTADO") == 0)
     {
+        detenerPlanificador();
         listar_por_estado();
-        listar_por_estado_lp();
+        listar_estados_lp();
+        reanudarPlanificador();
     }
-    else
-    {
-    } 
 
     string_array_destroy(comando);
 }

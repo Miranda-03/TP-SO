@@ -2,9 +2,17 @@
 
 void conectarModuloMemoria()
 {
+    const char *puerto_de_escucha = obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA");
+
+    t_log *loger = log_create("logs/memoria_conn.log", "mem_conn", 1, LOG_LEVEL_INFO);
+
+    escucharYResponder(puerto_de_escucha, loger);
+
+    log_destroy(loger);
+
     pthread_t threadModulos;
 
-    int MemoriasocketEscucha = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA"), NULL, 10);
+    int MemoriasocketEscucha = crearSocket(puerto_de_escucha, NULL, 10);
 
     pthread_create(&threadModulos, NULL, recibirModulo, (void *)&MemoriasocketEscucha);
     pthread_join(threadModulos, NULL);

@@ -83,4 +83,6 @@ void recibirConexion(int *socket, TipoConn conexion);
 
 char *get_tipo_conn(TipoConn conn);
 
+void obtener_ip_de_modulo_memoria(int socket, t_config *config);
+
 #endif

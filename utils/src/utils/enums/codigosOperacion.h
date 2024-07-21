@@ -18,6 +18,7 @@ typedef enum {
     RESIZE,
     OBTENER_MARCO,
     CHECK_CONN_IO,
+    OBTENER_IP_MEMORIA,
 } op_code;
 
 #endif

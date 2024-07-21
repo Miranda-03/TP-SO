@@ -47,7 +47,7 @@ void crear_tabla_de_pagina(int PID)
 {
     t_list *tabla_de_paginas = list_create();
     char char_pid[10];
-    t_logger *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
     dictionary_put(tablas_de_paginas, char_pid, tabla_de_paginas);
     tam_pagina = atoi(obtenerValorConfig("memoria.config", "TAM_PAGINA"));
@@ -114,7 +114,7 @@ void encontrar_marco(int PID, int numero_de_pagina)
 void escribir_memoria(int PID, int direccion_fisica, int bytes_a_escribir, void *dato, int *socket)
 {
 
-    t_logger *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
 
     memcpy(espacio + direccion_fisica, dato, bytes_a_escribir);
 
@@ -131,7 +131,7 @@ void escribir_memoria(int PID, int direccion_fisica, int bytes_a_escribir, void 
 void leer_memoria(int PID, int direccion_fisica, int bytes_a_leer, int *socket)
 {
     void *dato = malloc(bytes_a_leer);
-    t_logger *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
     memcpy(dato, espacio + direccion_fisica, bytes_a_leer);
 
     enviar_dato_a_modulo(dato, bytes_a_leer, socket);
@@ -145,7 +145,7 @@ int quitar_paginas(int PID, int tam, int cant_paginas)
 {
     char char_pid[10];
 
-    t_logger *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
 
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
 
@@ -156,7 +156,7 @@ int quitar_paginas(int PID, int tam, int cant_paginas)
         Pagina *entrada = (Pagina *)list_remove(tabla_de_paginas, list_size(tabla_de_paginas) - 1);
 
         int num_pagina = entrada->numero_de_pagina;
-        int num_marco = entrada->marco->numero_marco;
+        int num_marco = entrada->marco->numero_de_marco;
         entrada->marco->ocupado = 0;
 
         log_info(log, "PID: %d - Pagina: %d - Marco: %d", PID, num_pagina, num_marco); // revisar si como acceso contamos esto o no, solo una vez en la pagina "base"
@@ -176,7 +176,7 @@ int agregar_paginas(int PID, int tam, int cant_paginas)
 {
     char char_pid[10];
 
-    t_logger *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
 
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
 
@@ -199,8 +199,8 @@ int agregar_paginas(int PID, int tam, int cant_paginas)
             entrada->numero_de_pagina = cant_paginas;
         }
 
-        num_pagina = entrada->numero_de_pagina;
-        num_marco = entrada->marco->numero_de_marco;
+        int num_pagina = entrada->numero_de_pagina;
+        int num_marco = entrada->marco->numero_de_marco;
 
         list_add(tabla_de_paginas, entrada);
         log_info(log, "PID: %d - Pagina: %d - Marco: %d", PID, num_pagina, num_marco); // revisar si como acceso contamos esto o no, solo una vez en la pagina "base"

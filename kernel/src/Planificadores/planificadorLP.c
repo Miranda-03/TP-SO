@@ -237,7 +237,8 @@ int encontrar_en_new_y_terminar(int pid)
     return -1;
 }
 
-void listar_estados_lp(){
+void listar_estados_lp()
+{
     t_log *loger_estados_lp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
 
     char *mensaje_lp_new = string_new();
@@ -254,7 +255,6 @@ void listar_estados_lp(){
     log_info(loger_estados_lp, mensaje_lp_new);
     free(mensaje_lp_new);
 
-
     char *mensaje_lp_exit = string_new();
     string_append(&mensaje_lp_exit, "EXIT [ ");
     void recorrerExit(void *value)
@@ -270,5 +270,4 @@ void listar_estados_lp(){
     free(mensaje_lp_exit);
 
     log_destroy(loger_estados_lp);
-
-} 
+}

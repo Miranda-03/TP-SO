@@ -16,7 +16,7 @@ int enviarMensaje(int *socket, t_buffer *buffer, TipoModulo modulo, op_code codi
     offset += sizeof(TipoModulo);
     memcpy(a_enviar + offset, &(codigoOperacion), sizeof(op_code));
 
-    if (codigoOperacion != HANDSHAKE && codigoOperacion != CHECK_CONN_IO)
+    if (codigoOperacion != HANDSHAKE && codigoOperacion != CHECK_CONN_IO && buffer != NULL)
     {
         offset += sizeof(op_code);
         memcpy(a_enviar + offset, &(buffer->size), sizeof(uint32_t));

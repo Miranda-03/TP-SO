@@ -1,21 +1,34 @@
 #include <Conexion/conectar.h>
 
+t_log *loger;
+
 void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
 {
+    loger = log_create("logs/cpu.log", "cpu_conn", 1, LOG_LEVEL_INFO);
+
+    //Obtener direccion IP del modulo memoria
+    t_config *cpu_config = config_create("cpu.config");
+    solicitar_ip("255.255.255.255", config_get_string_value(cpu_config, "PUERTO_MEMORIA"), cpu_config, "IP_MEMORIA", loger);
+    config_destroy(cpu_config);
+
     // Conexion con el módulo memoria
     *CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), 0);
 
     handshakeCPUMemoria(CPUSocketMemoria);
 
+    escucharYResponder(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), loger);
+
+    log_destroy(loger);
+
     procesoCPU->pid = -1;
     int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
+    int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
+
     // la siguiente linea es autobloqueante
     *CPUsocketBidireccionalDispatch = esperarCliente(&CPUsocketEscuchaDispatch);
     if (*CPUsocketBidireccionalDispatch != -1)
         recibirConn(CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
     
-    sleep(3);
-    int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
     // la siguiente linea es autobloqueante
     *CPUsocketBidireccionalInterrupt = esperarCliente(&CPUsocketEscuchaInterrupt);
     if (*CPUsocketBidireccionalInterrupt != -1)
@@ -32,11 +45,11 @@ void handshakeCPUMemoria(int *CPUSocketMemoria)
 
     if (resultado == 1)
     {
-        // Handshake OK
+        log_info(loger, "Conexión con módulo memoria realizada");
     }
     else
     {
-        // Handshake ERROR
+        log_error(loger, "Error de conexión con la memoria");
     }
 }
 
@@ -47,7 +60,6 @@ void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, i
     switch (*modulo)
     {
     case KERNEL:
-        printf("socket de escuha de cpu %i\n", socket);
         manageKernel(socket, conexion, procesoCPU, interrupcion);
         break;
 

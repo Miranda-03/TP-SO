@@ -12,6 +12,7 @@
 #include <commons/string.h>
 #include <unistd.h>
 #include <string.h> 
+#include <commons/log.h>
 
 typedef struct
 {

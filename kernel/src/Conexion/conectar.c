@@ -6,19 +6,27 @@ typedef struct
     t_dictionary *interfaces_conectadas;
 } parametros_hilo_IO_Kernel;
 
+t_log *loger;
+
 void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch, int *KernelSocketCPUInterrumpt, t_dictionary *interfaces_conectadas)
 {
+    loger = log_create("logs/kernel_conn.log", "kernel_conn", 1, LOG_LEVEL_INFO);
     t_config *config = config_create(PATH_CONFIG);
-    // PUERTO_MEMORIA, IP_MEMORIA
-    *KernelSocketMemoria = crearSocket(config_get_string_value(config, "PUERTO_MEMORIA"), config_get_string_value(config, "IP_MEMORIA"), 0);
-    handshakeKernelMemoria(KernelSocketMemoria);
+
+    solicitar_ip("255.255.255.255", config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config, "IP_CPU", loger);
 
     // Conexiones con el módulo CPU
     *KernelSocketCPUDispatch = crearSocket(config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config_get_string_value(config, "IP_CPU"), 0);
     handshakeKernelCPU(DISPATCH, KernelSocketCPUDispatch);
-    sleep(1);
+    
     *KernelSocketCPUInterrumpt = crearSocket(config_get_string_value(config, "PUERTO_CPU_INTERRUPT"), config_get_string_value(config, "IP_CPU"), 0);
     handshakeKernelCPU(INTERRUMPT, KernelSocketCPUInterrumpt);
+
+    obtener_ip_de_modulo_memoria(*KernelSocketCPUDispatch, config);
+
+    // PUERTO_MEMORIA, IP_MEMORIA
+    *KernelSocketMemoria = crearSocket(config_get_string_value(config, "PUERTO_MEMORIA"), config_get_string_value(config, "IP_MEMORIA"), 0);
+    handshakeKernelMemoria(KernelSocketMemoria);
 
     // Recibir conexiones de IO
     int KernelsocketEscucha = crearSocket(config_get_string_value(config, "PUERTO_ESCUCHA"), NULL, MAXCONN);
@@ -89,7 +97,7 @@ void *atenderIO(void *ptr)
 void handshakeKernelCPU(TipoConn conn, int *socket)
 {
     t_buffer *buffer = buffer_create(sizeof(TipoConn));
-    t_log *loger = log_create("logs/kernel_conn.log", "kernel_conn", 1, LOG_LEVEL_INFO);
+    
     if (!buffer)
     {
         perror("buffer_create");
@@ -117,7 +125,6 @@ void handshakeKernelCPU(TipoConn conn, int *socket)
     }
 
     free(mensaje_loger);
-    log_destroy(loger);
 }
 
 char *get_tipo_conn(TipoConn conn)
@@ -129,9 +136,6 @@ char *get_tipo_conn(TipoConn conn)
 
 void handshakeKernelMemoria(int *socketMemoria)
 {
-
-    t_log *loger = log_create("logs/kernel_conn.log", "kernel_conn", 1, LOG_LEVEL_INFO);
-
     t_buffer *buffer = buffer_create(0);
     if (!buffer)
     {
@@ -145,6 +149,20 @@ void handshakeKernelMemoria(int *socketMemoria)
         log_info(loger, "Se establece conexion con la memoria");
     else
         log_error(loger, "Error en la conexion con la memoria");
+}
 
-    log_destroy(loger);
+void obtener_ip_de_modulo_memoria(int socket, t_config *config)
+{
+    enviarMensaje(&socket, NULL, KERNEL, OBTENER_IP_MEMORIA);
+
+    TipoModulo *modulo = get_modulo_msg_recv(&socket);
+    op_code *opcode = get_opcode_msg_recv(&socket);
+
+    t_buffer *buffer = buffer_leer_recv(&socket);
+
+    int size = buffer_read_uint32(buffer);
+    char *ip = buffer_read_string(buffer, size);
+
+    config_set_value(config, "IP_MEMORIA", ip);
+    config_save(config);
 }

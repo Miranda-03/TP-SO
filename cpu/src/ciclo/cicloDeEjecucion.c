@@ -197,7 +197,21 @@ void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)
     buffer_add_uint8(buffer, procesoCPU->registros.cx.u8);
     buffer_add_uint32(buffer, procesoCPU->registros.ecx.i32);
     buffer_add_uint8(buffer, procesoCPU->registros.dx.u8);
-    buffer_add_uint32(buffer, procesoCPU->registros.edx.i32);logger
+    buffer_add_uint32(buffer, procesoCPU->registros.edx.i32);
+}
+
+char *mensaje_fetch_instruccion_log(int *pid, int *pc)
+{
+    char *result = string_new();
+    string_append(&result, "PID: ");
+    string_append(&result, string_itoa(*pid));
+    string_append(&result, " - FETCH - Program Counter: ");
+    string_append(&result, string_itoa(*pc));
+    return result;
+}
+
+char *mensaje_execute_log(int *pid, char *instruccion)
+{
     char *result = string_new();
     string_append(&result, "PID: ");
     string_append(&result, string_itoa(*pid));

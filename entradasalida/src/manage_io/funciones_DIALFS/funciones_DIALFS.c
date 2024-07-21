@@ -100,7 +100,7 @@ void crear_archivo(int pid, t_log *loger, char **instruccionSeparada, char *path
 
 void borrar_archivo(int pid, t_log *log, char **instruccionSeparada, char *path_base, int cant_bloques)
 {
-    t_bitarray *bitmap = obtener_bit array_del_archivo(path_base, cant_bloques);
+    t_bitarray *bitmap = obtener_bitarray_del_archivo(path_base, cant_bloques);
 
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/%s", path_base, instruccionSeparada[2]);
@@ -221,7 +221,7 @@ int compactar(int pid, t_log *loger, t_bitarray *bitmap, char *path_base, int si
             {
                 borrar_bits(bitmap, contador, num_bloques);
                 agregar_bits(bitmap, offset_bitmap, num_bloques);
-                mover_datos_guardados(contador, offset_bitmap, num_bloques, size_bloque);
+                mover_datos_guardados(contador, offset_bitmap, num_bloques, size_bloque, path_base);
                 offset_bitmap += num_bloques;
             }
         }
@@ -242,7 +242,7 @@ void mover_datos_guardados(int contador, int offset, int num_bloques, int size_b
     FILE *file = fopen(fullPath, "rb+");
     if (!file)
     {
-        log_error(loger, "Error al abrir archivo");
+        //log_error(loger, "Error al abrir archivo");
     }
 
     char *buffer = (char *)malloc(num_bloques * size_bloque);

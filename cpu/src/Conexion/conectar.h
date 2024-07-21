@@ -16,6 +16,7 @@
 #include <utils/structs/structSendContextCPU.h>
 #include <stdint.h>
 #include <connKernel/connKernel.h>
+#include <commons/log.h>
 
 
 /**
