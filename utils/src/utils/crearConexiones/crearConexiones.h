@@ -86,4 +86,6 @@ void escucharYResponder(const char *puerto, t_log *loger);
  */
 void solicitar_ip(const char *server_ip, const char *port, t_config *config, char *ip_a_modificar, t_log *loger);
 
+void get_local_ip(char *buffer, size_t buflen);
+
 #endif

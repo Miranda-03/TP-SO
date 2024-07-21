@@ -75,7 +75,7 @@ void escucharYResponder(const char *puerto, t_log *loger)
     char buffer[BUF_SIZE];
     char ip[INET_ADDRSTRLEN];
 
-    sockfd = crearSocketEscucha(puerto);
+    sockfd = crear_socket_escucha(puerto);
 
     char *mensaje_de_escucha = string_new();
     string_append(&mensaje_de_escucha, "Escuchando mensaje broadcast en el puerto: ");
@@ -123,7 +123,7 @@ void escucharYResponder(const char *puerto, t_log *loger)
     close(sockfd);
 }
 
-int crearSocketEscucha(const char *puerto)
+int crear_socket_escucha(const char *puerto)
 {
     int sockfd;
     struct sockaddr_in servaddr;
