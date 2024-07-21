@@ -179,8 +179,8 @@ void get_local_ip(char *buffer, size_t buflen)
                 exit(EXIT_FAILURE);
             }
 
-            // if (strcmp(buffer, "127.0.0.1") != 0)
-            //     break;
+            if (strcmp(buffer, "127.0.0.1") != 0)
+                break;
         }
     }
 
