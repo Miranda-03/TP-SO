@@ -1,6 +1,6 @@
 #include "planificadorLP.h"
 
-int pid_global = -1;
+int pid_global = 0;
 
 // int grado_multiprogramacion;
 

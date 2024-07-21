@@ -6,7 +6,7 @@ void consolaInteractiva()
 
     while (1)
     {
-        linea = readline("FIFO-OS>");
+        linea = readline("FIFO2B-OS>");
 
         if (linea)
         {
