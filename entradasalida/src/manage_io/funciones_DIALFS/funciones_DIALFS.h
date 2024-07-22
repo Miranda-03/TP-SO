@@ -57,4 +57,6 @@ t_bitarray *obtener_bitarray_del_archivo(char *path_base, int size);
 
 char *mensaje_info_detallado(int PID, char *operacion, char *nombre_archivo, int tamano, int puntero_archivo);
 
+void mover_datos_guardados(int contador, int offset, int num_bloques, int size_bloque, char *path_base);
+
 #endif

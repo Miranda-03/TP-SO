@@ -387,7 +387,7 @@ int escribir_archivo(int pid, t_log *loger, char **instruccionSeparada, int size
     char size_dato_a_leer_str[20];
     sprintf(size_dato_a_leer_str, "%d", size_dato_a_leer);
 
-    char *mensaje = mensaje_info_detallado(pid, instruccionSeparada[1], instruccionSeparada[2], size_dato_a_leer_str, instruccionSeparada[4]);
+    // char *mensaje = mensaje_info_detallado(pid, instruccionSeparada[1], instruccionSeparada[2], size_dato_a_leer_str, instruccionSeparada[4]);
 
     fclose(file);
 
