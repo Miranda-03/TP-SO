@@ -154,10 +154,7 @@ void escucharYResponder(const char *puerto, t_log *loger, char *ip_adicional, bo
             memcpy(stream + strlen(ip) * 2 + 1, " ", 1);
 
             char *mensaje_enviar = string_new();
-            string_append(&mensaje_enviar, "Enviando IPs: ");
-            string_append(&mensaje_enviar, ip);
-            string_append(&mensaje_enviar, " y ");
-            string_append(&mensaje_enviar, ip_adicional);
+            string_append(&mensaje_enviar, "Enviando IPs");
 
             log_info(loger, mensaje_enviar);
 

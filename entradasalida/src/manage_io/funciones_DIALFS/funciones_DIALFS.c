@@ -193,9 +193,6 @@ int verificar_contiguo(int pid, t_log *loger, t_bitarray *bitmap, int bloque_ini
         contador++;
     }
 
-    printf("Bloques libres: %d\n", bloques_disponibles);
-    printf("Bloques a colocar: %d\n", bloques_a_colocar);
-
     if (bloques_disponibles < bloques_a_colocar)
     {
         return compactar(pid, loger, bitmap, path_base, size_bloque, retardo);
