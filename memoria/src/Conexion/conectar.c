@@ -6,7 +6,7 @@ void conectarModuloMemoria()
 
     t_log *loger = log_create("logs/memoria_conn.log", "mem_conn", 1, LOG_LEVEL_INFO);
 
-    escucharYResponder(puerto_de_escucha, loger);
+    escucharYResponder(puerto_de_escucha, loger, NULL, 0);
 
     log_destroy(loger);
 

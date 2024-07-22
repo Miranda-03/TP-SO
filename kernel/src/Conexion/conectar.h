@@ -85,4 +85,6 @@ char *get_tipo_conn(TipoConn conn);
 
 void obtener_ip_de_modulo_memoria(int socket, t_config *config);
 
+void *hilo_responder_ips(void *ptr);
+
 #endif

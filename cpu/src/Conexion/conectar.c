@@ -8,7 +8,7 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
 
     //Obtener direccion IP del modulo memoria
     t_config *cpu_config = config_create("cpu.config");
-    solicitar_ip("255.255.255.255", config_get_string_value(cpu_config, "PUERTO_MEMORIA"), cpu_config, "IP_MEMORIA", loger);
+    solicitar_ip("255.255.255.255", config_get_string_value(cpu_config, "PUERTO_MEMORIA"), cpu_config, "IP_MEMORIA", loger, "SOLICITAR_IP");
     config_destroy(cpu_config);
 
     // Conexion con el módulo memoria
@@ -16,7 +16,7 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
 
     handshakeCPUMemoria(CPUSocketMemoria);
 
-    escucharYResponder(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), loger);
+    escucharYResponder(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), loger, NULL, 0);
 
     log_destroy(loger);
 

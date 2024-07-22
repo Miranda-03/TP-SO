@@ -32,7 +32,7 @@ typedef struct
  * @fn crearIO
  * @brief funcion para crear I/O.
  */
-void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha);
+void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha, char *ip_kernel, char *ip_memoria);
 
 /**
  * @fn hilo_conexion_io

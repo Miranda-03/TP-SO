@@ -1,10 +1,9 @@
 #include "crearConexiones.h"
 
-void solicitar_ip(const char *server_ip, const char *port, t_config *config, char *ip_a_modificar, t_log *loger)
+void *solicitar_ip(const char *server_ip, const char *port, t_config *config, char *ip_a_modificar, t_log *loger, char *mensaje)
 {
     int sockfd;
     struct sockaddr_in servaddr;
-    char *mensaje = "SOLICITAR_IP";
     char buffer[BUF_SIZE];
     socklen_t len = sizeof(servaddr);
 
@@ -45,29 +44,53 @@ void solicitar_ip(const char *server_ip, const char *port, t_config *config, cha
     log_info(loger, "Broadcast de solicitud de IP realizado");
 
     // Recibir respuesta
-    int n = recvfrom(sockfd, (char *)buffer, BUF_SIZE, 0, (struct sockaddr *)&servaddr, &len);
-    if (n < 0)
+    if (strcmp(mensaje, "SOLICITAR_IP") == 0)
     {
-        log_error(loger, "Falla en el recvfrom");
-        close(sockfd);
-        exit(EXIT_FAILURE);
+        int n = recvfrom(sockfd, (char *)buffer, BUF_SIZE, 0, (struct sockaddr *)&servaddr, &len);
+        if (n < 0)
+        {
+            log_error(loger, "Falla en el recvfrom");
+            close(sockfd);
+            exit(EXIT_FAILURE);
+        }
+
+        buffer[n] = '\0';
+
+        char *mensaje_loger = string_new();
+        string_append(&mensaje_loger, "IP recibida: ");
+        string_append(&mensaje_loger, buffer);
+
+        log_info(loger, mensaje_loger);
+
+        config_set_value(config, ip_a_modificar, buffer);
+        config_save(config);
     }
+    else if (strcmp(mensaje, "SOLICITAR_IPS") == 0)
+    {
+        void *buffer_ips = malloc(BUF_SIZE);
+        int n = recvfrom(sockfd, buffer_ips, BUF_SIZE, 0, (struct sockaddr *)&servaddr, &len);
+        if (n < 0)
+        {
+            log_error(loger, "Falla en el recvfrom");
+            close(sockfd);
+            exit(EXIT_FAILURE);
+        }
 
-    buffer[n] = '\0';
+        log_info(loger, "IPs recibidas");
 
-    char *mensaje_loger = string_new();
-    string_append(&mensaje_loger, "IP recibida: ");
-    string_append(&mensaje_loger, buffer);
+        close(sockfd);
 
-    log_info(loger, mensaje_loger);
-
-    config_set_value(config, ip_a_modificar, buffer);
-    config_save(config);
+        return buffer_ips;
+    }
+    else
+    {
+        log_error(loger, "Mensaje de broadcast desconocido");
+    }
 
     close(sockfd);
 }
 
-void escucharYResponder(const char *puerto, t_log *loger)
+void escucharYResponder(const char *puerto, t_log *loger, char *ip_adicional, bool escucha_en_loop)
 {
     int sockfd;
     struct sockaddr_in cliaddr;
@@ -83,9 +106,10 @@ void escucharYResponder(const char *puerto, t_log *loger)
 
     log_info(loger, mensaje_de_escucha);
 
+    len = sizeof(cliaddr);
+
     while (1)
     {
-        len = sizeof(cliaddr);
         int n = recvfrom(sockfd, (char *)buffer, BUF_SIZE, 0, (struct sockaddr *)&cliaddr, &len);
         if (n < 0)
         {
@@ -101,22 +125,57 @@ void escucharYResponder(const char *puerto, t_log *loger)
 
         log_info(loger, mensaje_de_solicitud);
 
+        free(mensaje_de_solicitud);
+
+        get_local_ip(ip, INET_ADDRSTRLEN);
+
         if (strcmp(buffer, "SOLICITAR_IP") == 0)
         {
-            get_local_ip(ip, INET_ADDRSTRLEN);
-
             char *mensaje_enviar = string_new();
             string_append(&mensaje_enviar, "Enviando IP: ");
             string_append(&mensaje_enviar, ip);
 
             log_info(loger, mensaje_enviar);
 
+            free(mensaje_enviar);
+
             sendto(sockfd, ip, strlen(ip), 0, (const struct sockaddr *)&cliaddr, len);
-            break;
+
+            if (!escucha_en_loop)
+                break;
+        }
+        else if (strcmp(buffer, "SOLICITAR_IPS") == 0)
+        {
+            void *stream = malloc(strlen(ip) * 2);
+
+            memcpy(stream, ip, strlen(ip));
+            memcpy(stream + strlen(ip), " ", 1);
+            memcpy(stream + strlen(ip) + 1, ip_adicional, INET_ADDRSTRLEN);
+            memcpy(stream + strlen(ip) * 2 + 1, " ", 1);
+
+            char *mensaje_enviar = string_new();
+            string_append(&mensaje_enviar, "Enviando IPs: ");
+            string_append(&mensaje_enviar, ip);
+            string_append(&mensaje_enviar, " y ");
+            string_append(&mensaje_enviar, ip_adicional);
+
+            log_info(loger, mensaje_enviar);
+
+            free(mensaje_enviar);
+
+            sendto(sockfd, stream, strlen(ip) * 2 + 2, 0, (const struct sockaddr *)&cliaddr, len);
+
+            free(stream);
+
+            if (!escucha_en_loop)
+                break;
         }
         else
         {
             log_error(loger, "Mensaje de solicitud desconocido");
+
+            if (!escucha_en_loop)
+                break;
         }
     }
 

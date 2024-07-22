@@ -78,13 +78,13 @@ int crear_socket_escucha(const char *puerto);
  * @fn escucharYResponder
  * @brief Escucha solicitudes y responde con la IP del equipo.
  */
-void escucharYResponder(const char *puerto, t_log *loger);
+void escucharYResponder(const char *puerto, t_log *loger, char *ip_adicional, bool escucha_en_loop);
 
 /**
  * @fn solicitar_ip
  * @brief Realiza un broadcast en busca de una respuesta con el IP y lo guarda en la configuracion.
  */
-void solicitar_ip(const char *server_ip, const char *port, t_config *config, char *ip_a_modificar, t_log *loger);
+void *solicitar_ip(const char *server_ip, const char *port, t_config *config, char *ip_a_modificar, t_log *loger, char *mensaje);
 
 void get_local_ip(char *buffer, size_t buflen);
 

@@ -45,3 +45,22 @@ void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *s
         printf("ERROR CON KERNEL\n");
     }
 }
+
+void obtener_ips(char **ip_kernel, char **ip_memoria)
+{
+    t_config *config = config_create("entradasalida.config");
+    t_log *loger = log_create("logs/io_conn.log", "conn_b", 1, LOG_LEVEL_INFO);
+    void *ips = solicitar_ip("255.255.255.255", config_get_string_value(config, "PUERTO_KERNEL"), NULL, NULL, loger, "SOLICITAR_IPS");
+
+    char *ips_char = (char *)ips;
+
+    char **ips_separadas = string_split(ips_char, " ");
+
+    string_append(ip_kernel, ips_separadas[0]);
+    string_append(ip_memoria, ips_separadas[1]);
+
+    string_array_destroy(ips_separadas);
+    free(ips);
+    config_destroy(config);
+    log_destroy(loger);
+}

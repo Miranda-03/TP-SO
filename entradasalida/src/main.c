@@ -6,6 +6,9 @@
 #include <dirent.h>
 #include <pthread.h>
 
+char *ip_kernel;
+char *ip_memoria;
+
 int main()
 {
 
@@ -15,6 +18,10 @@ int main()
     const char *folder_path = "io_config";
 
     inicializarMutex();
+
+    ip_kernel = string_new();
+    ip_memoria = string_new();
+    obtener_ips(&ip_kernel, &ip_memoria);
 
     // Contar el número de archivos en el directorio
     if ((dir = opendir(folder_path)) != NULL)
@@ -53,7 +60,7 @@ int main()
             {
                 char config_path[256];
                 snprintf(config_path, sizeof(config_path), "%s/%s", folder_path, ent->d_name);
-                crearIO(config_path, ent->d_name, &hilos_de_escucha[thread_index]);
+                crearIO(config_path, ent->d_name, &hilos_de_escucha[thread_index], ip_kernel, ip_memoria);
                 thread_index++;
             }
         }

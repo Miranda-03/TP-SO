@@ -14,7 +14,7 @@ void inicializarMutex()
     logger = log_create("logs/io.log", "entradasalida", 1, LOG_LEVEL_INFO);
 }
 
-void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
+void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha, char *ip_kernel, char *ip_memoria)
 {
     // crear el dispositivo impresora a modo de ejemplo
     char **nombreArchivo = string_split(idIO, ".");
@@ -28,6 +28,13 @@ void crearIO(char *config_file, char *idIO, pthread_t *hilo_de_escucha)
 
     int *IOsocketKernelptr = &IOsocketKernel;
     int *IOsocketMemoriaptr = &IOsocketMemoria;
+
+    t_config *config = config_create(config_file);
+    config_set_value(config, "IP_KERNEL", ip_kernel);
+    if (config_has_property(config, "IP_MEMORIA"))
+        config_set_value(config, "IP_MEMORIA", ip_memoria);
+    config_save(config);
+    config_destroy(config);
 
     conectarModuloIO(io_interfaz, identificador, IOsocketKernelptr, IOsocketMemoriaptr, config_file);
 
@@ -121,27 +128,27 @@ void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int
 
     if (strcmp(comando[0], "IO_FS_CREATE") == 0)
     {
-        log_info(logger,"Pid: %s - Operacion: IO_FS_CREATE",pid);
+        log_info(logger, "Pid: %s - Operacion: IO_FS_CREATE", pid);
         crear_archivo(*pid, logger, comando, path_base, block_count);
     }
     else if (strcmp(comando[0], "IO_FS_DELETE") == 0)
     {
-        log_info(logger,"Pid: %s - Operacion: IO_FS_DELETE",pid);
+        log_info(logger, "Pid: %s - Operacion: IO_FS_DELETE", pid);
         borrar_archivo(*pid, logger, comando, path_base, block_count);
     }
     else if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0)
     {
-        log_info(logger,"Pid: %s - Operacion: IO_FS_TRUNCATE",pid);
+        log_info(logger, "Pid: %s - Operacion: IO_FS_TRUNCATE", pid);
         truncate_archivo(*pid, logger, comando, path_base, block_count, block_size, retraso);
     }
     else if (strcmp(comando[0], "IO_FS_WRITE") == 0)
     {
-        log_info(logger,"Pid: %s - Operacion: IO_FS_WRITE",pid);
+        log_info(logger, "Pid: %s - Operacion: IO_FS_WRITE", pid);
         escribir_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
     }
     else if (strcmp(comando[0], "IO_FS_READ") == 0)
     {
-        log_info(logger,"Pid: %s - Operacion: IO_FS_READ",pid);
+        log_info(logger, "Pid: %s - Operacion: IO_FS_READ", pid);
         leer_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
     }
     else
@@ -413,7 +420,6 @@ char *mensaje_info_operacion(int PID, char *operacion)
     string_append(&result, operacion);
     return result;
 }
-
 
 char *obtener_nombre_archivo(char **comando)
 {

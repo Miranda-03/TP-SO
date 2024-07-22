@@ -21,4 +21,6 @@ void conectarModuloIO(TipoInterfaz tipo_interfaz, char* identificador, int *IOso
 */
 void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *socket);
 
+void obtener_ips(char **ip_kernel, char **ip_memoria);
+
 #endif

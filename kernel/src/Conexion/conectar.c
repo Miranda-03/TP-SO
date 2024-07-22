@@ -13,7 +13,7 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
     loger = log_create("logs/kernel_conn.log", "kernel_conn", 1, LOG_LEVEL_INFO);
     t_config *config = config_create(PATH_CONFIG);
 
-    solicitar_ip("255.255.255.255", config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config, "IP_CPU", loger);
+    solicitar_ip("255.255.255.255", config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config, "IP_CPU", loger, "SOLICITAR_IP");
 
     // Conexiones con el módulo CPU
     *KernelSocketCPUDispatch = crearSocket(config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config_get_string_value(config, "IP_CPU"), 0);
@@ -43,7 +43,12 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
 
 void *recibirClientes(void *ptr)
 {
-    parametros_hilo_IO_Kernel *params = (parametros_hilo_IO_Kernel *)ptr; // Castear correctamente el descriptor de socket
+    parametros_hilo_IO_Kernel *params = (parametros_hilo_IO_Kernel *)ptr;
+
+    pthread_t hilo_escucha_broadcast;
+    pthread_create(&hilo_escucha_broadcast, NULL, hilo_responder_ips, NULL);
+    pthread_detach(hilo_escucha_broadcast);
+
     int socketEscucha = params->socket;
     while (1)
     {
@@ -165,4 +170,10 @@ void obtener_ip_de_modulo_memoria(int socket, t_config *config)
 
     config_set_value(config, "IP_MEMORIA", ip);
     config_save(config);
+}
+
+void *hilo_responder_ips(void *ptr)
+{
+    t_config *config = config_create("kernel.config");
+    escucharYResponder(config_get_string_value(config, "PUERTO_ESCUCHA"), loger, config_get_string_value(config, "IP_MEMORIA"), 1);
 }
