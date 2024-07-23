@@ -1,9 +1,9 @@
 # Generated files
 bin/
 obj/
-*.log
 *.dat
 file_system/*
+!file_system/.gitkeep
 
 # Eclipse files
 .settings/

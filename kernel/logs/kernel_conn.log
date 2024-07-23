@@ -1,8 +1,0 @@
-[INFO] 23:33:18:978 kernel_conn/(14285:14285): Broadcast de solicitud de IP realizado
-[INFO] 23:33:18:979 kernel_conn/(14285:14285): IP recibida: 192.168.0.10
-[INFO] 23:33:19:150 kernel_conn/(14285:14285): Se establece conexion con CPU: DISPATCH
-[INFO] 23:33:19:152 kernel_conn/(14285:14285): Se establece conexion con CPU: INTERRUMPT
-[INFO] 23:33:19:576 kernel_conn/(14285:14285): Se establece conexion con la memoria
-[INFO] 23:33:19:580 kernel_conn/(14285:14313): Escuchando mensaje broadcast en el puerto: 8003
-[INFO] 23:33:44:479 kernel_conn/(14285:14313): Solicitud recibida: SOLICITAR_IPS
-[INFO] 23:33:44:479 kernel_conn/(14285:14313): Enviando IPs
