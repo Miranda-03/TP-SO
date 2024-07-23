@@ -1,0 +1,27 @@
+[INFO] 03:28:29:886 mem_conn/(36938:36938): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 03:28:37:645 mem_conn/(36938:36938): Solicitud recibida: SOLICITAR_IP
+[INFO] 03:28:37:645 mem_conn/(36938:36938): Enviando IP: 192.168.0.10
+[INFO] 03:30:50:388 mem_conn/(38049:38049): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 03:32:17:801 mem_conn/(38049:38049): Solicitud recibida: SOLICITAR_IP
+[INFO] 03:32:17:801 mem_conn/(38049:38049): Enviando IP: 192.168.0.10
+[INFO] 04:29:38:300 mem_conn/(67349:67349): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:29:50:088 mem_conn/(67349:67349): Solicitud recibida: SOLICITAR_IP
+[INFO] 04:29:50:088 mem_conn/(67349:67349): Enviando IP: 192.168.0.10
+[INFO] 04:37:17:828 mem_conn/(69766:69766): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:37:24:363 mem_conn/(69766:69766): Solicitud recibida: SOLICITAR_IP
+[INFO] 04:37:24:363 mem_conn/(69766:69766): Enviando IP: 192.168.0.10
+[INFO] 04:40:10:697 mem_conn/(71016:71016): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:40:19:244 mem_conn/(71016:71016): Solicitud recibida: SOLICITAR_IP
+[INFO] 04:40:19:244 mem_conn/(71016:71016): Enviando IP: 192.168.0.10
+[INFO] 04:47:08:485 mem_conn/(73277:73277): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:47:16:203 mem_conn/(73277:73277): Solicitud recibida: SOLICITAR_IP
+[INFO] 04:47:16:204 mem_conn/(73277:73277): Enviando IP: 192.168.0.10
+[INFO] 04:49:27:585 mem_conn/(74169:74169): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:49:37:051 mem_conn/(74169:74169): Solicitud recibida: SOLICITAR_IP
+[INFO] 04:49:37:051 mem_conn/(74169:74169): Enviando IP: 192.168.0.10
+[INFO] 04:56:40:926 mem_conn/(76976:76976): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:56:49:404 mem_conn/(76976:76976): Solicitud recibida: SOLICITAR_IP
+[INFO] 04:56:49:404 mem_conn/(76976:76976): Enviando IP: 192.168.0.10
+[INFO] 23:32:56:028 mem_conn/(13567:13567): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 23:33:09:840 mem_conn/(13567:13567): Solicitud recibida: SOLICITAR_IP
+[INFO] 23:33:09:840 mem_conn/(13567:13567): Enviando IP: 192.168.0.10

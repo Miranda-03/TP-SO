@@ -1,0 +1,1886 @@
+[INFO] 00:20:21:409 conn_memoria/(10242:10242): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: 1431687852
+[INFO] 00:20:22:415 conn_memoria/(10242:10242): PID: 0 - Acción: LEER - Dirección Física: 10 - Valor: 1431703872
+[INFO] 00:41:36:194 conn_memoria/(18083:18083): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: 1
+[INFO] 00:41:37:197 conn_memoria/(18083:18083): PID: 0 - Acción: LEER - Dirección Física: 10 - Valor: 198145
+[INFO] 00:51:24:036 conn_memoria/(20489:20489): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: 1
+[INFO] 00:51:25:038 conn_memoria/(20489:20489): PID: 0 - Acción: LEER - Dirección Física: 10 - Valor: 198145
+[INFO] 00:53:05:681 conn_memoria/(20489:20489): PID: 1 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: 1
+[INFO] 01:01:02:244 conn_memoria/(25061:25061): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: 1
+[INFO] 01:03:49:760 conn_memoria/(25061:25061): PID: 0 - Acción: LEER - Dirección Física: 10 - Valor: 198145
+[INFO] 01:12:59:775 conn_memoria/(27883:27883): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: 1
+[INFO] 01:22:43:100 conn_memoria/(33260:33260): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: 1
+[INFO] 01:23:01:371 conn_memoria/(33260:33260): PID: 0 - Acción: LEER - Dirección Física: 10 - Valor: 1
+[INFO] 01:24:29:581 conn_memoria/(33260:33260): PID: 1 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 01:24:37:340 conn_memoria/(33260:33260): PID: 1 - Acción: LEER - Dirección Física: 2 - Valor: 0
+[INFO] 01:28:18:570 conn_memoria/(33260:33260): PID: 2 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 01:35:54:379 conn_memoria/(38106:38106): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 01:56:31:296 conn_memoria/(44553:44553): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 02:11:29:280 conn_memoria/(48566:48566): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 02:11:33:159 conn_memoria/(48566:48566): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: 0
+[INFO] 02:16:38:048 conn_memoria/(50678:50678): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 02:16:44:763 conn_memoria/(50678:50678): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: 89
+[INFO] 02:20:04:667 conn_memoria/(50678:50678): PID: 2 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 02:20:11:881 conn_memoria/(50678:50678): PID: 2 - Acción: LEER - Dirección Física: 2 - Valor: 89
+[INFO] 02:22:54:985 conn_memoria/(50678:50678): PID: 3 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 02:23:00:264 conn_memoria/(50678:50678): PID: 3 - Acción: LEER - Dirección Física: 2 - Valor: 89
+[INFO] 02:31:37:266 conn_memoria/(56069:56069): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 02:31:47:562 conn_memoria/(56069:56069): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: 89
+[INFO] 03:54:11:589 conn_memoria/(11030:11030): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 03:54:12:595 conn_memoria/(11030:11030): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: 89
+[INFO] 21:59:28:322 conn_memoria/(6173:6173): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 21:59:29:324 conn_memoria/(6173:6173): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: 89
+[INFO] 23:52:54:881 conn_memoria/(42018:42018): PID: 9 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: 89
+[INFO] 23:52:55:882 conn_memoria/(42018:42018): PID: 9 - Acción: LEER - Dirección Física: 2 - Valor: 89
+[INFO] 00:55:08:647 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 00:55:09:649 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 00:55:10:650 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 00:55:11:651 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 00:55:13:653 conn_memoria/(60294:60294): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: -798616832
+[INFO] 00:55:14:655 conn_memoria/(60294:60294): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: -798619392
+[INFO] 00:55:18:658 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 64
+[INFO] 00:55:19:659 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: 64
+[INFO] 00:55:24:663 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: 64
+[INFO] 00:55:25:664 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: 64
+[INFO] 00:55:26:665 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: 64
+[INFO] 00:55:27:667 conn_memoria/(60294:60294): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: 64
+[INFO] 01:02:48:774 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 01:02:49:776 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 01:02:50:777 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 01:02:51:778 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 01:02:53:779 conn_memoria/(62751:62751): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 362839040
+[INFO] 01:02:54:780 conn_memoria/(62751:62751): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 362838272
+[INFO] 01:02:58:784 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 64
+[INFO] 01:02:59:785 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: 64
+[INFO] 01:03:04:789 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: 64
+[INFO] 01:03:05:790 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: 64
+[INFO] 01:03:06:791 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: 64
+[INFO] 01:03:07:793 conn_memoria/(62751:62751): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: 64
+[INFO] 01:05:39:802 conn_memoria/(63723:63723): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 01:05:40:804 conn_memoria/(63723:63723): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 01:05:41:805 conn_memoria/(63723:63723): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 01:05:42:806 conn_memoria/(63723:63723): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 01:11:47:298 conn_memoria/(66004:66004): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 01:11:48:299 conn_memoria/(66004:66004): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 01:11:49:300 conn_memoria/(66004:66004): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 01:11:50:301 conn_memoria/(66004:66004): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 01:19:00:897 conn_memoria/(68532:68532): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 01:19:01:899 conn_memoria/(68532:68532): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 01:19:02:900 conn_memoria/(68532:68532): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 01:19:03:901 conn_memoria/(68532:68532): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 05:02:26:551 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 05:02:27:553 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 05:02:28:554 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 05:02:29:555 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 05:02:39:883 conn_memoria/(7109:7109): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 0
+[INFO] 05:02:40:885 conn_memoria/(7109:7109): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 0
+[INFO] 05:02:44:888 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 64
+[INFO] 05:02:45:890 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: 64
+[INFO] 05:02:50:893 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: 64
+[INFO] 05:02:51:894 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: 64
+[INFO] 05:02:52:896 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: 64
+[INFO] 05:02:53:897 conn_memoria/(7109:7109): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: 64
+[INFO] 05:10:55:136 conn_memoria/(10336:10336): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 05:10:56:140 conn_memoria/(10336:10336): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 0
+[INFO] 05:17:56:161 conn_memoria/(12352:12352): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 05:23:25:322 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 05:23:26:324 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 05:23:27:325 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 05:23:28:326 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 05:23:45:521 conn_memoria/(14974:14974): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 0
+[INFO] 05:23:50:017 conn_memoria/(14974:14974): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 0
+[INFO] 05:23:54:021 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 64
+[INFO] 05:23:55:022 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: 64
+[INFO] 05:24:00:026 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: 64
+[INFO] 05:24:01:027 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: 64
+[INFO] 05:24:02:029 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: 64
+[INFO] 05:24:03:030 conn_memoria/(14974:14974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: 64
+[INFO] 05:25:09:773 conn_memoria/(14974:14974): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 05:25:10:774 conn_memoria/(14974:14974): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 0
+[INFO] 05:25:34:270 conn_memoria/(14974:14974): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 05:32:27:073 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 05:32:28:074 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 05:32:29:075 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 05:32:30:077 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 05:33:00:844 conn_memoria/(18758:18758): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 0
+[INFO] 05:33:11:977 conn_memoria/(18758:18758): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 0
+[INFO] 05:33:15:980 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 64
+[INFO] 05:33:16:981 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: 64
+[INFO] 05:33:21:985 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: 64
+[INFO] 05:33:22:986 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: 64
+[INFO] 05:33:23:988 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: 64
+[INFO] 05:33:24:989 conn_memoria/(18758:18758): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: 64
+[INFO] 05:33:45:635 conn_memoria/(18758:18758): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 05:37:47:942 conn_memoria/(20911:20911): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 05:41:08:399 conn_memoria/(22332:22332): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 05:41:09:400 conn_memoria/(22332:22332): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 10
+[INFO] 05:44:01:754 conn_memoria/(22332:22332): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 05:52:04:468 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 73
+[INFO] 05:52:04:477 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:04:772 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 05:52:04:773 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 05:52:04:774 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 05:52:04:781 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 39
+[INFO] 05:52:04:786 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 05:52:04:791 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:05:085 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 05:52:05:087 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 97
+[INFO] 05:52:05:088 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 05:52:05:089 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 05:52:05:090 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:05:359 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 05:52:05:360 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 05:52:05:366 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:05:635 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 115
+[INFO] 05:52:05:648 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 05:52:05:656 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 05:52:05:697 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:05:961 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 05:52:05:963 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 104
+[INFO] 05:52:05:964 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 05:52:05:966 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:06:231 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 05:52:06:235 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 05:52:06:252 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 05:52:06:264 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 108
+[INFO] 05:52:06:267 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 05:52:06:269 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:06:552 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 05:52:06:563 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 05:52:06:575 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 05:52:06:853 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 102
+[INFO] 05:52:06:854 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 105
+[INFO] 05:52:06:859 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 05:52:06:865 conn_memoria/(25381:25381): PID: 4 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 05:52:20:394 conn_memoria/(25381:25381): PID: 3 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: 87
+[INFO] 05:52:20:395 conn_memoria/(25381:25381): PID: 3 - Acción: ESCRIBIR - Dirección Física: 12 - Valor: 65
+[INFO] 05:52:20:396 conn_memoria/(25381:25381): PID: 3 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: 82
+[INFO] 05:52:20:397 conn_memoria/(25381:25381): PID: 3 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: 44
+[INFO] 05:52:20:904 conn_memoria/(25381:25381): PID: 3 - Acción: ESCRIBIR - Dirección Física: 15 - Valor: 32
+[INFO] 06:00:14:088 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 73
+[INFO] 06:00:14:089 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:14:360 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 06:00:14:362 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:00:14:364 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:00:14:366 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 39
+[INFO] 06:00:14:368 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:00:14:369 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:14:628 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 06:00:14:629 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 97
+[INFO] 06:00:14:632 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:00:14:634 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:00:14:636 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:14:901 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:00:14:902 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:00:14:904 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:15:161 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 115
+[INFO] 06:00:15:162 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:00:15:163 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:00:15:165 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:15:430 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:00:15:433 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 104
+[INFO] 06:00:15:435 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:00:15:437 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:15:695 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 06:00:15:697 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:00:15:698 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 06:00:15:700 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 108
+[INFO] 06:00:15:701 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 06:00:15:702 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:15:964 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:00:15:968 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:00:15:971 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:00:16:232 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 102
+[INFO] 06:00:16:233 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 105
+[INFO] 06:00:16:236 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 06:00:16:238 conn_memoria/(29026:29026): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:00:18:661 conn_memoria/(29026:29026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: 87
+[INFO] 06:00:18:667 conn_memoria/(29026:29026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 12 - Valor: 65
+[INFO] 06:00:18:670 conn_memoria/(29026:29026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: 82
+[INFO] 06:00:18:670 conn_memoria/(29026:29026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: 44
+[INFO] 06:00:19:178 conn_memoria/(29026:29026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 15 - Valor: 32
+[INFO] 06:07:25:589 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 73
+[INFO] 06:07:25:599 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:25:872 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 06:07:25:873 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:07:25:875 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:07:25:876 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 39
+[INFO] 06:07:25:880 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:07:25:884 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:26:140 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 06:07:26:141 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 97
+[INFO] 06:07:26:142 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:07:26:144 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:07:26:145 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:26:410 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:07:26:414 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:07:26:415 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:26:682 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 115
+[INFO] 06:07:26:686 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:07:26:692 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:07:26:695 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:26:967 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:07:26:968 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 104
+[INFO] 06:07:26:971 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:07:26:973 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:27:242 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 06:07:27:246 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:07:27:247 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 06:07:27:249 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 108
+[INFO] 06:07:27:252 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 06:07:27:253 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:27:515 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:07:27:515 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:07:27:516 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:07:27:772 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 102
+[INFO] 06:07:27:773 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 105
+[INFO] 06:07:27:773 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 06:07:27:775 conn_memoria/(31762:31762): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:07:30:563 conn_memoria/(31762:31762): PID: 0 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: 87
+[INFO] 06:07:30:566 conn_memoria/(31762:31762): PID: 0 - Acción: ESCRIBIR - Dirección Física: 12 - Valor: 65
+[INFO] 06:07:30:567 conn_memoria/(31762:31762): PID: 0 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: 82
+[INFO] 06:07:30:569 conn_memoria/(31762:31762): PID: 0 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: 44
+[INFO] 06:07:31:084 conn_memoria/(31762:31762): PID: 0 - Acción: ESCRIBIR - Dirección Física: 15 - Valor: 32
+[INFO] 06:10:58:848 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 73
+[INFO] 06:10:58:857 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:10:59:129 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 06:10:59:132 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:10:59:136 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:10:59:138 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 39
+[INFO] 06:10:59:140 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:10:59:143 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:10:59:410 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 06:10:59:412 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 97
+[INFO] 06:10:59:414 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:10:59:418 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:10:59:419 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:10:59:674 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:10:59:677 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:10:59:678 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:10:59:943 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 115
+[INFO] 06:10:59:945 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:10:59:947 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:10:59:953 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:11:00:220 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 116
+[INFO] 06:11:00:226 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 104
+[INFO] 06:11:00:229 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:11:00:230 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:11:00:501 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 119
+[INFO] 06:11:00:503 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:11:00:506 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 06:11:00:508 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 108
+[INFO] 06:11:00:510 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 100
+[INFO] 06:11:00:514 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:11:00:778 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 111
+[INFO] 06:11:00:783 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 110
+[INFO] 06:11:00:790 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 32
+[INFO] 06:11:01:060 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 102
+[INFO] 06:11:01:062 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 105
+[INFO] 06:11:01:063 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 114
+[INFO] 06:11:01:069 conn_memoria/(33936:33936): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 101
+[INFO] 06:11:02:852 conn_memoria/(33936:33936): PID: 0 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: 87
+[INFO] 06:11:02:853 conn_memoria/(33936:33936): PID: 0 - Acción: ESCRIBIR - Dirección Física: 12 - Valor: 65
+[INFO] 06:11:02:854 conn_memoria/(33936:33936): PID: 0 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: 82
+[INFO] 06:11:02:855 conn_memoria/(33936:33936): PID: 0 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: 44
+[INFO] 06:11:03:362 conn_memoria/(33936:33936): PID: 0 - Acción: ESCRIBIR - Dirección Física: 15 - Valor: 32
+[INFO] 06:11:55:705 conn_memoria/(33936:33936): PID: 2 - Acción: LEER - Dirección Física: 11 - Valor: 0
+[INFO] 06:40:56:526 conn_memoria/(45588:45588): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 115
+[INFO] 06:40:58:741 conn_memoria/(45588:45588): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 115
+[INFO] 06:40:58:750 conn_memoria/(45588:45588): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 06:40:58:752 conn_memoria/(45588:45588): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 06:58:55:958 conn_memoria/(53495:53495): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 72
+[INFO] 06:58:55:959 conn_memoria/(53495:53495): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 72
+[INFO] 06:58:55:964 conn_memoria/(53495:53495): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 06:58:55:966 conn_memoria/(53495:53495): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:02:11:719 conn_memoria/(55512:55512): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 72
+[INFO] 07:02:11:719 conn_memoria/(55512:55512): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 72
+[INFO] 07:02:11:721 conn_memoria/(55512:55512): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:02:11:723 conn_memoria/(55512:55512): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:02:30:489 conn_memoria/(55512:55512): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 72
+[INFO] 07:02:30:490 conn_memoria/(55512:55512): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 72
+[INFO] 07:02:30:492 conn_memoria/(55512:55512): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:02:30:494 conn_memoria/(55512:55512): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:03:35:239 conn_memoria/(55512:55512): PID: 2 - Acción: LEER - Dirección Física: 0 - Valor: 87
+[INFO] 07:03:35:240 conn_memoria/(55512:55512): PID: 2 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 87
+[INFO] 07:03:35:242 conn_memoria/(55512:55512): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:03:35:246 conn_memoria/(55512:55512): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:04:31:243 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 73
+[INFO] 07:04:31:244 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:31:504 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 100
+[INFO] 07:04:31:508 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 111
+[INFO] 07:04:31:510 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 110
+[INFO] 07:04:31:513 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 39
+[INFO] 07:04:31:515 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 116
+[INFO] 07:04:31:519 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:31:777 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 119
+[INFO] 07:04:31:780 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 97
+[INFO] 07:04:31:782 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 110
+[INFO] 07:04:31:783 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 116
+[INFO] 07:04:31:785 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:32:056 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 116
+[INFO] 07:04:32:060 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 111
+[INFO] 07:04:32:062 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:32:331 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 115
+[INFO] 07:04:32:335 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 101
+[INFO] 07:04:32:335 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 116
+[INFO] 07:04:32:336 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:32:610 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 116
+[INFO] 07:04:32:611 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 104
+[INFO] 07:04:32:614 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 101
+[INFO] 07:04:32:617 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:32:886 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 119
+[INFO] 07:04:32:889 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 111
+[INFO] 07:04:32:892 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 114
+[INFO] 07:04:32:895 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 108
+[INFO] 07:04:32:897 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 100
+[INFO] 07:04:32:902 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:33:161 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 111
+[INFO] 07:04:33:163 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 110
+[INFO] 07:04:33:167 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 32
+[INFO] 07:04:33:425 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 102
+[INFO] 07:04:33:427 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 105
+[INFO] 07:04:33:429 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 114
+[INFO] 07:04:33:430 conn_memoria/(55512:55512): PID: 3 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 101
+[INFO] 07:08:36:575 conn_memoria/(58775:58775): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 07:08:36:579 conn_memoria/(58775:58775): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 83
+[INFO] 07:08:36:583 conn_memoria/(58775:58775): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:08:36:586 conn_memoria/(58775:58775): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:09:33:863 conn_memoria/(58775:58775): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 104
+[INFO] 07:09:33:863 conn_memoria/(58775:58775): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 104
+[INFO] 07:09:33:868 conn_memoria/(58775:58775): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:09:33:868 conn_memoria/(58775:58775): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:14:23:455 conn_memoria/(58775:58775): PID: 2 - Acción: LEER - Dirección Física: 0 - Valor: 104
+[INFO] 07:14:55:017 conn_memoria/(58775:58775): PID: 2 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 104
+[INFO] 07:14:55:026 conn_memoria/(58775:58775): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:14:55:032 conn_memoria/(58775:58775): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:16:14:948 conn_memoria/(58775:58775): PID: 3 - Acción: LEER - Dirección Física: 0 - Valor: 104
+[INFO] 07:18:13:645 conn_memoria/(58775:58775): PID: 3 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 104
+[INFO] 07:21:41:150 conn_memoria/(63719:63719): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 104
+[INFO] 07:26:10:144 conn_memoria/(65263:65263): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 07:40:51:644 conn_memoria/(72459:72459): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 07:44:10:120 conn_memoria/(72459:72459): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 1431655774
+[INFO] 07:44:10:123 conn_memoria/(72459:72459): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:44:10:125 conn_memoria/(72459:72459): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:45:41:382 conn_memoria/(72459:72459): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 07:45:50:585 conn_memoria/(72459:72459): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 259399
+[INFO] 07:45:50:590 conn_memoria/(72459:72459): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:45:50:592 conn_memoria/(72459:72459): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:50:43:148 conn_memoria/(76280:76280): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 07:50:47:498 conn_memoria/(76280:76280): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 1431655774
+[INFO] 07:50:47:502 conn_memoria/(76280:76280): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 49
+[INFO] 07:50:47:504 conn_memoria/(76280:76280): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 52
+[INFO] 07:53:31:593 conn_memoria/(77987:77987): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 07:53:33:949 conn_memoria/(77987:77987): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 1431655774
+[INFO] 07:54:02:489 conn_memoria/(77987:77987): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 07:55:50:106 conn_memoria/(77987:77987): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 250675
+[INFO] 07:58:34:861 conn_memoria/(80705:80705): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 08:04:31:806 conn_memoria/(83286:83286): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 08:04:52:465 conn_memoria/(83286:83286): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 1431655780
+[INFO] 12:40:30:508 conn_memoria/(144080:144080): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 12:40:45:908 conn_memoria/(144080:144080): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 1431655780
+[INFO] 12:44:10:489 conn_memoria/(144080:144080): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 83
+[INFO] 12:49:10:074 conn_memoria/(148279:148279): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Sistemas Operativos 1c2024
+[INFO] 12:52:55:068 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 
+[INFO] 12:52:55:069 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 
+[INFO] 12:52:55:069 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 
+[INFO] 12:52:55:070 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 
+[INFO] 12:53:20:308 conn_memoria/(150341:150341): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 
+[INFO] 12:53:36:026 conn_memoria/(150341:150341): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 
+[INFO] 12:53:36:035 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: @
+[INFO] 12:53:36:035 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: @
+[INFO] 12:53:36:036 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: @
+[INFO] 12:53:36:037 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: @
+[INFO] 12:53:36:039 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: @
+[INFO] 12:53:36:041 conn_memoria/(150341:150341): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: @
+[INFO] 12:53:56:053 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 
+[INFO] 12:53:56:054 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 
+[INFO] 12:53:56:054 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 
+[INFO] 12:53:56:054 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 
+[INFO] 12:55:16:253 conn_memoria/(150341:150341): PID: 1 - Acción: LEER - Dirección Física: 32 - Valor: 
+[INFO] 12:55:49:984 conn_memoria/(150341:150341): PID: 1 - Acción: LEER - Dirección Física: 64 - Valor: 
+[INFO] 12:55:49:993 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: @
+[INFO] 12:55:49:994 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: @
+[INFO] 12:55:49:999 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: @
+[INFO] 12:55:50:000 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: @
+[INFO] 12:55:50:001 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: @
+[INFO] 12:55:50:002 conn_memoria/(150341:150341): PID: 1 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: @
+[INFO] 12:57:28:664 conn_memoria/(150341:150341): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 
+
+[INFO] 12:57:58:697 conn_memoria/(150341:150341): PID: 2 - Acción: LEER - Dirección Física: 0 - Valor: 
+
+[INFO] 13:02:25:562 conn_memoria/(154223:154223): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 
+
+[INFO] 13:02:28:682 conn_memoria/(154223:154223): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 
+
+[INFO] 13:03:06:547 conn_memoria/(154223:154223): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 
+
+[INFO] 13:03:21:610 conn_memoria/(154223:154223): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 
+
+[INFO] 13:07:26:070 conn_memoria/(156394:156394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 
+
+[INFO] 13:11:16:228 conn_memoria/(157948:157948): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 13:11:34:826 conn_memoria/(157948:157948): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: 10
+[INFO] 13:11:48:472 conn_memoria/(157948:157948): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 
+[INFO] 13:11:48:473 conn_memoria/(157948:157948): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 
+[INFO] 13:11:48:474 conn_memoria/(157948:157948): PID: 1 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 
+[INFO] 13:11:48:475 conn_memoria/(157948:157948): PID: 1 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 
+[INFO] 13:12:09:076 conn_memoria/(157948:157948): PID: 1 - Acción: LEER - Dirección Física: 32 - Valor: 
+[INFO] 13:14:26:281 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 13:14:26:291 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 13:14:26:295 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 13:14:26:304 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 13:14:43:130 conn_memoria/(159828:159828): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 0
+[INFO] 13:15:17:748 conn_memoria/(159828:159828): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 0
+[INFO] 13:15:17:754 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: @
+[INFO] 13:15:17:754 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: @
+[INFO] 13:15:17:758 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: @
+[INFO] 13:15:17:758 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: @
+[INFO] 13:15:17:758 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: @
+[INFO] 13:15:17:759 conn_memoria/(159828:159828): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: @
+[INFO] 13:15:49:488 conn_memoria/(159828:159828): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 13:15:49:491 conn_memoria/(159828:159828): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 13:15:49:494 conn_memoria/(159828:159828): PID: 1 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 13:15:49:501 conn_memoria/(159828:159828): PID: 1 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 13:16:04:113 conn_memoria/(159828:159828): PID: 1 - Acción: LEER - Dirección Física: 32 - Valor: 0
+[INFO] 13:16:26:781 conn_memoria/(159828:159828): PID: 1 - Acción: LEER - Dirección Física: 64 - Valor: 0
+[INFO] 13:19:50:552 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 13:19:57:965 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 13:20:05:448 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 13:20:08:132 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 13:20:22:902 conn_memoria/(162269:162269): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 0
+[INFO] 13:20:34:998 conn_memoria/(162269:162269): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 0
+[INFO] 13:20:40:021 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 64
+[INFO] 13:20:47:653 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: 64
+[INFO] 13:20:50:597 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: 64
+[INFO] 13:20:54:326 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: 64
+[INFO] 13:20:56:502 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: 64
+[INFO] 13:20:57:358 conn_memoria/(162269:162269): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: 64
+[INFO] 13:28:02:012 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 0
+[INFO] 13:28:02:013 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: 0
+[INFO] 13:28:02:015 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 64 - Valor: 0
+[INFO] 13:28:02:017 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 96 - Valor: 0
+[INFO] 13:28:02:020 conn_memoria/(165698:165698): PID: 0 - Acción: LEER - Dirección Física: 32 - Valor: 0
+[INFO] 13:28:02:021 conn_memoria/(165698:165698): PID: 0 - Acción: LEER - Dirección Física: 64 - Valor: 0
+[INFO] 13:28:02:027 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: 64
+[INFO] 13:28:02:028 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 160 - Valor: 64
+[INFO] 13:28:02:034 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 40 - Valor: 64
+[INFO] 13:28:02:037 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: 64
+[INFO] 13:28:02:041 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 192 - Valor: 64
+[INFO] 13:28:02:044 conn_memoria/(165698:165698): PID: 0 - Acción: ESCRIBIR - Dirección Física: 224 - Valor: 64
+[INFO] 13:29:56:197 conn_memoria/(165698:165698): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 10
+[INFO] 13:29:56:198 conn_memoria/(165698:165698): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: 10
+[INFO] 13:30:25:441 conn_memoria/(165698:165698): PID: 2 - Acción: LEER - Dirección Física: 0 - Valor: Sistemas Operativos 1c2024
+[INFO] 13:30:25:442 conn_memoria/(165698:165698): PID: 2 - Acción: ESCRIBIR - Dirección Física: 32 - Valor: Sistemas Operativos 1c2024
+[INFO] 13:30:25:445 conn_memoria/(165698:165698): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 1
+[INFO] 13:30:25:447 conn_memoria/(165698:165698): PID: 2 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: 4
+[INFO] 14:09:26:131 conn_memoria/(176514:176514): PID: 0 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: W
+[INFO] 14:09:26:334 conn_memoria/(176514:176514): PID: 0 - Acción: ESCRIBIR - Dirección Física: 12 - Valor: A
+[INFO] 14:09:26:535 conn_memoria/(176514:176514): PID: 0 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: R
+[INFO] 14:09:26:738 conn_memoria/(176514:176514): PID: 0 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: ,
+[INFO] 14:09:27:645 conn_memoria/(176514:176514): PID: 0 - Acción: ESCRIBIR - Dirección Física: 15 - Valor:  
+[INFO] 14:09:50:838 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: I
+[INFO] 14:09:51:140 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:09:51:801 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: d
+[INFO] 14:09:52:103 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:09:52:406 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: n
+[INFO] 14:09:52:709 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: '
+[INFO] 14:09:53:011 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:09:53:315 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:09:53:982 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: w
+[INFO] 14:09:54:284 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: a
+[INFO] 14:09:54:588 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: n
+[INFO] 14:09:54:891 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:09:55:193 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:09:55:852 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:09:56:154 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:09:56:456 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:09:57:137 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: s
+[INFO] 14:09:57:439 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: e
+[INFO] 14:09:57:742 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:09:58:044 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:09:58:708 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:09:59:012 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: h
+[INFO] 14:09:59:315 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: e
+[INFO] 14:09:59:617 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:10:00:275 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: w
+[INFO] 14:10:00:577 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:10:00:880 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: r
+[INFO] 14:10:01:183 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: l
+[INFO] 14:10:01:486 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: d
+[INFO] 14:10:01:790 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:10:02:447 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:10:02:749 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: n
+[INFO] 14:10:03:053 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:10:03:712 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: f
+[INFO] 14:10:04:015 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: i
+[INFO] 14:10:04:319 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: r
+[INFO] 14:10:04:621 conn_memoria/(176514:176514): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: e
+[INFO] 14:11:20:382 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: I
+[INFO] 14:11:20:686 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:21:853 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: d
+[INFO] 14:11:22:154 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:11:22:457 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: n
+[INFO] 14:11:22:758 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: '
+[INFO] 14:11:23:061 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:11:23:364 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:24:045 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: w
+[INFO] 14:11:24:347 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: a
+[INFO] 14:11:24:650 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: n
+[INFO] 14:11:24:952 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:11:25:254 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:25:910 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:11:26:213 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:11:27:119 conn_memoria/(176514:176514): PID: 2 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: W
+[INFO] 14:11:27:321 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:27:524 conn_memoria/(176514:176514): PID: 2 - Acción: ESCRIBIR - Dirección Física: 12 - Valor: A
+[INFO] 14:11:27:726 conn_memoria/(176514:176514): PID: 2 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: R
+[INFO] 14:11:27:927 conn_memoria/(176514:176514): PID: 2 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: ,
+[INFO] 14:11:28:531 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: s
+[INFO] 14:11:28:832 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: e
+[INFO] 14:11:29:136 conn_memoria/(176514:176514): PID: 2 - Acción: ESCRIBIR - Dirección Física: 15 - Valor:  
+[INFO] 14:11:29:539 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:11:29:844 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:30:508 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:11:30:811 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: h
+[INFO] 14:11:31:113 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: e
+[INFO] 14:11:31:415 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:32:121 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: w
+[INFO] 14:11:32:423 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:11:32:727 conn_memoria/(176514:176514): PID: 4 - Acción: LEER - Dirección Física: 176 - Valor: Sistemas Operativos 1c2024
+[INFO] 14:11:32:728 conn_memoria/(176514:176514): PID: 4 - Acción: ESCRIBIR - Dirección Física: 208 - Valor: Sistemas Operativos 1c2024
+[INFO] 14:11:33:030 conn_memoria/(176514:176514): PID: 4 - Acción: ESCRIBIR - Dirección Física: 176 - Valor: 1
+[INFO] 14:11:33:332 conn_memoria/(176514:176514): PID: 4 - Acción: ESCRIBIR - Dirección Física: 176 - Valor: 4
+[INFO] 14:11:33:534 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: r
+[INFO] 14:11:33:836 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: l
+[INFO] 14:11:34:139 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: d
+[INFO] 14:11:34:543 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:35:204 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:11:35:507 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: n
+[INFO] 14:11:35:811 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:11:36:469 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: f
+[INFO] 14:11:36:771 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: i
+[INFO] 14:11:37:074 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: r
+[INFO] 14:11:37:377 conn_memoria/(176514:176514): PID: 3 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: e
+[INFO] 14:14:21:333 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: I
+[INFO] 14:14:21:636 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:22:293 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: d
+[INFO] 14:14:22:595 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:14:22:901 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: n
+[INFO] 14:14:23:203 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: '
+[INFO] 14:14:23:505 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:14:23:807 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:24:462 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: w
+[INFO] 14:14:24:764 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: a
+[INFO] 14:14:25:067 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: n
+[INFO] 14:14:25:369 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:14:25:671 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:26:329 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:14:26:631 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:14:26:934 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:27:594 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: s
+[INFO] 14:14:27:897 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: e
+[INFO] 14:14:28:200 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:14:28:503 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:29:163 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: t
+[INFO] 14:14:29:464 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: h
+[INFO] 14:14:29:768 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: e
+[INFO] 14:14:30:071 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:30:727 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: w
+[INFO] 14:14:31:029 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:14:31:332 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: r
+[INFO] 14:14:31:634 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: l
+[INFO] 14:14:31:936 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: d
+[INFO] 14:14:32:239 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:32:897 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: o
+[INFO] 14:14:33:199 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: n
+[INFO] 14:14:33:501 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor:  
+[INFO] 14:14:34:157 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: f
+[INFO] 14:14:34:460 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: i
+[INFO] 14:14:34:763 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: r
+[INFO] 14:14:35:065 conn_memoria/(176514:176514): PID: 5 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: e
+[INFO] 14:20:02:422 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: I
+[INFO] 14:20:02:725 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:03:890 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: d
+[INFO] 14:20:04:192 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:20:04:495 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: n
+[INFO] 14:20:04:797 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: '
+[INFO] 14:20:05:102 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:20:05:405 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:06:063 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: w
+[INFO] 14:20:06:365 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: a
+[INFO] 14:20:06:668 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: n
+[INFO] 14:20:06:970 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:20:07:272 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:07:941 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:20:08:244 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:20:08:552 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:09:209 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: s
+[INFO] 14:20:09:511 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: e
+[INFO] 14:20:09:814 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:20:10:116 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:11:159 conn_memoria/(176514:176514): PID: 6 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: W
+[INFO] 14:20:11:562 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: t
+[INFO] 14:20:11:864 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: h
+[INFO] 14:20:12:167 conn_memoria/(176514:176514): PID: 6 - Acción: ESCRIBIR - Dirección Física: 12 - Valor: A
+[INFO] 14:20:12:368 conn_memoria/(176514:176514): PID: 6 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: R
+[INFO] 14:20:12:570 conn_memoria/(176514:176514): PID: 6 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: ,
+[INFO] 14:20:12:974 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: e
+[INFO] 14:20:13:275 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:13:483 conn_memoria/(176514:176514): PID: 6 - Acción: ESCRIBIR - Dirección Física: 15 - Valor:  
+[INFO] 14:20:14:088 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: w
+[INFO] 14:20:14:390 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:20:14:801 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: r
+[INFO] 14:20:15:103 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: l
+[INFO] 14:20:15:405 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: d
+[INFO] 14:20:15:708 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:16:414 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: o
+[INFO] 14:20:16:716 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: n
+[INFO] 14:20:17:019 conn_memoria/(176514:176514): PID: 8 - Acción: LEER - Dirección Física: 176 - Valor: Sistemas Operativos 1c2024
+[INFO] 14:20:17:019 conn_memoria/(176514:176514): PID: 8 - Acción: ESCRIBIR - Dirección Física: 208 - Valor: Sistemas Operativos 1c2024
+[INFO] 14:20:17:321 conn_memoria/(176514:176514): PID: 8 - Acción: ESCRIBIR - Dirección Física: 176 - Valor: 1
+[INFO] 14:20:17:623 conn_memoria/(176514:176514): PID: 8 - Acción: ESCRIBIR - Dirección Física: 176 - Valor: 4
+[INFO] 14:20:17:826 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor:  
+[INFO] 14:20:18:780 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: f
+[INFO] 14:20:19:084 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: i
+[INFO] 14:20:19:388 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: r
+[INFO] 14:20:19:690 conn_memoria/(176514:176514): PID: 7 - Acción: ESCRIBIR - Dirección Física: 128 - Valor: e
+[INFO] 15:47:18:618 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: I
+[INFO] 15:47:18:921 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 1 - Valor:  
+[INFO] 15:47:19:588 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: d
+[INFO] 15:47:19:890 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 3 - Valor: o
+[INFO] 15:47:20:205 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 4 - Valor: n
+[INFO] 15:47:20:509 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 5 - Valor: '
+[INFO] 15:47:20:813 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 6 - Valor: t
+[INFO] 15:47:21:126 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 7 - Valor:  
+[INFO] 15:47:21:789 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 8 - Valor: w
+[INFO] 15:47:22:091 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: a
+[INFO] 15:47:22:393 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: n
+[INFO] 15:47:22:701 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: t
+[INFO] 15:47:23:009 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 12 - Valor:  
+[INFO] 15:47:23:665 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: t
+[INFO] 15:47:23:967 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: o
+[INFO] 15:47:24:270 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 15 - Valor:  
+[INFO] 15:47:24:930 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 16 - Valor: s
+[INFO] 15:47:25:233 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 17 - Valor: e
+[INFO] 15:47:25:536 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 18 - Valor: t
+[INFO] 15:47:25:838 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor:  
+[INFO] 15:47:26:495 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 20 - Valor: t
+[INFO] 15:47:26:797 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 21 - Valor: h
+[INFO] 15:47:27:100 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 22 - Valor: e
+[INFO] 15:47:27:402 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 23 - Valor:  
+[INFO] 15:47:28:064 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 24 - Valor: w
+[INFO] 15:47:28:366 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 25 - Valor: o
+[INFO] 15:47:28:668 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 26 - Valor: r
+[INFO] 15:47:28:971 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 27 - Valor: l
+[INFO] 15:47:29:275 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 28 - Valor: d
+[INFO] 15:47:29:589 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor:  
+[INFO] 15:47:30:262 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 30 - Valor: o
+[INFO] 15:47:30:563 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 31 - Valor: n
+[INFO] 15:47:30:866 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor:  
+[INFO] 15:47:31:526 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 33 - Valor: f
+[INFO] 15:47:31:829 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 34 - Valor: i
+[INFO] 15:47:32:131 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 35 - Valor: r
+[INFO] 15:47:32:433 conn_memoria/(203739:203739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 36 - Valor: e
+[INFO] 11:27:25:954 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: I
+[INFO] 11:27:26:261 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 1 - Valor:  
+[INFO] 11:27:26:950 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: d
+[INFO] 11:27:27:256 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 3 - Valor: o
+[INFO] 11:27:27:560 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 4 - Valor: n
+[INFO] 11:27:27:862 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 5 - Valor: '
+[INFO] 11:27:28:167 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 6 - Valor: t
+[INFO] 11:27:28:472 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 7 - Valor:  
+[INFO] 11:27:29:139 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 8 - Valor: w
+[INFO] 11:27:29:442 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: a
+[INFO] 11:27:29:748 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: n
+[INFO] 11:27:30:052 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: t
+[INFO] 11:27:30:354 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 12 - Valor:  
+[INFO] 11:27:31:012 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: t
+[INFO] 11:27:31:314 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: o
+[INFO] 11:27:31:618 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 15 - Valor:  
+[INFO] 11:27:32:275 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 16 - Valor: s
+[INFO] 11:27:32:577 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 17 - Valor: e
+[INFO] 11:27:32:881 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 18 - Valor: t
+[INFO] 11:27:33:183 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor:  
+[INFO] 11:27:33:843 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 20 - Valor: t
+[INFO] 11:27:34:144 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 21 - Valor: h
+[INFO] 11:27:34:447 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 22 - Valor: e
+[INFO] 11:27:34:750 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 23 - Valor:  
+[INFO] 11:27:35:405 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 24 - Valor: w
+[INFO] 11:27:35:707 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 25 - Valor: o
+[INFO] 11:27:36:011 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 26 - Valor: r
+[INFO] 11:27:36:313 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 27 - Valor: l
+[INFO] 11:27:36:615 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 28 - Valor: d
+[INFO] 11:27:36:920 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor:  
+[INFO] 11:27:37:579 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 30 - Valor: o
+[INFO] 11:27:37:883 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 31 - Valor: n
+[INFO] 11:27:38:185 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 32 - Valor:  
+[INFO] 11:27:38:843 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 33 - Valor: f
+[INFO] 11:27:39:145 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 34 - Valor: i
+[INFO] 11:27:39:454 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 35 - Valor: r
+[INFO] 11:27:39:758 conn_memoria/(290817:290817): PID: 0 - Acción: ESCRIBIR - Dirección Física: 36 - Valor: e
+[INFO] 12:31:58:834 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 0 - Valor: I
+[INFO] 12:31:59:138 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 1 - Valor:  
+[INFO] 12:32:52:054 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: d
+[INFO] 12:32:52:357 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 3 - Valor: o
+[INFO] 12:32:52:660 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 4 - Valor: n
+[INFO] 12:32:52:968 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 5 - Valor: '
+[INFO] 12:32:53:270 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 6 - Valor: t
+[INFO] 12:32:53:572 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 7 - Valor:  
+[INFO] 12:32:54:232 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 8 - Valor: w
+[INFO] 12:32:54:534 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: a
+[INFO] 12:32:54:836 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 10 - Valor: n
+[INFO] 12:32:55:139 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 11 - Valor: t
+[INFO] 12:32:55:441 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 12 - Valor:  
+[INFO] 12:32:56:102 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 13 - Valor: t
+[INFO] 12:32:56:405 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 14 - Valor: o
+[INFO] 12:32:56:707 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 15 - Valor:  
+[INFO] 12:32:57:367 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 16 - Valor: s
+[INFO] 12:32:57:669 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 17 - Valor: e
+[INFO] 12:32:57:971 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 18 - Valor: t
+[INFO] 12:32:58:273 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor:  
+[INFO] 12:32:58:931 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 20 - Valor: t
+[INFO] 12:32:59:233 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 21 - Valor: h
+[INFO] 12:32:59:537 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 22 - Valor: e
+[INFO] 12:32:59:839 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 23 - Valor:  
+[INFO] 12:33:00:495 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 24 - Valor: w
+[INFO] 12:33:00:797 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 25 - Valor: o
+[INFO] 12:33:01:099 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 26 - Valor: r
+[INFO] 12:33:01:402 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 27 - Valor: l
+[INFO] 12:33:01:704 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 28 - Valor: d
+[INFO] 12:33:02:007 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor:  
+[INFO] 12:33:02:663 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 30 - Valor: o
+[INFO] 12:33:02:967 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 31 - Valor: n
+[INFO] 12:33:03:269 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 32 - Valor:  
+[INFO] 12:33:03:928 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 33 - Valor: f
+[INFO] 12:33:04:230 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 34 - Valor: i
+[INFO] 12:33:04:533 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 35 - Valor: r
+[INFO] 12:33:04:835 conn_memoria/(18497:18497): PID: 1 - Acción: ESCRIBIR - Dirección Física: 36 - Valor: e
+[INFO] 14:34:29:904 conn_memoria/(53676:53676): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 14:34:30:106 conn_memoria/(53676:53676): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 14:34:30:307 conn_memoria/(53676:53676): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 14:34:30:508 conn_memoria/(53676:53676): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 14:34:30:710 conn_memoria/(53676:53676): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 14:42:02:882 conn_memoria/(56374:56374): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 14:42:03:084 conn_memoria/(56374:56374): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 14:42:03:285 conn_memoria/(56374:56374): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 14:42:03:488 conn_memoria/(56374:56374): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 14:42:03:689 conn_memoria/(56374:56374): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 14:51:24:408 conn_memoria/(59391:59391): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 14:51:24:609 conn_memoria/(59391:59391): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 14:51:24:810 conn_memoria/(59391:59391): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 14:51:25:012 conn_memoria/(59391:59391): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 14:51:25:214 conn_memoria/(59391:59391): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 14:55:53:736 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 14:55:53:938 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 14:55:54:139 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 14:55:54:341 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 14:55:54:542 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 14:55:54:955 conn_memoria/(61648:61648): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 14:55:54:956 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 14:55:55:157 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 14:55:55:459 conn_memoria/(61648:61648): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 14:55:55:461 conn_memoria/(61648:61648): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:07:44:039 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 15:07:44:240 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 15:07:44:442 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 15:07:44:649 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 15:07:44:851 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 15:07:45:269 conn_memoria/(66848:66848): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 15:07:45:270 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 15:07:45:472 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 15:07:45:774 conn_memoria/(66848:66848): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:07:45:775 conn_memoria/(66848:66848): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:16:53:581 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 15:16:53:787 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 15:16:53:989 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 15:16:54:198 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 15:16:54:400 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 15:16:54:825 conn_memoria/(70505:70505): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 15:16:54:828 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 15:16:55:030 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 15:16:55:334 conn_memoria/(70505:70505): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:16:55:335 conn_memoria/(70505:70505): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:26:59:883 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 15:27:00:084 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 15:27:00:287 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 15:27:00:490 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 15:27:00:691 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 15:27:01:114 conn_memoria/(74394:74394): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 15:27:01:114 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 15:27:01:316 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 15:27:01:618 conn_memoria/(74394:74394): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:27:01:619 conn_memoria/(74394:74394): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:32:53:253 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 15:32:53:456 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 15:32:53:657 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 15:32:53:859 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 15:32:54:061 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 15:32:54:476 conn_memoria/(76609:76609): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 15:32:54:478 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 15:32:54:682 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 15:32:54:990 conn_memoria/(76609:76609): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 15:32:54:994 conn_memoria/(76609:76609): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 16:18:21:158 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 16:18:21:359 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 16:18:21:560 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 16:18:21:762 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 16:18:21:964 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 16:18:22:384 conn_memoria/(92965:92965): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 16:18:22:384 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 16:18:22:585 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 16:18:22:887 conn_memoria/(92965:92965): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 16:18:22:890 conn_memoria/(92965:92965): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 16:38:08:260 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 16:38:08:462 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 16:38:08:663 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 16:38:08:865 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 16:38:09:067 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 16:39:42:657 conn_memoria/(103398:103398): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 16:39:42:657 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 16:39:42:859 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 16:39:43:166 conn_memoria/(103398:103398): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 16:39:43:167 conn_memoria/(103398:103398): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 16:48:02:697 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 16:48:02:902 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 16:48:03:104 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 16:48:03:307 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 16:48:03:517 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 16:48:03:946 conn_memoria/(109148:109148): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 16:48:03:947 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 16:48:04:149 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 16:48:04:451 conn_memoria/(109148:109148): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 16:48:04:451 conn_memoria/(109148:109148): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 16:59:24:349 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 16:59:24:551 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 16:59:24:752 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 16:59:24:954 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 16:59:25:158 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 17:02:12:333 conn_memoria/(114914:114914): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 17:02:12:335 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 17:02:12:548 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 17:02:12:857 conn_memoria/(114914:114914): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 17:02:12:858 conn_memoria/(114914:114914): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 17:18:51:138 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 17:18:51:340 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 17:18:51:541 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 17:18:51:742 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 17:18:51:948 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 17:18:52:372 conn_memoria/(125711:125711): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 17:18:52:372 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 17:18:52:575 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 17:18:52:878 conn_memoria/(125711:125711): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 17:18:52:880 conn_memoria/(125711:125711): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 17:48:12:237 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 17:48:12:438 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 17:48:12:640 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 17:48:12:842 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 17:48:13:043 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 17:48:13:457 conn_memoria/(139345:139345): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 17:48:13:457 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 17:48:13:658 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 17:48:13:961 conn_memoria/(139345:139345): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 17:48:13:963 conn_memoria/(139345:139345): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:03:51:732 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 18:03:51:936 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 18:03:52:137 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 18:03:52:338 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 18:03:52:542 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 18:03:52:958 conn_memoria/(148536:148536): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 18:03:52:958 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 18:03:53:159 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 18:03:53:461 conn_memoria/(148536:148536): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:03:53:462 conn_memoria/(148536:148536): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:08:02:452 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 18:08:02:654 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 18:08:02:855 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 18:08:03:057 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 18:08:03:262 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 18:08:03:680 conn_memoria/(151470:151470): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 18:08:03:681 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 18:08:03:882 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 18:08:04:185 conn_memoria/(151470:151470): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:08:04:185 conn_memoria/(151470:151470): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:36:23:130 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 18:36:23:332 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 18:36:23:534 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 18:36:23:736 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 18:36:23:940 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 18:36:24:360 conn_memoria/(166317:166317): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 18:36:24:360 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 18:36:24:561 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 18:36:24:865 conn_memoria/(166317:166317): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:36:24:868 conn_memoria/(166317:166317): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:44:32:484 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 18:44:32:686 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 18:44:32:888 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 18:44:33:095 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 18:44:33:303 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 18:44:33:725 conn_memoria/(169710:169710): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 18:44:33:727 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 18:44:33:934 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 18:44:34:240 conn_memoria/(169710:169710): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:44:34:251 conn_memoria/(169710:169710): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:53:38:618 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 18:53:38:820 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 18:53:39:021 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 18:53:39:222 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 18:53:39:425 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 18:53:39:833 conn_memoria/(178876:178876): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 18:53:39:833 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 18:53:40:034 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 18:53:40:336 conn_memoria/(178876:178876): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:53:40:337 conn_memoria/(178876:178876): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:58:26:617 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 18:58:26:819 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 18:58:27:020 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 18:58:27:222 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 18:58:27:424 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 18:58:27:836 conn_memoria/(181072:181072): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 18:58:27:836 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 18:58:28:037 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 18:58:28:340 conn_memoria/(181072:181072): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:58:28:341 conn_memoria/(181072:181072): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 19:17:02:250 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 19:17:02:452 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 19:17:02:653 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 19:17:02:859 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 19:17:03:060 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 19:17:03:470 conn_memoria/(190347:190347): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 19:17:03:470 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 19:17:03:674 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 19:17:03:979 conn_memoria/(190347:190347): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 19:17:03:980 conn_memoria/(190347:190347): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 19:28:17:202 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 19:28:17:404 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 19:28:17:605 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 19:28:17:806 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 19:28:18:010 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 19:28:18:430 conn_memoria/(198739:198739): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 19:28:18:430 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 19:28:18:632 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 19:28:18:934 conn_memoria/(198739:198739): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 19:28:18:937 conn_memoria/(198739:198739): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 19:39:09:088 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 19:39:09:289 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 19:39:09:491 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 19:39:09:692 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 19:39:09:896 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 19:39:10:356 conn_memoria/(205114:205114): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 19:39:10:360 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 19:39:10:561 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 19:39:10:863 conn_memoria/(205114:205114): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 19:39:10:864 conn_memoria/(205114:205114): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:01:49:874 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:01:50:076 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:01:50:279 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:01:50:481 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:01:50:683 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:01:51:094 conn_memoria/(217100:217100): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:01:51:094 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:01:51:296 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:01:51:599 conn_memoria/(217100:217100): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:01:51:601 conn_memoria/(217100:217100): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:08:04:859 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:08:05:061 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:08:05:262 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:08:05:464 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:08:05:665 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:08:06:079 conn_memoria/(220535:220535): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:08:06:080 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:08:06:282 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:08:06:584 conn_memoria/(220535:220535): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:08:06:585 conn_memoria/(220535:220535): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:22:42:500 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:22:42:702 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:22:42:904 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:22:43:106 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:22:43:308 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:22:43:740 conn_memoria/(227764:227764): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:22:43:740 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:22:43:942 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:22:44:248 conn_memoria/(227764:227764): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:22:44:249 conn_memoria/(227764:227764): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:28:23:822 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:28:24:025 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:28:24:230 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:28:24:433 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:28:24:636 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:28:25:064 conn_memoria/(232378:232378): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:28:25:065 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:28:25:266 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:28:25:570 conn_memoria/(232378:232378): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:28:25:571 conn_memoria/(232378:232378): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:43:46:503 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:43:46:707 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:43:46:909 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:43:47:110 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:43:47:316 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:43:47:732 conn_memoria/(240567:240567): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:43:47:732 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:43:47:933 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:43:48:235 conn_memoria/(240567:240567): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:43:48:236 conn_memoria/(240567:240567): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:41:49:130 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 21:41:49:332 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 21:41:49:534 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 21:41:49:735 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 21:41:49:938 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 21:41:50:355 conn_memoria/(269250:269250): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 21:41:50:356 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 21:41:50:558 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 21:41:50:860 conn_memoria/(269250:269250): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:41:50:860 conn_memoria/(269250:269250): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:48:23:999 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 21:48:24:201 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 21:48:24:403 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 21:48:24:605 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 21:48:24:807 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 21:48:25:223 conn_memoria/(269250:269250): PID: 2 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 21:48:25:224 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 21:48:25:425 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 21:48:25:727 conn_memoria/(269250:269250): PID: 2 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:48:25:728 conn_memoria/(269250:269250): PID: 2 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:59:55:117 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 21:59:55:318 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 21:59:55:520 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 21:59:55:727 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 21:59:55:929 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 21:59:56:349 conn_memoria/(282026:282026): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 21:59:56:350 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 21:59:56:551 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 21:59:56:853 conn_memoria/(282026:282026): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:59:56:854 conn_memoria/(282026:282026): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:13:06:384 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 22:13:06:586 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 22:13:06:788 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 22:13:06:990 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 22:13:07:191 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 22:13:07:598 conn_memoria/(289120:289120): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 22:13:07:598 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 22:13:07:800 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 22:13:08:103 conn_memoria/(289120:289120): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:13:08:104 conn_memoria/(289120:289120): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:28:51:988 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 22:28:52:193 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 22:28:52:404 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 22:28:52:606 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 22:28:52:808 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 22:28:53:230 conn_memoria/(296886:296886): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 22:28:53:232 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 22:28:53:433 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 22:28:53:739 conn_memoria/(296886:296886): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:28:53:743 conn_memoria/(296886:296886): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:42:17:551 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 22:42:17:754 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 22:42:17:956 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 22:42:18:161 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 22:42:18:362 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 22:42:18:785 conn_memoria/(303937:303937): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 22:42:18:785 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 22:42:18:986 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 22:42:19:305 conn_memoria/(303937:303937): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:42:19:308 conn_memoria/(303937:303937): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:51:49:351 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 22:51:49:554 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 22:51:49:756 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 22:51:49:959 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 22:51:50:161 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 22:51:50:575 conn_memoria/(308364:308364): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 22:51:50:575 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 22:51:50:777 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 22:51:51:080 conn_memoria/(308364:308364): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 22:51:51:081 conn_memoria/(308364:308364): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:03:11:178 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 23:03:11:381 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 23:03:11:582 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 23:03:11:784 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 23:03:11:989 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 23:03:12:399 conn_memoria/(316979:316979): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 23:03:12:400 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 23:03:12:602 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 23:03:12:904 conn_memoria/(316979:316979): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:03:12:905 conn_memoria/(316979:316979): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:15:04:981 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 23:15:05:182 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 23:15:05:383 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 23:15:05:586 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 23:15:05:791 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 23:15:06:212 conn_memoria/(324157:324157): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 23:15:06:213 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 23:15:06:414 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 23:15:06:718 conn_memoria/(324157:324157): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:15:06:719 conn_memoria/(324157:324157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:27:45:390 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 23:27:45:592 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 23:27:45:796 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 23:27:45:998 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 23:27:46:200 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 23:27:46:617 conn_memoria/(331712:331712): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 23:27:46:618 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 23:27:46:820 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 23:27:47:122 conn_memoria/(331712:331712): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:27:47:123 conn_memoria/(331712:331712): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:37:33:519 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 23:37:33:720 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 23:37:33:922 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 23:37:34:124 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 23:37:34:330 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 23:37:34:754 conn_memoria/(337157:337157): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 23:37:34:756 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 23:37:34:965 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 23:37:35:272 conn_memoria/(337157:337157): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 23:37:35:272 conn_memoria/(337157:337157): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:11:52:761 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 00:11:52:967 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 00:11:53:172 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 00:11:53:378 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 00:11:53:581 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 00:11:54:014 conn_memoria/(355783:355783): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 00:11:54:017 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 00:11:54:224 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 00:11:54:531 conn_memoria/(355783:355783): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:11:54:535 conn_memoria/(355783:355783): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:17:04:049 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 00:17:04:253 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 00:17:04:461 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 00:17:04:662 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 00:17:04:867 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 00:17:05:299 conn_memoria/(359494:359494): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 00:17:05:299 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 00:17:05:507 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 00:17:05:824 conn_memoria/(359494:359494): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:17:05:826 conn_memoria/(359494:359494): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:17:33:458 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 00:17:33:667 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 00:17:33:870 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 00:17:34:073 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 00:17:34:277 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 00:17:34:691 conn_memoria/(359494:359494): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: ��/�"350 e
+[INFO] 00:17:34:692 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: ��/�"350 e
+[INFO] 00:17:34:901 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 00:17:35:208 conn_memoria/(359494:359494): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: INICIAR_P
+OCESO scr
+pts_memor
+a/FS_1
+���
+[INFO] 00:17:35:212 conn_memoria/(359494:359494): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: INICIAR_P
+OCESO scr
+pts_memor
+a/FS_1
+���
+[INFO] 00:31:40:612 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 00:31:40:819 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 00:31:41:034 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 00:31:41:245 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 00:31:41:451 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 00:31:41:880 conn_memoria/(367956:367956): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 00:31:41:880 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 00:31:42:081 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 00:31:42:391 conn_memoria/(367956:367956): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:31:42:394 conn_memoria/(367956:367956): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:44:09:671 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 00:44:09:873 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 00:44:10:080 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 00:44:10:291 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 00:44:10:498 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 00:44:10:919 conn_memoria/(375275:375275): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 00:44:10:923 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 00:44:11:130 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 00:44:11:433 conn_memoria/(375275:375275): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:44:11:434 conn_memoria/(375275:375275): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:54:16:357 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 00:54:16:565 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 00:54:16:770 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 00:54:16:981 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 00:54:17:188 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 00:54:17:632 conn_memoria/(381764:381764): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 00:54:17:633 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 00:54:17:839 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 00:54:18:145 conn_memoria/(381764:381764): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 00:54:18:150 conn_memoria/(381764:381764): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:13:50:775 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 01:13:50:978 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 01:13:51:182 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 01:13:51:386 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 01:13:51:588 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 01:13:51:997 conn_memoria/(392331:392331): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 01:13:51:997 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 01:13:52:199 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 01:13:52:504 conn_memoria/(392331:392331): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:13:52:506 conn_memoria/(392331:392331): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:17:13:520 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 01:17:13:722 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 01:17:13:924 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 01:17:14:127 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 01:17:14:333 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 01:17:14:748 conn_memoria/(394974:394974): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 01:17:14:749 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 01:17:14:951 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 01:17:15:259 conn_memoria/(394974:394974): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:17:15:275 conn_memoria/(394974:394974): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:32:10:789 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 01:32:10:991 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 01:32:11:193 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 01:32:11:396 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 01:32:11:603 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 01:32:12:027 conn_memoria/(402072:402072): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 01:32:12:028 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 01:32:12:231 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 01:32:12:535 conn_memoria/(402072:402072): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:32:12:537 conn_memoria/(402072:402072): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:59:55:926 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 01:59:56:127 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 01:59:56:328 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 01:59:56:549 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 01:59:56:759 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 02:00:02:461 conn_memoria/(416407:416407): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 02:00:02:465 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 02:00:02:674 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 02:00:04:531 conn_memoria/(416407:416407): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:00:04:548 conn_memoria/(416407:416407): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:07:57:369 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 02:07:57:571 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 02:07:57:773 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 02:07:57:978 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 02:07:58:181 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 02:08:02:143 conn_memoria/(420914:420914): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 02:08:02:146 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 02:08:02:353 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 02:08:04:446 conn_memoria/(420914:420914): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:08:04:446 conn_memoria/(420914:420914): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:25:10:883 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 02:25:11:084 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 02:25:11:288 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 02:25:11:490 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 02:25:11:693 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 02:26:41:608 conn_memoria/(430302:430302): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 02:26:41:608 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 02:26:41:810 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 02:26:44:056 conn_memoria/(430302:430302): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:26:44:061 conn_memoria/(430302:430302): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:45:53:064 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 02:45:53:266 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 02:45:53:468 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 02:45:53:672 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 02:45:53:873 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 02:45:54:299 conn_memoria/(440034:440034): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 02:45:54:300 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 02:45:54:501 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 02:45:54:804 conn_memoria/(440034:440034): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:45:54:805 conn_memoria/(440034:440034): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:53:27:870 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 02:53:28:072 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 02:53:28:273 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 02:53:28:476 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 02:53:28:676 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 02:53:29:082 conn_memoria/(445154:445154): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 02:53:29:082 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 02:53:29:283 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 02:53:29:585 conn_memoria/(445154:445154): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:53:29:587 conn_memoria/(445154:445154): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 03:01:24:594 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 03:01:24:796 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 03:01:24:997 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 03:01:25:203 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 03:01:25:404 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 03:01:25:812 conn_memoria/(449519:449519): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 03:01:25:812 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 03:01:26:014 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 03:01:26:316 conn_memoria/(449519:449519): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 03:01:26:317 conn_memoria/(449519:449519): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:14:25:257 conn_memoria/(31760:31760): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:14:25:465 conn_memoria/(31760:31760): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:14:25:670 conn_memoria/(31760:31760): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:14:25:878 conn_memoria/(31760:31760): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:14:26:088 conn_memoria/(31760:31760): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:29:32:245 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:29:32:446 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:29:32:653 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:29:32:856 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:29:33:059 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:29:33:480 conn_memoria/(37135:37135): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:29:33:480 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:29:33:685 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:29:33:990 conn_memoria/(37135:37135): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:29:33:992 conn_memoria/(37135:37135): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:40:03:093 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:40:03:295 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:40:03:497 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:40:03:698 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:40:03:902 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:40:04:332 conn_memoria/(40956:40956): PID: 1 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:40:04:333 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:40:04:534 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:40:04:836 conn_memoria/(40956:40956): PID: 1 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:40:04:838 conn_memoria/(40956:40956): PID: 1 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 02:43:04:049 conn_memoria/(151947:151947): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: Y
+[INFO] 02:43:04:151 conn_memoria/(151947:151947): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: Y
+[INFO] 03:03:01:476 conn_memoria/(160152:160152): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: Y
+[INFO] 03:03:01:578 conn_memoria/(160152:160152): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: Y
+[INFO] 20:09:55:681 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 20:09:55:889 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 20:09:56:090 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 20:09:56:297 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 20:09:56:503 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 20:09:56:922 conn_memoria/(12256:12256): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 20:09:56:922 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 20:09:57:124 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 20:09:57:426 conn_memoria/(12256:12256): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 20:09:57:427 conn_memoria/(12256:12256): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:12:19:759 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 21:12:19:964 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 21:12:20:165 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 21:12:20:372 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 21:12:20:576 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 21:12:20:990 conn_memoria/(83599:83599): PID: 0 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 21:12:20:991 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 21:12:21:193 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 21:12:21:495 conn_memoria/(83599:83599): PID: 0 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 21:12:21:503 conn_memoria/(83599:83599): PID: 0 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 18:02:08:045 conn_memoria/(17656:17656): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: Y
+[INFO] 18:02:08:152 conn_memoria/(17656:17656): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: Y
+[INFO] 18:03:19:466 conn_memoria/(17656:17656): PID: 1 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: Y
+[INFO] 18:03:19:567 conn_memoria/(17656:17656): PID: 1 - Acción: LEER - Dirección Física: 2 - Valor: Y
+[INFO] 18:04:34:462 conn_memoria/(17656:17656): PID: 2 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: Y
+[INFO] 18:04:34:563 conn_memoria/(17656:17656): PID: 2 - Acción: LEER - Dirección Física: 2 - Valor: Y
+[INFO] 20:25:04:727 conn_memoria/(67898:67898): PID: 0 - Acción: ESCRIBIR - Dirección Física: 2 - Valor: Y
+[INFO] 20:25:04:830 conn_memoria/(67898:67898): PID: 0 - Acción: LEER - Dirección Física: 2 - Valor: Y

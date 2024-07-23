@@ -25,7 +25,7 @@ void iniciar_espacio_usuario()
 void iniciar_marcos()
 {
     tam_pagina = atoi(obtenerValorConfig("memoria.config", "TAM_PAGINA"));
-    int cant_marcos = tam_memoria / tam_pagina;
+    float cant_marcos = (float)tam_memoria / tam_pagina;
 
     tabla_marcos = list_create();
 
