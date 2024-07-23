@@ -10,6 +10,7 @@ pthread_mutex_t mutexPID;
 pthread_mutex_t mutexColaNEW;
 pthread_mutex_t mutexMSGMemoria;
 sem_t grado_multiprogramacion;
+sem_t hay_procesos_en_new;
 
 t_queue *cola_de_new;
 t_queue *cola_de_exit;
@@ -19,12 +20,16 @@ t_log *kernel_loger_lp;
 void inicarPlanificadorLargoPLazo(int socketMemoria, char *path_config)
 {
     sem_init(&grado_multiprogramacion, 0, atoi(obtenerValorConfig(path_config, "GRADO_MULTIPROGRAMACION")));
+    sem_init(&hay_procesos_en_new, 0, 0);
     cola_de_exit = queue_create();
     cola_de_new = queue_create();
     socketBidireccionalMemoria = malloc(4);
     *socketBidireccionalMemoria = socketMemoria;
     kernel_loger_lp = log_create("logs/kernel_info.log", "plani_lp", 1, LOG_LEVEL_INFO);
     iniciarMutex();
+   pthread_t hilo_enviar_procesos_a_ready;
+  pthread_create(&hilo_enviar_procesos_a_ready, NULL, agregarNuevoProcesoReady, NULL);
+  pthread_detach(hilo_enviar_procesos_a_ready);
 }
 
 void nuevoProceso(char *path_instrucciones)
@@ -32,6 +37,7 @@ void nuevoProceso(char *path_instrucciones)
     PcbGuardarEnNEW *nuevo_proceso = (PcbGuardarEnNEW *)malloc(sizeof(PcbGuardarEnNEW));
     nuevo_proceso->proceso = crearProcesoEstadoNEW();
     nuevo_proceso->path_instrucciones = path_instrucciones;
+    printf("%s", nuevo_proceso->path_instrucciones);
     mensaje_nuevo_proceso(nuevo_proceso->proceso->pid);
     agregarProcesoColaNew(nuevo_proceso);
 }
@@ -56,24 +62,29 @@ void agregarProcesoColaNew(PcbGuardarEnNEW *proceso)
     pthread_mutex_unlock(&mutexColaNEW);
 }
 
-void *PLPNuevoProceso(void *ptr) // es una funcion de un hilo
+void PLPNuevoProceso(char *path_instrucciones) 
 {
-    char *path_instrucciones = (char *)ptr;
+	printf("%s", path_instrucciones);
     nuevoProceso(path_instrucciones);
-    agregarNuevoProcesoReady();
-    pthread_exit(NULL);
+   sem_post(&hay_procesos_en_new);
 }
 
-void agregarNuevoProcesoReady()
+void *agregarNuevoProcesoReady(void *ptr)
 {
-    if (!queue_is_empty(cola_de_new))
-    {
+printf("%s", "HOLAAAAAA" );
+while(1){
+    printf("%s", "HOLAAAA");
+    sem_wait(&hay_procesos_en_new);
+    
         PcbGuardarEnNEW *nuevo_proceso = sacarProcesoDeNew();
 
         int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
-
+	printf("%s", "el path en el hilo es:  ");
+	printf("%s", nuevo_proceso->path_instrucciones);
         if (resultadoMemoria > 0)
             agregarProcesoColaReady(nuevo_proceso->proceso);
+	else
+	log_error(kernel_loger_lp, "Error en la memoria");
     }
 }
 
@@ -104,8 +115,8 @@ int esperarRespuesteDeMemoria()
 
 PcbGuardarEnNEW *sacarProcesoDeNew()
 {
-    pthread_mutex_lock(&mutexColaNEW);
     sem_wait(&grado_multiprogramacion);
+    pthread_mutex_lock(&mutexColaNEW);
     PcbGuardarEnNEW *nuevo_proceso = queue_pop(cola_de_new);
     pthread_mutex_unlock(&mutexColaNEW);
 

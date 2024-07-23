@@ -125,3 +125,2380 @@
 [INFO] 01:57:44:075 plani_cp/(67213:67220): PID: 3 - Estado anterior: Ready - Estado actual: Executing
 [INFO] 01:57:44:176 plani_lp/(67213:67220): Finaliza el proceso 3 - Motivo: SUCCESS
 [ERROR] 01:57:45:855 plani_cp/(67213:67213): Comando no reconocido
+[ERROR] 13:00:47:225 plani_cp/(2887:2887): Comando no reconocido
+[ERROR] 13:01:35:849 plani_cp/(2887:2887): Comando no reconocido
+[INFO] 13:03:49:258 plani_lp/(2887:2918): Se crea el proceso 1 en NEW
+[INFO] 13:03:49:259 plani_cp/(2887:2918): Cola Ready: [ 1 ]
+[INFO] 13:03:49:259 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:03:49:572 plani_cp/(2887:2889): PID: 1 - Bloqueado por: FS
+[INFO] 13:03:49:572 plani_cp/(2887:2889): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:03:49:575 plani_cp/(2887:2920): Cola Ready: [ 1 ]
+[INFO] 13:03:49:577 plani_cp/(2887:2920): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:03:49:578 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:03:49:684 plani_cp/(2887:2889): PID: 1 - Bloqueado por: FS
+[INFO] 13:03:49:684 plani_cp/(2887:2889): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:03:49:694 plani_cp/(2887:2922): Cola Ready: [ 1 ]
+[INFO] 13:03:49:695 plani_cp/(2887:2922): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:03:49:696 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:03:49:801 plani_cp/(2887:2889): PID: 1 - Bloqueado por: FS
+[INFO] 13:03:49:802 plani_cp/(2887:2889): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:03:57:310 plani_cp/(2887:2924): Cola Ready: [ 1 ]
+[INFO] 13:03:57:310 plani_cp/(2887:2924): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:03:57:310 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:03:57:415 plani_cp/(2887:2889): PID: 1 - Bloqueado por: FS
+[INFO] 13:03:57:415 plani_cp/(2887:2889): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:04:04:926 plani_cp/(2887:2926): Cola Ready: [ 1 ]
+[INFO] 13:04:04:926 plani_cp/(2887:2926): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:04:04:927 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:04:05:450 plani_cp/(2887:2889): PID: 1 - Bloqueado por: TECLADO
+[INFO] 13:04:05:450 plani_cp/(2887:2889): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:04:37:290 plani_cp/(2887:2928): Cola Ready: [ 1 ]
+[INFO] 13:04:37:291 plani_cp/(2887:2928): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:04:37:291 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:04:38:327 plani_cp/(2887:2889): PID: 1 - Bloqueado por: FS
+[INFO] 13:04:38:328 plani_cp/(2887:2889): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:04:38:338 plani_cp/(2887:2930): Cola Ready: [ 1 ]
+[INFO] 13:04:38:339 plani_cp/(2887:2930): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:04:38:340 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:04:39:403 plani_cp/(2887:2889): PID: 1 - Bloqueado por: FS
+[INFO] 13:04:39:403 plani_cp/(2887:2889): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:04:39:413 plani_cp/(2887:2932): Cola Ready: [ 1 ]
+[INFO] 13:04:39:413 plani_cp/(2887:2932): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:04:39:413 plani_cp/(2887:2889): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:04:39:518 plani_lp/(2887:2889): Finaliza el proceso 1 - Motivo: SUCCESS
+[ERROR] 13:04:41:098 plani_cp/(2887:2887): Comando no reconocido
+[ERROR] 13:10:46:570 plani_cp/(2937:2937): Comando no reconocido
+[INFO] 13:11:26:506 plani_lp/(2937:2954): Se crea el proceso 1 en NEW
+[INFO] 13:11:26:508 plani_cp/(2937:2954): Cola Ready: [ 1 ]
+[INFO] 13:11:26:508 plani_cp/(2937:2939): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:11:27:041 plani_cp/(2937:2939): PID: 1 - Bloqueado por: FS
+[INFO] 13:11:27:041 plani_cp/(2937:2939): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:11:27:053 plani_cp/(2937:2956): Cola Ready: [ 1 ]
+[INFO] 13:11:27:054 plani_cp/(2937:2956): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:11:27:055 plani_cp/(2937:2939): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:11:27:167 plani_cp/(2937:2939): PID: 1 - Bloqueado por: MONITOR
+[INFO] 13:11:27:168 plani_cp/(2937:2939): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:11:27:180 plani_cp/(2937:2958): Cola Ready: [ 1 ]
+[INFO] 13:11:27:181 plani_cp/(2937:2958): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:11:27:182 plani_cp/(2937:2939): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:11:27:301 plani_cp/(2937:2939): PID: 1 - Bloqueado por: FS
+[INFO] 13:11:27:301 plani_cp/(2937:2939): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:11:27:315 plani_cp/(2937:2960): Cola Ready: [ 1 ]
+[INFO] 13:11:27:317 plani_cp/(2937:2960): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:11:27:318 plani_cp/(2937:2939): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:11:27:440 plani_cp/(2937:2939): PID: 1 - Bloqueado por: MONITOR
+[INFO] 13:11:27:440 plani_cp/(2937:2939): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:11:27:451 plani_cp/(2937:2962): Cola Ready: [ 1 ]
+[INFO] 13:11:27:451 plani_cp/(2937:2962): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:11:27:451 plani_cp/(2937:2939): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:11:27:557 plani_lp/(2937:2939): Finaliza el proceso 1 - Motivo: SUCCESS
+[ERROR] 13:11:40:026 plani_cp/(2937:2937): Comando no reconocido
+[ERROR] 13:24:52:436 plani_cp/(3054:3054): Comando no reconocido
+[ERROR] 13:25:00:444 plani_cp/(3054:3054): Comando no reconocido
+[INFO] 13:26:20:981 plani_lp/(3054:3076): Se crea el proceso 1 en NEW
+[INFO] 13:26:20:982 plani_lp/(3054:3077): Se crea el proceso 2 en NEW
+[INFO] 13:26:20:983 plani_lp/(3054:3078): Se crea el proceso 3 en NEW
+[INFO] 13:26:20:984 plani_lp/(3054:3079): Se crea el proceso 4 en NEW
+[ERROR] 13:29:12:084 plani_cp/(3101:3101): Comando no reconocido
+[ERROR] 13:29:17:524 plani_cp/(3101:3101): Comando no reconocido
+[INFO] 13:30:07:637 plani_lp/(3101:3121): Se crea el proceso 1 en NEW
+[INFO] 13:30:07:638 plani_cp/(3101:3121): Cola Ready: [ 1 ]
+[INFO] 13:30:07:638 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:07:644 plani_lp/(3101:3123): Se crea el proceso 2 en NEW
+[INFO] 13:30:07:645 plani_cp/(3101:3123): Cola Ready: [ 2 ]
+[INFO] 13:30:07:648 plani_lp/(3101:3124): Se crea el proceso 3 en NEW
+[INFO] 13:30:07:649 plani_cp/(3101:3124): Cola Ready: [ 2, 3 ]
+[INFO] 13:30:07:652 plani_lp/(3101:3125): Se crea el proceso 4 en NEW
+[INFO] 13:30:08:154 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:08:154 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:08:154 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:08:155 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:08:670 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:08:671 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:08:671 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:08:671 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:09:189 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:09:190 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:09:190 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:09:190 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:09:711 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:09:711 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:09:712 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:09:712 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:10:225 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:10:226 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:10:226 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:10:226 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:10:739 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:10:739 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:10:739 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:10:740 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:11:250 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:11:250 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:11:250 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:11:250 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:11:767 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:11:767 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:11:768 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:11:768 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:12:293 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:12:293 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:12:294 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:12:294 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:12:809 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:12:810 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:12:810 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:12:811 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:13:320 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:13:321 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:13:321 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:13:321 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:13:839 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:13:839 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:13:839 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:13:840 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:14:350 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:14:351 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:14:351 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:14:351 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:14:865 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:14:865 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:14:865 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:14:866 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:15:377 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:15:377 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:15:377 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:15:377 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:15:888 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:15:888 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:15:888 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:15:889 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:16:404 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:16:404 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:16:404 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:16:405 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:16:919 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:16:919 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:16:919 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:16:920 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:17:432 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:17:432 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:17:433 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:17:433 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:17:943 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:17:943 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:17:944 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:17:944 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:18:456 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:18:456 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:18:456 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:18:457 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:18:965 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:18:966 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:18:966 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:18:966 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:19:483 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:19:483 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:19:483 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:19:484 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:20:005 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:20:005 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:20:005 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:20:005 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:20:518 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:20:518 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:20:518 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:20:518 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:21:030 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:21:030 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:21:031 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:21:031 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:21:546 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:21:546 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:21:546 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:21:546 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:22:056 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:22:056 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:22:056 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:22:057 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:22:565 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:22:565 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:22:565 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:22:566 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:23:083 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:23:084 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:23:084 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:23:084 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:23:593 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:23:594 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:23:594 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:23:594 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:24:108 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:24:108 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:24:108 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:24:109 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:24:621 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:24:622 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:24:622 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:24:622 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:25:135 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:25:135 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:25:136 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:25:136 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:25:649 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:25:649 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:25:650 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:25:650 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:26:165 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:26:165 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:26:165 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:26:166 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:26:677 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:26:677 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:26:677 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:26:678 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:27:186 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:27:186 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:27:186 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:27:187 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:27:699 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:27:699 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:27:699 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:27:700 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:28:213 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:28:213 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:28:213 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:28:214 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:28:726 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:28:726 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:28:726 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:28:727 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:29:239 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:29:239 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:29:240 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:29:240 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:29:751 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:29:751 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:29:751 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:29:751 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:30:265 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:30:265 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:30:265 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:30:266 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:30:779 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:30:780 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:30:780 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:30:780 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:31:292 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:31:293 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:31:293 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:31:293 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:31:803 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:31:803 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:31:804 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:31:804 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:32:316 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:32:316 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:32:317 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:32:317 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:32:832 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:32:833 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:32:833 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:32:833 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:33:349 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:33:349 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:33:350 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:33:350 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:33:865 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:33:865 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:33:866 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:33:866 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:34:379 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:34:379 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:34:379 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:34:380 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:34:892 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:34:893 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:34:893 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:34:893 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:35:407 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:35:407 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:35:408 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:35:408 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:35:919 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:35:919 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:35:920 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:35:920 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:36:428 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:36:429 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:36:429 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:36:429 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:36:942 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:36:943 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:36:943 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:36:943 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:37:452 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:37:452 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:37:452 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:37:452 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:37:977 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:37:977 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:37:977 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:37:978 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:38:488 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:38:488 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:38:489 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:38:489 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:39:002 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:39:003 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:39:003 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:39:003 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:39:516 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:39:516 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:39:517 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:39:517 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:40:030 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:40:030 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:40:030 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:40:031 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:40:545 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:40:545 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:40:545 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:40:546 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:41:063 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:41:063 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:41:064 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:41:064 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:41:578 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:41:578 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:41:578 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:41:578 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:42:089 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:42:089 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:42:090 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:42:090 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:42:602 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:42:603 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:42:603 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:42:603 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:43:114 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:43:115 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:43:115 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:43:115 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:43:628 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:43:629 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:43:629 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:43:629 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:44:143 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:44:143 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:44:144 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:44:144 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:44:658 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:44:658 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:44:658 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:44:659 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:45:168 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:45:168 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:45:169 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:45:169 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:45:681 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:45:681 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:45:682 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:45:682 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:46:195 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:46:195 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:46:195 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:46:195 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:46:710 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:46:710 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:46:710 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:46:710 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:47:223 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:47:224 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:47:224 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:47:224 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:47:736 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:47:737 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:47:737 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:47:737 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:48:257 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:48:257 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:48:258 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:48:258 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:48:783 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:48:784 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:48:784 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:48:784 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:49:304 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:49:305 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:49:305 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:49:305 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:49:817 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:49:817 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:49:818 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:49:818 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:50:327 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:50:327 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:50:327 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:50:328 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:50:841 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:50:842 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:50:842 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:50:842 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:51:354 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:51:354 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:51:355 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:51:355 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:51:867 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:51:867 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:51:868 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:51:868 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:52:381 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:52:381 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:52:382 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:52:382 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:52:910 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:52:910 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:52:910 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:52:911 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:53:425 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:53:425 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:53:425 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:53:426 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:53:938 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:53:938 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:53:938 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:53:939 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:54:451 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:54:452 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:54:452 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:54:452 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:54:961 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:54:962 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:54:962 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:54:962 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:55:476 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:55:476 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:55:477 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:55:477 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:55:986 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:55:986 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:55:986 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:55:987 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:56:504 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:56:504 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:56:505 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:56:505 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:57:019 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:57:019 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:57:020 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:57:020 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:57:532 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:57:533 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:57:533 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:57:534 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:58:060 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:58:060 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:58:061 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:58:061 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:58:574 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:30:58:574 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:30:58:575 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:58:575 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:59:093 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:30:59:094 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:30:59:094 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:59:095 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:30:59:605 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:30:59:606 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:30:59:606 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:30:59:606 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:00:119 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:00:119 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:00:119 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:00:120 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:00:649 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:00:649 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:00:650 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:00:650 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:01:173 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:01:173 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:01:174 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:01:174 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:01:702 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:01:702 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:01:702 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:01:703 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:02:226 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:02:226 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:02:226 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:02:226 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:02:747 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:02:747 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:02:748 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:02:748 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:03:270 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:03:270 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:03:271 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:03:271 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:03:787 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:03:788 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:03:788 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:03:788 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:04:296 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:04:297 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:04:297 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:04:297 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:04:810 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:04:810 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:04:810 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:04:810 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:05:322 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:05:322 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:05:322 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:05:323 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:05:839 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:05:839 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:05:839 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:05:839 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:06:352 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:06:353 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:06:353 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:06:353 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:06:863 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:06:863 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:06:864 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:06:864 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:07:377 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:07:377 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:07:377 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:07:378 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:07:895 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:07:895 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:07:895 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:07:896 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:08:412 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:08:412 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:08:412 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:08:412 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:08:923 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:08:923 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:08:924 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:08:924 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:09:437 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:09:437 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:09:438 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:09:438 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:09:949 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:09:950 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:09:950 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:09:950 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:10:463 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:10:464 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:10:464 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:10:464 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:10:984 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:10:984 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:10:984 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:10:985 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:11:498 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:11:498 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:11:498 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:11:499 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:12:011 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:12:011 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:12:012 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:12:012 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:12:526 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:12:527 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:12:527 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:12:527 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:13:042 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:13:043 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:13:043 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:13:043 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:13:555 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:13:555 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:13:555 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:13:555 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:14:068 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:14:069 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:14:069 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:14:069 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:14:578 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:14:578 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:14:578 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:14:579 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:15:092 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:15:092 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:15:093 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:15:093 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:15:604 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:15:604 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:15:605 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:15:605 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:16:119 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:16:120 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:16:120 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:16:120 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:16:632 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:16:633 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:16:633 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:16:633 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:17:145 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:17:145 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:17:145 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:17:145 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:17:657 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:17:658 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:17:658 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:17:658 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:18:168 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:18:168 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:18:169 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:18:169 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:18:681 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:18:681 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:18:681 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:18:682 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:19:211 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:19:211 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:19:211 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:19:212 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:19:734 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:19:734 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:19:735 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:19:735 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:20:249 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:20:249 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:20:250 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:20:250 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:20:778 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:20:779 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:20:779 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:20:779 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:21:311 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:21:311 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:21:311 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:21:311 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:21:830 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:21:831 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:21:831 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:21:831 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:22:347 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:22:347 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:22:348 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:22:348 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:22:857 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:22:857 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:22:858 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:22:858 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:23:371 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:23:372 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:23:372 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:23:372 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:23:884 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:23:884 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:23:885 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:23:886 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:24:397 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:24:398 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:24:398 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:24:398 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:24:909 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:24:910 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:24:910 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:24:910 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:25:420 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:25:420 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:25:420 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:25:421 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:25:932 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:25:932 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:25:932 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:25:932 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:26:447 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:26:447 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:26:447 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:26:448 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:26:960 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:26:960 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:26:960 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:26:960 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:27:470 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:27:470 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:27:470 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:27:470 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:27:982 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:27:982 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:27:983 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:27:983 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:28:502 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:28:502 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:28:502 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:28:503 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:29:017 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:29:017 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:29:018 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:29:018 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:29:532 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:29:532 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:29:532 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:29:532 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:30:044 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:30:045 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:30:045 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:30:045 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:30:558 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:30:558 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:30:558 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:30:559 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:31:071 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:31:071 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:31:072 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:31:072 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:31:584 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:31:584 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:31:584 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:31:584 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:32:093 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:32:093 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:32:093 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:32:094 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:32:605 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:32:606 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:32:606 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:32:606 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:33:114 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:33:114 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:33:114 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:33:115 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:33:639 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:33:639 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:33:640 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:33:640 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:34:154 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:34:154 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:34:154 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:34:155 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:34:674 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:34:674 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:34:674 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:34:675 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:35:186 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:35:186 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:35:186 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:35:187 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:35:699 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:35:700 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:35:700 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:35:700 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:36:212 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:36:212 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:36:213 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:36:213 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:36:721 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:36:721 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:36:722 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:36:722 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:37:232 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:37:233 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:37:233 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:37:234 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:37:745 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:37:746 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:37:746 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:37:746 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:38:258 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:38:258 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:38:258 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:38:258 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:38:771 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:38:771 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:38:771 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:38:771 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:39:281 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:39:282 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:39:282 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:39:282 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:39:802 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:39:802 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:39:802 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:39:803 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:40:324 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:40:325 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:40:325 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:40:325 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:40:835 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:40:835 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:40:835 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:40:835 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:41:343 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:41:344 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:41:344 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:41:344 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:41:863 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:41:863 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:41:863 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:41:864 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:42:383 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:42:383 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:42:383 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:42:384 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:42:909 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:42:909 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:42:909 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:42:910 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:43:424 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:43:424 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:43:425 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:43:425 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:43:936 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:43:936 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:43:936 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:43:937 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:44:455 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:44:455 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:44:455 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:44:455 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:44:973 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:44:973 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:44:973 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:44:974 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:45:484 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:45:484 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:45:485 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:45:485 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:45:991 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:45:992 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:45:992 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:45:992 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:46:506 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:46:506 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:46:506 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:46:507 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:47:017 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:47:018 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:47:018 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:47:018 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:47:531 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:47:531 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:47:532 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:47:532 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:48:042 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:48:043 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:48:043 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:48:043 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:48:557 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:48:558 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:48:558 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:48:558 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:49:079 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:49:079 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:49:079 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:49:080 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:49:592 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:49:593 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:49:593 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:49:593 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:50:108 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:50:109 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:50:109 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:50:109 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:50:625 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:50:625 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:50:626 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:50:626 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:51:138 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:51:138 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:51:139 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:51:139 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:51:653 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:51:653 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:51:653 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:51:653 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:52:174 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:52:174 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:52:175 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:52:175 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:52:688 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:52:688 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:52:688 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:52:688 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:53:212 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:53:212 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:53:212 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:53:213 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:53:726 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:53:726 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:53:726 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:53:727 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:54:241 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:54:241 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:54:242 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:54:242 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:54:754 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:54:755 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:54:755 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:54:755 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:55:264 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:55:264 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:55:264 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:55:265 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:55:778 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:55:778 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:55:779 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:55:779 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:56:305 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:56:305 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:56:305 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:56:305 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:56:825 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:56:826 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:56:826 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:56:826 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:57:344 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:57:345 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:57:345 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:57:345 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:57:866 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:57:866 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:57:867 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:57:867 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:58:379 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:58:380 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:58:380 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:58:380 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:58:896 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:31:58:896 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:31:58:897 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:58:897 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:59:407 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:31:59:408 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:31:59:408 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:59:408 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:31:59:920 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:31:59:921 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:31:59:921 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:31:59:921 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:00:434 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:00:435 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:00:435 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:00:435 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:00:950 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:00:951 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:00:951 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:00:951 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:01:465 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:01:465 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:01:466 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:01:466 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:01:977 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:01:977 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:01:977 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:01:977 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:02:494 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:02:494 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:02:494 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:02:495 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:03:005 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:03:006 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:03:006 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:03:006 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:03:520 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:03:520 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:03:520 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:03:520 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:04:034 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:04:034 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:04:034 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:04:034 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:04:547 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:04:547 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:04:547 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:04:547 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:05:074 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:05:074 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:05:074 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:05:075 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:05:585 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:05:585 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:05:585 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:05:585 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:06:103 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:06:103 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:06:104 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:06:104 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:06:617 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:06:618 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:06:618 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:06:618 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:07:129 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:07:130 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:07:130 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:07:130 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:07:643 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:07:643 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:07:643 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:07:644 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:08:157 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:08:158 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:08:158 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:08:158 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:08:674 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:08:674 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:08:674 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:08:674 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:09:186 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:09:186 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:09:186 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:09:186 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:09:700 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:09:700 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:09:701 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:09:701 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:10:210 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:10:210 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:10:210 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:10:211 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:10:723 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:10:723 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:10:723 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:10:724 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:11:238 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:11:239 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:11:239 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:11:239 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:11:753 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:11:753 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:11:753 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:11:754 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:12:266 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:12:267 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:12:267 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:12:267 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:12:780 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:12:780 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:12:780 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:12:780 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:13:298 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:13:298 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:13:298 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:13:298 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:13:807 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:13:808 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:13:808 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:13:809 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:14:322 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:14:322 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:14:322 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:14:323 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:14:835 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:14:835 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:14:835 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:14:835 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:15:347 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:15:347 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:15:348 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:15:348 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:15:873 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:15:873 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:15:873 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:15:874 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:16:405 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:16:406 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:16:406 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:16:406 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:16:926 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:16:927 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:16:927 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:16:927 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:17:444 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:17:444 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:17:445 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:17:445 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:17:956 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:17:957 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:17:957 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:17:957 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:18:466 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:18:467 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:18:467 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:18:467 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:18:979 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:18:979 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:18:979 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:18:980 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:19:492 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:19:493 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:19:493 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:19:493 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:20:006 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:20:006 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:20:006 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:20:007 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:20:519 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:20:519 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:20:519 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:20:520 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:21:029 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:21:030 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:21:030 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:21:031 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:21:545 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:21:546 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:21:546 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:21:547 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:22:059 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:22:059 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:22:059 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:22:060 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:22:584 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:22:584 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:22:584 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:22:585 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:23:093 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:23:093 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:23:093 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:23:094 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:23:609 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:23:609 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:23:609 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:23:609 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:24:122 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:24:122 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:24:122 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:24:122 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:24:635 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:24:635 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:24:636 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:24:636 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:25:153 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:25:153 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:25:153 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:25:153 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:25:665 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:25:665 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:25:665 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:25:665 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:26:178 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:26:178 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:26:178 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:26:179 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:26:690 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:26:690 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:26:691 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:26:691 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:27:207 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:27:207 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:27:207 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:27:207 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:27:717 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:27:717 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:27:717 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:27:717 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:28:231 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:28:231 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:28:231 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:28:232 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:28:740 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:28:741 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:28:741 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:28:741 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:29:255 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:29:255 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:29:255 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:29:255 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:29:768 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:29:769 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:29:769 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:29:769 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:30:282 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:30:282 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:30:282 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:30:283 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:30:794 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:30:794 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:30:795 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:30:795 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:31:308 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:31:308 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:31:308 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:31:309 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:31:821 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:31:821 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:31:821 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:31:822 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:32:333 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:32:333 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:32:333 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:32:334 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:32:847 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:32:847 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:32:848 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:32:848 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:33:358 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:33:358 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:33:359 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:33:359 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:33:872 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:33:872 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:33:872 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:33:872 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:34:386 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:34:387 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:34:387 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:34:387 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:34:898 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:34:898 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:34:899 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:34:899 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:35:411 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:35:411 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:35:411 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:35:412 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:35:925 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:35:926 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:35:926 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:35:926 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:36:436 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:36:436 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:36:436 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:36:437 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:36:946 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:36:946 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:36:947 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:36:947 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:37:460 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:37:461 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:37:461 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:37:461 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:37:974 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:37:974 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:37:974 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:37:974 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:38:487 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:38:487 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:38:488 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:38:488 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:39:002 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:39:002 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:39:003 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:39:003 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:39:523 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:39:524 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:39:524 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:39:524 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:40:035 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:40:035 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:40:035 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:40:036 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:40:550 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:40:551 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:40:551 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:40:551 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:41:074 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:41:074 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:41:075 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:41:075 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:41:587 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:41:587 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:41:587 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:41:588 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:42:105 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:42:105 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:42:106 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:42:106 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:42:618 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:42:618 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:42:619 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:42:619 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:43:131 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:43:131 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:43:132 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:43:132 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:43:658 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:43:658 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:43:659 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:43:659 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:44:170 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:44:170 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:44:170 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:44:170 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:44:684 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:44:684 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:44:684 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:44:685 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:45:202 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:45:202 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:45:202 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:45:202 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:45:714 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:45:714 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:45:715 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:45:715 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:46:232 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:46:233 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:46:233 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:46:233 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:46:746 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:46:746 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:46:746 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:46:746 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:47:258 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:47:258 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:47:259 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:47:259 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:47:771 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:47:772 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:47:772 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:47:772 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:48:287 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:48:287 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:48:288 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:48:288 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:48:817 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:48:817 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:48:818 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:48:818 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:49:331 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:49:331 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:49:331 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:49:331 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:49:846 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:49:846 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:49:846 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:49:847 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:50:358 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:50:358 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:50:359 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:50:359 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:50:869 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:50:869 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:50:870 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:50:870 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:51:396 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:51:397 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:51:397 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:51:397 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:51:914 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:51:914 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:51:914 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:51:914 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:52:439 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:52:439 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:52:440 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:52:440 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:52:962 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:52:962 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:52:963 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:52:963 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:53:477 plani_cp/(3101:3103): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:32:53:477 plani_cp/(3101:3103): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:32:53:477 plani_cp/(3101:3103): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:53:478 plani_cp/(3101:3103): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:53:993 plani_cp/(3101:3103): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:32:53:993 plani_cp/(3101:3103): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:32:53:993 plani_cp/(3101:3103): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:53:994 plani_cp/(3101:3103): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:32:54:506 plani_cp/(3101:3103): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:32:54:506 plani_cp/(3101:3103): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:32:54:506 plani_cp/(3101:3103): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:32:54:507 plani_cp/(3101:3103): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[ERROR] 13:36:55:349 plani_cp/(3452:3452): Comando no reconocido
+[ERROR] 13:37:23:869 plani_cp/(3452:3452): Comando no reconocido
+[INFO] 13:37:32:149 plani_lp/(3452:3472): Se crea el proceso 1 en NEW
+[INFO] 13:37:32:172 plani_cp/(3452:3472): Cola Ready: [ 1 ]
+[INFO] 13:37:32:172 plani_cp/(3452:3454): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:37:32:287 plani_cp/(3452:3454): PID: 1 - Bloqueado por: RA
+[INFO] 13:37:32:287 plani_cp/(3452:3454): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 13:37:32:287 plani_cp/(3452:3456): Ready Prioridad: [ 1 ]
+[INFO] 13:37:32:287 plani_cp/(3452:3456): PID: 1 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 13:37:32:288 plani_cp/(3452:3454): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:37:32:390 plani_cp/(3452:3454): PID: 1 - Bloqueado por: RA
+[INFO] 13:37:32:390 plani_cp/(3452:3454): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[ERROR] 13:37:39:093 plani_cp/(3452:3452): Comando no reconocido
+[ERROR] 13:38:05:549 plani_cp/(3452:3452): Comando no reconocido
+[INFO] 13:38:17:229 plani_lp/(3452:3452): Finaliza el proceso 1 - Motivo: INTERRUPTED_BY_USER
+[ERROR] 13:48:14:949 plani_cp/(3513:3513): Comando no reconocido
+[INFO] 13:48:55:158 plani_lp/(3513:3533): Se crea el proceso 1 en NEW
+[INFO] 13:48:55:160 plani_cp/(3513:3533): Cola Ready: [ 1 ]
+[INFO] 13:48:55:160 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:55:168 plani_lp/(3513:3535): Se crea el proceso 2 en NEW
+[INFO] 13:48:55:171 plani_cp/(3513:3535): Cola Ready: [ 2 ]
+[INFO] 13:48:55:176 plani_lp/(3513:3536): Se crea el proceso 3 en NEW
+[INFO] 13:48:55:178 plani_cp/(3513:3536): Cola Ready: [ 2, 3 ]
+[INFO] 13:48:55:181 plani_lp/(3513:3537): Se crea el proceso 4 en NEW
+[INFO] 13:48:55:683 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:48:55:683 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:48:55:683 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:55:683 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:56:201 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:48:56:201 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:48:56:201 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:56:201 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:56:722 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:48:56:722 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:48:56:722 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:56:723 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:57:242 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:48:57:242 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:48:57:242 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:57:243 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:57:763 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:48:57:763 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:48:57:764 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:57:764 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:58:289 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:48:58:289 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:48:58:289 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:58:290 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:58:809 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:48:58:810 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:48:58:810 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:58:810 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:59:340 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:48:59:340 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:48:59:340 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:59:341 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:48:59:863 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:48:59:863 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:48:59:863 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:48:59:864 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:00:388 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:49:00:389 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:49:00:389 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:00:389 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:00:909 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:49:00:909 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:49:00:910 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:00:910 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:01:427 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:49:01:427 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:49:01:427 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:01:428 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:01:954 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:49:01:954 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:49:01:955 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:01:955 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:02:485 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:49:02:485 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:49:02:486 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:02:486 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:03:006 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:49:03:006 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:49:03:006 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:03:007 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:03:534 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:49:03:534 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:49:03:534 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:03:534 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:04:053 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:49:04:053 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:49:04:054 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:04:054 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:04:573 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:49:04:573 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:49:04:574 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:04:574 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:05:097 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:49:05:097 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:49:05:098 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:05:098 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:05:628 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:49:05:629 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:49:05:629 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:05:629 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:06:149 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:49:06:149 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:49:06:150 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:06:150 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:06:666 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:49:06:666 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:49:06:666 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:06:666 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:07:189 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:49:07:189 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:49:07:190 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:07:190 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:07:719 plani_cp/(3513:3515): PID: 3 - Desalojado por fin de Quantum
+[INFO] 13:49:07:719 plani_cp/(3513:3515): Cola Ready: [ 1, 2, 3 ]
+[INFO] 13:49:07:719 plani_cp/(3513:3515): PID: 3 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:07:719 plani_cp/(3513:3515): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:08:239 plani_cp/(3513:3515): PID: 1 - Desalojado por fin de Quantum
+[INFO] 13:49:08:239 plani_cp/(3513:3515): Cola Ready: [ 2, 3, 1 ]
+[INFO] 13:49:08:239 plani_cp/(3513:3515): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:08:240 plani_cp/(3513:3515): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 13:49:08:759 plani_cp/(3513:3515): PID: 2 - Desalojado por fin de Quantum
+[INFO] 13:49:08:759 plani_cp/(3513:3515): Cola Ready: [ 3, 1, 2 ]
+[INFO] 13:49:08:759 plani_cp/(3513:3515): PID: 2 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 13:49:08:760 plani_cp/(3513:3515): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[ERROR] 14:01:32:574 plani_cp/(3693:3693): Comando no reconocido
+[ERROR] 14:01:41:166 plani_cp/(3693:3693): Comando no reconocido
+[INFO] 14:01:51:342 plani_lp/(3693:3718): Se crea el proceso 1 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3719): Se crea el proceso 2 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3720): Se crea el proceso 3 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3721): Se crea el proceso 4 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3722): Se crea el proceso 5 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3723): Se crea el proceso 6 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3724): Se crea el proceso 7 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3725): Se crea el proceso 8 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3726): Se crea el proceso 9 en NEW
+[INFO] 14:01:51:342 plani_lp/(3693:3727): Se crea el proceso 10 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3728): Se crea el proceso 11 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3729): Se crea el proceso 12 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3730): Se crea el proceso 13 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3731): Se crea el proceso 14 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3732): Se crea el proceso 15 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3733): Se crea el proceso 16 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3734): Se crea el proceso 17 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3735): Se crea el proceso 18 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3736): Se crea el proceso 19 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3737): Se crea el proceso 20 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3738): Se crea el proceso 21 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3739): Se crea el proceso 22 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3740): Se crea el proceso 23 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3741): Se crea el proceso 24 en NEW
+[INFO] 14:01:51:343 plani_lp/(3693:3742): Se crea el proceso 25 en NEW
+[INFO] 14:01:51:344 plani_lp/(3693:3717): Se crea el proceso 26 en NEW
+[INFO] 14:01:51:347 plani_lp/(3693:3716): Se crea el proceso 27 en NEW
+[INFO] 14:01:51:347 plani_lp/(3693:3715): Se crea el proceso 28 en NEW
+[INFO] 14:01:51:347 plani_lp/(3693:3714): Se crea el proceso 29 en NEW
+[INFO] 14:01:51:347 plani_lp/(3693:3713): Se crea el proceso 30 en NEW
+[ERROR] 14:02:22:262 plani_cp/(3693:3693): Comando no reconocido
+[INFO] 14:03:03:566 plani_lp/(3693:3748): Se crea el proceso 31 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3749): Se crea el proceso 32 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3750): Se crea el proceso 33 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3751): Se crea el proceso 34 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3752): Se crea el proceso 35 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3753): Se crea el proceso 36 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3754): Se crea el proceso 37 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3755): Se crea el proceso 38 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3756): Se crea el proceso 39 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3757): Se crea el proceso 40 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3758): Se crea el proceso 41 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3759): Se crea el proceso 42 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3760): Se crea el proceso 43 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3761): Se crea el proceso 44 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3762): Se crea el proceso 45 en NEW
+[INFO] 14:03:03:566 plani_lp/(3693:3763): Se crea el proceso 46 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3764): Se crea el proceso 47 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3765): Se crea el proceso 48 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3766): Se crea el proceso 49 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3767): Se crea el proceso 50 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3768): Se crea el proceso 51 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3769): Se crea el proceso 52 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3770): Se crea el proceso 53 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3771): Se crea el proceso 54 en NEW
+[INFO] 14:03:03:567 plani_lp/(3693:3772): Se crea el proceso 55 en NEW
+[INFO] 14:03:03:571 plani_lp/(3693:3747): Se crea el proceso 56 en NEW
+[INFO] 14:03:03:571 plani_lp/(3693:3746): Se crea el proceso 57 en NEW
+[INFO] 14:03:03:571 plani_lp/(3693:3745): Se crea el proceso 58 en NEW
+[INFO] 14:03:03:571 plani_lp/(3693:3744): Se crea el proceso 59 en NEW
+[INFO] 14:03:03:571 plani_lp/(3693:3743): Se crea el proceso 60 en NEW
+[ERROR] 14:31:17:872 plani_cp/(4030:4030): Comando no reconocido
+[ERROR] 14:31:22:760 plani_cp/(4030:4030): Comando no reconocido
+[INFO] 14:31:42:746 plani_lp/(4030:4056): Se crea el proceso 1 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4057): Se crea el proceso 2 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4058): Se crea el proceso 3 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4059): Se crea el proceso 4 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4060): Se crea el proceso 5 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4061): Se crea el proceso 6 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4062): Se crea el proceso 7 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4063): Se crea el proceso 8 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4064): Se crea el proceso 9 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4065): Se crea el proceso 10 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4066): Se crea el proceso 11 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4067): Se crea el proceso 12 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4068): Se crea el proceso 13 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4069): Se crea el proceso 14 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4070): Se crea el proceso 15 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4071): Se crea el proceso 16 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4072): Se crea el proceso 17 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4073): Se crea el proceso 18 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4074): Se crea el proceso 19 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4075): Se crea el proceso 20 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4076): Se crea el proceso 21 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4077): Se crea el proceso 22 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4078): Se crea el proceso 23 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4079): Se crea el proceso 24 en NEW
+[INFO] 14:31:42:746 plani_lp/(4030:4080): Se crea el proceso 25 en NEW
+[INFO] 14:31:42:747 plani_lp/(4030:4055): Se crea el proceso 26 en NEW
+[INFO] 14:31:42:752 plani_lp/(4030:4054): Se crea el proceso 27 en NEW
+[INFO] 14:31:42:752 plani_lp/(4030:4053): Se crea el proceso 28 en NEW
+[INFO] 14:31:42:752 plani_lp/(4030:4052): Se crea el proceso 29 en NEW
+[INFO] 14:31:42:752 plani_lp/(4030:4051): Se crea el proceso 30 en NEW
+[ERROR] 14:37:59:145 plani_cp/(4302:4302): Comando no reconocido
+[ERROR] 14:38:02:082 plani_cp/(4302:4302): Comando no reconocido
+[INFO] 14:38:10:153 plani_lp/(4302:4323): Se crea el proceso 1 en NEW
+[INFO] 14:38:10:154 plani_lp/(4302:4324): Se crea el proceso 2 en NEW
+[INFO] 14:38:10:154 plani_lp/(4302:4325): Se crea el proceso 3 en NEW
+[INFO] 14:38:10:155 plani_lp/(4302:4326): Se crea el proceso 4 en NEW
+[INFO] 14:38:10:155 plani_lp/(4302:4327): Se crea el proceso 5 en NEW
+[INFO] 14:38:10:156 plani_lp/(4302:4328): Se crea el proceso 6 en NEW
+[INFO] 14:38:10:156 plani_cp/(4302:4305): Cola Ready: [ 1 ]
+[INFO] 14:38:10:156 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:10:158 plani_cp/(4302:4305): Cola Ready: [ 2 ]
+[INFO] 14:38:10:160 plani_cp/(4302:4305): Cola Ready: [ 2, 3 ]
+[INFO] 14:38:10:164 plani_lp/(4302:4330): Se crea el proceso 7 en NEW
+[INFO] 14:38:10:164 plani_lp/(4302:4331): Se crea el proceso 8 en NEW
+[INFO] 14:38:10:165 plani_lp/(4302:4332): Se crea el proceso 9 en NEW
+[INFO] 14:38:10:169 plani_lp/(4302:4333): Se crea el proceso 10 en NEW
+[INFO] 14:38:10:169 plani_lp/(4302:4334): Se crea el proceso 11 en NEW
+[INFO] 14:38:10:173 plani_lp/(4302:4335): Se crea el proceso 12 en NEW
+[INFO] 14:38:10:173 plani_lp/(4302:4336): Se crea el proceso 13 en NEW
+[INFO] 14:38:10:177 plani_lp/(4302:4337): Se crea el proceso 14 en NEW
+[INFO] 14:38:10:177 plani_lp/(4302:4338): Se crea el proceso 15 en NEW
+[INFO] 14:38:10:181 plani_lp/(4302:4339): Se crea el proceso 16 en NEW
+[INFO] 14:38:10:181 plani_lp/(4302:4340): Se crea el proceso 17 en NEW
+[INFO] 14:38:10:184 plani_lp/(4302:4341): Se crea el proceso 18 en NEW
+[INFO] 14:38:10:185 plani_lp/(4302:4342): Se crea el proceso 19 en NEW
+[INFO] 14:38:10:188 plani_lp/(4302:4343): Se crea el proceso 20 en NEW
+[INFO] 14:38:10:189 plani_lp/(4302:4344): Se crea el proceso 21 en NEW
+[INFO] 14:38:10:192 plani_lp/(4302:4345): Se crea el proceso 22 en NEW
+[INFO] 14:38:10:193 plani_lp/(4302:4346): Se crea el proceso 23 en NEW
+[INFO] 14:38:10:196 plani_lp/(4302:4347): Se crea el proceso 24 en NEW
+[INFO] 14:38:10:197 plani_lp/(4302:4348): Se crea el proceso 25 en NEW
+[INFO] 14:38:10:201 plani_lp/(4302:4349): Se crea el proceso 26 en NEW
+[INFO] 14:38:10:201 plani_lp/(4302:4350): Se crea el proceso 27 en NEW
+[INFO] 14:38:10:201 plani_lp/(4302:4351): Se crea el proceso 28 en NEW
+[INFO] 14:38:10:205 plani_lp/(4302:4352): Se crea el proceso 29 en NEW
+[INFO] 14:38:10:205 plani_lp/(4302:4353): Se crea el proceso 30 en NEW
+[INFO] 14:38:10:675 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:10:675 plani_cp/(4302:4304): Cola Ready: [ 2, 3, 1 ]
+[INFO] 14:38:10:675 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:10:676 plani_cp/(4302:4304): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:11:106 plani_cp/(4302:4304): PID: 2 - Bloqueado por: TECLADO
+[INFO] 14:38:11:106 plani_cp/(4302:4304): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 14:38:11:107 plani_cp/(4302:4304): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:11:532 plani_cp/(4302:4304): PID: 3 - Bloqueado por: TECLADO
+[INFO] 14:38:11:533 plani_cp/(4302:4304): PID: 3 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 14:38:11:533 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:12:057 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:12:057 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:12:057 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:12:058 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:12:578 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:12:578 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:12:578 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:12:578 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:13:095 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:13:096 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:13:096 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:13:097 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:13:615 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:13:615 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:13:616 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:13:616 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:14:131 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:14:132 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:14:132 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:14:132 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:14:654 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:14:655 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:14:655 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:14:655 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:15:168 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:15:168 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:15:169 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:15:169 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:15:688 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:15:688 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:15:689 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:15:689 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:16:208 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:16:208 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:16:208 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:16:209 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:16:727 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:16:727 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:16:728 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:16:728 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:17:246 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:17:246 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:17:246 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:17:247 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:17:770 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:17:770 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:17:770 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:17:771 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:18:303 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:18:303 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:18:304 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:18:304 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:18:827 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:18:827 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:18:827 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:18:828 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:19:358 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:19:359 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:19:359 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:19:359 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[ERROR] 14:38:19:697 plani_cp/(4302:4302): Comando no reconocido
+[INFO] 14:38:19:878 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:19:878 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:19:878 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:19:878 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[ERROR] 14:38:20:377 plani_cp/(4302:4302): Comando no reconocido
+[INFO] 14:38:20:400 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:20:400 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:20:400 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:20:401 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:20:920 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:20:920 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:20:921 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:20:921 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:21:433 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:21:433 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:21:433 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:21:434 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:21:952 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:21:953 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:21:953 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:21:953 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:22:472 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:22:472 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:22:473 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:22:473 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:22:998 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:22:998 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:22:999 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:22:999 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:23:519 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:23:520 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:23:520 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:23:520 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:24:036 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:24:036 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:24:037 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:24:037 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:24:554 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:24:554 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:24:554 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:24:555 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:25:071 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:25:071 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:25:072 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:25:072 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:25:592 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:25:592 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:25:593 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:25:593 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:26:112 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:26:113 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:26:113 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:26:113 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:26:632 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:26:632 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:26:632 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:26:633 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:27:153 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:27:153 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:27:153 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:27:154 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:27:668 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:27:668 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:27:668 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:27:669 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:28:201 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:28:201 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:28:201 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:28:202 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:28:727 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:28:727 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:28:728 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:28:728 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:29:255 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:29:255 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:29:256 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:29:256 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:29:776 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:29:776 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:29:777 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:29:777 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:30:293 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:30:294 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:30:294 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:30:294 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:30:825 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:30:825 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:30:825 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:30:826 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:31:352 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:31:353 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:31:353 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:31:353 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:31:885 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:31:886 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:31:886 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:31:886 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:32:406 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:32:406 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:32:406 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:32:407 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:32:926 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:32:926 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:32:926 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:32:927 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:33:456 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:33:456 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:33:456 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:33:457 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:33:973 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:33:973 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:33:973 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:33:973 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:34:507 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:34:507 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:34:507 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:34:508 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:35:026 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:35:026 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:35:026 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:35:027 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:35:543 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:35:544 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:35:544 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:35:544 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:36:064 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:36:065 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:36:065 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:36:065 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:36:582 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:36:582 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:36:582 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:36:583 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:37:097 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:37:097 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:37:098 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:37:098 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:37:615 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:37:616 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:37:616 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:37:616 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:38:135 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:38:135 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:38:136 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:38:136 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:38:654 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:38:654 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:38:655 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:38:655 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:39:172 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:39:172 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:39:172 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:39:173 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:39:693 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:39:693 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:39:693 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:39:694 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:40:213 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:40:213 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:40:213 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:40:213 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:40:741 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:40:741 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:40:741 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:40:742 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:41:269 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:41:270 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:41:270 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:41:270 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:41:801 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:41:801 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:41:801 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:41:802 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:42:333 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:42:334 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:42:334 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:42:334 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:42:862 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:42:862 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:42:862 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:42:863 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:43:385 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:43:385 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:43:385 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:43:386 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:43:902 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:43:903 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:43:903 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:43:903 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:44:432 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:44:432 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:44:432 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:44:432 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:44:961 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:44:961 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:44:961 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:44:962 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:45:488 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:45:488 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:45:488 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:45:489 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:46:008 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:46:008 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:46:008 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:46:008 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:46:525 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:46:525 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:46:526 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:46:526 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 14:38:47:046 plani_cp/(4302:4304): PID: 1 - Desalojado por fin de Quantum
+[INFO] 14:38:47:046 plani_cp/(4302:4304): Cola Ready: [ 1 ]
+[INFO] 14:38:47:047 plani_cp/(4302:4304): PID: 1 - Estado anterior: Executing - Estado actual: Ready
+[INFO] 14:38:47:047 plani_cp/(4302:4304): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[ERROR] 14:49:58:330 plani_cp/(4604:4604): Comando no reconocido
+[ERROR] 14:50:01:770 plani_cp/(4604:4604): Comando no reconocido
+[INFO] 14:50:09:331 plani_lp/(4604:4604): Se crea el proceso 1 en NEW
+[INFO] 14:50:09:331 plani_lp/(4604:4604): Se crea el proceso 2 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 3 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 4 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 5 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 6 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 7 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 8 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 9 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 10 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 11 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 12 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 13 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 14 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 15 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 16 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 17 en NEW
+[INFO] 14:50:09:332 plani_lp/(4604:4604): Se crea el proceso 18 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 19 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 20 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 21 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 22 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 23 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 24 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 25 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 26 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 27 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 28 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 29 en NEW
+[INFO] 14:50:09:333 plani_lp/(4604:4604): Se crea el proceso 30 en NEW
+[ERROR] 14:57:10:420 plani_cp/(4747:4747): Comando no reconocido
+[ERROR] 14:57:30:420 plani_cp/(4747:4747): Comando no reconocido
+[INFO] 14:57:57:133 plani_lp/(4747:4747): Se crea el proceso 1 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 2 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 3 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 4 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 5 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 6 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 7 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 8 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 9 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 10 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 11 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 12 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 13 en NEW
+[INFO] 14:57:57:134 plani_lp/(4747:4747): Se crea el proceso 14 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 15 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 16 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 17 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 18 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 19 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 20 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 21 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 22 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 23 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 24 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 25 en NEW
+[INFO] 14:57:57:135 plani_lp/(4747:4747): Se crea el proceso 26 en NEW
+[INFO] 14:57:57:136 plani_lp/(4747:4747): Se crea el proceso 27 en NEW
+[INFO] 14:57:57:136 plani_lp/(4747:4747): Se crea el proceso 28 en NEW
+[INFO] 14:57:57:136 plani_lp/(4747:4747): Se crea el proceso 29 en NEW
+[INFO] 14:57:57:136 plani_lp/(4747:4747): Se crea el proceso 30 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 31 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 32 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 33 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 34 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 35 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 36 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 37 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 38 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 39 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 40 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 41 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 42 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 43 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 44 en NEW
+[INFO] 14:59:00:669 plani_lp/(4747:4747): Se crea el proceso 45 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 46 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 47 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 48 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 49 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 50 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 51 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 52 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 53 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 54 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 55 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 56 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 57 en NEW
+[INFO] 14:59:00:670 plani_lp/(4747:4747): Se crea el proceso 58 en NEW
+[INFO] 14:59:00:671 plani_lp/(4747:4747): Se crea el proceso 59 en NEW
+[INFO] 14:59:00:671 plani_lp/(4747:4747): Se crea el proceso 60 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 61 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 62 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 63 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 64 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 65 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 66 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 67 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 68 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 69 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 70 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 71 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 72 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 73 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 74 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 75 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 76 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 77 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 78 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 79 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 80 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 81 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 82 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 83 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 84 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 85 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 86 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 87 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 88 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 89 en NEW
+[INFO] 14:59:02:261 plani_lp/(4747:4747): Se crea el proceso 90 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 91 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 92 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 93 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 94 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 95 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 96 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 97 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 98 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 99 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 100 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 101 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 102 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 103 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 104 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 105 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 106 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 107 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 108 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 109 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 110 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 111 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 112 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 113 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 114 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 115 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 116 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 117 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 118 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 119 en NEW
+[INFO] 14:59:03:261 plani_lp/(4747:4747): Se crea el proceso 120 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 121 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 122 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 123 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 124 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 125 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 126 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 127 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 128 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 129 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 130 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 131 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 132 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 133 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 134 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 135 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 136 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 137 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 138 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 139 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 140 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 141 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 142 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 143 en NEW
+[INFO] 14:59:03:925 plani_lp/(4747:4747): Se crea el proceso 144 en NEW
+[INFO] 14:59:03:926 plani_lp/(4747:4747): Se crea el proceso 145 en NEW
+[INFO] 14:59:03:926 plani_lp/(4747:4747): Se crea el proceso 146 en NEW
+[INFO] 14:59:03:926 plani_lp/(4747:4747): Se crea el proceso 147 en NEW
+[INFO] 14:59:03:926 plani_lp/(4747:4747): Se crea el proceso 148 en NEW
+[INFO] 14:59:03:926 plani_lp/(4747:4747): Se crea el proceso 149 en NEW
+[INFO] 14:59:03:926 plani_lp/(4747:4747): Se crea el proceso 150 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 151 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 152 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 153 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 154 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 155 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 156 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 157 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 158 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 159 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 160 en NEW
+[INFO] 14:59:06:573 plani_lp/(4747:4747): Se crea el proceso 161 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 162 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 163 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 164 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 165 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 166 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 167 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 168 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 169 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 170 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 171 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 172 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 173 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 174 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 175 en NEW
+[INFO] 14:59:06:574 plani_lp/(4747:4747): Se crea el proceso 176 en NEW
+[INFO] 14:59:06:575 plani_lp/(4747:4747): Se crea el proceso 177 en NEW
+[INFO] 14:59:06:575 plani_lp/(4747:4747): Se crea el proceso 178 en NEW
+[INFO] 14:59:06:575 plani_lp/(4747:4747): Se crea el proceso 179 en NEW
+[INFO] 14:59:06:575 plani_lp/(4747:4747): Se crea el proceso 180 en NEW
+[ERROR] 15:04:09:598 plani_cp/(4876:4876): Comando no reconocido
+[ERROR] 15:04:13:990 plani_cp/(4876:4876): Comando no reconocido
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 1 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 2 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 3 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 4 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 5 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 6 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 7 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 8 en NEW
+[INFO] 15:04:21:855 plani_lp/(4876:4876): Se crea el proceso 9 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 10 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 11 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 12 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 13 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 14 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 15 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 16 en NEW
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 17 en NEW
+[ERROR] 15:04:21:856 plani_lp/(4876:4879): Error en la memoria
+[INFO] 15:04:21:856 plani_lp/(4876:4876): Se crea el proceso 18 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 19 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 20 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 21 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 22 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 23 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 24 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 25 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 26 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 27 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 28 en NEW
+[INFO] 15:04:21:857 plani_lp/(4876:4876): Se crea el proceso 29 en NEW
+[ERROR] 15:04:21:857 plani_lp/(4876:4879): Error en la memoria
+[INFO] 15:04:21:858 plani_lp/(4876:4876): Se crea el proceso 30 en NEW
+[ERROR] 15:04:21:858 plani_lp/(4876:4879): Error en la memoria
+[ERROR] 15:08:21:751 plani_cp/(5027:5027): Comando no reconocido
+[ERROR] 15:08:25:495 plani_cp/(5027:5027): Comando no reconocido
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 1 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 2 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 3 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 4 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 5 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 6 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 7 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 8 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 9 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 10 en NEW
+[INFO] 15:08:29:936 plani_lp/(5027:5027): Se crea el proceso 11 en NEW
+[ERROR] 15:08:29:937 plani_lp/(5027:5030): Error en la memoria
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 12 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 13 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 14 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 15 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 16 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 17 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 18 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 19 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 20 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 21 en NEW
+[INFO] 15:08:29:937 plani_lp/(5027:5027): Se crea el proceso 22 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 23 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 24 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 25 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 26 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 27 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 28 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 29 en NEW
+[INFO] 15:08:29:938 plani_lp/(5027:5027): Se crea el proceso 30 en NEW
+[ERROR] 15:08:29:939 plani_lp/(5027:5030): Error en la memoria
+[ERROR] 15:08:29:940 plani_lp/(5027:5030): Error en la memoria
+[ERROR] 15:14:19:120 plani_cp/(5270:5270): Comando no reconocido
+[ERROR] 15:14:24:912 plani_cp/(5270:5270): Comando no reconocido
+[INFO] 15:14:31:737 plani_lp/(5270:5270): Se crea el proceso 1 en NEW
+[INFO] 15:14:31:737 plani_lp/(5270:5270): Se crea el proceso 2 en NEW
+[INFO] 15:14:31:737 plani_lp/(5270:5270): Se crea el proceso 3 en NEW
+[INFO] 15:14:31:737 plani_lp/(5270:5270): Se crea el proceso 4 en NEW
+[INFO] 15:14:31:737 plani_lp/(5270:5270): Se crea el proceso 5 en NEW
+[INFO] 15:14:31:737 plani_lp/(5270:5270): Se crea el proceso 6 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 7 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 8 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 9 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 10 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 11 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 12 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 13 en NEW
+[ERROR] 15:14:31:738 plani_lp/(5270:5273): Error en la memoria
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 14 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 15 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 16 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 17 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 18 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 19 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 20 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 21 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 22 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 23 en NEW
+[INFO] 15:14:31:738 plani_lp/(5270:5270): Se crea el proceso 24 en NEW
+[INFO] 15:14:31:739 plani_lp/(5270:5270): Se crea el proceso 25 en NEW
+[INFO] 15:14:31:739 plani_lp/(5270:5270): Se crea el proceso 26 en NEW
+[INFO] 15:14:31:739 plani_lp/(5270:5270): Se crea el proceso 27 en NEW
+[INFO] 15:14:31:739 plani_lp/(5270:5270): Se crea el proceso 28 en NEW
+[INFO] 15:14:31:739 plani_lp/(5270:5270): Se crea el proceso 29 en NEW
+[INFO] 15:14:31:739 plani_lp/(5270:5270): Se crea el proceso 30 en NEW
+[ERROR] 15:14:31:740 plani_lp/(5270:5273): Error en la memoria
+[ERROR] 15:14:31:741 plani_lp/(5270:5273): Error en la memoria
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 31 en NEW
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 32 en NEW
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 33 en NEW
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 34 en NEW
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 35 en NEW
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 36 en NEW
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 37 en NEW
+[INFO] 15:14:58:704 plani_lp/(5270:5270): Se crea el proceso 38 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 39 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 40 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 41 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 42 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 43 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 44 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 45 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 46 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 47 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 48 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 49 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 50 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 51 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 52 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 53 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 54 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 55 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 56 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 57 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 58 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 59 en NEW
+[INFO] 15:14:58:705 plani_lp/(5270:5270): Se crea el proceso 60 en NEW
+[ERROR] 15:20:17:481 plani_cp/(5399:5399): Comando no reconocido
+[ERROR] 15:20:23:105 plani_cp/(5399:5399): Comando no reconocido
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 1 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 2 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 3 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 4 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 5 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 6 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 7 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 8 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 9 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 10 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 11 en NEW
+[INFO] 15:20:26:265 plani_lp/(5399:5399): Se crea el proceso 12 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 13 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 14 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 15 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 16 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 17 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 18 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 19 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 20 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 21 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 22 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 23 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 24 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 25 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 26 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 27 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 28 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 29 en NEW
+[INFO] 15:20:26:266 plani_lp/(5399:5399): Se crea el proceso 30 en NEW
+[ERROR] 15:20:26:266 plani_lp/(5399:5402): Error en la memoria
+[ERROR] 15:20:26:267 plani_lp/(5399:5402): Error en la memoria
+[ERROR] 15:20:26:268 plani_lp/(5399:5402): Error en la memoria
+[ERROR] 15:24:30:458 plani_cp/(5520:5520): Comando no reconocido
+[ERROR] 15:24:38:210 plani_cp/(5520:5520): Comando no reconocido
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 1 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 2 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 3 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 4 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 5 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 6 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 7 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 8 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 9 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 10 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 11 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 12 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 13 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 14 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 15 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 16 en NEW
+[INFO] 15:24:41:067 plani_lp/(5520:5520): Se crea el proceso 17 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 18 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 19 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 20 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 21 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 22 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 23 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 24 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 25 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 26 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 27 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 28 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 29 en NEW
+[INFO] 15:24:41:068 plani_lp/(5520:5520): Se crea el proceso 30 en NEW
+[ERROR] 15:24:41:068 plani_lp/(5520:5523): Error en la memoria
+[ERROR] 15:24:41:069 plani_lp/(5520:5523): Error en la memoria
+[ERROR] 15:24:41:070 plani_lp/(5520:5523): Error en la memoria
+[ERROR] 15:35:43:243 plani_cp/(5642:5642): Comando no reconocido
+[ERROR] 15:35:50:819 plani_cp/(5642:5642): Comando no reconocido
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 1 en NEW
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 2 en NEW
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 3 en NEW
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 4 en NEW
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 5 en NEW
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 6 en NEW
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 7 en NEW
+[INFO] 15:35:52:932 plani_lp/(5642:5642): Se crea el proceso 8 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 9 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 10 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 11 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 12 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 13 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 14 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 15 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 16 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 17 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 18 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 19 en NEW
+[INFO] 15:35:52:933 plani_lp/(5642:5642): Se crea el proceso 20 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 21 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 22 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 23 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 24 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 25 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 26 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 27 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 28 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 29 en NEW
+[INFO] 15:35:52:934 plani_lp/(5642:5642): Se crea el proceso 30 en NEW
+[ERROR] 15:35:52:934 plani_lp/(5642:5645): Error en la memoria
+[ERROR] 15:35:52:935 plani_lp/(5642:5645): Error en la memoria
+[ERROR] 15:35:52:936 plani_lp/(5642:5645): Error en la memoria

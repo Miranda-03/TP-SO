@@ -42,15 +42,15 @@ void agregarProcesoColaNew(PcbGuardarEnNEW *proceso);
 
 /**
 * @fn    PLPNuevoProceso
-* @brief funcion del hilo para crear un nuevo proceso.
+* @brief funcion para crear un nuevo proceso.
 */
-void *PLPNuevoProceso(void *ptr);
+void PLPNuevoProceso(char *path_instrucciones);
 
 /**
 * @fn    agregarNuevoProcesoReady
 * @brief envia al proceso a Ready decrementado el GM.
 */
-void agregarNuevoProcesoReady();
+void *agregarNuevoProcesoReady(void *ptr);
 
 /**
 * @fn    guardarInstruccionesMemoria
