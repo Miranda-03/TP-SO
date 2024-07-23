@@ -23,7 +23,7 @@
 * @fn    conectarModuloKernel
 * @brief conecta el modulo kernel con los demas componentes.
 */
-void conectarModuloKernel();
+void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch, int *KernelSocketCPUInterrumpt, t_dictionary *interfaces_conectadas, char *path_config);
 
 /**
 * @fn    manageCPU

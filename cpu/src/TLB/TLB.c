@@ -10,22 +10,22 @@ int socket_con_memoria;
 
 t_log *log_tlb;
 
-void iniciar_TLB(int socket)
+void iniciar_TLB(int socket, char *path_config)
 {
     TLB = queue_create();
 
-    algoritmo = obtener_algoritmo_de_la_configuracion();
+    algoritmo = obtener_algoritmo_de_la_configuracion(path_config);
 
-    cant_entradas_TLB = atoi(obtenerValorConfig("cpu.config", "CANTIDAD_ENTRADAS_TLB"));
+    cant_entradas_TLB = atoi(obtenerValorConfig(path_config, "CANTIDAD_ENTRADAS_TLB"));
 
     socket_con_memoria = socket;
 
     log_tlb = log_create("logs/cpu_tlb.log", "TLB", 1, LOG_LEVEL_INFO);
 }
 
-int obtener_algoritmo_de_la_configuracion()
+int obtener_algoritmo_de_la_configuracion(char *path_config)
 {
-    char *algoritmo_char = obtenerValorConfig("cpu.config", "ALGORITMO_TLB");
+    char *algoritmo_char = obtenerValorConfig(path_config, "ALGORITMO_TLB");
 
     if (strcmp(algoritmo_char, "FIFO"))
         return FIFO;

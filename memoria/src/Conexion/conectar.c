@@ -1,8 +1,8 @@
 #include <Conexion/conectar.h>
 
-void conectarModuloMemoria()
+void conectarModuloMemoria(char *path_config)
 {
-    const char *puerto_de_escucha = obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA");
+    const char *puerto_de_escucha = obtenerValorConfig(path_config, "PUERTO_ESCUCHA");
 
     t_log *loger = log_create("logs/memoria_conn.log", "mem_conn", 1, LOG_LEVEL_INFO);
 

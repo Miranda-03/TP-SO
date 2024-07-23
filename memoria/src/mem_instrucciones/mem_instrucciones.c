@@ -4,10 +4,10 @@ t_dictionary *memoria_instrucciones;
 
 int retardoEspera;
 
-void crear_mem_instrucciones()
+void crear_mem_instrucciones(char *path_config)
 {
    memoria_instrucciones = dictionary_create();
-   retardoEspera = atoi(obtenerValorConfig("memoria.config", "RETARDO_RESPUESTA"));
+   retardoEspera = atoi(obtenerValorConfig(path_config, "RETARDO_RESPUESTA"));
 }
 
 int agregar_instrucciones(char *path, int pid)

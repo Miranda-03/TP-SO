@@ -28,13 +28,13 @@ typedef enum
 * @fn    iniciar_TLB
 * @brief inicia la cola que representa la TLB y demas datos necesarios para su funcionamiento.
 */
-void iniciar_TLB(int socket);
+void iniciar_TLB(int socket, char *path_config);
 
 /**
 * @fn    obtener_algoritmo_de_la_configuracion
 * @brief obtiene el algoritmo de reemplazo de la TLB.
 */
-int obtener_algoritmo_de_la_configuracion();
+int obtener_algoritmo_de_la_configuracion(char *path_config);
 
 /**
 * @fn    obtener_marco

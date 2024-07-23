@@ -17,8 +17,6 @@ void *manage_conn_stdout_io(void *ptr)
         t_buffer *buffer = buffer_leer_recv(&socketSTDOUT);
         pid = buffer_read_uint32(buffer);
 
-        printf("SE PASA\n");
-
         switch (*op_code)
         {
         case LEER_MEMORIA:

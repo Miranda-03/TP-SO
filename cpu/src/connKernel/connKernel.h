@@ -36,6 +36,6 @@ void obtener_procesoCPU_del_stream(t_buffer *buffer, Contexto_proceso *procesoCP
 */
 void obtener_registros(t_buffer *buffer, Contexto_proceso *procesoCPU);
 
-void enviar_ip_memoria_a_kernel(int socket);
+void enviar_ip_memoria_a_kernel(int socket, char *path_config);
 
 #endif

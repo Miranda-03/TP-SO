@@ -1,0 +1,127 @@
+[ERROR] 01:20:51:243 plani_cp/(52638:52638): Comando no reconocido
+[INFO] 01:21:04:880 plani_lp/(52638:52987): Se crea el proceso 1 en NEW
+[INFO] 01:21:04:881 plani_cp/(52638:52987): Cola Ready: [ 1 ]
+[INFO] 01:21:04:881 plani_cp/(52638:52644): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:21:05:387 plani_cp/(52638:52644): PID: 1 - Bloqueado por: FS
+[INFO] 01:21:05:387 plani_cp/(52638:52644): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:21:05:733 plani_lp/(52638:52990): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:21:14:123 plani_cp/(52638:52638): Comando no reconocido
+[ERROR] 01:24:57:546 plani_cp/(54313:54313): Comando no reconocido
+[INFO] 01:25:03:906 plani_lp/(54313:54441): Se crea el proceso 1 en NEW
+[INFO] 01:25:03:907 plani_cp/(54313:54441): Cola Ready: [ 1 ]
+[INFO] 01:25:03:907 plani_cp/(54313:54319): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:25:04:412 plani_cp/(54313:54319): PID: 1 - Bloqueado por: FS
+[INFO] 01:25:04:413 plani_cp/(54313:54319): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:25:04:727 plani_lp/(54313:54444): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:29:06:176 plani_cp/(56663:56663): Comando no reconocido
+[INFO] 01:29:11:510 plani_lp/(56663:56781): Se crea el proceso 1 en NEW
+[INFO] 01:29:11:511 plani_cp/(56663:56781): Cola Ready: [ 1 ]
+[INFO] 01:29:11:511 plani_cp/(56663:56669): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:29:12:017 plani_cp/(56663:56669): PID: 1 - Bloqueado por: FS
+[INFO] 01:29:12:017 plani_cp/(56663:56669): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:29:12:379 plani_lp/(56663:56785): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:31:26:731 plani_cp/(57803:57803): Comando no reconocido
+[INFO] 01:31:32:177 plani_lp/(57803:58007): Se crea el proceso 1 en NEW
+[INFO] 01:31:32:178 plani_cp/(57803:58007): Cola Ready: [ 1 ]
+[INFO] 01:31:32:178 plani_cp/(57803:57809): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:31:32:685 plani_cp/(57803:57809): PID: 1 - Bloqueado por: FS
+[INFO] 01:31:32:685 plani_cp/(57803:57809): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:31:33:068 plani_lp/(57803:58017): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:31:36:243 plani_cp/(57803:57803): Comando no reconocido
+[ERROR] 01:35:35:704 plani_cp/(59489:59489): Comando no reconocido
+[INFO] 01:35:42:898 plani_lp/(59489:59618): Se crea el proceso 1 en NEW
+[INFO] 01:35:42:898 plani_cp/(59489:59618): Cola Ready: [ 1 ]
+[INFO] 01:35:42:898 plani_cp/(59489:59494): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:35:43:404 plani_cp/(59489:59494): PID: 1 - Bloqueado por: FS
+[INFO] 01:35:43:404 plani_cp/(59489:59494): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:35:43:725 plani_lp/(59489:59621): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:38:54:071 plani_cp/(60927:60927): Comando no reconocido
+[INFO] 01:39:26:863 plani_lp/(60927:61386): Se crea el proceso 1 en NEW
+[INFO] 01:39:26:864 plani_cp/(60927:61386): Cola Ready: [ 1 ]
+[INFO] 01:39:26:864 plani_cp/(60927:60933): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:39:27:370 plani_cp/(60927:60933): PID: 1 - Bloqueado por: FS
+[INFO] 01:39:27:370 plani_cp/(60927:60933): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:39:27:705 plani_lp/(60927:61390): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:42:53:162 plani_cp/(62794:62794): Comando no reconocido
+[INFO] 01:43:01:206 plani_lp/(62794:62925): Se crea el proceso 1 en NEW
+[INFO] 01:43:01:207 plani_cp/(62794:62925): Cola Ready: [ 1 ]
+[INFO] 01:43:01:208 plani_cp/(62794:62800): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:43:01:714 plani_cp/(62794:62800): PID: 1 - Bloqueado por: FS
+[INFO] 01:43:01:714 plani_cp/(62794:62800): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:43:02:032 plani_lp/(62794:62928): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:43:07:930 plani_cp/(62794:62794): Comando no reconocido
+[ERROR] 01:54:54:709 plani_cp/(67213:67213): Comando no reconocido
+[INFO] 01:55:23:321 plani_lp/(67213:67532): Se crea el proceso 1 en NEW
+[INFO] 01:55:23:322 plani_cp/(67213:67532): Cola Ready: [ 1 ]
+[INFO] 01:55:23:322 plani_cp/(67213:67220): PID: 1 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:55:23:827 plani_cp/(67213:67220): PID: 1 - Bloqueado por: FS
+[INFO] 01:55:23:827 plani_cp/(67213:67220): PID: 1 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:55:24:193 plani_lp/(67213:67535): Finaliza el proceso 1 - Motivo: ERROR_DE_IO
+[ERROR] 01:55:25:537 plani_cp/(67213:67213): Comando no reconocido
+[ERROR] 01:55:30:901 plani_cp/(67213:67213): Comando no reconocido
+[INFO] 01:55:36:887 plani_lp/(67213:67655): Se crea el proceso 2 en NEW
+[INFO] 01:55:36:887 plani_cp/(67213:67655): Cola Ready: [ 2 ]
+[INFO] 01:55:36:887 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:55:37:191 plani_cp/(67213:67220): PID: 2 - Bloqueado por: FS
+[INFO] 01:55:37:191 plani_cp/(67213:67220): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:55:37:192 plani_cp/(67213:67666): Cola Ready: [ 2 ]
+[INFO] 01:55:37:192 plani_cp/(67213:67666): PID: 2 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:55:37:192 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:55:37:293 plani_cp/(67213:67220): PID: 2 - Bloqueado por: FS
+[INFO] 01:55:37:293 plani_cp/(67213:67220): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:55:37:294 plani_cp/(67213:67669): Cola Ready: [ 2 ]
+[INFO] 01:55:37:294 plani_cp/(67213:67669): PID: 2 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:55:37:294 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:55:37:395 plani_cp/(67213:67220): PID: 2 - Bloqueado por: FS
+[INFO] 01:55:37:396 plani_cp/(67213:67220): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:55:44:898 plani_cp/(67213:67671): Cola Ready: [ 2 ]
+[INFO] 01:55:44:898 plani_cp/(67213:67671): PID: 2 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:55:44:899 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:55:45:005 plani_cp/(67213:67220): PID: 2 - Bloqueado por: FS
+[INFO] 01:55:45:006 plani_cp/(67213:67220): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:55:52:515 plani_cp/(67213:67709): Cola Ready: [ 2 ]
+[INFO] 01:55:52:515 plani_cp/(67213:67709): PID: 2 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:55:52:515 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:55:53:020 plani_cp/(67213:67220): PID: 2 - Bloqueado por: TECLADO
+[INFO] 01:55:53:020 plani_cp/(67213:67220): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:56:09:258 plani_cp/(67213:67749): Cola Ready: [ 2 ]
+[INFO] 01:56:09:258 plani_cp/(67213:67749): PID: 2 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:56:09:258 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:56:10:270 plani_cp/(67213:67220): PID: 2 - Bloqueado por: FS
+[INFO] 01:56:10:270 plani_cp/(67213:67220): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:56:10:272 plani_cp/(67213:67848): Cola Ready: [ 2 ]
+[INFO] 01:56:10:272 plani_cp/(67213:67848): PID: 2 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:56:10:273 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:56:11:288 plani_cp/(67213:67220): PID: 2 - Bloqueado por: FS
+[INFO] 01:56:11:288 plani_cp/(67213:67220): PID: 2 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:56:11:290 plani_cp/(67213:67854): Cola Ready: [ 2 ]
+[INFO] 01:56:11:290 plani_cp/(67213:67854): PID: 2 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:56:11:290 plani_cp/(67213:67220): PID: 2 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:56:11:391 plani_lp/(67213:67220): Finaliza el proceso 2 - Motivo: SUCCESS
+[ERROR] 01:57:24:891 plani_cp/(67213:67213): Comando no reconocido
+[ERROR] 01:57:38:124 plani_cp/(67213:67213): Comando no reconocido
+[INFO] 01:57:43:251 plani_lp/(67213:68327): Se crea el proceso 3 en NEW
+[INFO] 01:57:43:251 plani_cp/(67213:68327): Cola Ready: [ 3 ]
+[INFO] 01:57:43:251 plani_cp/(67213:67220): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:57:43:757 plani_cp/(67213:67220): PID: 3 - Bloqueado por: FS
+[INFO] 01:57:43:757 plani_cp/(67213:67220): PID: 3 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:57:43:759 plani_cp/(67213:68330): Cola Ready: [ 3 ]
+[INFO] 01:57:43:759 plani_cp/(67213:68330): PID: 3 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:57:43:759 plani_cp/(67213:67220): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:57:43:861 plani_cp/(67213:67220): PID: 3 - Bloqueado por: MONITOR
+[INFO] 01:57:43:861 plani_cp/(67213:67220): PID: 3 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:57:43:864 plani_cp/(67213:68338): Cola Ready: [ 3 ]
+[INFO] 01:57:43:864 plani_cp/(67213:68338): PID: 3 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:57:43:864 plani_cp/(67213:67220): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:57:43:968 plani_cp/(67213:67220): PID: 3 - Bloqueado por: FS
+[INFO] 01:57:43:968 plani_cp/(67213:67220): PID: 3 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:57:43:969 plani_cp/(67213:68342): Cola Ready: [ 3 ]
+[INFO] 01:57:43:969 plani_cp/(67213:68342): PID: 3 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:57:43:969 plani_cp/(67213:67220): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:57:44:072 plani_cp/(67213:67220): PID: 3 - Bloqueado por: MONITOR
+[INFO] 01:57:44:072 plani_cp/(67213:67220): PID: 3 - Estado anterior: Executing - Estado actual: Bloqueado
+[INFO] 01:57:44:074 plani_cp/(67213:68344): Cola Ready: [ 3 ]
+[INFO] 01:57:44:074 plani_cp/(67213:68344): PID: 3 - Estado anterior: Bloqueado - Estado actual: Ready
+[INFO] 01:57:44:075 plani_cp/(67213:67220): PID: 3 - Estado anterior: Ready - Estado actual: Executing
+[INFO] 01:57:44:176 plani_lp/(67213:67220): Finaliza el proceso 3 - Motivo: SUCCESS
+[ERROR] 01:57:45:855 plani_cp/(67213:67213): Comando no reconocido

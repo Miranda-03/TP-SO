@@ -11,8 +11,18 @@ int CPUsocketBidireccionalDispatch;
 int CPUsocketBidireccionalInterrupt;
 int interrupcion;
 
+char *path_config;
+
 int main(int argc, char *argv[])
 {
+    if (argc != 2)
+    {
+        fprintf(stderr, "Uso: %s <ruta_archivo_configuracion>\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    path_config = argv[1];
+
     procesoCPU = malloc(sizeof(Contexto_proceso));
 
     // Declaración de los sockets como punteros para poder modificarlos dentro de conectarModuloCPU
@@ -20,9 +30,9 @@ int main(int argc, char *argv[])
     int *CPUsocketBidireccionalDispatchPtr = &CPUsocketBidireccionalDispatch;
     int *CPUsocketBidireccionalInterruptPtr = &CPUsocketBidireccionalInterrupt;
 
-    conectarModuloCPU(CPUSocketMemoriaPtr, CPUsocketBidireccionalDispatchPtr, CPUsocketBidireccionalInterruptPtr, procesoCPU, &interrupcion);
+    conectarModuloCPU(CPUSocketMemoriaPtr, CPUsocketBidireccionalDispatchPtr, CPUsocketBidireccionalInterruptPtr, procesoCPU, &interrupcion, path_config);
 
-    iniciar_TLB(CPUSocketMemoria);
+    iniciar_TLB(CPUSocketMemoria, path_config);
     iniciar_loger_conn_memoria();
 
     cicloDeEjecucion(&CPUSocketMemoria, &CPUsocketBidireccionalDispatch, &CPUsocketBidireccionalInterrupt, procesoCPU, &interrupcion);

@@ -11,20 +11,23 @@ int tam_pagina;
 
 int *socket_cpu;
 
+char *path_config_mem_user;
+
 void obtener_socket(int *socket_main)
 {
     socket_cpu = socket_main;
 }
 
-void iniciar_espacio_usuario()
+void iniciar_espacio_usuario(char *path_config)
 {
-    tam_memoria = atoi(obtenerValorConfig("memoria.config", "TAM_MEMORIA"));
+    tam_memoria = atoi(obtenerValorConfig(path_config, "TAM_MEMORIA"));
     espacio = malloc(tam_memoria);
+    path_config_mem_user = path_config;
 }
 
 void iniciar_marcos()
 {
-    tam_pagina = atoi(obtenerValorConfig("memoria.config", "TAM_PAGINA"));
+    tam_pagina = atoi(obtenerValorConfig(path_config_mem_user, "TAM_PAGINA"));
     float cant_marcos = (float)tam_memoria / tam_pagina;
 
     tabla_marcos = list_create();
@@ -50,7 +53,7 @@ void crear_tabla_de_pagina(int PID)
     t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
     dictionary_put(tablas_de_paginas, char_pid, tabla_de_paginas);
-    tam_pagina = atoi(obtenerValorConfig("memoria.config", "TAM_PAGINA"));
+    tam_pagina = atoi(obtenerValorConfig(path_config_mem_user, "TAM_PAGINA"));
     log_info(log, "PID: %d - Tamaño: %d", PID, tam_pagina);
     log_destroy(log);
 }

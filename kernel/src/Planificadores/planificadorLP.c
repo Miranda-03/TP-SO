@@ -16,9 +16,9 @@ t_queue *cola_de_exit;
 
 t_log *kernel_loger_lp;
 
-void inicarPlanificadorLargoPLazo(int socketMemoria)
+void inicarPlanificadorLargoPLazo(int socketMemoria, char *path_config)
 {
-    sem_init(&grado_multiprogramacion, 0, atoi(obtenerValorConfig(PATH_CONFIG, "GRADO_MULTIPROGRAMACION")));
+    sem_init(&grado_multiprogramacion, 0, atoi(obtenerValorConfig(path_config, "GRADO_MULTIPROGRAMACION")));
     cola_de_exit = queue_create();
     cola_de_new = queue_create();
     socketBidireccionalMemoria = malloc(4);

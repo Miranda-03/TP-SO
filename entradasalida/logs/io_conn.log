@@ -1,0 +1,58 @@
+[INFO] 01:20:47:695 conn_b/(52874:52874): Broadcast de solicitud de IP realizado
+[INFO] 01:20:47:695 conn_b/(52874:52874): IPs recibidas
+[INFO] 01:21:17:001 conn_b/(53084:53084): Broadcast de solicitud de IP realizado
+[INFO] 01:24:54:866 conn_b/(54366:54366): Broadcast de solicitud de IP realizado
+[INFO] 01:24:54:866 conn_b/(54366:54366): IPs recibidas
+[INFO] 01:25:09:753 conn_b/(54506:54506): Broadcast de solicitud de IP realizado
+[INFO] 01:29:04:142 conn_b/(56704:56704): Broadcast de solicitud de IP realizado
+[INFO] 01:29:04:143 conn_b/(56704:56704): IPs recibidas
+[INFO] 01:29:20:417 conn_b/(56840:56840): Broadcast de solicitud de IP realizado
+[INFO] 01:31:24:281 conn_b/(57952:57952): Broadcast de solicitud de IP realizado
+[INFO] 01:31:24:282 conn_b/(57952:57952): IPs recibidas
+[INFO] 01:31:38:594 conn_b/(58070:58070): Broadcast de solicitud de IP realizado
+[INFO] 01:35:33:801 conn_b/(59550:59550): Broadcast de solicitud de IP realizado
+[INFO] 01:35:33:801 conn_b/(59550:59550): IPs recibidas
+[INFO] 01:36:01:982 conn_b/(59732:59732): Broadcast de solicitud de IP realizado
+[INFO] 01:38:50:885 conn_b/(61012:61012): Broadcast de solicitud de IP realizado
+[INFO] 01:38:50:886 conn_b/(61012:61012): IPs recibidas
+[INFO] 01:39:30:240 conn_b/(61435:61435): Broadcast de solicitud de IP realizado
+[INFO] 01:42:51:279 conn_b/(62837:62837): Broadcast de solicitud de IP realizado
+[INFO] 01:42:51:280 conn_b/(62837:62837): IPs recibidas
+[INFO] 01:43:04:947 conn_b/(62968:62968): Broadcast de solicitud de IP realizado
+[INFO] 01:43:04:948 conn_b/(62968:62968): IPs recibidas
+[INFO] 01:54:52:641 conn_b/(67363:67363): Broadcast de solicitud de IP realizado
+[INFO] 01:54:52:643 conn_b/(67363:67363): IPs recibidas
+[INFO] 01:54:52:644 conn_b/(67363:67363): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 01:54:52:645 conn_b/(67363:67363): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 01:54:52:646 conn_b/(67363:67363): Se crea la conexión, id de interfaz: SLP1
+[INFO] 01:54:52:647 conn_b/(67363:67363): Se crea la conexión, id de interfaz: GENERICA
+[INFO] 01:54:52:649 conn_b/(67363:67363): Se crea la conexión, id de interfaz: ESPERA
+[INFO] 01:54:52:649 conn_b/(67363:67363): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 01:54:52:650 conn_b/(67363:67363): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 01:54:52:651 conn_b/(67363:67363): Se crea la conexión, id de interfaz: IO_GEN_SLEEP
+[INFO] 01:54:52:652 conn_b/(67363:67363): Se crea la conexión, id de interfaz: FS
+[INFO] 01:54:52:652 conn_b/(67363:67363): Se crea la conexión, id de interfaz: FS
+[INFO] 01:55:28:753 conn_b/(67590:67590): Broadcast de solicitud de IP realizado
+[INFO] 01:55:28:754 conn_b/(67590:67590): IPs recibidas
+[INFO] 01:55:28:755 conn_b/(67590:67590): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 01:55:28:755 conn_b/(67590:67590): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 01:55:28:756 conn_b/(67590:67590): Se crea la conexión, id de interfaz: SLP1
+[INFO] 01:55:28:756 conn_b/(67590:67590): Se crea la conexión, id de interfaz: GENERICA
+[INFO] 01:55:28:757 conn_b/(67590:67590): Se crea la conexión, id de interfaz: ESPERA
+[INFO] 01:55:28:758 conn_b/(67590:67590): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 01:55:28:758 conn_b/(67590:67590): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 01:55:28:758 conn_b/(67590:67590): Se crea la conexión, id de interfaz: IO_GEN_SLEEP
+[INFO] 01:55:28:759 conn_b/(67590:67590): Se crea la conexión, id de interfaz: FS
+[INFO] 01:55:28:759 conn_b/(67590:67590): Se crea la conexión, id de interfaz: FS
+[INFO] 01:57:35:918 conn_b/(68273:68273): Broadcast de solicitud de IP realizado
+[INFO] 01:57:35:919 conn_b/(68273:68273): IPs recibidas
+[INFO] 01:57:35:920 conn_b/(68273:68273): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 01:57:35:921 conn_b/(68273:68273): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 01:57:35:922 conn_b/(68273:68273): Se crea la conexión, id de interfaz: SLP1
+[INFO] 01:57:35:923 conn_b/(68273:68273): Se crea la conexión, id de interfaz: GENERICA
+[INFO] 01:57:35:924 conn_b/(68273:68273): Se crea la conexión, id de interfaz: ESPERA
+[INFO] 01:57:35:926 conn_b/(68273:68273): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 01:57:35:927 conn_b/(68273:68273): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 01:57:35:927 conn_b/(68273:68273): Se crea la conexión, id de interfaz: IO_GEN_SLEEP
+[INFO] 01:57:35:928 conn_b/(68273:68273): Se crea la conexión, id de interfaz: FS
+[INFO] 01:57:35:928 conn_b/(68273:68273): Se crea la conexión, id de interfaz: FS

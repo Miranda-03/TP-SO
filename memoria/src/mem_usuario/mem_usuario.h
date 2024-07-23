@@ -36,7 +36,7 @@ void crear_tabla_de_pagina(int PID);
  * @fn    iniciar_espacio_usuario
  * @brief hace un malloc para iniciar el espacio de usuario representado por un void.
  */
-void iniciar_espacio_usuario();
+void iniciar_espacio_usuario(char *path_config);
 
 /**
  * @fn    iniciar_marcos

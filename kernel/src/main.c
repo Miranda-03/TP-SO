@@ -25,9 +25,11 @@ typedef struct
     t_queue *cola_de_exit;
 } colasLargoPlazo;
 
+char *path_config;
+
 void obtenerAlgoritmoDeConfig()
 {
-    t_config *config = config_create("kernel.config");
+    t_config *config = config_create(path_config);
     char *charAlgortimo = config_get_string_value(config, "ALGORITMO_PLANIFICACION");
     if (strcmp(charAlgortimo, "RR") == 0)
         algoritmoPlanificacion = RR;
@@ -41,7 +43,7 @@ void obtenerAlgoritmoDeConfig()
 
 void obtenerRecuros()
 {
-    t_config *config = config_create("kernel.config");
+    t_config *config = config_create(path_config);
     char **recursosIDs = config_get_array_value(config, "RECURSOS");
     char **recursosCantidad = config_get_array_value(config, "INSTANCIAS_RECURSOS");
 
@@ -74,6 +76,13 @@ void obtenerRecuros()
 
 int main(int argc, char *argv[])
 {
+    if (argc != 2)
+    {
+        fprintf(stderr, "Uso: %s <ruta_archivo_configuracion>\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    path_config = argv[1];
 
     interfaces_conectadas_main = dictionary_create();
 
@@ -88,7 +97,7 @@ int main(int argc, char *argv[])
     int *KernelSocketMemoriaPtr = &KernelSocketMemoria;
 
     // Conecta el Kernel con los demas modulos
-    conectarModuloKernel(KernelSocketMemoriaPtr, KernelSocketCPUDispatchPtr, KernelSocketCPUInterrumptPtr, interfaces_conectadas_main);
+    conectarModuloKernel(KernelSocketMemoriaPtr, KernelSocketCPUDispatchPtr, KernelSocketCPUInterrumptPtr, interfaces_conectadas_main, path_config);
 
     ParamsPCP_kernel *parametrosPlanificadorCortoPlazo = malloc(sizeof(ParamsPCP_kernel));
     parametrosPlanificadorCortoPlazo->interfaces_conectadas = interfaces_conectadas_main;
@@ -97,6 +106,8 @@ int main(int argc, char *argv[])
     parametrosPlanificadorCortoPlazo->KernelSocketMemoria = KernelSocketMemoria;
     parametrosPlanificadorCortoPlazo->algoritmo = algoritmoPlanificacion;
     parametrosPlanificadorCortoPlazo->recursos = recursos_main;
+    parametrosPlanificadorCortoPlazo->path_config = string_new();
+    string_append(&parametrosPlanificadorCortoPlazo->path_config, path_config);
 
     // Hilo para el planificador de corto plazo con los datos necesarios introducidos en el struct ParamsPCP
     pthread_t hiloPlanificadorCortoPlazo;
@@ -104,7 +115,7 @@ int main(int argc, char *argv[])
     pthread_detach(hiloPlanificadorCortoPlazo);
 
     // Se inicializa el planificador a largo plazo.
-    inicarPlanificadorLargoPLazo(KernelSocketMemoria);
+    inicarPlanificadorLargoPLazo(KernelSocketMemoria, path_config);
 
     consolaInteractiva();
 

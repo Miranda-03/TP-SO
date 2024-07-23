@@ -15,9 +15,7 @@ void consolaInteractiva()
 
         int valido = verificar_comando(linea);
 
-        if (valido < 0)
-            printf("comando no reconocido\n");
-        else
+        if (valido > 0)
             atender_instruccion(linea);
     }
 }
@@ -42,7 +40,7 @@ int verificar_comando(char *leido)
         return 1;
     }
     free(comando);
-    log_error(logger_comando, "ERROR");
+    log_error(logger_comando, "Comando no reconocido");
     log_destroy(logger_comando);
     return -1;
 }

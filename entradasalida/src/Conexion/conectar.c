@@ -33,17 +33,29 @@ void realizarHandshakeIO(TipoInterfaz tipo_interfaz, char* identificador, int *s
     buffer_add_string(buffer, strlen(identificador) + 1, identificador);
     enviarMensaje(socket, buffer, IO, MENSAJE);
 
+    t_log *loger = log_create("logs/io_conn.log", "conn_b", 1, LOG_LEVEL_INFO);
+
     int respuestaHandshake = resultadoHandShake(socket);
 
     if (respuestaHandshake == 1)
     {
-        printf("SE CONECTA CON KERNEL\n");
+        char *mensaje_loger = string_new();
+        string_append(&mensaje_loger, "Se crea la conexión, id de interfaz: ");
+        string_append(&mensaje_loger, identificador);
+        log_info(loger, mensaje_loger);
+        free(mensaje_loger);
         
     }
     else
     {
-        printf("ERROR CON KERNEL\n");
+        char *mensaje_loger_error = string_new();
+        string_append(&mensaje_loger_error, "Error en la conexión, id de interfaz: ");
+        string_append(&mensaje_loger_error, identificador);
+        log_error(loger, mensaje_loger_error);
+        free(mensaje_loger_error);
     }
+
+    log_destroy(loger);
 }
 
 void obtener_ips(char **ip_kernel, char **ip_memoria)

@@ -26,7 +26,7 @@ typedef struct
 * @fn    inicarPlanificadorLargoPLazo
 * @brief iniciar datos del planificador a largo plazo.
 */
-void inicarPlanificadorLargoPLazo(int socketMemoria);
+void inicarPlanificadorLargoPLazo(int socketMemoria, char *path_config);
 
 /**
 * @fn    nuevoProceso

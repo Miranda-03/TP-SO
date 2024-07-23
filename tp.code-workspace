@@ -30,7 +30,8 @@
 			"memory_resource": "c",
 			"memory": "c",
 			"MMU.H": "cpp",
-			"cmath": "c"
+			"cmath": "c",
+			"sstream": "c"
 		},
 		"C_Cpp.errorSquiggles": "disabled",
 	},

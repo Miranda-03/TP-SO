@@ -23,7 +23,7 @@
 * @fn    conectarModuloMemoria
 * @brief conecta el modulo memoria con los demas componentes.
 */
-void conectarModuloMemoria();
+void conectarModuloMemoria(char *path_config);
 
 /**
 * @fn    recibirModulo

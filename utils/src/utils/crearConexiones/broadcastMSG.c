@@ -119,13 +119,7 @@ void escucharYResponder(const char *puerto, t_log *loger, char *ip_adicional, bo
         }
         buffer[n] = '\0';
 
-        char *mensaje_de_solicitud = string_new();
-        string_append(&mensaje_de_solicitud, "Solicitud recibida: ");
-        string_append(&mensaje_de_solicitud, buffer);
-
-        log_info(loger, mensaje_de_solicitud);
-
-        free(mensaje_de_solicitud);
+        log_info(loger, "Solicitud recibida");
 
         get_local_ip(ip, INET_ADDRSTRLEN);
 
@@ -153,12 +147,7 @@ void escucharYResponder(const char *puerto, t_log *loger, char *ip_adicional, bo
             memcpy(stream + strlen(ip) + 1, ip_adicional, INET_ADDRSTRLEN);
             memcpy(stream + strlen(ip) * 2 + 1, " ", 1);
 
-            char *mensaje_enviar = string_new();
-            string_append(&mensaje_enviar, "Enviando IPs");
-
-            log_info(loger, mensaje_enviar);
-
-            free(mensaje_enviar);
+            log_info(loger, "Enviando IPs");
 
             sendto(sockfd, stream, strlen(ip) * 2 + 2, 0, (const struct sockaddr *)&cliaddr, len);
 

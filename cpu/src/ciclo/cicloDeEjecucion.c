@@ -8,7 +8,7 @@ sem_t hay_proceso_exec_sem;
 
 void cicloDeEjecucion(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion_main)
 {
-    t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO); // se destruye este log?
+    t_log *loger = log_create("logs/cpu.log", "Ciclo CPU", 1, LOG_LEVEL_INFO);
     interrupcion_ce = interrupcion_main;
     socket_con_memoria_cpu = *CPUSocketMemoria;
     obtener_tam_pagina(*CPUSocketMemoria);

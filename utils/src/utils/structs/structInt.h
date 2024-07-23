@@ -17,6 +17,7 @@ typedef struct
     int *socket;
     int *interrupcion;
     Contexto_proceso *procesoCPU;
+    char *path_config;
 } parametros_hilo_Cpu;  
 
 /**

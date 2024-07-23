@@ -1,0 +1,283 @@
+[INFO] 01:21:04:881 Memoria Usuario/(52491:52642): PID: 1 - Tamaño: 16
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:21:05:285 Memoria Usuario/(52491:52512): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:21:05:732 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:21:05:733 Memoria Usuario/(52491:52642): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:25:03:907 Memoria Usuario/(54123:54317): PID: 1 - Tamaño: 16
+[INFO] 01:25:04:310 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:25:04:311 Memoria Usuario/(54123:54145): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:25:04:726 Memoria Usuario/(54123:54317): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:29:11:510 Memoria Usuario/(56391:56667): PID: 1 - Tamaño: 16
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:29:11:915 Memoria Usuario/(56391:56528): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:29:12:371 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:29:12:372 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:29:12:373 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:29:12:373 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:29:12:373 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:29:12:373 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:29:12:373 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:29:12:373 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:29:12:373 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:29:12:377 Memoria Usuario/(56391:56667): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:29:12:377 Memoria Usuario/(56391:56667): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:31:32:178 Memoria Usuario/(57481:57807): PID: 1 - Tamaño: 16
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:31:32:582 Memoria Usuario/(57481:57618): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:31:33:059 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:31:33:063 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:31:33:063 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:31:33:064 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:31:33:064 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:31:33:064 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:31:33:064 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:31:33:064 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:31:33:065 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:31:33:065 Memoria Usuario/(57481:57807): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:31:33:065 Memoria Usuario/(57481:57807): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:35:42:898 Memoria Usuario/(59227:59496): PID: 1 - Tamaño: 16
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:35:43:302 Memoria Usuario/(59227:59362): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:35:43:724 Memoria Usuario/(59227:59496): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:39:26:864 Memoria Usuario/(60658:60930): PID: 1 - Tamaño: 16
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:39:27:268 Memoria Usuario/(60658:60796): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:39:27:705 Memoria Usuario/(60658:60930): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:43:01:207 Memoria Usuario/(62535:62798): PID: 1 - Tamaño: 16
+[INFO] 01:43:01:612 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:43:01:612 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:43:01:612 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:43:01:612 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:43:01:612 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:43:01:612 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:43:01:612 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:43:01:613 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:43:01:613 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:43:01:613 Memoria Usuario/(62535:62671): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:43:01:613 Memoria Usuario/(62535:62671): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:43:02:031 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:43:02:032 Memoria Usuario/(62535:62798): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:55:23:321 Memoria Usuario/(66944:67217): PID: 1 - Tamaño: 16
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:55:23:725 Memoria Usuario/(66944:67087): PID: 1 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:55:24:192 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 9 - Marco: 9
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 8 - Marco: 8
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 7 - Marco: 7
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 6 - Marco: 6
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 5 - Marco: 5
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 4 - Marco: 4
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 3 - Marco: 3
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 2 - Marco: 2
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 1 - Marco: 1
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 01:55:24:193 Memoria Usuario/(66944:67217): PID: 1 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:55:36:887 Memoria Usuario/(66944:67217): PID: 2 - Tamaño: 16
+[INFO] 01:55:52:616 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 1 - Marco: 1
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 2 - Marco: 2
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 3 - Marco: 3
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 4 - Marco: 4
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 5 - Marco: 5
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 6 - Marco: 6
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 7 - Marco: 7
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 8 - Marco: 8
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Pagina: 9 - Marco: 9
+[INFO] 01:55:52:617 Memoria Usuario/(66944:67087): PID: 2 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:56:09:257 Memoria Usuario/(66944:67603): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 16 
+[INFO] 01:56:09:258 Memoria Usuario/(66944:67603): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 16 - Tamaño: 16 
+[INFO] 01:56:09:258 Memoria Usuario/(66944:67603): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 32 - Tamaño: 16 
+[INFO] 01:56:09:258 Memoria Usuario/(66944:67603): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 48 - Tamaño: 16 
+[INFO] 01:56:09:258 Memoria Usuario/(66944:67603): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 5 
+[INFO] 01:56:09:359 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 9 - Tamaño: 1 
+[INFO] 01:56:09:561 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 19 - Tamaño: 1 
+[INFO] 01:56:09:763 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 29 - Tamaño: 1 
+[INFO] 01:56:09:965 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 48 - Tamaño: 1 
+[INFO] 01:56:10:168 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 58 - Tamaño: 1 
+[INFO] 01:56:10:271 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 0 - Tamaño: 16 
+[INFO] 01:56:10:272 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 16 - Tamaño: 16 
+[INFO] 01:56:10:272 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 32 - Tamaño: 16 
+[INFO] 01:56:10:272 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 48 - Tamaño: 16 
+[INFO] 01:56:10:272 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 64 - Tamaño: 5 
+[INFO] 01:56:10:576 Memoria Usuario/(66944:67087): PID: 2 - Accion: LEER - Direccion fisica: 59 - Tamaño: 5 
+[INFO] 01:56:10:576 Memoria Usuario/(66944:67087): PID: 2 - Accion: LEER - Direccion fisica: 64 - Tamaño: 5 
+[INFO] 01:56:10:578 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 80 - Tamaño: 10 
+[INFO] 01:56:10:780 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 90 - Tamaño: 1 
+[INFO] 01:56:11:083 Memoria Usuario/(66944:67087): PID: 2 - Accion: LEER - Direccion fisica: 0 - Tamaño: 16 
+[INFO] 01:56:11:084 Memoria Usuario/(66944:67087): PID: 2 - Accion: LEER - Direccion fisica: 16 - Tamaño: 16 
+[INFO] 01:56:11:084 Memoria Usuario/(66944:67087): PID: 2 - Accion: LEER - Direccion fisica: 32 - Tamaño: 16 
+[INFO] 01:56:11:084 Memoria Usuario/(66944:67087): PID: 2 - Accion: LEER - Direccion fisica: 48 - Tamaño: 11 
+[INFO] 01:56:11:085 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 91 - Tamaño: 5 
+[INFO] 01:56:11:085 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 96 - Tamaño: 16 
+[INFO] 01:56:11:085 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 112 - Tamaño: 16 
+[INFO] 01:56:11:085 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 128 - Tamaño: 16 
+[INFO] 01:56:11:085 Memoria Usuario/(66944:67087): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 144 - Tamaño: 6 
+[INFO] 01:56:11:289 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 80 - Tamaño: 16 
+[INFO] 01:56:11:289 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 96 - Tamaño: 16 
+[INFO] 01:56:11:289 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 112 - Tamaño: 16 
+[INFO] 01:56:11:289 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 128 - Tamaño: 16 
+[INFO] 01:56:11:289 Memoria Usuario/(66944:67609): PID: 2 - Accion: LEER - Direccion fisica: 144 - Tamaño: 5 
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 9 - Marco: 9
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 8 - Marco: 8
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 7 - Marco: 7
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 6 - Marco: 6
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 5 - Marco: 5
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 4 - Marco: 4
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 3 - Marco: 3
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 2 - Marco: 2
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 1 - Marco: 1
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Pagina: 0 - Marco: 0
+[INFO] 01:56:11:391 Memoria Usuario/(66944:67217): PID: 2 - Tamaño actual: 0 - Tamaño a reducir: 0
+[INFO] 01:57:43:251 Memoria Usuario/(66944:67217): PID: 3 - Tamaño: 16
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 1 - Marco: 1
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 2 - Marco: 2
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 3 - Marco: 3
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 4 - Marco: 4
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 5 - Marco: 5
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 6 - Marco: 6
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 7 - Marco: 7
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 8 - Marco: 8
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Pagina: 9 - Marco: 9
+[INFO] 01:57:43:655 Memoria Usuario/(66944:67087): PID: 3 - Tamaño actual: 160 - Tamaño a aumentar: 160
+[INFO] 01:57:43:758 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 16 
+[INFO] 01:57:43:758 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 16 - Tamaño: 16 
+[INFO] 01:57:43:758 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 32 - Tamaño: 16 
+[INFO] 01:57:43:758 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 48 - Tamaño: 16 
+[INFO] 01:57:43:759 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 5 
+[INFO] 01:57:43:862 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 0 - Tamaño: 16 
+[INFO] 01:57:43:862 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 16 - Tamaño: 16 
+[INFO] 01:57:43:863 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 32 - Tamaño: 16 
+[INFO] 01:57:43:863 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 48 - Tamaño: 16 
+[INFO] 01:57:43:864 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 5 
+[INFO] 01:57:43:968 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 80 - Tamaño: 16 
+[INFO] 01:57:43:969 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 96 - Tamaño: 16 
+[INFO] 01:57:43:969 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 112 - Tamaño: 16 
+[INFO] 01:57:43:969 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 128 - Tamaño: 16 
+[INFO] 01:57:43:969 Memoria Usuario/(66944:68292): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 144 - Tamaño: 5 
+[INFO] 01:57:44:072 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 80 - Tamaño: 16 
+[INFO] 01:57:44:073 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 96 - Tamaño: 16 
+[INFO] 01:57:44:073 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 112 - Tamaño: 16 
+[INFO] 01:57:44:073 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 128 - Tamaño: 16 
+[INFO] 01:57:44:074 Memoria Usuario/(66944:68276): PID: 3 - Accion: LEER - Direccion fisica: 144 - Tamaño: 5 
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 9 - Marco: 9
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 8 - Marco: 8
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 7 - Marco: 7
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 6 - Marco: 6
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 5 - Marco: 5
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 4 - Marco: 4
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 3 - Marco: 3
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 2 - Marco: 2
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 1 - Marco: 1
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Pagina: 0 - Marco: 0
+[INFO] 01:57:44:176 Memoria Usuario/(66944:67217): PID: 3 - Tamaño actual: 0 - Tamaño a reducir: 0

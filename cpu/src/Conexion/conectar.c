@@ -2,37 +2,37 @@
 
 t_log *loger;
 
-void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion)
+void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatch, int *CPUsocketBidireccionalInterrupt, Contexto_proceso *procesoCPU, int *interrupcion, char *path_config)
 {
     loger = log_create("logs/cpu.log", "cpu_conn", 1, LOG_LEVEL_INFO);
 
     //Obtener direccion IP del modulo memoria
-    t_config *cpu_config = config_create("cpu.config");
+    t_config *cpu_config = config_create(path_config);
     solicitar_ip("255.255.255.255", config_get_string_value(cpu_config, "PUERTO_MEMORIA"), cpu_config, "IP_MEMORIA", loger, "SOLICITAR_IP");
     config_destroy(cpu_config);
 
     // Conexion con el módulo memoria
-    *CPUSocketMemoria = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_MEMORIA"), obtenerValorConfig(PATH_CONFIG, "IP_MEMORIA"), 0);
+    *CPUSocketMemoria = crearSocket(obtenerValorConfig(path_config, "PUERTO_MEMORIA"), obtenerValorConfig(path_config, "IP_MEMORIA"), 0);
 
     handshakeCPUMemoria(CPUSocketMemoria);
 
-    escucharYResponder(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), loger, NULL, 0);
+    escucharYResponder(obtenerValorConfig(path_config, "PUERTO_ESCUCHA_DISPATCH"), loger, NULL, 0);
 
     log_destroy(loger);
 
     procesoCPU->pid = -1;
-    int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
-    int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(PATH_CONFIG, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
+    int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(path_config, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
+    int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(path_config, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
 
     // la siguiente linea es autobloqueante
     *CPUsocketBidireccionalDispatch = esperarCliente(&CPUsocketEscuchaDispatch);
     if (*CPUsocketBidireccionalDispatch != -1)
-        recibirConn(CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion);
+        recibirConn(CPUsocketBidireccionalDispatch, DISPATCH, procesoCPU, interrupcion, path_config);
     
     // la siguiente linea es autobloqueante
     *CPUsocketBidireccionalInterrupt = esperarCliente(&CPUsocketEscuchaInterrupt);
     if (*CPUsocketBidireccionalInterrupt != -1)
-        recibirConn(CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion);
+        recibirConn(CPUsocketBidireccionalInterrupt, INTERRUMPT, procesoCPU, interrupcion, path_config);
 }
 
 void handshakeCPUMemoria(int *CPUSocketMemoria)
@@ -53,14 +53,14 @@ void handshakeCPUMemoria(int *CPUSocketMemoria)
     }
 }
 
-void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion)
+void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion, char *path_config)
 {
     TipoModulo *modulo = get_modulo_msg_recv(socket);
 
     switch (*modulo)
     {
     case KERNEL:
-        manageKernel(socket, conexion, procesoCPU, interrupcion);
+        manageKernel(socket, conexion, procesoCPU, interrupcion, path_config);
         break;
 
     default:
@@ -70,7 +70,7 @@ void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, i
     free(modulo);
 }
 
-void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion)
+void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion, char *path_config)
 {
     op_code *codigoOperacion = get_opcode_msg_recv(socket);
 
@@ -79,7 +79,7 @@ void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, 
         enviarPaqueteResult(1, socket, CPU, KERNEL);
         if (conexion == DISPATCH)
         {
-            crearHiloDISPATCH(socket, procesoCPU);
+            crearHiloDISPATCH(socket, procesoCPU, path_config);
         }
         else
         {
@@ -94,7 +94,7 @@ void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, 
     free(codigoOperacion);
 }
 
-void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU)
+void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU, char *path_config)
 {
     pthread_t hiloDISPATCH;
 
@@ -102,6 +102,7 @@ void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU)
     params->socket = socket;
     params->interrupcion = NULL;
     params->procesoCPU = procesoCPU;
+    params->path_config = path_config;
 
     pthread_create(&hiloDISPATCH,
                    NULL,
@@ -119,6 +120,7 @@ void crearHiloINTERRUPT(int *socket, int *interrupcion)
     params->socket = socket;
     params->procesoCPU = NULL;
     params->interrupcion = interrupcion;
+    params->path_config = NULL;
 
     pthread_create(&hiloINTERRUPT,
                    NULL,

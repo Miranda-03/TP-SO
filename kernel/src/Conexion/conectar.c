@@ -8,10 +8,13 @@ typedef struct
 
 t_log *loger;
 
-void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch, int *KernelSocketCPUInterrumpt, t_dictionary *interfaces_conectadas)
+char *path_config_conn;
+
+void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch, int *KernelSocketCPUInterrumpt, t_dictionary *interfaces_conectadas, char *path_config)
 {
     loger = log_create("logs/kernel_conn.log", "kernel_conn", 1, LOG_LEVEL_INFO);
-    t_config *config = config_create(PATH_CONFIG);
+    path_config_conn = path_config;
+    t_config *config = config_create(path_config);
 
     solicitar_ip("255.255.255.255", config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config, "IP_CPU", loger, "SOLICITAR_IP");
 
@@ -174,6 +177,6 @@ void obtener_ip_de_modulo_memoria(int socket, t_config *config)
 
 void *hilo_responder_ips(void *ptr)
 {
-    t_config *config = config_create("kernel.config");
+    t_config *config = config_create(path_config_conn);
     escucharYResponder(config_get_string_value(config, "PUERTO_ESCUCHA"), loger, config_get_string_value(config, "IP_MEMORIA"), 1);
 }

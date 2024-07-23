@@ -1,0 +1,20 @@
+[INFO] 01:56:09:359 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 9 - Valor: 10
+[INFO] 01:56:09:561 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 19 - Valor: 10
+[INFO] 01:56:09:763 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 29 - Valor: 10
+[INFO] 01:56:09:965 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 48 - Valor: 10
+[INFO] 01:56:10:168 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 58 - Valor: 10
+[INFO] 01:56:10:577 conn_memoria/(67084:67084): PID: 2 - Acción: LEER - Dirección Física: 59 - Valor: Fallout 76
+[INFO] 01:56:10:578 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 80 - Valor: Fallout 76
+[INFO] 01:56:10:780 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 90 - Valor: 10
+[INFO] 01:56:11:084 conn_memoria/(67084:67084): PID: 2 - Acción: LEER - Dirección Física: 0 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+
+[INFO] 01:56:11:085 conn_memoria/(67084:67084): PID: 2 - Acción: ESCRIBIR - Dirección Física: 91 - Valor: Fallout 1
+Fallout 2
+Fallout 3
+Fallout: New Vegas
+Fallout 4
+

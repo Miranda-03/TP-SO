@@ -11,8 +11,6 @@ void *manage_conn_stdin_io(void *ptr)
 
     int conectada = 1;
 
-    printf("ENTRA EN EL HILO DE STDIN\n");
-
     while (conectada > 0)
     {
         TipoModulo *modulo = get_modulo_msg_recv(&socketSTDIN);

@@ -43,15 +43,18 @@ sem_t cant_procesos_ready;
 
 MensajeProcesoDelCPU *procesoDelCPU;
 
+char *path_config_cp;
+
 void *planificarCortoPlazo(void *ptr)
 {
     params = (ParamsPCP_kernel *)ptr;
     interfaces_conectadas = params->interfaces_conectadas;
     recursos = params->recursos;
     algoritmo = params->algoritmo;
+    path_config_cp = params->path_config;
     PIDprocesoEjecutando = -1;
 
-    t_config *config = config_create(PATH_CONFIG);
+    t_config *config = config_create(path_config_cp);
     quantumTotal = atoi(config_get_string_value(config, "QUANTUM"));
     config_destroy(config);
 
@@ -748,7 +751,7 @@ int laIOEstaConectada(structGuardarProcesoEnBloqueado *proceso)
     {
         IOguardar *io = (IOguardar *)value;
         if (strcmp(key, keyProceso) == 0)
-            if(check_socket_connection(io->socket) == 0)
+            if (check_socket_connection(io->socket) == 0)
                 estaConectada = -1;
     }
 
@@ -907,7 +910,7 @@ void *manageGenericoPorID(void *ptr)
 
     int pid = proceso->procesoPCB->pid;
 
-    if(check_socket_connection(cola->socket) == 0)
+    if (check_socket_connection(cola->socket) == 0)
     {
         proceso = (structGuardarProcesoEnBloqueado *)queue_pop(cola->colaBloqueadoPorID);
         terminarProceso(proceso->procesoPCB, "INVALID_INTERFACE (probablemente desconectada)");
@@ -1432,7 +1435,7 @@ void listar_por_estado()
     char *mensaje_cp_bloqueado = string_new();
     string_append(&mensaje_cp_bloqueado, "BLOQUEADOS [ ");
 
-    void iterar_cola(void *value) 
+    void iterar_cola(void *value)
     {
         structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
         string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
@@ -1469,7 +1472,6 @@ void listar_por_estado()
 
     dictionary_iterator(recursos, buscar_proceso_por_recurso);
 
-    
     string_append(&mensaje_cp_bloqueado, "]");
     log_info(loger_estados_cp, mensaje_cp_bloqueado);
     free(mensaje_cp_bloqueado);

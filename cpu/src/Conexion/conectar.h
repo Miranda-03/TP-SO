@@ -27,7 +27,8 @@ void conectarModuloCPU(int *CPUSocketMemoria,
                        int *CPUsocketBidireccionalDispatch,
                        int *CPUsocketBidireccionalInterrupt,
                        Contexto_proceso *procesoCPU,
-                       int *interrupcion);
+                       int *interrupcion,
+                       char *path_config);
 
 /**
  * @fn    handshakeCPUMemoria
@@ -39,19 +40,19 @@ void handshakeCPUMemoria(int *CPUSocketMemoria);
  * @fn    recibirConn
  * @brief recibir y gestionar conexion entrante.
  */
-void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion);
+void recibirConn(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion, char *path_config);
 
 /**
  * @fn    manageKernel
  * @brief gestionar la conexion con Kernel.
  */
-void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion);
+void manageKernel(int *socket, TipoConn conexion, Contexto_proceso *procesoCPU, int *interrupcion, char *path_config);
 
 /**
  * @fn    crearHiloDISPATCH
  * @brief crear hilo con la función de conexión dispatch con el Kernel.
  */
-void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU);
+void crearHiloDISPATCH(int *socket, Contexto_proceso *procesoCPU, char *path_config);
 
 /**
  * @fn    crearHiloINTERRUPT

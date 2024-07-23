@@ -13,7 +13,7 @@
  * @fn    crear_mem_instrucciones
  * @brief crea un diccionario para guardar los PID y las instrucciones de cada proceso.
  */
-void crear_mem_instrucciones();
+void crear_mem_instrucciones(char *path_config);
 
 /**
  * @fn    agregar_instrucciones

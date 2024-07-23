@@ -56,6 +56,7 @@ typedef struct
     Algoritmo algoritmo;
     t_dictionary *interfaces_conectadas;
     t_dictionary *recursos;
+    char *path_config;
 } ParamsPCP_kernel;
 
 typedef struct

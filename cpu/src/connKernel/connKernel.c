@@ -11,7 +11,7 @@ void *manageDISPATCH(void *ptr)
         op_code *op_code = get_opcode_msg_recv(params->socket);
 
         if (*op_code == OBTENER_IP_MEMORIA)
-            enviar_ip_memoria_a_kernel(*(params->socket));
+            enviar_ip_memoria_a_kernel(*(params->socket), params->path_config);
         else
         {
             obtener_procesoCPU_del_stream(buffer_leer_recv(params->socket), params->procesoCPU);
@@ -63,9 +63,9 @@ void obtener_registros(t_buffer *buffer, Contexto_proceso *procesoCPU)
     procesoCPU->registros.edx.i32 = buffer_read_uint32(buffer);
 }
 
-void enviar_ip_memoria_a_kernel(int socket)
+void enviar_ip_memoria_a_kernel(int socket, char *path_config)
 {
-    t_config *config = config_create("cpu.config");
+    t_config *config = config_create(path_config);
 
     char *ip = config_get_string_value(config, "IP_MEMORIA");
     int size = strlen(ip) + 1;
