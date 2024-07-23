@@ -1,8 +1,9 @@
 # Generated files
 bin/
 obj/
-.file_system/*
-!.file_system/
+*.log
+*.dat
+file_system/*
 
 # Eclipse files
 .settings/
