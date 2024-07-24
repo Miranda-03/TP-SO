@@ -235,3 +235,195 @@
 [INFO] 15:35:40:648 kernel_conn/(5642:5651): Escuchando mensaje broadcast en el puerto: 8003
 [INFO] 15:35:46:779 kernel_conn/(5642:5651): Solicitud recibida
 [INFO] 15:35:46:779 kernel_conn/(5642:5651): Enviando IPs
+[INFO] 20:05:54:815 kernel_conn/(19682:19682): Broadcast de solicitud de IP realizado
+[INFO] 20:05:54:815 kernel_conn/(19682:19682): IP recibida: 192.168.0.10
+[INFO] 20:05:54:816 kernel_conn/(19682:19682): Se establece conexion con CPU: DISPATCH
+[INFO] 20:05:54:816 kernel_conn/(19682:19682): Se establece conexion con CPU: INTERRUMPT
+[INFO] 20:05:54:823 kernel_conn/(19682:19682): Se establece conexion con la memoria
+[INFO] 20:05:54:823 kernel_conn/(19682:19689): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 20:06:02:966 kernel_conn/(19682:19689): Solicitud recibida
+[INFO] 20:06:02:966 kernel_conn/(19682:19689): Enviando IPs
+[INFO] 20:21:32:767 kernel_conn/(24923:24923): Broadcast de solicitud de IP realizado
+[INFO] 20:21:32:767 kernel_conn/(24923:24923): IP recibida: 192.168.0.10
+[INFO] 20:21:32:768 kernel_conn/(24923:24923): Se establece conexion con CPU: DISPATCH
+[INFO] 20:21:32:769 kernel_conn/(24923:24923): Se establece conexion con CPU: INTERRUMPT
+[INFO] 20:21:32:770 kernel_conn/(24923:24923): Se establece conexion con la memoria
+[INFO] 20:21:32:771 kernel_conn/(24923:24930): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 20:21:35:673 kernel_conn/(24923:24930): Solicitud recibida
+[INFO] 20:21:35:674 kernel_conn/(24923:24930): Enviando IPs
+[INFO] 20:25:40:479 kernel_conn/(26450:26450): Broadcast de solicitud de IP realizado
+[INFO] 20:25:40:479 kernel_conn/(26450:26450): IP recibida: 192.168.0.10
+[INFO] 20:25:40:480 kernel_conn/(26450:26450): Se establece conexion con CPU: DISPATCH
+[INFO] 20:25:40:481 kernel_conn/(26450:26450): Se establece conexion con CPU: INTERRUMPT
+[INFO] 20:25:40:483 kernel_conn/(26450:26450): Se establece conexion con la memoria
+[INFO] 20:25:40:487 kernel_conn/(26450:26457): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 20:25:43:103 kernel_conn/(26450:26457): Solicitud recibida
+[INFO] 20:25:43:104 kernel_conn/(26450:26457): Enviando IPs
+[INFO] 20:38:38:503 kernel_conn/(31585:31585): Broadcast de solicitud de IP realizado
+[INFO] 20:38:38:504 kernel_conn/(31585:31585): IP recibida: 192.168.0.10
+[INFO] 20:38:38:504 kernel_conn/(31585:31585): Se establece conexion con CPU: DISPATCH
+[INFO] 20:38:38:504 kernel_conn/(31585:31585): Se establece conexion con CPU: INTERRUMPT
+[INFO] 20:38:38:505 kernel_conn/(31585:31585): Se establece conexion con la memoria
+[INFO] 20:38:38:507 kernel_conn/(31585:31596): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 20:38:41:112 kernel_conn/(31585:31596): Solicitud recibida
+[INFO] 20:38:41:112 kernel_conn/(31585:31596): Enviando IPs
+[INFO] 20:46:10:625 kernel_conn/(34402:34402): Broadcast de solicitud de IP realizado
+[INFO] 20:46:10:626 kernel_conn/(34402:34402): IP recibida: 192.168.0.10
+[INFO] 20:46:10:626 kernel_conn/(34402:34402): Se establece conexion con CPU: DISPATCH
+[INFO] 20:46:10:627 kernel_conn/(34402:34402): Se establece conexion con CPU: INTERRUMPT
+[INFO] 20:46:10:627 kernel_conn/(34402:34402): Se establece conexion con la memoria
+[INFO] 20:46:10:628 kernel_conn/(34402:34409): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 20:46:12:704 kernel_conn/(34402:34409): Solicitud recibida
+[INFO] 20:46:12:705 kernel_conn/(34402:34409): Enviando IPs
+[INFO] 20:57:15:604 kernel_conn/(39073:39073): Broadcast de solicitud de IP realizado
+[INFO] 20:57:15:604 kernel_conn/(39073:39073): IP recibida: 192.168.0.10
+[INFO] 20:57:15:605 kernel_conn/(39073:39073): Se establece conexion con CPU: DISPATCH
+[INFO] 20:57:15:605 kernel_conn/(39073:39073): Se establece conexion con CPU: INTERRUMPT
+[INFO] 20:57:15:606 kernel_conn/(39073:39073): Se establece conexion con la memoria
+[INFO] 20:57:15:607 kernel_conn/(39073:39080): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 20:57:18:599 kernel_conn/(39073:39080): Solicitud recibida
+[INFO] 20:57:18:599 kernel_conn/(39073:39080): Enviando IPs
+[INFO] 21:03:32:319 kernel_conn/(41043:41043): Broadcast de solicitud de IP realizado
+[INFO] 21:03:32:320 kernel_conn/(41043:41043): IP recibida: 192.168.0.10
+[INFO] 21:03:32:320 kernel_conn/(41043:41043): Se establece conexion con CPU: DISPATCH
+[INFO] 21:03:32:320 kernel_conn/(41043:41043): Se establece conexion con CPU: INTERRUMPT
+[INFO] 21:03:32:323 kernel_conn/(41043:41043): Se establece conexion con la memoria
+[INFO] 21:03:32:324 kernel_conn/(41043:41050): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 21:03:34:819 kernel_conn/(41043:41050): Solicitud recibida
+[INFO] 21:03:34:820 kernel_conn/(41043:41050): Enviando IPs
+[INFO] 21:21:17:264 kernel_conn/(47241:47241): Broadcast de solicitud de IP realizado
+[INFO] 21:21:17:266 kernel_conn/(47241:47241): IP recibida: 192.168.0.10
+[INFO] 21:21:17:266 kernel_conn/(47241:47241): Se establece conexion con CPU: DISPATCH
+[INFO] 21:21:17:269 kernel_conn/(47241:47241): Se establece conexion con CPU: INTERRUMPT
+[INFO] 21:21:17:276 kernel_conn/(47241:47241): Se establece conexion con la memoria
+[INFO] 21:21:17:290 kernel_conn/(47241:47265): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 21:21:51:507 kernel_conn/(47241:47265): Solicitud recibida
+[INFO] 21:21:51:508 kernel_conn/(47241:47265): Enviando IPs
+[INFO] 21:29:30:543 kernel_conn/(51264:51264): Broadcast de solicitud de IP realizado
+[INFO] 21:29:30:544 kernel_conn/(51264:51264): IP recibida: 192.168.0.10
+[INFO] 21:29:30:545 kernel_conn/(51264:51264): Se establece conexion con CPU: DISPATCH
+[INFO] 21:29:30:546 kernel_conn/(51264:51264): Se establece conexion con CPU: INTERRUMPT
+[INFO] 21:29:30:549 kernel_conn/(51264:51264): Se establece conexion con la memoria
+[INFO] 21:29:30:553 kernel_conn/(51264:51277): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 21:29:37:295 kernel_conn/(51264:51277): Solicitud recibida
+[INFO] 21:29:37:295 kernel_conn/(51264:51277): Enviando IPs
+[INFO] 21:33:42:895 kernel_conn/(53810:53810): Broadcast de solicitud de IP realizado
+[INFO] 21:33:42:896 kernel_conn/(53810:53810): IP recibida: 192.168.0.10
+[INFO] 21:33:42:896 kernel_conn/(53810:53810): Se establece conexion con CPU: DISPATCH
+[INFO] 21:33:42:897 kernel_conn/(53810:53810): Se establece conexion con CPU: INTERRUMPT
+[INFO] 21:33:42:899 kernel_conn/(53810:53810): Se establece conexion con la memoria
+[INFO] 21:33:42:905 kernel_conn/(53810:53828): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 21:33:47:174 kernel_conn/(53810:53828): Solicitud recibida
+[INFO] 21:33:47:175 kernel_conn/(53810:53828): Enviando IPs
+[INFO] 23:09:52:715 kernel_conn/(84396:84396): Broadcast de solicitud de IP realizado
+[INFO] 23:09:52:716 kernel_conn/(84396:84396): IP recibida: 192.168.0.10
+[INFO] 23:09:52:720 kernel_conn/(84396:84396): Se establece conexion con CPU: DISPATCH
+[INFO] 23:09:52:721 kernel_conn/(84396:84396): Se establece conexion con CPU: INTERRUMPT
+[INFO] 23:09:52:723 kernel_conn/(84396:84396): Se establece conexion con la memoria
+[INFO] 23:09:52:726 kernel_conn/(84396:84404): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 23:09:55:590 kernel_conn/(84396:84404): Solicitud recibida
+[INFO] 23:09:55:590 kernel_conn/(84396:84404): Enviando IPs
+[INFO] 23:12:35:158 kernel_conn/(85714:85714): Broadcast de solicitud de IP realizado
+[INFO] 23:12:35:159 kernel_conn/(85714:85714): IP recibida: 192.168.0.10
+[INFO] 23:12:35:159 kernel_conn/(85714:85714): Se establece conexion con CPU: DISPATCH
+[INFO] 23:12:35:160 kernel_conn/(85714:85714): Se establece conexion con CPU: INTERRUMPT
+[INFO] 23:12:35:161 kernel_conn/(85714:85714): Se establece conexion con la memoria
+[INFO] 23:12:35:163 kernel_conn/(85714:85731): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 23:12:41:467 kernel_conn/(85714:85731): Solicitud recibida
+[INFO] 23:12:41:469 kernel_conn/(85714:85731): Enviando IPs
+[INFO] 23:41:45:430 kernel_conn/(97084:97084): Broadcast de solicitud de IP realizado
+[INFO] 23:41:45:431 kernel_conn/(97084:97084): IP recibida: 192.168.0.10
+[INFO] 23:41:45:431 kernel_conn/(97084:97084): Se establece conexion con CPU: DISPATCH
+[INFO] 23:41:45:432 kernel_conn/(97084:97084): Se establece conexion con CPU: INTERRUMPT
+[INFO] 23:41:45:436 kernel_conn/(97084:97084): Se establece conexion con la memoria
+[INFO] 23:41:45:452 kernel_conn/(97084:97106): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 23:41:53:994 kernel_conn/(97084:97106): Solicitud recibida
+[INFO] 23:41:53:994 kernel_conn/(97084:97106): Enviando IPs
+[INFO] 23:51:53:741 kernel_conn/(101151:101151): Broadcast de solicitud de IP realizado
+[INFO] 23:51:53:741 kernel_conn/(101151:101151): IP recibida: 192.168.0.10
+[INFO] 23:51:53:742 kernel_conn/(101151:101151): Se establece conexion con CPU: DISPATCH
+[INFO] 23:51:53:743 kernel_conn/(101151:101151): Se establece conexion con CPU: INTERRUMPT
+[INFO] 23:51:53:744 kernel_conn/(101151:101151): Se establece conexion con la memoria
+[INFO] 23:51:53:748 kernel_conn/(101151:101160): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 23:52:00:510 kernel_conn/(101151:101160): Solicitud recibida
+[INFO] 23:52:00:510 kernel_conn/(101151:101160): Enviando IPs
+[INFO] 23:58:56:008 kernel_conn/(104984:104984): Broadcast de solicitud de IP realizado
+[INFO] 23:58:56:009 kernel_conn/(104984:104984): IP recibida: 192.168.0.10
+[INFO] 23:58:56:009 kernel_conn/(104984:104984): Se establece conexion con CPU: DISPATCH
+[INFO] 23:58:56:010 kernel_conn/(104984:104984): Se establece conexion con CPU: INTERRUMPT
+[INFO] 23:58:56:012 kernel_conn/(104984:104984): Se establece conexion con la memoria
+[INFO] 23:58:56:016 kernel_conn/(104984:104995): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 23:59:12:578 kernel_conn/(104984:104995): Solicitud recibida
+[INFO] 23:59:12:578 kernel_conn/(104984:104995): Enviando IPs
+[INFO] 00:19:52:708 kernel_conn/(112898:112898): Broadcast de solicitud de IP realizado
+[INFO] 00:19:52:709 kernel_conn/(112898:112898): IP recibida: 192.168.0.10
+[INFO] 00:19:52:709 kernel_conn/(112898:112898): Se establece conexion con CPU: DISPATCH
+[INFO] 00:19:52:710 kernel_conn/(112898:112898): Se establece conexion con CPU: INTERRUMPT
+[INFO] 00:19:52:712 kernel_conn/(112898:112898): Se establece conexion con la memoria
+[INFO] 00:19:52:719 kernel_conn/(112898:112911): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 00:19:58:920 kernel_conn/(112898:112911): Solicitud recibida
+[INFO] 00:19:58:920 kernel_conn/(112898:112911): Enviando IPs
+[INFO] 00:41:11:807 kernel_conn/(120804:120804): Broadcast de solicitud de IP realizado
+[INFO] 00:41:11:807 kernel_conn/(120804:120804): IP recibida: 192.168.0.10
+[INFO] 00:41:11:808 kernel_conn/(120804:120804): Se establece conexion con CPU: DISPATCH
+[INFO] 00:41:11:808 kernel_conn/(120804:120804): Se establece conexion con CPU: INTERRUMPT
+[INFO] 00:41:11:809 kernel_conn/(120804:120804): Se establece conexion con la memoria
+[INFO] 00:41:11:809 kernel_conn/(120804:120811): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 00:41:13:926 kernel_conn/(120804:120811): Solicitud recibida
+[INFO] 00:41:13:926 kernel_conn/(120804:120811): Enviando IPs
+[INFO] 00:50:04:304 kernel_conn/(123458:123458): Broadcast de solicitud de IP realizado
+[INFO] 00:50:04:305 kernel_conn/(123458:123458): IP recibida: 192.168.0.10
+[INFO] 00:50:04:306 kernel_conn/(123458:123458): Se establece conexion con CPU: DISPATCH
+[INFO] 00:50:04:306 kernel_conn/(123458:123458): Se establece conexion con CPU: INTERRUMPT
+[INFO] 00:50:04:307 kernel_conn/(123458:123458): Se establece conexion con la memoria
+[INFO] 00:50:04:308 kernel_conn/(123458:123465): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 00:50:07:525 kernel_conn/(123458:123465): Solicitud recibida
+[INFO] 00:50:07:526 kernel_conn/(123458:123465): Enviando IPs
+[INFO] 01:04:47:263 kernel_conn/(128020:128020): Broadcast de solicitud de IP realizado
+[INFO] 01:04:47:263 kernel_conn/(128020:128020): IP recibida: 192.168.0.10
+[INFO] 01:04:47:264 kernel_conn/(128020:128020): Se establece conexion con CPU: DISPATCH
+[INFO] 01:04:47:264 kernel_conn/(128020:128020): Se establece conexion con CPU: INTERRUMPT
+[INFO] 01:04:47:265 kernel_conn/(128020:128020): Se establece conexion con la memoria
+[INFO] 01:04:47:265 kernel_conn/(128020:128027): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 01:04:50:005 kernel_conn/(128020:128027): Solicitud recibida
+[INFO] 01:04:50:006 kernel_conn/(128020:128027): Enviando IPs
+[INFO] 01:13:43:302 kernel_conn/(131394:131394): Broadcast de solicitud de IP realizado
+[INFO] 01:13:43:302 kernel_conn/(131394:131394): IP recibida: 192.168.0.10
+[INFO] 01:13:43:303 kernel_conn/(131394:131394): Se establece conexion con CPU: DISPATCH
+[INFO] 01:13:43:303 kernel_conn/(131394:131394): Se establece conexion con CPU: INTERRUMPT
+[INFO] 01:13:43:304 kernel_conn/(131394:131394): Se establece conexion con la memoria
+[INFO] 01:13:43:304 kernel_conn/(131394:131401): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 01:13:46:387 kernel_conn/(131394:131401): Solicitud recibida
+[INFO] 01:13:46:387 kernel_conn/(131394:131401): Enviando IPs
+[INFO] 03:53:23:338 kernel_conn/(181049:181049): Broadcast de solicitud de IP realizado
+[INFO] 03:53:23:338 kernel_conn/(181049:181049): IP recibida: 192.168.0.10
+[INFO] 03:53:23:339 kernel_conn/(181049:181049): Se establece conexion con CPU: DISPATCH
+[INFO] 03:53:23:339 kernel_conn/(181049:181049): Se establece conexion con CPU: INTERRUMPT
+[INFO] 03:53:23:340 kernel_conn/(181049:181049): Se establece conexion con la memoria
+[INFO] 03:53:23:342 kernel_conn/(181049:181056): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 03:53:25:769 kernel_conn/(181049:181056): Solicitud recibida
+[INFO] 03:53:25:770 kernel_conn/(181049:181056): Enviando IPs
+[INFO] 03:59:36:513 kernel_conn/(183473:183473): Broadcast de solicitud de IP realizado
+[INFO] 03:59:36:513 kernel_conn/(183473:183473): IP recibida: 192.168.0.10
+[INFO] 03:59:36:514 kernel_conn/(183473:183473): Se establece conexion con CPU: DISPATCH
+[INFO] 03:59:36:514 kernel_conn/(183473:183473): Se establece conexion con CPU: INTERRUMPT
+[INFO] 03:59:36:517 kernel_conn/(183473:183473): Se establece conexion con la memoria
+[INFO] 03:59:36:522 kernel_conn/(183473:183482): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 03:59:43:085 kernel_conn/(183473:183482): Solicitud recibida
+[INFO] 03:59:43:086 kernel_conn/(183473:183482): Enviando IPs
+[INFO] 04:10:47:601 kernel_conn/(188600:188600): Broadcast de solicitud de IP realizado
+[INFO] 04:10:47:602 kernel_conn/(188600:188600): IP recibida: 192.168.0.10
+[INFO] 04:10:47:606 kernel_conn/(188600:188600): Se establece conexion con CPU: DISPATCH
+[INFO] 04:10:47:608 kernel_conn/(188600:188600): Se establece conexion con CPU: INTERRUMPT
+[INFO] 04:10:47:612 kernel_conn/(188600:188600): Se establece conexion con la memoria
+[INFO] 04:10:47:617 kernel_conn/(188600:188610): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 04:10:54:759 kernel_conn/(188600:188610): Solicitud recibida
+[INFO] 04:10:54:759 kernel_conn/(188600:188610): Enviando IPs
+[INFO] 04:20:49:139 kernel_conn/(192877:192877): Broadcast de solicitud de IP realizado
+[INFO] 04:20:49:139 kernel_conn/(192877:192877): IP recibida: 192.168.0.10
+[INFO] 04:20:49:140 kernel_conn/(192877:192877): Se establece conexion con CPU: DISPATCH
+[INFO] 04:20:49:141 kernel_conn/(192877:192877): Se establece conexion con CPU: INTERRUMPT
+[INFO] 04:20:49:144 kernel_conn/(192877:192877): Se establece conexion con la memoria
+[INFO] 04:20:49:152 kernel_conn/(192877:192887): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 04:20:54:761 kernel_conn/(192877:192887): Solicitud recibida
+[INFO] 04:20:54:761 kernel_conn/(192877:192887): Enviando IPs

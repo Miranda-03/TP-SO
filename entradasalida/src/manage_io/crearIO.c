@@ -404,6 +404,10 @@ t_buffer *recibir_instruccion_del_kernel(char **instruccion, int *PID, int *sock
         *instruccion = buffer_read_string(buffer, size);
         return buffer;
     }
+    else
+    {
+        printf("llega check\n");
+    }
 
     free(modulo);
     free(codigo);

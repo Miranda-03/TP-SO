@@ -8,15 +8,20 @@ void consolaInteractiva()
     {
         linea = readline("FIFO2B-OS>");
 
+        if (!linea)
+        {
+            break;
+        }
+
         if (linea)
         {
             add_history(linea);
+
+            int valido = verificar_comando(linea);
+
+            if (valido > 0)
+                atender_instruccion(linea);
         }
-
-        int valido = verificar_comando(linea);
-
-        if (valido > 0)
-            atender_instruccion(linea);
     }
 }
 
@@ -56,8 +61,6 @@ void atender_instruccion(char *leido)
     else if (strcmp(comando[0], "INICIAR_PROCESO") == 0)
     {
         char *path = comando[1];
-	printf("%s", "el comando es");
-	printf("%s", path);
         PLPNuevoProceso(path);
     }
     else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0) // FALTA HACER

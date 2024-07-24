@@ -27,17 +27,18 @@ void inicarPlanificadorLargoPLazo(int socketMemoria, char *path_config)
     *socketBidireccionalMemoria = socketMemoria;
     kernel_loger_lp = log_create("logs/kernel_info.log", "plani_lp", 1, LOG_LEVEL_INFO);
     iniciarMutex();
-   pthread_t hilo_enviar_procesos_a_ready;
-  pthread_create(&hilo_enviar_procesos_a_ready, NULL, agregarNuevoProcesoReady, NULL);
-  pthread_detach(hilo_enviar_procesos_a_ready);
+    pthread_t hilo_enviar_procesos_a_ready;
+    pthread_create(&hilo_enviar_procesos_a_ready, NULL, agregarNuevoProcesoReady, NULL);
+    pthread_detach(hilo_enviar_procesos_a_ready);
 }
 
 void nuevoProceso(char *path_instrucciones)
 {
     PcbGuardarEnNEW *nuevo_proceso = (PcbGuardarEnNEW *)malloc(sizeof(PcbGuardarEnNEW));
     nuevo_proceso->proceso = crearProcesoEstadoNEW();
-    nuevo_proceso->path_instrucciones = path_instrucciones;
-    printf("%s", nuevo_proceso->path_instrucciones);
+    nuevo_proceso->path_instrucciones = string_new();
+    string_append(&(nuevo_proceso->path_instrucciones), path_instrucciones);
+
     mensaje_nuevo_proceso(nuevo_proceso->proceso->pid);
     agregarProcesoColaNew(nuevo_proceso);
 }
@@ -62,29 +63,26 @@ void agregarProcesoColaNew(PcbGuardarEnNEW *proceso)
     pthread_mutex_unlock(&mutexColaNEW);
 }
 
-void PLPNuevoProceso(char *path_instrucciones) 
+void PLPNuevoProceso(char *path_instrucciones)
 {
-	printf("%s", path_instrucciones);
     nuevoProceso(path_instrucciones);
-   sem_post(&hay_procesos_en_new);
+    sem_post(&hay_procesos_en_new);
 }
 
 void *agregarNuevoProcesoReady(void *ptr)
 {
-printf("%s", "HOLAAAAAA" );
-while(1){
-    printf("%s", "HOLAAAA");
-    sem_wait(&hay_procesos_en_new);
-    
+    while (1)
+    {
+        sem_wait(&hay_procesos_en_new);
+
         PcbGuardarEnNEW *nuevo_proceso = sacarProcesoDeNew();
 
         int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
-	printf("%s", "el path en el hilo es:  ");
-	printf("%s", nuevo_proceso->path_instrucciones);
+
         if (resultadoMemoria > 0)
             agregarProcesoColaReady(nuevo_proceso->proceso);
-	else
-	log_error(kernel_loger_lp, "Error en la memoria");
+        else
+            log_error(kernel_loger_lp, "Error en la memoria");
     }
 }
 
@@ -119,7 +117,7 @@ PcbGuardarEnNEW *sacarProcesoDeNew()
     pthread_mutex_lock(&mutexColaNEW);
     PcbGuardarEnNEW *nuevo_proceso = queue_pop(cola_de_new);
     pthread_mutex_unlock(&mutexColaNEW);
-
+    
     return nuevo_proceso;
 }
 

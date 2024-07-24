@@ -135,7 +135,7 @@ void esperarProcesoCPU(int quantum);
  * @fn    esperarQuantum
  * @brief mandar interrupcion por fin de quantum.
  */
-int esperarQuantum(int quantum);
+void *esperarQuantum(void *ptr);
 
 /**
  * @fn    obtener_registros_pcbCPU
@@ -243,7 +243,7 @@ int hayAlgunoEnCPU();
  * @fn    agregarProcesoAReadyCorrespondiente
  * @brief agrega el proceso a Ready o a mayor prioridad.
  */
-void agregarProcesoAReadyCorrespondiente();
+void agregarProcesoAReadyCorrespondiente(Pcb *proceso);
 
 /**
  * @fn    guardarLosRegistros
