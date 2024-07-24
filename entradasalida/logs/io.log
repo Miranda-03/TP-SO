@@ -531,3 +531,155 @@
 [ERROR] 04:16:52:630 entradasalida/(188785:188811): DialFS - Comando inválido
 [ERROR] 04:23:02:215 entradasalida/(193039:193073): DialFS - Comando inválido
 [INFO] 04:23:02:215 entradasalida/(193039:193059): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 04:36:11:912 entradasalida/(198452:198483): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 04:36:11:913 entradasalida/(198452:198470): PID: 0 - Operacion: IO_STDOUT_WRITE
+[INFO] 04:36:11:915 entradasalida/(198452:198472): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 04:36:11:916 entradasalida/(198452:198474): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 04:36:11:915 entradasalida/(198452:198480): PID: 0 - Operacion: IO_STDIN_READ
+[ERROR] 04:36:11:915 entradasalida/(198452:198487): DialFS - Comando inválido
+[INFO] 04:36:11:916 entradasalida/(198452:198476): PID: 0 - Operacion: IO_SLEEP_GEN
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:917 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[ERROR] 04:36:11:918 entradasalida/(198452:198487): DialFS - Comando inválido
+[INFO] 04:40:16:355 entradasalida/(201656:201685): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:40:26:377 entradasalida/(201656:201685): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:40:28:377 entradasalida/(201656:201685): PID: 3 - Operacion: IO_SLEEP_GEN
+[INFO] 04:44:36:142 entradasalida/(204135:204154): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:44:46:157 entradasalida/(204135:204154): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:44:48:163 entradasalida/(204135:204154): PID: 3 - Operacion: IO_SLEEP_GEN
+[INFO] 04:44:53:169 entradasalida/(204135:204154): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:45:01:178 entradasalida/(204135:204154): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:45:08:192 entradasalida/(204135:204154): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:45:13:199 entradasalida/(204135:204154): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 04:45:18:200 entradasalida/(204135:204154): PID: 2 - Operacion: IO_SLEEP_GEN
+[INFO] 06:06:20:307 entradasalida/(204135:204158): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 06:06:20:307 entradasalida/(204135:204154): PID: 402566722 - Operacion: IO_SLEEP_GEN
+[INFO] 06:06:20:308 entradasalida/(204135:204156): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 06:06:20:308 entradasalida/(204135:204162): PID: 0 - Operacion: IO_STDIN_READ
+[INFO] 06:06:20:308 entradasalida/(204135:204164): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 06:06:20:308 entradasalida/(204135:204152): PID: 0 - Operacion: IO_STDOUT_WRITE
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:317 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:318 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido
+[ERROR] 06:06:20:319 entradasalida/(204135:204168): DialFS - Comando inválido

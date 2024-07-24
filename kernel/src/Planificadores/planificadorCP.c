@@ -430,20 +430,22 @@ char *enum_to_string_EXIT(MotivoDesalojo motivo)
 
 void esperarProcesoCPU(int quantum)
 {
-    // Creo el hilo para escuchar a CPU
     pthread_t hiloEscuchaCPUDispatch;
-    pthread_create(&hiloEscuchaCPUDispatch, NULL, escuchaDispatch, (void *)quantum);
-
-    //sem_wait(&esperar_proceso);
+    pthread_create(&hiloEscuchaCPUDispatch, NULL, escuchaDispatch, (void *)(intptr_t)quantum);
 
     void *quantumRestante;
 
-    pthread_join(hiloEscuchaCPUDispatch, (void *)quantumRestante);
+    pthread_join(hiloEscuchaCPUDispatch, &quantumRestante);
 
     if (quantumRestante != NULL)
+    {
         procesoDelCPU->pcb->quantumRestante = *(int *)quantumRestante;
+        free(quantumRestante); // Liberar memoria después de usar
+    }
     else
+    {
         procesoDelCPU->pcb->quantumRestante = 0;
+    }
 
     sem_post(&esperar_guardar_proceso);
 }
@@ -485,12 +487,12 @@ void enviarInterrupcion(MotivoDesalojo motivo, int *socket)
 
 void *escuchaDispatch(void *ptr)
 {
-    int quantum = (int)ptr;
+    int quantum = (int)(intptr_t)ptr; // Correcto casting para evitar problemas
 
     if (algoritmo == RR)
     {
         pthread_t hilo_esperar_quantum;
-        pthread_create(&hilo_esperar_quantum, NULL, esperarQuantum, (void *)quantum);
+        pthread_create(&hilo_esperar_quantum, NULL, esperarQuantum, (void *)(intptr_t)quantum);
         pthread_detach(hilo_esperar_quantum);
     }
 
@@ -502,10 +504,10 @@ void *escuchaDispatch(void *ptr)
 
     if (temporal_gettime(tiempoEjecutando) < quantum)
         quantum_restante = quantum - temporal_gettime(tiempoEjecutando);
-    
+
     temporal_destroy(tiempoEjecutando);
 
-    PIDprocesoEjecutando = -1; // llego el proceso, ya no esta ejecutando ninguno
+    PIDprocesoEjecutando = -1; // Llegó el proceso, ya no está ejecutando ninguno
 
     op_code *op_code = get_opcode_msg_recv(&(params->KernelSocketCPUDispatch));
 
@@ -524,14 +526,21 @@ void *escuchaDispatch(void *ptr)
         procesoDelCPU->instruccion = buffer_read_string(buffer, len);
     }
 
-    //sem_post(&esperar_proceso);
-
     buffer_destroy(buffer);
     free(modulo);
     free(op_code);
 
+    // Pasar la variable a través de pthread_exit
+    int *quantum_restante_ptr = malloc(sizeof(int));
+    if (quantum_restante_ptr == NULL)
+    {
+        perror("malloc failed");
+        pthread_exit(NULL);
+    }
+    *quantum_restante_ptr = quantum_restante;
+
     if (algoritmo == VRR)
-        pthread_exit(&quantum_restante);
+        pthread_exit(quantum_restante_ptr);
 
     pthread_exit(NULL);
 }

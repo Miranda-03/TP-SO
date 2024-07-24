@@ -427,3 +427,27 @@
 [INFO] 04:20:49:152 kernel_conn/(192877:192887): Escuchando mensaje broadcast en el puerto: 8003
 [INFO] 04:20:54:761 kernel_conn/(192877:192887): Solicitud recibida
 [INFO] 04:20:54:761 kernel_conn/(192877:192887): Enviando IPs
+[INFO] 04:32:04:953 kernel_conn/(198283:198283): Broadcast de solicitud de IP realizado
+[INFO] 04:32:04:954 kernel_conn/(198283:198283): IP recibida: 192.168.0.10
+[INFO] 04:32:04:955 kernel_conn/(198283:198283): Se establece conexion con CPU: DISPATCH
+[INFO] 04:32:04:957 kernel_conn/(198283:198283): Se establece conexion con CPU: INTERRUMPT
+[INFO] 04:32:04:961 kernel_conn/(198283:198283): Se establece conexion con la memoria
+[INFO] 04:32:04:967 kernel_conn/(198283:198298): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 04:32:11:242 kernel_conn/(198283:198298): Solicitud recibida
+[INFO] 04:32:11:243 kernel_conn/(198283:198298): Enviando IPs
+[INFO] 04:39:57:642 kernel_conn/(201508:201508): Broadcast de solicitud de IP realizado
+[INFO] 04:39:57:645 kernel_conn/(201508:201508): IP recibida: 192.168.0.10
+[INFO] 04:39:57:646 kernel_conn/(201508:201508): Se establece conexion con CPU: DISPATCH
+[INFO] 04:39:57:650 kernel_conn/(201508:201508): Se establece conexion con CPU: INTERRUMPT
+[INFO] 04:39:57:655 kernel_conn/(201508:201508): Se establece conexion con la memoria
+[INFO] 04:39:57:659 kernel_conn/(201508:201522): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 04:40:03:037 kernel_conn/(201508:201522): Solicitud recibida
+[INFO] 04:40:03:037 kernel_conn/(201508:201522): Enviando IPs
+[INFO] 04:44:14:531 kernel_conn/(203958:203958): Broadcast de solicitud de IP realizado
+[INFO] 04:44:14:531 kernel_conn/(203958:203958): IP recibida: 192.168.0.10
+[INFO] 04:44:14:547 kernel_conn/(203958:203958): Se establece conexion con CPU: DISPATCH
+[INFO] 04:44:14:549 kernel_conn/(203958:203958): Se establece conexion con CPU: INTERRUMPT
+[INFO] 04:44:14:553 kernel_conn/(203958:203958): Se establece conexion con la memoria
+[INFO] 04:44:14:559 kernel_conn/(203958:203978): Escuchando mensaje broadcast en el puerto: 8003
+[INFO] 04:44:22:724 kernel_conn/(203958:203978): Solicitud recibida
+[INFO] 04:44:22:724 kernel_conn/(203958:203978): Enviando IPs
