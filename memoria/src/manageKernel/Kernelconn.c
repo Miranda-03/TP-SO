@@ -21,7 +21,6 @@ void *manage_conn_kernel(void *ptr)
         {
             int pid = buffer_read_uint32(buffer);
 
-            resize_proceso(pid, 0, 0);
             quitar_tabla_de_pagina(pid);
             int respuesta = quitar_instrucciones(pid);
 

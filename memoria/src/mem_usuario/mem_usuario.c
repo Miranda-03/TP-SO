@@ -49,12 +49,14 @@ void iniciar_tablas_de_paginas()
 void crear_tabla_de_pagina(int PID)
 {
     t_list *tabla_de_paginas = list_create();
+
     char char_pid[10];
     t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
+
     dictionary_put(tablas_de_paginas, char_pid, tabla_de_paginas);
-    tam_pagina = atoi(obtenerValorConfig(path_config_mem_user, "TAM_PAGINA"));
-    log_info(log, "PID: %d - Tamaño: %d", PID, tam_pagina);
+    log_info(log, "PID: %d - Tamaño: %d", PID, 0);
+
     log_destroy(log);
 }
 
@@ -64,13 +66,17 @@ void quitar_tabla_de_pagina(int pid)
 
     snprintf(char_pid, sizeof(char_pid), "%d", pid);
 
-    void quitar_tabla(void *value)
-    {
-        t_list *tabla = (t_list *)value;
-        list_destroy(tabla);
-    }
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
 
-    dictionary_remove_and_destroy(tablas_de_paginas, char_pid, quitar_tabla);
+    t_list *tabla_de_paginas = (t_list *)dictionary_get(tablas_de_paginas, char_pid);
+
+    log_info(log, "PID: %d - Tamaño: %d", pid, list_size(tabla_de_paginas));
+    quitar_paginas(pid, 0, list_size(tabla_de_paginas));
+
+    t_list *tabla = (t_list *)dictionary_remove(tablas_de_paginas, char_pid);
+    free(tabla);
+
+    log_destroy(log);
 }
 
 void resize_proceso(int PID, int tam, int enviar_dato)
@@ -79,17 +85,23 @@ void resize_proceso(int PID, int tam, int enviar_dato)
 
     int resultado = 1;
 
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
+
     if (cant_paginas * tam_pagina > tam)
     {
         resultado = quitar_paginas(PID, tam, cant_paginas);
+        log_info(log, "PID: %d - Tamaño actual: %d - Tamaño a reducir: %d", PID, cant_paginas * tam_pagina, tam);
     }
     else if (cant_paginas * tam_pagina < tam)
     {
         resultado = agregar_paginas(PID, tam, cant_paginas);
+        log_info(log, "PID: %d - Tamaño actual: %d - Tamaño a aumentar: %d", PID, cant_paginas * tam_pagina, tam);
     }
 
     if (enviar_dato > 0)
         enviar_dato_a_modulo(&resultado, 4, NULL);
+
+    log_destroy(log);
 }
 
 void encontrar_marco(int PID, int numero_de_pagina)
@@ -97,6 +109,8 @@ void encontrar_marco(int PID, int numero_de_pagina)
     char char_pid[10];
 
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
+
+    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
 
     t_list *tabla_de_paginas = (t_list *)dictionary_get(tablas_de_paginas, char_pid);
 
@@ -111,7 +125,11 @@ void encontrar_marco(int PID, int numero_de_pagina)
 
     Pagina *entrada = (Pagina *)list_find(tabla_de_paginas, encontrar_pagina);
 
+    log_info(log, "PID: %d - Pagina: %d - Marco: %d", PID, numero_de_pagina, entrada->marco->numero_de_marco);
+
     enviar_dato_a_modulo(&(entrada->marco->numero_de_marco), 4, NULL);
+
+    log_destroy(log);
 }
 
 void escribir_memoria(int PID, int direccion_fisica, int bytes_a_escribir, void *dato, int *socket)
@@ -148,8 +166,6 @@ int quitar_paginas(int PID, int tam, int cant_paginas)
 {
     char char_pid[10];
 
-    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
-
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
 
     t_list *tabla_de_paginas = (t_list *)dictionary_get(tablas_de_paginas, char_pid);
@@ -158,28 +174,20 @@ int quitar_paginas(int PID, int tam, int cant_paginas)
     {
         Pagina *entrada = (Pagina *)list_remove(tabla_de_paginas, list_size(tabla_de_paginas) - 1);
 
-        int num_pagina = entrada->numero_de_pagina;
-        int num_marco = entrada->marco->numero_de_marco;
         entrada->marco->ocupado = 0;
 
-        log_info(log, "PID: %d - Pagina: %d - Marco: %d", PID, num_pagina, num_marco); // revisar si como acceso contamos esto o no, solo una vez en la pagina "base"
+        // log_info(log, "PID: %d - Pagina: %d - Marco: %d", PID, num_pagina, num_marco); // revisar si como acceso contamos esto o no, solo una vez en la pagina "base"
 
         free(entrada);
         cant_paginas -= 1;
     }
 
-    int tam_actual = cant_paginas * tam_pagina;
-
-    log_info(log, "PID: %d - Tamaño actual: %d - Tamaño a reducir: %d", PID, tam_actual, tam);
-    log_destroy(log);
     return 1;
 }
 
 int agregar_paginas(int PID, int tam, int cant_paginas)
 {
     char char_pid[10];
-
-    t_log *log = log_create("logs/mem_info.log", "Memoria Usuario", 1, LOG_LEVEL_INFO);
 
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
 
@@ -202,17 +210,12 @@ int agregar_paginas(int PID, int tam, int cant_paginas)
             entrada->numero_de_pagina = cant_paginas;
         }
 
-        int num_pagina = entrada->numero_de_pagina;
-        int num_marco = entrada->marco->numero_de_marco;
-
         list_add(tabla_de_paginas, entrada);
-        log_info(log, "PID: %d - Pagina: %d - Marco: %d", PID, num_pagina, num_marco); // revisar si como acceso contamos esto o no, solo una vez en la pagina "base"
+        // log_info(log, "PID: %d - Pagina: %d - Marco: %d", PID, num_pagina, num_marco); // revisar si como acceso contamos esto o no, solo una vez en la pagina "base"
 
         cant_paginas += 1;
     }
-    int tam_actual = cant_paginas * tam_pagina;
-    log_info(log, "PID: %d - Tamaño actual: %d - Tamaño a aumentar: %d", PID, tam_actual, tam);
-    log_destroy(log);
+
     return 1;
 }
 

@@ -128,32 +128,23 @@ void manageDialFS(int *pid, t_log *logger, moduloIO *modulo_io, int *socket, int
 
     if (strcmp(comando[0], "IO_FS_CREATE") == 0)
     {
-        log_info(logger, "Pid: %s - Operacion: IO_FS_CREATE", pid);
         crear_archivo(*pid, logger, comando, path_base, block_count);
     }
     else if (strcmp(comando[0], "IO_FS_DELETE") == 0)
     {
-        log_info(logger, "Pid: %s - Operacion: IO_FS_DELETE", pid);
         borrar_archivo(*pid, logger, comando, path_base, block_count);
     }
     else if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0)
     {
-        log_info(logger, "Pid: %s - Operacion: IO_FS_TRUNCATE", pid);
         truncate_archivo(*pid, logger, comando, path_base, block_count, block_size, retraso);
     }
     else if (strcmp(comando[0], "IO_FS_WRITE") == 0)
     {
-        log_info(logger, "Pid: %s - Operacion: IO_FS_WRITE", pid);
         escribir_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
     }
     else if (strcmp(comando[0], "IO_FS_READ") == 0)
     {
-        log_info(logger, "Pid: %s - Operacion: IO_FS_READ", pid);
         leer_archivo(*pid, logger, comando, block_size, path_base, socketMemoria);
-    }
-    else
-    {
-        log_error(logger, "DialFS - Instrucción desconocida");
     }
 
     // Le dice al Kernel que termino con el numero 1
@@ -399,14 +390,10 @@ t_buffer *recibir_instruccion_del_kernel(char **instruccion, int *PID, int *sock
     if (*codigo != CHECK_CONN_IO)
     {
         t_buffer *buffer = buffer_leer_recv(socket);
-        *PID = buffer_read_uint32(buffer); // RECIBIRA ALGUNOS OTROS REGISTROS, NO ES NECESARIO PARA GENERICO. PASAR POR PARAMETRO TIPO DE IO
+        *PID = buffer_read_uint32(buffer);
         int size = buffer_read_uint32(buffer);
         *instruccion = buffer_read_string(buffer, size);
         return buffer;
-    }
-    else
-    {
-        printf("llega check\n");
     }
 
     free(modulo);
@@ -423,53 +410,4 @@ char *mensaje_info_operacion(int PID, char *operacion)
     string_append(&result, " - Operacion: ");
     string_append(&result, operacion);
     return result;
-}
-
-char *obtener_nombre_archivo(char **comando)
-{
-    if (comando[1] == NULL)
-    {
-        return NULL;
-    }
-    return comando[1];
-}
-
-int obtener_tamano_archivo(char **comando)
-{
-    // en realidad el tamaño hay q calcularlo en base a la direccion fisica?
-
-    if (comando[2] == NULL && comando[3] == NULL)
-    {
-
-        return -1;
-    }
-
-    // para IO_FS_TRUNCATE la tercera posicion y en la cuarta posición para IO_FS_WRITE y IO_FS_READ
-
-    if (strcmp(comando[0], "IO_FS_TRUNCATE") == 0)
-    {
-        return atoi(comando[2]);
-    }
-    else if (strcmp(comando[0], "IO_FS_WRITE") == 0 || strcmp(comando[0], "IO_FS_READ") == 0)
-    {
-        return atoi(comando[3]);
-    }
-    return -1;
-}
-
-int obtener_puntero_archivo(char **comando)
-{
-
-    if (comando[4] == NULL)
-    {
-
-        return -1;
-    }
-
-    // Misma logica q en el tamaño
-    if (strcmp(comando[0], "IO_FS_WRITE") == 0 || strcmp(comando[0], "IO_FS_READ") == 0)
-    {
-        return atoi(comando[4]);
-    }
-    return -1;
 }

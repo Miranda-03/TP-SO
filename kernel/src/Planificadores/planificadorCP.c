@@ -489,7 +489,7 @@ void *escuchaDispatch(void *ptr)
 {
     int quantum = (int)(intptr_t)ptr; // Correcto casting para evitar problemas
 
-    if (algoritmo == RR)
+    if (algoritmo == RR || algoritmo == VRR)
     {
         pthread_t hilo_esperar_quantum;
         pthread_create(&hilo_esperar_quantum, NULL, esperarQuantum, (void *)(intptr_t)quantum);
