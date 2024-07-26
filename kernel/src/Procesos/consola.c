@@ -50,7 +50,7 @@ int verificar_comando(char *leido)
     return -1;
 }
 
-void atender_instruccion(char *leido)
+void atender_instruccion(char *leido, t_log* logger)
 {
     char **comando = string_split(leido, " ");
 
@@ -66,9 +66,18 @@ void atender_instruccion(char *leido)
     else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0) // FALTA HACER
     {
         detenerPlanificador();
+
         if (encontrar_y_terminar_proceso(atoi(comando[1])) < 0)
-            encontrar_en_new_y_terminar(atoi(comando[1]));
-        reanudarPlanificador();
+        {
+            if (encontrar_en_new_y_terminar(atoi(comando[1])) < 0)
+            {
+                log_error(logger, "No se pudo encontrar el proceso: %d\n", atoi(comando[1]));
+                string_array_destroy(comando);
+                return; 
+            }
+        }
+
+        reanudarPlanificador(); // Solo se reanuda si al menos una función tuvo éxito
     }
     else if (strcmp(comando[0], "DETENER_PLANIFICACION") == 0)
     {

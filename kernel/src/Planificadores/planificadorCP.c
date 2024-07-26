@@ -1273,11 +1273,7 @@ void reanudarPlanificador()
 
 int encontrar_y_terminar_proceso(int pid)
 {
-    /*
-        Para hacer que la funcion tenga el correcto comportamiento
-        es necesario detener la planificacion del sistema.
-    */
-
+ 
     if (PIDprocesoEjecutando == pid)
     {
         interrumpir_ejecucion();
