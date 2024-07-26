@@ -13,6 +13,8 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
 
     // Conexion con el módulo memoria
     *CPUSocketMemoria = crearSocket(obtenerValorConfig(path_config, "PUERTO_MEMORIA"), obtenerValorConfig(path_config, "IP_MEMORIA"), 0);
+    int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(path_config, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
+    int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(path_config, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
 
     handshakeCPUMemoria(CPUSocketMemoria);
 
@@ -21,8 +23,6 @@ void conectarModuloCPU(int *CPUSocketMemoria, int *CPUsocketBidireccionalDispatc
     log_destroy(loger);
 
     procesoCPU->pid = -1;
-    int CPUsocketEscuchaDispatch = crearSocket(obtenerValorConfig(path_config, "PUERTO_ESCUCHA_DISPATCH"), NULL, MAXCONN);
-    int CPUsocketEscuchaInterrupt = crearSocket(obtenerValorConfig(path_config, "PUERTO_ESCUCHA_INTERRUPT"), NULL, MAXCONN);
 
     // la siguiente linea es autobloqueante
     *CPUsocketBidireccionalDispatch = esperarCliente(&CPUsocketEscuchaDispatch);

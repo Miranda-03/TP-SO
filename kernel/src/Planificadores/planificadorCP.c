@@ -45,6 +45,8 @@ MensajeProcesoDelCPU *procesoDelCPU;
 
 char *path_config_cp;
 
+bool detener_iniciar_plani;
+
 void *planificarCortoPlazo(void *ptr)
 {
     params = (ParamsPCP_kernel *)ptr;
@@ -59,6 +61,8 @@ void *planificarCortoPlazo(void *ptr)
     config_destroy(config);
 
     quantumRestante = quantumTotal;
+
+    detener_iniciar_plani = 0;
 
     kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
 
@@ -1251,12 +1255,20 @@ char *obtener_array_de_pids(char *cola_c, Pcb *proceso_nuevo)
 
 void detenerPlanificador()
 {
-    sem_wait(&flujoPlanificador_cp);
+    if(!detener_iniciar_plani)
+    {
+        detener_iniciar_plani = 1;
+        sem_wait(&flujoPlanificador_cp);
+    }
 }
 
 void reanudarPlanificador()
 {
-    sem_post(&flujoPlanificador_cp);
+    if(detener_iniciar_plani)
+    {
+        detener_iniciar_plani = 0;
+        sem_post(&flujoPlanificador_cp);
+    }
 }
 
 int encontrar_y_terminar_proceso(int pid)
@@ -1436,7 +1448,9 @@ void interrumpir_ejecucion()
 
 void listar_por_estado()
 {
-    t_log *loger_estados_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
+    t_log *loger_estados_cp = log_create("logs/kernel_info.log", "proceso_estado", 1, LOG_LEVEL_INFO);
+
+    log_info(loger_estados_cp, "EJECUTANDO: %d", PIDprocesoEjecutando);
 
     char *mensaje_cp_readys = string_new();
     string_append(&mensaje_cp_readys, "READY [ ");

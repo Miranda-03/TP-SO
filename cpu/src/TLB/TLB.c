@@ -27,7 +27,7 @@ int obtener_algoritmo_de_la_configuracion(char *path_config)
 {
     char *algoritmo_char = obtenerValorConfig(path_config, "ALGORITMO_TLB");
 
-    if (strcmp(algoritmo_char, "FIFO"))
+    if (strcmp(algoritmo_char, "FIFO") == 0)
         return FIFO;
     else
         return LRU;
@@ -118,9 +118,11 @@ void guardar_entrada_en_TLB(int pid, int num_pagina, int marco)
 
     queue_push(TLB, entrada);
 
+    int size = list_size(TLB->elements);
+
     if (list_size(TLB->elements) > cant_entradas_TLB)
     {
-        Entrada_TLB *entrada_sacar = queue_pop(TLB);
+        Entrada_TLB *entrada_sacar = (Entrada_TLB *)queue_pop(TLB);
         free(entrada_sacar);
     }
 }

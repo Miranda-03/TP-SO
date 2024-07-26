@@ -55,7 +55,7 @@ void crear_tabla_de_pagina(int PID)
     snprintf(char_pid, sizeof(char_pid), "%d", PID);
 
     dictionary_put(tablas_de_paginas, char_pid, tabla_de_paginas);
-    log_info(log, "PID: %d - Tamaño: %d", PID, 0);
+    log_info(log, "PID: %d - Crear tabla de páginas de tamaño: %d", PID, 0);
 
     log_destroy(log);
 }
@@ -70,11 +70,10 @@ void quitar_tabla_de_pagina(int pid)
 
     t_list *tabla_de_paginas = (t_list *)dictionary_get(tablas_de_paginas, char_pid);
 
-    log_info(log, "PID: %d - Tamaño: %d", pid, list_size(tabla_de_paginas));
-    quitar_paginas(pid, 0, list_size(tabla_de_paginas));
+    log_info(log, "PID: %d - Quitar tabla de páginas de tamaño: %d", pid, list_size(tabla_de_paginas));
+    liberar_memoria(pid);
 
-    t_list *tabla = (t_list *)dictionary_remove(tablas_de_paginas, char_pid);
-    free(tabla);
+    dictionary_remove(tablas_de_paginas, char_pid);
 
     log_destroy(log);
 }
@@ -246,7 +245,7 @@ int liberar_memoria(int pid)
 
     list_destroy_and_destroy_elements(tabla_de_paginas, liberar_paginas);
 
-    dictionary_remove(tablas_de_paginas, char_pid);
+    //dictionary_remove(tablas_de_paginas, char_pid);
 
     return 1;
 }

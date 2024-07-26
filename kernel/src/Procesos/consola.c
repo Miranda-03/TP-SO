@@ -8,9 +8,9 @@ void consolaInteractiva()
     {
         linea = readline("FIFO2B-OS>");
 
-        if (!linea)
+        if (!linea || strcmp(linea, "") == 0)
         {
-            break;
+            continue;
         }
 
         if (linea)
@@ -84,10 +84,10 @@ void atender_instruccion(char *leido)
     }
     else if (strcmp(leido, "PROCESO_ESTADO") == 0)
     {
-        detenerPlanificador();
+        //detenerPlanificador();
         listar_por_estado();
         listar_estados_lp();
-        reanudarPlanificador();
+        //reanudarPlanificador();
     }
 
     string_array_destroy(comando);
