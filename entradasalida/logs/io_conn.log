@@ -1,0 +1,32 @@
+[INFO] 06:50:35:775 conn_b/(129007:129007): Broadcast de solicitud de IP realizado
+[INFO] 06:50:35:775 conn_b/(129007:129007): IPs recibidas
+[INFO] 06:50:35:777 conn_b/(129007:129007): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 06:50:35:777 conn_b/(129007:129007): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 06:50:35:778 conn_b/(129007:129007): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 06:50:35:779 conn_b/(129007:129007): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 06:50:35:780 conn_b/(129007:129007): Se crea la conexión, id de interfaz: FS
+[INFO] 06:50:35:780 conn_b/(129007:129007): Se crea la conexión, id de interfaz: FS
+[INFO] 06:54:37:870 conn_b/(130572:130572): Broadcast de solicitud de IP realizado
+[INFO] 06:54:37:871 conn_b/(130572:130572): IPs recibidas
+[INFO] 06:54:37:871 conn_b/(130572:130572): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 06:54:37:872 conn_b/(130572:130572): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 06:54:37:873 conn_b/(130572:130572): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 06:54:37:873 conn_b/(130572:130572): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 06:54:37:874 conn_b/(130572:130572): Se crea la conexión, id de interfaz: FS
+[INFO] 06:54:37:874 conn_b/(130572:130572): Se crea la conexión, id de interfaz: FS
+[INFO] 07:05:54:704 conn_b/(134424:134424): Broadcast de solicitud de IP realizado
+[INFO] 07:05:54:705 conn_b/(134424:134424): IPs recibidas
+[INFO] 07:05:54:706 conn_b/(134424:134424): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 07:05:54:707 conn_b/(134424:134424): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 07:05:54:708 conn_b/(134424:134424): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 07:05:54:709 conn_b/(134424:134424): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 07:05:54:710 conn_b/(134424:134424): Se crea la conexión, id de interfaz: FS
+[INFO] 07:05:54:713 conn_b/(134424:134424): Se crea la conexión, id de interfaz: FS
+[INFO] 07:08:47:766 conn_b/(135496:135496): Broadcast de solicitud de IP realizado
+[INFO] 07:08:47:767 conn_b/(135496:135496): IPs recibidas
+[INFO] 07:08:47:768 conn_b/(135496:135496): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 07:08:47:769 conn_b/(135496:135496): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 07:08:47:770 conn_b/(135496:135496): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 07:08:47:770 conn_b/(135496:135496): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 07:08:47:771 conn_b/(135496:135496): Se crea la conexión, id de interfaz: FS
+[INFO] 07:08:47:772 conn_b/(135496:135496): Se crea la conexión, id de interfaz: FS

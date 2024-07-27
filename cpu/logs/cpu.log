@@ -1,0 +1,270 @@
+[INFO] 06:50:02:755 cpu_conn/(128761:128761): Broadcast de solicitud de IP realizado
+[INFO] 06:50:02:756 cpu_conn/(128761:128761): IP recibida: 192.168.0.10
+[INFO] 06:50:02:757 cpu_conn/(128761:128761): Conexión con módulo memoria realizada
+[INFO] 06:50:02:758 cpu_conn/(128761:128761): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 06:50:24:869 cpu_conn/(128761:128761): Solicitud recibida
+[INFO] 06:50:24:869 cpu_conn/(128761:128761): Enviando IP: 192.168.0.10
+[INFO] 06:50:48:647 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 0
+[INFO] 06:50:48:749 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - AX 10
+[INFO] 06:50:48:749 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 1
+[INFO] 06:50:48:850 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - BX 80
+[INFO] 06:50:48:850 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 2
+[INFO] 06:50:48:950 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: IO_FS_CREATE - FS salida.txt
+[INFO] 06:50:48:953 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 3
+[INFO] 06:50:49:053 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: IO_FS_CREATE - FS cronologico.txt
+[INFO] 06:50:49:055 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 4
+[INFO] 06:50:49:158 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: IO_FS_TRUNCATE - FS salida.txt BX
+[INFO] 06:50:49:163 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 5
+[INFO] 06:50:49:264 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: IO_FS_TRUNCATE - FS cronologico.txt BX
+[INFO] 06:50:56:814 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 6
+[INFO] 06:50:56:914 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: RESIZE - 160
+[INFO] 06:50:56:915 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 7
+[INFO] 06:50:57:015 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - CX 0
+[INFO] 06:50:57:015 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 8
+[INFO] 06:50:57:115 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - DX 9
+[INFO] 06:50:57:116 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 9
+[INFO] 06:50:57:216 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - EAX 69
+[INFO] 06:50:57:216 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 10
+[INFO] 06:50:57:317 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: IO_STDIN_READ - TECLADO CX EAX
+[INFO] 06:51:10:903 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 11
+[INFO] 06:51:11:003 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:51:11:004 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 12
+[INFO] 06:51:11:105 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - DX 19
+[INFO] 06:51:11:105 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 13
+[INFO] 06:51:11:206 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:51:11:207 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 14
+[INFO] 06:51:11:307 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - DX 29
+[INFO] 06:51:11:307 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 15
+[INFO] 06:51:11:408 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:51:11:409 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 16
+[INFO] 06:51:11:510 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - DX 48
+[INFO] 06:51:11:510 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 17
+[INFO] 06:51:11:610 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:51:11:611 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 18
+[INFO] 06:51:11:712 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - DX 58
+[INFO] 06:51:11:712 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 19
+[INFO] 06:51:11:812 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:51:11:813 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 20
+[INFO] 06:51:11:914 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: IO_FS_WRITE - FS salida.txt CX EAX CX
+[INFO] 06:51:11:920 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 21
+[INFO] 06:51:12:020 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - SI 59
+[INFO] 06:51:12:020 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 22
+[INFO] 06:51:12:121 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - DI 80
+[INFO] 06:51:12:121 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 23
+[INFO] 06:51:12:221 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: COPY_STRING - 10
+[INFO] 06:51:12:222 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 24
+[INFO] 06:51:12:323 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - BX 90
+[INFO] 06:51:12:323 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 25
+[INFO] 06:51:12:423 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: MOV_OUT - BX AX
+[INFO] 06:51:12:424 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 26
+[INFO] 06:51:12:525 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - SI 0
+[INFO] 06:51:12:525 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 27
+[INFO] 06:51:12:626 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - DI 91
+[INFO] 06:51:12:626 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 28
+[INFO] 06:51:12:726 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: COPY_STRING - 59
+[INFO] 06:51:12:745 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 29
+[INFO] 06:51:12:847 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: SET - ECX 80
+[INFO] 06:51:12:847 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 30
+[INFO] 06:51:12:947 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: IO_FS_WRITE - FS cronologico.txt ECX EAX CX
+[INFO] 06:51:12:957 Ciclo CPU/(128761:128761): PID: 1 - FETCH - Program Counter: 31
+[INFO] 06:51:13:058 Ciclo CPU/(128761:128761): PID: 1 - Ejecutando: EXIT
+[INFO] 06:52:14:419 Ciclo CPU/(128761:128761): PID: 0 - FETCH - Program Counter: 0
+[INFO] 06:52:14:916 Ciclo CPU/(128761:128761): PID: 0 - FETCH - Program Counter: 0
+[INFO] 06:54:31:980 cpu_conn/(130514:130514): Broadcast de solicitud de IP realizado
+[INFO] 06:54:31:980 cpu_conn/(130514:130514): IP recibida: 192.168.0.10
+[INFO] 06:54:31:981 cpu_conn/(130514:130514): Conexión con módulo memoria realizada
+[INFO] 06:54:31:982 cpu_conn/(130514:130514): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 06:54:35:006 cpu_conn/(130514:130514): Solicitud recibida
+[INFO] 06:54:35:007 cpu_conn/(130514:130514): Enviando IP: 192.168.0.10
+[INFO] 06:55:01:113 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 0
+[INFO] 06:55:01:213 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - AX 10
+[INFO] 06:55:01:214 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 1
+[INFO] 06:55:01:314 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - BX 80
+[INFO] 06:55:01:314 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 2
+[INFO] 06:55:01:415 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: IO_FS_CREATE - FS salida.txt
+[INFO] 06:55:01:417 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 3
+[INFO] 06:55:01:517 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: IO_FS_CREATE - FS cronologico.txt
+[INFO] 06:55:01:520 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 4
+[INFO] 06:55:01:623 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: IO_FS_TRUNCATE - FS salida.txt BX
+[INFO] 06:55:01:628 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 5
+[INFO] 06:55:01:733 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: IO_FS_TRUNCATE - FS cronologico.txt BX
+[INFO] 06:55:09:272 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 6
+[INFO] 06:55:09:375 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: RESIZE - 160
+[INFO] 06:55:09:376 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 7
+[INFO] 06:55:09:476 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - CX 0
+[INFO] 06:55:09:476 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 8
+[INFO] 06:55:09:577 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - DX 9
+[INFO] 06:55:09:577 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 9
+[INFO] 06:55:09:678 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - EAX 69
+[INFO] 06:55:09:678 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 10
+[INFO] 06:55:09:779 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: IO_STDIN_READ - TECLADO CX EAX
+[INFO] 06:55:11:783 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 11
+[INFO] 06:55:11:883 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:55:11:885 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 12
+[INFO] 06:55:11:986 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - DX 19
+[INFO] 06:55:11:986 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 13
+[INFO] 06:55:12:087 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:55:12:088 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 14
+[INFO] 06:55:12:189 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - DX 29
+[INFO] 06:55:12:189 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 15
+[INFO] 06:55:12:289 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:55:12:291 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 16
+[INFO] 06:55:12:391 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - DX 48
+[INFO] 06:55:12:391 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 17
+[INFO] 06:55:12:492 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:55:12:492 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 18
+[INFO] 06:55:12:593 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - DX 58
+[INFO] 06:55:12:593 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 19
+[INFO] 06:55:12:693 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 06:55:12:694 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 20
+[INFO] 06:55:12:794 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: IO_FS_WRITE - FS salida.txt CX EAX CX
+[INFO] 06:55:12:797 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 21
+[INFO] 06:55:12:897 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - SI 59
+[INFO] 06:55:12:897 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 22
+[INFO] 06:55:12:998 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - DI 80
+[INFO] 06:55:12:998 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 23
+[INFO] 06:55:13:099 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: COPY_STRING - 10
+[INFO] 06:55:13:100 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 24
+[INFO] 06:55:13:201 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - BX 90
+[INFO] 06:55:13:201 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 25
+[INFO] 06:55:13:302 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: MOV_OUT - BX AX
+[INFO] 06:55:13:303 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 26
+[INFO] 06:55:13:403 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - SI 0
+[INFO] 06:55:13:403 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 27
+[INFO] 06:55:13:504 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - DI 91
+[INFO] 06:55:13:504 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 28
+[INFO] 06:55:13:604 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: COPY_STRING - 59
+[INFO] 06:55:13:609 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 29
+[INFO] 06:55:13:710 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: SET - ECX 80
+[INFO] 06:55:13:710 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 30
+[INFO] 06:55:13:811 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: IO_FS_WRITE - FS cronologico.txt ECX EAX CX
+[INFO] 06:55:13:815 Ciclo CPU/(130514:130514): PID: 1 - FETCH - Program Counter: 31
+[INFO] 06:55:13:916 Ciclo CPU/(130514:130514): PID: 1 - Ejecutando: EXIT
+[INFO] 07:02:53:943 Ciclo CPU/(130514:130514): PID: 0 - FETCH - Program Counter: 0
+[INFO] 07:02:54:611 Ciclo CPU/(130514:130514): PID: 0 - FETCH - Program Counter: 1
+[INFO] 07:05:49:785 cpu_conn/(134363:134363): Broadcast de solicitud de IP realizado
+[INFO] 07:05:49:786 cpu_conn/(134363:134363): IP recibida: 192.168.0.10
+[INFO] 07:05:49:787 cpu_conn/(134363:134363): Conexión con módulo memoria realizada
+[INFO] 07:05:49:787 cpu_conn/(134363:134363): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 07:05:51:669 cpu_conn/(134363:134363): Solicitud recibida
+[INFO] 07:05:51:669 cpu_conn/(134363:134363): Enviando IP: 192.168.0.10
+[INFO] 07:06:46:748 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 0
+[INFO] 07:06:46:849 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - AX 10
+[INFO] 07:06:46:849 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 1
+[INFO] 07:06:46:950 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - BX 80
+[INFO] 07:06:46:950 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 2
+[INFO] 07:06:47:051 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: IO_FS_CREATE - FS salida.txt
+[INFO] 07:06:47:052 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 3
+[INFO] 07:06:47:153 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: IO_FS_CREATE - FS cronologico.txt
+[INFO] 07:06:47:155 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 4
+[INFO] 07:06:47:255 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: IO_FS_TRUNCATE - FS salida.txt BX
+[INFO] 07:06:54:758 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 5
+[INFO] 07:06:54:858 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: IO_FS_TRUNCATE - FS cronologico.txt BX
+[INFO] 07:07:02:361 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 6
+[INFO] 07:07:02:461 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: RESIZE - 160
+[INFO] 07:07:02:462 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 7
+[INFO] 07:07:02:562 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - CX 0
+[INFO] 07:07:02:563 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 8
+[INFO] 07:07:02:663 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - DX 9
+[INFO] 07:07:02:663 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 9
+[INFO] 07:07:02:764 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - EAX 69
+[INFO] 07:07:02:764 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 10
+[INFO] 07:07:02:865 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: IO_STDIN_READ - TECLADO CX EAX
+[INFO] 07:07:04:975 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 11
+[INFO] 07:07:05:075 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 07:07:05:076 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 12
+[INFO] 07:07:05:177 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - DX 19
+[INFO] 07:07:05:177 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 13
+[INFO] 07:07:05:277 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 07:07:05:278 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 14
+[INFO] 07:07:05:378 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - DX 29
+[INFO] 07:07:05:379 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 15
+[INFO] 07:07:05:479 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 07:07:05:480 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 16
+[INFO] 07:07:05:581 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - DX 48
+[INFO] 07:07:05:581 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 17
+[INFO] 07:07:05:682 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 07:07:05:682 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 18
+[INFO] 07:07:05:783 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - DX 58
+[INFO] 07:07:05:783 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 19
+[INFO] 07:07:05:883 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 07:07:05:884 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 20
+[INFO] 07:07:05:985 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: IO_FS_WRITE - FS salida.txt CX EAX CX
+[INFO] 07:07:05:993 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 21
+[INFO] 07:07:06:094 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - SI 59
+[INFO] 07:07:06:094 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 22
+[INFO] 07:07:06:194 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - DI 80
+[INFO] 07:07:06:195 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 23
+[INFO] 07:07:06:295 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: COPY_STRING - 10
+[INFO] 07:07:06:296 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 24
+[INFO] 07:07:06:396 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - BX 90
+[INFO] 07:07:06:396 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 25
+[INFO] 07:07:06:497 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: MOV_OUT - BX AX
+[INFO] 07:07:06:497 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 26
+[INFO] 07:07:06:598 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - SI 0
+[INFO] 07:07:06:598 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 27
+[INFO] 07:07:06:699 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - DI 91
+[INFO] 07:07:06:699 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 28
+[INFO] 07:07:06:800 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: COPY_STRING - 59
+[INFO] 07:07:06:804 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 29
+[INFO] 07:07:06:905 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: SET - ECX 80
+[INFO] 07:07:06:905 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 30
+[INFO] 07:07:07:006 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: IO_FS_WRITE - FS cronologico.txt ECX EAX CX
+[INFO] 07:07:07:010 Ciclo CPU/(134363:134363): PID: 1 - FETCH - Program Counter: 31
+[INFO] 07:07:07:111 Ciclo CPU/(134363:134363): PID: 1 - Ejecutando: EXIT
+[INFO] 07:07:19:841 Ciclo CPU/(134363:134363): PID: 2 - FETCH - Program Counter: 0
+[INFO] 07:07:19:946 Ciclo CPU/(134363:134363): PID: 2 - Ejecutando: SET - AX 10
+[INFO] 07:07:19:946 Ciclo CPU/(134363:134363): PID: 2 - FETCH - Program Counter: 1
+[INFO] 07:07:20:047 Ciclo CPU/(134363:134363): PID: 2 - Ejecutando: IO_FS_CREATE - FS archivo1.txt
+[INFO] 07:07:20:049 Ciclo CPU/(134363:134363): PID: 2 - FETCH - Program Counter: 2
+[INFO] 07:07:20:149 Ciclo CPU/(134363:134363): PID: 2 - Ejecutando: IO_FS_CREATE - FS archivo2.txt
+[INFO] 07:07:20:151 Ciclo CPU/(134363:134363): PID: 2 - FETCH - Program Counter: 3
+[INFO] 07:07:20:252 Ciclo CPU/(134363:134363): PID: 2 - Ejecutando: IO_FS_TRUNCATE - FS archivo1.txt AX
+[INFO] 07:07:20:254 Ciclo CPU/(134363:134363): PID: 2 - FETCH - Program Counter: 4
+[INFO] 07:07:20:354 Ciclo CPU/(134363:134363): PID: 2 - Ejecutando: IO_FS_TRUNCATE - FS archivo2.txt AX
+[INFO] 07:07:20:356 Ciclo CPU/(134363:134363): PID: 2 - FETCH - Program Counter: 5
+[INFO] 07:07:20:456 Ciclo CPU/(134363:134363): PID: 2 - Ejecutando: EXIT
+[INFO] 07:07:22:977 Ciclo CPU/(134363:134363): PID: 0 - FETCH - Program Counter: 0
+[INFO] 07:07:23:368 Ciclo CPU/(134363:134363): PID: 0 - FETCH - Program Counter: 0
+[INFO] 07:08:43:477 cpu_conn/(135446:135446): Broadcast de solicitud de IP realizado
+[INFO] 07:08:43:478 cpu_conn/(135446:135446): IP recibida: 192.168.0.10
+[INFO] 07:08:43:479 cpu_conn/(135446:135446): Conexión con módulo memoria realizada
+[INFO] 07:08:43:479 cpu_conn/(135446:135446): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 07:08:45:949 cpu_conn/(135446:135446): Solicitud recibida
+[INFO] 07:08:45:949 cpu_conn/(135446:135446): Enviando IP: 192.168.0.10
+[INFO] 07:09:05:671 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 0
+[INFO] 07:09:05:773 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: SET - AX 0
+[INFO] 07:09:05:774 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 1
+[INFO] 07:09:05:874 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: SET - BX 69
+[INFO] 07:09:05:874 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 2
+[INFO] 07:09:05:975 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: SET - CX 80
+[INFO] 07:09:05:975 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 3
+[INFO] 07:09:06:075 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: RESIZE - 160
+[INFO] 07:09:06:076 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 4
+[INFO] 07:09:06:177 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: IO_FS_READ - FS salida.txt AX BX AX
+[INFO] 07:09:06:182 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 5
+[INFO] 07:09:06:282 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: IO_STDOUT_WRITE - MONITOR AX BX
+[INFO] 07:09:06:289 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 6
+[INFO] 07:09:06:390 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: IO_FS_READ - FS cronologico.txt CX BX AX
+[INFO] 07:09:06:415 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 7
+[INFO] 07:09:06:515 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: IO_STDOUT_WRITE - MONITOR CX BX
+[INFO] 07:09:06:524 Ciclo CPU/(135446:135446): PID: 1 - FETCH - Program Counter: 8
+[INFO] 07:09:06:624 Ciclo CPU/(135446:135446): PID: 1 - Ejecutando: EXIT
+[INFO] 07:09:11:491 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 0
+[INFO] 07:09:11:593 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: SET - AX 0
+[INFO] 07:09:11:593 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 1
+[INFO] 07:09:11:694 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: SET - BX 250
+[INFO] 07:09:11:694 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 2
+[INFO] 07:09:11:794 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: SET - CX 70
+[INFO] 07:09:11:795 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 3
+[INFO] 07:09:11:895 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: IO_FS_CREATE - FS pesado.txt
+[INFO] 07:09:11:897 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 4
+[INFO] 07:09:11:998 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: IO_FS_TRUNCATE - FS pesado.txt BX
+[INFO] 07:09:12:000 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 5
+[INFO] 07:09:12:103 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: IO_FS_DELETE - FS archivo1.txt
+[INFO] 07:09:12:109 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 6
+[INFO] 07:09:12:210 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: IO_FS_TRUNCATE - FS archivo2.txt CX
+[INFO] 07:09:19:718 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 7
+[INFO] 07:09:19:819 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: SET - DX 0
+[INFO] 07:09:19:819 Ciclo CPU/(135446:135446): PID: 2 - FETCH - Program Counter: 8
+[INFO] 07:09:19:920 Ciclo CPU/(135446:135446): PID: 2 - Ejecutando: EXIT

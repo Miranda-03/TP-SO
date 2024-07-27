@@ -180,7 +180,7 @@ void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *p
 
 int verificar_contiguo(int pid, t_log *loger, t_bitarray *bitmap, int bloque_inicio, int bloques_a_colocar, int bloques_asignados, char *path_base, int size_bloque, int retardo)
 {
-    int contador = bloque_inicio + 1;
+    int contador = bloque_inicio;
     int bloques_disponibles = 0;
 
     while (contador < bitmap->size)
