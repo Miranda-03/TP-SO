@@ -75,14 +75,17 @@ void *agregarNuevoProcesoReady(void *ptr)
     {
         sem_wait(&hay_procesos_en_new);
 
-        PcbGuardarEnNEW *nuevo_proceso = sacarProcesoDeNew();
+        if (!queue_is_empty(cola_de_new))
+        {
+            PcbGuardarEnNEW *nuevo_proceso = sacarProcesoDeNew();
 
-        int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
+            int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
 
-        if (resultadoMemoria > 0)
-            agregarProcesoColaReady(nuevo_proceso->proceso);
-        else
-            log_error(kernel_loger_lp, "Error en la memoria");
+            if (resultadoMemoria > 0)
+                agregarProcesoColaReady(nuevo_proceso->proceso);
+            else
+                log_error(kernel_loger_lp, "Error en la memoria");
+        }
     }
 }
 
@@ -117,7 +120,7 @@ PcbGuardarEnNEW *sacarProcesoDeNew()
     pthread_mutex_lock(&mutexColaNEW);
     PcbGuardarEnNEW *nuevo_proceso = queue_pop(cola_de_new);
     pthread_mutex_unlock(&mutexColaNEW);
-    
+
     return nuevo_proceso;
 }
 

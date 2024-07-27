@@ -1,7 +1,11 @@
 #include "consola.h"
 
+bool detenido_previamente;
+
 void consolaInteractiva()
 {
+    detenido_previamente = 0;
+
     char *linea;
 
     while (1)
@@ -28,7 +32,7 @@ void consolaInteractiva()
 int verificar_comando(char *leido)
 {
     char **comando = string_split(leido, " ");
-    t_log *logger_comando = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
+    t_log *logger_comando = log_create("logs/kernel_info.log", "consola", 1, LOG_LEVEL_INFO);
 
     if (
         strcmp(comando[0], "EJECUTAR_SCRIPT") == 0 ||
@@ -40,19 +44,21 @@ int verificar_comando(char *leido)
         strcmp(comando[0], "PROCESO_ESTADO") == 0 ||
         strcmp(comando[0], "APAGAR_SISTEMA") == 0)
     {
-        free(comando);
+        string_array_destroy(comando);
         log_destroy(logger_comando);
         return 1;
     }
-    free(comando);
+    string_array_destroy(comando);
     log_error(logger_comando, "Comando no reconocido");
     log_destroy(logger_comando);
     return -1;
 }
 
-void atender_instruccion(char *leido, t_log* logger)
+void atender_instruccion(char *leido)
 {
     char **comando = string_split(leido, " ");
+
+    t_log *logger_consola = log_create("logs/kernel_info.log", "consola", 1, LOG_LEVEL_INFO);
 
     if (strcmp(comando[0], "EJECUTAR_SCRIPT") == 0)
     {
@@ -63,7 +69,7 @@ void atender_instruccion(char *leido, t_log* logger)
         char *path = comando[1];
         PLPNuevoProceso(path);
     }
-    else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0) // FALTA HACER
+    else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0)
     {
         detenerPlanificador();
 
@@ -71,21 +77,21 @@ void atender_instruccion(char *leido, t_log* logger)
         {
             if (encontrar_en_new_y_terminar(atoi(comando[1])) < 0)
             {
-                log_error(logger, "No se pudo encontrar el proceso: %d\n", atoi(comando[1]));
-                string_array_destroy(comando);
-                return; 
+                log_error(logger_consola, "No se pudo encontrar el proceso: %d\n", atoi(comando[1]));
             }
         }
-
-        reanudarPlanificador(); // Solo se reanuda si al menos una función tuvo éxito
+        if (!detenido_previamente)
+            reanudarPlanificador();
     }
     else if (strcmp(comando[0], "DETENER_PLANIFICACION") == 0)
     {
         detenerPlanificador();
+        detenido_previamente = 1;
     }
     else if (strcmp(comando[0], "INICIAR_PLANIFICACION") == 0)
     {
         reanudarPlanificador();
+        detenido_previamente = 0;
     }
     else if (strcmp(comando[0], "MULTIPROGRAMACION") == 0)
     {
@@ -93,13 +99,14 @@ void atender_instruccion(char *leido, t_log* logger)
     }
     else if (strcmp(leido, "PROCESO_ESTADO") == 0)
     {
-        //detenerPlanificador();
+        // detenerPlanificador();
         listar_por_estado();
         listar_estados_lp();
-        //reanudarPlanificador();
+        // reanudarPlanificador();
     }
 
     string_array_destroy(comando);
+    log_destroy(logger_consola);
 }
 
 void leer_script(const char *path)

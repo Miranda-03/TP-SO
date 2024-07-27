@@ -8,7 +8,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/bin/${workspaceFolderBasename}",
-      "args": ["FS", "TECLADO", "MONITOR"],
+      "args": ["GENERICA", "SLP1", "ESPERA", "TECLADO", "MONITOR"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

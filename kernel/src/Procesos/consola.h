@@ -13,7 +13,7 @@
 
 void consolaInteractiva();
 int verificar_comando(char *leido);
-void atender_instruccion(char* leido,t_log *logger);
+void atender_instruccion(char* leido);
 void leer_script(const char *path);
 
 

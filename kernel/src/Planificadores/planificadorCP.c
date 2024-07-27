@@ -47,6 +47,8 @@ char *path_config_cp;
 
 bool detener_iniciar_plani;
 
+Pcb *procesoPCB;
+
 void *planificarCortoPlazo(void *ptr)
 {
     params = (ParamsPCP_kernel *)ptr;
@@ -110,6 +112,9 @@ void *planificarCortoPlazo(void *ptr)
     {
         sem_wait(&cant_procesos_ready);
 
+        if (queue_is_empty(cola_de_ready) && queue_is_empty(cola_de_mayor_prioridad))
+            continue;
+
         if (algoritmo == VRR)
         {
             if (hayProcesosPrioritarios() > 0)
@@ -129,7 +134,7 @@ void *planificarCortoPlazo(void *ptr)
         }
 
         esperarProcesoCPU(quantumRestante);
-        Pcb *procesoPCB = malloc(sizeof(Pcb));
+        procesoPCB = malloc(sizeof(Pcb));
 
         actualizar_pcb(procesoPCB);
 
@@ -137,9 +142,12 @@ void *planificarCortoPlazo(void *ptr)
 
         mensaje_desalojo();
 
-        if (chequearMotivoIO(procesoPCB) < 0 && chequearMotivoExit(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
+        if (chequearMotivoExit(procesoPCB) < 0)
         {
-            agregarProcesoAReadyCorrespondiente(procesoPCB);
+            if (chequearMotivoIO(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
+            {
+                agregarProcesoAReadyCorrespondiente(procesoPCB);
+            }
         }
     }
 }
@@ -187,9 +195,12 @@ int chequearRecursos(Pcb *proceso)
         if (strcmp(instruccion_separada[0], "WAIT") == 0)
         {
             sem_wait(&flujoPlanificador_cp);
-            proceso->estado = BLOCK;
-            mensaje_cambio_de_estado("Executing", "Bloqueado", procesoDelCPU->pcb->pid);
-            guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
+            if (proceso->estado != ESTADO_EXIT)
+            {
+                proceso->estado = BLOCK;
+                mensaje_cambio_de_estado("Executing", "Bloqueado", procesoDelCPU->pcb->pid);
+                guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
+            }
             sem_post(&flujoPlanificador_cp);
             string_array_destroy(instruccion_separada);
             return 1;
@@ -232,6 +243,10 @@ void *waitHilo(void *ptr)
     while (1)
     {
         sem_wait(&(recurso->procesos_en_espera));
+
+        if (queue_is_empty(recurso->cola_de_bloqueados_por_recurso))
+            continue;
+
         Pcb *proceso = (Pcb *)queue_peek(recurso->cola_de_bloqueados_por_recurso);
         recurso_wait(recurso->id_recurso, recurso->cantidad_recurso, proceso->pid, recurso->cola_de_bloqueados_por_recurso, &(recurso->mutex_recurso), &(recurso->sem_recursos));
     }
@@ -350,10 +365,13 @@ int chequearMotivoIO(Pcb *proceso)
 
     sem_wait(&flujoPlanificador_cp);
 
-    proceso->estado = BLOCK;
-    mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
+    if (proceso->estado != ESTADO_EXIT)
+    {
+        proceso->estado = BLOCK;
+        mensaje_cambio_de_estado("Executing", "Bloqueado", proceso->pid);
 
-    enviarProcesoColaIOCorrespondiente(proceso);
+        enviarProcesoColaIOCorrespondiente(proceso);
+    }
 
     sem_post(&flujoPlanificador_cp);
 
@@ -677,6 +695,9 @@ void *manageIO_Kernel(void *ptr)
 
         sem_wait(sem_hay_procesos_esperando);
 
+        if (queue_is_empty(lista_bloqueados))
+            continue;
+
         ordenarListaConLasIOsConectadas(tipo_interfaz, listasPorCadaID); // HACE UN 'dictionary_iterator' con 'interfaces_conectadas'
 
         sem_wait(&flujoPlanificador_cp);
@@ -951,6 +972,10 @@ void *manageGenericoPorID(void *ptr)
         {
             quitarProcesoDeLaCola(result, cola, proceso->procesoPCB->pid);
         }
+        else
+        {
+            sem_post(&flujoPlanificador_cp);
+        }
     }
     else
     {
@@ -1098,15 +1123,18 @@ void agregarProcesoAReadyCorrespondiente(Pcb *proceso)
 {
     sem_wait(&flujoPlanificador_cp);
 
-    if (algoritmo == VRR && procesoDelCPU->pcb->quantumRestante > 0)
-        agregarProcesoColaMayorPrioridad(proceso);
-    else
-        agregarProcesoColaReady(proceso);
+    if (proceso->estado != ESTADO_EXIT)
+    {
+        if (algoritmo == VRR && procesoDelCPU->pcb->quantumRestante > 0)
+            agregarProcesoColaMayorPrioridad(proceso);
+        else
+            agregarProcesoColaReady(proceso);
 
-    char *estado_previo = enum_to_string(proceso->estado);
+        char *estado_previo = enum_to_string(proceso->estado);
 
-    proceso->estado = READY;
-    mensaje_cambio_de_estado(estado_previo, "Ready", proceso->pid);
+        proceso->estado = READY;
+        mensaje_cambio_de_estado(estado_previo, "Ready", proceso->pid);
+    }
 
     sem_post(&flujoPlanificador_cp);
 }
@@ -1255,7 +1283,7 @@ char *obtener_array_de_pids(char *cola_c, Pcb *proceso_nuevo)
 
 void detenerPlanificador()
 {
-    if(!detener_iniciar_plani)
+    if (!detener_iniciar_plani)
     {
         detener_iniciar_plani = 1;
         sem_wait(&flujoPlanificador_cp);
@@ -1264,7 +1292,7 @@ void detenerPlanificador()
 
 void reanudarPlanificador()
 {
-    if(detener_iniciar_plani)
+    if (detener_iniciar_plani)
     {
         detener_iniciar_plani = 0;
         sem_post(&flujoPlanificador_cp);
@@ -1273,10 +1301,16 @@ void reanudarPlanificador()
 
 int encontrar_y_terminar_proceso(int pid)
 {
- 
     if (PIDprocesoEjecutando == pid)
     {
         interrumpir_ejecucion();
+        return pid;
+    }
+
+    if (procesoPCB->pid == pid)
+    {
+        procesoPCB->estado == ESTADO_EXIT;
+        terminarProceso(procesoPCB, "INTERRUPTED_BY_USER");
         return pid;
     }
 

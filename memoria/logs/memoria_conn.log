@@ -1,0 +1,75 @@
+[INFO] 02:08:37:495 mem_conn/(17789:17789): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 02:21:40:386 mem_conn/(17789:17789): Solicitud recibida
+[INFO] 02:21:40:387 mem_conn/(17789:17789): Enviando IP: 192.168.0.10
+[INFO] 02:30:53:512 mem_conn/(26600:26600): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 02:31:01:137 mem_conn/(26600:26600): Solicitud recibida
+[INFO] 02:31:01:137 mem_conn/(26600:26600): Enviando IP: 192.168.0.10
+[INFO] 02:45:18:809 mem_conn/(32632:32632): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 02:45:35:515 mem_conn/(32632:32632): Solicitud recibida
+[INFO] 02:45:35:515 mem_conn/(32632:32632): Enviando IP: 192.168.0.10
+[INFO] 02:49:55:869 mem_conn/(35170:35170): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 02:50:01:926 mem_conn/(35170:35170): Solicitud recibida
+[INFO] 02:50:01:926 mem_conn/(35170:35170): Enviando IP: 192.168.0.10
+[INFO] 03:38:33:586 mem_conn/(52442:52442): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 03:38:39:340 mem_conn/(52442:52442): Solicitud recibida
+[INFO] 03:38:39:340 mem_conn/(52442:52442): Enviando IP: 192.168.0.10
+[INFO] 03:43:08:278 mem_conn/(55337:55337): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 03:43:14:835 mem_conn/(55337:55337): Solicitud recibida
+[INFO] 03:43:14:835 mem_conn/(55337:55337): Enviando IP: 192.168.0.10
+[INFO] 03:48:24:749 mem_conn/(58880:58880): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 03:48:54:595 mem_conn/(58880:58880): Solicitud recibida
+[INFO] 03:48:54:596 mem_conn/(58880:58880): Enviando IP: 192.168.0.10
+[INFO] 04:45:43:675 mem_conn/(77967:77967): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:45:45:467 mem_conn/(77967:77967): Solicitud recibida
+[INFO] 04:45:45:467 mem_conn/(77967:77967): Enviando IP: 192.168.0.10
+[INFO] 04:52:16:084 mem_conn/(80655:80655): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 04:52:18:420 mem_conn/(80655:80655): Solicitud recibida
+[INFO] 04:52:18:421 mem_conn/(80655:80655): Enviando IP: 192.168.0.10
+[INFO] 05:01:46:731 mem_conn/(84475:84475): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:01:48:274 mem_conn/(84475:84475): Solicitud recibida
+[INFO] 05:01:48:274 mem_conn/(84475:84475): Enviando IP: 192.168.0.10
+[INFO] 05:04:52:709 mem_conn/(85717:85717): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:04:57:830 mem_conn/(85717:85717): Solicitud recibida
+[INFO] 05:04:57:830 mem_conn/(85717:85717): Enviando IP: 192.168.0.10
+[INFO] 05:07:50:178 mem_conn/(87604:87604): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:07:54:161 mem_conn/(87604:87604): Solicitud recibida
+[INFO] 05:07:54:161 mem_conn/(87604:87604): Enviando IP: 192.168.0.10
+[INFO] 05:11:05:055 mem_conn/(89741:89741): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:11:06:484 mem_conn/(89741:89741): Solicitud recibida
+[INFO] 05:11:06:484 mem_conn/(89741:89741): Enviando IP: 192.168.0.10
+[INFO] 05:14:41:279 mem_conn/(91274:91274): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:14:42:522 mem_conn/(91274:91274): Solicitud recibida
+[INFO] 05:14:42:522 mem_conn/(91274:91274): Enviando IP: 192.168.0.10
+[INFO] 05:34:13:461 mem_conn/(99148:99148): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:34:15:622 mem_conn/(99148:99148): Solicitud recibida
+[INFO] 05:34:15:623 mem_conn/(99148:99148): Enviando IP: 192.168.0.10
+[INFO] 05:45:26:780 mem_conn/(103384:103384): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:45:29:849 mem_conn/(103384:103384): Solicitud recibida
+[INFO] 05:45:29:850 mem_conn/(103384:103384): Enviando IP: 192.168.0.10
+[INFO] 05:49:21:493 mem_conn/(104883:104883): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:49:22:844 mem_conn/(104883:104883): Solicitud recibida
+[INFO] 05:49:22:845 mem_conn/(104883:104883): Enviando IP: 192.168.0.10
+[INFO] 05:57:07:197 mem_conn/(108069:108069): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 05:57:09:071 mem_conn/(108069:108069): Solicitud recibida
+[INFO] 05:57:09:072 mem_conn/(108069:108069): Enviando IP: 192.168.0.10
+[INFO] 06:00:23:324 mem_conn/(109812:109812): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 06:00:24:653 mem_conn/(109812:109812): Solicitud recibida
+[INFO] 06:00:24:653 mem_conn/(109812:109812): Enviando IP: 192.168.0.10
+[INFO] 06:02:22:745 mem_conn/(110689:110689): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 06:02:24:581 mem_conn/(110689:110689): Solicitud recibida
+[INFO] 06:02:24:582 mem_conn/(110689:110689): Enviando IP: 192.168.0.10
+[INFO] 06:07:27:649 mem_conn/(112840:112840): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 06:07:29:166 mem_conn/(112840:112840): Solicitud recibida
+[INFO] 06:07:29:167 mem_conn/(112840:112840): Enviando IP: 192.168.0.10
+[INFO] 06:10:36:542 mem_conn/(114293:114293): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 06:10:37:966 mem_conn/(114293:114293): Solicitud recibida
+[INFO] 06:10:37:967 mem_conn/(114293:114293): Enviando IP: 192.168.0.10
+[INFO] 06:25:46:080 mem_conn/(119748:119748): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 06:25:48:438 mem_conn/(119748:119748): Solicitud recibida
+[INFO] 06:25:48:439 mem_conn/(119748:119748): Enviando IP: 192.168.0.10
+[INFO] 06:31:20:636 mem_conn/(121861:121861): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 06:31:22:619 mem_conn/(121861:121861): Solicitud recibida
+[INFO] 06:31:22:620 mem_conn/(121861:121861): Enviando IP: 192.168.0.10
+[INFO] 06:37:20:176 mem_conn/(124259:124259): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 06:37:22:347 mem_conn/(124259:124259): Solicitud recibida
+[INFO] 06:37:22:348 mem_conn/(124259:124259): Enviando IP: 192.168.0.10
