@@ -78,14 +78,23 @@ void crear_archivo_bloques(const char *path, const char *filename, size_t size)
     char fullPath[1024];
     snprintf(fullPath, sizeof(fullPath), "%s/%s.dat", path, filename);
 
-    FILE *file = fopen(fullPath, "a"); // Abrir el archivo en modo binario para escritura
-    if (file == NULL)
+    // Abrir el archivo en modo escritura
+    int file = open(fullPath, O_CREAT | O_WRONLY, 0644);
+    if (file == -1)
     {
         perror("Error al abrir el archivo");
         exit(EXIT_FAILURE);
     }
 
-    fclose(file); // Cerrar el archivo
+    // Ajustar el tamaño del archivo
+    if (ftruncate(file, size) == -1)
+    {
+        perror("Error al ajustar el tamaño del archivo");
+        close(file);
+        exit(EXIT_FAILURE);
+    }
+
+    close(file); // Cerrar el archivo
 }
 
 void crear_archivo(int pid, t_log *loger, char **instruccionSeparada, char *path_base, int cant_bloques)
