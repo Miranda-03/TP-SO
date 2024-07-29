@@ -82,7 +82,7 @@ void *agregarNuevoProcesoReady(void *ptr)
             int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
 
             if (resultadoMemoria > 0)
-                agregarProcesoColaReady(nuevo_proceso->proceso);
+                agregarProcesoNEWaREADYEnPLANI_CP(nuevo_proceso->proceso);
             else
                 log_error(kernel_loger_lp, "Error en la memoria");
         }
@@ -229,12 +229,12 @@ void ajustar_grado_multiprogramacion(int nuevo_valor)
 
 int encontrar_en_new_y_terminar(int pid)
 {
-    Pcb *proceso = NULL;
+    PcbGuardarEnNEW *proceso = NULL;
 
     bool encontrar_proceso(void *value)
     {
-        Pcb *proceso = (Pcb *)value;
-        if (proceso->pid == pid)
+        PcbGuardarEnNEW *proceso = (PcbGuardarEnNEW *)value;
+        if (proceso->proceso->pid == pid)
             return 1;
         return 0;
     }
@@ -242,8 +242,9 @@ int encontrar_en_new_y_terminar(int pid)
     proceso = list_remove_by_condition(cola_de_new->elements, encontrar_proceso);
     if (proceso != NULL)
     {
-        proceso->estado = ESTADO_EXIT;
-        queue_push(cola_de_exit, proceso);
+        proceso->proceso->estado = ESTADO_EXIT;
+        queue_push(cola_de_exit, proceso->proceso);
+        free(proceso);
         return 1;
     }
     return -1;
@@ -257,8 +258,8 @@ void listar_estados_lp()
     string_append(&mensaje_lp_new, "NEW [ ");
     void recorrerNew(void *value)
     {
-        Pcb *proceso = (Pcb *)value;
-        string_append(&mensaje_lp_new, string_itoa(proceso->pid));
+        PcbGuardarEnNEW *proceso = (PcbGuardarEnNEW *)value;
+        string_append(&mensaje_lp_new, string_itoa(proceso->proceso->pid));
         string_append(&mensaje_lp_new, ", ");
     }
 

@@ -379,4 +379,6 @@ void listar_por_estado();
 
 void actualizar_pcb(Pcb *proceso);
 
+void agregarProcesoNEWaREADYEnPLANI_CP(Pcb *proceso);
+
 #endif

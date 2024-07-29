@@ -37,6 +37,7 @@ pthread_mutex_t mutexIODIALFS;
 pthread_mutex_t mutexListaTodosPorIDio;
 
 sem_t flujoPlanificador_cp;
+
 sem_t esperar_proceso;
 sem_t esperar_guardar_proceso;
 sem_t cant_procesos_ready;
@@ -476,11 +477,11 @@ void *esperarQuantum(void *ptr)
 {
     int variable_local = PIDprocesoEjecutando;
 
-    int quantum = (int)ptr;
+    int *quantum = (int *)ptr;
 
-    usleep(quantum * 1000);
+    usleep(*quantum * 1000);
 
-    if (variable_local == PIDprocesoEjecutando)
+    if (variable_local == PIDprocesoEjecutando && *quantum != -1)
         enviarInterrupcion(FIN_DE_QUANNTUM, &(params->KernelSocketCPUInterrumpt));
 
     pthread_exit(NULL);
@@ -514,22 +515,25 @@ void *escuchaDispatch(void *ptr)
     if (algoritmo == RR || algoritmo == VRR)
     {
         pthread_t hilo_esperar_quantum;
-        pthread_create(&hilo_esperar_quantum, NULL, esperarQuantum, (void *)(intptr_t)quantum);
+        pthread_create(&hilo_esperar_quantum, NULL, esperarQuantum, (void *)(intptr_t)&quantum);
         pthread_detach(hilo_esperar_quantum);
     }
 
-    tiempoEjecutando = temporal_create();
+    t_temporal *tiempoEjecutando_cp = temporal_create();
 
     int quantum_restante = 0;
 
     TipoModulo *modulo = get_modulo_msg_recv(&(params->KernelSocketCPUDispatch));
 
-    if (temporal_gettime(tiempoEjecutando) < quantum)
-        quantum_restante = quantum - temporal_gettime(tiempoEjecutando);
+    quantum_restante = quantum - temporal_gettime(tiempoEjecutando_cp);
 
-    temporal_destroy(tiempoEjecutando);
+    if (quantum_restante < 0)
+        quantum_restante = 0;
+
+    temporal_destroy(tiempoEjecutando_cp);
 
     PIDprocesoEjecutando = -1; // Llegó el proceso, ya no está ejecutando ninguno
+    quantum = -1;
 
     op_code *op_code = get_opcode_msg_recv(&(params->KernelSocketCPUDispatch));
 
@@ -974,7 +978,10 @@ void *manageGenericoPorID(void *ptr)
         }
         else
         {
+            sem_post(&cola->semEsperarBlock);
             sem_post(&flujoPlanificador_cp);
+            free(params);
+            pthread_exit(NULL);
         }
     }
     else
@@ -986,7 +993,7 @@ void *manageGenericoPorID(void *ptr)
     }
 
     sem_post(&cola->semEsperarBlock);
-
+    free(params);
     pthread_exit(NULL);
 }
 
@@ -1015,13 +1022,11 @@ int esperarConfirmacion(int *socket)
 
 void quitarProcesoDeLaCola(int resultadoDeLaIO, listaBlockPorID *cola, int pid)
 {
-    pthread_mutex_lock(&(cola->mutexCola));
     structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)queue_peek(cola->colaBloqueadoPorID);
     if (proceso->procesoPCB->pid == pid)
     {
         structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)queue_pop(cola->colaBloqueadoPorID);
         sem_post(&flujoPlanificador_cp);
-        pthread_mutex_unlock(&(cola->mutexCola));
 
         if (resultadoDeLaIO < 0)
             terminarProceso(proceso->procesoPCB, "ERROR_DE_IO");
@@ -1033,7 +1038,6 @@ void quitarProcesoDeLaCola(int resultadoDeLaIO, listaBlockPorID *cola, int pid)
     else
     {
         sem_post(&flujoPlanificador_cp);
-        pthread_mutex_unlock(&(cola->mutexCola));
     }
 }
 
@@ -1125,7 +1129,7 @@ void agregarProcesoAReadyCorrespondiente(Pcb *proceso)
 
     if (proceso->estado != ESTADO_EXIT)
     {
-        if (algoritmo == VRR && procesoDelCPU->pcb->quantumRestante > 0)
+        if (algoritmo == VRR && proceso->quantumRestante > 0)
             agregarProcesoColaMayorPrioridad(proceso);
         else
             agregarProcesoColaReady(proceso);
@@ -1235,6 +1239,15 @@ void agregarProcesoColaReady(Pcb *procesoPCB)
     pthread_mutex_unlock(&mutexReady);
 }
 
+void agregarProcesoNEWaREADYEnPLANI_CP(Pcb *proceso)
+{
+    sem_wait(&flujoPlanificador_cp);
+
+    agregarProcesoColaReady(proceso);
+
+    sem_post(&flujoPlanificador_cp);
+}
+
 void log_ingreso_a_ready(char *cola, Pcb *proceso_nuevo)
 {
     char *array_pids = obtener_array_de_pids(cola, proceso_nuevo);
@@ -1301,17 +1314,23 @@ void reanudarPlanificador()
 
 int encontrar_y_terminar_proceso(int pid)
 {
-    if (PIDprocesoEjecutando == pid)
+    if (pid <= 0)
+        return -1;
+
+    if (PIDprocesoEjecutando == pid && PIDprocesoEjecutando != -1)
     {
         interrumpir_ejecucion();
         return pid;
     }
 
-    if (procesoPCB->pid == pid)
+    if (procesoPCB != NULL)
     {
-        procesoPCB->estado == ESTADO_EXIT;
-        terminarProceso(procesoPCB, "INTERRUPTED_BY_USER");
-        return pid;
+        if (procesoPCB->pid == pid)
+        {
+            procesoPCB->estado == ESTADO_EXIT;
+            terminarProceso(procesoPCB, "INTERRUPTED_BY_USER");
+            return pid;
+        }
     }
 
     if (buscar_colas_recursos_terminar(pid) > 0)
