@@ -47,6 +47,7 @@ MensajeProcesoDelCPU *procesoDelCPU;
 char *path_config_cp;
 
 bool detener_iniciar_plani;
+bool se_necesita_planificar;
 
 Pcb *procesoPCB;
 
@@ -66,6 +67,8 @@ void *planificarCortoPlazo(void *ptr)
     quantumRestante = quantumTotal;
 
     detener_iniciar_plani = 0;
+
+    se_necesita_planificar = 1;
 
     kernel_loger_cp = log_create("logs/kernel_info.log", "plani_cp", 1, LOG_LEVEL_INFO);
 
@@ -111,27 +114,32 @@ void *planificarCortoPlazo(void *ptr)
 
     while (1)
     {
-        sem_wait(&cant_procesos_ready);
-
-        if (queue_is_empty(cola_de_ready) && queue_is_empty(cola_de_mayor_prioridad))
-            continue;
-
-        if (algoritmo == VRR)
+        if (!se_necesita_planificar)
+            enviarMensajeCPUPCBProceso(procesoPCB);
+        else
         {
-            if (hayProcesosPrioritarios() > 0)
+            sem_wait(&cant_procesos_ready);
+
+            if (queue_is_empty(cola_de_ready) && queue_is_empty(cola_de_mayor_prioridad))
+                continue;
+
+            if (algoritmo == VRR)
             {
-                quantumRestante = enviarProcesoMayorPrioridadCPU();
+                if (hayProcesosPrioritarios() > 0)
+                {
+                    quantumRestante = enviarProcesoMayorPrioridadCPU();
+                }
+                else
+                {
+                    quantumRestante = quantumTotal;
+                    enviarProcesoReadyCPU();
+                }
             }
             else
             {
                 quantumRestante = quantumTotal;
                 enviarProcesoReadyCPU();
             }
-        }
-        else
-        {
-            quantumRestante = quantumTotal;
-            enviarProcesoReadyCPU();
         }
 
         esperarProcesoCPU(quantumRestante);
@@ -143,13 +151,16 @@ void *planificarCortoPlazo(void *ptr)
 
         mensaje_desalojo();
 
-        if (chequearMotivoExit(procesoPCB) < 0)
-        {
-            if (chequearMotivoIO(procesoPCB) < 0 && chequearRecursos(procesoPCB) < 0)
-            {
-                agregarProcesoAReadyCorrespondiente(procesoPCB);
-            }
-        }
+        if (chequearMotivoExit(procesoPCB) > 0)
+            continue;
+
+        if (chequearRecursos(procesoPCB) > 0)
+            continue;
+
+        if (chequearMotivoIO(procesoPCB) > 0)
+            continue;
+
+        agregarProcesoAReadyCorrespondiente(procesoPCB);
     }
 }
 
@@ -195,26 +206,55 @@ int chequearRecursos(Pcb *proceso)
 
         if (strcmp(instruccion_separada[0], "WAIT") == 0)
         {
-            sem_wait(&flujoPlanificador_cp);
             if (proceso->estado != ESTADO_EXIT)
             {
-                proceso->estado = BLOCK;
-                mensaje_cambio_de_estado("Executing", "Bloqueado", procesoDelCPU->pcb->pid);
-                guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
+                if (hay_recurso_disponibles(proceso, instruccion_separada) < 0)
+                {
+                    sem_wait(&flujoPlanificador_cp);
+                    proceso->estado = BLOCK;
+                    log_info(kernel_loger_cp, "PID: %d - Bloqueado por: %s", proceso->pid, instruccion_separada[1]);
+                    mensaje_cambio_de_estado("Executing", "Bloqueado", procesoDelCPU->pcb->pid);
+                    guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
+                    sem_post(&flujoPlanificador_cp);
+                    string_array_destroy(instruccion_separada);
+                    return 1;
+                }
+                else
+                {
+                    string_array_destroy(instruccion_separada);
+                    return 1;
+                }
             }
-            sem_post(&flujoPlanificador_cp);
-            string_array_destroy(instruccion_separada);
-            return 1;
         }
         else
         {
             hacerPOST(instruccion_separada[1], procesoDelCPU->pcb->pid);
             string_array_destroy(instruccion_separada);
-            return -1;
+            se_necesita_planificar = 0;
+            return 1;
         }
         string_array_destroy(instruccion_separada);
     }
     return -1;
+}
+
+int hay_recurso_disponibles(Pcb *proceso, char **instruccion_separada)
+{
+    Recurso *recurso = dictionary_get(recursos, instruccion_separada[1]);
+    int response = -1;
+
+    pthread_mutex_lock(&(recurso->mutex_recurso));
+    if (*(recurso->cantidad_recurso) > 0)
+    {
+        *(recurso->cantidad_recurso) -= 1;
+        sem_wait(&(recurso->sem_recursos));
+        poner_en_lista_de_recursos_adquiridos(proceso->pid, recurso->id_recurso);
+        response = 1;
+        se_necesita_planificar = 0;
+    }
+    pthread_mutex_unlock(&(recurso->mutex_recurso));
+
+    return response;
 }
 
 void guardar_en_cola_correspondiente_recurso(Pcb *proceso, char **instruccion_separada)
@@ -1098,10 +1138,15 @@ void enviarMensajeCPUPCBProceso(Pcb *proceso)
     buffer_add_uint32(buffer, proceso->SI);
     buffer_add_uint32(buffer, proceso->DI);
 
-    proceso->estado = EXEC;
-    mensaje_cambio_de_estado("Ready", "Executing", proceso->pid);
+    if (proceso->estado != EXEC)
+    {
+        proceso->estado = EXEC;
+        mensaje_cambio_de_estado("Ready", "Executing", proceso->pid);
+    }
 
     enviarMensaje(&(params->KernelSocketCPUDispatch), buffer, KERNEL, MENSAJE);
+
+    se_necesita_planificar = 1;
 
     // procesoDelCPU->pcb = proceso;
 }
@@ -1168,7 +1213,7 @@ void mensaje_desalojo()
 
         log_info(kernel_loger_cp, mensaje);
     }
-    else if (procesoDelCPU->motivo == PETICION_RECURSO || procesoDelCPU->motivo == INTERRUPCION_IO)
+    else if (procesoDelCPU->motivo == INTERRUPCION_IO)
     {
         char **instruccionSeparada = string_split(procesoDelCPU->instruccion, " ");
         char *recurso = instruccionSeparada[1];

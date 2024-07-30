@@ -381,4 +381,6 @@ void actualizar_pcb(Pcb *proceso);
 
 void agregarProcesoNEWaREADYEnPLANI_CP(Pcb *proceso);
 
+int hay_recurso_disponibles(Pcb *proceso, char **instruccion_separada);
+
 #endif
