@@ -37,7 +37,6 @@ typedef struct
     sem_t semEsperarBlock;
     pthread_mutex_t mutexCola;
     char *identificador;
-    int *conectado;
     int socket;
     t_queue *colaBloqueadoPorID;
 } listaBlockPorID;
@@ -382,5 +381,9 @@ void actualizar_pcb(Pcb *proceso);
 void agregarProcesoNEWaREADYEnPLANI_CP(Pcb *proceso);
 
 int hay_recurso_disponibles(Pcb *proceso, char **instruccion_separada);
+
+void bloquear_paso_de_procesos_a_colas();
+
+void desbloquear_paso_de_procesos_a_colas();
 
 #endif

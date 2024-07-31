@@ -38,6 +38,7 @@ pthread_mutex_t mutexListaTodosPorIDio;
 
 sem_t flujoPlanificador_cp;
 
+sem_t sem_buscar_proceso;
 sem_t esperar_proceso;
 sem_t esperar_guardar_proceso;
 sem_t cant_procesos_ready;
@@ -102,6 +103,7 @@ void *planificarCortoPlazo(void *ptr)
     pthread_mutex_init(&mutexListaTodosPorIDio, NULL);
 
     sem_init(&flujoPlanificador_cp, 0, 1);
+    sem_init(&sem_buscar_proceso, 0, 1);
     sem_init(&esperar_proceso, 0, 0);
     sem_init(&esperar_guardar_proceso, 0, 0);
     sem_init(&cant_procesos_ready, 0, 0);
@@ -210,12 +212,12 @@ int chequearRecursos(Pcb *proceso)
             {
                 if (hay_recurso_disponibles(proceso, instruccion_separada) < 0)
                 {
-                    sem_wait(&flujoPlanificador_cp);
+                    sem_wait(&sem_buscar_proceso);
                     proceso->estado = BLOCK;
                     log_info(kernel_loger_cp, "PID: %d - Bloqueado por: %s", proceso->pid, instruccion_separada[1]);
                     mensaje_cambio_de_estado("Executing", "Bloqueado", procesoDelCPU->pcb->pid);
                     guardar_en_cola_correspondiente_recurso(proceso, instruccion_separada);
-                    sem_post(&flujoPlanificador_cp);
+                    sem_post(&sem_buscar_proceso);
                     string_array_destroy(instruccion_separada);
                     return 1;
                 }
@@ -304,18 +306,18 @@ void recurso_wait(char *id_recurso, int *cant_recurso, int pid_solicitante, t_qu
     *cant_recurso -= 1;
     pthread_mutex_unlock(mutex);
 
-    sem_wait(&flujoPlanificador_cp);
+    sem_wait(&sem_buscar_proceso);
     if (queue_is_empty(cola_de_bloqueados_recursos))
     {
         sem_post(instancias);
         *cant_recurso += 1;
-        sem_post(&flujoPlanificador_cp);
+        sem_post(&sem_buscar_proceso);
     }
     else
     {
         Pcb *proceso = (Pcb *)queue_pop(cola_de_bloqueados_recursos);
         poner_en_lista_de_recursos_adquiridos(proceso->pid, id_recurso);
-        sem_post(&flujoPlanificador_cp);
+        sem_post(&sem_buscar_proceso);
         agregarProcesoAReadyCorrespondiente(proceso);
     }
 }
@@ -404,7 +406,7 @@ int chequearMotivoIO(Pcb *proceso)
         return 1;
     }
 
-    sem_wait(&flujoPlanificador_cp);
+    sem_wait(&sem_buscar_proceso);
 
     if (proceso->estado != ESTADO_EXIT)
     {
@@ -414,7 +416,7 @@ int chequearMotivoIO(Pcb *proceso)
         enviarProcesoColaIOCorrespondiente(proceso);
     }
 
-    sem_post(&flujoPlanificador_cp);
+    sem_post(&sem_buscar_proceso);
 
     return 1;
 }
@@ -734,6 +736,8 @@ void *manageIO_Kernel(void *ptr)
     t_queue *lista_bloqueados = obtenerColaCorrespondiente(tipo_interfaz);
     sem_t *sem_hay_procesos_esperando = obtenerSemaforoCorrespondiente(tipo_interfaz);
 
+    int numIOs = dictionary_size(interfaces_conectadas);
+
     while (1)
     {
 
@@ -742,11 +746,12 @@ void *manageIO_Kernel(void *ptr)
         if (queue_is_empty(lista_bloqueados))
             continue;
 
-        ordenarListaConLasIOsConectadas(tipo_interfaz, listasPorCadaID); // HACE UN 'dictionary_iterator' con 'interfaces_conectadas'
+        if (numIOs < dictionary_size(interfaces_conectadas))
+            ordenarListaConLasIOsConectadas(tipo_interfaz, listasPorCadaID);
 
-        sem_wait(&flujoPlanificador_cp);
+        sem_wait(&sem_buscar_proceso);
         proceso = (structGuardarProcesoEnBloqueado *)queue_pop(lista_bloqueados);
-        sem_post(&flujoPlanificador_cp);
+        sem_post(&sem_buscar_proceso);
 
         if (laIOEstaConectada(proceso) > 0)
         {
@@ -762,10 +767,18 @@ void *manageIO_Kernel(void *ptr)
             structParaHiloFORIO *params = malloc(sizeof(structParaHiloFORIO));
             params->lista = list_get(listasPorCadaID, i);
             params->interfaz = tipo_interfaz;
-            pthread_t hiloParaID;
-            pthread_create(&hiloParaID, NULL, manageGenericoPorID, (void *)params);
-            pthread_detach(hiloParaID);
+            if (!queue_is_empty(params->lista->colaBloqueadoPorID))
+            {
+                pthread_t hiloParaID;
+                pthread_create(&hiloParaID, NULL, manageGenericoPorID, (void *)params);
+                pthread_detach(hiloParaID);
+            }
+            else
+            {
+                free(params);
+            }
         }
+
         /*
              Primero guarda las io (en este caso genericas) conectadas junto a una cola de procesos
             luego se determina si la io que pide el proceso esta efectivamente conectada y se guarda
@@ -855,11 +868,11 @@ void guardarEnSuCola(t_list *listasPorCadaID, structGuardarProcesoEnBloqueado *p
         listaBlockPorID *io_conectada_por_id = (listaBlockPorID *)value;
         if (strcmp(io_conectada_por_id->identificador, ID_IOProceso) == 0)
         {
-            sem_wait(&flujoPlanificador_cp);
+            sem_wait(&sem_buscar_proceso);
             pthread_mutex_lock(&io_conectada_por_id->mutexCola);
             queue_push(io_conectada_por_id->colaBloqueadoPorID, proceso);
             pthread_mutex_unlock(&io_conectada_por_id->mutexCola);
-            sem_post(&flujoPlanificador_cp);
+            sem_post(&sem_buscar_proceso);
         }
     }
 
@@ -906,8 +919,6 @@ t_list *ordenarListaConLasIOsConectadas(TipoInterfaz tipo, t_list *listasPorCada
     }
 
     buscarNuevasConectadas(interfaces_conectadas, encontrarIONuevaConectada);
-
-    // MarcarDesconetadas(listasPorCadaID);
 }
 
 void PonerIO(char *key, void *value, t_list *listasPorCadaID, TipoInterfaz tipo)
@@ -916,13 +927,11 @@ void PonerIO(char *key, void *value, t_list *listasPorCadaID, TipoInterfaz tipo)
 
     if (io_a_guardar->interfaz == tipo)
     {
-        if (estaEnLaLista(key, listasPorCadaID) < 0) // HACER LA FUNCION
+        if (estaEnLaLista(key, listasPorCadaID) < 0)
         {
             listaBlockPorID *io_lista = (listaBlockPorID *)malloc(sizeof(listaBlockPorID));
-            io_lista->conectado = malloc(4);
             t_queue *io_queue = queue_create();
             io_lista->colaBloqueadoPorID = io_queue;
-            *(io_lista->conectado) = 1;
             io_lista->identificador = key;
             io_lista->socket = io_a_guardar->socket;
             sem_init(&(io_lista->semEsperarBlock), 0, 1);
@@ -946,20 +955,6 @@ int estaEnLaLista(char *key, t_list *lista)
     list_iterate(lista, encontrar);
 
     return resultado;
-}
-
-void MarcarDesconetadas(t_list *listasPorCadaID)
-{
-    void verificarIOConectada(void *value)
-    {
-        listaBlockPorID *io = (listaBlockPorID *)value;
-        if (check_socket_connection(io->socket) <= 0) // poner mutex en Interfaces
-        {
-            *(io->conectado) = -1;
-        }
-    }
-
-    list_iterate(listasPorCadaID, verificarIOConectada);
 }
 
 void *manageGenericoPorID(void *ptr)
@@ -1370,7 +1365,7 @@ int encontrar_y_terminar_proceso(int pid)
 
     if (procesoPCB != NULL)
     {
-        if (procesoPCB->pid == pid)
+        if (procesoPCB->pid == pid && procesoPCB->estado == EXEC)
         {
             procesoPCB->estado == ESTADO_EXIT;
             terminarProceso(procesoPCB, "INTERRUPTED_BY_USER");
@@ -1546,6 +1541,9 @@ void listar_por_estado()
 
     log_info(loger_estados_cp, "EJECUTANDO: %d", PIDprocesoEjecutando);
 
+    if (procesoPCB->estado == EXEC && procesoDelCPU->motivo == FIN_DE_QUANNTUM)
+        log_info(loger_estados_cp, "Esperando a ser ingresado en cola READY: %d", procesoPCB->pid);
+
     char *mensaje_cp_readys = string_new();
     string_append(&mensaje_cp_readys, "READY [ ");
     void recorrer(void *value)
@@ -1566,8 +1564,11 @@ void listar_por_estado()
     void iterar_cola(void *value)
     {
         structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
-        string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
-        string_append(&mensaje_cp_bloqueado, ", ");
+         if (proceso->procesoPCB->estado != ESTADO_EXIT)
+        {
+            string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
+            string_append(&mensaje_cp_bloqueado, ", ");
+        }
     }
 
     void iterar_sobre_colas_de_espera_por_cada_io(void *value)
@@ -1588,8 +1589,11 @@ void listar_por_estado()
     void iterar_procesos_recurso(void *value)
     {
         Pcb *proceso = (Pcb *)value;
-        string_append(&mensaje_cp_bloqueado, string_itoa(proceso->pid));
-        string_append(&mensaje_cp_bloqueado, ", ");
+        if (proceso->estado != ESTADO_EXIT)
+        {
+            string_append(&mensaje_cp_bloqueado, string_itoa(proceso->pid));
+            string_append(&mensaje_cp_bloqueado, ", ");
+        }
     }
 
     void buscar_proceso_por_recurso(char *key, void *value)
@@ -1605,4 +1609,14 @@ void listar_por_estado()
     free(mensaje_cp_bloqueado);
 
     log_destroy(loger_estados_cp);
+}
+
+void bloquear_paso_de_procesos_a_colas()
+{
+    sem_wait(&sem_buscar_proceso);
+}
+
+void desbloquear_paso_de_procesos_a_colas()
+{
+    sem_post(&sem_buscar_proceso);
 }

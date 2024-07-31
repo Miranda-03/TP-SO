@@ -72,6 +72,7 @@ void atender_instruccion(char *leido)
     else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0)
     {
         detenerPlanificador();
+        bloquear_paso_de_procesos_a_colas();
 
         if (encontrar_y_terminar_proceso(atoi(comando[1])) < 0)
         {
@@ -80,6 +81,9 @@ void atender_instruccion(char *leido)
                 log_error(logger_consola, "No se pudo encontrar el proceso: %d\n", atoi(comando[1]));
             }
         }
+
+        desbloquear_paso_de_procesos_a_colas();
+
         if (!detenido_previamente)
             reanudarPlanificador();
     }
