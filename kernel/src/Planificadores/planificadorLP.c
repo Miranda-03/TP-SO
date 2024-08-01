@@ -9,7 +9,7 @@ int *socketBidireccionalMemoria;
 pthread_mutex_t mutexPID;
 pthread_mutex_t mutexColaNEW;
 pthread_mutex_t mutexMSGMemoria;
-sem_t grado_multiprogramacion;
+
 sem_t hay_procesos_en_new;
 
 t_queue *cola_de_new;
@@ -17,9 +17,17 @@ t_queue *cola_de_exit;
 
 t_log *kernel_loger_lp;
 
+sem_t grado_multiprogramacion;
+
+StructMultiprogramacion *control_multiprogramacion;
+
 void inicarPlanificadorLargoPLazo(int socketMemoria, char *path_config)
 {
-    sem_init(&grado_multiprogramacion, 0, atoi(obtenerValorConfig(path_config, "GRADO_MULTIPROGRAMACION")));
+    // sem_init(&grado_multiprogramacion, 0, atoi(obtenerValorConfig(path_config, "GRADO_MULTIPROGRAMACION")));
+    control_multiprogramacion = malloc(sizeof(StructMultiprogramacion));
+
+    init_sem_multiprogramacion(control_multiprogramacion, atoi(obtenerValorConfig(path_config, "GRADO_MULTIPROGRAMACION")));
+
     sem_init(&hay_procesos_en_new, 0, 0);
     cola_de_exit = queue_create();
     cola_de_new = queue_create();
@@ -30,6 +38,13 @@ void inicarPlanificadorLargoPLazo(int socketMemoria, char *path_config)
     pthread_t hilo_enviar_procesos_a_ready;
     pthread_create(&hilo_enviar_procesos_a_ready, NULL, agregarNuevoProcesoReady, NULL);
     pthread_detach(hilo_enviar_procesos_a_ready);
+}
+
+void init_sem_multiprogramacion(StructMultiprogramacion *msem, int value)
+{
+    msem->valor_inicial = value;
+    sem_init(&(msem->sem_multiprogramacion), 0, value);
+    pthread_mutex_init(&(msem->mutex), NULL);
 }
 
 void nuevoProceso(char *path_instrucciones)
@@ -116,7 +131,8 @@ int esperarRespuesteDeMemoria()
 
 PcbGuardarEnNEW *sacarProcesoDeNew()
 {
-    sem_wait(&grado_multiprogramacion);
+    //sem_wait(&grado_multiprogramacion);
+    wait_multiprogramacion();
     pthread_mutex_lock(&mutexColaNEW);
     PcbGuardarEnNEW *nuevo_proceso = queue_pop(cola_de_new);
     pthread_mutex_unlock(&mutexColaNEW);
@@ -165,7 +181,8 @@ void terminarProceso(Pcb *proceso, char *motivo_exit)
     liberar_recursos(proceso);
     queue_push(cola_de_exit, proceso);
     mensaje_exit(proceso->pid, motivo_exit);
-    sem_post(&grado_multiprogramacion);
+    //sem_post(&grado_multiprogramacion);
+    post_multiprogramacion();
 }
 
 void mensaje_exit(int pid, char *motivo_exit)
@@ -206,25 +223,42 @@ int buscarProcesoEnREADYyEXITporIDyFinalizarlo(char *PID) // HEADER
 {
 }
 
-void ajustar_grado_multiprogramacion(int nuevo_valor)
+void ajustar_grado_multiprogramacion(int new_value)
 {
-    int valor_actual;
-    sem_getvalue(&grado_multiprogramacion, &valor_actual);
+    pthread_mutex_lock(&(control_multiprogramacion->mutex));
 
-    if (nuevo_valor > valor_actual)
+    int current_value;
+    sem_getvalue(&(control_multiprogramacion->sem_multiprogramacion), &current_value);
+
+    int delta = new_value - (control_multiprogramacion->valor_inicial - current_value);
+
+    if (delta > 0)
     {
-        for (int i = 0; i < (nuevo_valor - valor_actual); i++)
+        for (int i = 0; i < delta; i++)
         {
-            sem_post(&grado_multiprogramacion);
+            sem_post(&(control_multiprogramacion->sem_multiprogramacion));
         }
     }
-    else if (nuevo_valor < valor_actual)
+    else
     {
-        for (int i = 0; i < (valor_actual - nuevo_valor); i++)
+        for (int i = 0; i < -delta; i++)
         {
-            sem_wait(&grado_multiprogramacion);
+            sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
         }
     }
+
+    control_multiprogramacion->valor_inicial = new_value;
+    pthread_mutex_unlock(&(control_multiprogramacion->mutex));
+}
+
+void wait_multiprogramacion()
+{
+    sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
+}
+
+void post_multiprogramacion()
+{
+    sem_post(&(control_multiprogramacion->sem_multiprogramacion));
 }
 
 int encontrar_en_new_y_terminar(int pid)

@@ -22,6 +22,21 @@ typedef struct
     char *path_instrucciones;
 } PcbGuardarEnNEW;
 
+typedef struct
+{
+    sem_t sem_multiprogramacion;
+    int valor_inicial;
+    pthread_mutex_t mutex;
+} StructMultiprogramacion;
+
+
+
+void init_sem_multiprogramacion(StructMultiprogramacion *msem, int value);
+
+void post_multiprogramacion();
+
+void wait_multiprogramacion();
+
 /**
 * @fn    inicarPlanificadorLargoPLazo
 * @brief iniciar datos del planificador a largo plazo.
