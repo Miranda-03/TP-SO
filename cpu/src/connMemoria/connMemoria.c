@@ -25,6 +25,8 @@ char *recibirInstruccion(int *socket, unsigned int pid, unsigned int pc)
     char *instruccion = buffer_read_string(buffer_recv, size);
 
     buffer_destroy(buffer_recv);
+    free(modulo);
+    free(op_code);
 
     return instruccion;
 }
@@ -60,6 +62,8 @@ char *cpu_leer_memoria(int direccion_logica_inicio, int bytes_a_leer, int pid, i
         offset += atoi(direcciones[i + 1]);
 
         buffer_destroy(buffer_recv);
+        free(modulo);
+        free(opcode);
     }
 
     mensaje_conn_memoria(pid, "LEER", direcciones[0], dato);
@@ -98,6 +102,8 @@ int escribir_memoria(int direccion_logica_inicio, int bytes_a_escribir, int pid,
         buffer_read(buffer_recv, &resultado, 4);
 
         buffer_destroy(buffer_recv);
+        free(modulo);
+        free(opcode);
 
         if (resultado < 0)
             break;

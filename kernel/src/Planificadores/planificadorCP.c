@@ -505,7 +505,7 @@ void esperarProcesoCPU(int quantum)
     if (quantumRestante != NULL)
     {
         procesoDelCPU->pcb->quantumRestante = *(int *)quantumRestante;
-        free(quantumRestante); // Liberar memoria después de usar
+        free(quantumRestante);
     }
     else
     {
@@ -843,7 +843,8 @@ sem_t *obtenerSemaforoCorrespondiente(TipoInterfaz interfaz) // HEADER
 int laIOEstaConectada(structGuardarProcesoEnBloqueado *proceso)
 {
     int estaConectada = 1;
-    char *keyProceso = string_split(proceso->instruccion, " ")[1];
+    char **instruccionSeparada = string_split(proceso->instruccion, " ");
+    char *keyProceso = instruccionSeparada[1];
 
     void saberSiEstaConectada(char *key, void *value)
     {
@@ -854,6 +855,8 @@ int laIOEstaConectada(structGuardarProcesoEnBloqueado *proceso)
     }
 
     dictionary_iterator(interfaces_conectadas, saberSiEstaConectada);
+
+    string_array_destroy(instruccionSeparada);
 
     return estaConectada;
 }
@@ -1051,6 +1054,8 @@ int esperarConfirmacion(int *socket)
     int resultado = buffer_read_uint32(buffer);
 
     buffer_destroy(buffer);
+    free(modulo);
+    free(codigo);
 
     return resultado;
 }

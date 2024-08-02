@@ -137,6 +137,8 @@ int esperarRespuesteDeMemoria()
     int resultado = buffer_read_uint32(buffer);
 
     buffer_destroy(buffer);
+    free(modulo);
+    free(codigo);
 
     return resultado;
 }

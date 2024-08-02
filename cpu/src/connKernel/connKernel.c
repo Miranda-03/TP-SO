@@ -18,6 +18,9 @@ void *manageDISPATCH(void *ptr)
 
             llega_proceso();
         }
+
+        free(modulo);
+        free(op_code);
     }
 }
 
@@ -35,6 +38,9 @@ void *manageINTERRUPT(void *ptr)
         *(params->interrupcion) = buffer_read_uint32(buffer); // pasar un 1 como unsigned int para interrumpir, un 2 para indicar fin de quanntum
 
         buffer_destroy(buffer);
+
+        free(modulo);
+        free(op_code);
     }
 }
 

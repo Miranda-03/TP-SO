@@ -31,5 +31,8 @@ void *manage_conn_stdout_io(void *ptr)
             conectada = -1;
             break;
         }
+
+        free(modulo);
+        free(op_code);
     }
 }

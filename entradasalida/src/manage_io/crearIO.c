@@ -201,6 +201,8 @@ void manageSTDIN(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer 
             break;
 
         buffer_destroy(buffer_recv);
+        free(modulo);
+        free(opcode);
     }
 
     // Le dice al Kernel que termino con el numero 1
@@ -239,6 +241,8 @@ void manageSTDOUT(moduloIO *modulo_io, int *socket, int *socketMemoria, t_buffer
         string_append(&dato_a_leer, buffer_read_string(buffer_recv, atoi(direcciones_fisicas[i + 1])));
 
         buffer_destroy(buffer_recv);
+        free(modulo);
+        free(opcode);
     }
 
     printf("%s\n", dato_a_leer);

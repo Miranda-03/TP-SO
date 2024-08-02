@@ -21,7 +21,7 @@ void conectarModuloKernel(int *KernelSocketMemoria, int *KernelSocketCPUDispatch
     // Conexiones con el módulo CPU
     *KernelSocketCPUDispatch = crearSocket(config_get_string_value(config, "PUERTO_CPU_DISPATCH"), config_get_string_value(config, "IP_CPU"), 0);
     handshakeKernelCPU(DISPATCH, KernelSocketCPUDispatch);
-    
+
     *KernelSocketCPUInterrumpt = crearSocket(config_get_string_value(config, "PUERTO_CPU_INTERRUPT"), config_get_string_value(config, "IP_CPU"), 0);
     handshakeKernelCPU(INTERRUMPT, KernelSocketCPUInterrumpt);
 
@@ -105,7 +105,7 @@ void *atenderIO(void *ptr)
 void handshakeKernelCPU(TipoConn conn, int *socket)
 {
     t_buffer *buffer = buffer_create(sizeof(TipoConn));
-    
+
     if (!buffer)
     {
         perror("buffer_create");
@@ -173,6 +173,8 @@ void obtener_ip_de_modulo_memoria(int socket, t_config *config)
 
     config_set_value(config, "IP_MEMORIA", ip);
     config_save(config);
+    free(modulo);
+    free(opcode);
 }
 
 void *hilo_responder_ips(void *ptr)

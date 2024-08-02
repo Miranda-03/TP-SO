@@ -247,6 +247,8 @@ void obtener_tam_pagina(int socket)
     instanciar_tam_pagina_MMU(*tam_pagina);
 
     free(tam_pagina);
+    free(modulo);
+    free(opcode);
 }
 
 void llega_proceso()

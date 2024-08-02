@@ -1,11 +1,13 @@
 
 #include "funciones_DIALFS.h"
 
+int tam_bloque;
+
 void iniciar_archivos(char *path_config)
 {
     t_config *config = config_create(path_config);
 
-    int tam_bloque = config_get_int_value(config, "BLOCK_SIZE");
+    tam_bloque = config_get_int_value(config, "BLOCK_SIZE");
     int cant_bloques = config_get_int_value(config, "BLOCK_COUNT");
 
     char *path_base = config_get_string_value(config, "PATH_BASE_DIALFS");
@@ -157,15 +159,13 @@ void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *p
 
     config_destroy(metadata);
 
+    t_config *metadata_guardar = config_create(fullPath);
+
     if (bloques_nuevos < bloques_asignados)
     {
         borrar_bits(bitmap, inicio + bloques_nuevos, bloques_asignados - bloques_nuevos);
 
-        t_config *metadata_guardar = config_create(fullPath);
         config_set_value(metadata_guardar, "BLOQUE_INICIAL", string_itoa(nuevo_inicio));
-        config_set_value(metadata_guardar, "TAMANIO_ARCHIVO", string_itoa(nuevo_tam));
-        config_save(metadata_guardar);
-        config_destroy(metadata_guardar);
     }
     else if (bloques_nuevos > bloques_asignados)
     {
@@ -175,16 +175,16 @@ void truncate_archivo(int pid, t_log *loger, char **instruccionSeparada, char *p
         nuevo_inicio = verificar_contiguo(pid, loger, bitmap, inicio + bloques_asignados, bloques_nuevos - bloques_asignados, bloques_asignados, path_base, size_bloques, retardo);
         agregar_bits(bitmap, nuevo_inicio, bloques_nuevos);
 
-        t_config *metadata_guardar = config_create(fullPath);
         config_set_value(metadata_guardar, "BLOQUE_INICIAL", string_itoa(nuevo_inicio));
-        config_set_value(metadata_guardar, "TAMANIO_ARCHIVO", string_itoa(nuevo_tam));
-        config_save(metadata_guardar);
-        config_destroy(metadata_guardar);
     }
 
-    mensaje_info_detallado(pid, instruccionSeparada[0], instruccionSeparada[2], nuevo_tam, 0, loger);
-
     guardar_bitmap(path_base, bitmap);
+
+    config_set_value(metadata_guardar, "TAMANIO_ARCHIVO", string_itoa(nuevo_tam));
+    config_save(metadata_guardar);
+    config_destroy(metadata_guardar);
+
+    mensaje_info_detallado(pid, instruccionSeparada[0], instruccionSeparada[2], nuevo_tam, 0, loger);
 }
 
 int verificar_contiguo(int pid, t_log *loger, t_bitarray *bitmap, int bloque_inicio, int bloques_a_colocar, int bloques_asignados, char *path_base, int size_bloque, int retardo)
@@ -363,7 +363,8 @@ int escribir_archivo(int pid, t_log *loger, char **instruccionSeparada, int size
 
         free(data);
         buffer_destroy(buffer_recv);
-        buffer_destroy(buffer);
+        free(modulo);
+        free(opcode);
     }
 
     int bloque_inicio;
@@ -488,12 +489,12 @@ char *leer_archivo(int pid, t_log *loger, char **instruccionSeparada, int size_b
         if (resultado < 0)
         {
             buffer_destroy(buffer_recv);
-            buffer_destroy(buffer);
             break;
         }
 
         buffer_destroy(buffer_recv);
-        buffer_destroy(buffer);
+        free(modulo);
+        free(opcode);
     }
 
     mensaje_info_detallado(pid, instruccionSeparada[0], instruccionSeparada[2], size_dato_a_leer, offset_archivo, loger);
@@ -530,12 +531,13 @@ void agregar_bits(t_bitarray *self, int inicio, int tam)
 
 void borrar_bits(t_bitarray *self, int inicio, int tam)
 {
-    int tam_nuevo = inicio + tam;
-    while (inicio < tam_nuevo)
+    int bloques = floor((float)tam / tam_bloque);
+    int tam_nuevo = inicio + bloques;
+    do
     {
         bitarray_clean_bit(self, inicio);
         inicio++;
-    }
+    } while (inicio < tam_nuevo);
 }
 
 void crear_archivo_metadata(char *path_base, char *nombre_archivo, int bloque_inicial)

@@ -123,6 +123,8 @@ void instruccion_RESIZE(char *primerParametro, Contexto_proceso *procesoCPU, int
         enviar_contexto_al_kernel(procesoCPU, OUT_OF_MEMORY, NULL, socketDispatch);
 
     free(resultado);
+    free(modulo);
+    free(opcode);
     buffer_destroy(buffer_recv);
 }
 

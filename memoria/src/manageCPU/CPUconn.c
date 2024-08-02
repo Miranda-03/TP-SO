@@ -62,5 +62,8 @@ void *manage_conn_cpu(void *ptr)
             enviar_tam_de_pagina();
             break;
         }
+
+        free(modulo);
+        free(op_code);
     }
 }

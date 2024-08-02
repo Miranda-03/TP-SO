@@ -10,7 +10,7 @@ void consolaInteractiva()
 
     while (1)
     {
-        linea = readline("FIFO2B-OS>");
+        linea = readline("FIFO3B-OS>");
 
         if (!linea || strcmp(linea, "") == 0)
         {
@@ -62,31 +62,38 @@ void atender_instruccion(char *leido)
 
     if (strcmp(comando[0], "EJECUTAR_SCRIPT") == 0)
     {
-        leer_script(comando[1]);
+        if (comando[1] != NULL)
+            leer_script(comando[1]);
     }
     else if (strcmp(comando[0], "INICIAR_PROCESO") == 0)
     {
         char *path = comando[1];
-        PLPNuevoProceso(path);
+        if (comando[1] != NULL)
+            PLPNuevoProceso(path);
     }
     else if (strcmp(comando[0], "FINALIZAR_PROCESO") == 0)
     {
-        detenerPlanificador();
-        bloquear_paso_de_procesos_a_colas();
-
-        if (encontrar_y_terminar_proceso(atoi(comando[1])) < 0)
+        if (comando[1] != NULL)
         {
-            if (encontrar_en_new_y_terminar(atoi(comando[1])) < 0)
+
+            detenerPlanificador();
+            bloquear_paso_de_procesos_a_colas();
+
+            if (encontrar_y_terminar_proceso(atoi(comando[1])) < 0)
             {
-                log_error(logger_consola, "No se pudo encontrar el proceso: %d\n", atoi(comando[1]));
+                if (encontrar_en_new_y_terminar(atoi(comando[1])) < 0)
+                {
+                    log_error(logger_consola, "No se pudo encontrar el proceso: %d\n", atoi(comando[1]));
+                }
             }
+
+            desbloquear_paso_de_procesos_a_colas();
+
+            if (!detenido_previamente)
+                reanudarPlanificador();
         }
-
-        desbloquear_paso_de_procesos_a_colas();
-
-        if (!detenido_previamente)
-            reanudarPlanificador();
     }
+
     else if (strcmp(comando[0], "DETENER_PLANIFICACION") == 0)
     {
         detenerPlanificador();
@@ -99,7 +106,8 @@ void atender_instruccion(char *leido)
     }
     else if (strcmp(comando[0], "MULTIPROGRAMACION") == 0)
     {
-        ajustar_grado_multiprogramacion(atoi(comando[1]));
+        if (comando[1] != NULL)
+            ajustar_grado_multiprogramacion(atoi(comando[1]));
     }
     else if (strcmp(leido, "PROCESO_ESTADO") == 0)
     {

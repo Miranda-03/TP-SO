@@ -104,6 +104,8 @@ int pedir_marco_a_memoria(int num_pagina, int pid)
     int marco_return = *marco;
 
     free(marco);
+    free(modulo);
+    free(opcode);
 
     return marco_return;
 }
