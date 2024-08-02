@@ -1,0 +1,321 @@
+[INFO] 17:01:37:522 Memoria Usuario/(58849:58979): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:01:37:926 Memoria Usuario/(58849:58909): PID: 5 - Tamaño actual: 0 - Tamaño a aumentar: 160
+[INFO] 17:01:38:028 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 0 - Marco: 0
+[INFO] 17:01:38:028 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 1 - Marco: 1
+[INFO] 17:01:38:028 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 2 - Marco: 2
+[INFO] 17:01:38:029 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 3 - Marco: 3
+[INFO] 17:01:38:029 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 4 - Marco: 4
+[INFO] 17:01:38:030 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 16 
+[INFO] 17:01:38:030 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 16 - Tamaño: 16 
+[INFO] 17:01:38:031 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 32 - Tamaño: 16 
+[INFO] 17:01:38:031 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 48 - Tamaño: 16 
+[INFO] 17:01:38:031 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 5 
+[INFO] 17:01:38:133 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 0 - Marco: 0
+[INFO] 17:01:38:133 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 1 - Marco: 1
+[INFO] 17:01:38:134 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 2 - Marco: 2
+[INFO] 17:01:38:134 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 3 - Marco: 3
+[INFO] 17:01:38:135 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 4 - Marco: 4
+[INFO] 17:01:38:136 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 0 - Tamaño: 16 
+[INFO] 17:01:38:136 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 16 - Tamaño: 16 
+[INFO] 17:01:38:136 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 32 - Tamaño: 16 
+[INFO] 17:01:38:137 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 48 - Tamaño: 16 
+[INFO] 17:01:38:137 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 64 - Tamaño: 5 
+[INFO] 17:01:38:238 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 5 - Marco: 5
+[INFO] 17:01:38:239 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 6 - Marco: 6
+[INFO] 17:01:38:240 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 7 - Marco: 7
+[INFO] 17:01:38:240 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 8 - Marco: 8
+[INFO] 17:01:38:241 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 9 - Marco: 9
+[INFO] 17:01:38:242 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 80 - Tamaño: 16 
+[INFO] 17:01:38:242 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 96 - Tamaño: 16 
+[INFO] 17:01:38:242 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 112 - Tamaño: 16 
+[INFO] 17:01:38:242 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 128 - Tamaño: 16 
+[INFO] 17:01:38:242 Memoria Usuario/(58849:59215): PID: 5 - Accion: ESCRIBIR - Direccion fisica: 144 - Tamaño: 5 
+[INFO] 17:01:38:343 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 5 - Marco: 5
+[INFO] 17:01:38:345 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 6 - Marco: 6
+[INFO] 17:01:38:345 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 7 - Marco: 7
+[INFO] 17:01:38:346 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 8 - Marco: 8
+[INFO] 17:01:38:346 Memoria Usuario/(58849:58909): PID: 5 - Pagina: 9 - Marco: 9
+[INFO] 17:01:38:349 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 80 - Tamaño: 16 
+[INFO] 17:01:38:349 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 96 - Tamaño: 16 
+[INFO] 17:01:38:349 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 112 - Tamaño: 16 
+[INFO] 17:01:38:350 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 128 - Tamaño: 16 
+[INFO] 17:01:38:350 Memoria Usuario/(58849:59207): PID: 5 - Accion: LEER - Direccion fisica: 144 - Tamaño: 5 
+[INFO] 17:01:38:453 Memoria Usuario/(58849:58979): PID: 5 - Quitar tabla de páginas de tamaño: 10
+[INFO] 20:32:10:122 Memoria Usuario/(143851:143917): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:32:10:122 Memoria Usuario/(143851:143917): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:32:10:123 Memoria Usuario/(143851:143917): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:38:49:412 Memoria Usuario/(147118:147182): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:38:49:413 Memoria Usuario/(147118:147182): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:38:49:414 Memoria Usuario/(147118:147182): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:38:49:415 Memoria Usuario/(147118:147182): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:38:49:924 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:38:50:737 Memoria Usuario/(147118:147134): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:38:50:838 Memoria Usuario/(147118:147134): PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 20:38:50:839 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:50:940 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:51:043 Memoria Usuario/(147118:147134): PID: 4 - Tamaño actual: 0 - Tamaño a aumentar: 40
+[INFO] 20:38:51:548 Memoria Usuario/(147118:147134): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 20:38:51:548 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 1 
+[INFO] 20:38:51:750 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 1 - Tamaño: 1 
+[INFO] 20:38:51:952 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 2 - Tamaño: 1 
+[INFO] 20:38:52:053 Memoria Usuario/(147118:147134): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:38:52:155 Memoria Usuario/(147118:147134): PID: 2 - Pagina: 0 - Marco: 6
+[INFO] 20:38:52:155 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:38:52:357 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:38:52:661 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:52:761 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:52:963 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:53:168 Memoria Usuario/(147118:147134): PID: 4 - Pagina: 0 - Marco: 4
+[INFO] 20:38:53:172 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 128 - Tamaño: 1 
+[INFO] 20:38:53:476 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:38:53:577 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:38:54:082 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:38:54:284 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:38:54:385 Memoria Usuario/(147118:147134): PID: 2 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:38:54:587 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:54:789 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:54:891 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:54:991 Memoria Usuario/(147118:147134): PID: 3 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:38:55:302 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 130 - Tamaño: 1 
+[INFO] 20:38:55:705 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:38:55:806 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 1 
+[INFO] 20:38:56:008 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 1 - Tamaño: 1 
+[INFO] 20:38:56:612 Memoria Usuario/(147118:147134): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:38:57:016 Memoria Usuario/(147118:147134): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:38:57:117 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:57:219 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 131 - Tamaño: 1 
+[INFO] 20:38:57:522 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 132 - Tamaño: 1 
+[INFO] 20:38:57:831 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 2 - Tamaño: 1 
+[INFO] 20:38:57:932 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:38:58:235 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:38:58:436 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:38:58:638 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:38:58:740 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:58:941 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:59:042 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:38:59:347 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 133 - Tamaño: 1 
+[INFO] 20:38:59:650 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 134 - Tamaño: 1 
+[INFO] 20:39:00:052 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:39:00:153 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 1 
+[INFO] 20:39:00:355 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:39:00:456 Memoria Usuario/(147118:147134): PID: 2 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:39:00:764 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:00:867 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:01:073 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:01:174 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:01:477 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 135 - Tamaño: 1 
+[INFO] 20:39:01:884 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 1 - Tamaño: 1 
+[INFO] 20:39:02:085 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 2 - Tamaño: 1 
+[INFO] 20:39:02:186 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:39:02:689 Memoria Usuario/(147118:147134): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:39:02:791 Memoria Usuario/(147118:147134): PID: 3 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:39:03:193 Memoria Usuario/(147118:147134): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:39:03:295 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 136 - Tamaño: 1 
+[INFO] 20:39:03:598 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 137 - Tamaño: 1 
+[INFO] 20:39:04:306 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:39:04:508 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:39:04:710 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:39:04:811 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:04:912 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:05:114 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:05:216 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:05:420 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 138 - Tamaño: 1 
+[INFO] 20:39:05:723 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 139 - Tamaño: 1 
+[INFO] 20:39:05:827 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:39:05:929 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 1 
+[INFO] 20:39:06:131 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 1 - Tamaño: 1 
+[INFO] 20:39:06:433 Memoria Usuario/(147118:147134): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 193 - Tamaño: 1 
+[INFO] 20:39:06:534 Memoria Usuario/(147118:147134): PID: 2 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:39:06:938 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:07:039 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:07:241 Memoria Usuario/(147118:147134): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:07:543 Memoria Usuario/(147118:147134): PID: 4 - Accion: ESCRIBIR - Direccion fisica: 140 - Tamaño: 1 
+[INFO] 20:39:07:846 Memoria Usuario/(147118:147134): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 2 - Tamaño: 1 
+[INFO] 20:39:07:947 Memoria Usuario/(147118:147134): PID: 1 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:39:08:753 Memoria Usuario/(147118:147134): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:39:08:858 Memoria Usuario/(147118:147134): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:39:08:959 Memoria Usuario/(147118:147134): PID: 3 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:42:46:614 Memoria Usuario/(148939:149018): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:42:46:615 Memoria Usuario/(148939:149018): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:42:46:615 Memoria Usuario/(148939:149018): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:42:47:121 Memoria Usuario/(148939:148960): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:42:47:930 Memoria Usuario/(148939:148960): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:42:48:037 Memoria Usuario/(148939:148960): PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 20:42:48:037 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:48:138 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:48:242 Memoria Usuario/(148939:148960): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 20:42:48:243 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 1 
+[INFO] 20:42:48:457 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 1 - Tamaño: 1 
+[INFO] 20:42:48:662 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 2 - Tamaño: 1 
+[INFO] 20:42:48:765 Memoria Usuario/(148939:148960): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:42:48:866 Memoria Usuario/(148939:148960): PID: 2 - Pagina: 0 - Marco: 4
+[INFO] 20:42:48:867 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:49:069 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:49:374 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:49:476 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:49:677 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:49:779 Memoria Usuario/(148939:148960): PID: 1 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:42:50:283 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:50:485 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:50:586 Memoria Usuario/(148939:148960): PID: 2 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:42:50:788 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:50:990 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:51:091 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:51:192 Memoria Usuario/(148939:148960): PID: 3 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:42:51:395 Memoria Usuario/(148939:148960): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:42:51:496 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 1 
+[INFO] 20:42:51:698 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 1 - Tamaño: 1 
+[INFO] 20:42:52:610 Memoria Usuario/(148939:148960): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:42:52:712 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:52:915 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 2 - Tamaño: 1 
+[INFO] 20:42:53:016 Memoria Usuario/(148939:148960): PID: 1 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:42:53:318 Memoria Usuario/(148939:148960): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:42:53:420 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:53:621 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:53:824 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:54:026 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:54:127 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:54:631 Memoria Usuario/(148939:148960): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:42:54:731 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 0 - Tamaño: 1 
+[INFO] 20:42:54:833 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:55:035 Memoria Usuario/(148939:148960): PID: 2 - Accion: ESCRIBIR - Direccion fisica: 129 - Tamaño: 1 
+[INFO] 20:42:55:136 Memoria Usuario/(148939:148960): PID: 2 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:42:55:338 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:55:438 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:55:640 Memoria Usuario/(148939:148960): PID: 3 - Accion: ESCRIBIR - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:42:55:741 Memoria Usuario/(148939:148960): PID: 3 - Accion: LEER - Direccion fisica: 64 - Tamaño: 1 
+[INFO] 20:44:08:009 Memoria Usuario/(148939:149018): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:009 Memoria Usuario/(148939:149018): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:009 Memoria Usuario/(148939:149018): PID: 6 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:009 Memoria Usuario/(148939:149018): PID: 7 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:010 Memoria Usuario/(148939:149018): PID: 8 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:010 Memoria Usuario/(148939:149018): PID: 9 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:010 Memoria Usuario/(148939:149018): PID: 10 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:010 Memoria Usuario/(148939:149018): PID: 11 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:010 Memoria Usuario/(148939:149018): PID: 12 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:011 Memoria Usuario/(148939:149018): PID: 13 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:011 Memoria Usuario/(148939:149018): PID: 14 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:011 Memoria Usuario/(148939:149018): PID: 15 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:011 Memoria Usuario/(148939:149018): PID: 16 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:011 Memoria Usuario/(148939:149018): PID: 17 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:011 Memoria Usuario/(148939:149018): PID: 18 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:012 Memoria Usuario/(148939:149018): PID: 19 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:012 Memoria Usuario/(148939:149018): PID: 20 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:012 Memoria Usuario/(148939:149018): PID: 21 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:012 Memoria Usuario/(148939:149018): PID: 22 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:013 Memoria Usuario/(148939:149018): PID: 23 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:013 Memoria Usuario/(148939:149018): PID: 24 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:014 Memoria Usuario/(148939:149018): PID: 25 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:015 Memoria Usuario/(148939:149018): PID: 26 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:015 Memoria Usuario/(148939:149018): PID: 27 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:016 Memoria Usuario/(148939:149018): PID: 28 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:016 Memoria Usuario/(148939:149018): PID: 29 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:017 Memoria Usuario/(148939:149018): PID: 30 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:44:08:211 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 1 - Tamaño: 1 
+[INFO] 20:44:08:412 Memoria Usuario/(148939:148960): PID: 1 - Accion: ESCRIBIR - Direccion fisica: 2 - Tamaño: 1 
+[INFO] 20:44:08:513 Memoria Usuario/(148939:148960): PID: 1 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:44:09:118 Memoria Usuario/(148939:148960): PID: 3 - Tamaño actual: 64 - Tamaño a reducir: 0
+[INFO] 20:44:09:521 Memoria Usuario/(148939:148960): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:09:623 Memoria Usuario/(148939:148960): PID: 4 - Tamaño actual: 0 - Tamaño a aumentar: 40
+[INFO] 20:44:10:129 Memoria Usuario/(148939:148960): PID: 5 - Tamaño actual: 0 - Tamaño a aumentar: 22
+[INFO] 20:44:10:845 Memoria Usuario/(148939:148960): PID: 6 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 20:44:10:946 Memoria Usuario/(148939:148960): PID: 6 - Pagina: 0 - Marco: 5
+[INFO] 20:44:11:450 Memoria Usuario/(148939:148960): PID: 7 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:12:258 Memoria Usuario/(148939:148960): PID: 9 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:12:359 Memoria Usuario/(148939:148960): PID: 9 - Pagina: 0 - Marco: 8
+[INFO] 20:44:12:359 Memoria Usuario/(148939:148960): PID: 9 - Accion: ESCRIBIR - Direccion fisica: 256 - Tamaño: 1 
+[INFO] 20:44:12:460 Memoria Usuario/(148939:148960): PID: 9 - Accion: LEER - Direccion fisica: 256 - Tamaño: 1 
+[INFO] 20:44:12:561 Memoria Usuario/(148939:148960): PID: 10 - Tamaño actual: 0 - Tamaño a aumentar: 40
+[INFO] 20:44:13:066 Memoria Usuario/(148939:148960): PID: 11 - Tamaño actual: 0 - Tamaño a aumentar: 22
+[INFO] 20:44:13:773 Memoria Usuario/(148939:148960): PID: 12 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 20:44:13:874 Memoria Usuario/(148939:148960): PID: 12 - Pagina: 0 - Marco: 13
+[INFO] 20:44:14:384 Memoria Usuario/(148939:148960): PID: 13 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:15:192 Memoria Usuario/(148939:148960): PID: 15 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:15:294 Memoria Usuario/(148939:148960): PID: 15 - Pagina: 0 - Marco: 16
+[INFO] 20:44:15:295 Memoria Usuario/(148939:148960): PID: 15 - Accion: ESCRIBIR - Direccion fisica: 512 - Tamaño: 1 
+[INFO] 20:44:15:395 Memoria Usuario/(148939:148960): PID: 15 - Accion: LEER - Direccion fisica: 512 - Tamaño: 1 
+[INFO] 20:44:15:497 Memoria Usuario/(148939:148960): PID: 16 - Tamaño actual: 0 - Tamaño a aumentar: 40
+[INFO] 20:44:16:001 Memoria Usuario/(148939:148960): PID: 17 - Tamaño actual: 0 - Tamaño a aumentar: 22
+[INFO] 20:44:16:712 Memoria Usuario/(148939:148960): PID: 18 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 20:44:16:813 Memoria Usuario/(148939:148960): PID: 18 - Pagina: 0 - Marco: 21
+[INFO] 20:44:17:319 Memoria Usuario/(148939:148960): PID: 19 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:18:125 Memoria Usuario/(148939:148960): PID: 21 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:18:226 Memoria Usuario/(148939:148960): PID: 21 - Pagina: 0 - Marco: 24
+[INFO] 20:44:18:227 Memoria Usuario/(148939:148960): PID: 21 - Accion: ESCRIBIR - Direccion fisica: 768 - Tamaño: 1 
+[INFO] 20:44:18:328 Memoria Usuario/(148939:148960): PID: 21 - Accion: LEER - Direccion fisica: 768 - Tamaño: 1 
+[INFO] 20:44:18:430 Memoria Usuario/(148939:148960): PID: 22 - Tamaño actual: 0 - Tamaño a aumentar: 40
+[INFO] 20:44:18:933 Memoria Usuario/(148939:148960): PID: 23 - Tamaño actual: 0 - Tamaño a aumentar: 22
+[INFO] 20:44:39:974 Memoria Usuario/(148939:149018): PID: 6 - Quitar tabla de páginas de tamaño: 1
+[INFO] 20:44:45:895 Memoria Usuario/(148939:149071): PID: 6 - Accion: ESCRIBIR - Direccion fisica: 160 - Tamaño: 1 
+[INFO] 20:44:53:598 Memoria Usuario/(148939:148960): PID: 24 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 20:44:53:699 Memoria Usuario/(148939:148960): PID: 24 - Pagina: 0 - Marco: 5
+[INFO] 20:44:54:205 Memoria Usuario/(148939:148960): PID: 25 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:55:012 Memoria Usuario/(148939:148960): PID: 27 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:44:55:113 Memoria Usuario/(148939:148960): PID: 27 - Pagina: 0 - Marco: 31
+[INFO] 20:44:55:113 Memoria Usuario/(148939:148960): PID: 27 - Accion: ESCRIBIR - Direccion fisica: 992 - Tamaño: 1 
+[INFO] 20:44:55:215 Memoria Usuario/(148939:148960): PID: 27 - Accion: LEER - Direccion fisica: 992 - Tamaño: 1 
+[INFO] 20:44:55:316 Memoria Usuario/(148939:148960): PID: 28 - Tamaño actual: 0 - Tamaño a aumentar: 40
+[INFO] 20:44:55:823 Memoria Usuario/(148939:148960): PID: 29 - Tamaño actual: 0 - Tamaño a aumentar: 22
+[INFO] 20:44:56:528 Memoria Usuario/(148939:148960): PID: 30 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 20:44:56:630 Memoria Usuario/(148939:148960): PID: 30 - Pagina: 0 - Marco: 36
+[INFO] 20:44:57:237 Memoria Usuario/(148939:148960): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 64
+[INFO] 20:50:10:530 Memoria Usuario/(151465:151655): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:50:10:531 Memoria Usuario/(151465:151655): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 20:50:10:531 Memoria Usuario/(151465:151655): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:20:43:232 Memoria Usuario/(162167:162299): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:20:43:233 Memoria Usuario/(162167:162299): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:20:43:233 Memoria Usuario/(162167:162299): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:21:19:975 Memoria Usuario/(162167:162299): PID: 1 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:21:20:077 Memoria Usuario/(162167:162299): PID: 2 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:21:20:179 Memoria Usuario/(162167:162299): PID: 3 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:21:26:277 Memoria Usuario/(162167:162299): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:21:27:390 Memoria Usuario/(162167:162299): PID: 4 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:21:56:145 Memoria Usuario/(162167:162299): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:21:56:145 Memoria Usuario/(162167:162299): PID: 6 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:21:56:146 Memoria Usuario/(162167:162299): PID: 7 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:23:03:988 Memoria Usuario/(162167:162299): PID: 5 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:23:03:988 Memoria Usuario/(162167:162299): PID: 8 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:23:04:090 Memoria Usuario/(162167:162299): PID: 6 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:23:04:191 Memoria Usuario/(162167:162299): PID: 7 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:23:05:301 Memoria Usuario/(162167:162299): PID: 8 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:23:26:829 Memoria Usuario/(162167:162299): PID: 9 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:23:27:171 Memoria Usuario/(162167:162299): PID: 10 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:23:28:916 Memoria Usuario/(162167:162299): PID: 11 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:23:28:953 Memoria Usuario/(162167:162299): PID: 9 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:23:29:055 Memoria Usuario/(162167:162299): PID: 10 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:23:30:169 Memoria Usuario/(162167:162299): PID: 11 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:33:08:740 Memoria Usuario/(167019:167356): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:33:08:741 Memoria Usuario/(167019:167356): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:33:08:743 Memoria Usuario/(167019:167356): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 21:33:19:755 Memoria Usuario/(167019:167356): PID: 1 - Quitar tabla de páginas de tamaño: 0
+[INFO] 21:56:54:703 Memoria Usuario/(167019:167356): PID: 2 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:00:54:199 Memoria Usuario/(167019:167356): PID: 3 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:06:17:378 Memoria Usuario/(179498:179558): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:06:17:379 Memoria Usuario/(179498:179558): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:06:17:379 Memoria Usuario/(179498:179558): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:06:58:080 Memoria Usuario/(179498:179558): PID: 1 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:06:58:184 Memoria Usuario/(179498:179558): PID: 2 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:06:58:286 Memoria Usuario/(179498:179558): PID: 3 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:07:19:806 Memoria Usuario/(179498:179558): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:07:19:806 Memoria Usuario/(179498:179558): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:07:19:807 Memoria Usuario/(179498:179558): PID: 6 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:07:22:939 Memoria Usuario/(179498:179558): PID: 4 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:07:23:041 Memoria Usuario/(179498:179558): PID: 5 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:07:23:143 Memoria Usuario/(179498:179558): PID: 6 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:16:26:409 Memoria Usuario/(183299:183413): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:16:26:410 Memoria Usuario/(183299:183413): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:16:26:410 Memoria Usuario/(183299:183413): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:19:38:837 Memoria Usuario/(184863:185073): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:19:38:838 Memoria Usuario/(184863:185073): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:19:38:838 Memoria Usuario/(184863:185073): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:20:01:650 Memoria Usuario/(184863:185073): PID: 1 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:20:01:752 Memoria Usuario/(184863:185073): PID: 2 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:20:01:853 Memoria Usuario/(184863:185073): PID: 3 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:20:31:148 Memoria Usuario/(184863:185073): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:20:32:262 Memoria Usuario/(184863:185073): PID: 4 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:20:32:263 Memoria Usuario/(184863:185073): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:20:33:377 Memoria Usuario/(184863:185073): PID: 5 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:20:33:377 Memoria Usuario/(184863:185073): PID: 6 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:20:34:486 Memoria Usuario/(184863:185073): PID: 6 - Quitar tabla de páginas de tamaño: 0
+[INFO] 22:20:34:486 Memoria Usuario/(184863:185073): PID: 7 - Crear tabla de páginas de tamaño: 0
+[INFO] 22:20:35:596 Memoria Usuario/(184863:185073): PID: 7 - Quitar tabla de páginas de tamaño: 0

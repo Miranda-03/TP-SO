@@ -1,0 +1,1686 @@
+[INFO] 17:01:37:523 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 0
+[INFO] 17:01:37:624 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: SET - AX 0
+[INFO] 17:01:37:624 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 1
+[INFO] 17:01:37:724 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: SET - BX 69
+[INFO] 17:01:37:724 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 2
+[INFO] 17:01:37:825 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: SET - CX 80
+[INFO] 17:01:37:825 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 3
+[INFO] 17:01:37:926 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: RESIZE - 160
+[INFO] 17:01:37:926 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 4
+[INFO] 17:01:38:027 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: IO_FS_READ - FS salida.txt AX BX AX
+[INFO] 17:01:38:031 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 5
+[INFO] 17:01:38:132 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: IO_STDOUT_WRITE - MONITOR AX BX
+[INFO] 17:01:38:138 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 6
+[INFO] 17:01:38:238 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: IO_FS_READ - FS cronologico.txt CX BX AX
+[INFO] 17:01:38:243 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 7
+[INFO] 17:01:38:343 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: IO_STDOUT_WRITE - MONITOR CX BX
+[INFO] 17:01:38:351 Ciclo CPU/(58906:58906): PID: 5 - FETCH - Program Counter: 8
+[INFO] 17:01:38:452 Ciclo CPU/(58906:58906): PID: 5 - Ejecutando: EXIT
+[INFO] 18:15:13:913 Ciclo CPU/(58906:58906): PID: 268435600 - FETCH - Program Counter: 32761
+[INFO] 18:15:14:633 Ciclo CPU/(58906:58906): PID: 0 - FETCH - Program Counter: 0
+[INFO] 19:02:06:796 cpu_conn/(102294:102294): Broadcast de solicitud de IP realizado
+[INFO] 19:02:06:797 cpu_conn/(102294:102294): IP recibida: 192.168.0.10
+[INFO] 19:02:06:799 cpu_conn/(102294:102294): Conexión con módulo memoria realizada
+[INFO] 19:02:06:799 cpu_conn/(102294:102294): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 19:02:09:689 cpu_conn/(102294:102294): Solicitud recibida
+[INFO] 19:02:09:690 cpu_conn/(102294:102294): Enviando IP: 192.168.0.10
+[INFO] 19:07:37:141 Ciclo CPU/(102294:102294): PID: 0 - FETCH - Program Counter: 0
+[INFO] 19:11:59:634 cpu_conn/(106433:106433): Broadcast de solicitud de IP realizado
+[INFO] 19:11:59:635 cpu_conn/(106433:106433): IP recibida: 192.168.0.10
+[INFO] 19:11:59:637 cpu_conn/(106433:106433): Conexión con módulo memoria realizada
+[INFO] 19:11:59:638 cpu_conn/(106433:106433): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 19:12:07:527 cpu_conn/(106433:106433): Solicitud recibida
+[INFO] 19:12:07:527 cpu_conn/(106433:106433): Enviando IP: 192.168.0.10
+[INFO] 19:14:47:843 Ciclo CPU/(106433:106433): PID: 0 - FETCH - Program Counter: 0
+[INFO] 19:24:52:903 cpu_conn/(112050:112050): Broadcast de solicitud de IP realizado
+[INFO] 19:24:52:904 cpu_conn/(112050:112050): IP recibida: 192.168.0.10
+[INFO] 19:24:52:906 cpu_conn/(112050:112050): Conexión con módulo memoria realizada
+[INFO] 19:24:52:906 cpu_conn/(112050:112050): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 19:24:57:423 cpu_conn/(112050:112050): Solicitud recibida
+[INFO] 19:24:57:423 cpu_conn/(112050:112050): Enviando IP: 192.168.0.10
+[INFO] 19:28:40:368 cpu_conn/(114377:114377): Broadcast de solicitud de IP realizado
+[INFO] 19:28:40:369 cpu_conn/(114377:114377): IP recibida: 192.168.0.10
+[INFO] 19:28:40:370 cpu_conn/(114377:114377): Conexión con módulo memoria realizada
+[INFO] 19:28:40:370 cpu_conn/(114377:114377): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 19:33:16:988 cpu_conn/(116292:116292): Broadcast de solicitud de IP realizado
+[INFO] 19:33:16:989 cpu_conn/(116292:116292): IP recibida: 192.168.0.10
+[INFO] 19:33:16:991 cpu_conn/(116292:116292): Conexión con módulo memoria realizada
+[INFO] 19:33:16:991 cpu_conn/(116292:116292): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 19:33:37:585 cpu_conn/(116292:116292): Solicitud recibida
+[INFO] 19:33:37:586 cpu_conn/(116292:116292): Enviando IP: 192.168.0.10
+[INFO] 19:46:07:500 cpu_conn/(121745:121745): Broadcast de solicitud de IP realizado
+[INFO] 19:46:07:501 cpu_conn/(121745:121745): IP recibida: 192.168.0.10
+[INFO] 19:46:07:504 cpu_conn/(121745:121745): Conexión con módulo memoria realizada
+[INFO] 19:46:07:505 cpu_conn/(121745:121745): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 19:46:13:931 cpu_conn/(121745:121745): Solicitud recibida
+[INFO] 19:46:13:932 cpu_conn/(121745:121745): Enviando IP: 192.168.0.10
+[INFO] 19:55:34:102 cpu_conn/(125941:125941): Broadcast de solicitud de IP realizado
+[INFO] 19:55:34:102 cpu_conn/(125941:125941): IP recibida: 192.168.0.10
+[INFO] 19:55:34:104 cpu_conn/(125941:125941): Conexión con módulo memoria realizada
+[INFO] 19:55:34:104 cpu_conn/(125941:125941): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 19:55:52:312 cpu_conn/(125941:125941): Solicitud recibida
+[INFO] 19:55:52:314 cpu_conn/(125941:125941): Enviando IP: 192.168.0.10
+[INFO] 20:00:10:455 cpu_conn/(128726:128726): Broadcast de solicitud de IP realizado
+[INFO] 20:00:10:456 cpu_conn/(128726:128726): IP recibida: 192.168.0.10
+[INFO] 20:01:30:754 cpu_conn/(129418:129418): Broadcast de solicitud de IP realizado
+[INFO] 20:01:30:754 cpu_conn/(129418:129418): IP recibida: 192.168.0.10
+[INFO] 20:01:30:757 cpu_conn/(129418:129418): Conexión con módulo memoria realizada
+[INFO] 20:01:30:757 cpu_conn/(129418:129418): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:01:36:772 cpu_conn/(129418:129418): Solicitud recibida
+[INFO] 20:01:36:772 cpu_conn/(129418:129418): Enviando IP: 192.168.0.10
+[INFO] 20:06:01:003 cpu_conn/(131933:131933): Broadcast de solicitud de IP realizado
+[INFO] 20:06:01:003 cpu_conn/(131933:131933): IP recibida: 192.168.0.10
+[INFO] 20:06:01:005 cpu_conn/(131933:131933): Conexión con módulo memoria realizada
+[INFO] 20:06:01:005 cpu_conn/(131933:131933): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:06:08:196 cpu_conn/(131933:131933): Solicitud recibida
+[INFO] 20:06:08:196 cpu_conn/(131933:131933): Enviando IP: 192.168.0.10
+[INFO] 20:08:12:133 Ciclo CPU/(131933:131933): PID: 268378802 - FETCH - Program Counter: 32767
+[INFO] 20:15:26:016 cpu_conn/(136545:136545): Broadcast de solicitud de IP realizado
+[INFO] 20:15:26:019 cpu_conn/(136545:136545): IP recibida: 192.168.0.10
+[INFO] 20:19:18:414 cpu_conn/(138220:138220): Broadcast de solicitud de IP realizado
+[INFO] 20:19:18:415 cpu_conn/(138220:138220): IP recibida: 192.168.0.10
+[INFO] 20:19:32:445 cpu_conn/(138554:138554): Broadcast de solicitud de IP realizado
+[INFO] 20:19:32:446 cpu_conn/(138554:138554): IP recibida: 192.168.0.10
+[INFO] 20:19:32:447 cpu_conn/(138554:138554): Conexión con módulo memoria realizada
+[INFO] 20:19:32:447 cpu_conn/(138554:138554): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:19:38:862 cpu_conn/(138554:138554): Solicitud recibida
+[INFO] 20:19:38:863 cpu_conn/(138554:138554): Enviando IP: 192.168.0.10
+[INFO] 20:27:55:521 cpu_conn/(142540:142540): Broadcast de solicitud de IP realizado
+[INFO] 20:27:55:522 cpu_conn/(142540:142540): IP recibida: 192.168.0.10
+[INFO] 20:27:55:525 cpu_conn/(142540:142540): Conexión con módulo memoria realizada
+[INFO] 20:27:55:525 cpu_conn/(142540:142540): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:27:58:682 cpu_conn/(142540:142540): Solicitud recibida
+[INFO] 20:27:58:683 cpu_conn/(142540:142540): Enviando IP: 192.168.0.10
+[INFO] 20:29:10:691 Ciclo CPU/(142540:142540): PID: 0 - FETCH - Program Counter: 0
+[INFO] 20:31:11:137 cpu_conn/(143885:143885): Broadcast de solicitud de IP realizado
+[INFO] 20:31:11:138 cpu_conn/(143885:143885): IP recibida: 192.168.0.10
+[INFO] 20:31:11:140 cpu_conn/(143885:143885): Conexión con módulo memoria realizada
+[INFO] 20:31:11:140 cpu_conn/(143885:143885): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:31:12:875 cpu_conn/(143885:143885): Solicitud recibida
+[INFO] 20:31:12:876 cpu_conn/(143885:143885): Enviando IP: 192.168.0.10
+[INFO] 20:34:42:334 Ciclo CPU/(143885:143885): PID: 0 - FETCH - Program Counter: 0
+[INFO] 20:36:40:639 cpu_conn/(146198:146198): Broadcast de solicitud de IP realizado
+[INFO] 20:36:40:639 cpu_conn/(146198:146198): IP recibida: 192.168.0.10
+[INFO] 20:36:40:641 cpu_conn/(146198:146198): Conexión con módulo memoria realizada
+[INFO] 20:36:40:641 cpu_conn/(146198:146198): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:36:41:865 cpu_conn/(146198:146198): Solicitud recibida
+[INFO] 20:36:41:865 cpu_conn/(146198:146198): Enviando IP: 192.168.0.10
+[INFO] 20:36:49:607 Ciclo CPU/(146198:146198): PID: 0 - FETCH - Program Counter: 0
+[INFO] 20:38:36:175 cpu_conn/(147131:147131): Broadcast de solicitud de IP realizado
+[INFO] 20:38:36:175 cpu_conn/(147131:147131): IP recibida: 192.168.0.10
+[INFO] 20:38:36:176 cpu_conn/(147131:147131): Conexión con módulo memoria realizada
+[INFO] 20:38:36:176 cpu_conn/(147131:147131): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:38:39:770 cpu_conn/(147131:147131): Solicitud recibida
+[INFO] 20:38:39:770 cpu_conn/(147131:147131): Enviando IP: 192.168.0.10
+[INFO] 20:38:49:415 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:38:49:519 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:38:49:520 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:38:49:620 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:38:49:620 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:38:49:721 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:38:49:721 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:38:49:823 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:38:49:823 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:38:49:924 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 64
+[INFO] 20:38:49:925 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:38:50:027 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:38:50:027 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:38:50:127 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:38:50:128 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:38:50:228 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:38:50:229 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:38:50:329 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:38:50:329 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:38:50:430 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 0
+[INFO] 20:38:50:431 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 0
+[INFO] 20:38:50:533 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 20:38:50:533 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 1
+[INFO] 20:38:50:635 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - EAX 0
+[INFO] 20:38:50:635 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 2
+[INFO] 20:38:50:736 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: RESIZE - 64
+[INFO] 20:38:50:737 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 3
+[INFO] 20:38:50:837 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:38:50:839 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 4
+[INFO] 20:38:50:939 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:38:50:940 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 0
+[INFO] 20:38:51:042 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: RESIZE - 40
+[INFO] 20:38:51:043 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 1
+[INFO] 20:38:51:143 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - BX 0
+[INFO] 20:38:51:144 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 2
+[INFO] 20:38:51:244 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - EBX 0
+[INFO] 20:38:51:244 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 3
+[INFO] 20:38:51:345 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - CX 1
+[INFO] 20:38:51:345 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 4
+[INFO] 20:38:51:445 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - DX 32
+[INFO] 20:38:51:446 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 5
+[INFO] 20:38:51:547 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:38:51:548 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 6
+[INFO] 20:38:51:649 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:38:51:649 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 7
+[INFO] 20:38:51:749 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:38:51:750 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 8
+[INFO] 20:38:51:850 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 2
+[INFO] 20:38:51:850 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 9
+[INFO] 20:38:51:951 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:38:51:952 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 5
+[INFO] 20:38:52:053 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: RESIZE - 64
+[INFO] 20:38:52:054 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 6
+[INFO] 20:38:52:155 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:38:52:155 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 7
+[INFO] 20:38:52:256 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 1
+[INFO] 20:38:52:256 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 8
+[INFO] 20:38:52:356 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:38:52:357 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 9
+[INFO] 20:38:52:457 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 2
+[INFO] 20:38:52:458 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 5
+[INFO] 20:38:52:559 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:38:52:559 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 6
+[INFO] 20:38:52:660 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX BX
+[INFO] 20:38:52:661 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 7
+[INFO] 20:38:52:761 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - CX EAX
+[INFO] 20:38:52:762 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 8
+[INFO] 20:38:52:862 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:38:52:862 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 9
+[INFO] 20:38:52:963 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX CX
+[INFO] 20:38:52:964 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 5
+[INFO] 20:38:53:065 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 83
+[INFO] 20:38:53:065 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 6
+[INFO] 20:38:53:167 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:38:53:172 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 7
+[INFO] 20:38:53:274 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 101
+[INFO] 20:38:53:274 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 8
+[INFO] 20:38:53:375 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:38:53:375 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 9
+[INFO] 20:38:53:476 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:38:53:477 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 10
+[INFO] 20:38:53:577 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 0
+[INFO] 20:38:53:578 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 11
+[INFO] 20:38:53:678 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - PC 0
+[INFO] 20:38:53:678 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:38:53:779 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:38:53:779 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:38:53:880 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:38:53:880 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:38:53:981 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:38:53:981 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 10
+[INFO] 20:38:54:082 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:38:54:083 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 11
+[INFO] 20:38:54:183 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 3
+[INFO] 20:38:54:183 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 12
+[INFO] 20:38:54:284 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX DX
+[INFO] 20:38:54:284 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 13
+[INFO] 20:38:54:385 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: RESIZE - 0
+[INFO] 20:38:54:385 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 14
+[INFO] 20:38:54:486 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - PC 0
+[INFO] 20:38:54:486 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 10
+[INFO] 20:38:54:586 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - DX EAX
+[INFO] 20:38:54:588 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 11
+[INFO] 20:38:54:688 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:38:54:688 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 12
+[INFO] 20:38:54:789 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX DX
+[INFO] 20:38:54:789 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 13
+[INFO] 20:38:54:890 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - AX EAX
+[INFO] 20:38:54:891 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 14
+[INFO] 20:38:54:991 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: RESIZE - 0
+[INFO] 20:38:54:996 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 10
+[INFO] 20:38:55:100 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 103
+[INFO] 20:38:55:100 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 11
+[INFO] 20:38:55:201 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:38:55:201 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 12
+[INFO] 20:38:55:302 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:38:55:302 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 13
+[INFO] 20:38:55:402 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 109
+[INFO] 20:38:55:402 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 14
+[INFO] 20:38:55:503 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:38:55:503 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:38:55:604 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:38:55:604 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:38:55:705 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 64
+[INFO] 20:38:55:705 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 5
+[INFO] 20:38:55:806 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:38:55:806 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 6
+[INFO] 20:38:55:907 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:38:55:907 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 7
+[INFO] 20:38:56:007 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:38:56:009 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:38:56:110 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:38:56:110 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:38:56:210 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:38:56:210 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:38:56:310 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:38:56:311 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:38:56:411 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:38:56:411 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:38:56:511 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 0
+[INFO] 20:38:56:512 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 5
+[INFO] 20:38:56:612 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: RESIZE - 64
+[INFO] 20:38:56:613 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 15
+[INFO] 20:38:56:713 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - PC 0
+[INFO] 20:38:56:713 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 0
+[INFO] 20:38:56:814 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 20:38:56:814 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 1
+[INFO] 20:38:56:915 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - EAX 0
+[INFO] 20:38:56:915 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 2
+[INFO] 20:38:57:016 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: RESIZE - 64
+[INFO] 20:38:57:016 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 3
+[INFO] 20:38:57:117 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:38:57:118 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 15
+[INFO] 20:38:57:219 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:38:57:219 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 16
+[INFO] 20:38:57:320 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 101
+[INFO] 20:38:57:320 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 17
+[INFO] 20:38:57:421 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:38:57:421 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 18
+[INFO] 20:38:57:521 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:38:57:522 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 19
+[INFO] 20:38:57:624 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 110
+[INFO] 20:38:57:628 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 8
+[INFO] 20:38:57:729 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 2
+[INFO] 20:38:57:729 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 9
+[INFO] 20:38:57:830 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:38:57:831 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 10
+[INFO] 20:38:57:931 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 0
+[INFO] 20:38:57:932 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 11
+[INFO] 20:38:58:033 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - PC 0
+[INFO] 20:38:58:033 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:38:58:133 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:38:58:134 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 6
+[INFO] 20:38:58:234 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:38:58:235 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 7
+[INFO] 20:38:58:335 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 1
+[INFO] 20:38:58:335 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 8
+[INFO] 20:38:58:436 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:38:58:436 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 9
+[INFO] 20:38:58:537 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 2
+[INFO] 20:38:58:537 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 10
+[INFO] 20:38:58:637 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:38:58:639 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 4
+[INFO] 20:38:58:740 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:38:58:740 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 5
+[INFO] 20:38:58:840 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:38:58:840 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 6
+[INFO] 20:38:58:941 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX BX
+[INFO] 20:38:58:941 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 7
+[INFO] 20:38:59:042 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - CX EAX
+[INFO] 20:38:59:043 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 8
+[INFO] 20:38:59:143 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:38:59:144 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 20
+[INFO] 20:38:59:245 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:38:59:245 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 21
+[INFO] 20:38:59:346 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:38:59:347 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 22
+[INFO] 20:38:59:448 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 116
+[INFO] 20:38:59:448 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 23
+[INFO] 20:38:59:549 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:38:59:549 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 24
+[INFO] 20:38:59:649 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:38:59:650 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:38:59:751 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:38:59:751 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:38:59:851 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:38:59:851 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:38:59:951 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:38:59:952 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:39:00:052 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 64
+[INFO] 20:39:00:053 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 5
+[INFO] 20:39:00:153 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:39:00:154 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 11
+[INFO] 20:39:00:254 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 3
+[INFO] 20:39:00:254 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 12
+[INFO] 20:39:00:355 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX DX
+[INFO] 20:39:00:355 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 13
+[INFO] 20:39:00:456 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: RESIZE - 0
+[INFO] 20:39:00:456 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 14
+[INFO] 20:39:00:557 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - PC 0
+[INFO] 20:39:00:557 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:39:00:659 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:39:00:662 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 9
+[INFO] 20:39:00:763 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX CX
+[INFO] 20:39:00:764 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 10
+[INFO] 20:39:00:865 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - DX EAX
+[INFO] 20:39:00:869 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 11
+[INFO] 20:39:00:972 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:39:00:972 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 12
+[INFO] 20:39:01:072 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX DX
+[INFO] 20:39:01:073 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 13
+[INFO] 20:39:01:173 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - AX EAX
+[INFO] 20:39:01:174 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 25
+[INFO] 20:39:01:275 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 97
+[INFO] 20:39:01:275 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 26
+[INFO] 20:39:01:375 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:39:01:376 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 27
+[INFO] 20:39:01:477 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:39:01:480 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 28
+[INFO] 20:39:01:581 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 116
+[INFO] 20:39:01:581 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 29
+[INFO] 20:39:01:681 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:39:01:682 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 6
+[INFO] 20:39:01:783 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:39:01:783 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 7
+[INFO] 20:39:01:883 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:39:01:884 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 8
+[INFO] 20:39:01:984 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 2
+[INFO] 20:39:01:984 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 9
+[INFO] 20:39:02:085 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:39:02:086 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 10
+[INFO] 20:39:02:186 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 0
+[INFO] 20:39:02:186 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:39:02:287 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:39:02:287 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:39:02:388 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:39:02:388 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:39:02:488 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:39:02:488 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:39:02:589 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 0
+[INFO] 20:39:02:589 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 5
+[INFO] 20:39:02:689 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: RESIZE - 64
+[INFO] 20:39:02:690 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 14
+[INFO] 20:39:02:790 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: RESIZE - 0
+[INFO] 20:39:02:791 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 15
+[INFO] 20:39:02:891 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - PC 0
+[INFO] 20:39:02:891 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 0
+[INFO] 20:39:02:992 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 20:39:02:992 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 1
+[INFO] 20:39:03:092 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - EAX 0
+[INFO] 20:39:03:092 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 2
+[INFO] 20:39:03:193 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: RESIZE - 64
+[INFO] 20:39:03:194 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 30
+[INFO] 20:39:03:295 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:39:03:295 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 31
+[INFO] 20:39:03:395 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 105
+[INFO] 20:39:03:395 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 32
+[INFO] 20:39:03:496 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:39:03:496 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 33
+[INFO] 20:39:03:597 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:39:03:598 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 34
+[INFO] 20:39:03:700 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 111
+[INFO] 20:39:03:700 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 11
+[INFO] 20:39:03:801 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - PC 0
+[INFO] 20:39:03:801 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:39:03:902 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:39:03:903 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:39:04:003 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:39:04:003 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:39:04:104 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:39:04:104 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:39:04:204 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:39:04:205 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 6
+[INFO] 20:39:04:305 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:39:04:306 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 7
+[INFO] 20:39:04:407 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 1
+[INFO] 20:39:04:407 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 8
+[INFO] 20:39:04:507 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:39:04:508 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 9
+[INFO] 20:39:04:609 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 2
+[INFO] 20:39:04:609 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 10
+[INFO] 20:39:04:709 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:39:04:710 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 3
+[INFO] 20:39:04:811 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:39:04:811 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 4
+[INFO] 20:39:04:912 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:39:04:913 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 5
+[INFO] 20:39:05:013 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:39:05:014 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 6
+[INFO] 20:39:05:114 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX BX
+[INFO] 20:39:05:115 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 7
+[INFO] 20:39:05:215 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - CX EAX
+[INFO] 20:39:05:218 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 35
+[INFO] 20:39:05:319 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:39:05:319 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 36
+[INFO] 20:39:05:420 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:39:05:420 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 37
+[INFO] 20:39:05:521 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 110
+[INFO] 20:39:05:521 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 38
+[INFO] 20:39:05:621 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:39:05:621 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 39
+[INFO] 20:39:05:722 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:39:05:724 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:39:05:826 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 64
+[INFO] 20:39:05:828 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 5
+[INFO] 20:39:05:928 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:39:05:929 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 6
+[INFO] 20:39:06:029 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:39:06:029 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 7
+[INFO] 20:39:06:130 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:39:06:131 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 8
+[INFO] 20:39:06:231 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - DX 2
+[INFO] 20:39:06:232 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 11
+[INFO] 20:39:06:332 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 3
+[INFO] 20:39:06:333 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 12
+[INFO] 20:39:06:433 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: MOV_OUT - DX DX
+[INFO] 20:39:06:433 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 13
+[INFO] 20:39:06:534 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: RESIZE - 0
+[INFO] 20:39:06:534 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 14
+[INFO] 20:39:06:635 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - PC 0
+[INFO] 20:39:06:635 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:39:06:736 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:39:06:736 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 8
+[INFO] 20:39:06:837 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:39:06:837 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 9
+[INFO] 20:39:06:938 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX CX
+[INFO] 20:39:06:938 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 10
+[INFO] 20:39:07:038 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - DX EAX
+[INFO] 20:39:07:039 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 11
+[INFO] 20:39:07:139 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:39:07:140 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 12
+[INFO] 20:39:07:240 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_OUT - EAX DX
+[INFO] 20:39:07:241 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 40
+[INFO] 20:39:07:342 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 32
+[INFO] 20:39:07:342 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 41
+[INFO] 20:39:07:442 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:39:07:442 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 42
+[INFO] 20:39:07:543 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: MOV_OUT - BX AX
+[INFO] 20:39:07:543 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 43
+[INFO] 20:39:07:644 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SET - AX 102
+[INFO] 20:39:07:644 Ciclo CPU/(147131:147131): PID: 4 - FETCH - Program Counter: 44
+[INFO] 20:39:07:745 Ciclo CPU/(147131:147131): PID: 4 - Ejecutando: SUM - BX CX
+[INFO] 20:39:07:745 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 9
+[INFO] 20:39:07:846 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:39:07:846 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 10
+[INFO] 20:39:07:946 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: RESIZE - 0
+[INFO] 20:39:07:947 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 11
+[INFO] 20:39:08:048 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - PC 0
+[INFO] 20:39:08:048 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:39:08:149 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:39:08:149 Ciclo CPU/(147131:147131): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:39:08:249 Ciclo CPU/(147131:147131): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:39:08:250 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:39:08:350 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:39:08:350 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:39:08:451 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:39:08:451 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:39:08:551 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:39:08:552 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:39:08:652 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: SET - EAX 0
+[INFO] 20:39:08:652 Ciclo CPU/(147131:147131): PID: 2 - FETCH - Program Counter: 5
+[INFO] 20:39:08:753 Ciclo CPU/(147131:147131): PID: 2 - Ejecutando: RESIZE - 64
+[INFO] 20:39:08:754 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 13
+[INFO] 20:39:08:857 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: MOV_IN - AX EAX
+[INFO] 20:39:08:858 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 14
+[INFO] 20:39:08:958 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: RESIZE - 0
+[INFO] 20:39:08:959 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 15
+[INFO] 20:39:09:059 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - PC 0
+[INFO] 20:39:09:060 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 0
+[INFO] 20:39:09:160 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 20:39:09:160 Ciclo CPU/(147131:147131): PID: 3 - FETCH - Program Counter: 1
+[INFO] 20:39:09:261 Ciclo CPU/(147131:147131): PID: 3 - Ejecutando: SET - EAX 0
+[INFO] 20:39:49:744 Ciclo CPU/(147131:147131): PID: 536871056 - FETCH - Program Counter: 32546
+[INFO] 20:39:50:373 Ciclo CPU/(147131:147131): PID: 0 - FETCH - Program Counter: 1
+[INFO] 20:42:27:618 cpu_conn/(148957:148957): Broadcast de solicitud de IP realizado
+[INFO] 20:42:27:618 cpu_conn/(148957:148957): IP recibida: 192.168.0.10
+[INFO] 20:42:27:619 cpu_conn/(148957:148957): Conexión con módulo memoria realizada
+[INFO] 20:42:27:619 cpu_conn/(148957:148957): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:42:29:928 cpu_conn/(148957:148957): Solicitud recibida
+[INFO] 20:42:29:929 cpu_conn/(148957:148957): Enviando IP: 192.168.0.10
+[INFO] 20:42:46:617 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:42:46:718 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:42:46:718 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:42:46:818 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:42:46:818 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:42:46:919 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:42:46:919 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:42:47:020 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:42:47:020 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:42:47:120 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: RESIZE - 64
+[INFO] 20:42:47:122 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:42:47:223 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:42:47:223 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:42:47:324 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:42:47:324 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:42:47:424 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:42:47:424 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:42:47:525 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:42:47:525 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:42:47:628 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 0
+[INFO] 20:42:47:628 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 0
+[INFO] 20:42:47:729 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 20:42:47:729 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 1
+[INFO] 20:42:47:829 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - EAX 0
+[INFO] 20:42:47:829 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 2
+[INFO] 20:42:47:930 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: RESIZE - 64
+[INFO] 20:42:47:930 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 3
+[INFO] 20:42:48:036 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:42:48:037 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 4
+[INFO] 20:42:48:137 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:42:48:141 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 5
+[INFO] 20:42:48:242 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:42:48:243 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 6
+[INFO] 20:42:48:356 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:42:48:356 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 7
+[INFO] 20:42:48:457 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:42:48:457 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 8
+[INFO] 20:42:48:558 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 2
+[INFO] 20:42:48:558 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 9
+[INFO] 20:42:48:661 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:42:48:663 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 5
+[INFO] 20:42:48:765 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: RESIZE - 64
+[INFO] 20:42:48:765 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 6
+[INFO] 20:42:48:866 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:42:48:867 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 7
+[INFO] 20:42:48:968 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 1
+[INFO] 20:42:48:968 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 8
+[INFO] 20:42:49:069 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:42:49:069 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 9
+[INFO] 20:42:49:170 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 2
+[INFO] 20:42:49:173 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 5
+[INFO] 20:42:49:273 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:42:49:273 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 6
+[INFO] 20:42:49:374 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX BX
+[INFO] 20:42:49:374 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 7
+[INFO] 20:42:49:475 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - CX EAX
+[INFO] 20:42:49:476 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 8
+[INFO] 20:42:49:576 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:42:49:576 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 9
+[INFO] 20:42:49:677 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX CX
+[INFO] 20:42:49:678 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 10
+[INFO] 20:42:49:778 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: RESIZE - 0
+[INFO] 20:42:49:779 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 11
+[INFO] 20:42:49:879 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - PC 0
+[INFO] 20:42:49:879 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:42:49:980 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:42:49:980 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:42:50:080 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:42:50:080 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:42:50:181 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:42:50:182 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 10
+[INFO] 20:42:50:282 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:42:50:283 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 11
+[INFO] 20:42:50:383 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 3
+[INFO] 20:42:50:383 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 12
+[INFO] 20:42:50:484 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX DX
+[INFO] 20:42:50:485 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 13
+[INFO] 20:42:50:585 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: RESIZE - 0
+[INFO] 20:42:50:586 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 14
+[INFO] 20:42:50:686 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - PC 0
+[INFO] 20:42:50:687 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 10
+[INFO] 20:42:50:788 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - DX EAX
+[INFO] 20:42:50:788 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 11
+[INFO] 20:42:50:889 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:42:50:889 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 12
+[INFO] 20:42:50:989 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX DX
+[INFO] 20:42:50:990 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 13
+[INFO] 20:42:51:091 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - AX EAX
+[INFO] 20:42:51:091 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 14
+[INFO] 20:42:51:192 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: RESIZE - 0
+[INFO] 20:42:51:193 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:42:51:293 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:42:51:293 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:42:51:394 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: RESIZE - 64
+[INFO] 20:42:51:395 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 5
+[INFO] 20:42:51:495 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:42:51:496 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 6
+[INFO] 20:42:51:597 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:42:51:597 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 7
+[INFO] 20:42:51:697 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:42:51:699 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:42:51:799 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:42:51:799 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:42:51:900 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:42:51:900 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:42:52:001 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:42:52:001 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:42:52:101 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:42:52:102 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:42:52:203 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 0
+[INFO] 20:42:52:205 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 15
+[INFO] 20:42:52:306 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - PC 0
+[INFO] 20:42:52:306 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 0
+[INFO] 20:42:52:407 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 20:42:52:407 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 1
+[INFO] 20:42:52:508 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - EAX 0
+[INFO] 20:42:52:508 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 2
+[INFO] 20:42:52:609 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: RESIZE - 64
+[INFO] 20:42:52:611 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 3
+[INFO] 20:42:52:712 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:42:52:713 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 8
+[INFO] 20:42:52:813 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 2
+[INFO] 20:42:52:814 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 9
+[INFO] 20:42:52:914 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:42:52:915 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 10
+[INFO] 20:42:53:015 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: RESIZE - 0
+[INFO] 20:42:53:016 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 11
+[INFO] 20:42:53:116 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - PC 0
+[INFO] 20:42:53:117 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:42:53:217 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:42:53:218 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 5
+[INFO] 20:42:53:318 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: RESIZE - 64
+[INFO] 20:42:53:319 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 6
+[INFO] 20:42:53:419 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:42:53:420 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 7
+[INFO] 20:42:53:520 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 1
+[INFO] 20:42:53:520 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 8
+[INFO] 20:42:53:621 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:42:53:622 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 9
+[INFO] 20:42:53:722 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 2
+[INFO] 20:42:53:724 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 4
+[INFO] 20:42:53:824 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:42:53:824 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 5
+[INFO] 20:42:53:925 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:42:53:925 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 6
+[INFO] 20:42:54:025 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX BX
+[INFO] 20:42:54:026 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 7
+[INFO] 20:42:54:127 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - CX EAX
+[INFO] 20:42:54:127 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 8
+[INFO] 20:42:54:228 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:42:54:228 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:42:54:328 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:42:54:329 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:42:54:429 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:42:54:429 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:42:54:530 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:42:54:530 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:42:54:630 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: RESIZE - 64
+[INFO] 20:42:54:631 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 5
+[INFO] 20:42:54:731 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX AX
+[INFO] 20:42:54:732 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 10
+[INFO] 20:42:54:832 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:42:54:833 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 11
+[INFO] 20:42:54:933 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 3
+[INFO] 20:42:54:934 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 12
+[INFO] 20:42:55:034 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: MOV_OUT - DX DX
+[INFO] 20:42:55:035 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 13
+[INFO] 20:42:55:135 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: RESIZE - 0
+[INFO] 20:42:55:136 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 14
+[INFO] 20:42:55:236 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - PC 0
+[INFO] 20:42:55:237 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 9
+[INFO] 20:42:55:337 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX CX
+[INFO] 20:42:55:338 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 10
+[INFO] 20:42:55:438 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - DX EAX
+[INFO] 20:42:55:438 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 11
+[INFO] 20:42:55:539 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SUM - EAX AX
+[INFO] 20:42:55:539 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 12
+[INFO] 20:42:55:640 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_OUT - EAX DX
+[INFO] 20:42:55:640 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 13
+[INFO] 20:42:55:741 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: MOV_IN - AX EAX
+[INFO] 20:44:08:009 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 6
+[INFO] 20:44:08:109 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:44:08:109 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 7
+[INFO] 20:44:08:210 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX BX
+[INFO] 20:44:08:211 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 8
+[INFO] 20:44:08:311 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 2
+[INFO] 20:44:08:311 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 9
+[INFO] 20:44:08:412 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: MOV_OUT - DX CX
+[INFO] 20:44:08:412 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 10
+[INFO] 20:44:08:513 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: RESIZE - 0
+[INFO] 20:44:08:514 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:44:08:614 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:44:08:614 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:44:08:715 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:44:08:715 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:44:08:815 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:44:08:815 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:44:08:916 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:44:08:916 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:44:09:016 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: SET - EAX 0
+[INFO] 20:44:09:017 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 14
+[INFO] 20:44:09:118 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: RESIZE - 0
+[INFO] 20:44:09:118 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 15
+[INFO] 20:44:09:219 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - PC 0
+[INFO] 20:44:09:219 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 0
+[INFO] 20:44:09:319 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 20:44:09:319 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 1
+[INFO] 20:44:09:420 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: SET - EAX 0
+[INFO] 20:44:09:420 Ciclo CPU/(148957:148957): PID: 3 - FETCH - Program Counter: 2
+[INFO] 20:44:09:520 Ciclo CPU/(148957:148957): PID: 3 - Ejecutando: RESIZE - 64
+[INFO] 20:44:09:521 Ciclo CPU/(148957:148957): PID: 4 - FETCH - Program Counter: 0
+[INFO] 20:44:09:622 Ciclo CPU/(148957:148957): PID: 4 - Ejecutando: RESIZE - 40
+[INFO] 20:44:09:623 Ciclo CPU/(148957:148957): PID: 4 - FETCH - Program Counter: 1
+[INFO] 20:44:09:723 Ciclo CPU/(148957:148957): PID: 4 - Ejecutando: SET - BX 0
+[INFO] 20:44:09:724 Ciclo CPU/(148957:148957): PID: 4 - FETCH - Program Counter: 2
+[INFO] 20:44:09:824 Ciclo CPU/(148957:148957): PID: 4 - Ejecutando: SET - EBX 0
+[INFO] 20:44:09:824 Ciclo CPU/(148957:148957): PID: 4 - FETCH - Program Counter: 3
+[INFO] 20:44:09:924 Ciclo CPU/(148957:148957): PID: 4 - Ejecutando: SET - CX 1
+[INFO] 20:44:09:925 Ciclo CPU/(148957:148957): PID: 4 - FETCH - Program Counter: 4
+[INFO] 20:44:10:026 Ciclo CPU/(148957:148957): PID: 4 - Ejecutando: SET - DX 32
+[INFO] 20:44:10:026 Ciclo CPU/(148957:148957): PID: 5 - FETCH - Program Counter: 0
+[INFO] 20:44:10:128 Ciclo CPU/(148957:148957): PID: 5 - Ejecutando: RESIZE - 22
+[INFO] 20:44:10:130 Ciclo CPU/(148957:148957): PID: 5 - FETCH - Program Counter: 1
+[INFO] 20:44:10:231 Ciclo CPU/(148957:148957): PID: 5 - Ejecutando: SET - BX 0
+[INFO] 20:44:10:231 Ciclo CPU/(148957:148957): PID: 5 - FETCH - Program Counter: 2
+[INFO] 20:44:10:332 Ciclo CPU/(148957:148957): PID: 5 - Ejecutando: SET - EBX 0
+[INFO] 20:44:10:332 Ciclo CPU/(148957:148957): PID: 5 - FETCH - Program Counter: 3
+[INFO] 20:44:10:433 Ciclo CPU/(148957:148957): PID: 5 - Ejecutando: SET - CX 1
+[INFO] 20:44:10:433 Ciclo CPU/(148957:148957): PID: 5 - FETCH - Program Counter: 4
+[INFO] 20:44:10:534 Ciclo CPU/(148957:148957): PID: 5 - Ejecutando: SET - DX 21
+[INFO] 20:44:10:534 Ciclo CPU/(148957:148957): PID: 6 - FETCH - Program Counter: 0
+[INFO] 20:44:10:638 Ciclo CPU/(148957:148957): PID: 6 - Ejecutando: SET - AX 0
+[INFO] 20:44:10:638 Ciclo CPU/(148957:148957): PID: 6 - FETCH - Program Counter: 1
+[INFO] 20:44:10:741 Ciclo CPU/(148957:148957): PID: 6 - Ejecutando: SET - BX 1
+[INFO] 20:44:10:741 Ciclo CPU/(148957:148957): PID: 6 - FETCH - Program Counter: 2
+[INFO] 20:44:10:844 Ciclo CPU/(148957:148957): PID: 6 - Ejecutando: RESIZE - 8
+[INFO] 20:44:10:845 Ciclo CPU/(148957:148957): PID: 6 - FETCH - Program Counter: 3
+[INFO] 20:44:10:946 Ciclo CPU/(148957:148957): PID: 6 - Ejecutando: IO_STDIN_READ - TECLADO AX BX
+[INFO] 20:44:10:947 Ciclo CPU/(148957:148957): PID: 7 - FETCH - Program Counter: 0
+[INFO] 20:44:11:047 Ciclo CPU/(148957:148957): PID: 7 - Ejecutando: SET - AX 1
+[INFO] 20:44:11:047 Ciclo CPU/(148957:148957): PID: 7 - FETCH - Program Counter: 1
+[INFO] 20:44:11:148 Ciclo CPU/(148957:148957): PID: 7 - Ejecutando: SET - BX 1
+[INFO] 20:44:11:148 Ciclo CPU/(148957:148957): PID: 7 - FETCH - Program Counter: 2
+[INFO] 20:44:11:249 Ciclo CPU/(148957:148957): PID: 7 - Ejecutando: SET - CX 1
+[INFO] 20:44:11:249 Ciclo CPU/(148957:148957): PID: 7 - FETCH - Program Counter: 3
+[INFO] 20:44:11:350 Ciclo CPU/(148957:148957): PID: 7 - Ejecutando: SET - DX 0
+[INFO] 20:44:11:350 Ciclo CPU/(148957:148957): PID: 7 - FETCH - Program Counter: 4
+[INFO] 20:44:11:450 Ciclo CPU/(148957:148957): PID: 7 - Ejecutando: RESIZE - 64
+[INFO] 20:44:11:451 Ciclo CPU/(148957:148957): PID: 8 - FETCH - Program Counter: 0
+[INFO] 20:44:11:552 Ciclo CPU/(148957:148957): PID: 8 - Ejecutando: SET - AX 1
+[INFO] 20:44:11:552 Ciclo CPU/(148957:148957): PID: 8 - FETCH - Program Counter: 1
+[INFO] 20:44:11:653 Ciclo CPU/(148957:148957): PID: 8 - Ejecutando: SET - BX 1
+[INFO] 20:44:11:653 Ciclo CPU/(148957:148957): PID: 8 - FETCH - Program Counter: 2
+[INFO] 20:44:11:754 Ciclo CPU/(148957:148957): PID: 8 - Ejecutando: SET - CX 1
+[INFO] 20:44:11:754 Ciclo CPU/(148957:148957): PID: 8 - FETCH - Program Counter: 3
+[INFO] 20:44:11:854 Ciclo CPU/(148957:148957): PID: 8 - Ejecutando: SET - DX 1
+[INFO] 20:44:11:854 Ciclo CPU/(148957:148957): PID: 8 - FETCH - Program Counter: 4
+[INFO] 20:44:11:955 Ciclo CPU/(148957:148957): PID: 8 - Ejecutando: SET - EAX 0
+[INFO] 20:44:11:955 Ciclo CPU/(148957:148957): PID: 9 - FETCH - Program Counter: 0
+[INFO] 20:44:12:056 Ciclo CPU/(148957:148957): PID: 9 - Ejecutando: SET - AX 1
+[INFO] 20:44:12:056 Ciclo CPU/(148957:148957): PID: 9 - FETCH - Program Counter: 1
+[INFO] 20:44:12:156 Ciclo CPU/(148957:148957): PID: 9 - Ejecutando: SET - EAX 0
+[INFO] 20:44:12:157 Ciclo CPU/(148957:148957): PID: 9 - FETCH - Program Counter: 2
+[INFO] 20:44:12:257 Ciclo CPU/(148957:148957): PID: 9 - Ejecutando: RESIZE - 64
+[INFO] 20:44:12:258 Ciclo CPU/(148957:148957): PID: 9 - FETCH - Program Counter: 3
+[INFO] 20:44:12:359 Ciclo CPU/(148957:148957): PID: 9 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:44:12:359 Ciclo CPU/(148957:148957): PID: 9 - FETCH - Program Counter: 4
+[INFO] 20:44:12:459 Ciclo CPU/(148957:148957): PID: 9 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:44:12:461 Ciclo CPU/(148957:148957): PID: 10 - FETCH - Program Counter: 0
+[INFO] 20:44:12:561 Ciclo CPU/(148957:148957): PID: 10 - Ejecutando: RESIZE - 40
+[INFO] 20:44:12:562 Ciclo CPU/(148957:148957): PID: 10 - FETCH - Program Counter: 1
+[INFO] 20:44:12:662 Ciclo CPU/(148957:148957): PID: 10 - Ejecutando: SET - BX 0
+[INFO] 20:44:12:662 Ciclo CPU/(148957:148957): PID: 10 - FETCH - Program Counter: 2
+[INFO] 20:44:12:763 Ciclo CPU/(148957:148957): PID: 10 - Ejecutando: SET - EBX 0
+[INFO] 20:44:12:763 Ciclo CPU/(148957:148957): PID: 10 - FETCH - Program Counter: 3
+[INFO] 20:44:12:863 Ciclo CPU/(148957:148957): PID: 10 - Ejecutando: SET - CX 1
+[INFO] 20:44:12:864 Ciclo CPU/(148957:148957): PID: 10 - FETCH - Program Counter: 4
+[INFO] 20:44:12:964 Ciclo CPU/(148957:148957): PID: 10 - Ejecutando: SET - DX 32
+[INFO] 20:44:12:965 Ciclo CPU/(148957:148957): PID: 11 - FETCH - Program Counter: 0
+[INFO] 20:44:13:066 Ciclo CPU/(148957:148957): PID: 11 - Ejecutando: RESIZE - 22
+[INFO] 20:44:13:066 Ciclo CPU/(148957:148957): PID: 11 - FETCH - Program Counter: 1
+[INFO] 20:44:13:168 Ciclo CPU/(148957:148957): PID: 11 - Ejecutando: SET - BX 0
+[INFO] 20:44:13:168 Ciclo CPU/(148957:148957): PID: 11 - FETCH - Program Counter: 2
+[INFO] 20:44:13:269 Ciclo CPU/(148957:148957): PID: 11 - Ejecutando: SET - EBX 0
+[INFO] 20:44:13:269 Ciclo CPU/(148957:148957): PID: 11 - FETCH - Program Counter: 3
+[INFO] 20:44:13:369 Ciclo CPU/(148957:148957): PID: 11 - Ejecutando: SET - CX 1
+[INFO] 20:44:13:369 Ciclo CPU/(148957:148957): PID: 11 - FETCH - Program Counter: 4
+[INFO] 20:44:13:470 Ciclo CPU/(148957:148957): PID: 11 - Ejecutando: SET - DX 21
+[INFO] 20:44:13:471 Ciclo CPU/(148957:148957): PID: 12 - FETCH - Program Counter: 0
+[INFO] 20:44:13:572 Ciclo CPU/(148957:148957): PID: 12 - Ejecutando: SET - AX 0
+[INFO] 20:44:13:572 Ciclo CPU/(148957:148957): PID: 12 - FETCH - Program Counter: 1
+[INFO] 20:44:13:672 Ciclo CPU/(148957:148957): PID: 12 - Ejecutando: SET - BX 1
+[INFO] 20:44:13:672 Ciclo CPU/(148957:148957): PID: 12 - FETCH - Program Counter: 2
+[INFO] 20:44:13:773 Ciclo CPU/(148957:148957): PID: 12 - Ejecutando: RESIZE - 8
+[INFO] 20:44:13:773 Ciclo CPU/(148957:148957): PID: 12 - FETCH - Program Counter: 3
+[INFO] 20:44:13:874 Ciclo CPU/(148957:148957): PID: 12 - Ejecutando: IO_STDIN_READ - TECLADO AX BX
+[INFO] 20:44:13:875 Ciclo CPU/(148957:148957): PID: 13 - FETCH - Program Counter: 0
+[INFO] 20:44:13:977 Ciclo CPU/(148957:148957): PID: 13 - Ejecutando: SET - AX 1
+[INFO] 20:44:13:977 Ciclo CPU/(148957:148957): PID: 13 - FETCH - Program Counter: 1
+[INFO] 20:44:14:081 Ciclo CPU/(148957:148957): PID: 13 - Ejecutando: SET - BX 1
+[INFO] 20:44:14:081 Ciclo CPU/(148957:148957): PID: 13 - FETCH - Program Counter: 2
+[INFO] 20:44:14:181 Ciclo CPU/(148957:148957): PID: 13 - Ejecutando: SET - CX 1
+[INFO] 20:44:14:183 Ciclo CPU/(148957:148957): PID: 13 - FETCH - Program Counter: 3
+[INFO] 20:44:14:283 Ciclo CPU/(148957:148957): PID: 13 - Ejecutando: SET - DX 0
+[INFO] 20:44:14:283 Ciclo CPU/(148957:148957): PID: 13 - FETCH - Program Counter: 4
+[INFO] 20:44:14:384 Ciclo CPU/(148957:148957): PID: 13 - Ejecutando: RESIZE - 64
+[INFO] 20:44:14:385 Ciclo CPU/(148957:148957): PID: 14 - FETCH - Program Counter: 0
+[INFO] 20:44:14:486 Ciclo CPU/(148957:148957): PID: 14 - Ejecutando: SET - AX 1
+[INFO] 20:44:14:486 Ciclo CPU/(148957:148957): PID: 14 - FETCH - Program Counter: 1
+[INFO] 20:44:14:586 Ciclo CPU/(148957:148957): PID: 14 - Ejecutando: SET - BX 1
+[INFO] 20:44:14:587 Ciclo CPU/(148957:148957): PID: 14 - FETCH - Program Counter: 2
+[INFO] 20:44:14:687 Ciclo CPU/(148957:148957): PID: 14 - Ejecutando: SET - CX 1
+[INFO] 20:44:14:687 Ciclo CPU/(148957:148957): PID: 14 - FETCH - Program Counter: 3
+[INFO] 20:44:14:788 Ciclo CPU/(148957:148957): PID: 14 - Ejecutando: SET - DX 1
+[INFO] 20:44:14:788 Ciclo CPU/(148957:148957): PID: 14 - FETCH - Program Counter: 4
+[INFO] 20:44:14:889 Ciclo CPU/(148957:148957): PID: 14 - Ejecutando: SET - EAX 0
+[INFO] 20:44:14:890 Ciclo CPU/(148957:148957): PID: 15 - FETCH - Program Counter: 0
+[INFO] 20:44:14:990 Ciclo CPU/(148957:148957): PID: 15 - Ejecutando: SET - AX 1
+[INFO] 20:44:14:990 Ciclo CPU/(148957:148957): PID: 15 - FETCH - Program Counter: 1
+[INFO] 20:44:15:091 Ciclo CPU/(148957:148957): PID: 15 - Ejecutando: SET - EAX 0
+[INFO] 20:44:15:091 Ciclo CPU/(148957:148957): PID: 15 - FETCH - Program Counter: 2
+[INFO] 20:44:15:192 Ciclo CPU/(148957:148957): PID: 15 - Ejecutando: RESIZE - 64
+[INFO] 20:44:15:193 Ciclo CPU/(148957:148957): PID: 15 - FETCH - Program Counter: 3
+[INFO] 20:44:15:293 Ciclo CPU/(148957:148957): PID: 15 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:44:15:295 Ciclo CPU/(148957:148957): PID: 15 - FETCH - Program Counter: 4
+[INFO] 20:44:15:395 Ciclo CPU/(148957:148957): PID: 15 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:44:15:396 Ciclo CPU/(148957:148957): PID: 16 - FETCH - Program Counter: 0
+[INFO] 20:44:15:496 Ciclo CPU/(148957:148957): PID: 16 - Ejecutando: RESIZE - 40
+[INFO] 20:44:15:497 Ciclo CPU/(148957:148957): PID: 16 - FETCH - Program Counter: 1
+[INFO] 20:44:15:597 Ciclo CPU/(148957:148957): PID: 16 - Ejecutando: SET - BX 0
+[INFO] 20:44:15:597 Ciclo CPU/(148957:148957): PID: 16 - FETCH - Program Counter: 2
+[INFO] 20:44:15:698 Ciclo CPU/(148957:148957): PID: 16 - Ejecutando: SET - EBX 0
+[INFO] 20:44:15:698 Ciclo CPU/(148957:148957): PID: 16 - FETCH - Program Counter: 3
+[INFO] 20:44:15:799 Ciclo CPU/(148957:148957): PID: 16 - Ejecutando: SET - CX 1
+[INFO] 20:44:15:799 Ciclo CPU/(148957:148957): PID: 16 - FETCH - Program Counter: 4
+[INFO] 20:44:15:899 Ciclo CPU/(148957:148957): PID: 16 - Ejecutando: SET - DX 32
+[INFO] 20:44:15:900 Ciclo CPU/(148957:148957): PID: 17 - FETCH - Program Counter: 0
+[INFO] 20:44:16:000 Ciclo CPU/(148957:148957): PID: 17 - Ejecutando: RESIZE - 22
+[INFO] 20:44:16:001 Ciclo CPU/(148957:148957): PID: 17 - FETCH - Program Counter: 1
+[INFO] 20:44:16:106 Ciclo CPU/(148957:148957): PID: 17 - Ejecutando: SET - BX 0
+[INFO] 20:44:16:107 Ciclo CPU/(148957:148957): PID: 17 - FETCH - Program Counter: 2
+[INFO] 20:44:16:207 Ciclo CPU/(148957:148957): PID: 17 - Ejecutando: SET - EBX 0
+[INFO] 20:44:16:207 Ciclo CPU/(148957:148957): PID: 17 - FETCH - Program Counter: 3
+[INFO] 20:44:16:308 Ciclo CPU/(148957:148957): PID: 17 - Ejecutando: SET - CX 1
+[INFO] 20:44:16:308 Ciclo CPU/(148957:148957): PID: 17 - FETCH - Program Counter: 4
+[INFO] 20:44:16:408 Ciclo CPU/(148957:148957): PID: 17 - Ejecutando: SET - DX 21
+[INFO] 20:44:16:409 Ciclo CPU/(148957:148957): PID: 18 - FETCH - Program Counter: 0
+[INFO] 20:44:16:510 Ciclo CPU/(148957:148957): PID: 18 - Ejecutando: SET - AX 0
+[INFO] 20:44:16:510 Ciclo CPU/(148957:148957): PID: 18 - FETCH - Program Counter: 1
+[INFO] 20:44:16:611 Ciclo CPU/(148957:148957): PID: 18 - Ejecutando: SET - BX 1
+[INFO] 20:44:16:611 Ciclo CPU/(148957:148957): PID: 18 - FETCH - Program Counter: 2
+[INFO] 20:44:16:711 Ciclo CPU/(148957:148957): PID: 18 - Ejecutando: RESIZE - 8
+[INFO] 20:44:16:712 Ciclo CPU/(148957:148957): PID: 18 - FETCH - Program Counter: 3
+[INFO] 20:44:16:812 Ciclo CPU/(148957:148957): PID: 18 - Ejecutando: IO_STDIN_READ - TECLADO AX BX
+[INFO] 20:44:16:815 Ciclo CPU/(148957:148957): PID: 19 - FETCH - Program Counter: 0
+[INFO] 20:44:16:916 Ciclo CPU/(148957:148957): PID: 19 - Ejecutando: SET - AX 1
+[INFO] 20:44:16:916 Ciclo CPU/(148957:148957): PID: 19 - FETCH - Program Counter: 1
+[INFO] 20:44:17:017 Ciclo CPU/(148957:148957): PID: 19 - Ejecutando: SET - BX 1
+[INFO] 20:44:17:017 Ciclo CPU/(148957:148957): PID: 19 - FETCH - Program Counter: 2
+[INFO] 20:44:17:118 Ciclo CPU/(148957:148957): PID: 19 - Ejecutando: SET - CX 1
+[INFO] 20:44:17:118 Ciclo CPU/(148957:148957): PID: 19 - FETCH - Program Counter: 3
+[INFO] 20:44:17:218 Ciclo CPU/(148957:148957): PID: 19 - Ejecutando: SET - DX 0
+[INFO] 20:44:17:218 Ciclo CPU/(148957:148957): PID: 19 - FETCH - Program Counter: 4
+[INFO] 20:44:17:319 Ciclo CPU/(148957:148957): PID: 19 - Ejecutando: RESIZE - 64
+[INFO] 20:44:17:320 Ciclo CPU/(148957:148957): PID: 20 - FETCH - Program Counter: 0
+[INFO] 20:44:17:420 Ciclo CPU/(148957:148957): PID: 20 - Ejecutando: SET - AX 1
+[INFO] 20:44:17:420 Ciclo CPU/(148957:148957): PID: 20 - FETCH - Program Counter: 1
+[INFO] 20:44:17:521 Ciclo CPU/(148957:148957): PID: 20 - Ejecutando: SET - BX 1
+[INFO] 20:44:17:521 Ciclo CPU/(148957:148957): PID: 20 - FETCH - Program Counter: 2
+[INFO] 20:44:17:621 Ciclo CPU/(148957:148957): PID: 20 - Ejecutando: SET - CX 1
+[INFO] 20:44:17:622 Ciclo CPU/(148957:148957): PID: 20 - FETCH - Program Counter: 3
+[INFO] 20:44:17:722 Ciclo CPU/(148957:148957): PID: 20 - Ejecutando: SET - DX 1
+[INFO] 20:44:17:722 Ciclo CPU/(148957:148957): PID: 20 - FETCH - Program Counter: 4
+[INFO] 20:44:17:823 Ciclo CPU/(148957:148957): PID: 20 - Ejecutando: SET - EAX 0
+[INFO] 20:44:17:824 Ciclo CPU/(148957:148957): PID: 21 - FETCH - Program Counter: 0
+[INFO] 20:44:17:924 Ciclo CPU/(148957:148957): PID: 21 - Ejecutando: SET - AX 1
+[INFO] 20:44:17:924 Ciclo CPU/(148957:148957): PID: 21 - FETCH - Program Counter: 1
+[INFO] 20:44:18:024 Ciclo CPU/(148957:148957): PID: 21 - Ejecutando: SET - EAX 0
+[INFO] 20:44:18:025 Ciclo CPU/(148957:148957): PID: 21 - FETCH - Program Counter: 2
+[INFO] 20:44:18:125 Ciclo CPU/(148957:148957): PID: 21 - Ejecutando: RESIZE - 64
+[INFO] 20:44:18:126 Ciclo CPU/(148957:148957): PID: 21 - FETCH - Program Counter: 3
+[INFO] 20:44:18:226 Ciclo CPU/(148957:148957): PID: 21 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:44:18:227 Ciclo CPU/(148957:148957): PID: 21 - FETCH - Program Counter: 4
+[INFO] 20:44:18:327 Ciclo CPU/(148957:148957): PID: 21 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:44:18:329 Ciclo CPU/(148957:148957): PID: 22 - FETCH - Program Counter: 0
+[INFO] 20:44:18:430 Ciclo CPU/(148957:148957): PID: 22 - Ejecutando: RESIZE - 40
+[INFO] 20:44:18:430 Ciclo CPU/(148957:148957): PID: 22 - FETCH - Program Counter: 1
+[INFO] 20:44:18:530 Ciclo CPU/(148957:148957): PID: 22 - Ejecutando: SET - BX 0
+[INFO] 20:44:18:530 Ciclo CPU/(148957:148957): PID: 22 - FETCH - Program Counter: 2
+[INFO] 20:44:18:631 Ciclo CPU/(148957:148957): PID: 22 - Ejecutando: SET - EBX 0
+[INFO] 20:44:18:631 Ciclo CPU/(148957:148957): PID: 22 - FETCH - Program Counter: 3
+[INFO] 20:44:18:731 Ciclo CPU/(148957:148957): PID: 22 - Ejecutando: SET - CX 1
+[INFO] 20:44:18:731 Ciclo CPU/(148957:148957): PID: 22 - FETCH - Program Counter: 4
+[INFO] 20:44:18:832 Ciclo CPU/(148957:148957): PID: 22 - Ejecutando: SET - DX 32
+[INFO] 20:44:18:832 Ciclo CPU/(148957:148957): PID: 23 - FETCH - Program Counter: 0
+[INFO] 20:44:18:933 Ciclo CPU/(148957:148957): PID: 23 - Ejecutando: RESIZE - 22
+[INFO] 20:44:18:933 Ciclo CPU/(148957:148957): PID: 23 - FETCH - Program Counter: 1
+[INFO] 20:44:19:034 Ciclo CPU/(148957:148957): PID: 23 - Ejecutando: SET - BX 0
+[INFO] 20:44:19:035 Ciclo CPU/(148957:148957): PID: 23 - FETCH - Program Counter: 2
+[INFO] 20:44:19:135 Ciclo CPU/(148957:148957): PID: 23 - Ejecutando: SET - EBX 0
+[INFO] 20:44:19:135 Ciclo CPU/(148957:148957): PID: 23 - FETCH - Program Counter: 3
+[INFO] 20:44:19:235 Ciclo CPU/(148957:148957): PID: 23 - Ejecutando: SET - CX 1
+[INFO] 20:44:19:236 Ciclo CPU/(148957:148957): PID: 23 - FETCH - Program Counter: 4
+[INFO] 20:44:19:336 Ciclo CPU/(148957:148957): PID: 23 - Ejecutando: SET - DX 21
+[INFO] 20:44:53:296 Ciclo CPU/(148957:148957): PID: 24 - FETCH - Program Counter: 0
+[INFO] 20:44:53:396 Ciclo CPU/(148957:148957): PID: 24 - Ejecutando: SET - AX 0
+[INFO] 20:44:53:396 Ciclo CPU/(148957:148957): PID: 24 - FETCH - Program Counter: 1
+[INFO] 20:44:53:497 Ciclo CPU/(148957:148957): PID: 24 - Ejecutando: SET - BX 1
+[INFO] 20:44:53:497 Ciclo CPU/(148957:148957): PID: 24 - FETCH - Program Counter: 2
+[INFO] 20:44:53:597 Ciclo CPU/(148957:148957): PID: 24 - Ejecutando: RESIZE - 8
+[INFO] 20:44:53:598 Ciclo CPU/(148957:148957): PID: 24 - FETCH - Program Counter: 3
+[INFO] 20:44:53:698 Ciclo CPU/(148957:148957): PID: 24 - Ejecutando: IO_STDIN_READ - TECLADO AX BX
+[INFO] 20:44:53:701 Ciclo CPU/(148957:148957): PID: 25 - FETCH - Program Counter: 0
+[INFO] 20:44:53:802 Ciclo CPU/(148957:148957): PID: 25 - Ejecutando: SET - AX 1
+[INFO] 20:44:53:802 Ciclo CPU/(148957:148957): PID: 25 - FETCH - Program Counter: 1
+[INFO] 20:44:53:903 Ciclo CPU/(148957:148957): PID: 25 - Ejecutando: SET - BX 1
+[INFO] 20:44:53:903 Ciclo CPU/(148957:148957): PID: 25 - FETCH - Program Counter: 2
+[INFO] 20:44:54:003 Ciclo CPU/(148957:148957): PID: 25 - Ejecutando: SET - CX 1
+[INFO] 20:44:54:003 Ciclo CPU/(148957:148957): PID: 25 - FETCH - Program Counter: 3
+[INFO] 20:44:54:104 Ciclo CPU/(148957:148957): PID: 25 - Ejecutando: SET - DX 0
+[INFO] 20:44:54:104 Ciclo CPU/(148957:148957): PID: 25 - FETCH - Program Counter: 4
+[INFO] 20:44:54:205 Ciclo CPU/(148957:148957): PID: 25 - Ejecutando: RESIZE - 64
+[INFO] 20:44:54:206 Ciclo CPU/(148957:148957): PID: 26 - FETCH - Program Counter: 0
+[INFO] 20:44:54:306 Ciclo CPU/(148957:148957): PID: 26 - Ejecutando: SET - AX 1
+[INFO] 20:44:54:306 Ciclo CPU/(148957:148957): PID: 26 - FETCH - Program Counter: 1
+[INFO] 20:44:54:407 Ciclo CPU/(148957:148957): PID: 26 - Ejecutando: SET - BX 1
+[INFO] 20:44:54:407 Ciclo CPU/(148957:148957): PID: 26 - FETCH - Program Counter: 2
+[INFO] 20:44:54:507 Ciclo CPU/(148957:148957): PID: 26 - Ejecutando: SET - CX 1
+[INFO] 20:44:54:507 Ciclo CPU/(148957:148957): PID: 26 - FETCH - Program Counter: 3
+[INFO] 20:44:54:608 Ciclo CPU/(148957:148957): PID: 26 - Ejecutando: SET - DX 1
+[INFO] 20:44:54:608 Ciclo CPU/(148957:148957): PID: 26 - FETCH - Program Counter: 4
+[INFO] 20:44:54:709 Ciclo CPU/(148957:148957): PID: 26 - Ejecutando: SET - EAX 0
+[INFO] 20:44:54:709 Ciclo CPU/(148957:148957): PID: 27 - FETCH - Program Counter: 0
+[INFO] 20:44:54:810 Ciclo CPU/(148957:148957): PID: 27 - Ejecutando: SET - AX 1
+[INFO] 20:44:54:810 Ciclo CPU/(148957:148957): PID: 27 - FETCH - Program Counter: 1
+[INFO] 20:44:54:910 Ciclo CPU/(148957:148957): PID: 27 - Ejecutando: SET - EAX 0
+[INFO] 20:44:54:910 Ciclo CPU/(148957:148957): PID: 27 - FETCH - Program Counter: 2
+[INFO] 20:44:55:011 Ciclo CPU/(148957:148957): PID: 27 - Ejecutando: RESIZE - 64
+[INFO] 20:44:55:012 Ciclo CPU/(148957:148957): PID: 27 - FETCH - Program Counter: 3
+[INFO] 20:44:55:112 Ciclo CPU/(148957:148957): PID: 27 - Ejecutando: MOV_OUT - EAX AX
+[INFO] 20:44:55:114 Ciclo CPU/(148957:148957): PID: 27 - FETCH - Program Counter: 4
+[INFO] 20:44:55:214 Ciclo CPU/(148957:148957): PID: 27 - Ejecutando: MOV_IN - BX EAX
+[INFO] 20:44:55:216 Ciclo CPU/(148957:148957): PID: 28 - FETCH - Program Counter: 0
+[INFO] 20:44:55:316 Ciclo CPU/(148957:148957): PID: 28 - Ejecutando: RESIZE - 40
+[INFO] 20:44:55:317 Ciclo CPU/(148957:148957): PID: 28 - FETCH - Program Counter: 1
+[INFO] 20:44:55:420 Ciclo CPU/(148957:148957): PID: 28 - Ejecutando: SET - BX 0
+[INFO] 20:44:55:420 Ciclo CPU/(148957:148957): PID: 28 - FETCH - Program Counter: 2
+[INFO] 20:44:55:521 Ciclo CPU/(148957:148957): PID: 28 - Ejecutando: SET - EBX 0
+[INFO] 20:44:55:521 Ciclo CPU/(148957:148957): PID: 28 - FETCH - Program Counter: 3
+[INFO] 20:44:55:621 Ciclo CPU/(148957:148957): PID: 28 - Ejecutando: SET - CX 1
+[INFO] 20:44:55:621 Ciclo CPU/(148957:148957): PID: 28 - FETCH - Program Counter: 4
+[INFO] 20:44:55:722 Ciclo CPU/(148957:148957): PID: 28 - Ejecutando: SET - DX 32
+[INFO] 20:44:55:722 Ciclo CPU/(148957:148957): PID: 29 - FETCH - Program Counter: 0
+[INFO] 20:44:55:823 Ciclo CPU/(148957:148957): PID: 29 - Ejecutando: RESIZE - 22
+[INFO] 20:44:55:824 Ciclo CPU/(148957:148957): PID: 29 - FETCH - Program Counter: 1
+[INFO] 20:44:55:924 Ciclo CPU/(148957:148957): PID: 29 - Ejecutando: SET - BX 0
+[INFO] 20:44:55:924 Ciclo CPU/(148957:148957): PID: 29 - FETCH - Program Counter: 2
+[INFO] 20:44:56:025 Ciclo CPU/(148957:148957): PID: 29 - Ejecutando: SET - EBX 0
+[INFO] 20:44:56:025 Ciclo CPU/(148957:148957): PID: 29 - FETCH - Program Counter: 3
+[INFO] 20:44:56:125 Ciclo CPU/(148957:148957): PID: 29 - Ejecutando: SET - CX 1
+[INFO] 20:44:56:125 Ciclo CPU/(148957:148957): PID: 29 - FETCH - Program Counter: 4
+[INFO] 20:44:56:226 Ciclo CPU/(148957:148957): PID: 29 - Ejecutando: SET - DX 21
+[INFO] 20:44:56:226 Ciclo CPU/(148957:148957): PID: 30 - FETCH - Program Counter: 0
+[INFO] 20:44:56:327 Ciclo CPU/(148957:148957): PID: 30 - Ejecutando: SET - AX 0
+[INFO] 20:44:56:327 Ciclo CPU/(148957:148957): PID: 30 - FETCH - Program Counter: 1
+[INFO] 20:44:56:428 Ciclo CPU/(148957:148957): PID: 30 - Ejecutando: SET - BX 1
+[INFO] 20:44:56:428 Ciclo CPU/(148957:148957): PID: 30 - FETCH - Program Counter: 2
+[INFO] 20:44:56:528 Ciclo CPU/(148957:148957): PID: 30 - Ejecutando: RESIZE - 8
+[INFO] 20:44:56:529 Ciclo CPU/(148957:148957): PID: 30 - FETCH - Program Counter: 3
+[INFO] 20:44:56:629 Ciclo CPU/(148957:148957): PID: 30 - Ejecutando: IO_STDIN_READ - TECLADO AX BX
+[INFO] 20:44:56:630 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 11
+[INFO] 20:44:56:731 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - PC 0
+[INFO] 20:44:56:731 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:44:56:832 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:44:56:832 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:44:56:932 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:44:56:932 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:44:57:033 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:44:57:033 Ciclo CPU/(148957:148957): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:44:57:134 Ciclo CPU/(148957:148957): PID: 1 - Ejecutando: SET - DX 0
+[INFO] 20:44:57:135 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 5
+[INFO] 20:44:57:236 Ciclo CPU/(148957:148957): PID: 2 - Ejecutando: RESIZE - 64
+[INFO] 20:44:57:237 Ciclo CPU/(148957:148957): PID: 2 - FETCH - Program Counter: 6
+[INFO] 20:44:57:747 Ciclo CPU/(148957:148957): PID: 0 - FETCH - Program Counter: 1
+[INFO] 20:44:57:747 Ciclo CPU/(148957:148957): PID: 0 - FETCH - Program Counter: 2
+[INFO] 20:48:37:125 cpu_conn/(151493:151493): Broadcast de solicitud de IP realizado
+[INFO] 20:48:37:129 cpu_conn/(151493:151493): IP recibida: 192.168.0.10
+[INFO] 20:48:37:130 cpu_conn/(151493:151493): Conexión con módulo memoria realizada
+[INFO] 20:48:37:130 cpu_conn/(151493:151493): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 20:48:51:626 cpu_conn/(151493:151493): Solicitud recibida
+[INFO] 20:48:51:626 cpu_conn/(151493:151493): Enviando IP: 192.168.0.10
+[INFO] 20:50:10:532 Ciclo CPU/(151493:151493): PID: 1 - FETCH - Program Counter: 0
+[INFO] 20:50:10:633 Ciclo CPU/(151493:151493): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 20:50:10:633 Ciclo CPU/(151493:151493): PID: 1 - FETCH - Program Counter: 1
+[INFO] 20:50:10:734 Ciclo CPU/(151493:151493): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 20:50:10:734 Ciclo CPU/(151493:151493): PID: 1 - FETCH - Program Counter: 2
+[INFO] 20:50:10:835 Ciclo CPU/(151493:151493): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 20:50:10:835 Ciclo CPU/(151493:151493): PID: 1 - FETCH - Program Counter: 3
+[INFO] 20:50:10:935 Ciclo CPU/(151493:151493): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 20:50:10:935 Ciclo CPU/(151493:151493): PID: 1 - FETCH - Program Counter: 4
+[INFO] 20:50:11:036 Ciclo CPU/(151493:151493): PID: 1 - Ejecutando: SET - EAX 1000
+[INFO] 20:50:11:036 Ciclo CPU/(151493:151493): PID: 2 - FETCH - Program Counter: 0
+[INFO] 20:50:11:137 Ciclo CPU/(151493:151493): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 20:50:11:137 Ciclo CPU/(151493:151493): PID: 2 - FETCH - Program Counter: 1
+[INFO] 20:50:11:241 Ciclo CPU/(151493:151493): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 20:50:11:241 Ciclo CPU/(151493:151493): PID: 2 - FETCH - Program Counter: 2
+[INFO] 20:50:11:342 Ciclo CPU/(151493:151493): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 20:50:11:343 Ciclo CPU/(151493:151493): PID: 2 - FETCH - Program Counter: 3
+[INFO] 20:50:11:450 Ciclo CPU/(151493:151493): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 20:50:11:450 Ciclo CPU/(151493:151493): PID: 2 - FETCH - Program Counter: 4
+[INFO] 20:50:11:550 Ciclo CPU/(151493:151493): PID: 2 - Ejecutando: SET - EAX 1000
+[INFO] 20:52:31:111 Ciclo CPU/(151493:151493): PID: 0 - FETCH - Program Counter: 0
+[INFO] 20:52:31:519 Ciclo CPU/(151493:151493): PID: 0 - FETCH - Program Counter: 1
+[INFO] 21:12:17:284 cpu_conn/(159475:159475): Broadcast de solicitud de IP realizado
+[INFO] 21:12:17:285 cpu_conn/(159475:159475): IP recibida: 192.168.0.10
+[INFO] 21:12:17:288 cpu_conn/(159475:159475): Conexión con módulo memoria realizada
+[INFO] 21:12:17:288 cpu_conn/(159475:159475): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 21:12:19:711 cpu_conn/(159475:159475): Solicitud recibida
+[INFO] 21:12:19:711 cpu_conn/(159475:159475): Enviando IP: 192.168.0.10
+[INFO] 21:13:38:962 Ciclo CPU/(159475:159475): PID: 0 - FETCH - Program Counter: 0
+[INFO] 21:19:39:412 cpu_conn/(162254:162254): Broadcast de solicitud de IP realizado
+[INFO] 21:19:39:412 cpu_conn/(162254:162254): IP recibida: 192.168.0.10
+[INFO] 21:19:39:413 cpu_conn/(162254:162254): Conexión con módulo memoria realizada
+[INFO] 21:19:39:413 cpu_conn/(162254:162254): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 21:19:43:680 cpu_conn/(162254:162254): Solicitud recibida
+[INFO] 21:19:43:680 cpu_conn/(162254:162254): Enviando IP: 192.168.0.10
+[INFO] 21:20:43:234 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 0
+[INFO] 21:20:43:334 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 21:20:43:334 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 1
+[INFO] 21:20:43:438 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 21:20:43:438 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 2
+[INFO] 21:20:43:544 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 21:20:43:544 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 3
+[INFO] 21:20:43:644 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 21:20:43:644 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 4
+[INFO] 21:20:43:745 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - EAX 1000
+[INFO] 21:20:43:745 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 0
+[INFO] 21:20:43:846 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 21:20:43:846 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 1
+[INFO] 21:20:43:947 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 21:20:43:947 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 2
+[INFO] 21:20:44:047 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 21:20:44:047 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 3
+[INFO] 21:20:44:148 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 21:20:44:148 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 4
+[INFO] 21:20:44:248 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - EAX 1000
+[INFO] 21:21:17:854 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 0
+[INFO] 21:21:17:955 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 21:21:17:955 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 1
+[INFO] 21:21:18:056 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - BX 1
+[INFO] 21:21:18:056 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 2
+[INFO] 21:21:18:157 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - CX 1
+[INFO] 21:21:18:157 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 3
+[INFO] 21:21:18:257 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - DX 1
+[INFO] 21:21:18:257 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 4
+[INFO] 21:21:18:358 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - EAX 1000
+[INFO] 21:21:18:359 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 5
+[INFO] 21:21:18:459 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - EBX 1000
+[INFO] 21:21:18:460 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 6
+[INFO] 21:21:18:560 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - ECX 1000
+[INFO] 21:21:18:560 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 7
+[INFO] 21:21:18:661 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - EDX 1000
+[INFO] 21:21:18:661 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 8
+[INFO] 21:21:18:761 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - SI 0
+[INFO] 21:21:18:761 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 9
+[INFO] 21:21:18:862 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: SET - DI 64
+[INFO] 21:21:18:863 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 5
+[INFO] 21:21:18:963 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - EBX 1000
+[INFO] 21:21:18:963 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 6
+[INFO] 21:21:19:064 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - ECX 1000
+[INFO] 21:21:19:064 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 7
+[INFO] 21:21:19:164 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - EDX 1000
+[INFO] 21:21:19:165 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 8
+[INFO] 21:21:19:265 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - SI 0
+[INFO] 21:21:19:265 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 9
+[INFO] 21:21:19:366 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: SET - DI 64
+[INFO] 21:21:19:366 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 5
+[INFO] 21:21:19:469 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - EBX 1000
+[INFO] 21:21:19:469 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 6
+[INFO] 21:21:19:570 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - ECX 1000
+[INFO] 21:21:19:570 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 7
+[INFO] 21:21:19:671 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - EDX 1000
+[INFO] 21:21:19:671 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 8
+[INFO] 21:21:19:771 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - SI 0
+[INFO] 21:21:19:771 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 9
+[INFO] 21:21:19:872 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: SET - DI 64
+[INFO] 21:21:19:874 Ciclo CPU/(162254:162254): PID: 1 - FETCH - Program Counter: 10
+[INFO] 21:21:19:974 Ciclo CPU/(162254:162254): PID: 1 - Ejecutando: EXIT
+[INFO] 21:21:19:976 Ciclo CPU/(162254:162254): PID: 2 - FETCH - Program Counter: 10
+[INFO] 21:21:20:077 Ciclo CPU/(162254:162254): PID: 2 - Ejecutando: EXIT
+[INFO] 21:21:20:078 Ciclo CPU/(162254:162254): PID: 3 - FETCH - Program Counter: 10
+[INFO] 21:21:20:179 Ciclo CPU/(162254:162254): PID: 3 - Ejecutando: EXIT
+[INFO] 21:21:26:278 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 0
+[INFO] 21:21:26:379 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - AX 1
+[INFO] 21:21:26:379 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 1
+[INFO] 21:21:26:480 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - BX 1
+[INFO] 21:21:26:480 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 2
+[INFO] 21:21:26:581 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - CX 1
+[INFO] 21:21:26:581 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 3
+[INFO] 21:21:26:681 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - DX 1
+[INFO] 21:21:26:682 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 4
+[INFO] 21:21:26:782 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - EAX 1000
+[INFO] 21:21:26:783 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 5
+[INFO] 21:21:26:884 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - EBX 1000
+[INFO] 21:21:26:884 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 6
+[INFO] 21:21:26:984 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - ECX 1000
+[INFO] 21:21:26:985 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 7
+[INFO] 21:21:27:085 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - EDX 1000
+[INFO] 21:21:27:085 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 8
+[INFO] 21:21:27:186 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - SI 0
+[INFO] 21:21:27:186 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 9
+[INFO] 21:21:27:287 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: SET - DI 64
+[INFO] 21:21:27:288 Ciclo CPU/(162254:162254): PID: 4 - FETCH - Program Counter: 10
+[INFO] 21:21:27:389 Ciclo CPU/(162254:162254): PID: 4 - Ejecutando: EXIT
+[INFO] 21:21:56:146 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 0
+[INFO] 21:21:56:246 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - AX 1
+[INFO] 21:21:56:246 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 1
+[INFO] 21:21:56:347 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - BX 1
+[INFO] 21:21:56:347 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 2
+[INFO] 21:21:56:447 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - CX 1
+[INFO] 21:21:56:448 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 3
+[INFO] 21:21:56:548 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - DX 1
+[INFO] 21:21:56:548 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 4
+[INFO] 21:21:56:649 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - EAX 1000
+[INFO] 21:21:56:649 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 0
+[INFO] 21:21:56:750 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - AX 1
+[INFO] 21:21:56:750 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 1
+[INFO] 21:21:56:851 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - BX 1
+[INFO] 21:21:56:851 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 2
+[INFO] 21:21:56:952 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - CX 1
+[INFO] 21:21:56:952 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 3
+[INFO] 21:21:57:052 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - DX 1
+[INFO] 21:21:57:053 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 4
+[INFO] 21:21:57:153 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - EAX 1000
+[INFO] 21:23:01:866 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 0
+[INFO] 21:23:01:966 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - AX 1
+[INFO] 21:23:01:967 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 1
+[INFO] 21:23:02:067 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - BX 1
+[INFO] 21:23:02:067 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 2
+[INFO] 21:23:02:168 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - CX 1
+[INFO] 21:23:02:168 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 3
+[INFO] 21:23:02:268 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - DX 1
+[INFO] 21:23:02:268 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 4
+[INFO] 21:23:02:369 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - EAX 1000
+[INFO] 21:23:02:370 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 5
+[INFO] 21:23:02:470 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - EBX 1000
+[INFO] 21:23:02:470 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 6
+[INFO] 21:23:02:571 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - ECX 1000
+[INFO] 21:23:02:571 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 7
+[INFO] 21:23:02:672 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - EDX 1000
+[INFO] 21:23:02:672 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 8
+[INFO] 21:23:02:773 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - SI 0
+[INFO] 21:23:02:773 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 9
+[INFO] 21:23:02:873 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: SET - DI 64
+[INFO] 21:23:02:874 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 5
+[INFO] 21:23:02:975 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - EBX 1000
+[INFO] 21:23:02:975 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 6
+[INFO] 21:23:03:081 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - ECX 1000
+[INFO] 21:23:03:081 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 7
+[INFO] 21:23:03:182 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - EDX 1000
+[INFO] 21:23:03:182 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 8
+[INFO] 21:23:03:282 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - SI 0
+[INFO] 21:23:03:282 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 9
+[INFO] 21:23:03:383 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: SET - DI 64
+[INFO] 21:23:03:383 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 5
+[INFO] 21:23:03:484 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - EBX 1000
+[INFO] 21:23:03:484 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 6
+[INFO] 21:23:03:584 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - ECX 1000
+[INFO] 21:23:03:585 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 7
+[INFO] 21:23:03:685 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - EDX 1000
+[INFO] 21:23:03:685 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 8
+[INFO] 21:23:03:786 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - SI 0
+[INFO] 21:23:03:786 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 9
+[INFO] 21:23:03:887 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: SET - DI 64
+[INFO] 21:23:03:887 Ciclo CPU/(162254:162254): PID: 5 - FETCH - Program Counter: 10
+[INFO] 21:23:03:988 Ciclo CPU/(162254:162254): PID: 5 - Ejecutando: EXIT
+[INFO] 21:23:03:988 Ciclo CPU/(162254:162254): PID: 6 - FETCH - Program Counter: 10
+[INFO] 21:23:04:089 Ciclo CPU/(162254:162254): PID: 6 - Ejecutando: EXIT
+[INFO] 21:23:04:090 Ciclo CPU/(162254:162254): PID: 7 - FETCH - Program Counter: 10
+[INFO] 21:23:04:191 Ciclo CPU/(162254:162254): PID: 7 - Ejecutando: EXIT
+[INFO] 21:23:04:191 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 0
+[INFO] 21:23:04:292 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - AX 1
+[INFO] 21:23:04:292 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 1
+[INFO] 21:23:04:393 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - BX 1
+[INFO] 21:23:04:393 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 2
+[INFO] 21:23:04:493 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - CX 1
+[INFO] 21:23:04:493 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 3
+[INFO] 21:23:04:594 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - DX 1
+[INFO] 21:23:04:594 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 4
+[INFO] 21:23:04:695 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - EAX 1000
+[INFO] 21:23:04:695 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 5
+[INFO] 21:23:04:796 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - EBX 1000
+[INFO] 21:23:04:796 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 6
+[INFO] 21:23:04:897 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - ECX 1000
+[INFO] 21:23:04:897 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 7
+[INFO] 21:23:04:998 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - EDX 1000
+[INFO] 21:23:04:998 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 8
+[INFO] 21:23:05:098 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - SI 0
+[INFO] 21:23:05:099 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 9
+[INFO] 21:23:05:199 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: SET - DI 64
+[INFO] 21:23:05:200 Ciclo CPU/(162254:162254): PID: 8 - FETCH - Program Counter: 10
+[INFO] 21:23:05:301 Ciclo CPU/(162254:162254): PID: 8 - Ejecutando: EXIT
+[INFO] 21:23:26:830 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 0
+[INFO] 21:23:26:930 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - AX 1
+[INFO] 21:23:26:930 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 1
+[INFO] 21:23:27:031 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - BX 1
+[INFO] 21:23:27:031 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 2
+[INFO] 21:23:27:132 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - CX 1
+[INFO] 21:23:27:132 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 3
+[INFO] 21:23:27:232 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - DX 1
+[INFO] 21:23:27:232 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 4
+[INFO] 21:23:27:333 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - EAX 1000
+[INFO] 21:23:27:334 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 0
+[INFO] 21:23:27:441 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - AX 1
+[INFO] 21:23:27:441 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 1
+[INFO] 21:23:27:541 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - BX 1
+[INFO] 21:23:27:541 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 2
+[INFO] 21:23:27:642 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - CX 1
+[INFO] 21:23:27:642 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 3
+[INFO] 21:23:27:743 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - DX 1
+[INFO] 21:23:27:743 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 4
+[INFO] 21:23:27:843 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - EAX 1000
+[INFO] 21:23:27:844 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 5
+[INFO] 21:23:27:945 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - EBX 1000
+[INFO] 21:23:27:945 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 6
+[INFO] 21:23:28:045 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - ECX 1000
+[INFO] 21:23:28:046 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 7
+[INFO] 21:23:28:146 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - EDX 1000
+[INFO] 21:23:28:146 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 8
+[INFO] 21:23:28:247 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - SI 0
+[INFO] 21:23:28:247 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 9
+[INFO] 21:23:28:348 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: SET - DI 64
+[INFO] 21:23:28:348 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 5
+[INFO] 21:23:28:449 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - EBX 1000
+[INFO] 21:23:28:449 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 6
+[INFO] 21:23:28:550 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - ECX 1000
+[INFO] 21:23:28:550 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 7
+[INFO] 21:23:28:650 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - EDX 1000
+[INFO] 21:23:28:651 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 8
+[INFO] 21:23:28:751 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - SI 0
+[INFO] 21:23:28:751 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 9
+[INFO] 21:23:28:852 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: SET - DI 64
+[INFO] 21:23:28:852 Ciclo CPU/(162254:162254): PID: 9 - FETCH - Program Counter: 10
+[INFO] 21:23:28:953 Ciclo CPU/(162254:162254): PID: 9 - Ejecutando: EXIT
+[INFO] 21:23:28:954 Ciclo CPU/(162254:162254): PID: 10 - FETCH - Program Counter: 10
+[INFO] 21:23:29:055 Ciclo CPU/(162254:162254): PID: 10 - Ejecutando: EXIT
+[INFO] 21:23:29:055 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 0
+[INFO] 21:23:29:156 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - AX 1
+[INFO] 21:23:29:156 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 1
+[INFO] 21:23:29:257 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - BX 1
+[INFO] 21:23:29:257 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 2
+[INFO] 21:23:29:361 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - CX 1
+[INFO] 21:23:29:361 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 3
+[INFO] 21:23:29:461 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - DX 1
+[INFO] 21:23:29:461 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 4
+[INFO] 21:23:29:562 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - EAX 1000
+[INFO] 21:23:29:563 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 5
+[INFO] 21:23:29:664 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - EBX 1000
+[INFO] 21:23:29:664 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 6
+[INFO] 21:23:29:764 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - ECX 1000
+[INFO] 21:23:29:765 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 7
+[INFO] 21:23:29:865 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - EDX 1000
+[INFO] 21:23:29:865 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 8
+[INFO] 21:23:29:966 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - SI 0
+[INFO] 21:23:29:966 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 9
+[INFO] 21:23:30:066 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: SET - DI 64
+[INFO] 21:23:30:068 Ciclo CPU/(162254:162254): PID: 11 - FETCH - Program Counter: 10
+[INFO] 21:23:30:169 Ciclo CPU/(162254:162254): PID: 11 - Ejecutando: EXIT
+[INFO] 21:27:05:194 Ciclo CPU/(162254:162254): PID: 0 - FETCH - Program Counter: 0
+[INFO] 21:27:05:707 Ciclo CPU/(162254:162254): PID: 0 - FETCH - Program Counter: 0
+[INFO] 21:31:36:870 cpu_conn/(167159:167159): Broadcast de solicitud de IP realizado
+[INFO] 21:31:36:870 cpu_conn/(167159:167159): IP recibida: 192.168.0.10
+[INFO] 21:31:36:872 cpu_conn/(167159:167159): Conexión con módulo memoria realizada
+[INFO] 21:31:36:872 cpu_conn/(167159:167159): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 21:31:45:301 cpu_conn/(167159:167159): Solicitud recibida
+[INFO] 21:31:45:301 cpu_conn/(167159:167159): Enviando IP: 192.168.0.10
+[INFO] 21:33:08:744 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 0
+[INFO] 21:33:09:746 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 21:33:09:746 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 1
+[INFO] 21:33:10:747 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 21:33:10:747 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 2
+[INFO] 21:33:11:747 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 21:33:11:748 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 3
+[INFO] 21:33:12:748 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 21:33:12:748 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 4
+[INFO] 21:33:13:749 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - EAX 1000
+[INFO] 21:33:13:749 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 5
+[INFO] 21:33:14:749 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - EBX 1000
+[INFO] 21:33:14:750 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 6
+[INFO] 21:33:15:750 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - ECX 1000
+[INFO] 21:33:15:750 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 7
+[INFO] 21:33:16:750 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - EDX 1000
+[INFO] 21:33:16:751 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 8
+[INFO] 21:33:17:752 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - SI 0
+[INFO] 21:33:17:752 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 9
+[INFO] 21:33:18:753 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: SET - DI 64
+[INFO] 21:33:18:753 Ciclo CPU/(167159:167159): PID: 1 - FETCH - Program Counter: 10
+[INFO] 21:33:19:754 Ciclo CPU/(167159:167159): PID: 1 - Ejecutando: EXIT
+[INFO] 21:56:43:695 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 0
+[INFO] 21:56:44:696 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 21:56:44:696 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 1
+[INFO] 21:56:45:697 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 21:56:45:697 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 2
+[INFO] 21:56:46:697 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 21:56:46:697 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 3
+[INFO] 21:56:47:698 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 21:56:47:698 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 4
+[INFO] 21:56:48:699 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - EAX 1000
+[INFO] 21:56:48:699 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 5
+[INFO] 21:56:49:699 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - EBX 1000
+[INFO] 21:56:49:699 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 6
+[INFO] 21:56:50:700 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - ECX 1000
+[INFO] 21:56:50:700 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 7
+[INFO] 21:56:51:701 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - EDX 1000
+[INFO] 21:56:51:701 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 8
+[INFO] 21:56:52:702 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - SI 0
+[INFO] 21:56:52:702 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 9
+[INFO] 21:56:53:702 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: SET - DI 64
+[INFO] 21:56:53:702 Ciclo CPU/(167159:167159): PID: 2 - FETCH - Program Counter: 10
+[INFO] 21:56:54:703 Ciclo CPU/(167159:167159): PID: 2 - Ejecutando: EXIT
+[INFO] 22:00:43:190 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 0
+[INFO] 22:00:44:191 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 22:00:44:191 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 1
+[INFO] 22:00:45:191 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - BX 1
+[INFO] 22:00:45:191 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 2
+[INFO] 22:00:46:192 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - CX 1
+[INFO] 22:00:46:192 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 3
+[INFO] 22:00:47:193 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - DX 1
+[INFO] 22:00:47:193 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 4
+[INFO] 22:00:48:194 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - EAX 1000
+[INFO] 22:00:48:194 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 5
+[INFO] 22:00:49:195 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - EBX 1000
+[INFO] 22:00:49:195 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 6
+[INFO] 22:00:50:195 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - ECX 1000
+[INFO] 22:00:50:195 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 7
+[INFO] 22:00:51:196 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - EDX 1000
+[INFO] 22:00:51:196 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 8
+[INFO] 22:00:52:197 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - SI 0
+[INFO] 22:00:52:197 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 9
+[INFO] 22:00:53:197 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: SET - DI 64
+[INFO] 22:00:53:198 Ciclo CPU/(167159:167159): PID: 3 - FETCH - Program Counter: 10
+[INFO] 22:00:54:199 Ciclo CPU/(167159:167159): PID: 3 - Ejecutando: EXIT
+[INFO] 22:01:37:527 cpu_conn/(178310:178310): Broadcast de solicitud de IP realizado
+[INFO] 22:01:37:529 cpu_conn/(178310:178310): IP recibida: 192.168.0.10
+[INFO] 22:05:15:528 cpu_conn/(179526:179526): Broadcast de solicitud de IP realizado
+[INFO] 22:05:15:529 cpu_conn/(179526:179526): IP recibida: 192.168.0.10
+[INFO] 22:05:15:530 cpu_conn/(179526:179526): Conexión con módulo memoria realizada
+[INFO] 22:05:15:530 cpu_conn/(179526:179526): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 22:05:17:787 cpu_conn/(179526:179526): Solicitud recibida
+[INFO] 22:05:17:788 cpu_conn/(179526:179526): Enviando IP: 192.168.0.10
+[INFO] 22:06:17:380 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 0
+[INFO] 22:06:17:481 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 22:06:17:481 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 1
+[INFO] 22:06:17:582 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 22:06:17:582 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 2
+[INFO] 22:06:17:683 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 22:06:17:683 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 3
+[INFO] 22:06:17:783 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 22:06:17:784 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 4
+[INFO] 22:06:17:884 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - EAX 1000
+[INFO] 22:06:17:885 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 0
+[INFO] 22:06:17:986 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 22:06:17:986 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 1
+[INFO] 22:06:18:087 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 22:06:18:087 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 2
+[INFO] 22:06:18:187 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 22:06:18:187 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 3
+[INFO] 22:06:18:287 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 22:06:18:288 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 4
+[INFO] 22:06:18:388 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - EAX 1000
+[INFO] 22:06:55:963 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 0
+[INFO] 22:06:56:064 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 22:06:56:064 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 1
+[INFO] 22:06:56:164 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - BX 1
+[INFO] 22:06:56:165 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 2
+[INFO] 22:06:56:265 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - CX 1
+[INFO] 22:06:56:265 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 3
+[INFO] 22:06:56:366 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - DX 1
+[INFO] 22:06:56:366 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 4
+[INFO] 22:06:56:467 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - EAX 1000
+[INFO] 22:06:56:467 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 5
+[INFO] 22:06:56:568 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - EBX 1000
+[INFO] 22:06:56:568 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 6
+[INFO] 22:06:56:669 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - ECX 1000
+[INFO] 22:06:56:669 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 7
+[INFO] 22:06:56:770 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - EDX 1000
+[INFO] 22:06:56:770 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 8
+[INFO] 22:06:56:870 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - SI 0
+[INFO] 22:06:56:870 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 9
+[INFO] 22:06:56:970 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: SET - DI 64
+[INFO] 22:06:56:971 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 5
+[INFO] 22:06:57:072 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - EBX 1000
+[INFO] 22:06:57:072 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 6
+[INFO] 22:06:57:172 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - ECX 1000
+[INFO] 22:06:57:173 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 7
+[INFO] 22:06:57:273 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - EDX 1000
+[INFO] 22:06:57:273 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 8
+[INFO] 22:06:57:374 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - SI 0
+[INFO] 22:06:57:374 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 9
+[INFO] 22:06:57:474 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: SET - DI 64
+[INFO] 22:06:57:475 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 5
+[INFO] 22:06:57:576 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - EBX 1000
+[INFO] 22:06:57:576 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 6
+[INFO] 22:06:57:676 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - ECX 1000
+[INFO] 22:06:57:676 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 7
+[INFO] 22:06:57:777 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - EDX 1000
+[INFO] 22:06:57:777 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 8
+[INFO] 22:06:57:878 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - SI 0
+[INFO] 22:06:57:878 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 9
+[INFO] 22:06:57:979 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: SET - DI 64
+[INFO] 22:06:57:979 Ciclo CPU/(179526:179526): PID: 1 - FETCH - Program Counter: 10
+[INFO] 22:06:58:080 Ciclo CPU/(179526:179526): PID: 1 - Ejecutando: EXIT
+[INFO] 22:06:58:082 Ciclo CPU/(179526:179526): PID: 2 - FETCH - Program Counter: 10
+[INFO] 22:06:58:183 Ciclo CPU/(179526:179526): PID: 2 - Ejecutando: EXIT
+[INFO] 22:06:58:185 Ciclo CPU/(179526:179526): PID: 3 - FETCH - Program Counter: 10
+[INFO] 22:06:58:286 Ciclo CPU/(179526:179526): PID: 3 - Ejecutando: EXIT
+[INFO] 22:07:19:807 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 0
+[INFO] 22:07:19:908 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - AX 1
+[INFO] 22:07:19:908 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 1
+[INFO] 22:07:20:009 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - BX 1
+[INFO] 22:07:20:009 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 2
+[INFO] 22:07:20:110 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - CX 1
+[INFO] 22:07:20:110 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 3
+[INFO] 22:07:20:210 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - DX 1
+[INFO] 22:07:20:210 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 4
+[INFO] 22:07:20:311 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - EAX 1000
+[INFO] 22:07:20:312 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 0
+[INFO] 22:07:20:413 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - AX 1
+[INFO] 22:07:20:413 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 1
+[INFO] 22:07:20:513 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - BX 1
+[INFO] 22:07:20:513 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 2
+[INFO] 22:07:20:614 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - CX 1
+[INFO] 22:07:20:614 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 3
+[INFO] 22:07:20:714 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - DX 1
+[INFO] 22:07:20:714 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 4
+[INFO] 22:07:20:815 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - EAX 1000
+[INFO] 22:07:20:815 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 0
+[INFO] 22:07:20:915 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - AX 1
+[INFO] 22:07:20:915 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 1
+[INFO] 22:07:21:016 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - BX 1
+[INFO] 22:07:21:016 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 2
+[INFO] 22:07:21:117 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - CX 1
+[INFO] 22:07:21:117 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 3
+[INFO] 22:07:21:217 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - DX 1
+[INFO] 22:07:21:217 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 4
+[INFO] 22:07:21:318 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - EAX 1000
+[INFO] 22:07:21:319 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 5
+[INFO] 22:07:21:421 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - EBX 1000
+[INFO] 22:07:21:421 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 6
+[INFO] 22:07:21:527 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - ECX 1000
+[INFO] 22:07:21:527 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 7
+[INFO] 22:07:21:627 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - EDX 1000
+[INFO] 22:07:21:628 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 8
+[INFO] 22:07:21:728 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - SI 0
+[INFO] 22:07:21:728 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 9
+[INFO] 22:07:21:829 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: SET - DI 64
+[INFO] 22:07:21:830 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 5
+[INFO] 22:07:21:930 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - EBX 1000
+[INFO] 22:07:21:930 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 6
+[INFO] 22:07:22:031 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - ECX 1000
+[INFO] 22:07:22:031 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 7
+[INFO] 22:07:22:132 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - EDX 1000
+[INFO] 22:07:22:132 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 8
+[INFO] 22:07:22:232 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - SI 0
+[INFO] 22:07:22:233 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 9
+[INFO] 22:07:22:333 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: SET - DI 64
+[INFO] 22:07:22:334 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 5
+[INFO] 22:07:22:435 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - EBX 1000
+[INFO] 22:07:22:435 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 6
+[INFO] 22:07:22:535 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - ECX 1000
+[INFO] 22:07:22:535 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 7
+[INFO] 22:07:22:636 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - EDX 1000
+[INFO] 22:07:22:636 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 8
+[INFO] 22:07:22:737 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - SI 0
+[INFO] 22:07:22:737 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 9
+[INFO] 22:07:22:837 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: SET - DI 64
+[INFO] 22:07:22:838 Ciclo CPU/(179526:179526): PID: 4 - FETCH - Program Counter: 10
+[INFO] 22:07:22:939 Ciclo CPU/(179526:179526): PID: 4 - Ejecutando: EXIT
+[INFO] 22:07:22:940 Ciclo CPU/(179526:179526): PID: 5 - FETCH - Program Counter: 10
+[INFO] 22:07:23:041 Ciclo CPU/(179526:179526): PID: 5 - Ejecutando: EXIT
+[INFO] 22:07:23:042 Ciclo CPU/(179526:179526): PID: 6 - FETCH - Program Counter: 10
+[INFO] 22:07:23:143 Ciclo CPU/(179526:179526): PID: 6 - Ejecutando: EXIT
+[INFO] 22:10:39:625 Ciclo CPU/(179526:179526): PID: 2013266064 - FETCH - Program Counter: 32721
+[INFO] 22:10:40:070 Ciclo CPU/(179526:179526): PID: 0 - FETCH - Program Counter: 1
+[INFO] 22:15:44:984 cpu_conn/(183340:183340): Broadcast de solicitud de IP realizado
+[INFO] 22:15:44:984 cpu_conn/(183340:183340): IP recibida: 192.168.0.10
+[INFO] 22:15:44:985 cpu_conn/(183340:183340): Conexión con módulo memoria realizada
+[INFO] 22:15:44:985 cpu_conn/(183340:183340): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 22:15:48:607 cpu_conn/(183340:183340): Solicitud recibida
+[INFO] 22:15:48:608 cpu_conn/(183340:183340): Enviando IP: 192.168.0.10
+[INFO] 22:16:26:411 Ciclo CPU/(183340:183340): PID: 1 - FETCH - Program Counter: 0
+[INFO] 22:16:26:511 Ciclo CPU/(183340:183340): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 22:16:26:511 Ciclo CPU/(183340:183340): PID: 1 - FETCH - Program Counter: 1
+[INFO] 22:16:26:612 Ciclo CPU/(183340:183340): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 22:16:26:613 Ciclo CPU/(183340:183340): PID: 1 - FETCH - Program Counter: 2
+[INFO] 22:16:26:715 Ciclo CPU/(183340:183340): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 22:16:26:716 Ciclo CPU/(183340:183340): PID: 1 - FETCH - Program Counter: 3
+[INFO] 22:16:26:816 Ciclo CPU/(183340:183340): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 22:16:26:816 Ciclo CPU/(183340:183340): PID: 1 - FETCH - Program Counter: 4
+[INFO] 22:16:26:917 Ciclo CPU/(183340:183340): PID: 1 - Ejecutando: SET - EAX 1000
+[INFO] 22:16:26:917 Ciclo CPU/(183340:183340): PID: 2 - FETCH - Program Counter: 0
+[INFO] 22:16:27:018 Ciclo CPU/(183340:183340): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 22:16:27:018 Ciclo CPU/(183340:183340): PID: 2 - FETCH - Program Counter: 1
+[INFO] 22:16:27:119 Ciclo CPU/(183340:183340): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 22:16:27:119 Ciclo CPU/(183340:183340): PID: 2 - FETCH - Program Counter: 2
+[INFO] 22:16:27:220 Ciclo CPU/(183340:183340): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 22:16:27:220 Ciclo CPU/(183340:183340): PID: 2 - FETCH - Program Counter: 3
+[INFO] 22:16:27:320 Ciclo CPU/(183340:183340): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 22:16:27:321 Ciclo CPU/(183340:183340): PID: 2 - FETCH - Program Counter: 4
+[INFO] 22:16:27:422 Ciclo CPU/(183340:183340): PID: 2 - Ejecutando: SET - EAX 1000
+[INFO] 22:17:13:844 Ciclo CPU/(183340:183340): PID: 0 - FETCH - Program Counter: 0
+[INFO] 22:17:14:281 Ciclo CPU/(183340:183340): PID: 0 - FETCH - Program Counter: 1
+[INFO] 22:19:11:645 cpu_conn/(184893:184893): Broadcast de solicitud de IP realizado
+[INFO] 22:19:11:646 cpu_conn/(184893:184893): IP recibida: 192.168.0.10
+[INFO] 22:19:11:647 cpu_conn/(184893:184893): Conexión con módulo memoria realizada
+[INFO] 22:19:11:647 cpu_conn/(184893:184893): Escuchando mensaje broadcast en el puerto: 8006
+[INFO] 22:19:17:162 cpu_conn/(184893:184893): Solicitud recibida
+[INFO] 22:19:17:162 cpu_conn/(184893:184893): Enviando IP: 192.168.0.10
+[INFO] 22:19:38:838 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 0
+[INFO] 22:19:38:939 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - AX 1
+[INFO] 22:19:38:939 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 1
+[INFO] 22:19:39:042 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - BX 1
+[INFO] 22:19:39:042 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 2
+[INFO] 22:19:39:142 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - CX 1
+[INFO] 22:19:39:142 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 3
+[INFO] 22:19:39:243 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - DX 1
+[INFO] 22:19:39:243 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 4
+[INFO] 22:19:39:344 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - EAX 1000
+[INFO] 22:19:39:345 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 0
+[INFO] 22:19:39:445 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - AX 1
+[INFO] 22:19:39:445 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 1
+[INFO] 22:19:39:546 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - BX 1
+[INFO] 22:19:39:546 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 2
+[INFO] 22:19:39:647 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - CX 1
+[INFO] 22:19:39:647 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 3
+[INFO] 22:19:39:748 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - DX 1
+[INFO] 22:19:39:748 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 4
+[INFO] 22:19:39:848 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - EAX 1000
+[INFO] 22:19:59:529 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 0
+[INFO] 22:19:59:629 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - AX 1
+[INFO] 22:19:59:630 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 1
+[INFO] 22:19:59:731 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - BX 1
+[INFO] 22:19:59:731 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 2
+[INFO] 22:19:59:832 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - CX 1
+[INFO] 22:19:59:832 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 3
+[INFO] 22:19:59:932 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - DX 1
+[INFO] 22:19:59:932 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 4
+[INFO] 22:20:00:033 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - EAX 1000
+[INFO] 22:20:00:033 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 5
+[INFO] 22:20:00:134 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - EBX 1000
+[INFO] 22:20:00:134 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 6
+[INFO] 22:20:00:235 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - ECX 1000
+[INFO] 22:20:00:235 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 7
+[INFO] 22:20:00:335 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - EDX 1000
+[INFO] 22:20:00:335 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 8
+[INFO] 22:20:00:437 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - SI 0
+[INFO] 22:20:00:437 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 9
+[INFO] 22:20:00:538 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: SET - DI 64
+[INFO] 22:20:00:541 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 5
+[INFO] 22:20:00:642 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - EBX 1000
+[INFO] 22:20:00:642 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 6
+[INFO] 22:20:00:742 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - ECX 1000
+[INFO] 22:20:00:742 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 7
+[INFO] 22:20:00:843 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - EDX 1000
+[INFO] 22:20:00:843 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 8
+[INFO] 22:20:00:944 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - SI 0
+[INFO] 22:20:00:944 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 9
+[INFO] 22:20:01:044 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: SET - DI 64
+[INFO] 22:20:01:045 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 5
+[INFO] 22:20:01:145 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - EBX 1000
+[INFO] 22:20:01:146 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 6
+[INFO] 22:20:01:246 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - ECX 1000
+[INFO] 22:20:01:246 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 7
+[INFO] 22:20:01:347 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - EDX 1000
+[INFO] 22:20:01:347 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 8
+[INFO] 22:20:01:447 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - SI 0
+[INFO] 22:20:01:448 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 9
+[INFO] 22:20:01:548 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: SET - DI 64
+[INFO] 22:20:01:549 Ciclo CPU/(184893:184893): PID: 1 - FETCH - Program Counter: 10
+[INFO] 22:20:01:649 Ciclo CPU/(184893:184893): PID: 1 - Ejecutando: EXIT
+[INFO] 22:20:01:650 Ciclo CPU/(184893:184893): PID: 2 - FETCH - Program Counter: 10
+[INFO] 22:20:01:751 Ciclo CPU/(184893:184893): PID: 2 - Ejecutando: EXIT
+[INFO] 22:20:01:752 Ciclo CPU/(184893:184893): PID: 3 - FETCH - Program Counter: 10
+[INFO] 22:20:01:853 Ciclo CPU/(184893:184893): PID: 3 - Ejecutando: EXIT
+[INFO] 22:20:31:148 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 0
+[INFO] 22:20:31:249 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - AX 1
+[INFO] 22:20:31:249 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 1
+[INFO] 22:20:31:350 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - BX 1
+[INFO] 22:20:31:350 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 2
+[INFO] 22:20:31:450 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - CX 1
+[INFO] 22:20:31:450 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 3
+[INFO] 22:20:31:552 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - DX 1
+[INFO] 22:20:31:553 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 4
+[INFO] 22:20:31:653 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - EAX 1000
+[INFO] 22:20:31:658 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 5
+[INFO] 22:20:31:758 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - EBX 1000
+[INFO] 22:20:31:758 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 6
+[INFO] 22:20:31:859 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - ECX 1000
+[INFO] 22:20:31:859 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 7
+[INFO] 22:20:31:959 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - EDX 1000
+[INFO] 22:20:31:959 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 8
+[INFO] 22:20:32:060 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - SI 0
+[INFO] 22:20:32:060 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 9
+[INFO] 22:20:32:161 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: SET - DI 64
+[INFO] 22:20:32:161 Ciclo CPU/(184893:184893): PID: 4 - FETCH - Program Counter: 10
+[INFO] 22:20:32:261 Ciclo CPU/(184893:184893): PID: 4 - Ejecutando: EXIT
+[INFO] 22:20:32:263 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 0
+[INFO] 22:20:32:364 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - AX 1
+[INFO] 22:20:32:364 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 1
+[INFO] 22:20:32:464 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - BX 1
+[INFO] 22:20:32:464 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 2
+[INFO] 22:20:32:565 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - CX 1
+[INFO] 22:20:32:565 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 3
+[INFO] 22:20:32:666 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - DX 1
+[INFO] 22:20:32:666 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 4
+[INFO] 22:20:32:767 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - EAX 1000
+[INFO] 22:20:32:768 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 5
+[INFO] 22:20:32:868 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - EBX 1000
+[INFO] 22:20:32:869 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 6
+[INFO] 22:20:32:969 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - ECX 1000
+[INFO] 22:20:32:969 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 7
+[INFO] 22:20:33:070 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - EDX 1000
+[INFO] 22:20:33:070 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 8
+[INFO] 22:20:33:173 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - SI 0
+[INFO] 22:20:33:174 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 9
+[INFO] 22:20:33:275 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: SET - DI 64
+[INFO] 22:20:33:276 Ciclo CPU/(184893:184893): PID: 5 - FETCH - Program Counter: 10
+[INFO] 22:20:33:377 Ciclo CPU/(184893:184893): PID: 5 - Ejecutando: EXIT
+[INFO] 22:20:33:377 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 0
+[INFO] 22:20:33:478 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - AX 1
+[INFO] 22:20:33:478 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 1
+[INFO] 22:20:33:579 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - BX 1
+[INFO] 22:20:33:579 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 2
+[INFO] 22:20:33:679 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - CX 1
+[INFO] 22:20:33:679 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 3
+[INFO] 22:20:33:780 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - DX 1
+[INFO] 22:20:33:780 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 4
+[INFO] 22:20:33:880 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - EAX 1000
+[INFO] 22:20:33:881 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 5
+[INFO] 22:20:33:981 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - EBX 1000
+[INFO] 22:20:33:982 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 6
+[INFO] 22:20:34:082 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - ECX 1000
+[INFO] 22:20:34:082 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 7
+[INFO] 22:20:34:183 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - EDX 1000
+[INFO] 22:20:34:183 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 8
+[INFO] 22:20:34:284 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - SI 0
+[INFO] 22:20:34:284 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 9
+[INFO] 22:20:34:384 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: SET - DI 64
+[INFO] 22:20:34:385 Ciclo CPU/(184893:184893): PID: 6 - FETCH - Program Counter: 10
+[INFO] 22:20:34:485 Ciclo CPU/(184893:184893): PID: 6 - Ejecutando: EXIT
+[INFO] 22:20:34:487 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 0
+[INFO] 22:20:34:587 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - AX 1
+[INFO] 22:20:34:587 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 1
+[INFO] 22:20:34:688 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - BX 1
+[INFO] 22:20:34:688 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 2
+[INFO] 22:20:34:789 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - CX 1
+[INFO] 22:20:34:789 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 3
+[INFO] 22:20:34:890 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - DX 1
+[INFO] 22:20:34:890 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 4
+[INFO] 22:20:34:990 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - EAX 1000
+[INFO] 22:20:34:991 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 5
+[INFO] 22:20:35:092 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - EBX 1000
+[INFO] 22:20:35:092 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 6
+[INFO] 22:20:35:193 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - ECX 1000
+[INFO] 22:20:35:193 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 7
+[INFO] 22:20:35:293 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - EDX 1000
+[INFO] 22:20:35:293 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 8
+[INFO] 22:20:35:394 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - SI 0
+[INFO] 22:20:35:394 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 9
+[INFO] 22:20:35:495 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: SET - DI 64
+[INFO] 22:20:35:495 Ciclo CPU/(184893:184893): PID: 7 - FETCH - Program Counter: 10
+[INFO] 22:20:35:596 Ciclo CPU/(184893:184893): PID: 7 - Ejecutando: EXIT

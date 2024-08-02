@@ -92,14 +92,26 @@ void *agregarNuevoProcesoReady(void *ptr)
 
         if (!queue_is_empty(cola_de_new))
         {
+            wait_multiprogramacion();
+
+            wait_flujo();
+
             PcbGuardarEnNEW *nuevo_proceso = sacarProcesoDeNew();
 
             int resultadoMemoria = guardarInstruccionesMemoria(nuevo_proceso);
 
             if (resultadoMemoria > 0)
+            {
                 agregarProcesoNEWaREADYEnPLANI_CP(nuevo_proceso->proceso);
+            }
             else
+            {
+                post_flujo();
+                post_multiprogramacion();
                 log_error(kernel_loger_lp, "Error en la memoria");
+                terminarProceso(nuevo_proceso->proceso, "MEMORY_ERROR");
+                free(nuevo_proceso);
+            }
         }
     }
 }
@@ -131,8 +143,7 @@ int esperarRespuesteDeMemoria()
 
 PcbGuardarEnNEW *sacarProcesoDeNew()
 {
-    //sem_wait(&grado_multiprogramacion);
-    wait_multiprogramacion();
+    // sem_wait(&grado_multiprogramacion);
     pthread_mutex_lock(&mutexColaNEW);
     PcbGuardarEnNEW *nuevo_proceso = queue_pop(cola_de_new);
     pthread_mutex_unlock(&mutexColaNEW);
@@ -181,7 +192,7 @@ void terminarProceso(Pcb *proceso, char *motivo_exit)
     liberar_recursos(proceso);
     queue_push(cola_de_exit, proceso);
     mensaje_exit(proceso->pid, motivo_exit);
-    //sem_post(&grado_multiprogramacion);
+    // sem_post(&grado_multiprogramacion);
     post_multiprogramacion();
 }
 
@@ -243,7 +254,10 @@ void ajustar_grado_multiprogramacion(int new_value)
     {
         for (int i = 0; i < -delta; i++)
         {
-            sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
+            int value;
+            sem_getvalue(&(control_multiprogramacion->sem_multiprogramacion), &value);
+            if (value > 0)
+                sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
         }
     }
 
@@ -258,7 +272,10 @@ void wait_multiprogramacion()
 
 void post_multiprogramacion()
 {
-    sem_post(&(control_multiprogramacion->sem_multiprogramacion));
+    int value;
+    sem_getvalue(&(control_multiprogramacion->sem_multiprogramacion), &value);
+    if (value < control_multiprogramacion->valor_inicial)
+        sem_post(&(control_multiprogramacion->sem_multiprogramacion));
 }
 
 int encontrar_en_new_y_terminar(int pid)
@@ -298,7 +315,11 @@ void listar_estados_lp()
     }
 
     list_iterate(cola_de_new->elements, recorrerNew);
-    string_append(&mensaje_lp_new, "]");
+    string_trim_right(&mensaje_lp_new);
+    char ultimo = mensaje_lp_new[strlen(mensaje_lp_new) - 1];
+    if (mensaje_lp_new[strlen(mensaje_lp_new) - 1] == ',')
+        mensaje_lp_new[strlen(mensaje_lp_new) - 1] = '\0';
+    string_append(&mensaje_lp_new, " ]");
     log_info(loger_estados_lp, mensaje_lp_new);
     free(mensaje_lp_new);
 
@@ -312,7 +333,10 @@ void listar_estados_lp()
     }
 
     list_iterate(cola_de_exit->elements, recorrerExit);
-    string_append(&mensaje_lp_exit, "]");
+    string_trim_right(&mensaje_lp_exit);
+    if (mensaje_lp_exit[strlen(mensaje_lp_exit) - 1] == ',')
+        mensaje_lp_exit[strlen(mensaje_lp_exit) - 1] = '\0';
+    string_append(&mensaje_lp_exit, " ]");
     log_info(loger_estados_lp, mensaje_lp_exit);
     free(mensaje_lp_exit);
 

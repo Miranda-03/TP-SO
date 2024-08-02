@@ -386,4 +386,8 @@ void bloquear_paso_de_procesos_a_colas();
 
 void desbloquear_paso_de_procesos_a_colas();
 
+void wait_flujo();
+
+void post_flujo();
+
 #endif

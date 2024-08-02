@@ -1281,10 +1281,18 @@ void agregarProcesoColaReady(Pcb *procesoPCB)
 
 void agregarProcesoNEWaREADYEnPLANI_CP(Pcb *proceso)
 {
-    sem_wait(&flujoPlanificador_cp);
-
     agregarProcesoColaReady(proceso);
 
+    sem_post(&flujoPlanificador_cp);
+}
+
+void wait_flujo()
+{
+    sem_wait(&flujoPlanificador_cp);
+}
+
+void post_flujo()
+{
     sem_post(&flujoPlanificador_cp);
 }
 
@@ -1541,8 +1549,11 @@ void listar_por_estado()
 
     log_info(loger_estados_cp, "EJECUTANDO: %d", PIDprocesoEjecutando);
 
-    if (procesoPCB->estado == EXEC && procesoDelCPU->motivo == FIN_DE_QUANNTUM)
-        log_info(loger_estados_cp, "Esperando a ser ingresado en cola READY: %d", procesoPCB->pid);
+    if (procesoPCB != NULL)
+    {
+        if (procesoPCB->estado == EXEC && procesoDelCPU->motivo == FIN_DE_QUANNTUM)
+            log_info(loger_estados_cp, "Esperando a ser ingresado en cola READY: %d", procesoPCB->pid);
+    }
 
     char *mensaje_cp_readys = string_new();
     string_append(&mensaje_cp_readys, "READY [ ");
@@ -1554,7 +1565,10 @@ void listar_por_estado()
     }
     list_iterate(cola_de_ready->elements, recorrer);
     list_iterate(cola_de_mayor_prioridad->elements, recorrer);
-    string_append(&mensaje_cp_readys, "]");
+    string_trim_right(&mensaje_cp_readys);
+    if (mensaje_cp_readys[strlen(mensaje_cp_readys) - 1] == ',')
+        mensaje_cp_readys[strlen(mensaje_cp_readys) - 1] = '\0';
+    string_append(&mensaje_cp_readys, " ]");
     log_info(loger_estados_cp, mensaje_cp_readys);
     free(mensaje_cp_readys);
 
@@ -1564,7 +1578,7 @@ void listar_por_estado()
     void iterar_cola(void *value)
     {
         structGuardarProcesoEnBloqueado *proceso = (structGuardarProcesoEnBloqueado *)value;
-         if (proceso->procesoPCB->estado != ESTADO_EXIT)
+        if (proceso->procesoPCB->estado != ESTADO_EXIT)
         {
             string_append(&mensaje_cp_bloqueado, string_itoa(proceso->procesoPCB->pid));
             string_append(&mensaje_cp_bloqueado, ", ");
@@ -1603,8 +1617,10 @@ void listar_por_estado()
     }
 
     dictionary_iterator(recursos, buscar_proceso_por_recurso);
-
-    string_append(&mensaje_cp_bloqueado, "]");
+    string_trim_right(&mensaje_cp_bloqueado);
+    if (mensaje_cp_bloqueado[strlen(mensaje_cp_bloqueado) - 1] == ',')
+        mensaje_cp_bloqueado[strlen(mensaje_cp_bloqueado) - 1] = '\0';
+    string_append(&mensaje_cp_bloqueado, " ]");
     log_info(loger_estados_cp, mensaje_cp_bloqueado);
     free(mensaje_cp_bloqueado);
 
