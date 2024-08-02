@@ -1,0 +1,27 @@
+[INFO] 16:58:05:627 conn_b/(18247:18247): Broadcast de solicitud de IP realizado
+[INFO] 16:58:05:627 conn_b/(18247:18247): IPs recibidas
+[INFO] 16:58:05:629 conn_b/(18247:18247): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 16:58:05:629 conn_b/(18247:18247): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 16:58:05:631 conn_b/(18247:18247): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 16:58:05:631 conn_b/(18247:18247): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 16:58:05:633 conn_b/(18247:18247): Se crea la conexión, id de interfaz: GENERICA
+[INFO] 16:58:05:634 conn_b/(18247:18247): Se crea la conexión, id de interfaz: ESPERA
+[INFO] 16:58:05:635 conn_b/(18247:18247): Se crea la conexión, id de interfaz: SLP1
+[INFO] 17:02:26:479 conn_b/(18703:18703): Broadcast de solicitud de IP realizado
+[INFO] 17:02:26:480 conn_b/(18703:18703): IPs recibidas
+[INFO] 17:02:26:481 conn_b/(18703:18703): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 17:02:26:482 conn_b/(18703:18703): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 17:02:26:483 conn_b/(18703:18703): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 17:02:26:484 conn_b/(18703:18703): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 17:02:26:485 conn_b/(18703:18703): Se crea la conexión, id de interfaz: GENERICA
+[INFO] 17:02:26:486 conn_b/(18703:18703): Se crea la conexión, id de interfaz: ESPERA
+[INFO] 17:02:26:487 conn_b/(18703:18703): Se crea la conexión, id de interfaz: SLP1
+[INFO] 17:10:11:549 conn_b/(19360:19360): Broadcast de solicitud de IP realizado
+[INFO] 17:10:11:550 conn_b/(19360:19360): IPs recibidas
+[INFO] 17:10:11:551 conn_b/(19360:19360): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 17:10:11:552 conn_b/(19360:19360): Se crea la conexión, id de interfaz: MONITOR
+[INFO] 17:10:11:553 conn_b/(19360:19360): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 17:10:11:554 conn_b/(19360:19360): Se crea la conexión, id de interfaz: TECLADO
+[INFO] 17:10:11:555 conn_b/(19360:19360): Se crea la conexión, id de interfaz: GENERICA
+[INFO] 17:10:11:557 conn_b/(19360:19360): Se crea la conexión, id de interfaz: ESPERA
+[INFO] 17:10:11:558 conn_b/(19360:19360): Se crea la conexión, id de interfaz: SLP1

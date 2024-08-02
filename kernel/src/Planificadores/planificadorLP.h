@@ -27,6 +27,7 @@ typedef struct
     sem_t sem_multiprogramacion;
     int valor_inicial;
     pthread_mutex_t mutex;
+    unsigned int procesos_ejecutando;  
 } StructMultiprogramacion;
 
 

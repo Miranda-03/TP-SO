@@ -1,0 +1,14 @@
+[INFO] 16:58:30:335 entradasalida/(18247:18255): PID: 1 - Operacion: IO_STDIN_READ
+[INFO] 17:00:38:145 entradasalida/(18247:18261): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:00:38:146 entradasalida/(18247:18257): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:00:38:146 entradasalida/(18247:18251): PID: 0 - Operacion: IO_STDOUT_WRITE
+[INFO] 17:00:38:146 entradasalida/(18247:18259): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:02:52:996 entradasalida/(18703:18711): PID: 1 - Operacion: IO_STDIN_READ
+[INFO] 17:07:25:750 entradasalida/(18703:18717): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:07:25:750 entradasalida/(18703:18715): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:07:25:750 entradasalida/(18703:18713): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:10:29:046 entradasalida/(19360:19368): PID: 1 - Operacion: IO_STDIN_READ
+[INFO] 17:11:13:240 entradasalida/(19360:19374): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:11:13:240 entradasalida/(19360:19364): PID: 0 - Operacion: IO_STDOUT_WRITE
+[INFO] 17:11:13:240 entradasalida/(19360:19372): PID: 0 - Operacion: IO_SLEEP_GEN
+[INFO] 17:11:13:240 entradasalida/(19360:19370): PID: 0 - Operacion: IO_SLEEP_GEN

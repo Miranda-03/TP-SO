@@ -43,6 +43,7 @@ void inicarPlanificadorLargoPLazo(int socketMemoria, char *path_config)
 void init_sem_multiprogramacion(StructMultiprogramacion *msem, int value)
 {
     msem->valor_inicial = value;
+    msem->procesos_ejecutando = 0;
     sem_init(&(msem->sem_multiprogramacion), 0, value);
     pthread_mutex_init(&(msem->mutex), NULL);
 }
@@ -243,7 +244,7 @@ void ajustar_grado_multiprogramacion(int new_value)
     int current_value;
     sem_getvalue(&(control_multiprogramacion->sem_multiprogramacion), &current_value);
 
-    int delta = new_value - (control_multiprogramacion->valor_inicial - current_value);
+    int delta = new_value - (control_multiprogramacion->valor_inicial);
 
     if (delta > 0)
     {
@@ -252,7 +253,7 @@ void ajustar_grado_multiprogramacion(int new_value)
             sem_post(&(control_multiprogramacion->sem_multiprogramacion));
         }
     }
-    else
+    /*else
     {
         for (int i = 0; i < -delta; i++)
         {
@@ -261,7 +262,7 @@ void ajustar_grado_multiprogramacion(int new_value)
             if (value > 0)
                 sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
         }
-    }
+    }*/
 
     control_multiprogramacion->valor_inicial = new_value;
     pthread_mutex_unlock(&(control_multiprogramacion->mutex));
@@ -269,7 +270,33 @@ void ajustar_grado_multiprogramacion(int new_value)
 
 void wait_multiprogramacion()
 {
+
+    if(control_multiprogramacion->procesos_ejecutando > control_multiprogramacion->valor_inicial)
+    {
+        int esperar = control_multiprogramacion->procesos_ejecutando - control_multiprogramacion->valor_inicial;
+
+        for(int i = 0; i < esperar; i++)
+        {
+            sem_wait(&(control_multiprogramacion->sem_multiprogramacion));        
+        }
+    }
+    else if(control_multiprogramacion->procesos_ejecutando == control_multiprogramacion->valor_inicial)
+    {
+        int valor;
+        sem_getvalue(&(control_multiprogramacion->sem_multiprogramacion), &valor);
+
+        if(valor > 0)
+        {
+            for(int i = 0; i < valor; i++)
+            {
+                sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
+            }
+        }
+    }
+
     sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
+
+    control_multiprogramacion->procesos_ejecutando += 1;
 }
 
 void post_multiprogramacion()
@@ -278,6 +305,8 @@ void post_multiprogramacion()
     sem_getvalue(&(control_multiprogramacion->sem_multiprogramacion), &value);
     if (value < control_multiprogramacion->valor_inicial)
         sem_post(&(control_multiprogramacion->sem_multiprogramacion));
+
+    control_multiprogramacion->procesos_ejecutando -= 1;
 }
 
 int encontrar_en_new_y_terminar(int pid)

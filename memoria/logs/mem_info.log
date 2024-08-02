@@ -1,0 +1,63 @@
+[INFO] 16:58:29:928 Memoria Usuario/(18218:18228): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 16:58:30:232 Memoria Usuario/(18218:18222): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 16:58:30:333 Memoria Usuario/(18218:18222): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 16:58:31:424 Memoria Usuario/(18218:18228): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 16:58:31:727 Memoria Usuario/(18218:18222): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 16:58:31:828 Memoria Usuario/(18218:18222): PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 16:58:32:443 Memoria Usuario/(18218:18228): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 16:58:32:747 Memoria Usuario/(18218:18222): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 16:58:32:848 Memoria Usuario/(18218:18222): PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 16:58:33:473 Memoria Usuario/(18218:18228): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 16:58:33:777 Memoria Usuario/(18218:18222): PID: 4 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 16:58:33:879 Memoria Usuario/(18218:18222): PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 16:58:34:351 Memoria Usuario/(18218:18228): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 16:58:34:654 Memoria Usuario/(18218:18222): PID: 5 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 16:58:34:756 Memoria Usuario/(18218:18222): PID: 5 - Pagina: 0 - Marco: 4
+[INFO] 16:58:35:808 Memoria Usuario/(18218:18228): PID: 6 - Crear tabla de páginas de tamaño: 0
+[INFO] 16:58:36:112 Memoria Usuario/(18218:18222): PID: 6 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 16:58:36:213 Memoria Usuario/(18218:18222): PID: 6 - Pagina: 0 - Marco: 5
+[INFO] 16:58:36:890 Memoria Usuario/(18218:18228): PID: 7 - Crear tabla de páginas de tamaño: 0
+[INFO] 16:58:37:194 Memoria Usuario/(18218:18222): PID: 7 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 16:58:37:296 Memoria Usuario/(18218:18222): PID: 7 - Pagina: 0 - Marco: 6
+[INFO] 17:02:52:581 Memoria Usuario/(18679:18689): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:02:52:885 Memoria Usuario/(18679:18684): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:02:52:986 Memoria Usuario/(18679:18684): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:02:53:726 Memoria Usuario/(18679:18689): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:02:54:030 Memoria Usuario/(18679:18684): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:02:54:132 Memoria Usuario/(18679:18684): PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 17:02:55:139 Memoria Usuario/(18679:18689): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:02:55:441 Memoria Usuario/(18679:18684): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:02:55:542 Memoria Usuario/(18679:18684): PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 17:02:57:369 Memoria Usuario/(18679:18689): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:02:57:671 Memoria Usuario/(18679:18684): PID: 4 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:02:57:772 Memoria Usuario/(18679:18684): PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 17:02:58:373 Memoria Usuario/(18679:18689): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:02:58:675 Memoria Usuario/(18679:18684): PID: 5 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:02:58:776 Memoria Usuario/(18679:18684): PID: 5 - Pagina: 0 - Marco: 4
+[INFO] 17:03:10:762 Memoria Usuario/(18679:18689): PID: 5 - Quitar tabla de páginas de tamaño: 1
+[INFO] 17:03:10:762 Memoria Usuario/(18679:18689): PID: 6 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:03:11:065 Memoria Usuario/(18679:18684): PID: 6 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:03:11:167 Memoria Usuario/(18679:18684): PID: 6 - Pagina: 0 - Marco: 4
+[INFO] 17:03:24:462 Memoria Usuario/(18679:18689): PID: 7 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:03:24:765 Memoria Usuario/(18679:18684): PID: 7 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:03:24:866 Memoria Usuario/(18679:18684): PID: 7 - Pagina: 0 - Marco: 5
+[INFO] 17:03:41:328 Memoria Usuario/(18679:18689): PID: 7 - Quitar tabla de páginas de tamaño: 1
+[INFO] 17:10:28:631 Memoria Usuario/(19335:19344): PID: 1 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:10:28:935 Memoria Usuario/(19335:19339): PID: 1 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:10:29:037 Memoria Usuario/(19335:19339): PID: 1 - Pagina: 0 - Marco: 0
+[INFO] 17:10:30:545 Memoria Usuario/(19335:19344): PID: 2 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:10:30:848 Memoria Usuario/(19335:19339): PID: 2 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:10:30:950 Memoria Usuario/(19335:19339): PID: 2 - Pagina: 0 - Marco: 1
+[INFO] 17:10:31:534 Memoria Usuario/(19335:19344): PID: 3 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:10:31:837 Memoria Usuario/(19335:19339): PID: 3 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:10:31:939 Memoria Usuario/(19335:19339): PID: 3 - Pagina: 0 - Marco: 2
+[INFO] 17:10:32:385 Memoria Usuario/(19335:19344): PID: 4 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:10:32:689 Memoria Usuario/(19335:19339): PID: 4 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:10:32:791 Memoria Usuario/(19335:19339): PID: 4 - Pagina: 0 - Marco: 3
+[INFO] 17:10:33:257 Memoria Usuario/(19335:19344): PID: 5 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:10:33:561 Memoria Usuario/(19335:19339): PID: 5 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:10:33:663 Memoria Usuario/(19335:19339): PID: 5 - Pagina: 0 - Marco: 4
+[INFO] 17:10:45:452 Memoria Usuario/(19335:19344): PID: 5 - Quitar tabla de páginas de tamaño: 1
+[INFO] 17:10:45:452 Memoria Usuario/(19335:19344): PID: 6 - Crear tabla de páginas de tamaño: 0
+[INFO] 17:10:45:755 Memoria Usuario/(19335:19339): PID: 6 - Tamaño actual: 0 - Tamaño a aumentar: 8
+[INFO] 17:10:45:856 Memoria Usuario/(19335:19339): PID: 6 - Pagina: 0 - Marco: 4
