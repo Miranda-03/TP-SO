@@ -181,11 +181,11 @@ void enviar_contexto_al_kernel(Contexto_proceso *procesoCPU, MotivoDesalojo moti
     { // No estoy seguro de la comparacion
         buffer_add_string(buffer, strlen(instruccion) + 1, instruccion);
     }
-
+	procesoCPU->pid = -1;
+	*interrupcion_ce = 0;
     enviarMensaje(CPUsocketBidireccionalDispatch, buffer, CPU, MENSAJE);
 
-    procesoCPU->pid = -1;
-    *interrupcion_ce = 0;
+   
 }
 
 void agregar_registros_al_buffer(Contexto_proceso *procesoCPU, t_buffer *buffer)

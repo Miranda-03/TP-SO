@@ -1,0 +1,6 @@
+[INFO] 18:43:30:481 mem_conn/(3430:3430): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 18:43:48:657 mem_conn/(3430:3430): Solicitud recibida
+[INFO] 18:43:48:657 mem_conn/(3430:3430): Enviando IP: 192.168.1.135
+[INFO] 18:46:01:328 mem_conn/(3457:3457): Escuchando mensaje broadcast en el puerto: 8002
+[INFO] 18:46:12:904 mem_conn/(3457:3457): Solicitud recibida
+[INFO] 18:46:12:905 mem_conn/(3457:3457): Enviando IP: 192.168.1.135

@@ -1,0 +1,6 @@
+[INFO] 18:44:28:809 conn_b/(3450:3450): Broadcast de solicitud de IP realizado
+[INFO] 18:44:28:810 conn_b/(3450:3450): IPs recibidas
+[INFO] 18:44:28:811 conn_b/(3450:3450): Se crea la conexión, id de interfaz: SLP1
+[INFO] 18:46:51:049 conn_b/(3478:3478): Broadcast de solicitud de IP realizado
+[INFO] 18:46:51:049 conn_b/(3478:3478): IPs recibidas
+[INFO] 18:46:51:050 conn_b/(3478:3478): Se crea la conexión, id de interfaz: SLP1
