@@ -110,7 +110,9 @@ void *agregarNuevoProcesoReady(void *ptr)
                 post_flujo();
                 post_multiprogramacion();
                 log_error(kernel_loger_lp, "Error en la memoria");
-                terminarProceso(nuevo_proceso->proceso, "MEMORY_ERROR");
+                nuevo_proceso->proceso->estado = ESTADO_EXIT;
+                queue_push(cola_de_exit, nuevo_proceso->proceso);
+                log_info(kernel_loger_lp, "Finaliza el proceso %d - Motivo: MEMORY_ERROR (path not found)", nuevo_proceso->proceso->pid);
                 free(nuevo_proceso);
             }
         }
@@ -271,23 +273,23 @@ void ajustar_grado_multiprogramacion(int new_value)
 void wait_multiprogramacion()
 {
 
-    if(control_multiprogramacion->procesos_ejecutando > control_multiprogramacion->valor_inicial)
+    if (control_multiprogramacion->procesos_ejecutando > control_multiprogramacion->valor_inicial)
     {
         int esperar = control_multiprogramacion->procesos_ejecutando - control_multiprogramacion->valor_inicial;
 
-        for(int i = 0; i < esperar; i++)
+        for (int i = 0; i < esperar; i++)
         {
-            sem_wait(&(control_multiprogramacion->sem_multiprogramacion));        
+            sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
         }
     }
-    else if(control_multiprogramacion->procesos_ejecutando == control_multiprogramacion->valor_inicial)
+    else if (control_multiprogramacion->procesos_ejecutando == control_multiprogramacion->valor_inicial)
     {
         int valor;
         sem_getvalue(&(control_multiprogramacion->sem_multiprogramacion), &valor);
 
-        if(valor > 0)
+        if (valor > 0)
         {
-            for(int i = 0; i < valor; i++)
+            for (int i = 0; i < valor; i++)
             {
                 sem_wait(&(control_multiprogramacion->sem_multiprogramacion));
             }
@@ -326,6 +328,7 @@ int encontrar_en_new_y_terminar(int pid)
     {
         proceso->proceso->estado = ESTADO_EXIT;
         queue_push(cola_de_exit, proceso->proceso);
+        log_info(kernel_loger_lp, "Finaliza el proceso %d - Motivo: INTERRUPTED_BY_USER", proceso->proceso->pid);
         free(proceso);
         return 1;
     }
